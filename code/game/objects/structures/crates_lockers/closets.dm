@@ -34,7 +34,9 @@ GLOBAL_LIST_EMPTY(lockers)
 	var/material_drop_amount = 2
 	var/delivery_icon = "deliverycloset" //which icon to use when packagewrapped. null to be unwrappable.
 	var/anchorable = TRUE
+	var/can_be_emaged = FALSE
 	var/icon_welded = "welded"
+	var/icon_broken = "broken"
 	/// Protection against weather that being inside of it provides.
 	var/list/weather_protection = null
 	/// How close being inside of the thing provides complete pressure safety. Must be between 0 and 1!
@@ -85,6 +87,8 @@ GLOBAL_LIST_EMPTY(lockers)
 					add_overlay("locked")
 				else
 					add_overlay("unlocked")
+			if(secure && broken)
+				add_overlay("broken")
 
 	else
 		layer = BELOW_OBJ_LAYER
@@ -282,12 +286,30 @@ GLOBAL_LIST_EMPTY(lockers)
 		bust_open()
 
 /obj/structure/closet/attackby(obj/item/W, mob/user, params)
-	if(user in src)
+	if(opened)
+		if(istype(W, /obj/item/tk_grab))
+			return FALSE
+		if(user.a_intent != INTENT_HELP) // Stops you from putting your baton in the closet on accident
+			return
+		if(iscyborg(user))
+			return
+		if(!user.dropItemToGround(W)) //couldn't drop the item
+			to_chat(user, "<span class='notice'>\The [W] is stuck to your hand, you cannot put it in \the [src]!</span>")
+			return
+		if(W)
+			W.forceMove(loc)
+			return TRUE // It's resolved. No afterattack needed. Stops you from emagging lockers when putting in an emag
+	else if(can_be_emaged && (istype(W, /obj/item/card/emag) || istype(W, /obj/item/melee/transforming/energy/sword) && !broken))
+		emag_act(user)
+	else if(istype(W, /obj/item/stack/packageWrap))
 		return
-	if(src.tool_interact(W,user))
-		return 1 // No afterattack
+	else if(user.a_intent != INTENT_HARM)
+		closed_item_click(user)
 	else
 		return ..()
+
+/obj/structure/closet/proc/closed_item_click(mob/user)
+	attack_hand(user)
 
 /obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
@@ -519,6 +541,7 @@ GLOBAL_LIST_EMPTY(lockers)
 		playsound(src, "sparks", 50, 1)
 		broken = TRUE
 		locked = FALSE
+		obj_flags |= EMAGGED
 		update_icon()
 
 /obj/structure/closet/get_remote_view_fullscreens(mob/user)
