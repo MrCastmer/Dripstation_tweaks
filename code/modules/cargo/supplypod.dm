@@ -190,6 +190,18 @@
 	if(decal)
 		. += decal
 
+/obj/structure/closet/supplypod/welder_act(mob/living/user, obj/item/W)
+	if(bluespace)
+		return
+	else 
+		..()
+
+/obj/structure/closet/supplypod/wrench_act(mob/living/user, obj/item/W)
+	if(bluespace)
+		return
+	else 
+		..()
+
 /obj/structure/closet/supplypod/ex_act() //Explosions dont do SHIT TO US! This is because supplypods create explosions when they land.
 	return
 

@@ -54,6 +54,12 @@
 		return TRUE
 	return other.can_open(user)
 
+/obj/structure/closet/bluespace/internal/welder_act(mob/living/user, obj/item/W)
+	return
+
+/obj/structure/closet/bluespace/internal/wrench_act(mob/living/user, obj/item/W)
+	return
+
 /obj/structure/closet/bluespace/internal/attack_hand(mob/living/user)
 	var/obj/structure/closet/other = get_other_locker()
 	if(!other)

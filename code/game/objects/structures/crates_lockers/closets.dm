@@ -353,7 +353,7 @@ GLOBAL_LIST_EMPTY(lockers)
 							span_italics("You hear welding."))
 			update_icon()
 
-/obj/structure/closet/wrench_act(mob/user, obj/item/W)
+/obj/structure/closet/wrench_act(mob/living/user, obj/item/W)
 	if(anchorable)
 		if(isinspace() && !anchored)
 			return
