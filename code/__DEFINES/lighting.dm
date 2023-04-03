@@ -52,6 +52,8 @@
 #define LIGHT_COLOR_RED        "#FA8282"
 /// Bright but quickly dissipating neon green. rgb(100, 200, 100)
 #define LIGHT_COLOR_GREEN      "#64C864"
+/// Electric green. rgb(0, 255, 0)
+#define LIGHT_COLOR_ELECTRIC_GREEN      "#00FF00"
 /// Cold, diluted blue. rgb(100, 150, 250)
 #define LIGHT_COLOR_BLUE       "#6496FA"
 /// Light blueish green. rgb(125, 225, 175)
@@ -116,6 +118,23 @@
 #define DYNAMIC_LIGHTING_IFSTARLIGHT 3
 #define IS_DYNAMIC_LIGHTING(A) A.dynamic_lighting
 
+/// Colors for pride week (just needed the colors)
+#define COLOR_PRIDE_RED "#FF6666"
+#define COLOR_PRIDE_ORANGE "#FC9F3C"
+#define COLOR_PRIDE_YELLOW "#EAFF51"
+#define COLOR_PRIDE_GREEN "#41FC66"
+#define COLOR_PRIDE_BLUE "#42FFF2"
+#define COLOR_PRIDE_PURPLE "#5D5DFC"
+
+//The GAGS greyscale_colors for each department's computer/machine circuits (just needed the colors)
+#define CIRCUIT_COLOR_GENERIC "#1A7A13"
+#define CIRCUIT_COLOR_COMMAND "#1B4594"
+#define CIRCUIT_COLOR_SECURITY "#9A151E"
+#define CIRCUIT_COLOR_SCIENCE "#BC4A9B"
+#define CIRCUIT_COLOR_SERVICE "#92DCBA"
+#define CIRCUIT_COLOR_MEDICAL "#00CCFF"
+#define CIRCUIT_COLOR_ENGINEERING "#F8D700"
+#define CIRCUIT_COLOR_SUPPLY "#C47749"
 
 //code assumes higher numbers override lower numbers.
 #define LIGHTING_NO_UPDATE 0
