@@ -311,10 +311,10 @@ GLOBAL_LIST_EMPTY(lockers)
 /obj/structure/closet/proc/closed_item_click(mob/user)
 	attack_hand(user)
 
-/obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
-	. = TRUE
+/obj/structure/closet/welder_act(mob/living/user, obj/item/W)
+	. = ..()
 	if(opened)
-		if(user.a_intent == INTENT_HARM)
+		if(user.a_intent != INTENT_HARM)
 			return FALSE
 		if(istype(W, cutting_tool))
 			if(W.tool_behaviour == TOOL_WELDER)
@@ -352,13 +352,16 @@ GLOBAL_LIST_EMPTY(lockers)
 							span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [W]."),
 							span_italics("You hear welding."))
 			update_icon()
-	else if(W.tool_behaviour == TOOL_WRENCH && anchorable)
+
+/obj/structure/closet/wrench_act(mob/user, obj/item/W)
+	if(anchorable)
 		if(isinspace() && !anchored)
 			return
-		setAnchored(!anchored)
-		W.play_tool_sound(src, 75)
-		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
-						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+		if(user.a_intent == INTENT_HARM)
+			setAnchored(!anchored)
+			W.play_tool_sound(src, 75)
+			user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+							span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_italics("You hear a ratchet."))
 	else if(user.a_intent != INTENT_HARM)
 		var/item_is_id = W.GetID()

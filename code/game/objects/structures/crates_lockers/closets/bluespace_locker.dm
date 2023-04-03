@@ -54,9 +54,6 @@
 		return TRUE
 	return other.can_open(user)
 
-/obj/structure/closet/bluespace/internal/tool_interact(obj/item/W, mob/user)
-	return
-
 /obj/structure/closet/bluespace/internal/attack_hand(mob/living/user)
 	var/obj/structure/closet/other = get_other_locker()
 	if(!other)
