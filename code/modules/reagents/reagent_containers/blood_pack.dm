@@ -74,6 +74,9 @@
 /obj/item/reagent_containers/blood/update_icon()
 	cut_overlays()
 
+	if(blood_type)
+		add_overlay(image('icons/obj/bloodpack.dmi', "[blood_type]"))
+
 	var/v = min(round(reagents.total_volume / volume * 10), 10)
 	if(v > 0)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "bloodpack1")
@@ -108,11 +111,21 @@
 	blood_type = "O-"
 
 /obj/item/reagent_containers/blood/lizard
+	desc = "Contains blood used for lizard transfusion. Must be attached to an IV drip."
 	blood_type = "L"
 
 /obj/item/reagent_containers/blood/ethereal
+	desc = "Contains so called 'liquid electricity' which is a blood resource of ethereals."
 	blood_type = "LE"
 	unique_blood = /datum/reagent/consumable/liquidelectricity
+
+/obj/item/reagent_containers/blood/ethereal/update_icon()
+	. = ..()
+	add_overlay(image('icons/obj/bloodpack.dmi', "LE"))
+
+/obj/item/reagent_containers/blood/ethereal/update_pack_name()
+	if(!labelled)
+		name = "blood pack - LE"
 
 /obj/item/reagent_containers/blood/universal
 	blood_type = "U"
