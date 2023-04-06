@@ -61,6 +61,9 @@
 	density = FALSE
 	light_color = LIGHT_COLOR_RED
 
+/obj/machinery/computer/secure_data/laptop/screwdriver_act()
+	return
+
 /obj/machinery/computer/secure_data/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
