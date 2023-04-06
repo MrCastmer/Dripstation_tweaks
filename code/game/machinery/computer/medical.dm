@@ -575,6 +575,9 @@
 	icon_keyboard = "laptop_key"
 	clockwork = TRUE //it'd look weird
 	pass_flags = PASSTABLE
+	use_power = FALSE
+	density = FALSE
+	light_color = LIGHT_COLOR_BLUE
 
 /obj/machinery/computer/med_data/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE))

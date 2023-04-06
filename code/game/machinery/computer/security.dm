@@ -57,6 +57,9 @@
 	icon_keyboard = "laptop_key"
 	clockwork = TRUE //it'd look weird
 	pass_flags = PASSTABLE
+	use_power = FALSE
+	density = FALSE
+	light_color = LIGHT_COLOR_RED
 
 /obj/machinery/computer/secure_data/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
