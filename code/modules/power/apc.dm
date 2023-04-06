@@ -137,19 +137,19 @@
 
 /obj/machinery/power/apc/auto_name/north //Pixel offsets get overwritten on New()
 	dir = NORTH
-	pixel_y = 23
+	pixel_y = 28
 
 /obj/machinery/power/apc/auto_name/south
 	dir = SOUTH
-	pixel_y = -23
+	pixel_y = -28
 
 /obj/machinery/power/apc/auto_name/east
 	dir = EAST
-	pixel_x = 24
+	pixel_x = 28
 
 /obj/machinery/power/apc/auto_name/west
 	dir = WEST
-	pixel_x = -25
+	pixel_x = -28
 
 /obj/machinery/power/apc/get_cell()
 	return cell
@@ -181,21 +181,21 @@
 
 	switch(tdir)
 		if(NORTH)
-			if((pixel_y != initial(pixel_y)) && (pixel_y != 23))
+			if((pixel_y != initial(pixel_y)) && (pixel_y != 28))
 				log_mapping("APC: ([src]) at [AREACOORD(src)] with dir ([tdir] | [uppertext(dir2text(tdir))]) has pixel_y value ([pixel_y] - should be 23.)")
-			pixel_y = 23
+			pixel_y = 28
 		if(SOUTH)
-			if((pixel_y != initial(pixel_y)) && (pixel_y != -23))
+			if((pixel_y != initial(pixel_y)) && (pixel_y != -28))
 				log_mapping("APC: ([src]) at [AREACOORD(src)] with dir ([tdir] | [uppertext(dir2text(tdir))]) has pixel_y value ([pixel_y] - should be -23.)")
-			pixel_y = -23
+			pixel_y = -28
 		if(EAST)
-			if((pixel_y != initial(pixel_x)) && (pixel_x != 24))
+			if((pixel_y != initial(pixel_x)) && (pixel_x != 28))
 				log_mapping("APC: ([src]) at [AREACOORD(src)] with dir ([tdir] | [uppertext(dir2text(tdir))]) has pixel_x value ([pixel_x] - should be 24.)")
-			pixel_x = 24
+			pixel_x = 28
 		if(WEST)
-			if((pixel_y != initial(pixel_x)) && (pixel_x != -25))
+			if((pixel_y != initial(pixel_x)) && (pixel_x != -28))
 				log_mapping("APC: ([src]) at [AREACOORD(src)] with dir ([tdir] | [uppertext(dir2text(tdir))]) has pixel_x value ([pixel_x] - should be -25.)")
-			pixel_x = -25
+			pixel_x = -28
 	if (building)
 		if(user)
 			area = get_area(user)
