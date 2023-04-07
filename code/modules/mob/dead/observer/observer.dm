@@ -674,13 +674,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(world.time < client.crew_manifest_delay)
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
+	if(!GLOB.crew_manifest_tgui)
+		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
 
-	var/dat = "<HTML><HEAD><meta charset='UTF-8'></HEAD><BODY>"
-	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest_html()
-	dat += "</BODY></HTML>"
+	GLOB.crew_manifest_tgui.ui_interact(src)
 
-	src << browse(dat, "window=manifest;size=387x420;can_close=1")
+
 
 //this is called when a ghost is drag clicked to something.
 /mob/dead/observer/MouseDrop(atom/over)
