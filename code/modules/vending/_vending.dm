@@ -165,6 +165,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/alertradio
 
+	///Name of lighting mask for the vending machine
+	var/light_mask
+
 /obj/item/circuitboard
     ///determines if the circuit board originated from a vendor off station or not.
 	var/onstation = TRUE
@@ -252,7 +255,15 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		else
 			icon_state = "[initial(icon_state)]-off"
 
+/obj/machinery/vending/update_icon()
+	. = ..()
+	if(!light_mask)
+		return
 
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	if(!(stat & BROKEN) && powered())
+		SSvis_overlays.add_vis_overlay(src, icon, light_mask, EMISSIVE_LAYER, EMISSIVE_PLANE)
+	
 /obj/machinery/vending/obj_break(damage_flag)
 	. = ..()
 	if(!.)
@@ -398,6 +409,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		cut_overlays()
 		if(panel_open)
 			add_overlay("[initial(icon_state)]-panel")
+			SSvis_overlays.add_vis_overlay(src, icon, "[initial(icon_state)]-panel", EMISSIVE_BLOCKER_LAYER, EMISSIVE_BLOCKER_PLANE, dir)
 		updateUsrDialog()
 	else
 		to_chat(user, span_warning("You must first secure [src]."))
@@ -870,13 +882,16 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 /obj/machinery/vending/power_change()
 	if(stat & BROKEN)
+		set_light(0)
 		return
 
 	if(powered())
 		stat &= ~NOPOWER
 		START_PROCESSING(SSmachines, src)
+		set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
 	else
 		stat |= NOPOWER
+		set_light(0)
 
 	update_icon()
 

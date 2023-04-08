@@ -35,6 +35,7 @@
 	var/dispenser_arm = TRUE //whether or not the dispenser is active (wires can disable this)
 	var/power_wire_cut = FALSE
 	var/list/slogan_list = list()
+	var/light_mask = "smartfridge-light-mask"
 
 /obj/machinery/smartfridge/Initialize()
 	. = ..()
@@ -80,12 +81,15 @@
 		if(powered() && !power_wire_cut)
 			stat &= ~NOPOWER
 			START_PROCESSING(SSmachines, src)
+			set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
 		else
 			stat |= NOPOWER
+			set_light(0)
 
 /obj/machinery/smartfridge/process()
 	if(stat & (BROKEN|NOPOWER))
 		return PROCESS_KILL
+		set_light(0)
 
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
 		seconds_electrified--
@@ -173,6 +177,12 @@
 	else
 		icon_state = "[startstate]-off"
 
+/obj/machinery/smartfridge/update_icon()
+	. = ..()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	if(!(stat & BROKEN) && powered())
+		SSvis_overlays.add_vis_overlay(src, icon, light_mask, EMISSIVE_LAYER, EMISSIVE_PLANE)
+	
 /obj/machinery/smartfridge/proc/animate_dispenser()
 	//visually animate the smartfridge dispensing an item
 	if (supports_retrieval_state && !(stat & (NOPOWER|BROKEN)))
@@ -201,6 +211,7 @@
 		cut_overlays()
 		if(panel_open)
 			add_overlay("[initial(icon_state)]-panel")
+			SSvis_overlays.add_vis_overlay(src, icon, "[initial(icon_state)]-panel", EMISSIVE_BLOCKER_LAYER, EMISSIVE_BLOCKER_PLANE, dir)
 		updateUsrDialog()
 		return
 
