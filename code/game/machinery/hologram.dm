@@ -471,10 +471,13 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/holopad/update_icon()
 	var/total_users = LAZYLEN(masters) + LAZYLEN(holo_calls)
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(ringing)
 		icon_state = "holopad_ringing"
+		SSvis_overlays.add_vis_overlay(src, icon, "holopad_ringing_lightmask", EMISSIVE_LAYER, EMISSIVE_PLANE)
 	else if(total_users || replay_mode)
 		icon_state = "holopad1"
+		SSvis_overlays.add_vis_overlay(src, icon, "holopad1_lightmask", EMISSIVE_LAYER, EMISSIVE_PLANE)
 	else
 		icon_state = "holopad0"
 
