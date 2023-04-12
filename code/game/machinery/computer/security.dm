@@ -30,7 +30,7 @@
 
 	var/special_message
 
-	light_color = LIGHT_COLOR_RED
+	light_color = LIGHT_COLOR_INTENSE_RED
 
 /obj/machinery/computer/secure_data/Initialize(mapload)
 	. = ..()
@@ -59,7 +59,7 @@
 	pass_flags = PASSTABLE
 	use_power = FALSE
 	density = FALSE
-	light_color = LIGHT_COLOR_RED
+	light_color = LIGHT_COLOR_INTENSE_RED
 
 /obj/machinery/computer/secure_data/laptop/screwdriver_act()
 	return
