@@ -4,6 +4,7 @@
 	icon_state = "boozeomat"
 	icon_deny = "boozeomat-deny"
 	icon_vend = "boozeomat-vend"
+	light_color = LIGHT_COLOR_BLUEGREEN
 	products = list(/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
 					/obj/item/reagent_containers/food/drinks/flask = 3,

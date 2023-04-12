@@ -5,7 +5,8 @@
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
 	icon_state = "seeds"
 	icon_vend = "seeds-vend"
-	icon_deny = "seeds-deny"	
+	icon_deny = "seeds-deny"
+	light_color = LIGHT_COLOR_BLUEGREEN
 	products = list(/obj/item/seeds/aloe = 3,
 					/obj/item/seeds/ambrosia = 3,
 					/obj/item/seeds/apple = 3,

@@ -6,6 +6,7 @@
 	icon_state = "nutri"
 	icon_deny = "nutri-deny"
 	icon_vend = "nutri-vend"
+	light_color = LIGHT_COLOR_BLUEGREEN
 	products = list(/obj/item/reagent_containers/glass/bottle/nutrient/ez = 30,
 					/obj/item/reagent_containers/glass/bottle/nutrient/l4z = 20,
 					/obj/item/reagent_containers/glass/bottle/nutrient/rh = 10,

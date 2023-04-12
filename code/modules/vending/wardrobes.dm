@@ -25,7 +25,8 @@
 	desc = "A vending machine for security and security-related clothing!"
 	icon_state = "secdrobe"
 	icon_vend = "secdrobe-vend"
-	icon_deny = "secdrobe-deny"	
+	icon_deny = "secdrobe-deny"
+	light_color = LIGHT_COLOR_INTENSE_RED
 	product_ads = "Beat perps in style!;It's red so you can't see the blood!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
 	vend_reply = "Thank you for using the SecDrobe!"
 	products = list(/obj/item/clothing/suit/hooded/wintercoat/security = 3,
@@ -259,6 +260,7 @@
 	icon_deny = "hydrobe-deny"	
 	product_ads = "Do you love soil? Then buy our clothes!;Get outfits to match your green thumb here!"
 	vend_reply = "Thank you for using the Hydrobe!"
+	light_color = COLOR_GREEN
 	products = list(/obj/item/storage/backpack/botany = 2,
 					/obj/item/storage/backpack/satchel/hyd = 2,
 					/obj/item/clothing/suit/hooded/wintercoat/hydro = 2,

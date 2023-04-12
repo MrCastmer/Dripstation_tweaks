@@ -78,6 +78,7 @@
 	icon_state = "starkist"
 	icon_vend = "starkist-vend"
 	icon_deny = "starkist-deny"	
+	light_color = LIGHT_COLOR_ORANGE
 	name = "\improper Star-kist Vendor"
 	desc = "The taste of a star in liquid form."
 	product_slogans = "Drink the stars! Star-kist!"
@@ -103,7 +104,8 @@
 	desc = "~Shake me up some of that Shambler's Juice!~"
 	icon_state = "shamblers_juice"
 	icon_vend = "shamblers_juice-vend"
-	icon_deny = "shamblers_juice-deny"	
+	icon_deny = "shamblers_juice-deny"
+	light_color = COLOR_MAGENTA
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,

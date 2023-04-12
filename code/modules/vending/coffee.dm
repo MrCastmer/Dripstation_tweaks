@@ -5,6 +5,7 @@
 	icon_state = "coffee"
 	icon_deny = "coffee-deny"
 	icon_vend = "coffee-vend"
+	light_color = LIGHT_COLOR_BROWN
 	products = list(/obj/item/reagent_containers/food/drinks/coffee = 6,
 		            /obj/item/reagent_containers/food/drinks/mug/tea = 6,
 		            /obj/item/reagent_containers/food/drinks/mug/coco = 3)
