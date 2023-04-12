@@ -73,6 +73,7 @@ GLOBAL_LIST_EMPTY(lockers)
 
 /obj/structure/closet/update_icon()
 	cut_overlays()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(!opened)
 		layer = OBJ_LAYER
 		if(!is_animating_door)
@@ -85,8 +86,10 @@ GLOBAL_LIST_EMPTY(lockers)
 			if(secure && !broken)
 				if(locked)
 					add_overlay("locked")
+					SSvis_overlays.add_vis_overlay(src, icon, "locked", layer, EMISSIVE_PLANE, dir)
 				else
 					add_overlay("unlocked")
+					SSvis_overlays.add_vis_overlay(src, icon, "unlocked", layer, EMISSIVE_PLANE, dir)
 			if(secure && broken)
 				add_overlay("broken")
 
