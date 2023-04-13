@@ -6,7 +6,9 @@
 	desc = "Used to work with viruses."
 	density = TRUE
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "pandemic0"
+	icon_state = "pandemic"
+	light_color = LIGHT_COLOR_CYAN
+	integrity_failure = 50	
 	circuit = /obj/item/circuitboard/computer/pandemic
 	use_power = TRUE
 	idle_power_usage = 20
@@ -126,15 +128,36 @@
 	playsound(src, 'sound/machines/ping.ogg', 30, TRUE)
 
 /obj/machinery/computer/pandemic/update_icon()
+	cut_overlays()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(stat & BROKEN)
-		icon_state = (beaker ? "pandemic1_b" : "pandemic0_b")
-		return
-
-	icon_state = "pandemic[(beaker) ? "1" : "0"][powered() ? "" : "_nopower"]"
+		// if(!(stat & NOPOWER))
+		// 	add_overlay("pandemic_b")
+		// 	SSvis_overlays.add_vis_overlay(src, icon, "pandemic_b", layer, EMISSIVE_PLANE, dir)
+		// else
+		// 	add_overlay("pandemic_b_n")
+		add_overlay("pandemic_b_n")			
+	if(!(stat & (NOPOWER|BROKEN)) && !beaker)
+		add_overlay("pandemic0")
+		SSvis_overlays.add_vis_overlay(src, icon, "pandemic0", layer, EMISSIVE_PLANE, dir)
+	if(beaker)
+		add_overlay("pandemicbeaker")
+		if(!(stat & (NOPOWER|BROKEN)))
+			add_overlay("pandemic1")
+			SSvis_overlays.add_vis_overlay(src, icon, "pandemic1", layer, EMISSIVE_PLANE, dir)
 	if(wait)
-		add_overlay("waitlight")
-	else
-		cut_overlays()
+		add_overlay("waitlight_pandemic")
+		SSvis_overlays.add_vis_overlay(src, icon, "waitlight_pandemic", layer, EMISSIVE_PLANE, dir)
+
+/obj/machinery/chem_master/power_change()
+	..()
+	if(!(stat & BROKEN))
+		if(powered())
+			stat &= ~NOPOWER
+			set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
+		else
+			stat |= NOPOWER
+			set_light(0)
 
 /obj/machinery/computer/pandemic/proc/eject_beaker()
 	if(beaker)
