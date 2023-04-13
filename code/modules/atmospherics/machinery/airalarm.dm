@@ -651,6 +651,7 @@
 	var/area/A = get_area(src)
 	switch(max(danger_level, A.atmosalm))
 		if(0)
+			icon_state = "alarmp"
 			add_overlay("alarm0")
 			SSvis_overlays.add_vis_overlay(src, icon, "alarm0", layer, EMISSIVE_PLANE, dir)
 			light_color = "#03A728"  // green
