@@ -10,6 +10,7 @@
 	var/device_type = null
 	var/id = null
 	var/initialized_button = 0
+	var/light_mask
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 10, BIO = 100, RAD = 100, FIRE = 90, ACID = 70)
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
@@ -44,6 +45,7 @@
 
 /obj/machinery/button/update_icon()
 	cut_overlays()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(panel_open)
 		icon_state = "button-open"
 		if(device)
@@ -56,6 +58,7 @@
 			icon_state = "[skin]-p"
 		else
 			icon_state = skin
+			SSvis_overlays.add_vis_overlay(src, icon, light_mask, EMISSIVE_LAYER, EMISSIVE_PLANE)
 
 /obj/machinery/button/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
@@ -200,6 +203,7 @@
 /obj/machinery/button/door
 	name = "door button"
 	desc = "A door remote control switch."
+	light_mask = "doorctrl_overlay"
 	var/normaldoorcontrol = FALSE
 	var/specialfunctions = OPEN // Bitflag, see assembly file
 	var/sync_doors = TRUE
@@ -308,6 +312,7 @@
 /obj/machinery/button/holosign
 	name = "holosign button"
 	desc = "A remote control switch for a holosign."
+	light_mask = "doorctrl_overlay"	
 	device_type = /obj/item/assembly/control/holosign
 
 /obj/item/wallframe/button
