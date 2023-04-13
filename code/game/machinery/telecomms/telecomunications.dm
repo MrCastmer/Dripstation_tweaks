@@ -122,6 +122,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 
 /obj/machinery/telecomms/update_icon()
 	cut_overlays()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(on)
 		var/mutable_appearance/on_overlay
 		if(on_icon)
@@ -129,6 +130,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 		else
 			on_overlay = mutable_appearance(icon, "[initial(icon_state)]_on")
 		add_overlay(on_overlay)
+		SSvis_overlays.add_vis_overlay(src, icon, on_icon, EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 	if(panel_open)
 		icon_state = "[initial(icon_state)]_o"
 	else
