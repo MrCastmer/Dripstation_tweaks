@@ -262,7 +262,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(!(stat & BROKEN) && powered())
-		SSvis_overlays.add_vis_overlay(src, icon, light_mask, EMISSIVE_LAYER, EMISSIVE_PLANE)
+		SSvis_overlays.add_vis_overlay(src, icon, light_mask, layer, EMISSIVE_PLANE, dir)
 	
 /obj/machinery/vending/obj_break(damage_flag)
 	. = ..()
@@ -414,6 +414,10 @@ GLOBAL_LIST_EMPTY(vending_products)
 	else
 		to_chat(user, span_warning("You must first secure [src]."))
 	return TRUE
+
+/obj/machinery/vending/default_deconstruction_screwdriver()
+	. = ..()
+	update_icon()
 
 /obj/machinery/vending/attackby(obj/item/I, mob/user, params)
 	if(panel_open && is_wire_tool(I))

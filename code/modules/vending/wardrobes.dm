@@ -180,6 +180,7 @@
 	icon_vend = "cargodrobe-vend"
 	icon_deny = "cargodrobe-deny"
 	product_ads = "Upgraded Assistant Style! Pick yours today!;These shorts are comfy and easy to wear, get yours now!"
+	light_color = LIGHT_COLOR_YELLOW
 	vend_reply = "Thank you for using the CargoDrobe!"
 	products = list(/obj/item/clothing/suit/hooded/wintercoat/cargo = 3,
 					/obj/item/clothing/under/rank/cargotech = 3,
