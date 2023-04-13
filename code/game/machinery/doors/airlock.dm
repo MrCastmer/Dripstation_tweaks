@@ -674,46 +674,59 @@
 			if(lights && hasPower())
 				if(locked)
 					SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_bolts", FLOAT_LAYER, FLOAT_PLANE, dir)
+					SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_bolts", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 				else if(emergency)
 					SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_emergency", FLOAT_LAYER, FLOAT_PLANE, dir)
+					SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_bolts", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 			if(welded)
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "welded", FLOAT_LAYER, FLOAT_PLANE, dir)
 			if(obj_integrity <integrity_failure)
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_broken", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_broken", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 			else if(obj_integrity < (0.75 * max_integrity))
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_damaged", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_damaged", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 
 		if(AIRLOCK_DENY)
 			if(!hasPower())
 				return
 			SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_denied", FLOAT_LAYER, FLOAT_PLANE, dir)
+			SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_denied", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 			if(welded)
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "welded", FLOAT_LAYER, FLOAT_PLANE, dir)
 			if(obj_integrity <integrity_failure)
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_broken", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_broken", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 			else if(obj_integrity < (0.75 * max_integrity))
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_damaged", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_damaged", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 
 		if(AIRLOCK_EMAG)
 			if(welded)
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "welded", FLOAT_LAYER, FLOAT_PLANE, dir)
 			SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks", FLOAT_LAYER, FLOAT_PLANE, dir)
+			SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 			if(obj_integrity <integrity_failure)
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_broken", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_broken", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 			else if(obj_integrity < (0.75 * max_integrity))
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_damaged", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_damaged", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 
 		if(AIRLOCK_CLOSING)
 			if(lights && hasPower())
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_closing", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_closing", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 
 		if(AIRLOCK_OPEN)
 			if(obj_integrity < (0.75 * max_integrity))
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_open", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "sparks_open", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 
 		if(AIRLOCK_OPENING)
 			if(lights && hasPower())
 				SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_opening", FLOAT_LAYER, FLOAT_PLANE, dir)
+				SSvis_overlays.add_vis_overlay(src, overlays_file, "lights_opening", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
 	check_unres()
 
 /proc/get_airlock_overlay(icon_state, icon_file)
@@ -727,29 +740,33 @@
 /obj/machinery/door/airlock/proc/check_unres() //unrestricted sides. This overlay indicates which directions the player can access even without an ID
 	if(hasPower() && unres_sides)
 		if(unres_sides & NORTH)
-			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_n")
-			I.appearance_flags |= KEEP_APART
-			I.pixel_y = 32
-			set_light(l_range = 2, l_power = 1)
-			add_overlay(I)
-		if(unres_sides & SOUTH)
 			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_s")
 			I.appearance_flags |= KEEP_APART
-			I.pixel_y = -32
-			set_light(l_range = 2, l_power = 1)
+			set_light(MINIMUM_USEFUL_LIGHT_RANGE, l_power = 1)
+			set_light_color(LIGHT_COLOR_ELECTRIC_GREEN)
 			add_overlay(I)
-		if(unres_sides & EAST)
-			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_e")
+			SSvis_overlays.add_vis_overlay(src, 'icons/obj/doors/airlocks/station/overlays.dmi', "unres_s", layer, EMISSIVE_PLANE)
+		if(unres_sides & SOUTH)
+			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_n")
 			I.appearance_flags |= KEEP_APART
-			I.pixel_x = 32
-			set_light(l_range = 2, l_power = 1)
+			set_light(MINIMUM_USEFUL_LIGHT_RANGE, l_power = 1)
+			set_light_color(LIGHT_COLOR_ELECTRIC_GREEN)
 			add_overlay(I)
-		if(unres_sides & WEST)
+			SSvis_overlays.add_vis_overlay(src, 'icons/obj/doors/airlocks/station/overlays.dmi', "unres_n", layer, EMISSIVE_PLANE)
+		if(unres_sides & EAST)
 			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_w")
 			I.appearance_flags |= KEEP_APART
-			I.pixel_x = -32
-			set_light(l_range = 2, l_power = 1)
+			set_light(MINIMUM_USEFUL_LIGHT_RANGE, l_power = 1)
+			set_light_color(LIGHT_COLOR_ELECTRIC_GREEN)
 			add_overlay(I)
+			SSvis_overlays.add_vis_overlay(src, 'icons/obj/doors/airlocks/station/overlays.dmi', "unres_w", layer, EMISSIVE_PLANE)			
+		if(unres_sides & WEST)
+			var/image/I = image(icon='icons/obj/doors/airlocks/station/overlays.dmi', icon_state="unres_e")
+			I.appearance_flags |= KEEP_APART
+			set_light(MINIMUM_USEFUL_LIGHT_RANGE, l_power = 1)
+			set_light_color(LIGHT_COLOR_ELECTRIC_GREEN)
+			add_overlay(I)
+			SSvis_overlays.add_vis_overlay(src, 'icons/obj/doors/airlocks/station/overlays.dmi', "unres_e", layer, EMISSIVE_PLANE)			
 	else
 		set_light(0)
 
