@@ -14,6 +14,9 @@
 	circuit = /obj/item/circuitboard/machine/chem_master
 	integrity_failure = 50
 	light_color = LIGHT_COLOR_CYAN
+	light_range = MINIMUM_USEFUL_LIGHT_RANGE
+	light_power = 1
+	light_on = TRUE	
 	var/state_on = "mixer0"
 	var/state_working = "mixer1"
 	var/state_beaker = "mixerbeaker"
@@ -80,12 +83,12 @@
 	cut_overlays()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(stat & BROKEN)
+		add_overlay(state_broken_unpowered)
 		// if(powered())
 		// 	add_overlay(state_broken)
 		// 	SSvis_overlays.add_vis_overlay(src, icon, state_broken, layer, EMISSIVE_PLANE, dir)
 		// if(stat & NOPOWER)
 		// 	add_overlay(state_broken_unpowered) no idea how to make it all work
-		add_overlay(state_broken_unpowered)
 	if(!(stat & (NOPOWER|BROKEN)) && !beaker)
 		add_overlay(state_on)
 		SSvis_overlays.add_vis_overlay(src, icon, state_on, layer, EMISSIVE_PLANE, dir)
@@ -94,16 +97,15 @@
 		if(!(stat & (NOPOWER|BROKEN)))
 			add_overlay(state_working)
 			SSvis_overlays.add_vis_overlay(src, icon, state_working, layer, EMISSIVE_PLANE, dir)
-
+	
 /obj/machinery/chem_master/power_change()
-	..()
-	if(!(stat & BROKEN))
-		if(powered())
-			stat &= ~NOPOWER
-			set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
-		else
-			stat |= NOPOWER
-			set_light(0)
+	. = ..()
+	if(!.)
+		return // reduce unneeded light changes
+	if(stat & (NOPOWER|BROKEN))
+		set_light(FALSE)
+	else
+		set_light(TRUE)
 
 /obj/machinery/chem_master/blob_act(obj/structure/blob/B)
 	if (prob(50))

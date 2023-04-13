@@ -8,6 +8,8 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "pandemic"
 	light_color = LIGHT_COLOR_CYAN
+	light_range = MINIMUM_USEFUL_LIGHT_RANGE
+	light_power = 1
 	integrity_failure = 50	
 	circuit = /obj/item/circuitboard/computer/pandemic
 	use_power = TRUE
@@ -149,15 +151,15 @@
 		add_overlay("waitlight_pandemic")
 		SSvis_overlays.add_vis_overlay(src, icon, "waitlight_pandemic", layer, EMISSIVE_PLANE, dir)
 
-/obj/machinery/chem_master/power_change()
-	..()
-	if(!(stat & BROKEN))
-		if(powered())
-			stat &= ~NOPOWER
-			set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
-		else
-			stat |= NOPOWER
-			set_light(0)
+/obj/machinery/computer/pandemic/power_change()
+	. = ..()
+	if(!.)
+		return // reduce unneeded light changes
+	if(stat & (NOPOWER|BROKEN))
+		set_light(FALSE)
+	else
+		set_light(TRUE)
+
 
 /obj/machinery/computer/pandemic/proc/eject_beaker()
 	if(beaker)
