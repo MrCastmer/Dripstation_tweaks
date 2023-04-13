@@ -14,14 +14,17 @@
 		lit = FALSE
 	else
 		lit = !lit
-	update_icon()
+	update_hologram()	
 
-/obj/machinery/holosign/update_icon()
+/obj/machinery/holosign/proc/update_hologram()
+	cut_overlays()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(!lit)
-		icon_state = initial(icon_state)
 		set_light(0)
+		update_icon()
 	else
-		icon_state = on_icon
+		add_overlay(on_icon)
+		SSvis_overlays.add_vis_overlay(src, icon, on_icon, layer, EMISSIVE_PLANE)
 		set_light(1, 0.5, l_color = COLOR_BLUE_LIGHT)
 
 /obj/machinery/holosign/power_change()
