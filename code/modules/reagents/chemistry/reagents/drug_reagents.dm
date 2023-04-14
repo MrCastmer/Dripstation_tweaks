@@ -37,7 +37,7 @@
 	name = "Nicotine"
 	description = "Slightly reduces stun times. If overdosed it will deal toxin and oxygen damage."
 	reagent_state = LIQUID
-	color = "#60A584" // rgb: 96, 165, 132
+	color = "#333333" // rgb: 96, 165, 132
 	addiction_threshold = 10
 	taste_description = "smoke"
 	trippy = FALSE
