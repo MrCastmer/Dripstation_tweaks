@@ -12,7 +12,7 @@
 	console_department = "Security"
 	name = "security console"
 	desc = "A stationary computer. This one comes preloaded with security programs."
-	icon_keyboard = "security_key"		
+	// icon_keyboard = "security_key"		
 	starting_files = list(	new /datum/computer_file/program/secureye)
 	initial_program = /datum/computer_file/program/secureye
 
@@ -20,7 +20,7 @@
 /obj/machinery/modular_computer/console/preset/security
 	name = "brig console"
 	desc = "A stationary computer. This one comes preloaded with security and other brig management programs."
-	icon_keyboard = "security_key"	
+	// icon_keyboard = "security_key"	
 	starting_files = list(	new /datum/computer_file/program/secureye,
 							new /datum/computer_file/program/budgetorders,
 							new /datum/computer_file/program/crew_monitor)
@@ -30,7 +30,7 @@
 	console_department = "Engineering"
 	name = "engineering console"
 	desc = "A stationary computer. This one comes preloaded with engineering programs."
-	icon_keyboard = "power_key"	
+	// icon_keyboard = "power_key"	
 	starting_files = list(	new /datum/computer_file/program/power_monitor,
 							new /datum/computer_file/program/alarm_monitor,
 							new /datum/computer_file/program/supermatter_monitor)
@@ -50,7 +50,7 @@
 	console_department = "Research"
 	name = "research console"
 	desc = "A stationary computer. This one comes preloaded with research programs."
-	icon_keyboard = "tech_key"	
+	// icon_keyboard = "tech_key"	
 	starting_files = list(	new /datum/computer_file/program/robocontrol)
 	initial_program = /datum/computer_file/program/robocontrol
 
@@ -59,7 +59,7 @@
 	console_department = "Medical"
 	name = "medical console"
 	desc = "A stationary computer. This one comes preloaded with medical programs."
-	icon_keyboard = "med_key"	
+	// icon_keyboard = "med_key"	
 	starting_files = list(	new /datum/computer_file/program/crew_monitor)
 	initial_program = /datum/computer_file/program/crew_monitor
 
@@ -92,7 +92,7 @@
 	console_department = "Supply"
 	name = "mining console"
 	desc = "A stationary computer. This one comes preloaded with programs to monitor the lavaland mining opperation."
-	icon_keyboard = "med_key"	
+	// icon_keyboard = "med_key"	
 	starting_files = list(	new /datum/computer_file/program/secureye/mining)
 	initial_program = /datum/computer_file/program/secureye/mining
 
@@ -108,7 +108,7 @@
 	console_department = "Command"
 	name = "command console"
 	desc = "A stationary computer. This one comes preloaded with command programs."
-	icon_keyboard = "blue_key"
+	// icon_keyboard = "blue_key"
 	starting_components = list(	/obj/item/computer_hardware/network_card/wired,
 								/obj/item/computer_hardware/recharger/APC,
 								/obj/item/computer_hardware/hard_drive/super,
@@ -125,7 +125,7 @@
 /obj/machinery/modular_computer/console/preset/command/hop
 	name = "head of personnel's console"
 	desc = "A stationary computer. This one comes preloaded with bureaucratic programs."
-	icon_keyboard = "id_key"
+	// icon_keyboard = "id_key"
 	starting_files = list(	new /datum/computer_file/program/chatclient,
 							new /datum/computer_file/program/budgetorders,
 							new /datum/computer_file/program/card_mod,
@@ -139,7 +139,7 @@
 /obj/machinery/modular_computer/console/preset/command/hos
 	name = "head of security's console"
 	desc = "A stationary computer. This one comes preloaded with security programs."
-	icon_keyboard = "syndie_key"
+	// icon_keyboard = "syndie_key"
 	starting_files = list(	new /datum/computer_file/program/chatclient,
 							new /datum/computer_file/program/budgetorders,
 							new /datum/computer_file/program/card_mod/hos,
@@ -149,7 +149,7 @@
 /obj/machinery/modular_computer/console/preset/command/ce
 	name = "chief engineer's console"
 	desc = "A stationary computer. This one comes preloaded with engineering programs."
-	icon_keyboard = "power_key"	
+	// icon_keyboard = "power_key"	
 	starting_files = list(	new /datum/computer_file/program/chatclient,
 							new /datum/computer_file/program/budgetorders,
 							new /datum/computer_file/program/card_mod/ce,
@@ -162,7 +162,7 @@
 /obj/machinery/modular_computer/console/preset/command/rd
 	name = "research director's console"
 	desc = "A stationary computer. This one comes preloaded with research programs."
-	icon_keyboard = "rd_key"		
+	// icon_keyboard = "rd_key"		
 	starting_components = list(	/obj/item/computer_hardware/network_card/wired,
 								/obj/item/computer_hardware/recharger/APC,
 								/obj/item/computer_hardware/hard_drive/super,
@@ -183,7 +183,7 @@
 /obj/machinery/modular_computer/console/preset/command/cmo
 	name = "chief medical officer's console"
 	desc = "A stationary computer. This one comes preloaded with medical programs."
-	icon_keyboard = "med_key"		
+	// icon_keyboard = "med_key"		
 	starting_files = list(	new /datum/computer_file/program/chatclient,
 							new /datum/computer_file/program/budgetorders,
 							new /datum/computer_file/program/card_mod/cmo,
