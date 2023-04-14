@@ -192,6 +192,7 @@
 	name = "boxed cybernetic implants"
 	desc = "A sleek, sturdy box."
 	icon_state = "cyber_implants"
+	illustration = null
 	var/list/boxed = list(
 		/obj/item/autosurgeon/thermal_eyes,
 		/obj/item/autosurgeon/xray_eyes,
