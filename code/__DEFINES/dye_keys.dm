@@ -27,3 +27,7 @@
 #define DYE_REDCOAT "redcoat"
 #define DYE_CLOWN "clown"
 #define DYE_CHAP "chap"
+#define DYE_BLUES "blueshield"
+#define DYE_MAGI "magistrate"
+#define DYE_NTREP "ntrep"
+#define DYE_WARD "ward"

@@ -26,6 +26,11 @@
 	icon_state = "stamp-law"
 	dye_color = DYE_LAW
 
+/obj/item/stamp/chap
+	name = "chaplain's rubber stamp"
+	icon_state = "stamp-chap"
+	dye_color = DYE_CHAP
+
 /obj/item/stamp/captain
 	name = "captain's rubber stamp"
 	icon_state = "stamp-cap"
@@ -40,6 +45,11 @@
 	name = "head of security's rubber stamp"
 	icon_state = "stamp-hos"
 	dye_color = DYE_HOS
+
+/obj/item/stamp/warden
+	name = "warden's rubber stamp"
+	icon_state = "stamp-ward"
+	dye_color = DYE_WARD
 
 /obj/item/stamp/ce
 	name = "chief engineer's rubber stamp"
@@ -75,6 +85,21 @@
 	name = "centcom rubber stamp"
 	icon_state = "stamp-cent"
 	dye_color = DYE_REDCOAT
+
+/obj/item/stamp/blueshield
+	name = "Blueshield's rubber stamp"
+	icon_state = "stamp-blueshield"
+	dye_color = DYE_BLUES
+
+/obj/item/stamp/magistrate
+	name = "Magistrate's rubber stamp"
+	icon_state = "stamp-magistrate"
+	dye_color = DYE_MAGI
+
+/obj/item/stamp/ntrep
+	name = "Nanotrasen Representative's rubber stamp"
+	icon_state = "stamp-rep"
+	dye_color = DYE_NTREP
 
 /obj/item/stamp/syndi
 	name = "knock-off syndicate rubber stamp"
