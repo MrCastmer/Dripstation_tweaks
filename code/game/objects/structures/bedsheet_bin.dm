@@ -211,7 +211,14 @@ LINEN BINS
 	desc = "It is decorated with a crate emblem in silver lining.  It's rather tough, and just the thing to lie on after a hard day of pushing paper."
 	icon_state = "sheetqm"
 	item_state = "sheetqm"
-	dream_messages = list("a grey ID", "a shuttle", "a crate", "a sloth", "the quartermaster")
+	dream_messages = list("a brown card", "a shuttle", "a crate", "a sloth", "the quartermaster")
+
+/obj/item/bedsheet/chap
+	name = "chaplain's blanket"
+	desc = "A blanket woven with the hearts of gods themselves... Wait, that's just linen."
+	icon_state = "sheetchap"
+	item_state = "sheetchap"
+	dream_messages = list("a grey ID", "the gods", "a fulfilled prayer", "a cult", "the chaplain", "an inquisition", "a crusade", "xeno scum")
 
 /obj/item/bedsheet/brown
 	icon_state = "sheetbrown"
