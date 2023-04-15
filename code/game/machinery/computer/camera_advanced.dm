@@ -33,6 +33,7 @@
 			z_lock |= SSmapping.levels_by_trait(ZTRAIT_REEBE)
 
 /obj/machinery/computer/camera_advanced/syndie
+	icon_screen = "syndicam"
 	icon_keyboard = "syndie_key"
 
 /obj/machinery/computer/camera_advanced/proc/CreateEye()
