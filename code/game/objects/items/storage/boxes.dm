@@ -127,6 +127,7 @@
 /obj/item/storage/box/survival
 	name = "emergency survival box"
 	icon_state = "air"
+	illustration = null	
 	
 /obj/item/storage/box/survival/PopulateContents()
 	new /obj/item/clothing/mask/breath(src)
@@ -161,6 +162,7 @@
 /obj/item/storage/box/engineer
 	name = "extended emergency survival box"
 	icon_state = "air_upgrade"
+	illustration = null
 
 /obj/item/storage/box/engineer/PopulateContents()
 	new /obj/item/clothing/mask/breath(src)
@@ -175,6 +177,7 @@
 /obj/item/storage/box/syndie
 	name = "emergency survival box"
 	icon_state = "syndie_air"
+	illustration = null	
 
 /obj/item/storage/box/syndie/PopulateContents()
 	new /obj/item/clothing/mask/gas/syndicate(src)
@@ -200,6 +203,7 @@
 /obj/item/storage/box/plasmaman
 	name = "plasmaman survival box"
 	icon_state = "plasmaman"
+	illustration = null		
 
 /obj/item/storage/box/plasmaman/PopulateContents()
 	new /obj/item/clothing/mask/breath(src)
@@ -217,6 +221,7 @@
 /obj/item/storage/box/ipc
 	name = "robot survival box"
 	icon_state = "robot"
+	illustration = null	
 
 /obj/item/storage/box/ipc/PopulateContents()
 	new /obj/item/tank/internals/ipc_coolant(src)
@@ -250,6 +255,7 @@
 	name = "box of syringes"
 	desc = "A box full of syringes."
 	icon_state = "syringes"
+	illustration = null	
 
 /obj/item/storage/box/syringes/PopulateContents()
 	for(var/i in 1 to 7)
@@ -1308,7 +1314,7 @@
 	name = "box of deluxe stock parts"
 	desc = "Contains a variety of deluxe stock parts."
 	icon_state = "syndiebox"
-	illustration = "grenade"	
+	illustration = "circuit"	
 
 /obj/item/storage/box/stockparts/deluxe/PopulateContents()
 	var/static/items_inside = list(

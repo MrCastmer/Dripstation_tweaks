@@ -747,7 +747,8 @@
 
 /obj/item/storage/box/syndie_kit/augmentation
 	real_name = "augmentation kit"
-	icon_state = "cyber_implants"	
+	icon_state = "cyber_implants"
+	illustration = null		
 
 /obj/item/storage/box/syndie_kit/augmentation/PopulateContents()
 	new /obj/item/autosurgeon/limb/head/robot(src)
@@ -774,7 +775,8 @@
 
 /obj/item/storage/box/syndie_kit/buster
 	real_name = "Buster kit"
-	icon_state = "cyber_implants"	
+	icon_state = "cyber_implants"
+	illustration = null
 
 /obj/item/storage/box/syndie_kit/buster/PopulateContents()
 	for(var/i in 1 to 3)
