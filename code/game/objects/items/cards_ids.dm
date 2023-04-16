@@ -818,6 +818,8 @@ update_label("John Doe", "Clowny")
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"
 	desc = "Provides access to the departmental budget."
+	icon = 'icons/obj/card.dmi'
+	icon_state = "budgetcard"
 	var/department_ID = ACCOUNT_CIV
 	var/department_name = ACCOUNT_CIV_NAME
 	registered_age = null
@@ -838,9 +840,11 @@ update_label("John Doe", "Clowny")
 	return ..()
 
 /obj/item/card/id/departmental_budget/car
+	icon_state = "car_budget"
 	department_ID = ACCOUNT_CAR
 	department_name = ACCOUNT_CAR_NAME
 
 /obj/item/card/id/departmental_budget/sec
+	icon_state = "sec_budget"
 	department_ID = ACCOUNT_SEC
 	department_name = ACCOUNT_SEC_NAME
