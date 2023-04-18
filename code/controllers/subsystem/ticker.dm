@@ -678,13 +678,13 @@ SUBSYSTEM_DEF(ticker)
 		return
 	//yogs start - yogs tickets
 	if(GLOB.ahelp_tickets && GLOB.ahelp_tickets.ticketAmount)
-		var/list/adm = get_admin_counts(R_BAN)
-		var/list/activemins = adm["present"]
-		if(activemins.len > 0 && !force) // Ignore tickets if forced
-			to_chat(world, span_boldannounce("Not all tickets have been resolved. Server restart delayed."))
-			return
-		else
-			to_chat(world, span_boldannounce("Round ended, but there were still active tickets. Please submit a player complaint if you did not receive a response."))
+		// var/list/adm = get_admin_counts(R_BAN)
+		// var/list/activemins = adm["present"]
+		// if(activemins.len > 0 && !force) // Ignore tickets if forced
+		// 	to_chat(world, span_boldannounce("Not all tickets have been resolved. Server restart delayed."))
+		// 	return
+		// else
+		to_chat(world, span_boldannounce("Round ended, but there were still active tickets. Please submit a player complaint if you did not receive a response."))
 	 //yogs end - yogs tickets
 	to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(delay)]. [reason]"))
 	webhook_send_roundstatus("endgame") //yogs - webhook support
