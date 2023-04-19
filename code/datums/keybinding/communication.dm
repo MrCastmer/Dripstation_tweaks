@@ -3,11 +3,14 @@
 
 
 /datum/keybinding/client/communication/say
-	hotkey_keys = list("T")
-	name = SAY_CHANNEL
-	full_name = "IC Say"
-	description = ""
+    hotkey_keys = list("T")
+    name = SAY_CHANNEL
+    full_name = "IC Say"
+    description = ""
 
+/datum/keybinding/client/communication/say/down(client/user)
+    user.mob.say_wrapper()
+    return TRUE 
 
 /datum/keybinding/client/communication/emote
 	hotkey_keys = list("M")
@@ -15,6 +18,9 @@
 	full_name = "Emote"
 	description = ""
 
+/datum/keybinding/client/communication/emote/down(client/user)
+    user.mob.me_wrapper()
+    return TRUE 
 
 /datum/keybinding/client/communication/ooc
 	hotkey_keys = list("O")
@@ -22,6 +28,9 @@
 	full_name = "OOC"
 	description = ""
 
+/datum/keybinding/client/communication/ooc/down(client/user)
+    user.ooc_wrapper()
+    return TRUE 
 
 /datum/keybinding/client/communication/looc
 	hotkey_keys = list("L")
