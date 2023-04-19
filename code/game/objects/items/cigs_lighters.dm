@@ -597,7 +597,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A limited edition gold Zippo espesially for NT Captains. Looks extremely expensive."
 	overlay_state = "cap"
 	icon_state = null
-	light_color = COLOR_PRIDE_BLUE
+	light_color = LIGHT_COLOR_BABY_BLUE
 	item_state = "cap"
 	overlay_list = list("cap")
 
