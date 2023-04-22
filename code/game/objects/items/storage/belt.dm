@@ -916,22 +916,23 @@
 	STR.set_holdable(list(
 		/obj/item/melee/sabre
 		))
+	
 
-/obj/item/storage/belt/sabre/examine(mob/user)
-	. = ..()
-	if(length(contents))
-		. += span_notice("Alt-click it to quickly draw the blade.")
+// /obj/item/storage/belt/sabre/examine(mob/user)
+// 	. = ..()
+// 	if(length(contents))
+// 		. += span_notice("Alt-click it to quickly draw the blade.")
 
-/obj/item/storage/belt/sabre/AltClick(mob/user)
-	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(length(contents))
-		var/obj/item/I = contents[1]
-		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."))
-		user.put_in_hands(I)
-		update_icon()
-	else
-		to_chat(user, "[src] is empty.")
+// /obj/item/storage/belt/sabre/AltClick(mob/user)
+// 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+// 		return
+// 	if(length(contents))
+// 		var/obj/item/I = contents[1]
+// 		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."))
+// 		user.put_in_hands(I)
+// 		update_icon()
+// 	else
+// 		to_chat(user, "[src] is empty.")
 
 /obj/item/storage/belt/sabre/update_icon()
 	icon_state = "sheath"
