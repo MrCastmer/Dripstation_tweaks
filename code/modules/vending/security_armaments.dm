@@ -55,6 +55,12 @@
 			return TRUE
 	return FALSE
 
+/obj/machinery/armaments_dispenser/update_icon()
+	. = ..()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+	if(!(stat & BROKEN) && powered())
+		SSvis_overlays.add_vis_overlay(src, icon, "armament-light-mask", layer, EMISSIVE_PLANE, dir)
+
 /obj/machinery/armaments_dispenser/ui_interact(mob/user, datum/tgui/ui)
 	if(stat & (BROKEN | NOPOWER | MAINT))
 		if(ui)

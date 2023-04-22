@@ -159,6 +159,8 @@
 	desc = "A rarely used vending machine that provides clothing for Network Admins."
 	icon_state = "sigdrobe"
 	product_ads = "Dress to impress yourself!;The drones will love you!;Get your clothing here!"
+	icon_vend = "sigdrobe-vend"
+	icon_deny = "sigdrobe-deny"
 	vend_reply = "Thank you for using the SigDrobe!"
 	products = list(/obj/item/storage/backpack/duffelbag/engineering = 1,
 					/obj/item/storage/backpack/industrial = 1,
