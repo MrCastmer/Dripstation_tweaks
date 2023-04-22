@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(NTPDAMessages)
 	filename = "pda_client"
 	filedesc = "PDA Messaging"
 	category = PROGRAM_CATEGORY_MISC
-	program_icon_state = "command"
+	program_icon_state = "word"
 	extended_desc = "This program allows for direct messaging with other modular computers"
 	size = 3
 	// Doesn't require NTNet, because if it did, traitors can't access uplink with NTNet down
@@ -29,6 +29,7 @@ GLOBAL_LIST_EMPTY(NTPDAMessages)
 	var/authkey
 	var/list/message_history = list()
 	var/list/blocked_users = list()
+
 
 /datum/computer_file/program/pdamessager/New()
 	. = ..()
