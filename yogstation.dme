@@ -3526,6 +3526,7 @@
 #include "dripstation\code\loadouts.dm"
 #include "dripstation\code\items\garment.dm"
 #include "dripstation\code\items\clothing\backpacks.dm"
+#include "dripstation\code\items\clothing\bagsholding.dm"
 #include "dripstation\code\items\clothing\headsets.dm"
 #include "dripstation\code\items\clothing\mantle_cloak.dm"
 #include "dripstation\code\items\clothing\department\command.dm"

@@ -63,7 +63,7 @@
 	implants = list(/obj/item/implant/sad_trombone)
 
 	backpack = /obj/item/storage/backpack/clown
-	satchel = /obj/item/storage/backpack/clown
+	satchel = /obj/item/storage/backpack/satchel/clown
 	duffelbag = /obj/item/storage/backpack/duffelbag/clown //strangely has a duffel
 
 	box = /obj/item/storage/box/hug/survival

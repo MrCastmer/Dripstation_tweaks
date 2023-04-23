@@ -50,9 +50,9 @@
 	uniform_skirt = /obj/item/clothing/under/rank/atmospheric_technician/skirt
 	r_pocket = /obj/item/analyzer
 
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	backpack = /obj/item/storage/backpack/industrial/atmos
+	satchel = /obj/item/storage/backpack/satchel/atmos
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering/atmos
 	box = /obj/item/storage/box/engineer
 
 	pda_slot = SLOT_L_STORE

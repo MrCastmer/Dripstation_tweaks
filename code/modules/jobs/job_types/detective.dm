@@ -68,6 +68,9 @@
 		/obj/item/melee/classic_baton=1)
 	mask = /obj/item/clothing/mask/cigarette
 
+	backpack = /obj/item/storage/backpack/satchel/sec/detective
+	satchel = /obj/item/storage/backpack/satchel/sec/detective
+
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses)

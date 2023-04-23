@@ -45,12 +45,13 @@
 	item_state = "brokenpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	var/insertion_output = /obj/item/storage/backpack/holding
 
 /obj/item/boh_shell/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/assembly/signaler/anomaly))
 		to_chat(user, "[src] roars to life as you insert the anomaly core!")
-		new /obj/item/storage/backpack/holding(get_turf(src))
+		new insertion_output(get_turf(src))
 		qdel(src)
 		qdel(I)
 

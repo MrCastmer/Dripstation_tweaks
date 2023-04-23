@@ -48,7 +48,8 @@
 	uniform_skirt = /obj/item/clothing/under/rank/roboticist/skirt
 	suit = /obj/item/clothing/suit/toggle/labcoat
 
-	backpack = /obj/item/storage/backpack/science
-	satchel = /obj/item/storage/backpack/satchel/tox
+	backpack = /obj/item/storage/backpack/science/robo
+	satchel = /obj/item/storage/backpack/satchel/tox/robo
+	duffelbag = /obj/item/storage/backpack/duffelbag/science/robo
 
 	pda_slot = SLOT_L_STORE
