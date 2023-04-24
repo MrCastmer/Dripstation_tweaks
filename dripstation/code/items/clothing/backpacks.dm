@@ -165,6 +165,7 @@
 	name = "Parcel Parobust"
 	desc = "A silent satchel made for those silent workers. Silence Co."
 	icon_state = "satchel-mime"
+	item_state = "satchel-mime"
 	icon = 'dripstation/icons/obj/storage/backpacks.dmi'	
 	lefthand_file = 'dripstation/icons/mob/inhands/backpack_lefthand.dmi'
 	righthand_file = 'dripstation/icons/mob/inhands/backpack_righthand.dmi'
@@ -173,6 +174,7 @@
 	name = "Giggles Von Robuston"
 	desc = "It's a satchel made by Honk! Co."
 	icon_state = "satchel-clown"
+	item_state = "satchel-clown"
 	icon = 'dripstation/icons/obj/storage/backpacks.dmi'	
 	lefthand_file = 'dripstation/icons/mob/inhands/backpack_lefthand.dmi'
 	righthand_file = 'dripstation/icons/mob/inhands/backpack_righthand.dmi'	
@@ -253,7 +255,10 @@
 	name = "forensic satchel"
 	desc = "For every man, who at the bottom of his heart believes that he is a born detective."
 	icon_state = "satchel-detective"
+	item_state = "satchel-detective"	
 	icon = 'dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/backpack_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/backpack_righthand.dmi'		
 
 /obj/item/storage/backpack/duffelbag/genetics
 	name = "geneticist duffelbag"
