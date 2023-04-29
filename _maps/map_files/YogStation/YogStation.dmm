@@ -7732,6 +7732,8 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
+/obj/item/twohanded/required/kirbyplants/photosynthetic,
+/obj/item/toy/figure/cmo,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "aUh" = (
@@ -11539,6 +11541,13 @@
 "bxy" = (
 /turf/closed/wall,
 /area/quartermaster/miningdock)
+"bxA" = (
+/obj/machinery/button/holosign{
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/turf/closed/wall/r_wall,
+/area/crew_quarters/heads/cmo)
 "bxB" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -12550,10 +12559,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"bEi" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/crew_quarters/heads/cmo)
 "bEm" = (
 /turf/open/floor/engine,
 /area/science/xenobiology)
@@ -14127,9 +14132,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/machinery/modular_computer/console/preset/command/cmo{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
@@ -14797,12 +14799,14 @@
 /turf/open/space,
 /area/solar/port/aft)
 "cdh" = (
-/obj/machinery/holopad,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/carpet/royalblue,
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "cdi" = (
 /obj/machinery/suit_storage_unit/ce,
@@ -14990,6 +14994,7 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
+/obj/machinery/papershredder,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "cfb" = (
@@ -15178,6 +15183,12 @@
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall,
 /area/engine/engineering)
+"cgQ" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblue,
+/area/crew_quarters/heads/cmo)
 "cgR" = (
 /obj/structure/table,
 /obj/item/stack/rods/fifty,
@@ -22775,6 +22786,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/courtroom)
+"eTx" = (
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/space)
 "eUf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -23019,9 +23036,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics/garden)
-"eXN" = (
-/turf/closed/wall/r_wall,
-/area/medical/medbay/lobby)
 "eXT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc{
@@ -25259,7 +25273,10 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/carpet/royalblue,
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "fQO" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -26130,16 +26147,22 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "gkV" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Chief Medical Officer's Desk";
-	departmentType = 5;
-	name = "Chief Medical Officer RC";
-	pixel_y = 32
-	},
-/obj/machinery/suit_storage_unit/cmo,
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
+	},
+/obj/structure/table,
+/obj/item/clothing/suit/apron/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/machinery/button/door{
+	id = "cmo";
+	name = "CMO Privacy Shutters Control";
+	pixel_x = 7;
+	pixel_y = 24;
+	req_access_txt = "40"
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
@@ -29062,12 +29085,7 @@
 /obj/machinery/keycard_auth{
 	pixel_x = 24
 	},
-/obj/structure/closet/secure_closet/CMO,
-/obj/item/sensor_device,
-/obj/effect/turf_decal/tile/blue/opposingcorners{
-	dir = 1
-	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/carpet/royalblue,
 /area/crew_quarters/heads/cmo)
 "hsI" = (
 /obj/structure/sign/warning/securearea{
@@ -31325,11 +31343,15 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft_starboard)
 "ims" = (
-/obj/item/twohanded/required/kirbyplants/photosynthetic,
-/obj/effect/turf_decal/tile/blue/opposingcorners{
-	dir = 1
+/obj/structure/closet/secure_closet/CMO,
+/obj/item/sensor_device,
+/obj/machinery/button/door{
+	id = "cmo";
+	name = "CMO Privacy Shutters Control";
+	pixel_y = 28;
+	req_access_txt = "40"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/carpet/royalblue,
 /area/crew_quarters/heads/cmo)
 "imH" = (
 /obj/effect/turf_decal/trimline/engiyellow/filled/line/lower,
@@ -32357,6 +32379,7 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
+/obj/machinery/suit_storage_unit/cmo,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "iHr" = (
@@ -34605,6 +34628,13 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Chief Medical Officer's Desk";
+	departmentType = 5;
+	name = "Chief Medical Officer RC";
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "jEd" = (
@@ -35248,6 +35278,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics/garden)
+"jSK" = (
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
+	},
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/cafeteria,
+/area/crew_quarters/heads/cmo)
 "jTj" = (
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/mime,
@@ -35605,15 +35642,13 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "kaN" = (
-/obj/structure/table/glass,
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 5
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
 	},
-/obj/item/pen,
-/obj/item/folder/white,
-/obj/item/stamp/cmo,
-/turf/open/floor/carpet/royalblue,
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "kaO" = (
 /obj/structure/disposalpipe/segment{
@@ -36441,10 +36476,10 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "kug" = (
-/obj/structure/bed/dogbed/runtime,
-/obj/item/toy/cattoy,
-/mob/living/simple_animal/pet/cat/Runtime,
-/turf/open/floor/carpet/royalblue,
+/obj/machinery/computer/med_data,
+/turf/open/floor/carpet/royalblue{
+	pixel_y = -1
+	},
 /area/crew_quarters/heads/cmo)
 "kuY" = (
 /obj/machinery/holopad,
@@ -40737,8 +40772,9 @@
 	id = "cmo";
 	name = "CMO office shutters"
 	},
+/obj/machinery/holosign/surgery,
 /turf/open/floor/plating,
-/area/medical/medbay/lobby)
+/area/crew_quarters/heads/cmo)
 "min" = (
 /obj/structure/table/wood,
 /obj/machinery/photocopier/faxmachine{
@@ -41041,13 +41077,14 @@
 /turf/open/floor/plasteel,
 /area/security/prison)
 "mnN" = (
-/obj/structure/chair{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/carpet/royalblue,
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "mnR" = (
 /obj/machinery/firealarm{
@@ -42988,8 +43025,10 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "nau" = (
-/obj/structure/table/glass,
-/turf/open/floor/carpet/royalblue,
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "naz" = (
 /obj/effect/spawner/structure/solars/solar_96,
@@ -44443,6 +44482,9 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/solars/port/fore)
+"nFe" = (
+/turf/closed/wall,
+/area/crew_quarters/heads/cmo)
 "nFx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -44808,7 +44850,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/papershredder,
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
@@ -49818,12 +49859,10 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "pSo" = (
-/obj/structure/chair/office/light{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/table/glass,
 /turf/open/floor/carpet/royalblue,
 /area/crew_quarters/heads/cmo)
 "pSG" = (
@@ -53681,13 +53720,7 @@
 /obj/item/radio/intercom{
 	pixel_x = 28
 	},
-/obj/machinery/computer/med_data{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue/opposingcorners{
-	dir = 1
-	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/carpet/royalblue,
 /area/crew_quarters/heads/cmo)
 "rAb" = (
 /obj/structure/lattice/catwalk,
@@ -54516,11 +54549,10 @@
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "rPL" = (
-/obj/item/twohanded/required/kirbyplants/photosynthetic,
-/obj/item/toy/figure/cmo,
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
+/obj/machinery/anesthetic_machine/roundstart,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "rPO" = (
@@ -56607,6 +56639,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/table/glass,
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/folder/white,
+/obj/item/pen,
+/obj/item/stamp/cmo,
 /turf/open/floor/carpet/royalblue,
 /area/crew_quarters/heads/cmo)
 "sJV" = (
@@ -58135,6 +58175,9 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
 	},
+/obj/structure/bed/dogbed/runtime,
+/mob/living/simple_animal/pet/cat/Runtime,
+/obj/item/toy/cattoy,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
 "toV" = (
@@ -62135,6 +62178,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/escapepodbay)
+"uVM" = (
+/obj/effect/turf_decal/tile/blue/opposingcorners{
+	dir = 1
+	},
+/obj/machinery/computer/operating{
+	dir = 4
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/crew_quarters/heads/cmo)
 "uWm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -68727,12 +68779,7 @@
 	c_tag = "Chief Medical Office";
 	network = list("ss13","medbay")
 	},
-/obj/machinery/button/door{
-	id = "cmo";
-	name = "CMO Privacy Shutters Control";
-	pixel_y = 28;
-	req_access_txt = "40"
-	},
+/obj/machinery/modular_computer/console/preset/command/cmo,
 /turf/open/floor/carpet/royalblue,
 /area/crew_quarters/heads/cmo)
 "xIf" = (
@@ -109190,13 +109237,13 @@ buB
 aYV
 aYV
 duH
-eXN
+kiy
+lcC
+lcC
 mhS
-mhS
-mhS
-mhS
-eXN
-gtC
+lcC
+kiy
+nFe
 vIx
 kub
 tTO
@@ -109447,13 +109494,13 @@ buB
 aYV
 aYV
 duH
-kiy
+bxA
 gkV
-vcC
-vcC
-vcC
+jSK
+uVM
+eTx
 nQr
-bEi
+lcC
 guV
 cXg
 tTO
@@ -109706,7 +109753,7 @@ aYV
 lmt
 lcC
 rPL
-peX
+vcC
 fQE
 cdh
 nxT
@@ -109963,11 +110010,11 @@ aYV
 rlx
 kiy
 jDY
-peX
+vcC
 mnN
-peX
+vcC
 aUc
-bEi
+lcC
 nfk
 kub
 hLI
@@ -110477,7 +110524,7 @@ aYV
 duH
 lcC
 kug
-peX
+cgQ
 pSo
 kaN
 iHi
@@ -110736,9 +110783,9 @@ kiy
 xHF
 peX
 sJP
-peX
+vcC
 ceZ
-bEi
+lcC
 gRk
 lhI
 kub
