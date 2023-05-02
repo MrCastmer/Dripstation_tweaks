@@ -43880,6 +43880,10 @@
 /obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
+"nBD" = (
+/obj/effect/landmark/start/atmospheric_technician,
+/turf/open/floor/plasteel,
+/area/engine/atmos)
 "nBI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -118075,7 +118079,7 @@ aOl
 uzw
 jhF
 emc
-aCQ
+nBD
 aCQ
 kZw
 aOd
