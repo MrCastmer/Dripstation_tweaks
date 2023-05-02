@@ -5438,7 +5438,6 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "cHy" = (
-/obj/machinery/sleeper,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
@@ -5446,6 +5445,7 @@
 	name = "Station Intercom (General)";
 	pixel_y = 24
 	},
+/obj/structure/bodycontainer/morgue,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "cHZ" = (
@@ -28967,9 +28967,6 @@
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
 "orq" = (
-/obj/structure/bodycontainer/morgue{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 5
 	},
@@ -28977,6 +28974,7 @@
 	dir = 8;
 	pixel_x = 28
 	},
+/obj/machinery/anesthetic_machine/roundstart,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "ors" = (
@@ -41858,6 +41856,9 @@
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
+	},
+/obj/machinery/sleeper{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)

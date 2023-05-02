@@ -1864,7 +1864,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/computer/operating,
 /obj/machinery/flasher{
 	id = "briginfirmary";
 	pixel_x = 8;
@@ -1875,6 +1874,8 @@
 	pixel_x = -8;
 	pixel_y = 28
 	},
+/obj/structure/table/optable,
+/obj/item/storage/backpack/duffelbag/sec/surgery,
 /turf/open/floor/plasteel/white,
 /area/security/physician)
 "apB" = (
@@ -7657,11 +7658,10 @@
 /turf/open/floor/plasteel,
 /area/crew_quarters/bar)
 "bvd" = (
-/obj/structure/table/optable,
 /obj/machinery/airalarm{
 	pixel_y = 24
 	},
-/obj/item/storage/backpack/duffelbag/sec/surgery,
+/obj/machinery/anesthetic_machine/roundstart,
 /turf/open/floor/plasteel/white,
 /area/security/physician)
 "bvj" = (
@@ -21753,22 +21753,10 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "gkX" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/medspray/synthflesh{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/medspray/sterilizine{
-	pixel_x = -1;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_x = -8;
-	pixel_y = 3
-	},
 /obj/machinery/vending/wallmed{
 	pixel_y = 29
 	},
+/obj/machinery/computer/operating,
 /turf/open/floor/plasteel/white,
 /area/security/physician)
 "gli" = (
@@ -22891,6 +22879,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
 	},
+/obj/structure/closet/secure_closet/physician,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/gloves/color/latex,
 /turf/open/floor/plasteel/white,
 /area/security/physician)
 "gEx" = (
@@ -50623,6 +50614,22 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"pLy" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/medspray/synthflesh{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/medspray/sterilizine{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/white,
+/area/security/physician)
 "pLA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2
@@ -50906,12 +50913,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
-"pPh" = (
-/obj/structure/closet/secure_closet/physician,
-/obj/item/clothing/gloves/color/latex,
-/obj/item/clothing/mask/surgical,
-/turf/open/floor/plasteel/white,
-/area/security/physician)
 "pPl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -105426,9 +105427,9 @@ msb
 msb
 msb
 api
-oWG
+pLy
 iDZ
-pPh
+oWG
 unq
 dyV
 dgz

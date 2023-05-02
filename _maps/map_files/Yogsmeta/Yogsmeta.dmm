@@ -3783,6 +3783,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/effect/landmark/start/yogs/brigphsyician,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "akn" = (
@@ -3842,8 +3843,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/structure/table/optable,
-/obj/item/storage/backpack/duffelbag/sec/surgery,
+/obj/machinery/anesthetic_machine/roundstart,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "aku" = (
@@ -3859,7 +3859,8 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/machinery/computer/operating,
+/obj/structure/table/optable,
+/obj/item/storage/backpack/duffelbag/sec/surgery,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "akx" = (
@@ -4307,7 +4308,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/landmark/start/yogs/brigphsyician,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "alN" = (
@@ -52790,7 +52790,10 @@
 /area/crew_quarters/dorms)
 "fuH" = (
 /obj/structure/table,
-/obj/machinery/computer/med_data/laptop,
+/obj/machinery/computer/med_data/laptop{
+	pixel_x = -1;
+	pixel_y = 2
+	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
@@ -54433,15 +54436,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/structure/table,
-/obj/item/storage/lockbox/vialbox/blood{
-	pixel_x = -4;
-	pixel_y = 11
-	},
-/obj/item/healthanalyzer{
-	pixel_x = 3;
-	pixel_y = -1
-	},
+/obj/machinery/computer/operating,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "gxY" = (
@@ -55568,10 +55563,22 @@
 	dir = 9
 	},
 /obj/structure/rack,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/reagent_containers/glass/bottle/charcoal,
-/obj/item/reagent_containers/glass/bottle/epinephrine,
-/obj/item/reagent_containers/syringe,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = -1;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "hnZ" = (
@@ -73209,8 +73216,6 @@
 /turf/open/floor/plasteel/white,
 /area/medical/genetics)
 "szL" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -79425,7 +79430,8 @@
 	pixel_y = 3
 	},
 /obj/item/folder/red{
-	pixel_x = -3
+	pixel_x = 1;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)

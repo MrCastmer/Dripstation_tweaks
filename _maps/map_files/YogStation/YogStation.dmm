@@ -40600,13 +40600,10 @@
 	pixel_x = -8;
 	pixel_y = 28
 	},
-/obj/structure/table/glass,
-/obj/machinery/computer/med_data/laptop{
-	pixel_y = 1
-	},
 /obj/effect/turf_decal/trimline/blue/filled/line/lower{
 	dir = 1
 	},
+/obj/machinery/computer/operating,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "meG" = (
@@ -44120,9 +44117,14 @@
 /turf/open/floor/plasteel,
 /area/quartermaster/office)
 "nwM" = (
-/obj/structure/bed,
-/obj/item/bedsheet/medical,
 /obj/effect/turf_decal/trimline/blue/filled/line/lower,
+/obj/structure/table/glass{
+	pixel_x = 1
+	},
+/obj/machinery/computer/med_data/laptop{
+	dir = 1;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "nwZ" = (
@@ -45322,10 +45324,11 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/service)
 "nYw" = (
-/obj/machinery/computer/operating,
 /obj/effect/turf_decal/trimline/blue/filled/line/lower{
 	dir = 1
 	},
+/obj/structure/table/optable,
+/obj/item/storage/backpack/duffelbag/sec/surgery,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "nYC" = (
@@ -48741,6 +48744,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line/lower{
 	dir = 1
 	},
+/obj/item/clothing/gloves/color/latex,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "ptH" = (
@@ -55681,15 +55685,13 @@
 /turf/closed/wall,
 /area/engine/atmos/mix)
 "soz" = (
-/obj/structure/table/optable,
-/obj/item/storage/backpack/duffelbag/sec/surgery,
 /obj/machinery/vending/wallmed{
 	pixel_y = 29
 	},
-/obj/item/clothing/gloves/color/latex,
 /obj/effect/turf_decal/trimline/blue/filled/line/lower{
 	dir = 9
 	},
+/obj/machinery/anesthetic_machine/roundstart,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "soM" = (
@@ -57619,9 +57621,6 @@
 "tbS" = (
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/structure/chair/stool{
-	pixel_y = 8
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line/lower{
 	dir = 8
