@@ -595,9 +595,9 @@
 		/obj/item/storage/box/fancy/cigarettes/cigpack_uplift,
 		/obj/item/storage/box/fancy/cigarettes/cigpack_robust,
 		/obj/item/storage/box/fancy/cigarettes/cigpack_robustgold,
-		/obj/item/storage/box/fancy/cigarettes/cigpack_carp,
-		/obj/item/storage/box/fancy/cigarettes/cigars,
-		/obj/item/storage/box/fancy/cigarettes/cigars/havana)
+		/obj/item/storage/box/fancy/cigarettes/cigpack_carp)
+//		/obj/item/storage/box/fancy/cigarettes/cigars
+//		/obj/item/storage/box/fancy/cigarettes/cigars/havana
 	. = ..()
 
 /datum/quirk/junkie/smoker/announce_drugs()
