@@ -63,6 +63,7 @@
 	name = "blood-red magboots"
 	icon_state = "syndiemag0"
 	magboot_state = "syndiemag"
+	slowdown_active = 1
 
 /obj/item/clothing/shoes/magboots/syndie/attack_self(mob/user)
 	. = ..()
