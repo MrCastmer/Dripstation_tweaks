@@ -53,7 +53,12 @@ em						{font-style: normal;	font-weight: bold;}
 .suppradio				{color: #a8732b;}
 .servradio				{color: #6eaa2c;}
 .syndradio				{color: #6d3f40;}
-.centcomradio			{color: #686868;}
+.syndteamradio			{color: #311d1d;} /* dripstation */
+.taipanradio			{color: #79714d;} /* dripstation */
+.centcomradio			{color: #5C5C7C;} /* dripstation */
+.ertradio				{color: #948f02;} /* dripstation */
+.specopsradio			{color: #686868;} /* dripstation */
+.lawradio				{color: #E3027A;} /* dripstation */
 .aiprivradio			{color: #ff00ff;}
 .redteamradio           {color: #ff0000;}
 .blueteamradio          {color: #0000ff;}

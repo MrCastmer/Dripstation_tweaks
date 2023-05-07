@@ -121,6 +121,24 @@
 	icon_state = "srvsec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_srvsec
 
+/obj/item/radio/headset/headset_cargo
+	name = "supply radio headset"
+	desc = "A headset used by the QM slaves."
+	icon_state = "cargo_headset"
+	keyslot = new /obj/item/encryptionkey/headset_cargo
+
+/obj/item/radio/headset/headset_cargo/mining
+	name = "mining radio headset"
+	desc = "Headset used by shaft miners."
+	icon_state = "mine_headset"
+	keyslot = new /obj/item/encryptionkey/headset_mining
+
+/obj/item/radio/headset/headset_srv
+	name = "service radio headset"
+	desc = "Headset used by the service staff, tasked with keeping the station full, happy and clean."
+	icon_state = "srv_headset"
+	keyslot = new /obj/item/encryptionkey/headset_service
+
 /obj/item/radio/headset/headset_com
 	name = "command radio headset"
 	desc = "A headset with a commanding channel."
@@ -132,13 +150,13 @@
 
 /obj/item/radio/headset/heads/captain
 	name = "\proper the captain's headset"
-	desc = "The headset of the king."
+	desc = "The headset of the boss."
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/heads/captain/alt
 	name = "\proper the captain's bowman headset"
-	desc = "The headset of the boss. Protects ears from flashbangs."
+	desc = "The headset of the finest one. Protects ears from flashbangs."
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
@@ -164,7 +182,7 @@
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
-/obj/item/radio/headset/heads/hos/ComponentInitialize()
+/obj/item/radio/headset/heads/hos/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
@@ -186,58 +204,74 @@
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/heads/hop
 
-/obj/item/radio/headset/headset_cargo
-	name = "supply radio headset"
-	desc = "A headset used by the QM and his slaves."
-	icon_state = "cargo_headset"
-	keyslot = new /obj/item/encryptionkey/headset_cargo
+/obj/item/radio/headset/heads/qm
+	name = "\proper the quartermaster`s headset"
+	desc = "The headset of the guy who can become a captain by himself."
+	icon_state = "com_headset"
+	item_state = "headset"
+	keyslot = new /obj/item/encryptionkey/heads/qm
 
-/obj/item/radio/headset/headset_cargo/mining
-	name = "mining radio headset"
-	desc = "Headset used by shaft miners."
-	icon_state = "mine_headset"
-	keyslot = new /obj/item/encryptionkey/headset_mining
+/obj/item/radio/headset/heads/ntrep
+	name = "\proper the nanotrasen representative's headset"
+	desc = "The headset of the Nanotrasen Representative."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/ntrep
 
-/obj/item/radio/headset/headset_srv
-	name = "service radio headset"
-	desc = "Headset used by the service staff, tasked with keeping the station full, happy and clean."
-	icon_state = "srv_headset"
-	keyslot = new /obj/item/encryptionkey/headset_service
+/obj/item/radio/headset/heads/magistrate
+	name = "\proper the magistrate's headset"
+	desc = "The headset of the Magistrate."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/magistrate
+
+/obj/item/radio/headset/heads/blueshield
+	name = "\proper the blueshield's headset"
+	desc = "The headset of the Blueshield."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/blueshield
+
+/obj/item/radio/headset/heads/blueshield/alt
+	name = "\proper the blueshield's bowman headset"
+	desc = "The headset of the glorious Blueshield. Protects ears from flashbangs."
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
+
+/obj/item/radio/headset/heads/blueshield/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_cent
 	name = "\improper CentCom headset"
 	desc = "A headset used by the upper echelons of NanoTrasen."
 	icon_state = "cent_headset"
-	keyslot = new /obj/item/encryptionkey/headset_com
+	keyslot = null
 	keyslot2 = new /obj/item/encryptionkey/headset_cent
 
 /obj/item/radio/headset/headset_cent/empty
-	keyslot = null
 	keyslot2 = null
 
-/obj/item/radio/headset/headset_cent/alt
-	keyslot = new /obj/item/encryptionkey/heads/captain
-
-/obj/item/radio/headset/headset_cent/bowman // No captain key
-	name = "\improper CentCom bowman headset"
-	desc = "A headset especially for emergency response personnel. Protects ears from flashbangs."
-	icon_state = "cent_headset_alt"
-	item_state = "cent_headset_alt"
-
-/obj/item/radio/headset/headset_cent/bowman/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
-
 /obj/item/radio/headset/headset_cent/commander
-	name = "\improper CentCom bowman headset"
-	desc = "A headset especially for emergency response personnel. Protects ears from flashbangs."
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/headset_cent/alt // No captain key
+	name = "\improper military bowman headset"
+	desc = "A headset especially for military personnel. Protects ears from flashbangs."
 	icon_state = "cent_headset_alt"
 	item_state = "cent_headset_alt"
-	keyslot = new /obj/item/encryptionkey/heads/captain
 
 /obj/item/radio/headset/headset_cent/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
+/obj/item/radio/headset/headset_cent/alt/commander
+	name = "\improper officer bowman headset"
+	desc = "A headset especially for command personnel. Protects ears from flashbangs."
+	keyslot = new /obj/item/encryptionkey/heads/captain
+
+/obj/item/radio/headset/headset_cent/alt/specops
+	name = "\improper SpecOps officer bowman headset"
+	desc = "A headset especially for SpecOps personnel. Protects ears from flashbangs."
+	keyslot = new /obj/item/encryptionkey/headset_cent/specops
 
 /obj/item/radio/headset/silicon/pai
 	name = "\proper mini Integrated Subspace Transceiver "

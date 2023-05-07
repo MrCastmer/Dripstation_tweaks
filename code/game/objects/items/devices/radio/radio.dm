@@ -7,7 +7,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_ENGINEERING = RADIO_TOKEN_ENGINEERING,
 	RADIO_CHANNEL_SECURITY = RADIO_TOKEN_SECURITY,
 	RADIO_CHANNEL_CENTCOM = RADIO_TOKEN_CENTCOM,
+	RADIO_CHANNEL_ERT = RADIO_TOKEN_ERT,
+	RADIO_CHANNEL_SPECOPS = RADIO_TOKEN_SPECOPS,
+	RADIO_CHANNEL_LAW = RADIO_TOKEN_LAW,
 	RADIO_CHANNEL_SYNDICATE = RADIO_TOKEN_SYNDICATE,
+	RADIO_CHANNEL_SYNDTEAM = RADIO_TOKEN_SYNDTEAM,
+	RADIO_CHANNEL_TAIPAN = RADIO_TOKEN_TAIPAN,
 	RADIO_CHANNEL_SUPPLY = RADIO_TOKEN_SUPPLY,
 	RADIO_CHANNEL_SERVICE = RADIO_TOKEN_SERVICE,
 	MODE_BINARY = MODE_TOKEN_BINARY,
@@ -279,7 +284,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_SPECOPS || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.levels = list(0)  // reaches all Z-levels
@@ -329,7 +334,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
-	if (freq == FREQ_SYNDICATE && !syndie)
+	if (freq == (FREQ_SYNDICATE || FREQ_SYNDTEAM) && !syndie)
 		return FALSE
 	if (freq == FREQ_CENTCOM)
 		return independent  // hard-ignores the z-level check

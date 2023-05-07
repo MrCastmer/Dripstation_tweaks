@@ -17,8 +17,15 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_CTF_RED]" = "redteamradio",
 	//yogs start -- alternative radio freqs being a different color
 	"[FREQ_CTF_BLUE]" = "blueteamradio",
-	"[FREQ_COMMON]" = "commonradio"
+	"[FREQ_COMMON]" = "commonradio",
 	//yogs end
+	//dripstation start
+	"[FREQ_SYNDTEAM]" = "syndteamradio",
+	"[FREQ_TAIPAN]" = "taipanradio",
+	"[FREQ_ERT]" = "ertradio",
+	"[FREQ_SPECOPS]" = "specopsradio",
+	"[FREQ_LAW]" = "lawradio"
+	//dripstation end
 	))
 
 /atom/movable/proc/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)

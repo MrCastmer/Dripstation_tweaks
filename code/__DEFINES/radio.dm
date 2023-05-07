@@ -17,6 +17,10 @@
 #define RADIO_KEY_COMMAND "c"
 #define RADIO_TOKEN_COMMAND ":c"
 
+#define RADIO_CHANNEL_LAW "Law"
+#define RADIO_KEY_LAW "x"
+#define RADIO_TOKEN_LAW ":x"
+
 #define RADIO_CHANNEL_SCIENCE "Science"
 #define RADIO_KEY_SCIENCE "n"
 #define RADIO_TOKEN_SCIENCE ":n"
@@ -37,14 +41,29 @@
 #define RADIO_KEY_AI_PRIVATE "o"
 #define RADIO_TOKEN_AI_PRIVATE ":o"
 
-
-#define RADIO_CHANNEL_SYNDICATE "Syndicate"
+#define RADIO_CHANNEL_SYNDICATE "unkn"
 #define RADIO_KEY_SYNDICATE "t"
 #define RADIO_TOKEN_SYNDICATE ":t"
+
+#define RADIO_CHANNEL_SYNDTEAM "unid"
+#define RADIO_KEY_SYNDTEAM "_"
+#define RADIO_TOKEN_SYNDTEAM ":_"
+
+#define RADIO_CHANNEL_TAIPAN "noid"
+#define RADIO_KEY_TAIPAN ","
+#define RADIO_TOKEN_TAIPAN ":,"
 
 #define RADIO_CHANNEL_CENTCOM "CentCom"
 #define RADIO_KEY_CENTCOM "y"
 #define RADIO_TOKEN_CENTCOM ":y"
+
+#define RADIO_CHANNEL_ERT "Emergency Response Team"
+#define RADIO_KEY_ERT "$"
+#define RADIO_TOKEN_ERT ":$"
+
+#define RADIO_CHANNEL_SPECOPS "SpecOps"
+#define RADIO_KEY_SPECOPS "-"
+#define RADIO_TOKEN_SPECOPS ":-"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
@@ -53,10 +72,15 @@
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
-#define FREQ_SYNDICATE 1213  // Nuke op comms frequency, dark brown
+#define FREQ_SYNDICATE 1213  // Traitor comms frequency, dark brown
+#define FREQ_SYNDTEAM 1244 // Nuke elite comms
+#define FREQ_TAIPAN 1244 // Taipan comms
 #define FREQ_CTF_RED 1215  // CTF red team comms frequency, red
 #define FREQ_CTF_BLUE 1217  // CTF blue team comms frequency, blue
 #define FREQ_CENTCOM 1337  // CentCom comms frequency, gray
+#define FREQ_LAW 1339 //Procedure and Law comms frequency
+#define FREQ_SPECOPS 1341 //Special Operations comms frequency
+#define FREQ_ERT 1345 //ERT local radio comms frequency
 #define FREQ_SUPPLY 1347  // Supply comms frequency, light brown
 #define FREQ_SERVICE 1349  // Service comms frequency, green
 #define FREQ_SCIENCE 1351  // Science comms frequency, plum
