@@ -39,7 +39,8 @@
 #define ITEM_SLOT_NECK			(1<<14)
 #define ITEM_SLOT_HANDS			(1<<15)
 #define ITEM_SLOT_BACKPACK		(1<<16)
-#define ITEM_SLOT_SUIT			(1<<17) //yogs: suit storage inventory check
+/// Prevents items from being stored in suit storage
+#define ITEM_SLOT_DENY_S_STORE	(1<<17)
 
 //SLOTS
 #define SLOT_BACK			1
@@ -104,8 +105,6 @@
 			. = ITEM_SLOT_HANDS
 		if(SLOT_IN_BACKPACK)
 			. = ITEM_SLOT_BACKPACK
-		if(SLOT_S_STORE) //yogs: suit storage inventory check
-			. = ITEM_SLOT_SUIT //yogs
 
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
