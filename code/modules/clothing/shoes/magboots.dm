@@ -5,6 +5,7 @@
 	var/magboot_state = "magboots"
 	var/magpulse = 0
 	var/slowdown_active = 2
+	var/magpulse_name = "mag-pulse traction system"	
 	permeability_coefficient = 0.05
 	actions_types = list(/datum/action/item_action/toggle)
 	strip_delay = 70
@@ -42,7 +43,7 @@
 
 /obj/item/clothing/shoes/magboots/examine(mob/user)
 	. = ..()
-	. += "Its mag-pulse traction system appears to be [magpulse ? "enabled" : "disabled"]."
+	. += "Its [magpulse_name] appears to be [magpulse ? "enabled" : "disabled"]."
 
 
 /obj/item/clothing/shoes/magboots/advance
