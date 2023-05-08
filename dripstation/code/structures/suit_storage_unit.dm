@@ -239,7 +239,7 @@
 				mob_occupant.adjustFireLoss(rand(2, 8))
 			mob_occupant.emote("scream")
 		decon.start()
-		addtimer(CALLBACK(src, .proc/cook), 50)
+		addtimer(CALLBACK(src, PROC_REF(cook)), 50)
 	else
 		uv_cycles = initial(uv_cycles)
 		uv = FALSE
