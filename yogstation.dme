@@ -3545,7 +3545,6 @@
 #include "dripstation\code\items\clothing\department\research.dm"
 #include "dripstation\code\items\clothing\department\security.dm"
 #include "dripstation\code\structures\closets.dm"
-#include "dripstation\code\structures\furniture.dm"
 #include "dripstation\code\structures\suit_storage_unit.dm"
 #include "dripstation\code\structures\windows.dm"
 #include "interface\interface.dm"
