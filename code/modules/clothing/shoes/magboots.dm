@@ -5,7 +5,6 @@
 	var/magboot_state = "magboots"
 	var/magpulse = 0
 	var/slowdown_active = 2
-	var/magpulse_name = "mag-pulse traction system"	
 	permeability_coefficient = 0.05
 	actions_types = list(/datum/action/item_action/toggle)
 	strip_delay = 70
@@ -31,7 +30,7 @@
 		slowdown = slowdown_active
 	magpulse = !magpulse
 	icon_state = "[magboot_state][magpulse]"
-	to_chat(user, span_notice("You [magpulse ? "enable" : "disable"] the mag-pulse traction system."))
+	to_chat(user, span_notice("You [magpulse ? "enable" : "disable"] the [magpulse_name]."))
 	user.update_inv_shoes()	//so our mob-overlays update
 	user.update_gravity(user.has_gravity())
 	for(var/X in actions)
