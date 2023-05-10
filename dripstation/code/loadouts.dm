@@ -4,7 +4,7 @@
 	name = "Head of Security"
 	jobtype = /datum/job/hos
 
-	id_type = /obj/item/card/id/silver
+	id_type = /obj/item/card/id/head
 	pda_type = /obj/item/modular_computer/tablet/phone/preset/advanced/command/hos
 
 	belt = /obj/item/gun/energy/e_gun
@@ -97,7 +97,7 @@
 	uniform =  /obj/item/clothing/under/rank/captain
 	uniform_skirt = /obj/item/clothing/under/rank/captain/skirt
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
-	shoes = /obj/item/clothing/shoes/laceup
+	shoes = /obj/item/clothing/shoes/laceup/brown
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/command
 	head = /obj/item/clothing/head/caphat
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/gun/energy/e_gun=1) //yogs - adds egun/removes civ budget
@@ -110,3 +110,27 @@
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+
+/datum/outfit/job/rd
+	name = "Research Director"
+	jobtype = /datum/job/rd
+
+	id_type = /obj/item/card/id/head
+	pda_type = /obj/item/modular_computer/tablet/phone/preset/advanced/command/rd
+
+	ears = /obj/item/radio/headset/heads/rd
+	glasses = null	
+	uniform = /obj/item/clothing/under/rank/research_director
+	uniform_skirt = /obj/item/clothing/under/rank/research_director/skirt
+	shoes = /obj/item/clothing/shoes/laceup
+	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/command
+	suit = /obj/item/clothing/suit/toggle/labcoat
+	l_hand = /obj/item/clipboard
+	l_pocket = /obj/item/laser_pointer
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/analyzer/ranged=1) //yogs - removes sci budget
+
+	backpack = /obj/item/storage/backpack/science
+	satchel = /obj/item/storage/backpack/satchel/tox
+	duffelbag = /obj/item/storage/backpack/duffelbag/science
+
+	chameleon_extras = /obj/item/stamp/rd

@@ -34,12 +34,25 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/clothing/gloves/sec_maga(src)
+	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
 	new /obj/item/clipboard/yog/paperwork/warden(src)
 	new /obj/item/radio/security(src)
 	new /obj/item/storage/bag/garment/warden(src)
+
+// ###### SEC OFFICER ######
+/obj/structure/closet/secure_closet/security/PopulateContents()
+	..()
+	new /obj/item/clothing/suit/armor/vest/alt(src)
+	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/radio/headset/headset_sec(src)
+	new /obj/item/radio/headset/headset_sec/alt(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/radio/security(src)
+	new /obj/item/clipboard/yog/paperwork/security(src)
+	new /obj/item/barrier_taperoll/police(src)
 
 // ###### HOP ######
 /obj/structure/closet/secure_closet/hop/PopulateContents()
