@@ -595,9 +595,9 @@
 		/obj/item/storage/box/fancy/cigarettes/cigpack_uplift,
 		/obj/item/storage/box/fancy/cigarettes/cigpack_robust,
 		/obj/item/storage/box/fancy/cigarettes/cigpack_robustgold,
-		/obj/item/storage/box/fancy/cigarettes/cigpack_carp,
-		/obj/item/storage/box/fancy/cigarettes/cigars,
-		/obj/item/storage/box/fancy/cigarettes/cigars/havana)
+		/obj/item/storage/box/fancy/cigarettes/cigpack_carp)
+//		/obj/item/storage/box/fancy/cigarettes/cigars
+//		/obj/item/storage/box/fancy/cigarettes/cigars/havana
 	. = ..()
 
 /datum/quirk/junkie/smoker/announce_drugs()
@@ -610,7 +610,7 @@
 	var/obj/item/I = H.get_item_by_slot(SLOT_WEAR_MASK)
 	if (istype(I, /obj/item/clothing/mask/cigarette))
 		var/obj/item/storage/box/fancy/cigarettes/C = drug_instance
-		if(istype(I, C.spawn_type))
+		if(istype(I, C.spawn_type || (C.is_elite != 0)))
 			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")
 			return
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "wrong_cigs", /datum/mood_event/wrong_brand)

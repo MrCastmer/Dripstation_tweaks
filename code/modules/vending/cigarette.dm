@@ -16,14 +16,14 @@
 					/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/box/fancy/rollingpapers = 5)
 	contraband = list(/obj/item/clothing/mask/vape = 5)
-	premium = list(/obj/item/storage/box/fancy/cigarettes/cigpack_robustgold = 3,
+	premium = list(/obj/item/storage/box/fancy/cigarettes/cigpack_robustgold = 2,
 				   /obj/item/lighter = 3,
 		           /obj/item/storage/box/fancy/cigarettes/cigars = 1,
 		           /obj/item/storage/box/fancy/cigarettes/cigars/havana = 1,
 		           /obj/item/storage/box/fancy/cigarettes/cigars/cohiba = 1)
 	refill_canister = /obj/item/vending_refill/cigarette
-	default_price = 10
-	extra_price = 50
+	default_price = 25
+	extra_price = 60
 	payment_department = ACCOUNT_SRV
 	light_mask = "cigs-light-mask"	
 

@@ -125,6 +125,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/nextdragtime = 0
 	var/lit = FALSE
 	var/starts_lit = FALSE
+	var/is_elite = 0 //For smoker trait
 	var/icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
 	var/icon_off = "cigoff"
 	var/type_butt = /obj/item/cigbutt
@@ -397,6 +398,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	smoketime = 11 * 60 // 11 minutes
 	chem_volume = 40
 	list_reagents = list(/datum/reagent/drug/nicotine = 25)
+	is_elite = 1
 
 /obj/item/clothing/mask/cigarette/cigar/cohiba
 	name = "\improper Cohiba Robusto cigar"
@@ -414,9 +416,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
 	icon_off = "cigar2off"
-	smoketime = 30 * 60 // 30 minutes
-	chem_volume = 50
-	list_reagents =list(/datum/reagent/drug/nicotine = 15)
+	smoketime = 16 * 60 // 16 minutes
+	chem_volume = 60
+	list_reagents =list(/datum/reagent/drug/nicotine = 35)
 
 /obj/item/cigbutt
 	name = "cigarette butt"
