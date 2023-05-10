@@ -3531,6 +3531,7 @@
 #include "code\modules\zombie\organs.dm"
 #include "dripstation\code\decals.dm"
 #include "dripstation\code\loadouts.dm"
+#include "dripstation\code\race_blacklist.dm"
 #include "dripstation\code\items\garment.dm"
 #include "dripstation\code\items\ids.dm"
 #include "dripstation\code\items\toolbox.dm"
