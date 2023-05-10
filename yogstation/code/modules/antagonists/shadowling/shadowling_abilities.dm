@@ -1,4 +1,4 @@
-#define EMPOWERED_THRALL_LIMIT 3
+#define EMPOWERED_THRALL_LIMIT 5
 
 /obj/effect/proc_holder/spell/proc/shadowling_check(var/mob/living/carbon/human/H)
 	if(!H || !istype(H)) return
@@ -773,8 +773,8 @@
 	range = -1
 	include_user = TRUE
 	overlay = null
-	action_icon = 'icons/mob/actions/actions_spells.dmi'
-	action_icon_state = "jaunt"
+	action_icon = 'yogstation/icons/mob/actions.dmi'
+	action_icon_state = "shadow_walk"
 
 	var/apply_damage = TRUE
 
