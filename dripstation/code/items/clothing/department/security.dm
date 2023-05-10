@@ -207,6 +207,14 @@
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'	
 	pocket_storage_component_path = null
 
+/obj/item/clothing/head/helmet/sec
+	icon_state = "helmetalt"
+	item_state = "helmetalt"
+
+/obj/item/clothing/head/helmet/alt
+	icon_state = "helmet"
+	item_state = "helmet"
+
 // ###### VENDORS ######
 /obj/machinery/vending/wardrobe/sec_wardrobe
 	products = list(/obj/item/storage/backpack/security = 3,
