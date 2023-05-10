@@ -2515,6 +2515,17 @@
 					/obj/item/vending_refill/donksoft)
 	crate_name = "crate"
 
+/datum/supply_pack/costumes_toys/randomised/syndicate
+	name = "Tactical Crate"
+	desc = "(*!&@#UH THIS IS ANOTHER OPTION. YOU WANNA HAVE SOME DRIP? WELL, ITS YOURS, BUT FOR THE FAIR PRICE, OPERATIVE.#@*$"
+	hidden = TRUE
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/storage/box/donkdrip,
+					/obj/item/storage/box/donkdrip/combat,
+					/obj/item/storage/box/donkdrip/maid)
+	crate_name = "crate"
+
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
 	desc = "Break out the big guns with eight Foam Force shotguns!"

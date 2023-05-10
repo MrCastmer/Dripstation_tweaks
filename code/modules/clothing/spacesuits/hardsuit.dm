@@ -298,7 +298,7 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 90, WOUND = 25)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25)
 	on = TRUE
 	var/obj/item/clothing/suit/space/hardsuit/syndi/linkedsuit = null
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode)
@@ -358,9 +358,11 @@
 		else
 			linkedsuit.name += " (combat)"
 			linkedsuit.desc = linkedsuit.alt_desc
-			linkedsuit.slowdown = 0
+			linkedsuit.slowdown = linkedsuit.combat_slowdown
 			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
+			if(linkedsuit.lightweight)
+				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 
 		linkedsuit.icon_state = "hardsuit[on]-[hardsuit_type]"
 		linkedsuit.update_icon()
@@ -376,10 +378,39 @@
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
 	w_class = WEIGHT_CLASS_NORMAL
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 90, WOUND = 25)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25)
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
+	var/combat_slowdown = 0 //slowdown when in combat mode
+	var/lightweight = 0 //used for flags when toggling
+
+//Scarlet Syndie suit
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
+	name = "scarlet hardsuit helmet"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in EVA mode. Manufactured by Donk Co."
+	alt_desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in combat mode. Manufactured by Donk Co."
+	icon_state = "hardsuit1-scarlet"
+	item_state = "scarlet_helm"
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits/head.dmi'
+	icon = 'dripstation/icons/obj/clothing/suits/hats.dmi'
+	hardsuit_type = "scarlet"
+	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 25, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 25)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/scarlet
+	name = "scarlet hardsuit"
+	desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in EVA mode. Manufactured by Donk Co."
+	alt_desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in combat mode. Manufactured by Donk Co."
+	icon_state = "hardsuit1-scarlet"
+	item_state = "scarlet_hardsuit"
+	hardsuit_type = "scarlet"
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits/spacesuits.dmi'
+	icon = 'dripstation/icons/obj/clothing/suits/spacesuits.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
+	lightweight = 1
+	jetpack = null
+	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 25, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 25)
+	combat_slowdown = 0.5
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -1026,11 +1057,14 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 80, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 100, WOUND = 25)
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi
-	slowdown = 0
+	var/combat_slowdown = 0 //slowdown when in combat mode
 	jetpack = /obj/item/tank/jetpack/suit
+	shield_state = "shield-red"
+	shield_on = "shield-red"
+	var/lightweight = 0 //used for flags when toggling
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi
 	name = "blood-red hardsuit helmet"
@@ -1038,7 +1072,76 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 80, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 100, WOUND = 25)
+	on = TRUE
+	var/obj/item/clothing/suit/space/hardsuit/shielded/syndi/linkedsuit = null
+	actions_types = list(/datum/action/item_action/toggle_helmet_mode)
+	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+	visor_flags = STOPSPRESSUREDAMAGE
+
+/obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/update_icon()
+	icon_state = "hardsuit[on]-[hardsuit_type]"
+
+/obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/Initialize()
+	. = ..()
+	if(istype(loc, /obj/item/clothing/suit/space/hardsuit/shielded/syndi))
+		linkedsuit = loc
+
+/obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/attack_self(mob/user) //Toggle Helmet
+	if(!isturf(user.loc))
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
+		return
+	on = !on
+	if(on || force)
+		to_chat(user, span_notice("You switch your hardsuit to EVA mode, sacrificing speed for space protection."))
+		name = initial(name)
+		desc = initial(desc)
+		set_light_on(TRUE)
+		clothing_flags |= visor_flags
+		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
+		flags_inv |= visor_flags_inv
+		cold_protection |= HEAD
+	else
+		to_chat(user, span_notice("You switch your hardsuit to combat mode and can now run at full speed."))
+		name += " (combat)"
+		desc = alt_desc
+		set_light_on(FALSE)
+		clothing_flags &= ~visor_flags
+		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
+		flags_inv &= ~visor_flags_inv
+		cold_protection &= ~HEAD
+	update_icon()
+	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
+	toggle_hardsuit_mode(user)
+	user.update_inv_head()
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		C.head_update(src, forced = 1)
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/proc/toggle_hardsuit_mode(mob/user) //Helmet Toggles Suit Mode
+	if(linkedsuit)
+		if(on)
+			linkedsuit.name = initial(linkedsuit.name)
+			linkedsuit.desc = initial(linkedsuit.desc)
+			linkedsuit.slowdown = 1
+			linkedsuit.clothing_flags |= STOPSPRESSUREDAMAGE
+			linkedsuit.cold_protection |= CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+		else
+			linkedsuit.name += " (combat)"
+			linkedsuit.desc = linkedsuit.alt_desc
+			linkedsuit.slowdown = linkedsuit.combat_slowdown
+			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
+			linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
+			if(linkedsuit.lightweight)
+				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
+
+		linkedsuit.icon_state = "hardsuit[on]-[hardsuit_type]"
+		linkedsuit.update_icon()
+		user.update_inv_wear_suit()
+		user.update_inv_w_uniform()
 
 ///Deathsquad version
 
