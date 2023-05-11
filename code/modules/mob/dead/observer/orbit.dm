@@ -127,7 +127,7 @@
 /datum/asset/spritesheet/job_icons/create_spritesheets()
 	var/icon/I = icon('yogstation/icons/mob/hud.dmi')
 	// Get the job hud part
-	I.Crop(1, 17, 8, 24)
+	I.Crop(1, 25, 8, 32)
 	// Scale it up
 	I.Scale(16, 16)
 	InsertAll("job-icon", I)
