@@ -54,7 +54,7 @@
 	list_reagents = list(/datum/reagent/consumable/cornoil = 30)
 	possible_states = list()
 
-/obj/item/reagent_containers/food/condiment/enzyme/on_reagent_change(changetype)
+/obj/item/reagent_containers/food/condiment/cornoil/on_reagent_change(changetype)
 	if(reagents.reagent_list.len == 0)
 		icon_state = "cornoil_empty"
 	else
