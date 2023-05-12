@@ -84,14 +84,14 @@
 		to_chat(user, "<span class='notice'>You place your [C] on \the [src]</span>")
 		playsound(src, "rustle", 50, 1, -5)	
 		suit = C
-		user.doUnEquip(suit, src)
+		user.temporarilyRemoveItemFromInventory(suit, src)
 		suit.loc = src		
 		update_icon()
 	else if (istype(C, /obj/item/clothing/head) && !hat && is_type_in_list(C, allowed_hats))
 		to_chat(user, "<span class='notice'>You place your [C] on \the [src]</span>")
 		playsound(src, "rustle", 50, 1, -5)	
 		hat = C	
-		user.doUnEquip(hat, src)			
+		user.temporarilyRemoveItemFromInventory(hat, src)	
 		hat.loc = src
 		update_icon()
 	else if(istype(C, /obj/item/wrench))
@@ -144,7 +144,7 @@
 	suit = new/obj/item/clothing/suit/armor/hos/trenchcoat/winter(src)
 	update_icon()
 
-/obj/structure/coatrack/hos/New()
+/obj/structure/coatrack/warden/New()
 	..()
-	suit = new/obj/item/clothing/suit/armor/hos/trenchcoat/winter(src)
+	suit = new/obj/item/clothing/suit/armor/vest/warden/winter(src)
 	update_icon()
