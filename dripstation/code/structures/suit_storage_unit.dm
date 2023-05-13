@@ -3,7 +3,7 @@
 /obj/machinery/suit_storage_unit
 	name = "suit storage unit"
 	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
-	icon = 'icons/obj/machines/suit_storage.dmi'
+	icon = 'dripstation/icons/obj/suit_storage.dmi'
 	icon_state = "close"
 	density = TRUE
 	max_integrity = 250
@@ -16,6 +16,9 @@
 	var/obj/item/clothing/shoes/magboots = null	
 								// if you add more storage slots, update cook() to clear their radiation too.
 
+	var/department = null
+	var/image/openimage
+	var/image/closeimage
 	var/suit_type = null
 	var/helmet_type = null
 	var/mask_type = null
@@ -45,37 +48,44 @@
 	mask_type = /obj/item/clothing/mask/gas/captain
 	tank_type = /obj/item/tank/jetpack/oxygen/captain
 	magboots_type = /obj/item/clothing/shoes/magboots/security/captain
+	department = "cap"
 
 /obj/machinery/suit_storage_unit/engine
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine
 	mask_type = /obj/item/clothing/mask/breath
 	magboots_type = /obj/item/clothing/shoes/magboots //yogs
+	department = "engie"
 
 /obj/machinery/suit_storage_unit/ce
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/elite
 	mask_type = /obj/item/clothing/mask/breath
 	tank_type = /obj/item/tank/internals/oxygen/yellow
 	magboots_type = /obj/item/clothing/shoes/magboots/advance
+	department = "ce"	
 
 /obj/machinery/suit_storage_unit/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 	tank_type = /obj/item/tank/jetpack/oxygen/security
 	magboots_type = /obj/item/clothing/shoes/magboots/security
+	department = "sec"	
 
 /obj/machinery/suit_storage_unit/hos
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/hos
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 	tank_type = /obj/item/tank/internals/oxygen/red	
 	magboots_type = /obj/item/clothing/shoes/magboots/security
+	department = "sec"	
 
 /obj/machinery/suit_storage_unit/atmos
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/atmos
 	mask_type = /obj/item/clothing/mask/gas
+	department = "atmos"	
 
 /obj/machinery/suit_storage_unit/mining
 	suit_type = /obj/item/clothing/suit/hooded/explorer
 	mask_type = /obj/item/clothing/mask/gas/explorer
+	department = "mine"	
 
 /obj/machinery/suit_storage_unit/mining/eva
 	suit_type = /obj/item/clothing/suit/space/hardsuit/mining
@@ -84,40 +94,48 @@
 /obj/machinery/suit_storage_unit/cmo
 	suit_type = /obj/item/clothing/suit/space/hardsuit/medical
 	mask_type = /obj/item/clothing/mask/breath
+	department = "med"		
 
 /obj/machinery/suit_storage_unit/rd
 	suit_type = /obj/item/clothing/suit/space/hardsuit/rd
 	mask_type = /obj/item/clothing/mask/breath
+	department = "sci"	
 
 /obj/machinery/suit_storage_unit/command
 	suit_type = /obj/item/clothing/suit/space/heads
 	helmet_type = /obj/item/clothing/head/helmet/space/heads
 	mask_type = /obj/item/clothing/mask/breath
+	department = "cap"	
 
 /obj/machinery/suit_storage_unit/syndicate
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	tank_type = /obj/item/tank/jetpack/oxygen/harness
+	department = "synd"	
 
 /obj/machinery/suit_storage_unit/ert/command
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert
 	mask_type = /obj/item/clothing/mask/breath
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
+	department = "cap"	
 
 /obj/machinery/suit_storage_unit/ert/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/sec
 	mask_type = /obj/item/clothing/mask/breath
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
+	department = "sec"	
 
 /obj/machinery/suit_storage_unit/ert/engineer
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/engi
 	mask_type = /obj/item/clothing/mask/breath
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
+	department = "engie"	
 
 /obj/machinery/suit_storage_unit/ert/medical
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/med
 	mask_type = /obj/item/clothing/mask/breath
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
+	department = "med"	
 
 /obj/machinery/suit_storage_unit/pirate
 	suit_type = /obj/item/clothing/suit/space
@@ -128,7 +146,8 @@
 /obj/machinery/suit_storage_unit/infiltrator
 	suit_type = /obj/item/clothing/suit/space/hardsuit/infiltration
 	mask_type = /obj/item/clothing/mask/gas/syndicate
-	tank_type = /obj/item/tank/jetpack/oxygen/harness 
+	tank_type = /obj/item/tank/jetpack/oxygen/harness
+	department = "synd"	
 
 /obj/machinery/suit_storage_unit/radsuit
 	name = "radiation suit storage unit"
@@ -137,6 +156,8 @@
 
 /obj/machinery/suit_storage_unit/Initialize(mapload)
 	. = ..()
+	openimage = image(icon,src, "[department]_open")
+	closeimage = image(icon,src, "[department]_close")	
 	decon = new(list(src), FALSE)
 	wires = new /datum/wires/suit_storage_unit(src)
 	if(suit_type)
@@ -161,19 +182,24 @@
 
 /obj/machinery/suit_storage_unit/update_icon()
 	cut_overlays()
+	overlays.len = 0
 
 	if(uv)
 		if(uv_super)
 			add_overlay("super")
 		else if(occupant)
 			add_overlay("uvhuman")
+			overlays += closeimage	
 		else
 			add_overlay("uv")
+			overlays += closeimage			
 	else if(state_open)
 		if(stat & BROKEN)
 			add_overlay("broken")
+			overlays += openimage			
 		else
 			add_overlay("open")
+			overlays += openimage			
 			if(suit)
 				add_overlay("suit")
 			if(helmet)
@@ -182,7 +208,10 @@
 				add_overlay("storage")				
 	else if(occupant)
 		add_overlay("human")
-
+		overlays += closeimage
+	else if(!state_open)
+		overlays += closeimage
+	
 /obj/machinery/suit_storage_unit/proc/dump_contents()
 	dropContents()
 	helmet = null
