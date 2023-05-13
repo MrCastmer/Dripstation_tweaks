@@ -109,7 +109,7 @@
 /obj/item/reagent_containers/food/condiment/soysauce
 	item_state = "soysauce"
 
-/obj/item/reagent_containers/food/condiment/soysauce/cinnamon/on_reagent_change(changetype)
+/obj/item/reagent_containers/food/condiment/soysauce/on_reagent_change(changetype)
 	if(reagents.reagent_list.len == 0)
 		icon_state = "soysauce_empty"	
 	else
