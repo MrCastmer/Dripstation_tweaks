@@ -314,7 +314,8 @@
 		LAZYADD(stamped, P.icon_state)
 		add_overlay(stampoverlay)
 
-		to_chat(user, span_notice("You stamp the paper with your rubber stamp."))
+		to_chat(user, span_notice("You stamp the paper with your rubber stamp."))		
+		playsound(src, pick(stamp_sounds), 35, 1, -1)
 
 	if(P.is_hot())
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10))
