@@ -148,8 +148,7 @@
 
 // #### CONTRACTS ####
 /obj/item/paper/contract
-	icon = 'dripstation/icons/obj/bureaucracy.dmi'
-	var/list/stamp_sounds = list('dripstation/sound/effects/stamp1.ogg','dripstation/sound/effects/stamp2.ogg','dripstation/sound/effects/stamp3.ogg')		
+	icon = 'dripstation/icons/obj/bureaucracy.dmi'	
 
 /obj/item/paper/contract/employment
 	icon_state = "good_contract"

@@ -3,6 +3,7 @@
 /obj/item/stamp // inhand icon states and stamp sounds
 	lefthand_file = 'dripstation/icons/mob/inhands/paperwork_lefthand.dmi'
 	righthand_file = 'dripstation/icons/mob/inhands/paperwork_righthand.dmi'
+	icon = 'dripstation/icons/obj/bureaucracy.dmi'		
 	var/list/stamp_sounds = list('dripstation/sound/effects/stamp1.ogg','dripstation/sound/effects/stamp2.ogg','dripstation/sound/effects/stamp3.ogg')	
 
 /obj/item/stamp/attack(mob/living/M, mob/living/user)
