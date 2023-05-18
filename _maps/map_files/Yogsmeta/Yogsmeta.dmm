@@ -48400,7 +48400,7 @@
 /turf/open/floor/plasteel,
 /area/hydroponics)
 "dfW" = (
-/obj/machinery/chem_dispenser,
+/obj/structure/bookcase/random/religion,
 /turf/open/floor/wood,
 /area/medical/psych)
 "dgi" = (
@@ -53857,8 +53857,19 @@
 	pixel_y = 1
 	},
 /obj/item/pen/fountain{
-	pixel_x = -4;
-	pixel_y = 1
+	pixel_x = 6
+	},
+/obj/item/storage/pill_bottle/psicodine{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/item/storage/pill_bottle/gummies/mindbreaker{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/storage/pill_bottle/gummies/mindbreaker{
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/wood,
 /area/medical/psych)
@@ -56506,8 +56517,7 @@
 /turf/open/floor/plasteel,
 /area/engine/atmos/distro)
 "hYx" = (
-/obj/machinery/chem_master,
-/obj/item/book/manual/wiki/chemistry,
+/obj/structure/bookcase/random/nonfiction,
 /turf/open/floor/wood,
 /area/medical/psych)
 "hYG" = (

@@ -20091,23 +20091,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "dSq" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp/green{
-	pixel_x = -16;
-	pixel_y = 5
-	},
-/obj/item/folder/white{
-	pixel_x = -7;
-	pixel_y = -3
-	},
-/obj/item/folder/white{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/folder/white{
-	pixel_x = 4;
-	pixel_y = 4
-	},
+/obj/structure/bookcase/random/religion,
 /turf/open/floor/wood,
 /area/medical/psych)
 "dSz" = (
@@ -28523,11 +28507,23 @@
 /turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
 "hjl" = (
-/obj/machinery/chem_dispenser,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
+/obj/structure/table/wood,
+/obj/item/storage/briefcase{
+	pixel_x = -5;
+	pixel_y = 3
 	},
-/turf/open/floor/plasteel/white,
+/obj/item/storage/pill_bottle/gummies/mindbreaker{
+	pixel_x = 8
+	},
+/obj/item/storage/pill_bottle/gummies/mindbreaker{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/item/storage/pill_bottle/psicodine{
+	pixel_x = -10;
+	pixel_y = 60
+	},
+/turf/open/floor/wood,
 /area/medical/psych)
 "hjz" = (
 /obj/machinery/power/apc{
@@ -57113,11 +57109,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "sUY" = (
-/obj/structure/table/wood,
-/obj/item/storage/briefcase{
-	pixel_x = -5;
-	pixel_y = 3
-	},
+/obj/structure/bookcase/random/nonfiction,
 /turf/open/floor/wood,
 /area/medical/psych)
 "sVu" = (
@@ -64604,12 +64596,24 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "vRr" = (
-/obj/machinery/chem_master,
-/obj/item/book/manual/wiki/chemistry,
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
+/obj/item/flashlight/lamp/green{
+	pixel_x = -41;
+	pixel_y = 10
 	},
-/turf/open/floor/plasteel/white,
+/obj/structure/table/wood,
+/obj/item/folder/white{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/item/folder/white{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/folder/white{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/open/floor/wood,
 /area/medical/psych)
 "vRA" = (
 /obj/structure/disposalpipe/segment,

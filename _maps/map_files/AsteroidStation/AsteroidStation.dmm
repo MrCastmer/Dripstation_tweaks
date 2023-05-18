@@ -32012,6 +32012,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/psych,
 /turf/open/floor/wood,
 /area/medical/psych)
 "jEp" = (
@@ -32577,7 +32578,23 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "jOO" = (
-/obj/machinery/chem_dispenser,
+/obj/structure/table/wood,
+/obj/item/storage/pill_bottle/psicodine{
+	pixel_x = -5;
+	pixel_y = -2
+	},
+/obj/item/storage/pill_bottle/psicodine{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/storage/pill_bottle/gummies/mindbreaker{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/storage/pill_bottle/gummies/mindbreaker{
+	pixel_x = 7;
+	pixel_y = 10
+	},
 /turf/open/floor/wood,
 /area/medical/psych)
 "jOQ" = (
@@ -62100,19 +62117,11 @@
 /turf/open/floor/plasteel/white,
 /area/security/physician)
 "tpx" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/pen{
-	pixel_x = -6;
-	pixel_y = -1
-	},
 /obj/machinery/airalarm{
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/item/storage/box/beakers{
-	pixel_x = 2;
-	pixel_y = 7
-	},
+/obj/structure/bookcase/random/reference,
 /turf/open/floor/wood,
 /area/medical/psych)
 "tpJ" = (
@@ -64579,10 +64588,17 @@
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
 "ukc" = (
-/obj/machinery/chem_master,
-/obj/item/book/manual/wiki/chemistry,
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/table/wood,
+/obj/item/storage/box/beakers{
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/obj/item/flashlight/pen{
+	pixel_x = -6;
+	pixel_y = -1
 	},
 /turf/open/floor/wood,
 /area/medical/psych)
