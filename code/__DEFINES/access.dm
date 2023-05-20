@@ -100,6 +100,7 @@
 #define ACCESS_NTREP 82 // Locker, airlock
 #define ACCESS_MAGISTRATE 83 // Locker, airlock
 #define ACCESS_HAZARD_TECH 84 // Hazard technician stuff
+#define ACCESS_ARTIST 85 // Artist stuff, mostly door and vendor
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
 	Mostly for admin fun times.*/
