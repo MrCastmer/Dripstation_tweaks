@@ -87,7 +87,7 @@
 	icon_state = "ofcommpen"
 	item_state = "ofcommpen"
 
-/obj/item/pen/edagger/update_icon()
+/obj/item/pen/edagger/fancy/update_icon()
 	if(on)
 		icon_state = "ofcommpen_active"
 		item_state = "ofcommpen_active"
