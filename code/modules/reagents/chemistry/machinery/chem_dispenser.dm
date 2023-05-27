@@ -136,10 +136,10 @@
 	recharge_counter += delta_time
 
 /obj/machinery/chem_dispenser/proc/display_beaker()
-	var/mutable_appearance/b_o = beaker_overlay || mutable_appearance(icon, "disp_beaker")
-	b_o.pixel_y = -1
-	b_o.pixel_x = rand(-8, 8)
-	return b_o
+	var/mutable_appearance/beaker_overlay = mutable_appearance(icon, beaker.disp_icon)
+	beaker_overlay.pixel_y = -1
+	beaker_overlay.pixel_x = rand(-8, 8)
+	return beaker_overlay
 
 /obj/machinery/chem_dispenser/proc/work_animation()
 	if(working_state)
@@ -486,21 +486,21 @@
 		update_icon()  // the beaker needs to be re-positioned if we rotate
 
 /obj/machinery/chem_dispenser/drinks/display_beaker()
-	var/mutable_appearance/b_o = beaker_overlay || mutable_appearance(icon, "disp_beaker")
+	var/mutable_appearance/beaker_overlay = mutable_appearance(icon, beaker.disp_icon)
 	switch(dir)
 		if(NORTH)
-			b_o.pixel_y = 7
-			b_o.pixel_x = rand(-9, 9)
+			beaker_overlay.pixel_y = 7
+			beaker_overlay.pixel_x = rand(-9, 9)
 		if(EAST)
-			b_o.pixel_x = 4
-			b_o.pixel_y = rand(-5, 7)
+			beaker_overlay.pixel_x = 4
+			beaker_overlay.pixel_y = rand(-5, 7)
 		if(WEST)
-			b_o.pixel_x = -5
-			b_o.pixel_y = rand(-5, 7)
+			beaker_overlay.pixel_x = -5
+			beaker_overlay.pixel_y = rand(-5, 7)
 		else//SOUTH
-			b_o.pixel_y = -7
-			b_o.pixel_x = rand(-9, 9)
-	return b_o
+			beaker_overlay.pixel_y = -7
+			beaker_overlay.pixel_x = rand(-9, 9)
+	return beaker_overlay
 
 /obj/machinery/chem_dispenser/drinks
 	name = "soda dispenser"

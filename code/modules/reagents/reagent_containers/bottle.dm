@@ -4,6 +4,7 @@
 	name = "bottle"
 	desc = "A small bottle."
 	icon_state = "bottle"
+	disp_icon = "disp_bottle"	
 	item_state = "atoxinbottle"
 	possible_transfer_amounts = list(5,10,15,25,30)
 	volume = 30
@@ -15,6 +16,9 @@
 	. = ..()
 	if(!icon_state)
 		icon_state = "bottle"
+	if(lid_state == TRUE)
+		reagents.flags ^= OPENCONTAINER | REFILLABLE | DRAINABLE 
+		spillable = FALSE	
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/on_reagent_change(changetype)
@@ -31,93 +35,144 @@
 		switch(percent)
 			if(0 to 9)
 				filling.icon_state = "[filling_icon_state]-10"
-			if(10 to 29)
-				filling.icon_state = "[filling_icon_state]25"
-			if(30 to 49)
-				filling.icon_state = "[filling_icon_state]50"
-			if(50 to 69)
-				filling.icon_state = "[filling_icon_state]75"
-			if(70 to INFINITY)
+			if(10 to 19)
+				filling.icon_state = "[filling_icon_state]20"
+			if(20 to 39)
+				filling.icon_state = "[filling_icon_state]40"
+			if(40 to 59)
+				filling.icon_state = "[filling_icon_state]60"
+			if(60 to 79)
+				filling.icon_state = "[filling_icon_state]80"			
+			if(80 to INFINITY)
 				filling.icon_state = "[filling_icon_state]100"
 
 		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		add_overlay(filling)
 
+	if(lid_state == TRUE)
+		var/lid_icon = "lid_[icon_state]"
+		var/mutable_appearance/lid = mutable_appearance(icon, lid_icon)
+		add_overlay(lid)
+
+	if(label_state == TRUE)
+		var/label_icon = "label_[icon_state]"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
+
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
 	desc = "A small bottle. Contains epinephrine - used to stabilize patients."
+	icon_state = "bottle-4"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 30)
 
 /obj/item/reagent_containers/glass/bottle/toxin
 	name = "toxin bottle"
 	desc = "A small bottle of toxins. Do not drink, it is poisonous."
+	icon_state = "bottle-3"	
+	lid_state = TRUE
+	label_state = TRUE
 	list_reagents = list(/datum/reagent/toxin = 30)
 
 /obj/item/reagent_containers/glass/bottle/cyanide
 	name = "cyanide bottle"
 	desc = "A small bottle of cyanide. Bitter almonds?"
+	icon_state = "bottle-3"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/cyanide = 30)
 
 /obj/item/reagent_containers/glass/bottle/spewium
 	name = "spewium bottle"
 	desc = "A small bottle of spewium."
+	icon_state = "bottle-5"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/spewium = 30)
 
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
 	desc = "A small bottle of morphine."
-	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle-2"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 
 /obj/item/reagent_containers/glass/bottle/chloralhydrate
 	name = "chloral hydrate bottle"
 	desc = "A small bottle of Chloral Hydrate. Mickey's favorite!"
-	icon_state = "bottle20"
+	icon_state = "bottle-6"
+	label_state = TRUE
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 15)
 
 /obj/item/reagent_containers/glass/bottle/mannitol
 	name = "mannitol bottle"
 	desc = "A small bottle of Mannitol. Useful for healing brain damage."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/mannitol = 30)
 
 /obj/item/reagent_containers/glass/bottle/charcoal
 	name = "charcoal bottle"
 	desc = "A small bottle of charcoal, which removes toxins and other chemicals from the bloodstream."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/charcoal = 30)
 
 /obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"
 	desc = "A small bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/mutagen = 30)
 
 /obj/item/reagent_containers/glass/bottle/plasma
 	name = "liquid plasma bottle"
 	desc = "A small bottle of liquid plasma. Extremely toxic and reacts with micro-organisms inside blood."
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/plasma = 30)
 
 /obj/item/reagent_containers/glass/bottle/synaptizine
 	name = "synaptizine bottle"
-	desc = "A small bottle of synaptizine."
+	desc = "A small bottle of synaptizine."	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/synaptizine = 30)
 
 /obj/item/reagent_containers/glass/bottle/formaldehyde
 	name = "formaldehyde bottle"
 	desc = "A small bottle of formaldehyde."
+	icon_state = "bottle-3"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/formaldehyde = 30)
 
 /obj/item/reagent_containers/glass/bottle/ammonia
 	name = "ammonia bottle"
 	desc = "A small bottle of ammonia."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/ammonia = 30)
 
 /obj/item/reagent_containers/glass/bottle/diethylamine
 	name = "diethylamine bottle"
 	desc = "A small bottle of diethylamine."
+	icon_state = "bottle-2"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/diethylamine = 30)
 
 /obj/item/reagent_containers/glass/bottle/facid
 	name = "Fluorosulphuric Acid Bottle"
 	desc = "A small bottle. Contains a small amount of fluorosulphuric acid."
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/acid/fluacid = 30)
 
 /obj/item/reagent_containers/glass/bottle/adminordrazine
@@ -130,16 +185,23 @@
 /obj/item/reagent_containers/glass/bottle/capsaicin
 	name = "Capsaicin Bottle"
 	desc = "A small bottle. Contains hot sauce."
+	icon_state = "bottle-3"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 30)
 
 /obj/item/reagent_containers/glass/bottle/frostoil
 	name = "Frost Oil Bottle"
 	desc = "A small bottle. Contains cold sauce."
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/consumable/frostoil = 30)
 
 /obj/item/reagent_containers/glass/bottle/traitor
 	name = "syndicate bottle"
 	desc = "A small bottle. Contains a random nasty chemical."
+	lid_state = TRUE	
 	icon = 'icons/obj/chemical.dmi'
 	var/extra_reagent = null
 
@@ -151,91 +213,129 @@
 /obj/item/reagent_containers/glass/bottle/polonium
 	name = "polonium bottle"
 	desc = "A small bottle. Contains Polonium."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/polonium = 30)
 
 /obj/item/reagent_containers/glass/bottle/magillitis
 	name = "magillitis bottle"
 	desc = "A small bottle. Contains a serum known only as 'magillitis'."
+	icon_state = "bottle-6"
+	label_state = TRUE
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/magillitis = 5)
 
 /obj/item/reagent_containers/glass/bottle/venom
 	name = "venom bottle"
 	desc = "A small bottle. Contains venom."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/venom = 30)
 
 /obj/item/reagent_containers/glass/bottle/fentanyl
 	name = "fentanyl bottle"
 	desc = "A small bottle. Contains fentanyl."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/fentanyl = 30)
-
-/obj/item/reagent_containers/glass/bottle/formaldehyde
-	name = "formaldehyde bottle"
-	desc = "A small bottle. Contains formaldehyde."
-	list_reagents = list(/datum/reagent/toxin/formaldehyde = 30)
 
 /obj/item/reagent_containers/glass/bottle/initropidril
 	name = "initropidril bottle"
 	desc = "A small bottle. Contains initropidril."
+	icon_state = "bottle-3"
+	label_state = TRUE
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/toxin/initropidril = 30)
 
 /obj/item/reagent_containers/glass/bottle/pancuronium
 	name = "pancuronium bottle"
 	desc = "A small bottle. Contains pancuronium."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/pancuronium = 30)
 
 /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 	name = "sodium thiopental bottle"
 	desc = "A small bottle. Contains sodium thiopental."
+	icon_state = "bottle-4"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/sodium_thiopental = 30)
 
 /obj/item/reagent_containers/glass/bottle/coniine
 	name = "coniine bottle"
 	desc = "A small bottle. Contains coniine."
+	icon_state = "bottle-2"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/coniine = 30)
 
 /obj/item/reagent_containers/glass/bottle/curare
 	name = "curare bottle"
 	desc = "A small bottle. Contains curare."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/curare = 30)
 
 /obj/item/reagent_containers/glass/bottle/amanitin
 	name = "amanitin bottle"
 	desc = "A small bottle. Contains amanitin."
+	icon_state = "bottle-5"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/amanitin = 30)
 
 /obj/item/reagent_containers/glass/bottle/histamine
 	name = "histamine bottle"
 	desc = "A small bottle. Contains histamine."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/histamine = 30)
 
 /obj/item/reagent_containers/glass/bottle/diphenhydramine
 	name = "antihistamine bottle"
 	desc = "A small bottle of diphenhydramine."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/diphenhydramine = 30)
 
 /obj/item/reagent_containers/glass/bottle/potass_iodide
 	name = "anti-radiation bottle"
 	desc = "A small bottle of potassium iodide."
+	icon_state = "bottle-2"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/potass_iodide = 30)
 
 /obj/item/reagent_containers/glass/bottle/radscrub
 	name = "Rad Scrub Plus bottle"
 	desc = "A small bottle of Donk Co's Rad Scrub Plus."
+	icon_state = "bottle-2"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/radscrub = 30)
 
 /obj/item/reagent_containers/glass/bottle/salglu_solution
 	name = "saline-glucose solution bottle"
 	desc = "A small bottle of saline-glucose solution."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/salglu_solution = 30)
 
 /obj/item/reagent_containers/glass/bottle/atropine
 	name = "atropine bottle"
 	desc = "A small bottle of atropine."
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/atropine = 30)
 
 /obj/item/reagent_containers/glass/bottle/romerol
 	name = "romerol bottle"
 	desc = "A small bottle of romerol. The REAL zombie powder."
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/romerol = 30)
 
 /obj/item/reagent_containers/glass/bottle/random_virus
@@ -328,6 +428,8 @@
 /obj/item/reagent_containers/glass/bottle/tuberculosiscure
 	name = "BVAK bottle"
 	desc = "A small bottle containing Bio Virus Antidote Kit."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/atropine = 5, /datum/reagent/medicine/epinephrine = 5, /datum/reagent/medicine/perfluorodecalin = 10, /datum/reagent/medicine/spaceacillin = 10)
 
 /obj/item/reagent_containers/glass/bottle/necropolis_seed
@@ -340,102 +442,167 @@
 
 /obj/item/reagent_containers/glass/bottle/hydrogen
 	name = "hydrogen bottle"
+	icon_state = "bottle-3"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/hydrogen = 30)
 
 /obj/item/reagent_containers/glass/bottle/lithium
 	name = "lithium bottle"
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/lithium = 30)
 
 /obj/item/reagent_containers/glass/bottle/carbon
 	name = "carbon bottle"
+	label_state = TRUE
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/carbon = 30)
 
 /obj/item/reagent_containers/glass/bottle/nitrogen
 	name = "nitrogen bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/nitrogen = 30)
 
 /obj/item/reagent_containers/glass/bottle/oxygen
 	name = "oxygen bottle"
+	icon_state = "bottle-4"		
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/oxygen = 30)
 
 /obj/item/reagent_containers/glass/bottle/fluorine
 	name = "fluorine bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/fluorine = 30)
 
 /obj/item/reagent_containers/glass/bottle/sodium
 	name = "sodium bottle"
+	icon_state = "bottle-4"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/sodium = 30)
 
 /obj/item/reagent_containers/glass/bottle/aluminium
 	name = "aluminium bottle"
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/aluminium = 30)
 
 /obj/item/reagent_containers/glass/bottle/silicon
 	name = "silicon bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/silicon = 30)
 
 /obj/item/reagent_containers/glass/bottle/phosphorus
 	name = "phosphorus bottle"
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/phosphorus = 30)
 
 /obj/item/reagent_containers/glass/bottle/sulphur
 	name = "sulphur bottle"
+	icon_state = "bottle-5"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/sulphur = 30)
 
 /obj/item/reagent_containers/glass/bottle/chlorine
 	name = "chlorine bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/chlorine = 30)
 
 /obj/item/reagent_containers/glass/bottle/potassium
 	name = "potassium bottle"
+	icon_state = "bottle-2"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/potassium = 30)
 
 /obj/item/reagent_containers/glass/bottle/iron
 	name = "iron bottle"
+	icon_state = "bottle-3"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/iron = 30)
 
 /obj/item/reagent_containers/glass/bottle/copper
 	name = "copper bottle"
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/copper = 30)
 
 /obj/item/reagent_containers/glass/bottle/mercury
 	name = "mercury bottle"
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/mercury = 30)
 
 /obj/item/reagent_containers/glass/bottle/radium
 	name = "radium bottle"
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/uranium/radium = 30)
 
 /obj/item/reagent_containers/glass/bottle/water
 	name = "water bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/water = 30)
 
 /obj/item/reagent_containers/glass/bottle/ethanol
 	name = "ethanol bottle"
+	icon_state = "bottle-4"		
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/consumable/ethanol = 30)
 
 /obj/item/reagent_containers/glass/bottle/sugar
 	name = "sugar bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/consumable/sugar = 30)
 
 /obj/item/reagent_containers/glass/bottle/sacid
 	name = "sulphuric acid bottle"
+	icon_state = "bottle-5"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/toxin/acid = 30)
 
 /obj/item/reagent_containers/glass/bottle/welding_fuel
 	name = "welding fuel bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/fuel = 30)
 
 /obj/item/reagent_containers/glass/bottle/silver
 	name = "silver bottle"
+	icon_state = "bottle-3"	
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/silver = 30)
 
 /obj/item/reagent_containers/glass/bottle/iodine
 	name = "iodine bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/iodine = 30)
 
 /obj/item/reagent_containers/glass/bottle/bromine
 	name = "bromine bottle"
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/bromine = 30)
 	
 /obj/item/reagent_containers/glass/woodmug
@@ -451,7 +618,8 @@
 	name = "vial"
 	desc = "A small vial for holding small amounts of reagents."
 	icon_state = "vial"
-	item_state = "atoxinbottle"	
+	item_state = "atoxinbottle"
+	disp_icon = "disp_glass"
 	unique_reskin = list("vial" = "vial",
 						"white vial" = "vial_white",
 						"red vial" = "vial_red",
@@ -467,6 +635,8 @@
 	/// Name that used as the base for pen renaming, so subtypes can have different names without having to worry about messing with it
 	var/base_name = "vial"
 	var/base_icon_state = "vial"
+	var/label_image = "label_vial"
+	var/lid_image = "lid_vial"
 	/// List of icon_states that require the stripe overlay to look good. Not a very good way of doing it, but its the best I can come up with right now.
 	var/list/striped_vial_skins = list("vial_white", "vial_red", "vial_blue", "vial_green", "vial_orange", "vial_purple", "vial_black", "viallarge_white", "viallarge_red", "viallarge_blue", "viallarge_green", "viallarge_orange", "viallarge_purple", "viallarge_black")
 
@@ -477,18 +647,56 @@
 
 /obj/item/reagent_containers/glass/bottle/vial/attackby(obj/P, mob/user, params)
 	add_fingerprint(user)
-	if(istype(P, /obj/item/pen))
-		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on the label of [src]!"))
-			return
-		var/t = pretty_filter(stripped_input(user, "What would you like the label to be?", text("[]", name), null))
-		if (user.get_active_held_item() != P)
-			return
+	if(istype(P, /obj/item/pen)) // making labels
+		var/tmp_label = sanitize(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
+		if(length(tmp_label) > 15)
+			to_chat(user, "<span class='notice'>The label can be at most 15 characters long.</span>")
 		if(!user.canUseTopic(src, BE_CLOSE))
 			return
-		name = "[base_name][t ? " ([t])" : ""]"
-	else
-		return ..()
+		if(!user.is_literate())
+			to_chat(user, span_notice("You scribble illegibly on the label of [src]!"))
+			return						
+		else
+			to_chat(user, "<span class='notice'>You set the label to \"[tmp_label]\".</span>")
+			label_text = tmp_label
+			label_state = TRUE
+			update_name_label()
+			update_icon()
+		return
+	..()
+
+/obj/item/reagent_containers/glass/bottle/vial/update_icon()
+	cut_overlays()
+	if(!filling_icon_state)
+		filling_icon_state = icon_state
+	if(reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[filling_icon_state]-10")
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		switch(percent)
+			if(0 to 9)
+				filling.icon_state = "[filling_icon_state]-10"
+			if(10 to 19)
+				filling.icon_state = "[filling_icon_state]20"
+			if(20 to 39)
+				filling.icon_state = "[filling_icon_state]40"
+			if(40 to 59)
+				filling.icon_state = "[filling_icon_state]60"
+			if(60 to 79)
+				filling.icon_state = "[filling_icon_state]80"			
+			if(80 to INFINITY)
+				filling.icon_state = "[filling_icon_state]100"
+
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		add_overlay(filling)
+
+	if(lid_state == TRUE)
+		var/mutable_appearance/lid = mutable_appearance(icon, lid_image)
+		add_overlay(lid)
+
+	if(label_state == TRUE)
+		var/mutable_appearance/label = mutable_appearance(icon, label_image)
+		add_overlay(label)
 
 /obj/item/reagent_containers/glass/bottle/vial/libital
 	name = "vial (Libital)"
@@ -571,16 +779,22 @@
 /obj/item/reagent_containers/glass/bottle/vial/random_virus
 	name = "Experimental disease culture vial"
 	desc = "A small vial for holding small amounts of reagents. Contains an untested viral culture in synthblood medium."
+	label_state = TRUE
+	lid_state = TRUE	
 	spawned_disease = /datum/disease/advance/random
 
 /obj/item/reagent_containers/glass/bottle/vial/cold
 	name = "Rhinovirus culture vial"
 	desc = "A small vial for holding small amounts of reagents. Contains XY-rhinovirus culture in synthblood medium."
+	label_state = TRUE
+	lid_state = TRUE	
 	spawned_disease = /datum/disease/advance/cold
 
 /obj/item/reagent_containers/glass/bottle/vial/flu_virion
 	name = "Flu virion culture vial"
 	desc = "A small vial for holding small amounts of reagents. Contains H13N1 flu virion culture in synthblood medium."
+	label_state = TRUE
+	lid_state = TRUE	
 	spawned_disease = /datum/disease/advance/flu
 
 
@@ -589,16 +803,22 @@
 /obj/item/reagent_containers/glass/bottle/clownstears
 	name = "bottle of distilled clown misery"
 	desc = "A small bottle. Contains a mythical liquid used by sublime bartenders; made from the unhappiness of clowns."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/consumable/clownstears = 30)
 
 /obj/item/reagent_containers/glass/bottle/saltpetre
 	name = "saltpetre bottle"
 	desc = "A small bottle. Contains saltpetre."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/saltpetre = 30)
 
 /obj/item/reagent_containers/glass/bottle/flash_powder
 	name = "flash powder bottle"
 	desc = "A small bottle. Contains flash powder."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/flash_powder = 30)
 
 ///obj/item/reagent_containers/glass/bottle/exotic_stabilizer
@@ -614,6 +834,8 @@
 /obj/item/reagent_containers/glass/bottle/caramel
 	name = "bottle of caramel"
 	desc = "A bottle containing caramalized sugar, also known as caramel. Do not lick."
+	label_state = TRUE
+	lid_state = TRUE	
 	list_reagents = list(/datum/reagent/consumable/caramel = 30)
 
 /obj/item/reagent_containers/glass/bottle/vial/large
@@ -621,6 +843,8 @@
 	base_name = "large vial"
 	desc = "A large vial for holding a sizable amounts of reagents."
 	icon_state = "viallarge"
+	label_image = "label_viallarge"
+	lid_image = "lid_viallarge"
 	base_icon_state = "viallarge"
 	unique_reskin = list("large vial" = "viallarge",
 						"white large vial" = "viallarge_white",
@@ -634,7 +858,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	possible_transfer_amounts = list(5, 10, 15, 30)
 	volume = 30
-	disease_amount = 30
+	disease_amount = 30	
 
 /obj/item/reagent_containers/glass/bottle/vial/large/omnizine
 	name = "large vial (Omnizine)"
@@ -686,6 +910,8 @@
 	base_name = "bluespace vial"
 	desc = "A small vial powered by experimental bluespace technology capable of holding 60 units."
 	icon_state = "vialbluespace"
+	label_image = "label_vialbluespace"
+	lid_image = "lid_vialbluespace"		
 	base_icon_state = "vialbluespace"
 	unique_reskin = list("bluespace vial" = "vialbluespace",
 						"white bluespace vial" = "vialbluespace_white",
@@ -693,8 +919,7 @@
 						"blue bluespace vial" = "vialbluespace_blue",
 						"green bluespace vial" = "vialbluespace_green",
 						"orange bluespace vial" = "vialbluespace_orange",
-						"purple bluespace vial" = "vialbluespace_purple",
-						"black bluespace vial" = "vialbluespace_black"
+						"purple bluespace vial" = "vialbluespace_purple"
 						)
 	possible_transfer_amounts = list(5,10,15,30,45)
 	volume = 60

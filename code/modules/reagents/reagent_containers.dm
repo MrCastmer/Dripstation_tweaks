@@ -12,6 +12,7 @@
 	var/spawned_disease = null
 	var/disease_amount = 20
 	var/spillable = FALSE
+	var/disp_icon = "disp_glass"
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
@@ -122,6 +123,7 @@
 			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		visible_message(span_notice("[src] spills its contents all over [target]."))
+		playsound(src.loc, 'sound/effects/water_emerge.ogg', 50, 1)
 		reagents.reaction(target, TOUCH)
 		if(QDELETED(src))
 			return

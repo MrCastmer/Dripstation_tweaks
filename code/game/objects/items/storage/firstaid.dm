@@ -576,10 +576,13 @@
 	name = "pill bottle"
 	desc = "It's an airtight container for storing medication."
 	icon_state = "pill_canister"
+	item_state = "pill_canister"
 	icon = 'icons/obj/chemical.dmi'
-	item_state = "contsolid"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	item_state = "contsolid"	
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'
+	drop_sound = 'dripstation/sound/drop/pillbottle.ogg'
+	pickup_sound = 'dripstation/sound/pickup/pillbottle.ogg'	
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/pill_bottle/ComponentInitialize()
@@ -767,6 +770,7 @@
 	name = "large medicine bottle"
 	desc = "It's an airtight container for storing gummy bears." //until pills are 10u this is all they're for
 	icon_state = "pill_canister_large"
+	item_state = "pill_canister_large"	
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/pill_bottle/gummies/ComponentInitialize()

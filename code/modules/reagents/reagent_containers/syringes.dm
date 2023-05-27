@@ -17,6 +17,9 @@
 	sharpness = SHARP_POINTY
 	embedding = list("embedded_pain_chance" = 0, "embedded_pain_multiplier" = 0, "embedded_unsafe_removal_time" = 0.25 SECONDS, "embedded_unsafe_removal_pain_multiplier" = 0, "embed_chance" = 15, "embedded_fall_chance" = 5, "embedded_bleed_rate" = 0)
 
+	drop_sound = 'dripstation/sound/drop/glass_small.ogg'
+	pickup_sound = 'dripstation/sound/pickup/glass_small.ogg'
+
 /obj/item/reagent_containers/syringe/Initialize()
 	. = ..()
 	if(list_reagents) //syringe starts in inject mode if its already got something inside

@@ -187,7 +187,7 @@
 	category = list("initial","Botany Chemicals")
 
 /datum/design/botany_bottle
-	name = "Empty Bottle"
+	name = "Empty Plastic Jug"
 	id = "botany_bottle"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 5)
