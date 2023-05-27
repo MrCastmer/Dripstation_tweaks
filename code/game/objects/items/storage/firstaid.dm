@@ -577,8 +577,7 @@
 	desc = "It's an airtight container for storing medication."
 	icon_state = "pill_canister"
 	item_state = "pill_canister"
-	icon = 'icons/obj/chemical.dmi'
-	item_state = "contsolid"	
+	icon = 'icons/obj/chemical.dmi'	
 	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
 	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'
 	drop_sound = 'dripstation/sound/drop/pillbottle.ogg'
