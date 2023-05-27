@@ -8,8 +8,8 @@
 	icon = 'dripstation/icons/obj/cond_shelf.dmi'
 	icon_state = "cond_shelf_item"
 	item_state = "cond_shelf_item"
-	lefthand_file = 'dripstation/icons/mob/inhands/kitchen_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/kitchen_righthand.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/food/kitchen_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/food/kitchen_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	force = 8
 	throwforce = 10
