@@ -31,8 +31,8 @@
 	desc = "Welding goggles made from more expensive materials, strangely smells like potatoes."
 	icon_state = "welding-upgraded"
 	item_state = "welding-upgraded"
-	lefthand_file = 'dripstation/icons/mob/inhands/glasses_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/glasses_righthand.dmi'		
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_righthand.dmi'		
 	icon = 'dripstation/icons/obj/clothing/eyes.dmi'		
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/eyes.dmi'	
 	custom_materials = null // Don't want that to go in the autolathe
@@ -65,6 +65,9 @@
 /obj/item/clothing/head/cone
 	icon = 'dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/suit/toggle/labcoat/mad
+	icon_state = "labcoat_green"
 
 // ###### ROBOTICIST ######
 

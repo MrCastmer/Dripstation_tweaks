@@ -1,7 +1,7 @@
 /obj/item/clothing/suit/poncho
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/suits_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/suits_righthand.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/suits_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/suits_righthand.dmi'
 
 /obj/item/clothing/suit/poncho/purple
 	name = "purple poncho"

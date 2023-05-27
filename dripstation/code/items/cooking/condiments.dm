@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/food/condiment
 	icon = 'dripstation/icons/obj/food/containers.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/kitchen_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/kitchen_righthand.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/food/kitchen_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/food/kitchen_righthand.dmi'
 	item_state = "condiment"
 
 /obj/item/reagent_containers/food/condiment/sugar
