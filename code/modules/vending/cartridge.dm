@@ -10,6 +10,7 @@
 	refill_canister = /obj/item/vending_refill/cart
 	default_price = 50
 	extra_price = 100
+	req_access = list(ACCESS_HOP)
 	payment_department = ACCOUNT_SRV
 	light_mask = "cart-light-mask"	
 

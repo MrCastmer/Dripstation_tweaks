@@ -684,7 +684,15 @@
 		/obj/machinery/vending/wardrobe/gene_wardrobe = "GeneDrobe",
 		/obj/machinery/vending/wardrobe/viro_wardrobe = "ViroDrobe",
 		/obj/machinery/vending/wardrobe/sig_wardrobe = "SigDrobe",
+		/obj/machinery/vending/wardrobe/honk_wardrobe = "HonkDrobe",
+		/obj/machinery/vending/wardrobe/mime_wardrobe = "MimeDrobe",
+		/obj/machinery/vending/wardrobe/haztech_wardrobe = "HazardDrobe",
+		/obj/machinery/vending/wardrobe/para_wardrobe = "ParaDrobe",
+		/obj/machinery/vending/wardrobe/det_wardrobe = "DetDrobe",
 		/obj/machinery/vending/clothing = "ClothesMate",
+		/obj/machinery/vending/hatdispenser = "\improper Hatlord 9000",
+		/obj/machinery/vending/shoedispenser = "\improper Shoelord 9000",
+		/obj/machinery/vending/suitdispenser = "\improper Suitlord 9000",
 		/obj/machinery/vending/medical = "NanoMed Plus",
 		/obj/machinery/vending/wallmed = "NanoMed",
 		/obj/machinery/vending/wallhypo = "HypoMed",
@@ -694,13 +702,14 @@
 		/obj/machinery/vending/hydroseeds = "MegaSeed Servitor",
 		/obj/machinery/vending/sustenance = "Sustenance Vendor",
 		/obj/machinery/vending/dinnerware = "Plasteel Chef's Dinnerware Vendor",
+		/obj/machinery/vending/artvend = "\improper ArtVend",
 		/obj/machinery/vending/cart = "PTech",
 		/obj/machinery/vending/robotics = "Robotech Deluxe",
 		/obj/machinery/vending/engineering = "Robco Tool Maker",
 		/obj/machinery/vending/sovietsoda = "BODA",
 		/obj/machinery/vending/security = "SecTech",
-		/obj/machinery/vending/fishing = "Tackle Box 2000")//Yogs
-		//obj/machinery/vending/modularpc = "Deluxe Silicate Selections") // Yogs comment-out, because ktlwjec is bad at merging mirrors
+		/obj/machinery/vending/fishing = "Tackle Box 2000",
+		/obj/machinery/vending/modularpc = "Deluxe Silicate Selections") // Yogs comment-out, because ktlwjec is bad at merging mirrors
 
 /obj/item/circuitboard/machine/vendor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
