@@ -538,5 +538,8 @@
 /datum/config_entry/flag/cache_assets
 	default = TRUE
 
+/datum/config_entry/flag/save_spritesheets
+	default = FALSE
+
 /// Whether demos are written, if not set demo SS never initializes
 /datum/config_entry/flag/demos_enabled
