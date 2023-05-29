@@ -36,6 +36,15 @@
 		"stamp-ce" = "stamp_ce.png",
 		"stamp-law" = "stamp_law.png",
 		"stamp-clown" = "stamp_clown.png",
+		"stamp-rep" = "stamp_ntr.png",
+		"stamp-blueshield" = "stamp_bs.png",
+		"stamp-magistrate" = "stamp_magi.png",
+		"stamp-mime" = "stamp_mime.png",
+		"stamp-chap" = "stamp_chap.png",
+		"stamp-ward" = "stamp_ward.png",
+		"stamp-syndi" = "stamp_syndi.png",
+		"stamp-cent" = "stamp_cent.png",
+		"stamp-syndiround" = "stamp_syndiround.png",	
 	)
 	var/sfx = list(
 		"speaker" = 'sound/machines/inspector_booth/speech-announce.wav',
@@ -291,6 +300,7 @@
 // Copy-pasting the entire proc from yogstation/../cards_ids.dm
 // because the list there is a private var and its more work
 // to parse and process the overlays back into strings
+// list(bar,sticker)
 /obj/machinery/inspector_booth/proc/get_colors_by_job(real_job)
 	var/list/idfluff = list(
 	"Assistant" = list("civillian","green"),
