@@ -560,6 +560,20 @@
 		/obj/item/hand_labeler = 1,
 		/obj/item/stack/sheet/glass = 1)
 
+/obj/item/circuitboard/machine/inspector_booth
+	name = "Inspector Booth (Machine Board)"
+	icon_state = "generic"
+	build_path = /obj/machinery/inspector_booth
+	req_components = list(
+		// Make sure stamp is second because otherwise the machine frame will treat the denied stamp as granted
+		/obj/item/stamp/denied = 1,
+		/obj/item/stamp = 1,
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stack/sheet/glass = 1
+	)
+
 /obj/item/circuitboard/machine/protolathe
 	name = "Protolathe (Machine Board)"
 	icon_state = "generic"
@@ -684,7 +698,15 @@
 		/obj/machinery/vending/wardrobe/gene_wardrobe = "GeneDrobe",
 		/obj/machinery/vending/wardrobe/viro_wardrobe = "ViroDrobe",
 		/obj/machinery/vending/wardrobe/sig_wardrobe = "SigDrobe",
+		/obj/machinery/vending/wardrobe/honk_wardrobe = "HonkDrobe",
+		/obj/machinery/vending/wardrobe/mime_wardrobe = "MimeDrobe",
+		/obj/machinery/vending/wardrobe/haztech_wardrobe = "HazardDrobe",
+		/obj/machinery/vending/wardrobe/para_wardrobe = "ParaDrobe",
+		/obj/machinery/vending/wardrobe/det_wardrobe = "DetDrobe",
 		/obj/machinery/vending/clothing = "ClothesMate",
+		/obj/machinery/vending/hatdispenser = "\improper Hatlord 9000",
+		/obj/machinery/vending/shoedispenser = "\improper Shoelord 9000",
+		/obj/machinery/vending/suitdispenser = "\improper Suitlord 9000",
 		/obj/machinery/vending/medical = "NanoMed Plus",
 		/obj/machinery/vending/wallmed = "NanoMed",
 		/obj/machinery/vending/wallhypo = "HypoMed",
@@ -694,13 +716,14 @@
 		/obj/machinery/vending/hydroseeds = "MegaSeed Servitor",
 		/obj/machinery/vending/sustenance = "Sustenance Vendor",
 		/obj/machinery/vending/dinnerware = "Plasteel Chef's Dinnerware Vendor",
+		/obj/machinery/vending/artvend = "\improper ArtVend",
 		/obj/machinery/vending/cart = "PTech",
 		/obj/machinery/vending/robotics = "Robotech Deluxe",
 		/obj/machinery/vending/engineering = "Robco Tool Maker",
 		/obj/machinery/vending/sovietsoda = "BODA",
 		/obj/machinery/vending/security = "SecTech",
-		/obj/machinery/vending/fishing = "Tackle Box 2000")//Yogs
-		//obj/machinery/vending/modularpc = "Deluxe Silicate Selections") // Yogs comment-out, because ktlwjec is bad at merging mirrors
+		/obj/machinery/vending/fishing = "Tackle Box 2000",
+		/obj/machinery/vending/modularpc = "Deluxe Silicate Selections") // Yogs comment-out, because ktlwjec is bad at merging mirrors
 
 /obj/item/circuitboard/machine/vendor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)

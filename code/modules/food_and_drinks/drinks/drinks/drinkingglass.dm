@@ -5,6 +5,7 @@
 	desc = "Your standard drinking glass."
 	custom_price = 5
 	icon_state = "glass_empty"
+	disp_icon = "disp_glass"
 	amount_per_transfer_from_this = 10
 	volume = 50
 	materials = list(/datum/material/glass=500)

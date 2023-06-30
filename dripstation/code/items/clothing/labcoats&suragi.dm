@@ -9,8 +9,8 @@
 	item_state = "bomber"
 	icon = 'dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/suits_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/suits_righthand.dmi'	
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/suits_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/suits_righthand.dmi'	
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/box/fancy/cigarettes, /obj/item/lighter, /obj/item/radio)
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS

@@ -188,7 +188,7 @@
 	if(pda)
 		H.equip_to_slot_or_del(SSwardrobe.provide_type(pda, H), SLOT_WEAR_PDA, TRUE)
 	if(suit_store)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(suit_store, H), SLOT_S_STORE, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(suit_store, H), SLOT_SUIT_STORE, TRUE)
 
 	if(accessory)
 		var/obj/item/clothing/under/U = H.w_uniform

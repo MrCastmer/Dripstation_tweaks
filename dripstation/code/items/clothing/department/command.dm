@@ -98,8 +98,8 @@
 /obj/item/clothing/glasses/hud/personnel
 	icon = 'dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/eyes.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/glasses_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/glasses_righthand.dmi'	
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_righthand.dmi'	
 	icon_state = "sunhudskill"
 	item_state = "sunhudskill"
 
@@ -151,8 +151,8 @@
 	item_state = "oxford_brown"
 	icon = 'dripstation/icons/obj/clothing/shoes.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/shoes_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/shoes_righthand.dmi'	
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'	
 
 /obj/item/clothing/shoes/laceup/grey
 	name = "grey laceup shoes"
@@ -160,8 +160,8 @@
 	item_state = "oxford_grey"
 	icon = 'dripstation/icons/obj/clothing/shoes.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/shoes_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/shoes_righthand.dmi'	
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'	
 
 /obj/item/clothing/gloves/color/captain
 	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
@@ -216,7 +216,7 @@
 
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.build_all_button_icons()
 
 /obj/item/melee/sabre
 	name = "captain's rapier"

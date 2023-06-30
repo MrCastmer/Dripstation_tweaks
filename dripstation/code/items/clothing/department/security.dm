@@ -46,8 +46,8 @@
 
 /obj/item/clothing/suit/armor/hos/trenchcoat/winter
 	name = "head of Security's winter trenchcoat"
-	icon_state = "coathos"
-	item_state = "coathos"	
+	icon_state = "coathos_alt"
+	item_state = "coathos_alt"	
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT	

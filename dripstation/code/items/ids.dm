@@ -1,7 +1,7 @@
 /obj/item/card/id/head
 	name = "head identification card"
 	desc = "A dark card which shows power and responsibility."
-	icon_state = "head"
+	icon_state = "id_head"
 
 /obj/item/card/id/mime
 	name = "mime identification card"

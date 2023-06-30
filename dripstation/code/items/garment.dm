@@ -1,8 +1,8 @@
 /obj/item/storage/bag/garment
 	name = "garment bag"
 	icon = 'dripstation/icons/obj/storage/garment.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/backpack_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/backpack_righthand.dmi'			
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'			
 	icon_state = "garment_bag"
 	item_state = "garment_bag"
 	desc = "A bag for storing extra clothes and shoes."

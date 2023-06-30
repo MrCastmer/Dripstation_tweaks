@@ -3,8 +3,8 @@
 	var/magpulse_name = "mag-pulse traction system"
 	item_state = "magboots"
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/shoes_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/shoes_righthand.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'
 
 /obj/item/clothing/shoes/magboots/security
 	armor = list(MELEE = 15, BULLET = 10, LASER = 5, ENERGY = 10, BOMB = 15, BIO = 20, RAD = 0, FIRE = 20, ACID = 50)

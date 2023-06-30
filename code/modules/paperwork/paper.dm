@@ -314,7 +314,8 @@
 		LAZYADD(stamped, P.icon_state)
 		add_overlay(stampoverlay)
 
-		to_chat(user, span_notice("You stamp the paper with your rubber stamp."))
+		to_chat(user, span_notice("You stamp the paper with your rubber stamp."))		
+		playsound(src, pick(stamp_sounds), 35, 1, -1)
 
 	if(P.is_hot())
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10))
@@ -322,7 +323,7 @@
 								span_userdanger("You miss the paper and accidentally light yourself on fire!"))
 			user.dropItemToGround(P)
 			user.adjust_fire_stacks(1)
-			user.IgniteMob()
+			user.ignite_mob()
 			return
 
 		if(!(in_range(user, src))) //to prevent issues as a result of telepathically lighting a paper

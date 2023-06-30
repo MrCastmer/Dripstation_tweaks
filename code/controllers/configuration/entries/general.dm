@@ -80,6 +80,9 @@
 
 /datum/config_entry/flag/log_pda	// log pda messages
 
+/// log uplink/spellbook/codex ciatrix purchases and refunds
+/datum/config_entry/flag/log_uplink
+
 /datum/config_entry/flag/log_telecomms	// log telecomms messages
 
 /datum/config_entry/flag/log_ntsl		// log NTSL compilation
@@ -534,6 +537,9 @@
 
 /datum/config_entry/flag/cache_assets
 	default = TRUE
+
+/datum/config_entry/flag/save_spritesheets
+	default = FALSE
 
 /// Whether demos are written, if not set demo SS never initializes
 /datum/config_entry/flag/demos_enabled

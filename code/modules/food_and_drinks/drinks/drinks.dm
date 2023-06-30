@@ -77,6 +77,7 @@
 		var/refill = reagents.get_master_reagent_id()
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, span_notice("You transfer [trans] units of the solution to [target]."))
+		playsound(src, pick('dripstation/sound/effects/pour1.ogg','dripstation/sound/effects/pour2.ogg'), 25, 1)
 
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
 			var/mob/living/silicon/robot/bro = user
@@ -383,6 +384,7 @@
 	name = "shaker"
 	desc = "A metal shaker to mix drinks in."
 	icon_state = "shaker"
+	disp_icon = "disp_shaker"
 	materials = list(/datum/material/iron=1500)
 	amount_per_transfer_from_this = 10
 	volume = 100
@@ -393,6 +395,7 @@
 	desc = "Every good spaceman knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
 	custom_price = 30
 	icon_state = "flask"
+	disp_icon = "disp_flask"	
 	materials = list(/datum/material/iron=250)
 	volume = 60
 	isGlass = FALSE
@@ -401,12 +404,14 @@
 	name = "captain's flask"
 	desc = "A gold flask belonging to the captain."
 	icon_state = "flask_gold"
+	disp_icon = "disp_capflask"	
 	materials = list(/datum/material/gold=500)
 
 /obj/item/reagent_containers/food/drinks/flask/det
 	name = "detective's flask"
 	desc = "The detective's only true friend."
 	icon_state = "detflask"
+	disp_icon = "disp_detflask"	
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
 /obj/item/reagent_containers/food/drinks/britcup
@@ -423,6 +428,7 @@
 	name = "soda can"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	disp_icon = "disp_soda"	
 	reagent_flags = NONE
 	spillable = FALSE
 	isGlass = FALSE
