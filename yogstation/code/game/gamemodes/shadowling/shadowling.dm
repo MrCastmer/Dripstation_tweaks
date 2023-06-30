@@ -36,6 +36,9 @@ Made by Xhuis
 	var/required_thralls = 15 //How many thralls are needed (this is changed in pre_setup, so it scales based on pop)
 	var/shadowling_ascended = FALSE //If at least one shadowling has ascended
 	var/thrall_ratio = 1
+	var/warning_threshold = 10
+	var/victory_warning_announced = FALSE
+
 
 /datum/game_mode/proc/replace_jobbaned_player(mob/living/M, role_type, pref)
 	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a [role_type]?", "[role_type]", null, pref, 50, M)
@@ -51,10 +54,11 @@ Made by Xhuis
 	name = "shadowling"
 	config_tag = "shadowling"
 	antag_flag = ROLE_SHADOWLING
-	required_players = 38
-	required_enemies = 3
-	recommended_enemies = 3
+	required_players = 20
+	required_enemies = 1
+	recommended_enemies = 2
 	enemy_minimum_age = 14
+	false_report_weight = 5
 	restricted_jobs = list("AI", "Cyborg")
 	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Engineer", "Chief Medical Officer", "Brig Physician")
 	title_icon = "ss13"
@@ -68,7 +72,7 @@ Made by Xhuis
 		restricted_jobs += protected_jobs
 	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
 		restricted_jobs += "Assistant"
-	var/shadowlings = max(3, round(num_players()/14))
+	var/shadowlings = min(5, (round(num_players()/10) - 1)) //20pop = 1, 30 = 2, 40 = 3, 50 = 4, 60 = 5, max = 5
 	while(shadowlings)
 		var/datum/mind/shadow = pick(antag_candidates)
 		shadows += shadow
@@ -79,6 +83,9 @@ Made by Xhuis
 	var/thrall_scaling = round(num_players() / 3)
 	required_thralls = clamp(thrall_scaling, 15, 30)
 	thrall_ratio = required_thralls / 15
+
+	warning_threshold = round(0.66 * required_thralls) //For announce
+
 	return TRUE
 
 /datum/game_mode/shadowling/generate_report()
@@ -142,13 +149,16 @@ Made by Xhuis
 	name = "Shadowling"
 	id = "shadowling"
 	say_mod = "chitters"
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES,NOFLASH)
-	inherent_traits = list(TRAIT_NOGUNS, TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_PIERCEIMMUNE)
-	no_equip = list(SLOT_WEAR_MASK, SLOT_GLASSES, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
+	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES)
+	inherent_traits = list(TRAIT_NOPULSE, TRAIT_NOGUNS, TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_PIERCEIMMUNE)
+	no_equip = list(SLOT_WEAR_MASK, SLOT_GLASSES, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE, SLOT_WEAR_ID)
 	nojumpsuit = TRUE
-	mutanteyes = /obj/item/organ/eyes/night_vision/alien/sling
+	mutanteyes = /obj/item/organ/eyes/night_vision/shadowling
 	burnmod = 1.5 //1.5x burn damage, 2x is excessive
 	heatmod = 1.5
+	punchdamagelow = 11       //shadow claws
+	punchdamagehigh = 20     //shadow claws
+	punchstunthreshold = 18  //shadow claws 30% chance to stun
 	var/mutable_appearance/eyes_overlay
 	var/shadow_charges = 3
 	var/last_charge = 0
@@ -179,6 +189,7 @@ Made by Xhuis
 		var/light_amount = T.get_lumcount()
 		if(light_amount > LIGHT_DAM_THRESHOLD) //Can survive in very small light levels. Also doesn't take damage while incorporeal, for shadow walk purposes
 			H.adjustCloneLoss(LIGHT_DAMAGE_TAKEN) 
+			H.throw_alert("lightexposure", /atom/movable/screen/alert/lightexposure)
 			if(H.stat != DEAD)
 				to_chat(H, span_userdanger("The light burns you!")) //Message spam to say "GET THE FUCK OUT"
 				H.playsound_local(get_turf(H), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
@@ -190,6 +201,9 @@ Made by Xhuis
 			H.SetKnockdown(0)
 			H.SetStun(0)
 			H.SetParalyzed(0)
+			H.AdjustUnconscious(-20)
+			H.SetSleeping(0) // Evil shadows don`t sleep
+			H.clear_alert("lightexposure")
 	var/charge_time = 400 - ((SSticker.mode.thralls && SSticker.mode.thralls.len) || 0)*10
 	if(world.time >= charge_time+last_charge)
 		shadow_charges = min(shadow_charges + 1, 3)
@@ -212,18 +226,23 @@ Made by Xhuis
 	if(light_amount > LIGHT_DAM_THRESHOLD)
 		C.remove_movespeed_modifier(id)
 	else
-		C.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
-	
+		C.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-0.75, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/species/shadow/ling/lesser //Empowered thralls. Obvious, but powerful
 	name = "Lesser Shadowling"
 	id = "l_shadowling"
 	say_mod = "chitters"
-	species_traits = list(NOBLOOD,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES,NOFLASH)
-	inherent_traits = list(TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_PIERCEIMMUNE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD)
+	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING)
+	inherent_traits = list(TRAIT_NOPULSE, TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_PIERCEIMMUNE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD)
+	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLASSES, SLOT_SHOES, SLOT_S_STORE)
+	
+	mutanteyes = /obj/item/organ/eyes/night_vision/shadowling/l_shadowling
 	burnmod = 1.25
 	heatmod = 1.25
 	brutemod = 0.75
+	punchdamagelow = 5       //shadow claws
+	punchdamagehigh = 16     //shadow claws
+	punchstunthreshold = 13  //shadow claws 33% chance to stun
 
 /datum/species/shadow/ling/lesser/spec_life(mob/living/carbon/human/H)
 	H.nutrition = NUTRITION_LEVEL_WELL_FED //i aint never get hongry
@@ -231,12 +250,18 @@ Made by Xhuis
 		var/turf/T = H.loc
 		var/light_amount = T.get_lumcount()
 		if(light_amount > LIGHT_DAM_THRESHOLD && !H.incorporeal_move)
-			H.adjustCloneLoss(LIGHT_DAMAGE_TAKEN/2)
+			H.adjustCloneLoss(LIGHT_DAMAGE_TAKEN/2) 
+			H.throw_alert("lightexposure", /atom/movable/screen/alert/lightexposure)
+			if(H.stat != DEAD)
+				to_chat(H, span_userdanger("The light burns you!")) //Message spam to say "GET THE FUCK OUT"
+				H.playsound_local(get_turf(H), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
 		else if (light_amount < LIGHT_HEAL_THRESHOLD)
 			H.heal_overall_damage(4,4)
-			H.adjustToxLoss(-5)
+			H.SetSleeping(0) // Evil shadows don`t sleep
+			H.adjustToxLoss(-4)
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25)
-			H.adjustCloneLoss(-5)
+			H.adjustCloneLoss(-3)
+			H.clear_alert("lightexposure")
 
 /datum/game_mode/proc/update_shadow_icons_added(datum/mind/shadow_mind)
 	var/datum/atom_hud/antag/shadow_hud = GLOB.huds[ANTAG_HUD_SHADOW]
@@ -251,6 +276,14 @@ Made by Xhuis
 /mob/living/proc/add_thrall()
 	if(!istype(mind))
 		return FALSE
+	var/mob/M
+	var/thralls_warning_check = 0
+	for(M in GLOB.alive_mob_list)
+		if(is_thrall(M))
+			thralls_warning_check++
+		if(!SSticker.mode.victory_warning_announced && (thralls_warning_check >= SSticker.mode.warning_threshold))
+			SSticker.mode.victory_warning_announced = TRUE	//then let's give the station a warning
+			priority_announce("Large concentration of psychic bluespace energy detected by long-ranged scanners. Shadowling ascension event imminent. Any personnel is authorized to prevent it at all costs!", "Central Command Higher Dimensional Affairs", 'sound/AI/spanomalies.ogg')
 	return mind.add_antag_datum(ANTAG_DATUM_THRALL)
 
 /mob/living/proc/add_sling()
@@ -282,3 +315,84 @@ Made by Xhuis
 
 	round_credits += ..()
 	return round_credits
+
+
+///////////////////////////////// SHADOW MORPHISM /////////////////////////////////////
+// Shadow Morphism, also known as curse of darkness
+/datum/disease/transformation/shadow
+	name = "Shadow Morphism"
+	spread_text = "Shadowlings"
+	cure_text = "Sunshine. Rezadone" //Uh oh
+	cures = list(/datum/reagent/medicine/rezadone)
+	cure_chance = 6
+	stage_prob = 2
+	agent = "Pure Darkness"
+	desc = "Shadow curse"
+	severity = DISEASE_SEVERITY_BIOHAZARD
+	visibility_flags = 0
+	stage1	= list("You feel... You feel chill.")
+	stage2	= list("A cruel sense of cold overcomes you.")
+	stage3	= list(span_danger("You can't feel your eyes!"), span_danger("You feel strange anger at the light."))
+	stage4	= list(span_danger("You can't feel your eyes. It does not bother you anymore."), span_danger("You forget how it feels like to bask in the sun."))
+	stage5	= list("You feel the shadows invade your skin, leaping into the center of your chest! Now you're pure darkness!")
+	new_form = /mob/living/carbon/human/species/shadow
+
+/datum/disease/transformation/shadow/stage_act()
+	..()
+	var/turf/T = affected_mob.loc
+	var/light_amount = T.get_lumcount()
+	switch(stage)
+		if(1)
+			if (prob(4))
+				to_chat(affected_mob, "Hmm. Must have been the wind.")
+			if (light_amount > LIGHT_DAM_THRESHOLD && prob(10))
+				affected_mob.reagents.add_reagent_list(list(/datum/reagent/medicine/rezadone = 3))
+		if(2)
+			if (prob(8))
+				affected_mob.emote(pick("pale","shiver"))
+			if (light_amount > LIGHT_DAM_THRESHOLD && prob(4))
+				to_chat(affected_mob, span_danger("You feel a stabbing pain in your heart."))
+				affected_mob.Unconscious(50)
+				affected_mob.reagents.add_reagent_list(list(/datum/reagent/medicine/rezadone = 5))
+			if (light_amount < LIGHT_DAM_THRESHOLD && prob(10))
+				to_chat(affected_mob, span_danger("You feel fucking frostoil in your veins."))
+				affected_mob.reagents.add_reagent_list(list(/datum/reagent/consumable/frostoil = 5))
+		if(3)
+			if (prob(6))
+				affected_mob.say(pick("Kkkiiiill mmme", "I wwwaaannntt tttoo dddiiieeee...", "Mmyyy eeyyeesss..."), forced = "shadow transformation")
+				affected_mob.emote(pick("pale","shiver"))
+			if(light_amount > LIGHT_DAM_THRESHOLD && prob(30))
+				affected_mob.throw_alert("lightexposure", /atom/movable/screen/alert/lightexposure)
+				affected_mob.adjustCloneLoss(3)
+				affected_mob.adjustFireLoss(1)
+				to_chat(affected_mob, span_danger("You feel your skin turns to dust!</span>"))//Message spam to say "GET THE FUCK OUT"
+				affected_mob.playsound_local(get_turf(affected_mob), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
+			if(light_amount < LIGHT_DAM_THRESHOLD)
+				affected_mob.clear_alert("lightexposure")
+			if (light_amount < LIGHT_DAM_THRESHOLD && prob(20))
+				to_chat(affected_mob, span_danger("You feel fucking frostoil in your veins."))
+				affected_mob.reagents.add_reagent_list(list(/datum/reagent/consumable/frostoil = 5))
+		if(4)
+			if(light_amount > LIGHT_DAM_THRESHOLD)
+				affected_mob.throw_alert("lightexposure", /atom/movable/screen/alert/lightexposure)
+				affected_mob.adjustCloneLoss(5)
+				affected_mob.adjustFireLoss(2)
+				to_chat(affected_mob, span_danger("You feel your skin turns to dust!</span>"))//Message spam to say "GET THE FUCK OUT"
+				affected_mob.playsound_local(get_turf(affected_mob), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
+			if(light_amount < LIGHT_DAM_THRESHOLD)
+				affected_mob.adjustCloneLoss(-1)
+				affected_mob.adjustFireLoss(-2)
+				affected_mob.clear_alert("lightexposure")
+			if(affected_mob.cloneloss >= 100)
+				affected_mob.visible_message(span_danger("[affected_mob] skin turns to dust!"), "<span class'boldwarning'>Your skin turns to dust!</span>")
+				affected_mob.dust()
+			if(affected_mob.reagents.has_reagent(/datum/reagent/consumable/frostoil))
+				affected_mob.reagents.remove_reagent(/datum/reagent/consumable/frostoil)
+				to_chat(affected_mob, span_notice("You feel warmer... It feels good."))
+				affected_mob.bodytemperature = 310
+			if(affected_mob.reagents.has_reagent(/datum/reagent/medicine/rezadone))
+				affected_mob.reagents.remove_reagent(/datum/reagent/medicine/rezadone)
+				to_chat(affected_mob, span_notice("Nothing can help you at this point."))
+		if(5)
+			SEND_SOUND(affected_mob, sound('sound/effects/ghost.ogg'))
+			do_disease_transformation(affected_mob)

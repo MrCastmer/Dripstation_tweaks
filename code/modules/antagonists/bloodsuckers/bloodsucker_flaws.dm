@@ -70,7 +70,7 @@
 			var/obj/item/organ/heart/nightmare/nightmarish_heart = new
 			nightmarish_heart.Insert(bloodsucker)
 			nightmarish_heart.Stop()
-			for(var/obj/item/light_eater/blade in bloodsucker.held_items)
+			for(var/obj/item/melee/arm_blade/light_eater/blade in bloodsucker.held_items)
 				QDEL_NULL(blade)
 			GLOB.reality_smash_track.AddMind(owner)
 			var/datum/objective/bloodsucker/hierarchy/lasombra_objective = new

@@ -14,6 +14,7 @@
 	log_game("[key_name(owner.current)] was made into a shadowling!")
 	var/mob/living/carbon/human/S = owner.current
 	owner.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hatch(null))
+	owner.AddSpell(new /obj/effect/proc_holder/spell/targeted/enthrall(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hivemind(null))
 	if(owner.assigned_role == "Clown")
 		to_chat(S, span_notice("Your alien nature has allowed you to overcome your clownishness."))
@@ -45,8 +46,9 @@
 		spawn(30)
 			if(QDELETED(M))
 				return
-			M.visible_message(span_warning("[M] suddenly bloats and explodes!"))
 			to_chat(M,"<span class='warning bold'>AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font></span>")
+			playsound(M, 'sound/hallucinations/far_noise.ogg', 50, 1)
+			M.visible_message(span_warning("[M] suddenly bloats and explodes!"))
 			playsound(M, 'sound/magic/Disintegrate.ogg', 100, 1)
 			M.gib()
 	return ..()

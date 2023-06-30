@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(marker_beacon_colors, list(
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			qdel(src)
 			return
-	if(istype(I, /obj/item/light_eater))
+	if(istype(I, /obj/item/melee/arm_blade/light_eater))
 		var/obj/effect/decal/cleanable/ash/A = new /obj/effect/decal/cleanable/ash(drop_location())
 		A.desc += "\nLooks like this used to be \a [src] some time ago."
 		visible_message(span_danger("[src] is disintegrated by [I]!"))

@@ -18,6 +18,7 @@
 
 /datum/reagent/shadowling_blindness_smoke
 	name = "odd black liquid"
+	taste_description = "pure darkness"
 	description = "<::ERROR::> CANNOT ANALYZE REAGENT <::ERROR::>"
 	color = "#000000" //Complete black (RGB: 0, 0, 0)
 	metabolization_rate = 100 //lel
@@ -34,12 +35,15 @@
 		to_chat(M, span_notice("<b>You breathe in the black smoke, and you feel revitalized!</b>"))
 		M.adjustOxyLoss(-2, 0)
 		M.adjustToxLoss(-2, 0)
+		M.adjustBruteLoss(-1, 0)
+		M.adjustFireLoss(-1, 0)
 		. = 1
 	return ..() || .
 
 /datum/reagent/shadowfrost
 	name = "Shadowfrost"
 	description = "A dark liquid that seems to slow down anything that comes into contact with it."
+	taste_description = "pure darkness"
 	color = "#000000" //Complete black (RGB: 0, 0, 0)
 
 /datum/reagent/shadowfrost/on_mob_metabolize(mob/living/L)

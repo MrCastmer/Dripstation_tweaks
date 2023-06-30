@@ -1,7 +1,28 @@
 //Snowflake spot for putting sling organ related stuff
-/obj/item/organ/eyes/night_vision/alien/sling
+/obj/item/organ/eyes/shadow
+	name = "shadow eye"
+	flash_protect = -1
+	eye_color = "00FF00"
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	sight_flags = SEE_BLACKNESS
+	see_in_dark = 8
+
+/obj/item/organ/eyes/night_vision/shadowling
 	name = "shadowling eyes"
-	desc = "The eyes of a spooky shadowling!"
+	desc = "The eyes of a spooky shadowling! Even without their shadowy owner, looking at these eyes gives you a sense of dread."
+	icon_state = "burning_eyes"
+	eye_color = "BC2828"
+	see_in_dark = 9
+	sight_flags = SEE_MOBS
+	flash_protect = -1
+
+/obj/item/organ/eyes/night_vision/shadowling/l_shadowling
+	eye_color = "6432B7"
+	desc = "The eyes of a spooky shadowling! This pair exudes submission." //and breedable. Fuck, god save my soul.
+
+/obj/item/organ/eyes/night_vision/shadowling/nightmare
+	name = "burning red eyes"
+	flash_protect = 0
 
 /obj/item/organ/internal/shadowtumor
 	name = "black tumor"

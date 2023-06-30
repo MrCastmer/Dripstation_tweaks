@@ -3,7 +3,8 @@
 	name = "Hatch"
 	desc = "Casts off your disguise."
 	panel = "Shadowling Evolution"
-	charge_max = 3000
+	charge_max = 400
+	cooldown_min = 30
 	human_req = TRUE
 	clothes_req = FALSE
 	action_icon = 'yogstation/icons/mob/actions.dmi'
@@ -22,7 +23,6 @@
 	switch(hatch_or_no)
 		if("No")
 			to_chat(H, span_warning("You decide against hatching for now."))
-			charge_counter = charge_max
 			return
 		if("Yes")
 			H.notransform = TRUE
@@ -102,7 +102,6 @@
 			if(!do_mob(H,H,10,1))
 				return
 			to_chat(H, span_shadowling("<b><i>Your powers are awoken. You may now live to your fullest extent. Remember your goal. Cooperate with your thralls and allies.</b></i>"))
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/enthrall(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/glare(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/veil(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/void_jaunt(null))
@@ -175,6 +174,8 @@
 				H.mind.RemoveSpell(S)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/annihilate(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/hypnosis(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/revive_thrall/ascendant(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/empower_thrall/ascendant(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/ascendant_storm(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/void_jaunt/ascendant(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hivemind_ascendant(null))

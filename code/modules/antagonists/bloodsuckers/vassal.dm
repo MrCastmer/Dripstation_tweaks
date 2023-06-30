@@ -122,7 +122,7 @@
 			if(ishuman(owner.current))
 				vassal.see_in_dark = 8
 				vassal.eye_color = "f00"
-			var/list/powers = list(new /obj/effect/proc_holder/spell/targeted/lesser_glare, new /obj/effect/proc_holder/spell/targeted/shadowwalk)
+			var/list/powers = list(new /obj/effect/proc_holder/spell/targeted/sling/lesser_glare, new /obj/effect/proc_holder/spell/targeted/shadowwalk)
 			for(var/obj/effect/proc_holder/spell/targeted/power in powers)
 				owner.AddSpell(power)
 		if(CLAN_TZIMISCE)

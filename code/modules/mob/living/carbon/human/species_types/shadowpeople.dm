@@ -7,13 +7,22 @@
 	plural_form = "???"
 	id = "shadow"
 	sexes = FALSE
+	burnmod = 1.1
+	brutemod = 0.9
 	ignored_by = list(/mob/living/simple_animal/hostile/faithless)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/shadow
-	species_traits = list(NOBLOOD,NOEYESPRITES,NOFLASH, AGENDER)
-	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_GENELESS,TRAIT_NOHUNGER)
+	species_traits = list(NOBLOOD, NO_UNDERWEAR, AGENDER, NOEYESPRITES)
+	punchdamagelow = 2       //shadow claws
+	punchdamagehigh = 11     //shadow claws
+	punchstunthreshold = 10  //lesser shadow claws 20% chance to stun, robast shadows
+	attack_verb = "slash"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	inherent_traits = list(TRAIT_NOPULSE,TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_GENELESS,TRAIT_NOHUNGER)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
-
-	mutanteyes = /obj/item/organ/eyes/night_vision
+	screamsound = 'sound/hallucinations/far_noise.ogg'
+	deathsound = 'sound/voice/hiss5.ogg'
+	mutanteyes = /obj/item/organ/eyes/shadow
 
 
 /datum/species/shadow/spec_life(mob/living/carbon/human/H)
@@ -22,9 +31,16 @@
 		var/light_amount = T.get_lumcount()
 
 		if(light_amount > SHADOW_SPECIES_LIGHT_THRESHOLD) //if there's enough light, start dying
-			H.take_overall_damage(1,1, 0, BODYPART_ORGANIC)
+			H.take_overall_damage(0,1, 0, BODYPART_ORGANIC)
+			H.adjustCloneLoss(1)
+			H.throw_alert("lightexposure", /atom/movable/screen/alert/lightexposure)
+			if(H.stat != DEAD)
+				to_chat(H, span_userdanger("The light burns you!")) //Message spam to say "GET THE FUCK OUT"
+				H.playsound_local(get_turf(H), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
 		else if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark
 			H.heal_overall_damage(1,1, 0, BODYPART_ORGANIC)
+			H.adjustCloneLoss(-1)
+			H.clear_alert("lightexposure")
 
 /datum/species/shadow/check_roundstart_eligible()
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
@@ -84,12 +100,12 @@
 	name = "Nightmare"
 	plural_form = null
 	id = "nightmare"
-	limbs_id = "shadow"
+	limbs_id = "l_shadowling"
 	burnmod = 1.5
 	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES,NOFLASH)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOGUNS,TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOHUNGER)
-	mutanteyes = /obj/item/organ/eyes/night_vision/nightmare
+	inherent_traits = list(TRAIT_NOPULSE,TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOGUNS,TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOHUNGER)
+	mutanteyes = /obj/item/organ/eyes/night_vision/shadowling/nightmare
 	mutant_organs = list(/obj/item/organ/heart/nightmare)
 	mutantbrain = /obj/item/organ/brain/nightmare
 	
@@ -97,10 +113,14 @@
 					Your <span class='warning'>light eater</span> will destroy any light producing objects you attack, as well as destroy any lights a living creature may be holding. You will automatically dodge gunfire and melee attacks when on a dark tile. If killed, you will eventually revive if left in darkness."
 
 /datum/species/shadow/nightmare/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	C.draw_yogs_parts(TRUE)
 	. = ..()
 	to_chat(C, "[info_text]")
 
 	C.fully_replace_character_name("[C.real_name]","[pick(GLOB.nightmare_names)]") // Yogs -- fixes nightmares not having special spooky names. this proc takes the old name first, and *THEN* the new name!
+
+/datum/species/shadow/ling/on_species_loss(mob/living/carbon/human/C)
+	C.draw_yogs_parts(FALSE)
 
 /datum/species/shadow/nightmare/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H)
 	var/turf/T = H.loc
@@ -147,7 +167,7 @@
 	visual = TRUE
 	color = "#1C1C1C"
 	var/respawn_progress = 0
-	var/obj/item/light_eater/blade
+	var/obj/item/melee/arm_blade/light_eater/blade
 	decay_factor = 0
 
 
@@ -158,16 +178,15 @@
 						 span_danger("[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
 
-
-	user.visible_message(span_warning("Blood erupts from [user]'s arm as it reforms into a weapon!"), \
-						 span_userdanger("Icy blood pumps through your veins as your arm reforms itself!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)
 
 /obj/item/organ/heart/nightmare/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if(special != HEART_SPECIAL_SHADOWIFY)
-		blade = new/obj/item/light_eater
+		M.visible_message(span_warning("Blood erupts from [M]'s arm as it reforms into a weapon!"), \
+						 span_userdanger("Icy blood pumps through your veins as your arm reforms itself!"))
+		blade = new/obj/item/melee/arm_blade/light_eater
 		M.put_in_hands(blade)
 	START_PROCESSING(SSobj, src)
 
@@ -198,7 +217,7 @@
 			playsound(owner,'sound/effects/singlebeat.ogg',40,1)
 	if(respawn_progress >= HEART_RESPAWN_THRESHHOLD)
 		owner.revive(full_heal = TRUE)
-		if(!(owner.dna.species.id == "shadow" || owner.dna.species.id == "nightmare"))
+		if(!(owner.dna.species.id == "shadow" || owner.dna.species.id == "nightmare" || owner.dna.species.id == "shadowling" || owner.dna.species.id == "l_shadowling"))
 			var/mob/living/carbon/old_owner = owner
 			Remove(owner, HEART_SPECIAL_SHADOWIFY)
 			old_owner.set_species(/datum/species/shadow)
@@ -211,15 +230,19 @@
 
 //Weapon
 
-/obj/item/light_eater
+/obj/item/melee/arm_blade/light_eater
 	name = "light eater" //as opposed to heavy eater
+	desc = "A grotesque blade made out of bone and pure night that cleaves through people as a hot knife through butter."
 	icon = 'icons/obj/changeling.dmi'
 	icon_state = "arm_blade"
 	item_state = "arm_blade"
-	force = 25
-	armour_penetration = 35
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
+	force = 25
+	armour_penetration = 35
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	lefthand_file = 'dripstation/icons/mob/inhands/antag/lighteater_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/antag/lighteater_righthand.dmi'
 	item_flags = ABSTRACT | DROPDEL
 	tool_behaviour = TOOL_MINING
 	w_class = WEIGHT_CLASS_HUGE
@@ -228,12 +251,12 @@
 	bare_wound_bonus = 20
 	resistance_flags = ACID_PROOF
 
-/obj/item/light_eater/Initialize()
+/obj/item/melee/arm_blade/light_eater/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
 	AddComponent(/datum/component/butchering, 80, 70)
 
-/obj/item/light_eater/afterattack(atom/movable/AM, mob/user, proximity)
+/obj/item/melee/arm_blade/light_eater/afterattack(atom/movable/AM, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
@@ -258,8 +281,16 @@
 		var/obj/item/I = AM
 		if(I.light_range && I.light_power)
 			disintegrate(I)
+	
+	if(istype(AM, /obj/structure/table))
+		var/obj/structure/table/T = AM
+		T.deconstruct(FALSE)
 
-/obj/item/light_eater/proc/disintegrate(obj/item/O)
+	else if(istype(AM, /obj/machinery/computer))
+		var/obj/machinery/computer/C = AM
+		C.attack_alien(user) //muh copypasta
+
+/obj/item/melee/arm_blade/light_eater/proc/disintegrate(obj/item/O)
 	if(istype(O, /obj/item/pda))
 		var/obj/item/pda/PDA = O
 		PDA.set_light_on(FALSE)
@@ -270,6 +301,7 @@
 		visible_message(span_danger("[O] is disintegrated by [src]!"))
 		O.burn()
 	playsound(src, 'sound/items/welder.ogg', 50, 1)
+
 
 #undef HEART_SPECIAL_SHADOWIFY
 #undef HEART_RESPAWN_THRESHHOLD

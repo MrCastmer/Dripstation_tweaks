@@ -7,7 +7,7 @@
 	icon_state = "hazard"
 	density = TRUE
 	light_system = MOVABLE_LIGHT
-	light_range = 1.4
+	light_range = 1
 	light_on = FALSE
 	var/valve_open = FALSE
 	var/obj/machinery/atmospherics/components/binary/passive_gate/pump
@@ -303,7 +303,7 @@
 #define CANISTER_UPDATE_PRESSURE_5	(1<<9)
 #define CANISTER_UPDATE_FULL		(1<<10)
 #define CANISTER_UPDATE_FUSION		(1<<11)
-#define CANISTER_LIGHT_RANGE 0.4
+#define CANISTER_LIGHT_RANGE 0
 #define CANISTER_LIGHT_POWER 0.5
 
 /obj/machinery/portable_atmospherics/canister/update_icon()
@@ -398,7 +398,7 @@
 		SSvis_overlays.add_vis_overlay(src, icon, "can-oF", layer, plane, dir)
 		SSvis_overlays.add_vis_overlay(src, icon, "can-oF", layer, EMISSIVE_PLANE, dir)
 		set_light_on(TRUE)
-		set_light_range_power_color(2, 2, COLOR_WHITE)
+		set_light_range_power_color(1, 2, COLOR_WHITE)
 	else
 		set_light_on(FALSE)
 

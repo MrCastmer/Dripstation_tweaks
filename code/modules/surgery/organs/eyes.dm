@@ -115,8 +115,9 @@
 #undef OFFSET_Y
 
 /obj/item/organ/eyes/night_vision
-	name = "shadow eyes"
+	name = "night vision eyes"
 	desc = "A spooky set of eyes that can see in the dark."
+	eye_color = "00FF00"
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	actions_types = list(/datum/action/item_action/organ_action/use)
@@ -144,11 +145,6 @@
 /obj/item/organ/eyes/night_vision/zombie
 	name = "undead eyes"
 	desc = "Somewhat counterintuitively, these half-rotten eyes actually have superior vision to those of a living human."
-
-/obj/item/organ/eyes/night_vision/nightmare
-	name = "burning red eyes"
-	desc = "Even without their shadowy owner, looking at these eyes gives you a sense of dread."
-	icon_state = "burning_eyes"
 
 /obj/item/organ/eyes/night_vision/mushroom
 	name = "fung-eye"

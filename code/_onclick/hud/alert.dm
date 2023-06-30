@@ -207,6 +207,12 @@
 	desc = "The air around you is hazardously thick. A fire suit would protect you."
 	icon_state = "highpressure"
 
+/atom/movable/screen/alert/lightexposure
+	name = "Light Exposure"
+	desc = "You're exposed to light."
+	icon_state = "lightexposure"
+	icon = 'dripstation/icons/mob/alert.dmi'
+
 /atom/movable/screen/alert/blind
 	name = "Blind"
 	desc = "You can't see! This may be caused by a genetic defect, eye trauma, being unconscious, \

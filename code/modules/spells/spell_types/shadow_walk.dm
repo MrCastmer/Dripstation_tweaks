@@ -3,14 +3,13 @@
 /obj/effect/proc_holder/spell/targeted/shadowwalk
 	name = "Shadow Walk"
 	desc = "Grants unlimited movement in darkness."
-	charge_max = 0
+	charge_max = 60
 	clothes_req = FALSE
 	antimagic_allowed = TRUE
 	phase_allowed = TRUE
 	selection_type = "range"
 	range = -1
 	include_user = TRUE
-	cooldown_min = 0
 	overlay = null
 	action_icon = 'icons/mob/actions/actions_minor_antag.dmi'
 	action_icon_state = "ninja_cloak"
@@ -25,6 +24,10 @@
 		var/obj/effect/dummy/phased_mob/shadow/S = L
 		S.end_jaunt(FALSE)
 		return
+	if(user.on_fire)
+		user.visible_message(span_boldwarning("[user]'s body shudders and flickers into darkness for a moment!"),
+												span_shadowling("The void rejects the flames engulfing your body, throwing you back into the burning light!"))
+		return
 	else
 		var/turf/T = get_turf(user)
 		var/light_amount = T.get_lumcount()
@@ -36,11 +39,15 @@
 			var/obj/effect/dummy/phased_mob/shadow/S2 = new(get_turf(user.loc))
 			user.forceMove(S2)
 			S2.jaunter = user
+			charge_counter = charge_max //Don't have to wait for cooldown to exit
+			QDEL_NULL(cooldown_overlay) //since we're giving them a free cooldown, no more cooldown_overlay
+			S2.jaunt_spell = src
 		else
 			to_chat(user, span_warning("It isn't dark enough here!"))
 
 /obj/effect/dummy/phased_mob/shadow
 	var/mob/living/jaunter
+	var/obj/effect/proc_holder/spell/targeted/shadowwalk/jaunt_spell //what spell we actually came from (for forced cooldown)
 
 /obj/effect/dummy/phased_mob/shadow/Initialize(mapload)
 	. = ..()
@@ -83,9 +90,10 @@
 		if(forced)
 			visible_message(span_boldwarning("[jaunter] is revealed by the light!"))
 		else
-
 			visible_message("<span class='boldwarning'>[jaunter] emerges from the darkness!</span>")
 		playsound(loc, 'sound/magic/ethereal_exit.ogg', 50, TRUE, -1)
+		jaunt_spell?.charge_counter = 0
+		jaunt_spell?.start_recharge()
 	qdel(src)
 
 #undef SHADOW_REGEN_RATE
