@@ -3690,6 +3690,8 @@
 #include "dripstation\code\items\clothing\department\command.dm"
 #include "dripstation\code\items\clothing\department\research.dm"
 #include "dripstation\code\items\clothing\department\security.dm"
+#include "dripstation\code\items\clothing\syndicate\donk_co.dm"
+#include "dripstation\code\items\storage\boxes.dm"
 #include "dripstation\code\items\cooking\condiments.dm"
 #include "dripstation\code\structures\closets.dm"
 #include "dripstation\code\structures\coatrack.dm"
