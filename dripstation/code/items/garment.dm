@@ -1,7 +1,10 @@
 /obj/item/storage/bag/garment
 	name = "garment bag"
 	icon = 'dripstation/icons/obj/storage/garment.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'			
 	icon_state = "garment_bag"
+	item_state = "garment_bag"
 	desc = "A bag for storing extra clothes and shoes."
 	slot_flags = NONE
 	resistance_flags = FLAMMABLE
@@ -81,6 +84,7 @@
 	new /obj/item/clothing/head/beret/captain(src)
 	new /obj/item/clothing/gloves/color/captain(src)
 	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/shoes/laceup/brown(src)
 
 /obj/item/storage/bag/garment/hop/PopulateContents()
 	new /obj/item/clothing/under/rank/head_of_personnel(src)
@@ -135,10 +139,13 @@
 	new /obj/item/clothing/under/rank/warden/corporate/skirt(src)
 	new /obj/item/clothing/under/yogs/ocelot(src)
 	new /obj/item/clothing/under/rank/warden/navyblue(src)
+	new /obj/item/clothing/under/rank/warden/classic(src)
 	new /obj/item/clothing/suit/armor/wardenjacket(src)
 	new /obj/item/clothing/suit/armor/vest/wardenjacket(src)
 	new /obj/item/clothing/suit/armor/vest/warden/alt(src)
+	new /obj/item/clothing/suit/armor/vest/warden/short(src)
 	new /obj/item/clothing/suit/armor/vest/warden(src)
+	new /obj/item/clothing/suit/armor/vest/warden/winter(src)
 	new /obj/item/clothing/head/warden(src)
 	new /obj/item/clothing/head/warden/drill(src)
 	new /obj/item/clothing/head/beret/sec/navywarden(src)
@@ -154,6 +161,7 @@
 	new /obj/item/clothing/under/rank/research_director/alt/skirt(src)
 	new /obj/item/clothing/under/rank/research_director/turtleneck(src)
 	new /obj/item/clothing/under/rank/research_director/turtleneck/skirt(src)
+	new /obj/item/clothing/under/yogs/rdema(src)
 	new /obj/item/clothing/suit/toggle/labcoat/science/rd(src)
 	new /obj/item/clothing/suit/toggle/labcoat(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/science/rd(src)
@@ -163,8 +171,11 @@
 	new /obj/item/clothing/head/beret/rd(src)	
 	new /obj/item/clothing/head/beret/rd/white(src)
 	new /obj/item/clothing/gloves/color/latex(src)	
-	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/clothing/glasses/hud/diagnostic/sunglasses(src)
+	new /obj/item/clothing/glasses/sunglasses/reagent/sci(src)
+	new /obj/item/clothing/glasses/welding/superior(src)
 	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/shoes/sneakers/white(src)
 
 /obj/item/storage/bag/garment/chief_medical/PopulateContents()
 	new /obj/item/clothing/head/beret/cmo(src)

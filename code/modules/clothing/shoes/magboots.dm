@@ -30,19 +30,19 @@
 		slowdown = slowdown_active
 	magpulse = !magpulse
 	icon_state = "[magboot_state][magpulse]"
-	to_chat(user, span_notice("You [magpulse ? "enable" : "disable"] the mag-pulse traction system."))
+	to_chat(user, span_notice("You [magpulse ? "enable" : "disable"] the [magpulse_name]."))
 	user.update_inv_shoes()	//so our mob-overlays update
 	user.update_gravity(user.has_gravity())
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.build_all_button_icons()
 
 /obj/item/clothing/shoes/magboots/negates_gravity()
 	return clothing_flags & NOSLIP
 
 /obj/item/clothing/shoes/magboots/examine(mob/user)
 	. = ..()
-	. += "Its mag-pulse traction system appears to be [magpulse ? "enabled" : "disabled"]."
+	. += "Its [magpulse_name] appears to be [magpulse ? "enabled" : "disabled"]."
 
 
 /obj/item/clothing/shoes/magboots/advance

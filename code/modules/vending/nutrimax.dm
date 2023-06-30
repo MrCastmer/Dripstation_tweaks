@@ -22,6 +22,7 @@
 	default_price = 10
 	extra_price = 50
 	payment_department = ACCOUNT_SRV
+	req_access = list(ACCESS_HYDROPONICS)
 	light_mask = "nutri-light-mask"
 
 /obj/item/vending_refill/hydronutrients

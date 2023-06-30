@@ -175,34 +175,83 @@
 
 
 /obj/item/reagent_containers/glass/bottle/nutrient
-	name = "bottle of nutrient"
-	volume = 50
+	name = "plastic jug"
+	icon_state = "plastic_jug"
+	disp_icon = "disp_pjug"
+	volume = 80
 	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = list(1,2,5,10,15,25,50)
+	resistance_flags = null
+	w_class = WEIGHT_CLASS_NORMAL
+	item_state = "pjug"
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'
+	pickup_sound = 'sound/items/handling/cardboardbox_pickup.ogg'
+	drop_sound = 'dripstation/sound/item/handling/jug_empty_impact.ogg'
+	possible_transfer_amounts = list(5,10,20,40,80)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/Initialize()
 	. = ..()
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)
 
+/obj/item/reagent_containers/glass/bottle/nutrient/on_reagent_change()
+	. = ..()
+	update_icon()
+	if(reagents.total_volume)
+		var/fraction = reagents.total_volume / volume
+		force = max(5 * fraction, 1)
+		throwforce = max(5 * fraction, 1)
+		hitsound = 'dripstation/sound/item/handling/jug_filled_impact.ogg'
+		drop_sound = 'dripstation/sound/item/handling/jug_filled_impact.ogg'
+	else
+		force = 1
+		throwforce = 1
+		hitsound = 'dripstation/sound/item/handling/jug_empty_impact.ogg'
+		drop_sound = 'dripstation/sound/item/handling/jug_empty_impact.ogg'
+
+/obj/item/reagent_containers/glass/bottle/nutrient/update_icon()
+	cut_overlays()
+
+	if(lid_state == TRUE)
+		var/lid_icon = "lid_plastic_jug"
+		var/mutable_appearance/lid = mutable_appearance(icon, lid_icon)
+		add_overlay(lid)
+
+	if(label_state == TRUE)
+		var/label_icon = "label_plastic_jug"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
+
 
 /obj/item/reagent_containers/glass/bottle/nutrient/ez
-	name = "bottle of E-Z-Nutrient"
+	name = "jug of E-Z-Nutrient"
+	icon_state = "plastic_jug_ez"
+	item_state = "pjugez"
+	disp_icon = "disp_pjug_ez"	
+	lid_state = TRUE
 	desc = "Contains a fertilizer that causes mild mutations with each harvest."
-	list_reagents = list(/datum/reagent/plantnutriment/eznutriment = 50)
+	list_reagents = list(/datum/reagent/plantnutriment/eznutriment = 80)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/l4z
-	name = "bottle of Left 4 Zed"
+	name = "jug of Left 4 Zed"
+	icon_state = "plastic_jug_l4z"
+	item_state = "pjugl4z"
+	disp_icon = "disp_pjug_l4z"
+	lid_state = TRUE	
 	desc = "Contains a fertilizer that limits plant yields to no more than one and causes significant mutations in plants."
-	list_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 50)
+	list_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 80)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/rh
-	name = "bottle of Robust Harvest"
+	name = "jug of Robust Harvest"
+	icon_state = "plastic_jug_rh"
+	item_state = "pjugrh"	
+	disp_icon = "disp_pjug_rh"	
+	lid_state = TRUE	
 	desc = "Contains a fertilizer that increases the yield of a plant by 30% while causing no mutations."
-	list_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 50)
+	list_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 80)
 
 /obj/item/reagent_containers/glass/bottle/nutrient/empty
-	name = "bottle"
+	name = "plastic jug"
 
 /obj/item/reagent_containers/glass/bottle/killer
 	volume = 50

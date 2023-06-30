@@ -12,7 +12,7 @@
 
 /datum/orbit_menu/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
-	if (!ui)
+	if(!ui)
 		ui = new(user, src, "Orbit")
 		ui.open()
 
@@ -21,10 +21,10 @@
 	if(.)
 		return
 	switch(action)
-		if ("orbit")
+		if("orbit")
 			var/ref = params["ref"]
 			var/atom/movable/poi = (locate(ref) in GLOB.mob_list) || (locate(ref) in GLOB.poi_list)
-			if (poi == null)
+			if(poi == null)
 				. = TRUE
 				return
 			owner.ManualFollow(poi)
@@ -32,12 +32,12 @@
 			if (auto_observe)
 				owner.do_observe(poi)
 			. = TRUE
-		if ("refresh")
+		if("refresh")
 			update_static_data(owner, ui)
 			. = TRUE
-		if ("toggle_observe")
+		if("toggle_observe")
 			auto_observe = !auto_observe
-			if (auto_observe && owner.orbit_target)
+			if(auto_observe && owner.orbit_target)
 				owner.do_observe(owner.orbit_target)
 			else
 				owner.reset_perspective(null)
@@ -49,7 +49,6 @@
 
 /datum/orbit_menu/ui_static_data(mob/user)
 	var/list/data = list()
-
 	var/list/alive = list()
 	var/list/antagonists = list()
 	var/list/dead = list()
@@ -58,7 +57,7 @@
 	var/list/npcs = list()
 
 	var/list/pois = getpois(skip_mindless = TRUE, specify_dead_role = FALSE)
-	for (var/name in pois)
+	for(var/name in pois)
 		var/list/serialized = list()
 		serialized["name"] = name
 
@@ -66,35 +65,50 @@
 
 		serialized["ref"] = REF(poi)
 
-		var/mob/M = poi
-		if (istype(M))
-			if (isobserver(M))
-				var/number_of_orbiters = length(M.get_all_orbiters())
-				if (number_of_orbiters)
-					serialized["orbiters"] = number_of_orbiters
-				ghosts += list(serialized)
-			else if (M.stat == DEAD)
-				dead += list(serialized)
-			else if (M.mind == null)
-				npcs += list(serialized)
-			else
-				var/number_of_orbiters = length(M.get_all_orbiters())
-				if (number_of_orbiters)
-					serialized["orbiters"] = number_of_orbiters
+		var/mob/mob_poi = poi
 
-				var/datum/mind/mind = M.mind
-				var/was_antagonist = FALSE
+		if(!istype(mob_poi))
+			misc += list(serialized)
+			continue
+		if(isobserver(mob_poi))
+			ghosts += list(serialized)
+			continue
+		if(mob_poi.stat == DEAD)
+			dead += list(serialized)
+			continue
+		if(mob_poi.mind == null)
+			npcs += list(serialized)
+			continue
 
-				for (var/_A in mind.antag_datums)
-					var/datum/antagonist/A = _A
-					if (A.show_to_ghosts)
-						was_antagonist = TRUE
-						serialized["antag"] = A.name
-						antagonists += list(serialized)
-						break
+		var/number_of_orbiters = length(mob_poi.get_all_orbiters())
+		if(number_of_orbiters)
+			serialized["orbiters"] = number_of_orbiters
 
-				if (!was_antagonist)
-					alive += list(serialized)
+		var/datum/mind/mind = mob_poi.mind
+		var/obj/item/card/id/identification_card = mob_poi.get_idcard()
+		if(identification_card)
+			serialized["role_icon"] = "hud[ckey(identification_card.GetJobName())]"
+
+		var/was_antagonist = FALSE
+		for(var/_A in mind.antag_datums)
+			var/datum/antagonist/A = _A
+			if(A.show_to_ghosts)
+				was_antagonist = TRUE
+				var/datum/team/antag_team = A.get_team()
+				if(antag_team)
+					serialized["antag"] = antag_team.get_team_name()
+				else
+					serialized["antag"] = A.get_antag_name()
+				if(A.antag_hud_name)
+					serialized["antag_icon"] = A.antag_hud_name
+				antagonists += list(serialized)
+			else if((user.client.combo_hud_enabled) && A.antag_hud_name)
+				serialized["antag_icon"] = A.antag_hud_name
+				antagonists += list(serialized)
+				break
+
+		if(!was_antagonist)
+			alive += list(serialized)
 		else
 			misc += list(serialized)
 
@@ -109,4 +123,28 @@
 /datum/orbit_menu/ui_assets()
 	. = ..() || list()
 	. += get_asset_datum(/datum/asset/simple/orbit)
+	. += get_asset_datum(/datum/asset/spritesheet/job_icons)
+	. += get_asset_datum(/datum/asset/spritesheet/antag_hud)
 
+/datum/asset/spritesheet/job_icons
+	name = "job-icon"
+
+/datum/asset/spritesheet/antag_hud
+	name = "antag-hud"
+
+
+/datum/asset/spritesheet/job_icons/create_spritesheets()
+	var/icon/I = icon('yogstation/icons/mob/hud.dmi')
+	// Get the job hud part
+	I.Crop(1, 25, 8, 32)
+	// Scale it up
+	I.Scale(16, 16)
+	InsertAll("job-icon", I)
+
+/datum/asset/spritesheet/antag_hud/create_spritesheets()
+	var/icon/I = icon('yogstation/icons/mob/antag_hud.dmi')
+	// Get the antag hud part
+	I.Crop(25, 17, 32, 24)
+	// Scale it up
+	I.Scale(16, 16)
+	InsertAll("antag-hud", I)

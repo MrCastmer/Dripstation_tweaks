@@ -8,6 +8,7 @@
 	name = "glass bottle"
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
 	icon_state = "glassbottle"
+	disp_icon = "disp_bottle"
 	custom_price = 65
 	amount_per_transfer_from_this = 10
 	volume = 100

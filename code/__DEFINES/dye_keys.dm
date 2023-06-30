@@ -31,3 +31,5 @@
 #define DYE_MAGI "magistrate"
 #define DYE_NTREP "ntrep"
 #define DYE_WARD "ward"
+#define DYE_SYNDI "tactifool"
+#define DYE_CENT "centcom"

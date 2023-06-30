@@ -3,8 +3,8 @@
 	desc = "A decorative drape over the shoulders. This one has a simple, dry color."
 	icon = 'dripstation/icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/neck.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/clothing_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/clothing_righthand.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	icon_state = "mantle"
 
 /obj/item/clothing/neck/mantle/regal
