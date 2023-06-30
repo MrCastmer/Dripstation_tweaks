@@ -21,6 +21,7 @@
 	var/active_sound = null
 	var/toggle_cooldown = null
 	var/cooldown = 0
+	var/list/species_restricted = null //Only these species can wear this kit.
 
 	var/blocks_shove_knockdown = FALSE //Whether wearing the clothing item blocks the ability for shove to knock down.
 
@@ -70,6 +71,40 @@
 		var/atom/movable/screen/inventory/hand/H = over_object
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index))
 			add_fingerprint(usr)
+
+//BS12: Species-restricted clothing ID check. ID!!!
+/obj/item/clothing/mob_can_equip(M as mob, slot)
+
+	//if we can't equip the item anyway, don't bother with species_restricted (also cuts down on spam)
+	if(!..())
+		return 0
+
+	// Skip species restriction checks on non-equipment slots
+	if(slot in list(slot_r_hand, slot_l_hand, slot_in_backpack, slot_l_store, slot_r_store))
+		return 1
+
+	if(species_restricted && istype(M,/mob/living/carbon/human))
+
+		var/wearable = null
+		var/exclusive = null
+		var/mob/living/carbon/human/H = M
+
+		if("exclude" in species_restricted)
+			exclusive = 1
+
+		if(H.dna.species)
+			if(exclusive)
+				if(!(H.dna.species.id in species_restricted))
+					wearable = 1
+			else
+				if(H.dna.species.id in species_restricted)
+					wearable = 1
+
+			if(!wearable)
+				to_chat(M, "<span class='warning'>Your species cannot wear [src].</span>")
+				return 0
+
+	return 1
 
 /obj/item/reagent_containers/food/snacks/clothing
 	name = "temporary moth clothing snack item"
