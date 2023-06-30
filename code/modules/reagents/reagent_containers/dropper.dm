@@ -7,6 +7,8 @@
 	possible_transfer_amounts = list(1, 2, 3, 4, 5)
 	volume = 5
 	reagent_flags = TRANSPARENT
+	drop_sound = 'dripstation/sound/drop/glass_small.ogg'
+	pickup_sound = 'dripstation/sound/pickup/glass_small.ogg'	
 
 /obj/item/reagent_containers/dropper/afterattack(obj/target, mob/user , proximity)
 	. = ..()

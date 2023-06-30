@@ -6,7 +6,13 @@
 	reagent_flags = OPENCONTAINER
 	spillable = TRUE
 	resistance_flags = ACID_PROOF
-
+	pickup_sound = 'dripstation/sound/pickup/bottle.ogg'
+	drop_sound = 'dripstation/sound/drop/bottle.ogg'
+	disp_icon = "disp_beaker"
+	var/list/writing_sounds = list('dripstation/sound/effects/pen1.ogg', 'dripstation/sound/effects/pen2.ogg', 'dripstation/sound/effects/pen3.ogg')
+	var/lid_state = FALSE
+	var/label_state = FALSE
+	var/label_text = ""
 
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
 	if(!canconsume(M, user))
@@ -32,6 +38,7 @@
 				log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
 				message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
 			reagents.reaction(M, TOUCH)
+			playsound(src.loc, 'sound/effects/water_emerge.ogg', 50, 1)
 			log_combat(user, M, "splashed", R)
 			reagents.clear_reagents()
 		else
@@ -48,7 +55,7 @@
 				to_chat(user, span_notice("You swallow a gulp of [src]."))
 			var/fraction = min(5/reagents.total_volume, 1)
 			reagents.reaction(M, INGEST, fraction)
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5), 5)
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 5), 5)
 			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
@@ -57,6 +64,8 @@
 		return
 
 	if(!spillable)
+		if(lid_state == TRUE)
+			to_chat(user, span_warning("The lid prevents you from doing that!"))
 		return
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
@@ -68,8 +77,13 @@
 			to_chat(user, span_warning("[target] is full."))
 			return
 
+		if(lid_state == TRUE)
+			to_chat(user, span_warning("[target] has a lid on it."))
+			return
+
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
+		playsound(src, pick('dripstation/sound/effects/pour1.ogg','dripstation/sound/effects/pour2.ogg'), 25, 1)
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
@@ -78,6 +92,10 @@
 
 		if(reagents.holder_full())
 			to_chat(user, span_warning("[src] is full."))
+			return
+		
+		if(lid_state == TRUE)
+			to_chat(user, span_warning("[src] has a lid on it."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
@@ -106,8 +124,42 @@
 				E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
 				qdel(E)
 			return
+	add_fingerprint(user)			
+	if(istype(I, /obj/item/pen)) // making labels
+		var/tmp_label = sanitize(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
+		if(length(tmp_label) > 15)
+			to_chat(user, "<span class='notice'>The label can be at most 15 characters long.</span>")
+		if(!user.canUseTopic(src, BE_CLOSE))
+			return
+		if(!user.is_literate())
+			to_chat(user, span_notice("You scribble illegibly on the label of [src]!"))
+			return						
+		else
+			to_chat(user, "<span class='notice'>You set the label to \"[tmp_label]\".</span>")
+			label_text = tmp_label
+			label_state = TRUE
+			update_name_label()
+			update_icon()
+		return			
 	..()
 
+/obj/item/reagent_containers/glass/proc/update_name_label(var/base_name = initial(name))
+	if(label_text == "")
+		name = base_name
+		label_state = FALSE
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 50, 1)
+	else
+		name = "[base_name] ([label_text])"
+		playsound (src.loc, pick(writing_sounds), 30, TRUE)
+
+/obj/item/reagent_containers/glass/examine()
+	. = ..()
+	if(lid_state == TRUE)
+		. += span_notice("An airtight lid seals it completely.")
+	if(label_text == "")
+		. += span_notice("Use a pen to put a label on it.")
+
+	. += span_notice("Alt-click to change transfer amount.")
 
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"
@@ -115,10 +167,15 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beaker"
 	item_state = "beaker"
+	drop_sound = 'sound/items/handling/drinkglass_drop.ogg'
+	pickup_sound =  'sound/items/handling/drinkglass_pickup.ogg'
 	materials = list(/datum/material/glass=500)
 
 /obj/item/reagent_containers/glass/beaker/Initialize()
 	. = ..()
+	if(lid_state == TRUE)
+		reagents.flags ^= OPENCONTAINER | REFILLABLE | DRAINABLE 
+		spillable = FALSE	
 	update_icon()
 
 /obj/item/reagent_containers/glass/beaker/get_part_rating()
@@ -153,6 +210,41 @@
 		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		add_overlay(filling)
 
+	if(lid_state == TRUE)
+		var/lid_icon = "lid_[icon_state]"
+		var/mutable_appearance/lid = mutable_appearance(icon, lid_icon)
+		add_overlay(lid)
+
+	if(label_state == TRUE)
+		var/label_icon = "label_[icon_state]"
+		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
+		add_overlay(label)
+
+/obj/item/reagent_containers/glass/attack_self()
+	if(lid_state == FALSE)
+		to_chat(usr, "<span class = 'notice'>You put the lid on \the [src].</span>")
+		reagents.flags ^= OPENCONTAINER | REFILLABLE | DRAINABLE 
+		spillable = FALSE
+		lid_state = TRUE
+	else
+		to_chat(usr, "<span class = 'notice'>You take the lid off \the [src].</span>")
+		reagents.flags |= OPENCONTAINER | REFILLABLE | DRAINABLE
+		spillable = TRUE
+		lid_state = FALSE
+	update_icon()
+
+/obj/item/reagent_containers/glass/verb/set_APTFT() //set amount_per_transfer_from_this
+	set name = "Set transfer amount"
+	set category = "Object"
+	set src in range(0)
+	var/N = input("Amount per transfer from this:","[src]") as null|anything in possible_transfer_amounts
+	amount_per_transfer_from_this = N
+	if(N)
+		balloon_or_message(usr, "Transferring [amount_per_transfer_from_this]u")
+
+/obj/item/reagent_containers/glass/AltClick(var/mob/user)
+	set_APTFT()
+
 /obj/item/reagent_containers/glass/beaker/jar
 	name = "honey jar"
 	desc = "A jar for honey. It can hold up to 50 units of sweet delight."
@@ -172,6 +264,9 @@
 	name = "x-large beaker"
 	desc = "An extra-large beaker. Can hold up to 120 units."
 	icon_state = "beakerwhite"
+	item_state = "beakerwhite"
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'	
 	materials = list(/datum/material/glass=2500, /datum/material/plastic=3000)
 	volume = 120
 	amount_per_transfer_from_this = 10
@@ -186,6 +281,10 @@
 	name = "metamaterial beaker"
 	desc = "A large beaker. Can hold up to 180 units."
 	icon_state = "beakergold"
+	disp_icon = "disp_goldbeaker"
+	item_state = "beakergold"
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'
 	materials = list(/datum/material/glass=2500, /datum/material/plastic=3000, /datum/material/gold=1000, /datum/material/titanium=1000)
 	volume = 180
 	amount_per_transfer_from_this = 10
@@ -195,7 +294,11 @@
 	name = "cryostasis beaker"
 	desc = "A cryostasis beaker that allows for chemical storage without \
 		reactions. Can hold up to 50 units."
-	icon_state = "beakernoreact"
+	icon_state = "beakernoreact"	
+	disp_icon = "disp_noreactbeaker"
+	item_state = "beaker_noreact"
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'	
 	materials = list(/datum/material/iron=3000)
 	reagent_flags = OPENCONTAINER | NO_REACT
 	volume = 50
@@ -207,41 +310,59 @@
 		and Element Cuban combined with the Compound Pete. Can hold up to \
 		300 units."
 	icon_state = "beakerbluespace"
+	item_state = "beaker_bluespace"
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'	
+	disp_icon = "disp_bluespace_beaker"
 	materials = list(/datum/material/glass = 5000, /datum/material/plasma = 3000, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
 	volume = 300
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300)
 
 /obj/item/reagent_containers/glass/beaker/cryoxadone
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/medicine/cryoxadone = 30)
 
 /obj/item/reagent_containers/glass/beaker/sulphuric
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/toxin/acid = 50)
 
 /obj/item/reagent_containers/glass/beaker/slime
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/toxin/slimejelly = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/styptic
 	name = "styptic reserve tank"
+	lid_state = TRUE
+	label_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/styptic_powder = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/silver_sulfadiazine
 	name = "silver sulfadiazine reserve tank"
+	lid_state = TRUE
+	label_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/charcoal
 	name = "charcoal reserve tank"
+	lid_state = TRUE
+	label_state = TRUE	
 	list_reagents = list(/datum/reagent/medicine/charcoal = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/epinephrine
 	name = "epinephrine reserve tank"
+	lid_state = TRUE
+	label_state = TRUE
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 50)
 
 /obj/item/reagent_containers/glass/beaker/synthflesh
+	lid_state = TRUE
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
 
 /obj/item/reagent_containers/glass/beaker/large/lemoline
 	name = "lemoline reserve tank"
+	lid_state = TRUE
+	label_state = TRUE
 	list_reagents = list(/datum/reagent/lemoline = 100)
 
 /obj/item/reagent_containers/glass/bucket
@@ -250,8 +371,11 @@
 	icon = 'yogstation/icons/obj/janitor.dmi' //yogs - wasnt documented
 	icon_state = "bucket"
 	item_state = "bucket"
-	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
+	disp_icon = "disp_bucket"	
+	lefthand_file = 'dripstation/icons/mob/inhands/chemistry_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/chemistry_righthand.dmi'
+	drop_sound = 'dripstation/sound/drop/helm.ogg'
+	pickup_sound = 'dripstation/sound/pickup/helm.ogg'	
 	materials = list(/datum/material/iron=200)
 	w_class = WEIGHT_CLASS_NORMAL
 	amount_per_transfer_from_this = 20
@@ -260,23 +384,38 @@
 	flags_inv = HIDEHAIR
 	slot_flags = ITEM_SLOT_HEAD
 	resistance_flags = NONE
+	label_text = null
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 75, ACID = 50) //Weak melee protection, because you can wear it on your head
 	slot_equipment_priority = list( \
-		SLOT_BACK, SLOT_WEAR_ID,\
+		SLOT_BACK, SLOT_WEAR_ID, SLOT_WEAR_PDA,\
 		SLOT_W_UNIFORM, SLOT_WEAR_SUIT,\
 		SLOT_WEAR_MASK, SLOT_HEAD, SLOT_NECK,\
 		SLOT_SHOES, SLOT_GLOVES,\
 		SLOT_EARS, SLOT_GLASSES,\
-		SLOT_BELT, SLOT_S_STORE,\
+		SLOT_BELT, SLOT_SUIT_STORE,\
 		SLOT_L_STORE, SLOT_R_STORE,\
 		SLOT_GENERC_DEXTROUS_STORAGE
 	)
+
+/obj/item/reagent_containers/glass/bucket/update_icon()
+	cut_overlays()
+	if(reagents.total_volume > 0)
+		add_overlay("water_[initial(icon_state)]")
+	if(lid_state == TRUE)
+		add_overlay("lid_[initial(icon_state)]")
+
+/obj/item/reagent_containers/glass/bucket/on_reagent_change()
+	. = ..()
+	update_icon()
 
 /obj/item/reagent_containers/glass/bucket/wooden
 	name = "wooden bucket"
 	icon_state = "woodbucket"
 	item_state = "woodbucket"
+	disp_icon = "disp_wbucket"
 	materials = null
+	drop_sound = 'dripstation/sound/drop/wooden.ogg'
+	pickup_sound = 'dripstation/sound/pickup/wooden.ogg'
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 50)
 	resistance_flags = FLAMMABLE
 
@@ -288,6 +427,8 @@
 			reagents.trans_to(O, 5, transfered_by = user)
 			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+	if(istype(O, /obj/item/pen))
+		return			
 	else if(isprox(O)) //This works with wooden buckets for now. Somewhat unintended, but maybe someone will add sprites for it soon(TM)
 		to_chat(user, span_notice("You add [O] to [src]."))
 		qdel(O)
@@ -324,6 +465,7 @@
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
+	disp_icon = "disp_bottle"
 	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
 	materials = list(/datum/material/glass=0)
 	volume = 50
@@ -457,6 +599,8 @@
 	possible_transfer_amounts = list(30)
 	volume = 30
 	materials = list(/datum/material/iron=0) // No free mats for you, chap
+	pickup_sound = 'dripstation/sound/pickup/bottle.ogg'
+	drop_sound = 'dripstation/sound/drop/bottle.ogg'	
 	var/spilled = FALSE // Is it currently spilled?
 	var/locked = FALSE // Is it currently locked shut?
 

@@ -98,8 +98,8 @@
 /obj/item/clothing/glasses/hud/personnel
 	icon = 'dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/eyes.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/glasses_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/glasses_righthand.dmi'	
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_righthand.dmi'	
 	icon_state = "sunhudskill"
 	item_state = "sunhudskill"
 
@@ -145,6 +145,24 @@
 	icon_state = "capjacket"
 	body_parts_covered = CHEST|ARMS
 
+/obj/item/clothing/shoes/laceup/brown
+	name = "brown laceup shoes"
+	icon_state = "oxford_brown"
+	item_state = "oxford_brown"
+	icon = 'dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'	
+
+/obj/item/clothing/shoes/laceup/grey
+	name = "grey laceup shoes"
+	icon_state = "oxford_grey"
+	item_state = "oxford_grey"
+	icon = 'dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'	
+
 /obj/item/clothing/gloves/color/captain
 	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
 
@@ -164,6 +182,41 @@
 /obj/item/clothing/head/caphat/parade
 	icon = 'icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
+
+/obj/item/clothing/head/bearpelt
+	name = "spare bear pelt"
+	desc = "It shimmers in the light"
+	icon_state = "sparebearpelt"
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'	
+
+/obj/item/clothing/mask/gas/captain
+	name = "captain's gas mask"
+	desc = "Nanotrasen cut corners and repainted a spare gas mask, but don't tell anyone."
+	icon_state = "gas_cap"
+	icon = 'dripstation/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/masks.dmi'
+	armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 0, BIO = 50, FIRE = 20, ACID = 10)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/head/helmet/space/hardsuit/swat/captain
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
+	icon = 'dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "capspace0"
+	basestate = "capspace"
+	actions_types = list(/datum/action/item_action/toggle_helmet)
+
+/obj/item/clothing/head/helmet/space/hardsuit/swat/captain/attack_self(mob/user)
+	on = !on
+	icon_state = "[basestate][on]"
+	user.update_inv_head()	//so our mob-overlays update
+
+	set_light_on(on)
+
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.build_all_button_icons()
 
 /obj/item/melee/sabre
 	name = "captain's rapier"

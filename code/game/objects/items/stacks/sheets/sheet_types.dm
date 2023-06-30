@@ -203,6 +203,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("baseball bat", /obj/item/twohanded/required/baseball_bat, 10, time = 15),\
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("coffin", /obj/structure/closet/crate/coffin, 5, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("coatrack", /obj/structure/coatrack, 2, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dog bed", /obj/structure/bed/dogbed, 10, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
@@ -276,35 +277,30 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	return ..()
 
 /obj/item/stack/sheet/mineral/wood/attackby(obj/item/item, mob/user, params)
-	if(item.get_sharpness())
-		user.visible_message(
-			span_notice("[user] begins whittling [src] into a pointy object."),
-			span_notice("You begin whittling [src] into a sharp point at one end."),
-			span_hear("You hear wood carving."),
-		)
-		// 5 Second Timer
-		if(!do_after(user, 5 SECONDS, src))
-			return
-		// Make Stake
-		var/obj/item/stake/new_item = new(user.loc)
-		user.visible_message(
-			span_notice("[user] finishes carving a stake out of [src]."),
-			span_notice("You finish carving a stake out of [src]."),
-		)
-		// Prepare to Put in Hands (if holding wood)
-		var/obj/item/stack/sheet/mineral/wood/wood_stack = src
-		var/replace = (user.get_inactive_held_item() == wood_stack)
-		// Use Wood
-		wood_stack.use(1)
-		// If stack depleted, put item in that hand (if it had one)
-		if(!wood_stack && replace)
-			user.put_in_hands(new_item)
-	if(istype(item, merge_type))
-		var/obj/item/stack/merged_stack = item
-		if(merge(merged_stack))
-			to_chat(user, span_notice("Your [merged_stack.name] stack now contains [merged_stack.get_amount()] [merged_stack.singular_name]\s."))
+	if(!item.get_sharpness())
+		return ..()
+	user.visible_message(
+		span_notice("[user] begins whittling [src] into a pointy object."),
+		span_notice("You begin whittling [src] into a sharp point at one end."),
+		span_hear("You hear wood carving."),
+	)
+	// 5 Second Timer
+	if(!do_after(user, 5 SECONDS, src, NONE, TRUE))
 		return
-	return ..()
+	// Make Stake
+	var/obj/item/stake/new_item = new(user.loc)
+	user.visible_message(
+		span_notice("[user] finishes carving a stake out of [src]."),
+		span_notice("You finish carving a stake out of [src]."),
+	)
+	// Prepare to Put in Hands (if holding wood)
+	var/obj/item/stack/sheet/mineral/wood/wood_stack = src
+	var/replace = (user.get_inactive_held_item() == wood_stack)
+	// Use Wood
+	wood_stack.use(1)
+	// If stack depleted, put item in that hand (if it had one)
+	if(!wood_stack && replace)
+		user.put_in_hands(new_item)
 
 /obj/item/stack/sheet/mineral/wood/fifty
 	amount = 50

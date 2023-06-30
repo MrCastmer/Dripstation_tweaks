@@ -45,6 +45,7 @@
 	default_price = 25
 	extra_price = 100
 	payment_department = ACCOUNT_MED
+	req_access = list(ACCESS_MEDICAL)
 	light_mask = "med-light-mask"	
 
 /obj/item/vending_refill/medical

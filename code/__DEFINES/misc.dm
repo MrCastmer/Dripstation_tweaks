@@ -11,14 +11,15 @@
 
 
 //Human Overlays Indexes/////////
-#define MUTATIONS_LAYER			28		//mutations. Tk headglows, cold resistance glow, etc
-#define BODY_BEHIND_LAYER		27		//certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LAYER			26		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER			25		//certain mutantrace features (snout, body markings) that must appear above the body parts
-#define BODY_LAYER				24		//underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER	23		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER			22		//damage indicators (cuts and burns)
-#define UNIFORM_LAYER			21
+#define MUTATIONS_LAYER			29		//mutations. Tk headglows, cold resistance glow, etc
+#define BODY_BEHIND_LAYER		28		//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LAYER			27		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define BODY_ADJ_LAYER			26		//certain mutantrace features (snout, body markings) that must appear above the body parts
+#define BODY_LAYER				25		//underwear, undershirts, socks, eyes, lips(makeup)
+#define FRONT_MUTATIONS_LAYER	24		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER			23		//damage indicators (cuts and burns)
+#define UNIFORM_LAYER			22
+#define PDA_LAYER				21
 #define ID_LAYER				20 //lmao at the idiot who put both ids and hands on the same layer
 #define HANDS_PART_LAYER		19
 #define GLOVES_LAYER			18
@@ -31,15 +32,15 @@
 #define BACK_LAYER				11
 #define NECK_LAYER				10
 #define HAIR_LAYER				9		//TODO: make part of head layer?
-#define FACEMASK_LAYER			8
-#define HEAD_LAYER				7
-#define HANDCUFF_LAYER			6
-#define LEGCUFF_LAYER			5
-#define HANDS_LAYER				4
-#define BODY_FRONT_LAYER		3
+#define HANDCUFF_LAYER			8
+#define LEGCUFF_LAYER			7
+#define HANDS_LAYER				6
+#define BODY_FRONT_LAYER		5
+#define FACEMASK_LAYER			4
+#define HEAD_LAYER				3
 #define HALO_LAYER				2		//blood cult ascended halo, because there's currently no better solution for adding/removing
 #define FIRE_LAYER				1		//If you're on fire
-#define TOTAL_LAYERS			28		//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define TOTAL_LAYERS			29		//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"
@@ -355,11 +356,6 @@ GLOBAL_LIST_INIT(donor_pdas, list(PDA_COLOR_NORMAL, PDA_COLOR_TRANSPARENT, PDA_C
 #define BEAT_SLOW 2
 #define BEAT_NONE 0
 
-//https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
-#define MOUSE_OPACITY_TRANSPARENT 0
-#define MOUSE_OPACITY_ICON 1
-#define MOUSE_OPACITY_OPAQUE 2
-
 //world/proc/shelleo
 #define SHELLEO_ERRORLEVEL 1
 #define SHELLEO_STDOUT 2
@@ -400,13 +396,23 @@ GLOBAL_LIST_INIT(donor_pdas, list(PDA_COLOR_NORMAL, PDA_COLOR_TRANSPARENT, PDA_C
 #define STACK_CHECK_ADJACENT "adjacent" //checks if there is an object of the result type within one tile
 
 //text files
+/// File location for brain damage traumas
 #define BRAIN_DAMAGE_FILE "traumas.json"
+/// File location for AI ion laws
 #define ION_FILE "ion_laws.json"
+/// File location for pirate names
 #define PIRATE_NAMES_FILE "pirates.json"
+/// File location for redpill questions
 #define REDPILL_FILE "redpill.json"
+/// File location for wanted posters messages
 #define WANTED_FILE "wanted_message.json"
+/// File location for really dumb suggestions memes
+#define VISTA_FILE "steve.json"
+/// File location for flesh wound descriptions
 #define FLESH_SCAR_FILE "wounds/flesh_scar_desc.json"
+/// File location for bone wound descriptions
 #define BONE_SCAR_FILE "wounds/bone_scar_desc.json"
+/// File location for scar wound descriptions
 #define SCAR_LOC_FILE "wounds/scar_loc.json"
 
 //Fullscreen overlay resolution in tiles.
@@ -449,6 +455,9 @@ GLOBAL_LIST_INIT(donor_pdas, list(PDA_COLOR_NORMAL, PDA_COLOR_TRANSPARENT, PDA_C
 #define CAMERA_SEE_GHOSTS_ORBIT 2
 
 #define CLIENT_FROM_VAR(I) (ismob(I) ? I:client : (istype(I, /client) ? I : (istype(I, /datum/mind) ? I:current?:client : null)))
+
+/// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
+#define NO_BUCKLE_LYING -1
 
 #define AREASELECT_CORNERA "corner A"
 #define AREASELECT_CORNERB "corner B"

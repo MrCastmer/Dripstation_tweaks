@@ -34,12 +34,25 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/clothing/gloves/sec_maga(src)
+	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
 	new /obj/item/clipboard/yog/paperwork/warden(src)
 	new /obj/item/radio/security(src)
 	new /obj/item/storage/bag/garment/warden(src)
+
+// ###### SEC OFFICER ######
+/obj/structure/closet/secure_closet/security/PopulateContents()
+	..()
+	new /obj/item/clothing/suit/armor/vest/alt(src)
+	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/radio/headset/headset_sec(src)
+	new /obj/item/radio/headset/headset_sec/alt(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/radio/security(src)
+	new /obj/item/clipboard/yog/paperwork/security(src)
+	new /obj/item/barrier_taperoll/police(src)
 
 // ###### HOP ######
 /obj/structure/closet/secure_closet/hop/PopulateContents()
@@ -101,3 +114,135 @@
 	new /obj/item/clipboard/yog/paperwork/rd(src)
 	new /obj/item/storage/bag/garment/research_director(src)
 	new /obj/item/analyzer/ranged(src)
+
+// ###### MIME ######
+/obj/structure/closet/secure_closet/mime
+	name = "mime's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_MIME)
+	icon_state = "mime"
+
+/obj/structure/closet/secure_closet/mime/PopulateContents()
+	new /obj/item/cane(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/wine(src)
+	new /obj/item/reagent_containers/food/snacks/baguette(src)
+	new /obj/item/cartridge/virus/mime(src)
+	new /obj/item/instrument/violin(src)
+	// new /obj/item/food/grown/rose(src)
+	new /obj/item/radio/headset/headset_srv(src)
+	// new /obj/item/perfume/rose(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing(src)
+	new /obj/item/toy/crayon/spraycan/mimecan(src)
+	new /obj/item/storage/crayons(src)
+	new /obj/item/instrument/accordion(src)
+	// new /obj/item/clothing/suit/hooded/wintercoat/mime(src)
+	..()
+
+// ###### CLOWN ######
+/obj/structure/closet/secure_closet/clown
+	name = "clown's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_CLOWN)
+	icon_state = "clown"
+
+/obj/structure/closet/secure_closet/clown/PopulateContents()
+	new /obj/item/seeds/banana(src)
+	// new /obj/item/reagent_containers/food/drinks/bottle/bananajug(src)
+	new /obj/item/bikehorn(src)
+	new /obj/item/radio/headset/headset_srv(src)
+	new /obj/item/instrument/bikehorn(src)
+	new /obj/item/reagent_containers/spray/waterflower(src)
+	new /obj/item/megaphone/clown(src)
+	new /obj/item/storage/box/donkpockets/donkpockethonk(src)
+	new /obj/item/pneumatic_cannon/pie(src)
+	new /obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter(src)
+	new /obj/item/storage/crayons(src)
+	// new /obj/item/clothing/suit/hooded/wintercoat/clown(src)
+	..()
+
+// ###### MEDICAL DOCTOR ######
+/obj/structure/closet/secure_closet/medical3
+	icon = 'dripstation/icons/obj/closet.dmi'
+
+// ###### BRIG PHYSICIAN ######
+/obj/structure/closet/secure_closet/physician
+	icon = 'dripstation/icons/obj/closet.dmi'
+	icon_state = "brigphys"
+
+// ###### BRIG PHYSICIAN ######
+/obj/structure/closet/secure_closet/physician
+	icon = 'dripstation/icons/obj/closet.dmi'
+	icon_state = "brigphys"
+
+// ###### CHAPLAIN ######
+/obj/structure/closet/secure_closet/chaplain
+	name = "chaplain's locker"
+	desc = "A lockable storage unit for Nanotrasen-approved religious attire."
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_CHAPEL_OFFICE)
+	icon_state = "chaplain"
+
+/obj/structure/closet/secure_closet/chaplain/PopulateContents()
+	new /obj/item/choice_beacon/holy(src)
+	new /obj/item/clothing/accessory/pocketprotector/cosmetology(src)
+	new /obj/item/clothing/under/rank/chaplain(src)
+	new /obj/item/clothing/shoes/sneakers/black(src)
+	new /obj/item/clothing/suit/chaplainsuit/nun(src)
+	new /obj/item/clothing/head/nun_hood(src)
+	new /obj/item/clothing/suit/chaplainsuit/holidaypriest(src)
+	new /obj/item/storage/backpack/cultpack(src)
+	new /obj/item/storage/box/fancy/candle_box(src)
+	new /obj/item/storage/box/fancy/candle_box(src)
+
+// ###### POD PILOT ######
+/obj/structure/closet/secure_closet/pod_pilot
+	name = "pod pilot's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_POD_PILOT)
+	icon_state = "pod_pilot"
+
+/obj/structure/closet/secure_closet/pod_pilot/PopulateContents()
+	new /obj/item/clothing/suit/toggle/bomber/secbomber(src)
+	new /obj/item/clothing/head/beret/corpsec(src)
+	new /obj/item/radio/headset/headset_sec(src)
+	new /obj/item/radio/headset/headset_sec/alt(src)
+	new /obj/item/storage/belt/security/full(src)
+	new /obj/item/storage/firstaid/emergency(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/spacepod_key/sec(src)
+	new /obj/item/spacepod_equipment/weaponry/laser(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/radio/security(src)
+	new /obj/item/barrier_taperoll/police(src)
+	new /obj/item/bodybag/environmental/prisoner(src)
+	new /obj/item/bodybag/environmental/prisoner(src)
+
+// ###### HAZARD TECHNICIAN ######
+/obj/structure/closet/secure_closet/hazard_tech
+	name = "hazard technician's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_HAZARD_TECH)
+	icon_state = "haz_secure"
+
+// ###### BLUESHIELD ######
+/obj/structure/closet/secure_closet/blueshield
+	name = "blueshield's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_BLUESHIELD)
+	icon_state = "bs"
+
+// ###### NT REPRESENTATIVE ######
+/obj/structure/closet/secure_closet/ntrep
+	name = "\improper Nanotrasen Representative's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_NTREP)
+	icon_state = "cc"
+
+// ###### MAGISTRATE ######
+/obj/structure/closet/secure_closet/magistrate
+	name = "\improper Magistrate's locker"
+	icon = 'dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_MAGISTRATE)
+	icon_state = "cc"
+
+

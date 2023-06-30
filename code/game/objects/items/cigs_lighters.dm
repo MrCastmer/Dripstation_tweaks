@@ -75,7 +75,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/match/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(!isliving(M))
 		return
-	if(lit && M.IgniteMob())
+	if(lit && M.ignite_mob())
 		message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(M)] on fire with [src] at [AREACOORD(user)]")
 		log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
@@ -157,6 +157,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			light(lighting_text)
 	else
 		return ..()
+
+/obj/item/clothing/mask/cigarette/attack_hand(mob/user)
+	if(!lit && isethereal(user) && user.a_intent == INTENT_HARM)
+		light("With a snap of [user.p_their()] fingers, [user] lights [src].")
+		return
+	. = ..()
+	
 
 /obj/item/clothing/mask/cigarette/afterattack(obj/item/reagent_containers/glass/glass, mob/user, proximity)
 	. = ..()
@@ -255,7 +262,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/turf/location = get_turf(src)
 	var/mob/living/M = loc
 	if(isliving(loc))
-		M.IgniteMob()
+		M.ignite_mob()
 	smoketime -= delta_time
 	if(smoketime <= 0)
 		new type_butt(location)
@@ -766,7 +773,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		. = ..()
 
 /obj/item/lighter/attack(mob/living/carbon/M, mob/living/carbon/user)
-	if(lit && M.IgniteMob())
+	if(lit && M.ignite_mob())
 		message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(M)] on fire with [src] at [AREACOORD(user)]")
 		log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
@@ -991,7 +998,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				if(reagents.get_reagent_amount(/datum/reagent/fuel))
 					//HOT STUFF
 					C.fire_stacks = 2
-					C.IgniteMob()
+					C.ignite_mob()
 
 				if(reagents.get_reagent_amount(/datum/reagent/toxin/plasma)) // the plasma explodes when exposed to fire
 					var/datum/effect_system/reagents_explosion/e = new()
@@ -1017,7 +1024,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/mob/living/M = loc
 
 	if(isliving(loc))
-		M.IgniteMob()
+		M.ignite_mob()
 
 	vapetime += delta_time
 

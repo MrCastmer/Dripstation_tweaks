@@ -27,6 +27,7 @@
 	refill_canister = /obj/item/vending_refill/dinnerware
 	default_price = 5
 	extra_price = 50
+	req_access = list(ACCESS_KITCHEN)
 	payment_department = ACCOUNT_SRV
 	light_mask = "dinnerware-light-mask"	
 

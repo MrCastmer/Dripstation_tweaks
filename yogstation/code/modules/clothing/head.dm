@@ -189,7 +189,7 @@
 	name = "science beret"
 	desc = "A purple beret with the science insignia emblazoned on it. It has that authentic burning plasma smell."
 	// icon = 'yogstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
+	// mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
 	icon_state = "beret_sci"
 	armor = list(bomb = 5, bio = 5, fire = 5, acid = 10)
 	strip_delay = 60

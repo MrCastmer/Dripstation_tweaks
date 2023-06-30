@@ -63,6 +63,7 @@
 	refill_canister = /obj/item/vending_refill/hydroseeds
 	default_price = 10
 	extra_price = 50
+	req_access = list(ACCESS_HYDROPONICS)
 	payment_department = ACCOUNT_SRV
 	light_mask = "seeds-light-mask"	
 
