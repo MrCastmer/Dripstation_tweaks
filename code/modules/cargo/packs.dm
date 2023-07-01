@@ -241,7 +241,7 @@
 	name = "NULL_ENTRY"
 	desc = "(#@&^$THIS IS YOUR LOVELY PACKAGE THAT CONTAINS SOME RANDOM SYNDICATE STUFF. GIVE EM HELL, OPERATIVE@&!*()"
 	hidden = TRUE
-	cost = 10000
+	cost = 12000
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
@@ -255,6 +255,7 @@
 			new /obj/item/ammo_box/a762(C)
 		if(2)
 			new /obj/item/gun/ballistic/automatic/toy/pistol/riot(C)
+			new /obj/item/ammo_box/magazine/toy/pistol/riot(C)
 			new /obj/item/ammo_box/foambox/riot(C)
 		if(3)
 			new /obj/item/pen/edagger(C)
@@ -2692,7 +2693,7 @@
 					/obj/item/vending_refill/donksoft)
 	crate_name = "crate"
 
-/datum/supply_pack/costumes_toys/sindycigarets
+/datum/supply_pack/costumes_toys/sindycigarettes
 	name = "Unknown_Entry"
 	desc = "Contains one pack of unknown brand cigarettes. Extra badass."
 	cost = 700
