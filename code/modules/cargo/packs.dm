@@ -241,7 +241,7 @@
 	name = "NULL_ENTRY"
 	desc = "(#@&^$THIS IS YOUR LOVELY PACKAGE THAT CONTAINS SOME RANDOM SYNDICATE STUFF. GIVE EM HELL, OPERATIVE@&!*()"
 	hidden = TRUE
-	cost = 20000
+	cost = 10000
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
@@ -265,11 +265,11 @@
 					/obj/item/clothing/gloves/fingerless/bigboss,
 					/obj/item/storage/backpack/duffelbag/syndie,
 					/obj/item/storage/belt/chameleon/syndicate,
-					/obj/item/storage/box/syndie_kit/chameleon,
+					/obj/item/clothing/under/chameleon,
+					/obj/item/clothing/suit/chameleon,
 					/obj/item/flashlight/emp,
 					/obj/item/syndicateReverseCard,
-					/obj/item/multitool/ai_detect,
-					/obj/item/storage/box/syndie_kit/bugs,
+					/obj/item/camera_bug,
 					/obj/item/storage/toolbox/syndicate)
 		new item(C)
 		//Misk
@@ -282,7 +282,11 @@
 					/obj/item/stack/tape/guerrilla,
 					/obj/item/soap/syndie,
 					/obj/item/flashlight/lantern/syndicate,
-					/obj/item/camera_bug
+					/obj/item/storage/box/syndie_kit/bugs,
+					/obj/item/computer_hardware/hard_drive/portable/syndicate/ntnet_dos,
+					/obj/item/storage/box/syndie_kit/throwing_weapons,
+					/obj/item/multitool/ai_detect,
+					/obj/item/stamp/syndiround,
 					/obj/item/suppressor)
 		new item(C)
 
@@ -549,7 +553,6 @@
 	cost = 4000
 	contains = list(/obj/item/storage/lockbox/loyalty)
 	crate_name = "mindshield implant crate"
-
 
 /datum/supply_pack/security/armory/laserarmor
 	name = "Reflective Jacket Crate"
@@ -2688,6 +2691,14 @@
 					/obj/item/clothing/neck/necklace/dope,
 					/obj/item/vending_refill/donksoft)
 	crate_name = "crate"
+
+/datum/supply_pack/costumes_toys/sindycigarets
+	name = "Unknown_Entry"
+	desc = "Contains one pack of unknown brand cigarettes. Extra badass."
+	cost = 700
+	hidden = TRUE
+	small_item = TRUE
+	contains = list(/obj/item/storage/box/fancy/cigarettes/cigpack_syndicate)
 
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
