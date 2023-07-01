@@ -225,15 +225,21 @@
 
 /datum/supply_pack/emergency/specialops
 	name = "Special Ops Supplies"
-	desc = "(*!&@#TOO CHEAP FOR THAT NULL_ENTRY, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN STILL HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, AND A \"SLEEPY PEN\" FULL OF NICE TOXINS!#@*$"
+	desc = "(*!&@#TOO CHEAP FOR THAT NULL_ENTRY, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN STILL HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, A \"SLEEPY PEN\" FULL OF NICE TOXINS AND YOUR NEW GEAR!#@*$"
 	hidden = TRUE
-	cost = 2000
+	cost = 4000
 	contains = list(/obj/item/storage/box/emps,
 					/obj/item/grenade/smokebomb,
 					/obj/item/grenade/smokebomb,
 					/obj/item/grenade/smokebomb,
 					/obj/item/pen/sleepy,
-					/obj/item/grenade/chem_grenade/incendiary)
+					/obj/item/grenade/chem_grenade/incendiary,
+					/obj/item/clothing/glasses/night,
+					/obj/item/storage/belt/holster/syndicate,
+					/obj/item/clothing/mask/gas/syndicate,
+					/obj/item/clothing/under/syndicate/combat,
+					/obj/item/storage/toolbox/syndicate,
+					/obj/item/clothing/shoes/combat)
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
