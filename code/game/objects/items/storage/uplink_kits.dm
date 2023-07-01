@@ -25,7 +25,7 @@
 	name = initial(name)
 
 /obj/item/storage/box/syndicate/bundle_A/PopulateContents()
-	switch (pickweight(list("recon" = 2, "bloodyspai" = 3, "stealth" = 2, "guns" = 2, "murder" = 2, "implant" = 1, "hacker" = 3, "sabotage" = 3, "sniper" = 1, "metaops" = 1)))
+	switch (pickweight(list("recon" = 2, "bloodyspai" = 2, "stealth" = 2, "guns" = 2, "bond" = 2, "murder" = 2, "implant" = 2, "hacker" = 2, "sabotage" = 2, "sniper" = 1, "metaops" = 1)))
 		if("recon") //28ish TC
 			new /obj/item/clothing/glasses/thermal/xray(src) //Would argue 6 TC. Thermals are 4 TC but work on organic targets in darkness
 			new /obj/item/storage/briefcase/launchpad(src) //6 TC
@@ -73,7 +73,22 @@
 			new /obj/item/storage/belt/holster/syndicate(src) //A holster for your four guns. It could be 1 TC I guess, since the tactical webbing can't hold normal items?
 			new /obj/item/clothing/gloves/color/latex/nitrile(src) //Free?
 			new /obj/item/clothing/mask/gas/clown_hat(src) //Free?
-			new /obj/item/clothing/under/suit_jacket/really_black(src) //Free?
+			new /obj/item/clothing/under/syndicate/sniper(src) //Free?
+
+		if("bond") // 30TC + three 0TC 
+			new /obj/item/gun/ballistic/automatic/pistol(src) // 3TC
+			new /obj/item/suppressor(src) // 1TC
+			new /obj/item/ammo_box/magazine/m10mm/hp(src)  // 1TC
+			new /obj/item/ammo_box/magazine/m10mm/ap(src) // 1TC
+			new /obj/item/clothing/under/chameleon(src) //Free?
+			new /obj/item/clothing/suit/chameleon(src) //Free?
+			new /obj/item/storage/belt/military(src) //Free?
+			new /obj/item/card/id/syndicate(src) // 2TC
+			new /obj/item/encryptionkey/syndicate(src) // 2TC
+			new /obj/item/storage/box/syndie_kit/emp(src) // 2TC
+			new /obj/item/bodybag/environmental/prisoner/syndicate(src) // 2TC
+			new /obj/item/codespeak_manual/unlimited(src) // 3TC
+			new /obj/item/book/granter/martial/cqc(src) // 13TC
 
 		if("murder") //Total cost of 28 TC
 			new /obj/item/melee/transforming/energy/sword/saber(src) //8 TC
@@ -83,9 +98,9 @@
 			new /obj/item/encryptionkey/syndicate(src) //2 TC
 			new /obj/item/grenade/syndieminibomb(src) //6 TC
 
-		if("implant") //28 TC cost, then you get a spare 10 for a total of 38 TC (fair and balanced™)
+		if("implant") //31 TC cost (real fair and balanced™)
 			new /obj/item/implanter/freedom(src) //5 TC
-			new /obj/item/implanter/uplink/precharged(src) //4 TC + 10 to use
+			new /obj/item/implant/mindslave(src) //7 TC
 			new /obj/item/implanter/emp(src) //1 TC, kit with 5 grenades costs 2
 			new /obj/item/implanter/adrenalin(src) //8 TC
 			new /obj/item/implanter/explosive(src) //2 TC, nukies only
@@ -117,15 +132,15 @@
 			new /obj/item/pizzabox/bomb(src) //6 TC
 			new /obj/item/storage/box/syndie_kit/emp(src) //2 TC
 
-		if("sniper") //28 TC, you only get 11 shots total with the sniper and 14 with the revolver. A mini-ebow would probably be better than the sniper in a normal traitor game
+		if("sniper") //28 TC, you only get 11 shots total with the sniper. Revolver moved, mini-ebow would probably be better for the sniper in a normal traitor game but fock u
 			new /obj/item/gun/ballistic/automatic/sniper_rifle(src) //12 TC, nukies only
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src) //5 TC, nukies only
-			new /obj/item/gun/ballistic/revolver(src) //6 TC
-			new /obj/item/ammo_box/a357/heartpiercer(src) //1 TC
+			new /obj/item/card/id/syndicate(src) //2 TC
 			new /obj/item/clothing/glasses/thermal/syndi(src) //4 TC
-			new /obj/item/clothing/gloves/color/latex/nitrile(src) //Free?
-			new /obj/item/clothing/mask/gas/clown_hat(src) //Free?
-			new /obj/item/clothing/under/suit_jacket/really_black(src) //Free?
+			new /obj/item/clothing/gloves/combat(src) // probably 1 TC
+			new /obj/item/pen/edagger //2 TC
+			new /obj/item/clothing/under/syndicate/sniper(src) //Free?
+			new /obj/item/encryptionkey/syndicate(src) // 2TC
 
 		if("metaops") //30 TC
 			new /obj/item/clothing/suit/space/hardsuit/syndi(src) //8 TC
