@@ -237,6 +237,55 @@
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
+/datum/supply_pack/emergency/nullcrate
+	name = "NULL_ENTRY"
+	desc = "(#@&^$THIS IS YOUR LOVELY PACKAGE THAT CONTAINS SOME RANDOM SYNDICATE STUFF. GIVE EM HELL, OPERATIVE@&!*()"
+	hidden = TRUE
+	cost = 20000
+	crate_name = "emergency crate"
+	crate_type = /obj/structure/closet/crate/internals
+
+/datum/supply_pack/emergency/nullcrate/fill(obj/structure/closet/crate/C)
+	switch (rand(0,3))
+		if(0)
+			new /obj/item/gun/ballistic/automatic/pistol(C)
+			new /obj/item/storage/box/syndie_kit/pistolsleepyammo(C)
+		if(1)
+			new /obj/item/gun/ballistic/rifle/boltaction(C)
+			new /obj/item/ammo_box/a762(C)
+		if(2)
+			new /obj/item/gun/ballistic/automatic/toy/pistol/riot(C)
+			new /obj/item/ammo_box/foambox/riot(C)
+		if(3)
+			new /obj/item/pen/edagger(C)
+			new /obj/item/grenade/plastic/c4(C)
+	for(var/i in 1 to 2)
+		//Gear
+		var/item = pick(/obj/item/clothing/shoes/magboots/syndie,
+					/obj/item/clothing/gloves/fingerless/bigboss,
+					/obj/item/storage/backpack/duffelbag/syndie,
+					/obj/item/storage/belt/chameleon/syndicate,
+					/obj/item/storage/box/syndie_kit/chameleon,
+					/obj/item/flashlight/emp,
+					/obj/item/syndicateReverseCard,
+					/obj/item/multitool/ai_detect,
+					/obj/item/storage/box/syndie_kit/bugs,
+					/obj/item/storage/toolbox/syndicate)
+		new item(C)
+		//Misk
+		item = pick(/obj/item/storage/box/syndie_kit/cutouts,
+					/obj/item/disk/nuclear/fake,
+					/obj/item/toy/plush/carpplushie/dehy_carp,
+					/obj/item/storage/pill_bottle/gummies/omnizine,
+					/obj/item/storage/pill_bottle/gummies/sleepy,
+					/obj/item/storage/box/fancy/cigarettes/cigpack_syndicate,
+					/obj/item/stack/tape/guerrilla,
+					/obj/item/soap/syndie,
+					/obj/item/flashlight/lantern/syndicate,
+					/obj/item/camera_bug
+					/obj/item/suppressor)
+		new item(C)
+
 /datum/supply_pack/emergency/weedcontrol
 	name = "Weed Control Crate"
 	desc = "Keep those invasive species OUT. Contains a scythe, gasmask, and two anti-weed chemical grenades. Warranty void if used on ambrosia. Requires Hydroponics access to open."
@@ -287,7 +336,6 @@
 					/obj/item/gun/energy/disabler)
 	crate_name = "disabler crate"
 
-
 /datum/supply_pack/security/energypistol
 	name = "Energy Pistol Single-Pack"
 	desc = "Contains one energy pistol for personal defense, capable of firing both lethal and nonlethal blasts of light. Requires Security access to open."
@@ -321,14 +369,6 @@
 					/obj/item/ammo_box/magazine/recharge/ntusp,
 					/obj/item/ammo_box/magazine/recharge/ntusp)
 	crate_name = "nt-usp crate"
-
-/datum/supply_pack/security/trackingimp
-	name = "Tracking Implants Crate"
-	desc = "Contains a box with four tracking implants. Requires Security access to open."
-	cost = 2000
-	access_view = ACCESS_SECURITY
-	contains = list(/obj/item/storage/box/trackimp)
-	crate_name = "tracking implant crate"
 
 /datum/supply_pack/security/securitybarriers
 	name = "Security Barrier Grenades"
@@ -396,7 +436,7 @@
 /datum/supply_pack/security/headsetcrate
 	name = "Security Headset Crate"
 	desc = "Contains appropriate headsets for the station's private security force. There are two ordinary and two bowman headsets. Requires Security access to open."
-	cost = 2000
+	cost = 3000
 	contains = list(/obj/item/radio/headset/headset_sec/alt,
 					/obj/item/radio/headset/headset_sec/alt,
 					/obj/item/radio/headset/headset_sec,
@@ -406,7 +446,7 @@
 /datum/supply_pack/security/headkey
 	name = "Command Encryption Keys Crate"
 	desc = "Command encryption keys for command uses. Requires Command access to open."
-	cost = 5000
+	cost = 3000
 	access = ACCESS_HEADS
 	contains = list(/obj/item/encryptionkey/headset_com,
 					/obj/item/encryptionkey/headset_com,
@@ -443,19 +483,6 @@
 	access = ACCESS_ARMORY
 	access_view = ACCESS_ARMORY
 	crate_type = /obj/structure/closet/crate/secure/weapon
-
-/datum/supply_pack/security/armory/stormtrooper
-	name = "Stormtrooper Crate"
-	desc = "Three Sets of standard issue Stormtrooper Armor, Should help you defeat light wielding wizards. Requires Security access to open."
-	cost = 10000
-	contraband = TRUE
-	contains = list(/obj/item/clothing/suit/armor/stormtrooper,
-					/obj/item/clothing/suit/armor/stormtrooper,
-					/obj/item/clothing/suit/armor/stormtrooper,
-					/obj/item/clothing/head/helmet/stormtrooper,
-					/obj/item/clothing/head/helmet/stormtrooper,
-					/obj/item/clothing/head/helmet/stormtrooper)
-	crate_name = "stormtrooper crate"
 
 /datum/supply_pack/security/armory/bulletarmor
 	name = "Bulletproof Armor Crate"
@@ -646,6 +673,13 @@
 					/obj/item/storage/box/secfiringpins)
 	crate_name = "firing pins crate"
 
+/datum/supply_pack/security/armory/trackingimp
+	name = "Tracking Implants Crate"
+	desc = "Contains a box with four tracking implants. Requires Armory access to open."
+	cost = 2000
+	contains = list(/obj/item/storage/box/trackimp)
+	crate_name = "tracking implant crate"
+
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Imported Weaponry ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -778,20 +812,20 @@
 		var/item = pick(contains)
 		new item(C)
 
-/datum/supply_pack/weaponry/stormtrooper
-	name = "Stormtrooper Crate"
-	desc = "Three Sets of standard issue Stormtrooper Armor, Should help you defeat light-wielding wizards. Requires Security access to open."
-	cost = 10000
-	access = ACCESS_SECURITY
-	access_view = FALSE
-	contains = list(/obj/item/clothing/suit/armor/stormtrooper,
-					/obj/item/clothing/suit/armor/stormtrooper,
-					/obj/item/clothing/suit/armor/stormtrooper,
-					/obj/item/clothing/head/helmet/stormtrooper,
-					/obj/item/clothing/head/helmet/stormtrooper,
-					/obj/item/clothing/head/helmet/stormtrooper)
-	crate_name = "stormtrooper crate"
-	crate_type = /obj/structure/closet/crate/secure/gear
+///datum/supply_pack/weaponry/stormtrooper
+//	name = "Stormtrooper Crate"
+//	desc = "Three Sets of standard issue Stormtrooper Armor, Should help you defeat light-wielding wizards. Requires Security access to open."
+//	cost = 10000
+//	access = ACCESS_SECURITY
+//	access_view = FALSE
+//	contains = list(/obj/item/clothing/suit/armor/stormtrooper,
+//					/obj/item/clothing/suit/armor/stormtrooper,
+//					/obj/item/clothing/suit/armor/stormtrooper,
+//					/obj/item/clothing/head/helmet/stormtrooper,
+//					/obj/item/clothing/head/helmet/stormtrooper,
+//					/obj/item/clothing/head/helmet/stormtrooper)
+//	crate_name = "stormtrooper crate"
+//	crate_type = /obj/structure/closet/crate/secure/gear
 
 /datum/supply_pack/weaponry/wt550ammo
 	name = "Surplus Security Autocarbine Ammo Crate"
