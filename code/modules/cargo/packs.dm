@@ -475,6 +475,22 @@
 					/obj/item/flashlight/seclite)
 	crate_name = "seclite crate"
 
+/datum/supply_pack/security/chainsaw
+	name = "Chief Request Crate"
+	desc = "Package from $&@#0 to CentCom. Destination CentCom chief. Brig access required. ERROR %#@;#+"
+	cost = 3000
+	access = ACCESS_BRIG
+	contraband = TRUE
+	contains = list(/obj/item/twohanded/required/chainsaw)
+
+/datum/supply_pack/security/greytidespear
+	name = "GREY_TIDE"
+	desc = "#@&^$WE HAVE RECOVERED THIS $*F#- FROM SOME ^$ FACILITY. USE IT WELL ADN #-8D=@, OPERATIVE@&!*"
+	cost = 5200
+	access = ACCESS_BRIG
+	hidden = TRUE
+	contains = list(/obj/item/twohanded/spear/grey_tide)
+
 /datum/supply_pack/security/wall_flash
 	name = "Wall-Mounted Flash Crate"
 	desc = "Contains four wall-mounted flashes. Requires Security access to open."
