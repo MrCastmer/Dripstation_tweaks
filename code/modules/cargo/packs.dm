@@ -3046,10 +3046,9 @@
 /datum/supply_pack/misc/sunglasses
 	name = "Sunglasses Crate"
 	desc = "Some basic vision protection."
-	cost = 750
-	contains = list(/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses)
+	cost = 2000
+	small_item = TRUE
+	contains = list(/obj/item/clothing/glasses/sunglasses)
 	containername = "sunglasses crate"
 
 /datum/supply_packs/misc/tape
