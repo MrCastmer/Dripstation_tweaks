@@ -3043,13 +3043,24 @@
 /datum/supply_pack/misc
 	group = "Miscellaneous Supplies"
 
+/datum/supply_pack/misc/fakesunglasses
+	name = "Precious Sunglasses Crate"
+	desc = "For people who wants to be cool. Coooool."
+	cost = 350
+	contains = list(/obj/item/clothing/glasses/sunglasses/cheap,
+					/obj/item/clothing/glasses/sunglasses/cheap,
+					/obj/item/clothing/glasses/sunglasses/cheap,
+					/obj/item/clothing/glasses/sunglasses/cheap,
+					/obj/item/clothing/glasses/sunglasses/cheap)
+	containername = "sunglasses crate"
+
 /datum/supply_pack/misc/sunglasses
 	name = "Sunglasses Crate"
-	desc = "Some basic vision protection."
-	cost = 2000
+	desc = "Some basic vision protection. Tsh, secs don`t need to know about this."
+	cost = 1200
 	small_item = TRUE
+	contraband = TRUE
 	contains = list(/obj/item/clothing/glasses/sunglasses)
-	containername = "sunglasses crate"
 
 /datum/supply_packs/misc/tape
 	name = "Sticky Tape Crate"
