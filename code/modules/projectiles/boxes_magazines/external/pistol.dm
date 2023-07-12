@@ -80,10 +80,7 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 15
-
-/obj/item/ammo_box/magazine/pistolm9mm/update_icon()
-	..()
-	icon_state = "9x19p-[ammo_count() ? "10" : "0"]"
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 //Desert Eagle
 

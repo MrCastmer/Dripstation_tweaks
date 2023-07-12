@@ -16,6 +16,7 @@
 		or homing beacons. Additionally, remove any privately ordered crates from the shuttle."
 	var/blockade_warning = "Bluespace instability detected. Shuttle movement impossible."
 	var/self_paid = FALSE
+	req_access = list(ACCESS_CARGO)
 
 /obj/machinery/computer/cargo/request
 	name = "supply request console"
@@ -25,6 +26,7 @@
 	requestonly = TRUE
 	can_send = FALSE
 	can_approve_requests = FALSE
+	req_access = list()
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
@@ -168,6 +170,12 @@
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
 			if(!istype(pack))
 				return
+			if(pack.times_ordered >= pack.order_limit && pack.order_limit != -1) //If the crate has reached the limit, do not allow it to be ordered.
+				to_chat(usr, "<span class='warning'>[pack.name] is out of stock and can no longer be ordered.</span>")
+				return
+			if(pack.times_ordered_in_one_order >= pack.order_limit_in_one_order && pack.order_limit_in_one_order != -1)
+				to_chat(usr, "<span class='warning'>[pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.</span>")
+				return
 			if((pack.hidden && !(obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.DropPodOnly)
 				return
 
@@ -207,6 +215,8 @@
 				SSshuttle.requestlist += SO
 			else
 				SSshuttle.shoppinglist += SO
+				SO.pack.times_ordered += 1
+				SO.pack.times_ordered_in_one_order += 1
 				if(self_paid)
 					say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
 			. = TRUE
@@ -215,17 +225,30 @@
 			for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
 				if(SO.id == id)
 					SSshuttle.shoppinglist -= SO
+					SO.pack.times_ordered -= 1
+					SO.pack.times_ordered_in_one_order -= 1
 					. = TRUE
 					break
 		if("clear")
+			for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
+				SO.pack.times_ordered -= 1
+				SO.pack.times_ordered_in_one_order = 0
 			SSshuttle.shoppinglist.Cut()
 			. = TRUE
 		if("approve")
 			var/id = text2num(params["id"])
 			for(var/datum/supply_order/SO in SSshuttle.requestlist)
 				if(SO.id == id)
+					if(SO.pack.times_ordered >= SO.pack.order_limit && SO.pack.order_limit != -1) //If the crate has reached the limit, do not allow it to be ordered.
+						to_chat(usr, "<span class='warning'>[SO.pack.name] is out of stock and can no longer be ordered.</span>")
+						return
+					if(SO.pack.times_ordered_in_one_order >= SO.pack.order_limit_in_one_order && SO.pack.order_limit_in_one_order != -1) 
+						to_chat(usr, "<span class='warning'>[SO.pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.</span>")
+						return
 					SSshuttle.requestlist -= SO
 					SSshuttle.shoppinglist += SO
+					SO.pack.times_ordered += 1
+					SO.pack.times_ordered_in_one_order += 1
 					. = TRUE
 					break
 		if("deny")

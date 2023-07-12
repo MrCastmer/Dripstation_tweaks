@@ -57,6 +57,17 @@
 	description = "!&@#WHILE INFERIOR TO OUR BULLDOG SHOTGUNS, COMPACT COMBAT SHOTGUNS CONTAIN AN EXPENSIVE PART THAT'S REQUIRED TO MANUFACTURE BULLDOG SHOTGUNS. YOU'LL SAVE US A PRETTY PENNY BY GIVING US ONE, AND WE'LL PAY YOU IN RETURN#@*$"
 	wanted_types = list(/obj/item/gun/ballistic/shotgun/automatic/combat/compact)
 	reward = 8 //you gotta kill the warden
+/datum/bounty/item/syndicate/secbudget
+	name = "!&@#DEFENCE BUDGET CARD!#@*$"
+	description = "!&@#WE ARE INTERESTED IN CRYPTO CODES OF NANOTRASEN BUDGET CARDS. WE WANT SECS ONE. DO NOT FAIL US IN THIS TASK.#@*$"
+	wanted_types = list(/obj/item/card/id/departmental_budget/sec)
+	reward = 5 //you gotta take it from armory
+/datum/bounty/item/syndicate/combatmagboots
+	name = "!&@#COMBAT MAGBOOTS!#@*$"
+	description = "!&@#WE'RE LOOKING FOR NANOTRASEN ADVANCED MAGNETIC TECHNOLOGY. PROVIDE US SOME EXAMPLES FROM STATIONBOARD SECURITY DEPARTMENT.#@*$"
+	wanted_types = list(/obj/item/clothing/shoes/magboots/security)
+	required_count = 3
+	reward = 4
 /datum/bounty/item/syndicate/hoshardsuit
 	name = "!&@#HEAD OF SECURITY HARDSUIT!#@*$"
 	description = "!&@#SOME PARTS OF SECURITY PLATESHIELDING ARE EXPENSIVE ENOUGH TO BE SOLD TO SOME COLLECTORS. YOU KNOW WHAT TO DO.#@*$"

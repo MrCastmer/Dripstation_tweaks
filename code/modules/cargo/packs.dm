@@ -17,6 +17,10 @@
 	var/DropPodOnly = FALSE//only usable by the Bluespace Drop Pod via the express cargo console
 	var/admin_spawned = FALSE
 	var/small_item = FALSE //Small items can be grouped into a single crate.
+	var/order_limit = -1 // The number of times one can order a cargo crate, before it becomes restricted. -1 for infinite
+	var/times_ordered = 0 // Number of times a crate has been ordered in a shift
+	var/order_limit_in_one_order = -1 // The number of times one can order a cargo crate, before it becomes restricted. -1 for infinite
+	var/times_ordered_in_one_order = 0 // Number of times a crate has been ordered in one package
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C
@@ -247,9 +251,11 @@
 	name = "NULL_ENTRY"
 	desc = "(#@&^$THIS IS YOUR LOVELY PACKAGE THAT CONTAINS SOME RANDOM SYNDICATE STUFF. GIVE EM HELL, OPERATIVE@&!*()"
 	hidden = TRUE
+	order_limit_in_one_order = 2
 	cost = 12000
-	crate_name = "emergency crate"
-	crate_type = /obj/structure/closet/crate/internals
+	crate_name = "crate"
+	crate_type = /obj/structure/closet/crate
+	contains = list()
 
 /datum/supply_pack/emergency/nullcrate/fill(obj/structure/closet/crate/C)
 	switch (rand(0,3))
@@ -579,10 +585,10 @@
 
 /datum/supply_pack/security/armory/laserarmor
 	name = "Reflective Jacket Crate"
-	desc = "Contains two experimental vests of highly reflective material. Each armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely. Requires Armory access to open."
-	cost = 3500
-	contains = list(/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/suit/armor/laserproof)
+	desc = "Contains experimental vest of highly reflective material. This armor diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely. Requires Armory access to open."
+	cost = 10500
+	order_limit = 1
+	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflective jacket crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -837,6 +843,17 @@
 	for(var/i in 1 to 12)
 		var/item = pick(contains)
 		new item(C)
+
+/datum/supply_pack/weaponry/russiansportrifle
+	name = "Sport Rifle Crate"
+	desc = "Hello Comrade! You catch yourself thinking that you are tired of chasing after some ugly Terra Gov bastards or corp rats? Well, we can provide you access to our modern sport rifle! Shoot em out, tovarish."
+	cost = 10500
+	hidden = TRUE
+	order_limit = 1
+	contains = list(/obj/item/gun/ballistic/automatic/stm9,
+					/obj/item/ammo_box/magazine/pistolm9mm/pmag,
+					/obj/item/ammo_box/magazine/pistolm9mm/pmag)
+	crate_name = "modern sport rifle crate"
 
 ///datum/supply_pack/weaponry/stormtrooper
 //	name = "Stormtrooper Crate"
@@ -2653,13 +2670,6 @@
 /datum/supply_pack/costumes_toys
 	group = "Costumes & Toys"
 
-/datum/supply_packs/costumes_toys/posters
-	name = "Corporate Posters Crate"
-	desc = "A box of Nanotrasen-approved posters to boost crew morale."
-	cost = 1500
-	contains = list(/obj/item/storage/box/official_posters)
-	containername = "corporate posters crate"
-
 /datum/supply_pack/costumes_toys/randomised
 	name = "Collectable Hats Crate"
 	desc = "Flaunt your status with three unique, highly-collectable hats!"
@@ -2722,6 +2732,13 @@
 	hidden = TRUE
 	small_item = TRUE
 	contains = list(/obj/item/storage/box/fancy/cigarettes/cigpack_syndicate)
+
+/datum/supply_pack/costumes_toys/posters
+	name = "Corporate Posters Crate"
+	desc = "A box of Nanotrasen-approved posters to boost crew morale."
+	cost = 1500
+	contains = list(/obj/item/storage/box/official_posters)
+	crate_name = "corporate posters crate"
 
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
@@ -3052,7 +3069,7 @@
 					/obj/item/clothing/glasses/sunglasses/cheap,
 					/obj/item/clothing/glasses/sunglasses/cheap,
 					/obj/item/clothing/glasses/sunglasses/cheap)
-	containername = "sunglasses crate"
+	crate_name = "sunglasses crate"
 
 /datum/supply_pack/misc/sunglasses
 	name = "Sunglasses Crate"
@@ -3062,14 +3079,14 @@
 	contraband = TRUE
 	contains = list(/obj/item/clothing/glasses/sunglasses)
 
-/datum/supply_packs/misc/tape
+/datum/supply_pack/misc/tape
 	name = "Sticky Tape Crate"
 	desc = "Some tape. Just some tape."
 	cost = 650
-	contains = list(/obj/item/stack/tape_roll,
-					/obj/item/stack/tape_roll,
-					/obj/item/stack/tape_roll)
-	containername = "sticky tape crate"
+	contains = list(/obj/item/stack/tape,
+					/obj/item/stack/tape,
+					/obj/item/stack/tape)
+	crate_name = "sticky tape crate"
 
 /datum/supply_pack/misc/artsupply
 	name = "Art Supplies"
