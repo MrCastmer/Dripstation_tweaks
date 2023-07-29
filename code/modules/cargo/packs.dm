@@ -231,7 +231,8 @@
 	name = "Special Ops Supplies"
 	desc = "(*!&@#TOO CHEAP FOR THAT NULL_ENTRY, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN STILL HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, A \"SLEEPY PEN\" FULL OF NICE TOXINS AND YOUR NEW GEAR!#@*$"
 	hidden = TRUE
-	cost = 4000
+	cost = 6000
+	order_limit = 2
 	contains = list(/obj/item/storage/box/emps,
 					/obj/item/grenade/smokebomb,
 					/obj/item/grenade/smokebomb,
@@ -242,10 +243,9 @@
 					/obj/item/storage/belt/holster/syndicate,
 					/obj/item/clothing/mask/gas/syndicate,
 					/obj/item/clothing/under/syndicate/combat,
-					/obj/item/storage/toolbox/syndicate,
 					/obj/item/clothing/shoes/combat)
-	crate_name = "emergency crate"
-	crate_type = /obj/structure/closet/crate/internals
+	crate_name = "crate"
+	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/emergency/nullcrate
 	name = "NULL_ENTRY"
@@ -260,8 +260,9 @@
 /datum/supply_pack/emergency/nullcrate/fill(obj/structure/closet/crate/C)
 	switch (rand(0,3))
 		if(0)
-			new /obj/item/gun/ballistic/automatic/pistol(C)
-			new /obj/item/storage/box/syndie_kit/pistolsleepyammo(C)
+			new /obj/item/gun/ballistic/automatic/pistol/glock17(C)
+			new /obj/item/ammo_box/magazine/pistolm9mm/pmag(C)
+			new /obj/item/ammo_box/magazine/pistolm9mm/pmag(C)
 		if(1)
 			new /obj/item/gun/ballistic/rifle/boltaction(C)
 			new /obj/item/ammo_box/a762(C)
@@ -275,7 +276,7 @@
 	for(var/i in 1 to 2)
 		//Gear
 		var/item = pick(/obj/item/clothing/shoes/magboots/syndie,
-					/obj/item/clothing/gloves/fingerless/bigboss,
+					/obj/item/clothing/gloves/fingerless/bigboss/combat,
 					/obj/item/storage/backpack/duffelbag/syndie,
 					/obj/item/storage/belt/chameleon/syndicate,
 					/obj/item/clothing/under/chameleon,
@@ -414,6 +415,15 @@
 	cost = 1500
 	contains = list(/obj/item/vending_refill/security)
 	crate_name = "SecTech supply crate"
+
+/datum/supply_pack/security/webbing
+	name = "Security Webbing Crate"
+	desc = "Chest rigs crate. That`s what you need when all the guards have exchanged their own ones for donuts."
+	cost = 1200
+	contains = list(/obj/item/storage/belt/security/webbing,
+					/obj/item/storage/belt/security/webbing,
+					/obj/item/storage/belt/security/webbing)
+	crate_name = "security webbing crate"
 
 /datum/supply_pack/security/secway
     name = "Secway Crate"
@@ -671,6 +681,22 @@
 					/obj/item/clothing/gloves)
 	crate_name = "swat crate"
 
+/datum/supply_pack/weaponry/combatknives_single
+	name = "Combat Knife Single-Pack"
+	desc = "Contains one sharpened combat knife. Guaranteed to fit snugly inside any Nanotrasen-standard boot. Requires Armory access to open."
+	cost = 500
+	small_item = TRUE
+	contains = list(/obj/item/kitchen/knife/combat)
+
+/datum/supply_pack/weaponry/vib_blade
+	name = "Vibration Blade Crate"
+	desc = "Okey, eh, we see that your station have some armory supply issue. We can provide you standart vibration blades restock up to three times."
+	cost = 400
+	small_item = TRUE
+	order_limit = 3
+	contains = list(/obj/item/melee/transforming/vib_blade)
+	crate_name = "vibration blade crate"
+
 /datum/supply_pack/security/armory/securityclothes
 	name = "Security Clothing Crate"
 	desc = "Contains appropriate outfits for the station's private security force. Contains outfits for the Warden, Head of Security, and two Security Officers. Each outfit comes with a rank-appropriate jumpsuit, suit, and beret. Requires Armory access to open."
@@ -731,9 +757,8 @@
 
 /datum/supply_pack/weaponry/ammo
 	name = "Ammo Crate"
-	desc = "Contains two 20-round magazines for the WT-550 Auto Carbine, two 8-round magazines for the Vatra M38 Pistol, three boxes of buckshot ammo, and three boxes of rubber ammo. Requires Security access to open."
+	desc = "Contains two 20-round magazines for the WT-550 Auto Carbine, two 8-round magazines for the Vatra M38 Pistol, three boxes of buckshot ammo, and three boxes of rubber ammo. Requires Armory access to open."
 	cost = 2500
-	access = ACCESS_SECURITY
 	contains = list(/obj/item/ammo_box/magazine/wt550m9,
 					/obj/item/ammo_box/magazine/wt550m9,
 					/obj/item/storage/box/lethalshot,
@@ -744,13 +769,6 @@
 					/obj/item/storage/box/rubbershot)
 	crate_name = "ammo crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-
-/datum/supply_pack/weaponry/combatknives_single
-	name = "Combat Knife Single-Pack"
-	desc = "Contains one sharpened combat knife. Guaranteed to fit snugly inside any Nanotrasen-standard boot. Requires Armory access to open."
-	cost = 500
-	small_item = TRUE
-	contains = list(/obj/item/kitchen/knife/combat)
 
 /datum/supply_pack/weaponry/ballistic
 	name = "Combat Shotguns Crate"
@@ -3077,6 +3095,7 @@
 	cost = 1200
 	small_item = TRUE
 	contraband = TRUE
+	order_limit = 3
 	contains = list(/obj/item/clothing/glasses/sunglasses)
 
 /datum/supply_pack/misc/tape
@@ -3184,7 +3203,6 @@
 	crate_type = /obj/structure/closet/crate/wooden
 	crate_name = "festive wrapping paper crate"
 
-
 /datum/supply_pack/misc/funeral
 	name = "Funeral Supply crate"
 	desc = "At the end of the day, someone's gonna want someone dead. Give them a proper send-off with these funeral supplies! Contains a coffin with burial garmets and flowers."
@@ -3198,7 +3216,7 @@
 
 /datum/supply_pack/misc/religious_supplies
 	name = "Religious Supplies Crate"
-	desc = "Keep your local chaplain happy and well-supplied, lest they call down judgement upon your cargo bay. Contains two bottles of holywater, bibles, chaplain robes, and burial garmets."
+	desc = "Keep your local chaplain happy and well-supplied, lest they call down judgement upon your cargo bay. Contains two bottles of holywater, bibles and chaplain robes."
 	cost = 4000	// it costs so much because the Space Church is ran by Space Jews
 	access_view = ACCESS_CHAPEL_OFFICE
 	contains = list(/obj/item/reagent_containers/food/drinks/bottle/holywater,

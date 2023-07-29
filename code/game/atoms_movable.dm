@@ -954,6 +954,8 @@
 		return FALSE
 	if(force < (move_resist * MOVE_FORCE_PULL_RATIO))
 		return FALSE
+	if(SEND_SIGNAL(src, COMSIG_ATOM_CAN_BE_PULLED, user) & COMSIG_ATOM_CANT_PULL)
+		return FALSE
 	return TRUE
 
 /**

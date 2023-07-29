@@ -52,6 +52,7 @@
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
+	do_sparks(8, FALSE, loc)
 
 	// This also permamently sets this on the circuit board
 	var/obj/item/circuitboard/computer/cargo/board = circuit
@@ -132,6 +133,9 @@
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
+	if(!allowed(usr) && can_approve_requests)
+		say("Access denied.")
+		return
 	switch(action)
 		if("send")
 			if(!SSshuttle.supply.canMove())
@@ -171,10 +175,10 @@
 			if(!istype(pack))
 				return
 			if(pack.times_ordered >= pack.order_limit && pack.order_limit != -1) //If the crate has reached the limit, do not allow it to be ordered.
-				to_chat(usr, "<span class='warning'>[pack.name] is out of stock and can no longer be ordered.</span>")
+				say("[pack.name] is out of stock and can no longer be ordered.")
 				return
 			if(pack.times_ordered_in_one_order >= pack.order_limit_in_one_order && pack.order_limit_in_one_order != -1)
-				to_chat(usr, "<span class='warning'>[pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.</span>")
+				say("[pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.")
 				return
 			if((pack.hidden && !(obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.DropPodOnly)
 				return
@@ -240,10 +244,10 @@
 			for(var/datum/supply_order/SO in SSshuttle.requestlist)
 				if(SO.id == id)
 					if(SO.pack.times_ordered >= SO.pack.order_limit && SO.pack.order_limit != -1) //If the crate has reached the limit, do not allow it to be ordered.
-						to_chat(usr, "<span class='warning'>[SO.pack.name] is out of stock and can no longer be ordered.</span>")
+						say("[SO.pack.name] is out of stock and can no longer be ordered.")
 						return
 					if(SO.pack.times_ordered_in_one_order >= SO.pack.order_limit_in_one_order && SO.pack.order_limit_in_one_order != -1) 
-						to_chat(usr, "<span class='warning'>[SO.pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.</span>")
+						say("[SO.pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.")
 						return
 					SSshuttle.requestlist -= SO
 					SSshuttle.shoppinglist += SO
