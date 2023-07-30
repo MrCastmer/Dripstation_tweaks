@@ -37,14 +37,14 @@
 	fire_sound = 'dripstation/sound/weapons/pistol/shot_alt.ogg'
 	fire_delay = 1
 
-/obj/item/gun/ballistic/automatic/pistol/fnx
+/obj/item/gun/ballistic/automatic/pistol/fn45
 	name = "\improper FNX-45 Tactical"
 	desc = "Tactical modern Terra Gov service pistol. Better, faster, stronger than other service pistols. Do not as iconic as M1911, but reliable and modern. Chambered in .45 caliber. Has a threaded barrel for suppressors."
 	icon = 'dripstation/icons/obj/guns/ballistic.dmi'
 	icon_state = "fnx"
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m45fnx
-	starting_mag_type = /obj/item/ammo_box/magazine/45fnx
+	mag_type = /obj/item/ammo_box/magazine/fn45
+	starting_mag_type = /obj/item/ammo_box/magazine/fn45
 	spread = 3
 	can_suppress = TRUE
 	can_unsuppress = TRUE
@@ -53,7 +53,7 @@
 		"fire" = 3
 	)
 
-/obj/item/ammo_box/magazine/45fnx
+/obj/item/ammo_box/magazine/fn45
 	name = "FNX-45 magazine (.45 ACP)"
 	desc = "An 15-round .45 ACP magazine designed for the FNX-45 pistol."
 	icon_state = "9x19p"
@@ -61,7 +61,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 
-/obj/item/ammo_box/magazine/45fnx/ap
+/obj/item/ammo_box/magazine/fn45/ap
 	name = "FNX-45 magazine (.45 ACP Armor-Piercing)"
 	icon_state = "9x19pA"
 	ammo_type = /obj/item/ammo_casing/c45/ap

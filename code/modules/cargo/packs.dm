@@ -252,6 +252,7 @@
 	desc = "(#@&^$THIS IS YOUR LOVELY PACKAGE THAT CONTAINS SOME RANDOM SYNDICATE STUFF. GIVE EM HELL, OPERATIVE@&!*()"
 	hidden = TRUE
 	order_limit_in_one_order = 2
+	order_limit = 10
 	cost = 12000
 	crate_name = "crate"
 	crate_type = /obj/structure/closet/crate
@@ -1555,6 +1556,14 @@
 	)
 	crate_name = "medipen crate"
 
+/datum/supply_pack/security/mutadone_medipen
+	name = "Emergency Mutadone Kit Single-Pack"
+	desc = "Contains one Mutadone medipen for instant genetic removal. Best used for hulks."
+	cost = 300
+	small_item = TRUE
+	contains = list(/obj/item/reagent_containers/autoinjector/medipen/mutadone)
+	crate_type = /obj/structure/closet/crate/secure/cheap
+
 /datum/supply_pack/medical/firstaid_single
 	name = "First Aid Kit Single-Pack"
 	desc = "Contains one first aid kit for healing most types of wounds."
@@ -2576,6 +2585,14 @@
 	contains = list(/mob/living/simple_animal/cow)
 	crate_name = "cow crate"
 
+/datum/supply_pack/critter/frog
+	name = "Wednesday Frog Pod"
+	desc = "Frogpod for QM issues."
+	cost = 5000
+	contains = list(/mob/living/simple_animal/hostile/retaliate/frog)
+	crate_name = "wednesday crate"
+	DropPodOnly = TRUE
+
 /datum/supply_pack/critter/crab
 	name = "Crab Rocket"
 	desc = "CRAAAAAAB ROCKET. CRAB ROCKET. CRAB ROCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROCKET. CRAFT. ROCKET. BUY. CRAFT ROCKET. CRAB ROOOCKET. CRAB ROOOOCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROOOOOOOOOOOOOOOOOOOOOOCK EEEEEEEEEEEEEEEEEEEEEEEEE EEEETTTTTTTTTTTTAAAAAAAAA AAAHHHHHHHHHHHHH. CRAB ROCKET. CRAAAB ROCKEEEEEEEEEGGGGHHHHTT CRAB CRAB CRAABROCKET CRAB ROCKEEEET."//fun fact: i actually spent like 10 minutes and transcribed the entire video.
@@ -2741,6 +2758,18 @@
 					/obj/item/clothing/mask/gas/syndicate,
 					/obj/item/clothing/neck/necklace/dope,
 					/obj/item/vending_refill/donksoft)
+	crate_name = "crate"
+
+/datum/supply_pack/costumes_toys/blackmarket_telepad
+	name = "Black Market LTSRBT"
+	desc = "Need a faster and better way of transporting your illegal goods from and to the \
+		station? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) \
+		is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
+	cost = 26000
+	contraband = TRUE
+	contains = list(/obj/item/circuitboard/machine/ltsrbt,
+					/obj/item/stack/ore/bluespace_crystal/artificial = 2,
+					/obj/item/stock_parts/subspace/ansible)
 	crate_name = "crate"
 
 /datum/supply_pack/costumes_toys/sindycigarettes

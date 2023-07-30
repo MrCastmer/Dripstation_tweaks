@@ -37,6 +37,9 @@
 
 #define SUPPLYPOD_X_OFFSET -16
 
+/// Defining standart crate value for blackmarket, some events will change this shit some day
+#define CARGO_CRATE_VALUE 200
+
 GLOBAL_LIST_EMPTY(supplypod_loading_bays)
 
 GLOBAL_LIST_INIT(podstyles, list(\
