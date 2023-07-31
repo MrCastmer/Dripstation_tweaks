@@ -53,19 +53,6 @@
 		"fire" = 3
 	)
 
-/obj/item/ammo_box/magazine/fn45
-	name = "FNX-45 magazine (.45 ACP)"
-	desc = "An 15-round .45 ACP magazine designed for the FNX-45 pistol."
-	icon_state = "9x19p"
-	max_ammo = 15
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = ".45"
-
-/obj/item/ammo_box/magazine/fn45/ap
-	name = "FNX-45 magazine (.45 ACP Armor-Piercing)"
-	icon_state = "9x19pA"
-	ammo_type = /obj/item/ammo_casing/c45/ap
-
 //ammo boxes for 9mm
 /obj/item/ammo_box/c9mm/fire
 	name = "ammo box (9mm Incendiary)"
@@ -75,6 +62,50 @@
 	name = "ammo box (9mm Armor-Piercing)"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
+//ammo boxes for 12mm
+/obj/item/storage/box/slug
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug lethal shots designed for shotguns. The box itself is designed for holding any kind of shotgun shell."
+	icon_state = "slug_box"
+	icon = 'dripstation/icons/obj/ammo.dmi'
+	illustration = null
+
+/obj/item/storage/box/slug/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 7
+	STR.set_holdable(list(/obj/item/ammo_casing/shotgun))
+
+/obj/item/storage/box/slug/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
+
+/obj/item/storage/box/incendiary
+	name = "box of incendiary slug shotgun shots"
+	desc = "A box full of incendiary lethal shots designed for shotguns. The box itself is designed for holding any kind of shotgun shell."
+	icon_state = "incendiary_box"
+	icon = 'dripstation/icons/obj/ammo.dmi'
+	illustration = null
+
+/obj/item/storage/box/incendiary/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 7
+	STR.set_holdable(list(/obj/item/ammo_casing/shotgun))
+
+/obj/item/storage/box/incendiary/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/incendiary(src)
+
+/obj/item/ammo_box/no_direct/c38
+	name = "ammo box (.38 special)"
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 20
+
+/obj/item/ammo_box/no_direct/c38/rubber
+	name = "ammo box (.38 rubber)"
+	ammo_type = /obj/item/ammo_casing/c38/rubber
 
 //APS, Glock, STM-9 Mag
 /obj/item/ammo_box/magazine/pistolm9mm/ap
@@ -130,3 +161,28 @@
 	icon_state = "stm9magI"
 	desc = "A 50-round magazine for TSF side arm. Loaded with rounds which trade lethality for ignition of target."
 	ammo_type = /obj/item/ammo_casing/c9mm/inc
+
+/obj/item/ammo_box/magazine/fn45
+	name = "FNX-45 magazine (.45 ACP)"
+	desc = "An 15-round .45 ACP magazine designed for the FNX-45 pistol."
+	icon_state = "fn45"
+	icon = 'dripstation/icons/obj/ammo.dmi'
+	max_ammo = 15
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/fn45/ap
+	name = "FNX-45 magazine (Armor-Piercing .45 ACP)"
+	icon_state = "fn45A"
+	ammo_type = /obj/item/ammo_casing/c45/ap
+
+/obj/item/ammo_box/magazine/fn45/hp
+	name = "FNX-45 magazine (Hollow-Point .45 ACP)"
+	icon_state = "fn45H"
+	ammo_type = /obj/item/ammo_casing/c45/hp
+
+/obj/item/ammo_box/magazine/fn45/v
+	name = "FNX-45 magazine (Venom .45 ACP)"
+	icon_state = "fn45V"
+	ammo_type = /obj/item/ammo_casing/c45/venom

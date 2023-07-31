@@ -508,6 +508,30 @@
 	hidden = TRUE
 	contains = list(/obj/item/twohanded/spear/grey_tide)
 
+/datum/supply_pack/security/ammodetletal
+	name = ".38 Detective Ammo Crate"
+	desc = "When the criminal needs to be replaced with .38. Requires Detective access to open."
+	cost = 2600
+	access = ACCESS_FORENSICS_LOCKERS
+	contains = list(/obj/item/ammo_box/c38,
+					/obj/item/ammo_box/c38,
+					/obj/item/ammo_box/c38,
+					/obj/item/ammo_box/no_direct/c38)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/security/ammodetnonletal
+	name = ".38 Rubber Detective Ammo Crate"
+	desc = "Rubber for detective revolver. Just what det usually need. Requires Detective access to open."
+	cost = 1700
+	access = ACCESS_FORENSICS_LOCKERS
+	contains = list(/obj/item/ammo_box/c38/rubber,
+					/obj/item/ammo_box/c38/rubber,
+					/obj/item/ammo_box/c38/rubber,
+					/obj/item/ammo_box/no_direct/c38/rubber)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
 /datum/supply_pack/security/wall_flash
 	name = "Wall-Mounted Flash Crate"
 	desc = "Contains four wall-mounted flashes. Requires Security access to open."
@@ -757,11 +781,13 @@
 	contains = list(/obj/item/ammo_box/no_direct/m308)
 
 /datum/supply_pack/weaponry/ammo
-	name = "Ammo Crate"
+	name = "Standart Ammo Crate"
 	desc = "Contains two 20-round magazines for the WT-550 Auto Carbine, two 8-round magazines for the Vatra M38 Pistol, three boxes of buckshot ammo, and three boxes of rubber ammo. Requires Armory access to open."
 	cost = 2500
 	contains = list(/obj/item/ammo_box/magazine/wt550m9,
 					/obj/item/ammo_box/magazine/wt550m9,
+					/obj/item/ammo_box/magazine/v38,
+					/obj/item/ammo_box/magazine/v38,
 					/obj/item/storage/box/lethalshot,
 					/obj/item/storage/box/lethalshot,
 					/obj/item/storage/box/lethalshot,
@@ -770,6 +796,137 @@
 					/obj/item/storage/box/rubbershot)
 	crate_name = "ammo crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo38nodirect
+	name = ".38 Ammo Crate"
+	desc = "Just all .38 that you ever need. Requires Armory access to open."
+	cost = 2000
+	access = ACCESS_ARMORY
+	contains = list(/obj/item/ammo_box/no_direct/c38,
+					/obj/item/ammo_box/no_direct/c38,
+					/obj/item/ammo_box/no_direct/c38/rubber,
+					/obj/item/ammo_box/no_direct/c38/rubber)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+			
+/datum/supply_pack/weaponry/ammo45
+	name = ".45 ACP Ammo Crate"
+	desc = "Contains two 15-round magazines for the FNX-45 Tactical, two magazines for M1911, two topload magazines for .45 SMG, two magazines for surplus rifle, and two boxes of standard .45 ACP ammo. Requires Armory access to open."
+	cost = 4000
+	contains = list(/obj/item/ammo_box/magazine/fn45,
+					/obj/item/ammo_box/magazine/fn45,
+					/obj/item/ammo_box/magazine/m45,
+					/obj/item/ammo_box/magazine/m45,
+					/obj/item/ammo_box/magazine/smgm45,
+					/obj/item/ammo_box/magazine/smgm45,
+					/obj/item/ammo_box/magazine/m10mm/rifle,
+					/obj/item/ammo_box/magazine/m10mm/rifle,
+					/obj/item/ammo_box/c45,
+					/obj/item/ammo_box/c45)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo10
+	name = "9mm and 10mm Ammo Crate"
+	desc = "10mm and 9mm ammo crate. Contains three standard ammo boxes of each caliber. Requires Armory access to open."
+	cost = 3000
+	contains = list(/obj/item/ammo_box/c10mm,
+					/obj/item/ammo_box/c10mm,
+					/obj/item/ammo_box/c10mm,
+					/obj/item/ammo_box/c9mm,
+					/obj/item/ammo_box/c9mm,
+					/obj/item/ammo_box/c9mm)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo762
+	name = "7.62mm Ammo Crate"
+	desc = "One clip and tree ammo boxes of 7.62mm. Requires Armory access to open."
+	cost = 4000
+	contraband = TRUE
+	contains = list(/obj/item/ammo_box/a762,
+					/obj/item/ammo_box/no_direct/n762,
+					/obj/item/ammo_box/no_direct/n762,
+					/obj/item/ammo_box/no_direct/n762)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo12beanbag
+	name = "12mm Beanbag Ammo Crate"
+	desc = "Three beanbag boxes. When clown needs to be replaced with salt. Requires none access to open."
+	cost = 1200
+	access = FALSE
+	contains = list(/obj/item/storage/box/beanbag,
+					/obj/item/storage/box/beanbag,
+					/obj/item/storage/box/beanbag)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo12rubber
+	name = "12mm Rubber Ammo Crate"
+	desc = "Three rubber boxes. RUBBER. MORE RUBBER. Requires Security access to open."
+	cost = 1400
+	access = ACCESS_SECURITY
+	contains = list(/obj/item/storage/box/rubbershot,
+					/obj/item/storage/box/rubbershot,
+					/obj/item/storage/box/rubbershot)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo12buckshot
+	name = "12mm Buckshot Ammo Crate"
+	desc = "Three buckshot boxes. Feel free to friendly fire. Requires Armory access to open."
+	cost = 1700
+	contains = list(/obj/item/storage/box/lethalshot,
+					/obj/item/storage/box/lethalshot,
+					/obj/item/storage/box/lethalshot)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo12slug
+	name = "12mm Slug Ammo Crate"
+	desc = "Three slug boxes. Just fire and forget. Requires Armory access to open."
+	cost = 3000
+	contains = list(/obj/item/storage/box/slug,
+					/obj/item/storage/box/slug,
+					/obj/item/storage/box/slug)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo12breacherslug
+	name = "12mm Slug Ammo Crate"
+	desc = "Three breacherslug boxes. When you really need to make holes in airlocks. Requires Armory access to open."
+	cost = 3200
+	contains = list(/obj/item/storage/box/breacherslug,
+					/obj/item/storage/box/breacherslug,
+					/obj/item/storage/box/breacherslug)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo12incendiary
+	name = "12mm Incendiary Slug Ammo Crate"
+	desc = "Three incendiary slug boxes. Fire in the disco. Requires Armory access to open."
+	cost = 3400
+	contains = list(/obj/item/storage/box/incendiary,
+					/obj/item/storage/box/incendiary,
+					/obj/item/storage/box/incendiary)
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo357
+	name = ".357 Ammo Crate"
+	desc = "Two boxes of .357. Oh f... We just ripped them. Anyway. Requires Armory access to open."
+	cost = 5000
+	contains = list()
+	crate_name = "ammo crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/ammo357/fill(obj/structure/closet/crate/C)
+	for(var/i in 1 to 39)
+		var/item = pick(/obj/item/ammo_casing/a357,
+						/obj/item/ammo_casing/a357,
+						/obj/item/ammo_casing/a357/ironfeather)
+		new item(C)
 
 /datum/supply_pack/weaponry/ballistic
 	name = "Combat Shotguns Crate"
@@ -943,10 +1100,21 @@
 	desc = "A pack containing three Vatra M38s, an unusual handgun which loads .38 special designed for unarmored targets. Three spare magazines are included. Requires Security access to open."
 	cost = 4000
 	access = ACCESS_SECURITY
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/v38,
-					/obj/item/gun/ballistic/automatic/pistol/v38,
-					/obj/item/gun/ballistic/automatic/pistol/v38,
-					/obj/item/ammo_box/magazine/v38,
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/v38/less_lethal,
+					/obj/item/gun/ballistic/automatic/pistol/v38/less_lethal,
+					/obj/item/gun/ballistic/automatic/pistol/v38/less_lethal,
+					/obj/item/ammo_box/magazine/v38/rubber,
+					/obj/item/ammo_box/magazine/v38/rubber,
+					/obj/item/ammo_box/magazine/v38/rubber)
+	crate_name = "pistol crate"
+	crate_type = /obj/structure/closet/crate/secure/gear
+
+/datum/supply_pack/weaponry/v38letalmagasines
+	name = "Vatra M38 Magazines .38 Special Crate"
+	desc = "A pack containing three spare letal magazines for Vatra M38. Requires Armory access to open."
+	cost = 4000
+	access = ACCESS_ARMORY
+	contains = list(/obj/item/ammo_box/magazine/v38,
 					/obj/item/ammo_box/magazine/v38,
 					/obj/item/ammo_box/magazine/v38)
 	crate_name = "pistol crate"

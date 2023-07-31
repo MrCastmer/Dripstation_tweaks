@@ -41,6 +41,16 @@
 	price_max = CARGO_CRATE_VALUE * 4
 	availability_prob = 20
 
+/datum/market_item/tool/binoculars
+	name = "Binoculars"
+	desc = "Increase your sight by 150% with this handy Tool!"
+	item = /obj/item/twohanded/binoculars
+	stock = 1
+
+	price_min = CARGO_CRATE_VALUE * 2
+	price_max = CARGO_CRATE_VALUE * 4.8
+	availability_prob = 30
+
 /datum/market_item/tool/riot_shield
 	name = "Riot Shield"
 	desc = "Protect yourself from an unexpected Riot at your local Police department!"

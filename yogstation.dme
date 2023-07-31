@@ -3683,6 +3683,7 @@
 #include "dripstation\code\items\cargo_teleporter.dm"
 #include "dripstation\code\items\garment.dm"
 #include "dripstation\code\items\ids.dm"
+#include "dripstation\code\items\medicine.dm"
 #include "dripstation\code\items\toolbox.dm"
 #include "dripstation\code\items\clothing\backpacks.dm"
 #include "dripstation\code\items\clothing\bagsholding.dm"
