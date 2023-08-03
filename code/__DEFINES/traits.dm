@@ -314,6 +314,7 @@
 #define TRAIT_ANXIOUS			"anxious"
 #define TRAIT_SEE_REAGENTS		"see_reagents"
 #define TRAIT_STARGAZED			"stargazed"
+#define TRAIT_TRANSFORM_ACTIVE "active_transform" /// A transforming item that is actively extended / transformed
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

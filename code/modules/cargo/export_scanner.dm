@@ -7,6 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	item_flags = NOBLUDGEON
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	siemens_coefficient = 1
 	var/obj/machinery/computer/cargo/cargo_console = null

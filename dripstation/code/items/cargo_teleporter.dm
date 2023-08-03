@@ -5,8 +5,8 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 	desc = "Specialised personal teleporter based on modern bluespace technology. This one issued to QM for moving crates, closets and none-living objects to previously marked locations."
 	icon = 'dripstation/icons/obj/cargo_teleporter.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/belt.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/tools_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/tools_righthand.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/equipment/cargo_teleporter_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/equipment/cargo_teleporter_righthand.dmi'
 	icon_state = "cargo_tele"
 	item_state = "cargo_tele"
 	materials = list(MAT_METAL=10000)

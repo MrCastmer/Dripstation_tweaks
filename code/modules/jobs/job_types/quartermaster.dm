@@ -26,11 +26,10 @@
 
 	mail_goodies = list(
 		/obj/item/stack/sheet/mineral/gold = 10,
-		/obj/item/clothing/mask/facehugger/toy = 5,
-		/obj/item/circuitboard/machine/emitter = 3,
-		/obj/item/survivalcapsule/luxuryelite = 2,
-		/obj/item/construction/rcd = 2,
-		/obj/item/circuitboard/machine/vending/donksofttoyvendor = 1
+		/obj/item/circuitboard/machine/emitter = 5,
+		/obj/item/survivalcapsule/luxuryelite = 3,
+		/obj/item/construction/rcd = 3,
+		/obj/item/circuitboard/machine/vending/donksofttoyvendor = 2
 	)
 
 	smells_like = "capitalism"
@@ -42,7 +41,7 @@
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
 	jobtype = /datum/job/qm
-
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1)
 	pda_type = /obj/item/modular_computer/tablet/pda/preset/cargo
 
 	ears = /obj/item/radio/headset/headset_cargo

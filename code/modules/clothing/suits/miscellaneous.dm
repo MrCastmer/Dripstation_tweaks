@@ -739,6 +739,7 @@
 	icon_state = "coatcargo"
 	item_state = "coatcargo"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/cargo
+	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/box/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter)
 
 /obj/item/clothing/head/hooded/winterhood/cargo
 	icon_state = "winterhood_cargo"

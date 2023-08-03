@@ -44,7 +44,7 @@
 	jobtype = /datum/job/cargo_tech
 
 	pda_type = /obj/item/modular_computer/tablet/pda/preset/cargo
-
+	backpack_contents = list(/obj/item/boxcutter = 1)
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargotech
 	uniform_skirt = /obj/item/clothing/under/rank/cargotech/skirt

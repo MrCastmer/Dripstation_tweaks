@@ -1724,7 +1724,7 @@
 	)
 	crate_name = "medipen crate"
 
-/datum/supply_pack/security/mutadone_medipen
+/datum/supply_pack/medical/mutadone_medipen
 	name = "Emergency Mutadone Kit Single-Pack"
 	desc = "Contains one Mutadone medipen for instant genetic removal. Best used for hulks."
 	cost = 300
@@ -2384,6 +2384,17 @@
 	desc = "A prototype plasmacutter variant with lower cooldown, more efficient fuel usage, and higher range."
 	cost = 2000
 	contains = list(/obj/item/gun/energy/plasmacutter/adv)
+
+/datum/supply_pack/clearance/heavymining
+	name = "Shaft Miner Elite Hardsuit"
+	desc = "Prototipe hardsuit, made from more expensive materials."
+	cost = 5000
+	order_limit = 1
+	small_item = FALSE
+	access = ACCESS_QM
+	contains = list(/obj/item/clothing/suit/space/hardsuit/heavymining)
+	crate_name = "shaft miner hardsuit"
+	crate_type = /obj/structure/closet/crate/secure
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Organic /////////////////////////////////////////
