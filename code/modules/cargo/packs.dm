@@ -692,18 +692,21 @@
 
 /datum/supply_pack/security/armory/swat
 	name = "SWAT Crate"
-	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and black gloves. Requires Armory access to open."
-	cost = 6000
+	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and pair of combat gloves. Requires Armory access to open."
+	cost = 14000
+	order_limit = 1 
 	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen,
 					/obj/item/clothing/head/helmet/swat/nanotrasen,
-					/obj/item/clothing/suit/space/swat,
-					/obj/item/clothing/suit/space/swat,
+					/obj/item/clothing/suit/armor/swat,
+					/obj/item/clothing/suit/armor/swat,
 					/obj/item/clothing/mask/gas/sechailer/swat,
 					/obj/item/clothing/mask/gas/sechailer/swat,
 					/obj/item/storage/belt/military/assault,
 					/obj/item/storage/belt/military/assault,
-					/obj/item/clothing/gloves,
-					/obj/item/clothing/gloves)
+					/obj/item/clothing/shoes/combat,
+					/obj/item/clothing/shoes/combat,
+					/obj/item/clothing/gloves/combat,
+					/obj/item/clothing/gloves/combat)
 	crate_name = "swat crate"
 
 /datum/supply_pack/weaponry/combatknives_single
@@ -1726,7 +1729,7 @@
 
 /datum/supply_pack/medical/mutadone_medipen
 	name = "Emergency Mutadone Kit Single-Pack"
-	desc = "Contains one Mutadone medipen for instant genetic removal. Best used for hulks."
+	desc = "Contains one Mutadone medipen for instant genetic removal."
 	cost = 300
 	small_item = TRUE
 	contains = list(/obj/item/reagent_containers/autoinjector/medipen/mutadone)

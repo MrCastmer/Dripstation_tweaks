@@ -106,7 +106,7 @@ GLOBAL_LIST_INIT(battleroyale_armour, list(
 		/obj/item/clothing/suit/hooded/cloak/drake = -1,
 		/obj/item/clothing/head/helmet/thunderdome = -1,
 		/obj/item/clothing/head/helmet/swat = -1,
-		/obj/item/clothing/suit/space/swat = -1,
+		/obj/item/clothing/suit/armor/swat = -1,
 		//Weight of -2 - decent armour, space suits, no slowdown or just really good stats (good enough to finish a round with)
 		/obj/item/nullrod/staff = -2,
 		/obj/item/clothing/suit/space/hardsuit/powerarmor_advanced = -2,
