@@ -330,7 +330,8 @@
 	desc = "A bulletproof vest with forest camo. Good thing there's plenty of forests to hide in around here, right?"
 	icon_state = "rus_armor"
 	item_state = "rus_armor"
-	armor = list(MELEE = 25, BULLET = 30, LASER = 0, ENERGY = 15, BOMB = 10, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 10)
+	body_parts_covered = CHEST|GROIN
+	armor = list(MELEE = 25, BULLET = 50, LASER = 0, ENERGY = 15, BOMB = 40, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 15)
 
 /obj/item/clothing/suit/armor/vest/russian_coat
 	name = "russian battle coat"

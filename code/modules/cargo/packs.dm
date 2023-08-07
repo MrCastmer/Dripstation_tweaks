@@ -340,9 +340,9 @@
 	desc = "Three vests of well-rounded, decently-protective armor. Requires Security access to open."
 	cost = 1000
 	access_view = ACCESS_SECURITY
-	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest)
+	contains = list(/obj/item/clothing/suit/armor/vest/alt,
+					/obj/item/clothing/suit/armor/vest/alt,
+					/obj/item/clothing/suit/armor/vest/alt)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/disabler
@@ -1251,23 +1251,25 @@
 	crate_name = "insulated gloves crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
-/obj/item/stock_parts/cell/inducer_supply
-	maxcharge = 5000
-	charge = 5000
+//For reference issue
+///obj/item/stock_parts/cell/inducer_supply
+//	maxcharge = 5000
+//	charge = 5000
+///obj/item/inducer/sci {cell_type = /obj/item/stock_parts/cell/inducer_supply; opened = 0}, FALSE doesn't work in modified type paths apparently.
 
 /datum/supply_pack/engineering/inducers
-	name = "NT-75 Electromagnetic Power Inducers Crate"
+	name = "NT-75C Electromagnetic Power Inducers Crate"
 	desc = "No rechargers? No problem, with the NT-75 EPI, you can recharge any standard cell-based equipment anytime, anywhere. Contains two Inducers."
 	cost = 2000
-	contains = list(/obj/item/inducer/sci {cell_type = /obj/item/stock_parts/cell/inducer_supply; opened = 0}, /obj/item/inducer/sci {cell_type = /obj/item/stock_parts/cell/inducer_supply; opened = 0}) //FALSE doesn't work in modified type paths apparently.
+	contains = list(/obj/item/inducer/cargo,
+					/obj/item/inducer/cargo)
 	crate_name = "inducer crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
 /datum/supply_pack/engineering/pacman
 	name = "P.A.C.M.A.N Generator Crate"
 	desc = "Engineers can't set up the engine? Not an issue for you, once you get your hands on this P.A.C.M.A.N. Generator! Takes in plasma and spits out sweet sweet energy."
-	cost = 2500
-	access_view = ACCESS_ENGINE
+	cost = 3000
 	contains = list(/obj/machinery/power/port_gen/pacman)
 	crate_name = "PACMAN generator crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical

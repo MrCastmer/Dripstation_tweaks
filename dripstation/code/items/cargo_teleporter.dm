@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 /obj/item/cargo_teleporter
 	name = "QM personal teleporter"
 	desc = "Specialised personal teleporter based on modern bluespace technology. This one issued to QM for moving crates, closets and none-living objects to previously marked locations."
-	icon = 'dripstation/icons/obj/cargo_teleporter.dmi'
+	icon = 'dripstation/icons/obj/cargo/cargo_teleporter.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'dripstation/icons/mob/inhands/equipment/cargo_teleporter_lefthand.dmi'
 	righthand_file = 'dripstation/icons/mob/inhands/equipment/cargo_teleporter_righthand.dmi'
@@ -280,7 +280,7 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 /obj/effect/decal/cleanable/cargo_mark
 	name = "cargo mark"
 	desc = "A mark left behind by a cargo teleporter, which allows targeted teleportation. Can be removed by the cargo teleporter."
-	icon = 'dripstation/icons/obj/cargo_teleporter.dmi'
+	icon = 'dripstation/icons/obj/cargo/cargo_teleporter.dmi'
 	icon_state = "marker"
 	///the reference to the item that spawned the cargo mark
 	var/obj/item/cargo_teleporter/parent_item

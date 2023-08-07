@@ -1,7 +1,7 @@
 /obj/item/boxcutter
 	name = "boxcutter"
 	desc = "A tool for cutting boxes, or throats."
-	icon = 'dripstation/icons/obj/boxcutter.dmi'
+	icon = 'dripstation/icons/obj/cargo/boxcutter.dmi'
 	icon_state = "boxcutter"
 	item_state = "boxcutter"
 	lefthand_file = 'dripstation/icons/mob/inhands/equipment/boxcutter_lefthand.dmi'
