@@ -826,10 +826,10 @@
 	//desc = "A small bottle. Contains exotic stabilizer."
 	//list_reagents = list(/datum/reagent/exotic_stabilizer = 30)
 
-///obj/item/reagent_containers/glass/bottle/leadacetate
-	//name = "lead acetate bottle"
-	//desc = "A small bottle. Contains lead acetate."
-	//list_reagents = list(/datum/reagent/toxin/leadacetate = 30)
+/obj/item/reagent_containers/glass/bottle/leadacetate
+	name = "lead acetate bottle"
+	desc = "A small bottle. Contains lead acetate."
+	list_reagents = list(/datum/reagent/toxin/leadacetate = 30)
 
 /obj/item/reagent_containers/glass/bottle/caramel
 	name = "bottle of caramel"

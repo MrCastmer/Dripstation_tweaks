@@ -1528,9 +1528,9 @@
 	M.adjustBruteLoss(-0.35 * REM, 0)
 	return TRUE
 
-/datum/reagent/medicine/polypyr/reaction_mob(mob/living/carbon/human/exposed_human, methods=TOUCH, reac_volume)
+/datum/reagent/medicine/polypyr/reaction_mob(mob/living/carbon/human/exposed_human, method=TOUCH, reac_volume)
 	. = ..()
-	if(!(methods & (TOUCH|VAPOR)) || !ishuman(exposed_human) || (reac_volume < 0.5))
+	if(!(method & (TOUCH|VAPOR)) || !ishuman(exposed_human) || (reac_volume < 0.5))
 		return
 	exposed_human.hair_color = "92f"
 	exposed_human.facial_hair_color = "92f"

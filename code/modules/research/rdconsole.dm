@@ -1087,7 +1087,8 @@ Nothing else in the console has ID requirements.
 					stored_research.add_design(D, TRUE)
 		else
 			stored_research.add_design(d_disk.blueprints[n], TRUE)
-
+		say("Uploading blueprints from disk.")
+		d_disk.on_upload(stored_research)
 	updateUsrDialog()
 
 /obj/machinery/computer/rdconsole/ui_interact(mob/user)

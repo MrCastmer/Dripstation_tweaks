@@ -14,11 +14,12 @@
 	var/fall_chance = 10
 	var/removal_time = 0
 	var/removal_pain = 0
+	var/obj/tape_gag = /obj/item/clothing/mask/muzzle/tape
 
 /obj/item/stack/tape/attack(mob/living/M, mob/user)
 	. = ..()
 	if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-		var/obj/item/clothing/mask/muzzle/tape/tape_muzzle = new()
+		var/obj/item/clothing/mask/muzzle/tape/tape_muzzle = new tape_gag(src)
 		if(!tape_muzzle.mob_can_equip(M, null, SLOT_WEAR_MASK, TRUE, TRUE))
 			to_chat(user, span_warning("You can't tape [M]'s mouth shut!"))
 			return

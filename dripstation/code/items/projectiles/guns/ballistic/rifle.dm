@@ -5,7 +5,7 @@
 /obj/item/gun/ballistic/rifle/boltaction/brand_new/prime
 	name = "\improper Regal Nagant"
 	desc = "A prized hunting Mosin Nagant. Used for the most dangerous game."
-	icon = 'dripstation/icons/obj/guns/ballistic.dmi'
+	icon = 'dripstation/icons/obj/weapons/ballistic.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/guns_on_back.dmi'
 	lefthand_file = 'dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'dripstation/icons/mob/inhands/guns_righthand.dmi'

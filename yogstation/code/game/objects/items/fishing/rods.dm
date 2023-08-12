@@ -88,7 +88,7 @@
 		if(bait && prob(max(50 - bait.fishing_power,0))) //50 - bait.fishing_power% chance to lose your bait
 			to_chat(fisher, span_notice("Your [bait] is lost!"))
 			cut_overlays()
-			QDEL_NULL(bait)
+			consume_bait(bait)
 			recalculate_power()
 	else
 		playsound(fishing_component, 'sound/effects/splash.ogg', 50, FALSE, -5)
@@ -107,6 +107,11 @@
 	fishing_turf.cut_overlay(bobber)
 	fishing_component = null
 	bite = FALSE //just to be safe
+
+/obj/item/twohanded/fishingrod/proc/consume_bait()
+	if(bait)
+		QDEL_NULL(bait)
+		update_icon()
 
 /obj/item/twohanded/fishingrod/proc/reel_in_forced()
 	reel_in(forced = TRUE)

@@ -17,7 +17,7 @@
 	can_unsuppress = TRUE
 	actions_types = list()
 	vary_fire_sound = FALSE
-	icon = 'dripstation/icons/obj/guns/ballistic.dmi'
+	icon = 'dripstation/icons/obj/weapons/ballistic.dmi'
 	load_sound = "sound/weapons/rifleload.ogg"
 	load_empty_sound = "sound/weapons/rifleload.ogg"
 	rack_sound = "sound/weapons/riflerack.ogg"
@@ -28,7 +28,7 @@
 /obj/item/gun/ballistic/automatic/pistol/glock17
 	name = "\improper Glock-17"
 	desc = "A weapon from bygone times, this has been made to look like an old, blocky firearm from the 21st century. Chambered in 9x19mm."
-	icon = 'dripstation/icons/obj/guns/ballistic.dmi'
+	icon = 'dripstation/icons/obj/weapons/ballistic.dmi'
 	icon_state = "glock"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
@@ -40,7 +40,7 @@
 /obj/item/gun/ballistic/automatic/pistol/fn45
 	name = "\improper FNX-45 Tactical"
 	desc = "Tactical modern Terra Gov service pistol. Better, faster, stronger than other service pistols. Do not as iconic as M1911, but reliable and modern. Chambered in .45 caliber. Has a threaded barrel for suppressors."
-	icon = 'dripstation/icons/obj/guns/ballistic.dmi'
+	icon = 'dripstation/icons/obj/weapons/ballistic.dmi'
 	icon_state = "fnx"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/fn45

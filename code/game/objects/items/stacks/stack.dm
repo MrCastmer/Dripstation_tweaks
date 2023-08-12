@@ -456,8 +456,12 @@
 	var/on_floor = FALSE
 	var/window_checks = FALSE
 	var/placement_checks = FALSE
+	/// What trait, if any, boosts the construction speed of this item
+	var/trait_booster
+	/// How much the trait above, if supplied, boosts the construct speed of this item
+	var/trait_modifier = 1
 
-/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE )
+/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, trait_booster, trait_modifier = 1)
 
 
 	src.title = title
@@ -470,6 +474,8 @@
 	src.on_floor = on_floor
 	src.window_checks = window_checks
 	src.placement_checks = placement_checks
+	src.trait_booster = trait_booster
+	src.trait_modifier = trait_modifier
 /*
  * Recipe list datum
  */

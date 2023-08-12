@@ -133,7 +133,7 @@
 /obj/item/pda/quartermaster
 	name = "quartermaster PDA"
 	default_cartridge = /obj/item/cartridge/quartermaster
-	insert_type = /obj/item/pen/fountain
+	insert_type = /obj/item/pen/fountain/survival
 	icon_state = "pda-qm"
 
 /obj/item/pda/shaftminer
