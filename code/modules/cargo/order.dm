@@ -50,7 +50,10 @@
 	P.info += "Access Restrictions: [get_access_desc(pack.access)]<br/>"
 	P.info += "Requested by: [orderer]<br/>"
 	if(paying_account)
-		P.info += "Paid by: [paying_account.account_holder]<br/>"
+		if(isnull(paying_account.account_holder))
+			P.info += "Paid by: [paying_account.department_name]<br/>" //Department card manualy used to pay
+		else
+			P.info += "Paid by: [paying_account.account_holder]<br/>"
 	P.info += "Rank: [orderer_rank]<br/>"
 	P.info += "Comment: [reason]<br/>"
 
@@ -103,8 +106,10 @@
 	var/account_holder
 	if(paying_account)
 		account_holder = paying_account.account_holder
+		if(isnull(account_holder))
+			account_holder = paying_account.department_name //Department card manualy used to pay
 	else
-		account_holder = "Cargo"
+		account_holder = "Cargo Budget"
 	var/obj/structure/closet/crate/C = pack.generate(A, paying_account)
 	generateManifest(C, account_holder, pack)
 	return C

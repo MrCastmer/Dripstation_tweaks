@@ -23,7 +23,7 @@
 	hardsuit_type = "hvymining"
 	icon = 'dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-	slowdown = 0.4
+	slowdown = 0.5
 	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	armor = list(MELEE = 70, BULLET = 25, LASER = 20, ENERGY = 20, BOMB = 70, BIO = 100, RAD = 60, FIRE = 100, ACID = 100, WOUND = 15)
@@ -35,3 +35,4 @@
 /obj/item/clothing/suit/space/hardsuit/heavymining/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate,2,/obj/item/stack/sheet/animalhide/carpdragon, list(BULLET = 5, LASER = 10, BOMB = 5, RAD = 15, WOUND = 2.5))
+

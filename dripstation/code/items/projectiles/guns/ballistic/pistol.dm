@@ -62,41 +62,6 @@
 	name = "ammo box (9mm Armor-Piercing)"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
-//ammo boxes for 12mm
-/obj/item/storage/box/slug
-	name = "box of slug shotgun shots"
-	desc = "A box full of slug lethal shots designed for shotguns. The box itself is designed for holding any kind of shotgun shell."
-	icon_state = "slug_box"
-	icon = 'dripstation/icons/obj/ammo.dmi'
-	illustration = null
-
-/obj/item/storage/box/slug/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/ammo_casing/shotgun))
-
-/obj/item/storage/box/slug/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun(src)
-
-/obj/item/storage/box/incendiary
-	name = "box of incendiary slug shotgun shots"
-	desc = "A box full of incendiary lethal shots designed for shotguns. The box itself is designed for holding any kind of shotgun shell."
-	icon_state = "incendiary_box"
-	icon = 'dripstation/icons/obj/ammo.dmi'
-	illustration = null
-
-/obj/item/storage/box/incendiary/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/ammo_casing/shotgun))
-
-/obj/item/storage/box/incendiary/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/incendiary(src)
-
 /obj/item/ammo_box/no_direct/c38
 	name = "ammo box (.38 special)"
 	icon_state = "38box"

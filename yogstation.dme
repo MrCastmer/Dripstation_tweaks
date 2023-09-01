@@ -3730,6 +3730,7 @@
 #include "dripstation\code\items\cooking\condiments.dm"
 #include "dripstation\code\items\projectiles\guns\ballistic\pistol.dm"
 #include "dripstation\code\items\projectiles\guns\ballistic\rifle.dm"
+#include "dripstation\code\items\projectiles\guns\ballistic\shotgun.dm"
 #include "dripstation\code\modules\cargo\markets\_market.dm"
 #include "dripstation\code\modules\cargo\markets\market_item.dm"
 #include "dripstation\code\modules\cargo\markets\market_telepad.dm"

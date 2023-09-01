@@ -799,7 +799,7 @@
 	actions_types = list()
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize()
+/obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/Initialize()
 	. = ..()
 	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
 

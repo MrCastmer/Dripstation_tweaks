@@ -17,3 +17,6 @@
 	magboot_state = "capboots"
 	magpulse_name = "anchoring spikes"
 	slowdown_active = 2	
+
+/obj/item/clothing/shoes/magboots/syndie
+	slowdown_active = 1
