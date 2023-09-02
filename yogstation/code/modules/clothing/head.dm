@@ -180,7 +180,7 @@
 	name = "chief engineer beret"
 	desc = "A white beret with the engineering insignia emblazoned on it. Its owner knows what they're doing. Probably."
 	icon = 'yogstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
+	// mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
 	icon_state = "beret_ce"
 	armor = list(rad = 20, fire = 80)
 	strip_delay = 60
@@ -224,9 +224,9 @@
 /obj/item/clothing/head/beret/cmo
 	name = "chief medical officer beret"
 	desc = "A baby blue beret with the insignia of Medistan. It smells very sterile."
-	icon = 'yogstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
-	icon_state = "beret_cmo"
+	// icon = 'yogstation/icons/obj/clothing/hats.dmi'
+	// mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
+	// icon_state = "beret_cmo"
 	armor = list(bio = 30, acid = 20)
 	strip_delay = 60
 

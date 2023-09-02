@@ -53,6 +53,9 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT	
 	armor = list(MELEE = 35, BULLET = 25, LASER = 40, ENERGY = 20, BOMB = 35, BIO = 0, RAD = 0, FIRE = 0, ACID = 55)
 
+/obj/item/clothing/gloves/combat
+	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
+
 // ###### WARDEN ######
 
 /obj/item/clothing/under/rank/warden
@@ -83,6 +86,8 @@
 	desc = "Standart issue fancy corporate dress issued to the Head of Security."
 	icon_state = "warden_corporatef"
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP	
+	body_parts_covered = CHEST|GROIN|ARMS		
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 
 /obj/item/clothing/mask/gas/sechailer/swat/warden

@@ -16,7 +16,7 @@
 	alt_titles = list("Mute Entertainer", "Silent Jokester", "Pantomimist")
 
 	added_access = list()
-	base_access = list(ACCESS_THEATRE)
+	base_access = list(ACCESS_THEATRE, ACCESS_MIME)
 	paycheck = PAYCHECK_MINIMAL
 	paycheck_department = ACCOUNT_SRV
 

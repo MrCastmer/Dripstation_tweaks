@@ -5,6 +5,8 @@
 
 /obj/item/clothing/under/rank/head_of_personnel/skirt
 	can_adjust = TRUE
+	fitted = FEMALE_UNIFORM_TOP	
+	body_parts_covered = CHEST|GROIN|ARMS	
 	mutantrace_variation = MUTANTRACE_VARIATION	
 
 /obj/item/clothing/under/rank/head_of_personnel/dress

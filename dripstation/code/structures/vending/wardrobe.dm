@@ -108,24 +108,27 @@
 	product_ads = "Fire and acid proof!"
 	vend_reply = "There is no time to buy, go save someone!"
 	req_access = list(ACCESS_HAZARD_TECH)
-	products = list(
-		// /obj/item/storage/backpack/duffelbag/engineering/emtech = 2,
-		// /obj/item/storage/backpack/satchel/eng/emtech = 2,
-		// /obj/item/storage/backpack/industrial/emtech = 2,
-		// /obj/item/clothing/suit/hooded/wintercoat/engineering/emtech = 2,
-		// /obj/item/clothing/under/rank/engineering/engineer/hazard = 2,
-		// /obj/item/clothing/under/rank/engineering/engineer/skyrat/hazard_chem = 2,
-		// /obj/item/clothing/under/rank/engineering/engineer/skyrat/utility = 2,
-		// /obj/item/clothing/suit/hazardvest = 2,
-		// /obj/item/clothing/head/beretclassic/emtech = 2,
-		// /obj/item/clothing/shoes/workboots = 2,
-		// /obj/item/clothing/shoes/workboots/dark = 2,
-		// /obj/item/radio/headset/headset_eng = 2,
-		/obj/item/clothing/head/hardhat/orange = 2,
-	)
-	premium = list(/obj/item/clothing/head/hardhat/weldhat/orange = 1, /obj/item/clothing/glasses/meson/engine = 2)
+	products = list(/obj/item/clothing/accessory/pocketprotector = 1,
+					/obj/item/storage/backpack/duffelbag/engineering/hazard = 1,
+					/obj/item/storage/backpack/industrial/hazard = 1,
+					/obj/item/storage/backpack/satchel/hazard = 1,
+					/obj/item/clothing/under/rank/engineer/hazard = 1,					
+					/obj/item/clothing/under/rank/engineer/hazard/overalls = 1,
+					/obj/item/clothing/under/rank/engineer/hazard/overalls/skirt = 1,
+					/obj/item/clothing/suit/hazardvest = 1,				
+					/obj/item/clothing/suit/hooded/wintercoat/engineering/haztech = 1,			
+					/obj/item/clothing/shoes/workboots = 1,
+					/obj/item/clothing/shoes/workboots/black = 1,					
+					/obj/item/clothing/shoes/xeno_wraps/engineering = 1,
+					/obj/item/clothing/head/beret/haz = 1,
+					/obj/item/clothing/head/hardhat/orange = 1)
+	premium = list(/obj/item/storage/belt/utility = 1,
+					/obj/item/clothing/head/hardhat/weldhat/orange = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/haztech_wardrobe
 	payment_department = ACCOUNT_ENG
+
+/obj/item/clothing/head/hardhat/weldhat/orange
+	custom_premium_price = 150
 
 /obj/item/vending_refill/wardrobe/haztech_wardrobe
 	machine_name = "HazardDrobe"
@@ -228,3 +231,99 @@
 
 /obj/item/vending_refill/wardrobe/det_wardrobe
 	machine_name = "DetDrobe"
+
+/obj/machinery/vending/wardrobe/atmos_wardrobe
+	products = list(/obj/item/clothing/accessory/pocketprotector = 2,
+					/obj/item/storage/backpack/duffelbag/engineering/atmos = 2,
+					/obj/item/storage/backpack/satchel/atmos = 2,
+					/obj/item/storage/backpack/industrial/atmos = 2,
+					/obj/item/clothing/under/rank/atmospheric_technician = 3,
+					/obj/item/clothing/under/rank/atmospheric_technician/skirt = 3,
+					/obj/item/clothing/under/rank/atmospheric_technician/overalls = 2,
+					/obj/item/clothing/under/rank/atmospheric_technician/overalls/skirt = 2,
+					/obj/item/clothing/suit/hazardvest/blue = 3,
+					/obj/item/clothing/suit/toggle/bomber/engibomber/atmosbomber = 2,
+					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 2,
+					/obj/item/clothing/shoes/sneakers/black = 3,
+					/obj/item/clothing/shoes/workboots = 3,
+					/obj/item/clothing/shoes/xeno_wraps = 2,
+					/obj/item/clothing/head/beret/atmos = 3,					
+					/obj/item/clothing/head/hardhat = 2,
+					/obj/item/clothing/head/hardhat/dblue = 2,
+					/obj/item/clothing/gloves/color/black = 2,
+					/obj/item/clothing/accessory/armband/engine = 2)
+	premium = list(/obj/item/storage/belt/utility = 1,
+					/obj/item/clothing/head/hardhat/weldhat/dblue = 1)
+
+/obj/item/clothing/head/hardhat/weldhat/dblue
+	custom_premium_price = 150
+
+/obj/machinery/vending/wardrobe/engi_wardrobe
+	products = list(/obj/item/clothing/accessory/pocketprotector = 3,
+					/obj/item/storage/backpack/duffelbag/engineering = 3,
+					/obj/item/storage/backpack/industrial = 3,
+					/obj/item/storage/backpack/satchel/eng = 3,
+					/obj/item/clothing/under/rank/engineer = 3,
+					/obj/item/clothing/under/rank/engineer/skirt = 3,
+					/obj/item/clothing/suit/hazardvest = 3,
+					/obj/item/clothing/suit/toggle/bomber/engibomber = 3,
+					/obj/item/clothing/suit/toggle/bomber/engibomber/soft = 3,				
+					/obj/item/clothing/suit/hooded/wintercoat/engineering = 3,
+					/obj/item/clothing/suit/poncho/eng = 2,				
+					/obj/item/clothing/shoes/workboots = 3,
+					/obj/item/clothing/shoes/xeno_wraps/engineering = 3,
+					/obj/item/clothing/head/beret/eng = 3,
+					/obj/item/clothing/head/hardhat = 3,
+					/obj/item/clothing/head/welding/knight = 1,
+					/obj/item/clothing/head/welding/engie = 1)
+	premium = list(/obj/item/storage/belt/utility = 2,
+					/obj/item/clothing/head/hardhat/weldhat = 1)
+
+/obj/item/clothing/head/hardhat/weldhat
+	custom_premium_price = 150
+
+/obj/machinery/vending/wardrobe/science_wardrobe
+	products = list(/obj/item/clothing/accessory/pocketprotector = 3,
+					/obj/item/storage/backpack/science = 3,
+					/obj/item/storage/backpack/satchel/tox = 3,
+					/obj/item/storage/backpack/duffelbag/science = 3,
+					/obj/item/clothing/under/rank/scientist = 5,
+					/obj/item/clothing/under/rank/scientist/skirt = 5,					
+					/obj/item/clothing/suit/hooded/wintercoat/science = 3,
+					/obj/item/clothing/suit/toggle/labcoat = 5,					
+					/obj/item/clothing/suit/toggle/labcoat/science = 5,
+					/obj/item/clothing/suit/poncho/sci = 2,
+					/obj/item/clothing/suit/toggle/bomber/scibomber = 2,
+					/obj/item/clothing/head/beret/sci = 3,					
+					/obj/item/clothing/shoes/sneakers/white = 3,
+					/obj/item/clothing/shoes/sandal/white = 3,
+					/obj/item/clothing/shoes/xeno_wraps/science = 3,
+					/obj/item/radio/headset/headset_sci = 5,
+					/obj/item/clothing/mask/gas = 3,
+					/obj/item/clothing/neck/scarf/purple = 2,
+					/obj/item/clothing/accessory/armband/science = 2)
+
+/obj/machinery/vending/wardrobe/robo_wardrobe
+	products = list(/obj/item/storage/backpack/science/robo = 3,
+					/obj/item/storage/backpack/satchel/tox/robo = 3,
+					/obj/item/storage/backpack/duffelbag/science/robo = 3,
+					/obj/item/clothing/glasses/hud/diagnostic = 2,
+					/obj/item/clothing/under/rank/roboticist = 2,
+					/obj/item/clothing/under/rank/roboticist/skirt = 2,
+					/obj/item/clothing/suit/toggle/labcoat = 2,
+					/obj/item/clothing/suit/toggle/labcoat/science/robo = 2,
+					/obj/item/clothing/suit/toggle/labcoat/wardtlab = 2,
+					/obj/item/clothing/suit/toggle/labcoat/aeneasrinil = 2,
+					/obj/item/clothing/suit/hooded/wintercoat/science/robotics = 2,
+					/obj/item/clothing/suit/hooded/amech = 2,
+					/obj/item/clothing/head/beret/sci/robotics = 2,
+					/obj/item/clothing/head/soft/black = 2,
+					/obj/item/clothing/head/welding/carp = 1,
+					/obj/item/clothing/head/welding/fancy = 1,
+					/obj/item/clothing/head/welding/demon = 1,
+					/obj/item/clothing/head/welding/flame = 1,
+					/obj/item/clothing/head/welding/flame/blue = 1,
+					/obj/item/clothing/head/welding/flame/symbols = 1,					
+					/obj/item/clothing/shoes/sneakers/black = 2,
+					/obj/item/clothing/gloves/fingerless = 2,
+					/obj/item/clothing/mask/bandana/skull = 2)

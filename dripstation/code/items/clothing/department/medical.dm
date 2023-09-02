@@ -1,98 +1,66 @@
-// ###### HOS ######
-/obj/item/clothing/under/rank/head_of_security
-	icon = 'dripstation/icons/obj/clothing/uniform/security/hos.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/security/hos.dmi'
+// ###### CHIEF MEDICAL OFFICER ######
 
-/obj/item/clothing/under/rank/head_of_security/skirt
-	can_adjust = TRUE
+/obj/item/clothing/suit/hooded/wintercoat/medical/cmo
+	icon = 'dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
 
-/obj/item/clothing/under/rank/head_of_security/corporate
-	name = "head of security's corporate uniform"
-	desc = "Standart issue fancy corporate uniform issued to the Head of Security."
-	icon_state = "hos_corporate"
-	item_state = "hos_corporate"
-	can_adjust = FALSE
+/obj/item/clothing/head/hooded/winterhood/medical/cmo
+	icon = 'dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/cmo/alt
+	name = "chief medical officer's long winter coat"
+	icon_state = "coatcmo_alt"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/cmo/alt
+
+/obj/item/clothing/head/hooded/winterhood/medical/cmo/alt
+	icon_state = "winterhood_cmo_alt"
+
+/obj/item/clothing/under/rank/chief_medical_officer/turtleneck
+	name = "chief medical officer's turtleneck"
+	icon_state = "cmoturtle"
+	desc = "A light blue turtleneck and tan khakis, for a chief medical officer with a superior sense of style."
+	icon = 'dripstation/icons/obj/clothing/uniform/medical/chief_medical.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/medical/chief_medical.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 
-/obj/item/clothing/under/rank/head_of_security/corporate/skirt
-	name = "head of security's corporate dress"
-	desc = "Standart issue fancy corporate dress issued to the Head of Security."
-	icon_state = "hos_corporatef"
-	item_state = "hos_corporatef"
+/obj/item/clothing/under/rank/chief_medical_officer/turtleneck/skirt
+	name = "chief medical officer's skirtleneck"
+	icon_state = "cmoturtle_skirt"
+	fitted = FEMALE_UNIFORM_TOP	
+	body_parts_covered = CHEST|GROIN|ARMS	
+
+/obj/item/clothing/under/rank/chief_medical_officer/turtleneck/alt
+	name = "chief medical officer's dark turtleneck"
+	desc = "Let the dying patients remember you this stylish."	
+	icon_state = "cmoturtle_dark"
+
+/obj/item/clothing/under/rank/chief_medical_officer/turtleneck/alt/skirt
+	name = "chief medical officer's dark skirtleneck"
+	icon_state = "cmoturtle_dark_f"
+	fitted = FEMALE_UNIFORM_TOP	
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
 
-/obj/item/clothing/mask/gas/sechailer/swat/hos
-	name = "\improper HOS SWAT mask"
-	icon_state = "hosmask"
-	item_state = "hosmask"	
-	icon = 'dripstation/icons/obj/clothing/masks.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/masks.dmi'	
+/obj/item/clothing/neck/cloak/cmo/alt
+	name = "chief medical officer's blue cloak"
+	desc = "Worn by the Chief Medical Officer, Extra Sterile™."
+	icon_state = "cmocloak_blue"	
 
-/obj/item/clothing/head/HoS
+/obj/item/clothing/head/beret/cmo
+	desc = "A beret custom-fit to the Chief Medical Officer, smells like formaldehyde."	
+	icon_state = "beretcmoblue"
 	icon = 'dripstation/icons/obj/clothing/hats.dmi'
-
-/obj/item/clothing/head/HoS/beret
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
 
-/obj/item/clothing/head/HoS/dictator
-	icon_state = "policechiefcap"	
-	item_state = "policechiefcap"	
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
-	name = "dictator head of security cap"
-	desc = "Kill your own to fear the enemy."
+/obj/item/clothing/head/beret/cmo/alt
+	name = "chief medical officer's white beret"
+	desc = "A beret custom-fit to the Chief Medical Officer, repaired once or twice after Runtime got a hold of it."
+	icon_state = "beretcmowhite"
 
-/obj/item/clothing/suit/armor/hos/trenchcoat
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+/obj/item/clothing/glasses/hud/health/sunglasses
+	item_state = "sunhudmed"
+	icon = 'dripstation/icons/obj/clothing/eyes.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/eyes.dmi'
+	lefthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_lefthand.dmi'
+	righthand_file = 'dripstation/icons/mob/inhands/clothing/glasses_righthand.dmi'
 
-// ###### WARDEN ######
-
-/obj/item/clothing/under/rank/warden
-	name = "warden's jumpsuit"
-	icon = 'dripstation/icons/obj/clothing/uniform/security/warden.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/security/warden.dmi'
-
-/obj/item/clothing/under/rank/warden/skirt
-	name = "warden's jumpskirt"
-	can_adjust = TRUE
-
-/obj/item/clothing/under/rank/warden/corporate
-	name = "warden's corporate uniform"
-	desc = "Standart issue fancy corporate uniform issued to the Warden."
-	icon_state = "warden_corporate"
-	item_state = "warden_corporate"
-	can_adjust = FALSE
-	mutantrace_variation = NO_MUTANTRACE_VARIATION	
-
-/obj/item/clothing/under/rank/warden/corporate/skirt
-	name = "head of security's corporate dress"
-	desc = "Standart issue fancy corporate dress issued to the Head of Security."
-	icon_state = "warden_corporatef"
-	item_state = "warden_corporatef"
-	can_adjust = FALSE
-	mutantrace_variation = NO_MUTANTRACE_VARIATION	
-
-/obj/item/clothing/mask/gas/sechailer/swat/warden
-	name = "\improper Warden SWAT mask"
-	icon_state = "wardenmask"
-	item_state = "wardenmask"	
-	icon = 'dripstation/icons/obj/clothing/masks.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/masks.dmi'	
-
-/obj/item/clothing/under/rank/warden/navyblue
-	mutantrace_variation = NO_MUTANTRACE_VARIATION	
-
-/obj/item/clothing/suit/armor/wardenjacket
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/vest/warden/alt
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-
-/obj/item/clothing/head/warden
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'	
-
-/obj/item/clothing/head/warden/drill
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'

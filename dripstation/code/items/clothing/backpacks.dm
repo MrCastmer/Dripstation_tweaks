@@ -208,3 +208,27 @@
 	icon_state = "duffel-chemistry"
 	item_state = "duffel-chemistry"
 	icon = 'dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/satchel/hazard
+	name = "hazard satchel"
+	desc = "A fireproof satchel for keeping gear safe."
+	icon_state = "satchel-haz"
+	item_state = "satchel-haz"
+	resistance_flags = FIRE_PROOF	
+	icon = 'dripstation/icons/obj/storage/backpacks.dmi'	
+
+/obj/item/storage/backpack/industrial/hazard
+	name = "hazard backpack"
+	desc = "It's a fireproof backpack for Hazard Control Department."
+	icon_state = "hazpack"
+	item_state = "hazpack"		
+	resistance_flags = FIRE_PROOF	
+	icon = 'dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/engineering/hazard
+	name = "hazard duffelbag"
+	desc = "A duffelbag designed to hold tools. This one is specially designed for hazard technician."
+	icon_state = "duffel-haz"
+	item_state = "duffel-haz"
+	resistance_flags = FIRE_PROOF
+	icon = 'dripstation/icons/obj/storage/backpacks.dmi'	

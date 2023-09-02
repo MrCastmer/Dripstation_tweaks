@@ -2,10 +2,24 @@
 /obj/item/clothing/suit/toggle/labcoat/science/rd
 	name = "research directors labcoat"
 	desc = "A Nanotrasen special fancy labcoat for Research Directors."
-	icon_state = "labcoat_rd"	
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'		
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "labcoat_rd"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/suit/toggle/labcoat/science/rd/brown
+	name = "research directors brown labcoat"
+	desc = "Gives the old man vibes, but thats the point."
+	icon_state = "labcoat_rd_brown"
+
+/obj/item/clothing/suit/toggle/labcoat/science/rd/purple
+	name = "research directors purple labcoat"
+	desc = "More purple than the standard model."
+	icon_state = "labcoat_rd_purple"	
+
+/obj/item/clothing/under/rank/research_director/alt
+	icon = 'dripstation/icons/obj/clothing/uniform/research/research_director.dmi'
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/research/research_director.dmi'
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	can_adjust = FALSE
 
 /obj/item/clothing/head/beret/rd
 	desc = "A brown beret with a science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."	
@@ -76,6 +90,12 @@
 	desc = "A roboticist's beret. It strongly smells of oil."
 	icon_state = "beretrobo"
 
+/obj/item/clothing/suit/toggle/labcoat/science/robo
+	name = "roboticist's labcoat"
+	desc = "A black suit that protects against minor chemical spills. Has a red stripe on the shoulder."
+	icon_state = "labcoat_roboblack"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
 /obj/item/clothing/suit/hooded/wintercoat/science/robotics
 	name = "robotics winter coat"
 	desc = "A black winter coat with a badass flaming robotic skull for the zipper tab. This one has bright red designs and a few useless buttons."
@@ -109,49 +129,5 @@
 	desc = "A painted welding helmet, has some oriental symbols on it."
 	icon_state = "yuki_matsuda"	
 
-// ###### VENDORS ######
 
-/obj/machinery/vending/wardrobe/science_wardrobe
-	products = list(/obj/item/clothing/accessory/pocketprotector = 3,
-					/obj/item/storage/backpack/science = 3,
-					/obj/item/storage/backpack/satchel/tox = 3,
-					/obj/item/storage/backpack/duffelbag/science = 3,
-					/obj/item/clothing/under/rank/scientist = 5,
-					/obj/item/clothing/under/rank/scientist/skirt = 5,					
-					/obj/item/clothing/suit/hooded/wintercoat/science = 3,
-					/obj/item/clothing/suit/toggle/labcoat = 5,					
-					/obj/item/clothing/suit/toggle/labcoat/science = 5,
-					/obj/item/clothing/suit/poncho/sci = 2,
-					/obj/item/clothing/suit/toggle/bomber/scibomber = 2,
-					/obj/item/clothing/head/beret/sci = 3,					
-					/obj/item/clothing/shoes/sneakers/white = 3,
-					/obj/item/clothing/shoes/sandal/white = 3,
-					/obj/item/clothing/shoes/xeno_wraps/science = 3,
-					/obj/item/radio/headset/headset_sci = 5,
-					/obj/item/clothing/mask/gas = 3,
-					/obj/item/clothing/neck/scarf/purple = 2,
-					/obj/item/clothing/accessory/armband/science = 2)
 
-/obj/machinery/vending/wardrobe/robo_wardrobe
-	products = list(/obj/item/storage/backpack/science/robo = 3,
-					/obj/item/storage/backpack/satchel/tox/robo = 3,
-					/obj/item/storage/backpack/duffelbag/science/robo = 3,
-					/obj/item/clothing/glasses/hud/diagnostic = 2,
-					/obj/item/clothing/under/rank/roboticist = 2,
-					/obj/item/clothing/under/rank/roboticist/skirt = 2,
-					/obj/item/clothing/suit/toggle/labcoat = 2,
-					/obj/item/clothing/suit/toggle/labcoat/wardtlab = 2,
-					/obj/item/clothing/suit/toggle/labcoat/aeneasrinil = 2,
-					/obj/item/clothing/suit/hooded/wintercoat/science/robotics = 2,
-					/obj/item/clothing/suit/hooded/amech = 2,
-					/obj/item/clothing/head/beret/sci/robotics = 2,					
-					/obj/item/clothing/head/welding/carp = 1,
-					/obj/item/clothing/head/welding/fancy = 1,
-					/obj/item/clothing/head/welding/demon = 1,
-					/obj/item/clothing/head/welding/flame = 1,
-					/obj/item/clothing/head/welding/flame/blue = 1,
-					/obj/item/clothing/head/welding/flame/symbols = 1,					
-					/obj/item/clothing/shoes/sneakers/black = 2,
-					/obj/item/clothing/gloves/fingerless = 2,
-					/obj/item/clothing/head/soft/black = 2,
-					/obj/item/clothing/mask/bandana/skull = 2)

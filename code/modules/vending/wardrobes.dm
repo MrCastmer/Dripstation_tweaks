@@ -110,23 +110,23 @@
 	icon_deny = "engidrobe-deny"
 	product_ads = "Guaranteed to protect your feet from industrial accidents!;Afraid of radiation? Then wear yellow!"
 	vend_reply = "Thank you for using the EngiDrobe!"
-	products = list(/obj/item/clothing/accessory/pocketprotector = 3,
-					/obj/item/storage/backpack/duffelbag/engineering = 3,
-					/obj/item/storage/backpack/industrial = 3,
-					/obj/item/storage/backpack/satchel/eng = 3,
-					/obj/item/clothing/suit/hooded/wintercoat/engineering = 3,
-					/obj/item/clothing/under/rank/engineer = 3,
-					/obj/item/clothing/under/rank/engineer/skirt = 3,
-					/obj/item/clothing/under/rank/engineer/hazard = 3,
-					/obj/item/clothing/suit/hazardvest = 3,
-					/obj/item/clothing/shoes/workboots = 3,
-					/obj/item/clothing/shoes/xeno_wraps/engineering = 3,
-					/obj/item/clothing/head/beret/eng = 3,
-					/obj/item/clothing/head/hardhat = 3,
-					/obj/item/clothing/head/welding/demon = 1,
-					/obj/item/clothing/head/welding/knight = 1,
-					/obj/item/clothing/head/welding/engie = 1,
-					/obj/item/clothing/head/hardhat/weldhat = 1)
+	// products = list(/obj/item/clothing/accessory/pocketprotector = 3,
+	// 				/obj/item/storage/backpack/duffelbag/engineering = 3,
+	// 				/obj/item/storage/backpack/industrial = 3,
+	// 				/obj/item/storage/backpack/satchel/eng = 3,
+	// 				/obj/item/clothing/suit/hooded/wintercoat/engineering = 3,
+	// 				/obj/item/clothing/under/rank/engineer = 3,
+	// 				/obj/item/clothing/under/rank/engineer/skirt = 3,
+	// 				/obj/item/clothing/under/rank/engineer/hazard = 3,
+	// 				/obj/item/clothing/suit/hazardvest = 3,
+	// 				/obj/item/clothing/shoes/workboots = 3,
+	// 				/obj/item/clothing/shoes/xeno_wraps/engineering = 3,
+	// 				/obj/item/clothing/head/beret/eng = 3,
+	// 				/obj/item/clothing/head/hardhat = 3,
+	// 				/obj/item/clothing/head/welding/demon = 1,
+	// 				/obj/item/clothing/head/welding/knight = 1,
+	// 				/obj/item/clothing/head/welding/engie = 1,
+	// 				/obj/item/clothing/head/hardhat/weldhat = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/engi_wardrobe
 	req_access = list(ACCESS_ENGINE_EQUIP)
 	payment_department = ACCOUNT_ENG
@@ -142,15 +142,15 @@
 	icon_deny = "atmosdrobe-deny"
 	product_ads = "Get your inflammable clothing right here!!!"
 	vend_reply = "Thank you for using the AtmosDrobe!"
-	products = list(/obj/item/clothing/accessory/pocketprotector = 2,
-					/obj/item/storage/backpack/duffelbag/engineering = 2,
-					/obj/item/storage/backpack/satchel/eng = 2,
-					/obj/item/storage/backpack/industrial = 2,
-					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,
-					/obj/item/clothing/head/beret/atmos = 3,
-					/obj/item/clothing/under/rank/atmospheric_technician = 3,
-					/obj/item/clothing/under/rank/atmospheric_technician/skirt = 3,
-					/obj/item/clothing/shoes/sneakers/black = 3)
+	// products = list(/obj/item/clothing/accessory/pocketprotector = 2,
+	// 				/obj/item/storage/backpack/duffelbag/engineering = 2,
+	// 				/obj/item/storage/backpack/satchel/eng = 2,
+	// 				/obj/item/storage/backpack/industrial = 2,
+	// 				/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,
+	// 				/obj/item/clothing/head/beret/atmos = 3,
+	// 				/obj/item/clothing/under/rank/atmospheric_technician = 3,
+	// 				/obj/item/clothing/under/rank/atmospheric_technician/skirt = 3,
+	// 				/obj/item/clothing/shoes/sneakers/black = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/atmos_wardrobe
 	req_access = list(ACCESS_ATMOSPHERICS)
 	payment_department = ACCOUNT_ENG

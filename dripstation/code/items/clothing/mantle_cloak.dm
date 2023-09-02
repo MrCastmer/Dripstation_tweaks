@@ -57,7 +57,7 @@
 
 /obj/item/clothing/neck/cloak/cmo
 	icon = 'dripstation/icons/obj/clothing/neck.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/neck.dmi'	
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/neck.dmi'
 
 /obj/item/clothing/neck/cloak/cap
 	icon = 'dripstation/icons/obj/clothing/neck.dmi'

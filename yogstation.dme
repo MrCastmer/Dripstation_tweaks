@@ -3689,6 +3689,8 @@
 #include "dripstation\code\items\clothing\mantle_cloak.dm"
 #include "dripstation\code\items\clothing\poncho.dm"
 #include "dripstation\code\items\clothing\department\command.dm"
+#include "dripstation\code\items\clothing\department\engineering.dm"
+#include "dripstation\code\items\clothing\department\medical.dm"
 #include "dripstation\code\items\clothing\department\research.dm"
 #include "dripstation\code\items\clothing\department\security.dm"
 #include "dripstation\code\items\cooking\condiments.dm"

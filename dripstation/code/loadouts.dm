@@ -59,31 +59,11 @@
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 
-// ###### WARDEN ######
-
+// ###### HOP ######
 /datum/outfit/job/hop
-	name = "Head of Personnel"
-	jobtype = /datum/job/hop
-
-	id_type = /obj/item/card/id/silver
-	pda_type = /obj/item/modular_computer/tablet/phone/preset/advanced/command/hop
-
-	glasses = /obj/item/clothing/glasses/hud/personnel
-	ears = /obj/item/radio/headset/heads/hop
-	uniform = /obj/item/clothing/under/rank/head_of_personnel
-	uniform_skirt = /obj/item/clothing/under/rank/head_of_personnel/skirt
 	shoes = /obj/item/clothing/shoes/laceup
-	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/command
-	head = /obj/item/clothing/head/hopcap
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1) //yogs - removes serv budget
 
-	backpack = /obj/item/storage/backpack/head_of_personnel
-	satchel = /obj/item/storage/backpack/satchel/head_of_personnel
-	duffelbag = /obj/item/storage/backpack/duffelbag/head_of_personnel
-
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/hop)
-
+// ###### CAPTAIN ######
 /datum/outfit/job/captain
 	name = "Captain"
 	jobtype = /datum/job/captain
@@ -111,6 +91,7 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
+// ###### RESEARCH DIRECTOR ######
 /datum/outfit/job/rd
 	name = "Research Director"
 	jobtype = /datum/job/rd
@@ -134,3 +115,32 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/science
 
 	chameleon_extras = /obj/item/stamp/rd
+
+// ###### MIME ######
+/datum/outfit/job/mime
+	id_type = /obj/item/card/id/mime
+
+	backpack_contents = list(
+	/obj/item/book/mimery=1,
+	/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing=1)
+
+// ###### CHIEF ENGI ######
+/datum/outfit/job/ce
+	id_type = /obj/item/card/id/head
+
+	belt = null
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = null
+
+// ###### ROBOTICIST ######
+/datum/outfit/job/roboticist
+	suit = /obj/item/clothing/suit/toggle/labcoat/science/robo
+
+// ###### CHIEF MEDICAL ######
+/datum/outfit/job/cmo
+	id_type = /obj/item/card/id/head
+
+	belt = null
+	glasses = null
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	gloves = null
