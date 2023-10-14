@@ -224,26 +224,6 @@
 	. = ..()
 	allowed = GLOB.detective_vest_allowed
 
-	//REALLYNEW SWAT suit
-/obj/item/clothing/suit/armor/swat
-	name = "MK.I SWAT Suit"
-	desc = "A tactical suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 2XXX for military operations. It has a minor slowdown, but offers decent protection."
-	icon_state = "heavy"
-	item_state = "swat_suit"
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	clothing_flags = THICKMATERIAL
-	heat_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
-	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
-	slowdown = 0.7
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list(MELEE = 40, BULLET = 40, LASER = 30,ENERGY = 30, BOMB = 50, BIO = 90, RAD = 20, FIRE = 100, ACID = 100, WOUND = 15)
-	strip_delay = 120
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-
 //All of the armor below is mostly unused
 
 /obj/item/clothing/suit/armor/centcom

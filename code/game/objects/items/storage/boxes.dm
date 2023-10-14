@@ -998,8 +998,7 @@
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells designed for shotguns. The box itself is designed for holding any kind of shotgun shell."
-	icon_state = "beanbag_box"
-	icon = 'dripstation/icons/obj/ammo.dmi'
+	icon_state = "rubbershot_box"
 	illustration = null
 
 /obj/item/storage/box/beanbag/ComponentInitialize()

@@ -1,4 +1,8 @@
 //ammo boxes for 12mm
+/obj/item/storage/box/beanbag
+	icon_state = "beanbag_box"
+	icon = 'dripstation/icons/obj/ammo.dmi'
+
 /obj/item/storage/box/slug
 	name = "box of slug shotgun shots"
 	desc = "A box full of slug lethal shots designed for shotguns. The box itself is designed for holding any kind of shotgun shell."

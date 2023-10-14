@@ -39,8 +39,8 @@
 	var/datum/looping_sound/oven/decon   //im borrowing oven sound because it suits this
 
 /obj/machinery/suit_storage_unit/standard_unit
-	suit_type = /obj/item/clothing/suit/space
-	helmet_type = /obj/item/clothing/head/helmet/space
+	suit_type = /obj/item/clothing/suit/space/eva
+	helmet_type = /obj/item/clothing/head/helmet/space/eva
 	mask_type = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/captain

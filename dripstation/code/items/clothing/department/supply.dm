@@ -79,3 +79,6 @@
 	item_state = "tagillawelding"	
 	icon = 'dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+
+obj/item/clothing/suit/hooded/wintercoat/cargo
+	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/box/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter)

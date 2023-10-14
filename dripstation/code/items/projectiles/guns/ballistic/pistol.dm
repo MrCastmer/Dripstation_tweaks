@@ -39,7 +39,8 @@
 
 /obj/item/gun/ballistic/automatic/pistol/fn45
 	name = "\improper FNX-45 Tactical"
-	desc = "Tactical modern Terra Gov service pistol. Better, faster, stronger than other service pistols. Do not as iconic as M1911, but reliable and modern. Chambered in .45 caliber. Has a threaded barrel for suppressors."
+	desc = "Tactical modern Terra Gov service pistol. Better, faster, stronger than other service pistols. \
+	Do not as iconic as M1911, but reliable and modern. Chambered in .45 caliber. Has a threaded barrel for suppressors."
 	icon = 'dripstation/icons/obj/weapons/ballistic.dmi'
 	icon_state = "fnx"
 	w_class = WEIGHT_CLASS_NORMAL
