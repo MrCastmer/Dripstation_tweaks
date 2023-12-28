@@ -41,6 +41,8 @@
 
 /obj/item/ammo_casing/shotgun/buckshot/syndie
 	name = "12/70 RIP-S shell (Syndicate Radically Invasive Projectile)"
+	desc = "An 12-gauge heavy tungsten buckshot shell without manufacturer's marking."
+
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot/syndie
 	name = "12/70 RIP-S"
@@ -55,17 +57,17 @@
 
 
 /obj/item/ammo_casing/shotgun/syndie
-	name = "12g AP-SSS (Armor Piercing Syndicate Shotgun Slug)"
-	desc = "An illegal high penetrative 12-gauge slug produced by the Syndicate."
+	name = "12g AP-СSS (Armor Piercing Ceramic Shotgun Slug)"
+	desc = "A high penetrative 12-gauge сeramic slug without manufacturer's marking."
 
 /obj/item/projectile/bullet/shotgun/slug/syndie
-	name = "12g AP-SSS"
+	name = "12g AP-СSS"
 	damage = 50 //damage reduced
 	armour_penetration = 20 // Armor Piercing
 	wound_bonus = -10 // better bleeding chance
 
 /obj/item/ammo_box/magazine/m12g/slug
-	name = "shotgun magazine (12g syndicate slugs)"
+	name = "shotgun magazine (12g сeramic slugs)"
 	desc = "A drum magazine designed for the Bulldog shotgun. \
-			Syndicate AP slugs are the best armor issue choice. \
+			Ceramic AP slugs are the best armor issue choice. \
 			Armor Piercing death to the Nanotrasen scum!"

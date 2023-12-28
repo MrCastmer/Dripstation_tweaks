@@ -152,3 +152,13 @@
 	name = "FNX-45 magazine (Venom .45 ACP)"
 	icon_state = "fn45V"
 	ammo_type = /obj/item/ammo_casing/c45/venom
+
+
+
+
+//ammo override for pistol calibers
+/obj/item/projectile/bullet/c10mm/ap
+	armour_penetration = 30
+
+/obj/item/projectile/bullet/c10mm/ap
+	armour_penetration = 30
