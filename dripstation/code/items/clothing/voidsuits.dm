@@ -110,15 +110,32 @@
 	slowdown = 2
 
 /obj/item/clothing/head/helmet/space/fragile
-	icon_state = "helm-emergency"
-	item_state = "helm-emergency"
-	armor = list(MELEE = 5, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 10, FIRE = 0, ACID = 0)
+	icon_state = "helm-emergency_lethal"
+	item_state = "helm-emergency_lethal"
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 10, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/suit/space/fragile
-	icon_state = "emergency"
-	item_state = "emergency"
+	icon_state = "emergency_lethal"
+	item_state = "emergency_lethal"
 	armor = list(MELEE = 5, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 10, FIRE = 0, ACID = 0)
 
+/obj/item/clothing/suit/space/fragile/elite
+	desc = "A bulky, air-tight suit meant to protect the user during emergency situations. It looks somewhat durable."
+	icon_state = "emergency_lethal_elite"
+	item_state = "emergency_lethal_elite"
+	w_class = WEIGHT_CLASS_NORMAL
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
+	armor = list(MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 0, BIO = 100, RAD = 20, FIRE = 40, ACID = 0)
+
+/obj/item/clothing/suit/space/fragile/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(!torn && prob(30))
+		to_chat(owner, span_warning("[src] tears from the damage, breaking the air-tight seal!"))
+		clothing_flags &= ~STOPSPRESSUREDAMAGE
+		name = "torn [src]."
+		desc = "A bulky suit meant to protect the user during emergency situations, at least until someone tore a hole in the suit."
+		torn = TRUE
+		playsound(loc, 'sound/weapons/slashmiss.ogg', 50, 1)
+		playsound(loc, 'sound/effects/refill.ogg', 50, 1)
 
 //////Syndicate//////
 /obj/item/clothing/head/helmet/space/syndicate
