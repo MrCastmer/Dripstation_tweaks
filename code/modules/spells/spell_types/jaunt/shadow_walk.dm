@@ -23,6 +23,13 @@
 		return FALSE
 	if(is_jaunting(owner))
 		return TRUE
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		if(H.on_fire)						//dripstation edit start
+			owner.visible_message(span_boldwarning("[owner]'s body shudders and flickers into darkness for a moment!"),
+													span_shadowling("The void rejects the flames engulfing your body, throwing you back into the burning light!"))
+			H.AdjustKnockdown(30)
+			return FALSE						//dripstation edit end
 	var/turf/cast_turf = get_turf(owner)
 	if(cast_turf.get_lumcount() >= SHADOW_SPECIES_LIGHT_THRESHOLD)
 		if(feedback)

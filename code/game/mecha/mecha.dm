@@ -54,6 +54,7 @@
 	var/list/proc_res = list() //stores proc owners, like proc_res["functionname"] = owner reference
 	var/datum/effect_system/spark_spread/spark_system = new
 	var/lights = FALSE
+	var/lamp_cooldown = 0 //stores time of cooldown to force disabling.			dripstation edit
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
 	var/omnidirectional_attacks = FALSE //lets mech shoot anywhere, not just in front of it

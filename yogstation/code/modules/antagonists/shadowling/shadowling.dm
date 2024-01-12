@@ -14,6 +14,9 @@
 	log_game("[key_name(owner.current)] was made into a shadowling!")
 	var/datum/action/cooldown/spell/shadowling_hatch/hatch = new(owner.current)
 	hatch.Grant(owner.current)
+	
+	var/datum/action/cooldown/spell/pointed/enthrall/enthrall = new(owner.current)	//dripstation edit
+	enthrall.Grant(owner.current)	//dripstation edit
 
 	var/datum/action/cooldown/spell/shadowling_hivemind/hivemind_chat = new(owner.current)
 	hivemind_chat.Grant(owner.current)

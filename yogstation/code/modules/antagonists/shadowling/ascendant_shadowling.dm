@@ -1,4 +1,4 @@
-/mob/living/simple_animal/ascendant_shadowling
+/*/mob/living/simple_animal/ascendant_shadowling	//check modular_dripstation\code\modules\antagonists\shadowling\ascendant_shadowling.dm
 	name = "ascendant shadowling"
 	desc = "HOLY SHIT RUN THE FUCK AWAY- <span class='shadowling'>RAAAAAAA!</span>"
 	icon = 'yogstation/icons/mob/mob.dmi'
@@ -46,3 +46,4 @@
 		to_chat(M, span_notice("<i><b>You feel a woosh as newly released energy temporarily distorts space itself...</b></i>"))
 	sound_to_playing_players('sound/hallucinations/wail.ogg') // Ghosts have ears!!
 	. = ..()
+*/
