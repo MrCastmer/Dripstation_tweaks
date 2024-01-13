@@ -835,7 +835,7 @@
   */
 /mob/living/silicon/robot/proc/toggle_headlamp(turn_off = FALSE, update_color = FALSE)
 	//if both lamp is enabled AND the update_color flag is on, keep the lamp on. Otherwise, if anything listed is true, disable the lamp.
-	if(!(update_color && lamp_enabled) && (turn_off || lamp_enabled || update_color || !lamp_functional || stat || low_power_mode))
+	if(!(update_color && lamp_enabled) && (turn_off || lamp_enabled || update_color || !lamp_functional || stat || low_power_mode || (lamp_cooldown > world.time)))		//dripstation edit
 		if(lamp_functional && stat != DEAD)
 			set_light_on(TRUE) //If the lamp isn't broken and borg isn't dead, doomsday borgs cannot disable their light fully.
 			set_light_color("#FF0000") //This should only matter for doomsday borgs, as any other time the lamp will be off and the color not seen

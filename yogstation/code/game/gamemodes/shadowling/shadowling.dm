@@ -36,6 +36,8 @@ Made by Xhuis
 	var/required_thralls = 15 //How many thralls are needed (this is changed in pre_setup, so it scales based on pop)
 	var/shadowling_ascended = FALSE //If at least one shadowling has ascended
 	var/thrall_ratio = 1
+	var/warning_threshold = 10	//dripstation edit
+	var/victory_warning_announced = FALSE	//dripstation edit
 
 /datum/game_mode/proc/replace_jobbaned_player(mob/living/M, role_type, pref)
 	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a [role_type]?", "[role_type]", null, pref, 50, M)
@@ -51,10 +53,11 @@ Made by Xhuis
 	name = "shadowling"
 	config_tag = "shadowling"
 	antag_flag = ROLE_SHADOWLING
-	required_players = 38
-	required_enemies = 3
-	recommended_enemies = 3
+	required_players = 20	//dripstation edit
+	required_enemies = 1	//dripstation edit
+	recommended_enemies = 3	//dripstation edit
 	enemy_minimum_age = 14
+	false_report_weight = 5	//dripstation edit
 	restricted_jobs = list("AI", "Cyborg")
 	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Engineer", "Chief Medical Officer", "Brig Physician")
 	title_icon = "ss13"
@@ -68,7 +71,7 @@ Made by Xhuis
 		restricted_jobs += protected_jobs
 	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
 		restricted_jobs += "Assistant"
-	var/shadowlings = max(3, round(num_players()/14))
+	var/shadowlings = min(5, (round(num_players()/10) - 1)) //20pop = 1, 30 = 2, 40 = 3, 50 = 4, 60 = 5, max = 5	dripstation edit
 	while(shadowlings)
 		var/datum/mind/shadow = pick(antag_candidates)
 		shadows += shadow
@@ -79,6 +82,7 @@ Made by Xhuis
 	var/thrall_scaling = round(num_players() / 3)
 	required_thralls = clamp(thrall_scaling, 15, 30)
 	thrall_ratio = required_thralls / 15
+	warning_threshold = round(0.66 * required_thralls) //For announce	dripstation edit
 	return TRUE
 
 /datum/game_mode/shadowling/generate_report()
@@ -137,7 +141,7 @@ Made by Xhuis
 /*
 	MISCELLANEOUS
 */
-/datum/species/shadow/ling
+/datum/species/shadow/ling	//ALL SHADOWLING SPECIES CHANGES MOVED TO modular_dripstation\code\modules\mob\living\carbon\human\species_types\shadowling.dm
 	//Normal shadowpeople but with enhanced effects
 	name = "Shadowling"
 	id = "shadowling"
@@ -172,7 +176,7 @@ Made by Xhuis
 		QDEL_NULL(eyes_overlay)
 	. = ..()
 
-/datum/species/shadow/ling/spec_life(mob/living/carbon/human/H)
+/*/datum/species/shadow/ling/spec_life(mob/living/carbon/human/H)	check shadowpeople.dm in modular_dripstation
 	H.nutrition = NUTRITION_LEVEL_WELL_FED //i aint never get hongry
 	if(isturf(H.loc))
 		var/turf/T = H.loc
@@ -193,7 +197,7 @@ Made by Xhuis
 	var/charge_time = 400 - ((SSticker.mode.thralls && SSticker.mode.thralls.len) || 0)*10
 	if(world.time >= charge_time+last_charge)
 		shadow_charges = min(shadow_charges + 1, 3)
-		last_charge = world.time
+		last_charge = world.time*/
 
 /datum/species/shadow/ling/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
 	var/turf/T = H.loc
@@ -212,7 +216,7 @@ Made by Xhuis
 	if(light_amount > LIGHT_DAM_THRESHOLD)
 		C.remove_movespeed_modifier(id)
 	else
-		C.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
+		C.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-0.75, blacklisted_movetypes=(FLYING|FLOATING))	//shadowspeed dripstation tweak
 	
 
 /datum/species/shadow/ling/lesser //Empowered thralls. Obvious, but powerful
@@ -225,7 +229,7 @@ Made by Xhuis
 	heatmod = 1.25
 	brutemod = 0.75
 
-/datum/species/shadow/ling/lesser/spec_life(mob/living/carbon/human/H)
+/*/datum/species/shadow/ling/lesser/spec_life(mob/living/carbon/human/H)	//same as above, check shadowpeople.dm in modular_dripstation
 	H.nutrition = NUTRITION_LEVEL_WELL_FED //i aint never get hongry
 	if(isturf(H.loc))
 		var/turf/T = H.loc
@@ -236,11 +240,19 @@ Made by Xhuis
 			H.heal_overall_damage(4,4)
 			H.adjustToxLoss(-5)
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25)
-			H.adjustCloneLoss(-5)
+			H.adjustCloneLoss(-5)*/
 
 /mob/living/proc/add_thrall()
 	if(!istype(mind))
 		return FALSE
+	var/mob/M							//dripstation edit
+	var/thralls_warning_check = 0		//dripstation edit
+	for(M in GLOB.alive_mob_list)		//dripstation edit
+		if(is_thrall(M))				//dripstation edit
+			thralls_warning_check++		//dripstation edit
+		if(!SSticker.mode.victory_warning_announced && (thralls_warning_check >= SSticker.mode.warning_threshold))		//dripstation edit
+			SSticker.mode.victory_warning_announced = TRUE	//then let's give the station a warning						dripstation edit
+			priority_announce("Large concentration of psychic bluespace energy detected by long-ranged scanners. Shadowling ascension event imminent. Any personnel is authorized to prevent it at all costs!", "Central Command Higher Dimensional Affairs", 'sound/AI/spanomalies.ogg')	//dripstation edit
 	return mind.add_antag_datum(ANTAG_DATUM_THRALL)
 
 /mob/living/proc/add_sling()

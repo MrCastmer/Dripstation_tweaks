@@ -1,4 +1,4 @@
-#define EMPOWERED_THRALL_LIMIT 3
+#define EMPOWERED_THRALL_LIMIT 5	//dripstation edit
 
 /datum/action/cooldown/spell/proc/shadowling_check(mob/living/carbon/human/H) //what the fuck was this shit
 	if(!H || !istype(H)) 
@@ -67,6 +67,10 @@
 		to_chat(owner, span_warning("[target] must be conscious!"))
 		revert_cast()
 		return FALSE
+	if(!target.getorganslot(ORGAN_SLOT_EYES) || (target.eye_blind))	//dripstation edit
+		to_chat(user, span_warning("Your target need functioning eyes to be glared!"))	//dripstation edit
+		revert_cast()	//dripstation edit
+		return FALSE	//dripstation edit
 	if(is_shadow_or_thrall(target))
 		to_chat(owner, span_warning("You cannot glare at allies!"))
 		revert_cast()
@@ -74,11 +78,12 @@
 	var/mob/living/carbon/human/M = target
 	usr.visible_message(span_warning("<b>[owner]'s eyes flash a purpleish-red!</b>"))
 	var/distance = get_dist(target, owner)
-	if (distance <= 2)
+	if ((distance <= 2) || (target.get_eye_protection() <= 0)) //dripstation edit. Not even flash but psy disable method. Moths and regular shadows as well as creatures with negative vision protection are exposed to glare at any distance even if wear sunglasses
 		target.visible_message(span_danger("[target] suddendly collapses..."))
 		to_chat(target, span_userdanger("A purple light flashes across your vision, and you lose control of your movements!"))
 		target.Paralyze(10 SECONDS)
 		M.silent += 10
+		M.adjust_confusion(3 SECONDS)
 	else //Distant glare
 		var/loss = 100 - (distance * 10)
 		target.adjustStaminaLoss(loss)
@@ -105,7 +110,7 @@
 	spell_requirements = SPELL_REQUIRES_HUMAN
 
 /datum/action/cooldown/spell/aoe/proc/extinguishItem(obj/item/I, cold = FALSE) //Does not darken items held by mobs due to mobs having separate luminosity, use extinguish_mob() or write your own proc.
-	var/blacklisted_lights = list(/obj/item/flashlight/flare, /obj/item/flashlight/slime)
+	var/blacklisted_lights = list(/obj/item/flashlight/flare, /obj/item/flashlight/slime, /obj/item/flashlight/glowstick)	//dripstation edit
 	if(istype(I, /obj/item/flashlight))
 		var/obj/item/flashlight/F = I
 		if(F.light_on || F.on)
@@ -121,10 +126,17 @@
 			F.on = FALSE
 			F.set_light_on(FALSE)
 			F.update_brightness()
+			F.visible_message(span_warning("The unnatural darkness envelops [F]!"))	//dripstation edit
 	else if(istype(I, /obj/item/pda))
 		var/obj/item/pda/P = I
 		P.set_light_on(FALSE)
+	if(istype(I, /obj/item/gun))	//dripstation edit
+		var/obj/item/gun/G = I	//dripstation edit
+		if(G.gun_light.on == TRUE)	//dripstation edit
+			G.toggle_gunlight()	//dripstation edit
 	I.set_light_on(FALSE)
+	I.light_on = FALSE	//dripstation edit
+	I.update_icon()	//dripstation edit
 	return I.luminosity
 
 /datum/action/cooldown/spell/aoe/proc/extinguish_mob(mob/living/H, cold = FALSE)
@@ -149,16 +161,19 @@
 		G.modify() // Re-sets glowy
 		G.current_nullify_timer = null
 
+/datum/action/cooldown/spell/aoe/veil/cast()
+	. = ..()
+	to_chat(owner, span_shadowling("You silently disable all nearby lights."))
+
 /datum/action/cooldown/spell/aoe/veil/cast_on_thing_in_aoe(atom/target, atom/user)
 	if(!shadowling_check(owner) && !admin_override)
 		return
-	to_chat(owner, span_shadowling("You silently disable all nearby lights."))
 	var/turf/T = get_turf(owner)
 	for(var/datum/light_source/LS in T.get_affecting_lights())
 		var/atom/LO = LS.source_atom
-		if(isitem(LO))
-			extinguishItem(LO)
-			continue
+		//if(isitem(LO))		//dripstation edit
+		//	extinguishItem(LO)	//dripstation edit
+		//	continue			//dripstation edit
 		if(istype(LO, /obj/machinery/light))
 			var/obj/machinery/light/L = LO
 			L.on = FALSE
@@ -166,30 +181,89 @@
 			L.update(0)
 			L.set_light(0)
 			continue
-		if(istype(LO, /obj/machinery/computer) || istype(LO, /obj/machinery/power/apc))
-			LO.set_light(0)
-			LO.visible_message(span_warning("[LO] grows dim, its screen barely readable."))
-			continue
-		if(ismob(LO))
-			extinguish_mob(LO)
-		if(istype(LO, /mob/living/silicon/robot))
-			var/mob/living/silicon/robot/borg = LO
-			if(!borg.lamp_cooldown)
-				borg.smash_headlamp()
-		if(istype(LO, /obj/machinery/camera))
-			LO.set_light(0)
-			if(prob(10))
-				LO.emp_act(2)
-			continue
-		if(istype(LO, /obj/mecha))
-			var/obj/mecha/M = LO
+		//if(istype(LO, /obj/machinery/computer) || istype(LO, /obj/machinery/power/apc))	//dripstation edit start
+		//	LO.set_light(0)
+		//	LO.visible_message(span_warning("[LO] grows dim, its screen barely readable."))
+		//	continue
+		//if(ismob(LO))
+		//	extinguish_mob(LO)
+		//if(istype(LO, /mob/living/silicon/robot))
+		//	var/mob/living/silicon/robot/borg = LO
+		//	if(!borg.lamp_cooldown)
+		//		borg.smash_headlamp()
+		//if(istype(LO, /obj/machinery/camera))
+		//	LO.set_light(0)
+		//	if(prob(10))
+		//		LO.emp_act(2)
+		//	continue
+		//if(istype(LO, /obj/mecha))
+		//	var/obj/mecha/M = LO
+		//	M.set_light(0)
+		//	M.lights = FALSE
+		//if(istype(LO, /obj/machinery/power/floodlight))
+		//	var/obj/machinery/power/floodlight/FL = LO
+		//	FL.change_setting(2) // Set floodlight to lowest setting
+		//if(istype(LO, /obj/structure/light_prism))
+		//	qdel(LO)
+		if(istype(LO, /obj/machinery))
+			var/obj/machinery/M = LO
+			M.light_on = FALSE
+			M.visible_message(span_warning("[M] grows dim, its screen barely readable."))
 			M.set_light(0)
-			M.lights = FALSE
-		if(istype(LO, /obj/machinery/power/floodlight))
-			var/obj/machinery/power/floodlight/FL = LO
-			FL.change_setting(2) // Set floodlight to lowest setting
-		if(istype(LO, /obj/structure/light_prism))
-			qdel(LO)
+			continue
+	if(isturf(target))
+		var/turf/tu = target
+		for(var/mob/M in tu.contents)
+			if(istype(M, /mob/living/silicon/robot))
+				var/mob/living/silicon/robot/borg = M
+				if(borg.light_on == TRUE)
+					if(prob(15))
+						borg.smash_headlamp()
+						borg.visible_message(span_warning("[borg]`s light smashes by the dark forces!"))
+						return
+					borg.visible_message(span_warning("[borg]`s light flickers and falls dark."))
+					borg.lamp_cooldown = world.time + 200
+					borg.toggle_headlamp(TRUE)
+				else
+					borg.visible_message(span_warning("[borg]`s light sparks but nothing happens."))
+			if(istype(M, /mob/living/simple_animal/bot))
+				var/mob/living/simple_animal/bot = M
+				if(prob(30))
+					bot.emp_act(2)
+					bot.visible_message(span_warning("[bot]`s lights dies."))
+					return
+			extinguish_mob(M)
+		for(var/obj/item/F in tu.contents)
+			extinguishItem(F)
+		for(var/obj/O in tu.contents)
+			if(istype(O, /obj/structure/light_prism))
+				var/obj/structure/light_prism/LP = O
+				LP.visible_message(span_warning("[LP] dispels by force!"))
+				qdel(LP)
+			if(istype(O, /obj/mecha))
+				var/obj/mecha/M = O
+				M.visible_message(span_warning("[M]`s lights shutting down."))
+				M.lights = FALSE
+				M.set_light_on(FALSE)
+				M.lamp_cooldown = world.time + 200
+				for(var/mob/living/carbon/H in M)
+					extinguish_mob(H)
+			if(istype(O, /obj/structure/closet))
+				var/obj/structure/closet/C = O
+				for(var/mob/living/carbon/H in C)
+					extinguish_mob(H)
+				for(var/obj/item/I in C)
+					extinguishItem(I)
+			if(istype(O, /obj/machinery/power/floodlight))
+				var/obj/machinery/power/floodlight/FL = O
+				FL.change_setting(2) // Set floodlight to lowest setting
+				continue
+			if(istype(O, /obj/machinery/camera))
+				var/obj/machinery/camera/C = O
+				if(prob(10))
+					C.emp_act(2)
+					C.visible_message(span_warning("[C]`s red dot dies away, it seems off for a short amount of time."))
+					return																										//dripstation edit end
 
 	for(var/obj/structure/glowshroom/G in orange(7, user)) //High radius because glowshroom spam wrecks shadowlings
 		if(G.light_power > 0)
@@ -220,12 +294,12 @@
 /datum/action/cooldown/spell/aoe/flashfreeze/cast_on_thing_in_aoe(atom/target, atom/user)
 	if(!shadowling_check(owner))
 		return
-	to_chat(owner, span_shadowling("You freeze the nearby air."))
 	if(isturf(target))
 		var/turf/T = target
 		for(var/mob/living/carbon/M in T.contents)
 			if(is_shadow_or_thrall(M))
-				if(M == user) //No message for the user, of course
+				if(M == user)
+					to_chat(M, span_shadowling("You freeze the nearby air."))
 					continue
 				else
 					to_chat(M, span_danger("You feel a blast of paralyzingly cold air wrap around you and flow past, but you are unaffected!"))
@@ -239,6 +313,18 @@
 				M.reagents.add_reagent(/datum/reagent/consumable/frostoil, 5) //some amount of a cryo sting fucked if I care
 				M.reagents.add_reagent(/datum/reagent/shadowfrost, 5)
 			extinguish_mob(M, TRUE)
+		
+		for(var/obj/O in T.contents)		//dripstation edit start
+			if(istype(O, /obj/mecha))
+				var/obj/mecha/M = O
+				for(var/mob/living/carbon/H in M)
+					extinguish_mob(H, TRUE)
+			if(istype(O, /obj/structure/closet))
+				var/obj/structure/closet/C = O
+				for(var/mob/living/carbon/H in C)
+					extinguish_mob(H, TRUE)
+				for(var/obj/item/I in C)
+					extinguishItem(I, TRUE)		//dripstation edit end
 		for(var/obj/item/F in T.contents)
 			extinguishItem(F, TRUE)
 
@@ -261,7 +347,8 @@
 	listclearnulls(SSticker.mode.thralls)
 	if(!(user.mind in SSticker.mode.shadows)) return
 	if(user.dna.species.id != "shadowling")
-		if(SSticker.mode.thralls.len >= 5)
+		if(SSticker.mode.thralls.len >= 3)	//dripstation edit
+			to_chat(user, span_warning("You need more power to enthrall! Use hatch to become shadowling!"))	//dripstation edit
 			return FALSE
 	var/mob/living/target = target_atom
 	if(!target.key || !target.mind)
@@ -320,24 +407,24 @@
 			to_chat(target, span_userdanger("You wrest yourself away from [user]'s hands and compose yourself!"))
 			enthralling = FALSE
 			return
-		enthralling = FALSE
-		to_chat(user, span_shadowling("You have enthralled <b>[target.real_name]</b>!"))
-		target.visible_message(span_big("[target] looks to have experienced a revelation!"), \
-							   span_warning("False faces all d<b>ark not real not real not--</b>"))
-		target.setOxyLoss(0) //In case the shadowling was choking them out
-		if(iscarbon(target))
-			var/mob/living/carbon/M = target
-			var/datum/mutation/human/glow/G = M.dna.get_mutation(GLOWY)
-			if(G)
-				M.dna.remove_mutation(GLOWY)
-		target.mind.special_role = "thrall"
-		var/obj/item/organ/internal/shadowtumor/ST = new
-		ST.Insert(target, FALSE, FALSE)
-		target.add_thrall()
-		if(target.reagents.has_reagent(/datum/reagent/consumable/frostoil)) //Stabilize body temp incase the sling froze them earlier
-			target.reagents.remove_reagent(/datum/reagent/consumable/frostoil)
-			to_chat(target, span_notice("You feel warmer... It feels good."))
-			target.bodytemperature = 310
+	enthralling = FALSE
+	to_chat(user, span_shadowling("You have enthralled <b>[target.real_name]</b>!"))
+	target.visible_message(span_big("[target] looks to have experienced a revelation!"), \
+						   span_warning("False faces all d<b>ark not real not real not--</b>"))
+	target.setOxyLoss(0) //In case the shadowling was choking them out
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		var/datum/mutation/human/glow/G = M.dna.get_mutation(GLOWY)
+		if(G)
+			M.dna.remove_mutation(GLOWY)
+	target.mind.special_role = "thrall"
+	var/obj/item/organ/internal/shadowtumor/ST = new
+	ST.Insert(target, FALSE, FALSE)
+	target.add_thrall()
+	if(target.reagents.has_reagent(/datum/reagent/consumable/frostoil)) //Stabilize body temp incase the sling froze them earlier
+		target.reagents.remove_reagent(/datum/reagent/consumable/frostoil)
+		to_chat(target, span_notice("You feel warmer... It feels good."))
+		target.bodytemperature = 310
 	
 	return TRUE
 
@@ -352,8 +439,6 @@
 
 /datum/action/cooldown/spell/shadowling_hivemind/cast(atom/cast_on)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!is_shadow(owner))
 		to_chat(owner, span_warning("You must be a shadowling to do that!"))
 		return
@@ -370,29 +455,48 @@
 
 	return TRUE
 
-/datum/action/cooldown/spell/shadowling_regenarmor //Resets a shadowling's species to normal, removes genetic defects, and re-equips their armor
+/datum/action/cooldown/spell/shadowling_regenarmor //Resets a shadowling's species to normal, removes genetic defects, re-equips their armor and clean defects	//dripstation edited
 	name = "Rapid Re-Hatch"
-	desc = "Re-forms protective chitin that may be lost during cloning or similar processes."
+	desc = "Re-forms protective chitin that may be lost during cloning or similar processes. Also gets missing limbs back and regenerate eyes."
 	panel = "Shadowling Abilities"
 	button_icon = 'yogstation/icons/mob/actions.dmi'
 	button_icon_state = "regen_armor"
+	var/nightmare_heart_acquired = FALSE	//dripstation edit
 
-	cooldown_time = 1 MINUTES
+	cooldown_time = 5 MINUTES
 	spell_requirements = SPELL_REQUIRES_HUMAN
 
 /datum/action/cooldown/spell/shadowling_regenarmor/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!is_shadow(user))
 		to_chat(user, span_warning("You must be a shadowling to do this!"))
 		return
+	var/obj/item/organ/heart/CH = user.getorganslot(ORGAN_SLOT_HEART)	//dripstation edit
+	if(CH != null)	//dripstation edit
+		nightmare_heart_acquired = TRUE	//dripstation edit
 	user.visible_message(span_warning("[user]'s skin suddenly bubbles and shifts around their body!"), \
 						 span_shadowling("You regenerate your protective armor and cleanse your form of defects."))
 	user.setCloneLoss(0)
+	user.setOrganLoss(ORGAN_SLOT_EYES, 0)	//dripstation edit
+	user.update_sight()	//dripstation edit
+	user.remove_all_embedded_objects()	//dripstation edit
 	user.equip_to_slot_or_del(new /obj/item/clothing/suit/space/shadowling(user), ITEM_SLOT_OCLOTHING)
 	user.equip_to_slot_or_del(new /obj/item/clothing/head/shadowling(user), ITEM_SLOT_HEAD)
 	user.set_species(/datum/species/shadow/ling)
+	var/list/missing = user.get_missing_limbs()		//dripstation edit start
+	if(missing.len)
+		playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
+		user.visible_message("<span class='warning'>[user]'s missing limbs \
+			reform, making a loud, grotesque sound!</span>",
+			"<span class='userdanger'>Your limbs regrow, making a \
+			loud, crunchy sound and giving you great pain!</span>",
+			"<span class='italics'>You hear organic matter ripping \
+			and tearing!</span>")
+		user.emote("scream")
+		user.regenerate_limbs(1)
+	if(nightmare_heart_acquired == TRUE)
+		var/obj/item/organ/heart/NH = new/obj/item/organ/heart/nightmare(user)
+		NH.Insert(user)							//dripstation edit end
 
 	return TRUE
 
@@ -410,11 +514,10 @@
 	var/screech_acquired = FALSE
 	var/reviveThrallAcquired = FALSE
 	var/null_charge_acquired = FALSE
+	var/nightmare_heart_acquired = FALSE	//dripstation edit
 
 /datum/action/cooldown/spell/collective_mind/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!shadowling_check(user))
 		return
 	var/thralls = 0
@@ -443,18 +546,33 @@
 		empower.Grant(M)
 		var/datum/action/cooldown/spell/blindness_smoke/smoke = new(M)
 		smoke.Grant(M)
-	if(thralls >= CEILING(7 * SSticker.mode.thrall_ratio, 1) && !null_charge_acquired)
-		null_charge_acquired = TRUE
-		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Null Charge</b> ability. This ability will drain an APC's contents to the void, preventing it from recharging \
-		or sending power until repaired.</i></span>")
-		var/datum/action/cooldown/spell/null_charge/null_charge = new(M)
-		null_charge.Grant(M)
-	if(thralls >= CEILING(9 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)
+	//if(thralls >= CEILING(7 * SSticker.mode.thrall_ratio, 1) && !null_charge_acquired)	//dripstation edit start
+	//	null_charge_acquired = TRUE
+	//	to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Null Charge</b> ability. This ability will drain an APC's contents to the void, preventing it from recharging \
+	//	or sending power until repaired.</i></span>")
+	//	var/datum/action/cooldown/spell/null_charge/null_charge = new(M)
+	//	null_charge.Grant(M)
+	//if(thralls >= CEILING(9 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)
+	if(thralls >= CEILING(7 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)
 		reviveThrallAcquired = TRUE
 		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Black Recuperation</b> ability. This will, after a short time, bring a dead thrall completely back to life \
 		with no bodily defects.</i></span>")
 		var/datum/action/cooldown/spell/pointed/revive_thrall/revive = new(M)
 		revive.Grant(M)
+	if(thralls >= CEILING(8 * SSticker.mode.thrall_ratio, 1) && !null_charge_acquired)
+		null_charge_acquired = TRUE
+		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Null Charge</b> ability. This ability will drain an APC's contents to the void, preventing it from recharging \
+		or sending power until repaired.</i></span>")
+		var/datum/action/cooldown/spell/null_charge/null_charge = new(M)
+		null_charge.Grant(M)
+	if(thralls >= CEILING(10 * SSticker.mode.thrall_ratio, 1) && !nightmare_heart_acquired)
+		nightmare_heart_acquired = TRUE
+		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Nightmare heart</b>. This will, after some amount of time, bring you completely back to life in the darkness.</i></span>")
+		var/obj/item/organ/heart/OH = user.getorganslot(ORGAN_SLOT_HEART)
+		var/obj/item/organ/heart/NH
+		qdel(OH)
+		NH = new/obj/item/organ/heart/nightmare(user)
+		NH.Insert(user)							//dripstation edit end
 	if(thralls < victory_threshold)
 		to_chat(user, span_shadowling("You do not have the power to ascend. You require [victory_threshold] thralls, but only [thralls] living thralls are present."))
 	else if(thralls >= victory_threshold)
@@ -489,8 +607,6 @@
 
 /datum/action/cooldown/spell/null_charge/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!shadowling_check(user))
 		return
 
@@ -510,7 +626,7 @@
 	target_apc.visible_message(span_warning("The [target_apc] flickers and begins to grow dark."))
 
 	to_chat(user, span_shadowling("You dim the APC's screen and carefully begin siphoning its power into the void."))
-	if(!do_after(user, 15 SECONDS, target_apc))
+	if(!do_after(user, 8 SECONDS, target_apc))	//dripstation edit
 		//Whoops!  The APC's light turns back on
 		to_chat(user, span_shadowling("Your concentration breaks and the APC suddenly repowers!"))
 		target_apc.set_light(2)
@@ -538,8 +654,6 @@
 
 /datum/action/cooldown/spell/blindness_smoke/cast(mob/living/carbon/human/user) //Extremely hacky
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!shadowling_check(user))
 		return
 	user.visible_message(span_warning("[user] bends over and coughs out a cloud of black smoke!"))
@@ -576,7 +690,7 @@
 		var/turf/T = target_atom
 		for(var/mob/target in T.contents)
 			if(is_shadow_or_thrall(target))
-				if(target == user) //No message for the user, of course
+				if(target == user)
 					continue
 				else
 					continue
@@ -585,6 +699,10 @@
 				to_chat(M, span_danger("<b>A spike of pain drives into your head and scrambles your thoughts!</b>"))
 				M.adjust_confusion(10 SECONDS)
 				M.adjustEarDamage(0, 30)//as bad as a changeling shriek
+				var/obj/item/radio/headset/R = M.ears	//dripstation edit
+				if (R)	//dripstation edit
+					R.emp_act(2)	//dripstation edit
+					to_chat(M, span_danger("<b>Your sensitive headset resonates with screech!</b>"))	//dripstation edit
 			else if(issilicon(target))
 				var/mob/living/silicon/S = target
 				to_chat(S, span_warning("<b>ERROR $!(@ ERROR )#^! SENSORY OVERLOAD \[$(!@#</b>"))
@@ -598,7 +716,7 @@
 
 /datum/action/cooldown/spell/pointed/empower_thrall //turns a thrall into a lesser shadowling
 	name = "Dark Acceleration"
-	desc = "Empowers a thrall. You can only have 3 empowered thralls at a time. Empowered thralls become lesser versions of yourself, gaining a small selection of your abilities as well as your healing in the dark and aversion to light."
+	desc = "Empowers a thrall. You can only have 5 empowered thralls at a time. Empowered thralls become lesser versions of yourself, gaining a small selection of your abilities as well as your healing in the dark and aversion to light."	//dripstation edit
 	panel = "Shadowling Abilities"
 	button_icon = 'yogstation/icons/mob/actions.dmi'
 	button_icon_state = "darksight"
@@ -606,12 +724,15 @@
 	cast_range = 1
 	cooldown_time = 1 MINUTES
 	spell_requirements = SPELL_REQUIRES_HUMAN
+	var/cast_time = 40
+	var/whitelist_species = list("human", "felinid", "shadow", "pod", "lizard")
 
-/datum/action/cooldown/spell/pointed/empower_thral/InterceptClickOn(mob/living/user, params, atom/target)
+/datum/action/cooldown/spell/pointed/empower_thrall/InterceptClickOn(mob/living/user, params, atom/target)
 	. = ..()
 	if(!.)
 		return FALSE
-	if(!shadowling_check(user))
+	if(!shadowling_check(user) && !istype(user, /mob/living/simple_animal/ascendant_shadowling))	//dripstation edit
+		to_chat(user, span_warning("You don`t know how to do that."))	//dripstation edit
 		return
 	if(!ishuman(target))
 		return
@@ -619,12 +740,15 @@
 	if(!is_thrall(thrallToEmpower))
 		to_chat(user, span_warning("[thrallToEmpower] is not a thrall."))
 		return
-	if(thrallToEmpower.stat != CONSCIOUS)
-		to_chat(user, span_warning("[thrallToEmpower] must be conscious to become empowered."))
-		return
+	//if(thrallToEmpower.stat != CONSCIOUS)	//nobody cares on dripstation
+	//	to_chat(user, span_warning("[thrallToEmpower] must be conscious to become empowered."))	//dripstation edit
+	//	return	//dripstation edit
 	if(thrallToEmpower.dna.species.id == "l_shadowling")
 		to_chat(user, span_warning("[thrallToEmpower] is already empowered."))
 		return
+	if(!(thrallToEmpower.dna.species.id in whitelist_species))	//dripstation edit
+		to_chat(user, span_warning("You don`t know how to empower this weakling."))	//dripstation edit
+		return	//dripstation edit
 	var/empowered_thralls = 0
 	for(var/datum/mind/M in SSticker.mode.thralls)
 		if(!ishuman(M.current))
@@ -632,13 +756,13 @@
 		var/mob/living/carbon/human/H = M.current
 		if(H.dna.species.id == "l_shadowling")
 			empowered_thralls++
-	if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
+	if((empowered_thralls >= EMPOWERED_THRALL_LIMIT) && !istype(user, /mob/living/simple_animal/ascendant_shadowling))	//dripstation edit
 		to_chat(user, span_warning("You cannot spare this much energy. There are too many empowered thralls."))
 		return
 	user.visible_message(span_danger("[user] places their hands over [thrallToEmpower]'s face, red light shining from beneath."), \
 						span_shadowling("You place your hands on [thrallToEmpower]'s face and begin gathering energy..."))
 	to_chat(thrallToEmpower, span_userdanger("[user] places their hands over your face. You feel energy gathering. Stand still..."))
-	if(!do_after(user, 8 SECONDS, thrallToEmpower))
+	if(!do_after(user, (cast_time*2), thrallToEmpower))		//dripstation edit
 		to_chat(user, span_warning("Your concentration snaps. The flow of energy ebbs."))
 		return
 	to_chat(user, span_shadowling("<b><i>You release a massive surge of power into [thrallToEmpower]!</b></i>"))
@@ -649,7 +773,7 @@
 	thrallToEmpower.Knockdown(5)
 	thrallToEmpower.visible_message(span_warning("<b>[thrallToEmpower] collapses, their skin and face distorting!"), \
 								   span_userdanger("<i>AAAAAAAAAAAAAAAAAAAGH-</i>"))
-	if (!do_after(user, 5, thrallToEmpower))
+	if (!do_after(user, (cast_time/2), thrallToEmpower))	//dripstation edit
 		thrallToEmpower.Unconscious(1 MINUTES)
 		thrallToEmpower.visible_message(span_warning("<b>[thrallToEmpower] gasps, and passes out!</b>"), span_warning("<i>That... feels nice....</i>"))
 		to_chat(user, span_warning("We have been interrupted! [thrallToEmpower] will need to rest to recover."))
@@ -660,6 +784,10 @@
 	thrallToEmpower.set_species(/datum/species/shadow/ling/lesser)
 	for(var/datum/action/cooldown/spell/pointed/lesser_glare/lglare in thrallToEmpower.actions)
 		LAZYREMOVE(thrallToEmpower.actions, lglare)
+	for(var/datum/action/cooldown/spell/thrall_night_vision/tnv in thrallToEmpower.actions)	//dripstation edit
+		LAZYREMOVE(thrallToEmpower.actions, tnv)													//dripstation edit
+	for(var/datum/action/cooldown/spell/lesser_shadow_walk/lsw in thrallToEmpower.actions)	//dripstation edit
+		LAZYREMOVE(thrallToEmpower.actions, lsw)													//dripstation edit
 
 	var/datum/action/cooldown/spell/pointed/sling/glare/sglare = new(thrallToEmpower)
 	sglare.Grant(thrallToEmpower)
@@ -667,15 +795,16 @@
 	var/datum/action/cooldown/spell/aoe/veil/veil = new(thrallToEmpower)
 	veil.Grant(thrallToEmpower)
 
-	var/datum/action/cooldown/spell/jaunt/void_jaunt/jaunt = new(thrallToEmpower)
-	jaunt.Grant(thrallToEmpower)
+	var/datum/action/cooldown/spell/jaunt/shadow_walk/jaunt = new(thrallToEmpower)	//dripstation edit	
+	jaunt.Grant(thrallToEmpower)													//dripstation edit
 
-/datum/action/cooldown/spell/pointed/revive_thrall //Completely revives a dead thrall
+/datum/action/cooldown/spell/pointed/revive_thrall //Completely revives a dead thrall or shadowling, dripstation edited
 	name = "Black Recuperation"
-	desc = "Revives or empowers a thrall."
+	desc = "Performs dark ritual to revive human being."	//dripstation edit
 	panel = "Shadowling Abilities"
 	button_icon = 'yogstation/icons/mob/actions.dmi'
 	button_icon_state = "revive_thrall"
+	var/cast_time = 60
 
 	cast_range = 1
 	cooldown_time = 1 MINUTES
@@ -685,25 +814,33 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	if(!shadowling_check(user))
+	if(!shadowling_check(user) && !istype(user, /mob/living/simple_animal/ascendant_shadowling))	//dripstation edit	
 		return
 	if(!ishuman(target))
+		to_chat(user, span_warning("You may only revive humans!"))	//dripstation edit	
 		return
 	var/mob/living/carbon/human/thrallToRevive = target
-	if(!is_thrall(thrallToRevive))
-		to_chat(user, span_warning("[thrallToRevive] is not a thrall."))
-		return
+	if(HAS_TRAIT(thrallToRevive, TRAIT_MINDSHIELD))	//dripstation edit	
+		to_chat(user, span_warning("This body has been corrupted by strange machinery. You should shut down the implant preventing your abilities!"))	//dripstation edit	
 	if(thrallToRevive.stat != DEAD)
 		to_chat(user, span_warning("[thrallToRevive] is not dead."))
 		return
+	if(issilicon(thrallToRevive))		//dripstation edit	
+		to_chat(user, span_warning("[thrallToRevive] is non-humanoid machine."))	//dripstation edit		
+		return			//dripstation edit	
 	if(HAS_TRAIT(thrallToRevive, TRAIT_BADDNA))
 		to_chat(user, span_warning("[thrallToRevive] is too far gone."))
 		return
 
 	user.visible_message(span_danger("[user] kneels over [thrallToRevive], placing their hands on \his chest."), \
 						span_shadowling("You crouch over the body of your thrall and begin gathering energy..."))
-	thrallToRevive.notify_ghost_cloning("Your masters are resuscitating you! Re-enter your corpse if you wish to be brought to life.", source = thrallToRevive)
-	if(!do_after(user, 3 SECONDS, thrallToRevive))
+	if(is_thrall(thrallToRevive))
+		thrallToRevive.notify_ghost_cloning("Your masters are resuscitating you! Re-enter your corpse if you wish to be brought to life.", source = thrallToRevive)
+	if(is_shadow(thrallToRevive))
+		thrallToRevive.notify_ghost_cloning("Your fellow brothers are resuscitating you! Re-enter your corpse if you wish to be brought to life.", source = thrallToRevive)
+	if(!is_shadow_or_thrall(thrallToRevive))
+		thrallToRevive.notify_ghost_cloning("The dark ritual is performed on your body! Re-enter your corpse if you wish to be brought to life.", source = thrallToRevive)
+	if (!do_after(user, cast_time, thrallToRevive))	//dripstation edit
 		to_chat(user, span_warning("Your concentration snaps. The flow of energy ebbs."))
 		return
 	to_chat(user, span_shadowling("<b><i>You release a massive surge of power into [thrallToRevive]!</b></i>"))
@@ -717,9 +854,23 @@
 			span_shadowling("<b><i>You have returned. One of your masters has brought you from the darkness beyond.</b></i>"), \
 		)
 		thrallToRevive.Knockdown(4)
-		thrallToRevive.emote("gasp")
+		if(!(thrallToRevive.dna.species.id == "ipc"))
+			thrallToRevive.visible_message(span_boldannounce("[thrallToRevive] heaves in breath, dim red light shining in their eyes."))
+			thrallToRevive.emote("gasp")
+		else
+			thrallToRevive.visible_message(span_boldannounce("[thrallToRevive] sistems seems brought back to nominal, dim red light shining on their monitor."))
+			thrallToRevive.emote("buzz")
+		thrallToRevive.visible_message(span_shadowling("<b><i>You have returned. One of shadowlings has brought you from the darkness beyond.</b></i>"))
+		thrallToRevive.Knockdown(50)
+		thrallToRevive.Unconscious(20)
+		if(thrallToRevive.handcuffed)
+			thrallToRevive.uncuff()
+			thrallToRevive.visible_message(span_boldannounce("[thrallToRevive] restrains fallen!"))
+		thrallToRevive.resting = FALSE //remove all 
 		playsound(thrallToRevive, "bodyfall", 50, 1)
-		if (!do_after(user, 2 SECONDS, thrallToRevive))
+		if(!(thrallToRevive.dna.species.id == "shadow" || thrallToRevive.dna.species.id == "nightmare" || thrallToRevive.dna.species.id == "shadowling" || thrallToRevive.dna.species.id == "l_shadowling"))
+			thrallToRevive.ForceContractDisease(new/datum/disease/transformation/shadow())
+		if (!do_after(user, cast_time, thrallToRevive))
 			thrallToRevive.Knockdown(50)
 			thrallToRevive.Unconscious(500)
 			thrallToRevive.visible_message(span_boldannounce("[thrallToRevive] collapses in exhaustion."), \
@@ -789,8 +940,8 @@
 	name = "Void Jaunt"
 	desc = "Move through the void for a time, avoiding mortal eyes and lights."
 	panel = "Shadowling Abilities"
-	button_icon = 'icons/mob/actions/actions_spells.dmi'
-	button_icon_state = "jaunt"
+	button_icon = 'modular_dripstation/icons/mob/actions/actions_spells.dmi'	//dripstation edit
+	button_icon_state = "shadow_walk2"	//dripstation edit
 
 	cooldown_time = 80 SECONDS
 	spell_requirements = SPELL_REQUIRES_HUMAN
@@ -798,8 +949,6 @@
 
 /datum/action/cooldown/spell/jaunt/void_jaunt/cast(mob/living/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(iscarbon(user))	//If we're not an ascendant sling
 		var/mob/living/carbon/C = user
 		if(C.on_fire)
@@ -945,6 +1094,9 @@
 	if(M.stat)
 		to_chat(user, span_warning("[target] must be conscious!"))
 		return
+	if(!M.getorganslot(ORGAN_SLOT_EYES) || (M.eye_blind))
+		to_chat(user, span_warning("[target] need functioning eyes to be glared!"))
+		return
 	if(is_shadow_or_thrall(M))
 		to_chat(user, span_warning("You cannot glare at allies!"))
 		return
@@ -977,8 +1129,6 @@
 
 /datum/action/cooldown/spell/lesser_shadow_walk/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	user.visible_message(span_warning("[user] suddenly fades away!"), span_shadowling("You veil yourself in darkness, making you harder to see."))
 	user.alpha = 10
 	addtimer(CALLBACK(src, PROC_REF(reappear), user), 10 SECONDS)
@@ -995,25 +1145,24 @@
 
 /datum/action/cooldown/spell/thrall_night_vision/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!is_shadow_or_thrall(user))
 		return
 	var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)
 		return
+	var/default_vision = eyes.see_in_dark	//dripstation edit
 	eyes.sight_flags = initial(eyes.sight_flags)
 	switch(eyes.lighting_alpha)
-		if (LIGHTING_PLANE_ALPHA_VISIBLE)
-			eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
-			eyes.see_in_dark = 8
 		if (LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE)
 			eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 		if (LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE)
 			eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_INVISIBLE
-		else
+		if (LIGHTING_PLANE_ALPHA_INVISIBLE)	//dripstation edit
 			eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
-			eyes.see_in_dark = 2	//default
+			eyes.see_in_dark = default_vision	//default, dripstation edit
+		else	//dripstation edit
+			eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE	//dripstation edit
+			eyes.see_in_dark = 8	//dripstation edit
 	user.update_sight()
 
 	return TRUE
@@ -1030,8 +1179,6 @@
 
 /datum/action/cooldown/spell/lesser_shadowling_hivemind/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(!is_shadow_or_thrall(user))
 		to_chat(user, span_warning("<b>As you attempt to commune with the others, an agonizing spike of pain drives itself into your head!</b>"))
 		user.apply_damage(10, BRUTE, "head")
@@ -1091,11 +1238,11 @@
 		to_chat(boom, "<span class='userdanger'>You feel a slight recoil from the bag of holding!<span>")
 
 /datum/action/cooldown/spell/pointed/sling/hypnosis //Enthralls someone instantly. Nonlethal alternative to Annihilate
-	name = "Hypnosis"
+	name = "Subjugate"	//dripstation edit
 	desc = "Instantly enthralls a human."
 	panel = "Ascendant"
 	button_icon = 'yogstation/icons/mob/actions.dmi'
-	button_icon_state = "enthrall"
+	button_icon_state = "gore"
 	
 	spell_requirements = NONE
 
@@ -1169,8 +1316,6 @@
 
 /datum/action/cooldown/spell/shadowling_hivemind_ascendant/cast(mob/living/carbon/human/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	var/text = sanitize(tgui_input_text(user, "What do you want to say to fellow thralls and shadowlings?.", "Hive Chat", ""))
 	if(!text)
 		return
@@ -1197,3 +1342,20 @@
 	panel = "Ascendant"
 
 	apply_damage = FALSE
+
+
+/datum/action/cooldown/spell/pointed/revive_thrall/ascendant
+	name = "Resurrect a weakling"
+	desc = "Resurrect mortals to kill them again."
+	panel = "Ascendant"
+	cooldown_time = 2 SECONDS
+	spell_requirements = NONE
+	cast_time = 10
+
+/datum/action/cooldown/spell/pointed/empower_thrall/ascendant
+	name = "Empower a weakling"
+	desc = "The best reward would probably be death."
+	panel = "Ascendant"
+	cooldown_time = 2 SECONDS
+	spell_requirements = NONE
+	cast_time = 10

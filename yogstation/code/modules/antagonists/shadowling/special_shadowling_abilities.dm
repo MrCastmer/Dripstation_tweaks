@@ -6,7 +6,7 @@
 	button_icon = 'yogstation/icons/mob/actions.dmi'
 	button_icon_state = "hatch"
 
-	cooldown_time = 5 MINUTES
+	cooldown_time = 1 MINUTES
 	spell_requirements = SPELL_REQUIRES_HUMAN
 
 /obj/structure/alien/resin/wall/shadowling //For chrysalis
@@ -16,8 +16,6 @@
 
 /datum/action/cooldown/spell/shadowling_hatch/cast(mob/living/user)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(user.stat || !ishuman(user) || !user || !is_shadow(user) || user.isinspace())
 		return
 	var/mob/living/carbon/human/H = user
@@ -94,19 +92,17 @@
 			H.faction |= "faithless"
 			for(var/datum/antagonist/shadowling/antag_datum in H.mind.antag_datums)
 				antag_datum.show_to_ghosts = TRUE
-			H.LoadComponent(/datum/component/walk/shadow)
+			//H.LoadComponent(/datum/component/walk/shadow)	//dripstation edit, remove comment when somebody fixes pulling while having this component
 
 			H.equip_to_slot_or_del(new /obj/item/clothing/suit/space/shadowling(H), ITEM_SLOT_OCLOTHING)
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/shadowling(H), ITEM_SLOT_HEAD)
 			H.set_species(/datum/species/shadow/ling) //can't be a shadowling without being a shadowling
 			H.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
 			Remove(H)
-			if(!do_after(H, 10 SECONDS))
-				return
 			to_chat(H, span_shadowling("<b><i>Your powers are awoken. You may now live to your fullest extent. Remember your goal. Cooperate with your thralls and allies.</b></i>"))
 
-			var/datum/action/cooldown/spell/pointed/enthrall/enthrall = new(H)
-			enthrall.Grant(H)
+			//var/datum/action/cooldown/spell/pointed/enthrall/enthrall = new(H)	//dripstation edit, actually granted
+			//enthrall.Grant(H)	//dripstation edit
 
 			var/datum/action/cooldown/spell/pointed/sling/glare/glare = new(H)
 			glare.Grant(H)
@@ -218,6 +214,12 @@
 
 			var/datum/action/cooldown/spell/aoe/ascendant_storm/storm = new(A)
 			storm.Grant(A)
+
+			var/datum/action/cooldown/spell/pointed/empower_thrall/ascendant/empasc = new(A)
+			empasc.Grant(A)
+
+			var/datum/action/cooldown/spell/pointed/revive_thrall/ascendant/revasc = new(A)
+			revasc.Grant(A)
 
 			var/datum/action/cooldown/spell/jaunt/void_jaunt/ascendant/jaunt = new(A)
 			jaunt.Grant(A)

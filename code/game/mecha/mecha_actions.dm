@@ -112,6 +112,11 @@
 /datum/action/innate/mecha/mech_toggle_lights/Activate()
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
+	if(chassis.lamp_cooldown > world.time)							//dripstation edit
+		chassis.set_light_on(chassis.lights)						//dripstation edit
+		button_icon_state = "mech_lights_off"						//dripstation edit
+		chassis.occupant_message("Something prevents toggling.")	//dripstation edit
+		return														//dripstation edit
 	chassis.lights = !chassis.lights
 	if(chassis.lights)
 		button_icon_state = "mech_lights_on"
