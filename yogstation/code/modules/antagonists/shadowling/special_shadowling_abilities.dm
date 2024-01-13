@@ -110,8 +110,8 @@
 			var/datum/action/cooldown/spell/aoe/veil/veil = new(H)
 			veil.Grant(H)
 
-			var/datum/action/cooldown/spell/jaunt/void_jaunt/void_jaunt = new(H)
-			void_jaunt.Grant(H)
+			//var/datum/action/cooldown/spell/jaunt/void_jaunt/void_jaunt = new(H)	//dripstation edit, actually broken
+			//void_jaunt.Grant(H)
 
 			var/datum/action/cooldown/spell/jaunt/shadow_walk/shadow_walk = new(H)
 			shadow_walk.Grant(H)
@@ -221,8 +221,8 @@
 			var/datum/action/cooldown/spell/pointed/revive_thrall/ascendant/revasc = new(A)
 			revasc.Grant(A)
 
-			var/datum/action/cooldown/spell/jaunt/void_jaunt/ascendant/jaunt = new(A)
-			jaunt.Grant(A)
+			//var/datum/action/cooldown/spell/jaunt/void_jaunt/ascendant/jaunt = new(A) dripstation edit, actually broken
+			//jaunt.Grant(A)
 
 			var/datum/action/cooldown/spell/shadowling_hivemind_ascendant/hivemind = new(A)
 			hivemind.Grant(A)

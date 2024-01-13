@@ -786,8 +786,6 @@
 		LAZYREMOVE(thrallToEmpower.actions, lglare)
 	for(var/datum/action/cooldown/spell/thrall_night_vision/tnv in thrallToEmpower.actions)	//dripstation edit
 		LAZYREMOVE(thrallToEmpower.actions, tnv)													//dripstation edit
-	for(var/datum/action/cooldown/spell/lesser_shadow_walk/lsw in thrallToEmpower.actions)	//dripstation edit
-		LAZYREMOVE(thrallToEmpower.actions, lsw)													//dripstation edit
 
 	var/datum/action/cooldown/spell/pointed/sling/glare/sglare = new(thrallToEmpower)
 	sglare.Grant(thrallToEmpower)
