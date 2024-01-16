@@ -67,8 +67,8 @@
 	force = 8
 
 /obj/item/weldingtool/hugetank/nuke
-	name = "upgraded industrial welding tool"
-	desc = "An upgraded welder based of the industrial welder."
+	desc = "An upgraded welder based of the industrial welder. Has remarkable painting."
+	icon = 'modular_dripstation/icons/obj/tools.dmi'
 	icon_state = "syndiewelder"
 	item_state = "syndiewelder"
 	toolspeed = 0.5
@@ -94,11 +94,8 @@
 	toolspeed = 0.5
 
 /obj/item/jawsoflife/proc/transform_crowbar(mob/user)
-	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a prying head."
-	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
-	usesound = 'sound/items/jaws_pry.ogg'
-	hitsound = 'sound/items/jaws_pry.ogg'
 	tool_behaviour = TOOL_CROWBAR
+	icon = 'modular_dripstation/icons/obj/tools.dmi'
 	icon_state = "syndie_pry"
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
 	if (iscyborg(user))
@@ -114,7 +111,6 @@
 	usesound = 'sound/items/jaws_cut.ogg'
 	tool_behaviour = TOOL_WIRECUTTER
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
-	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
 	if (iscyborg(user))
 		to_chat(user,span_notice("Your servos whirr as the prying head reconfigures into a cutting head."))
 	else
