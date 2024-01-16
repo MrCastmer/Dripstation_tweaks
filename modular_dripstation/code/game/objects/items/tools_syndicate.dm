@@ -93,7 +93,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	toolspeed = 0.5
 
-/obj/item/jawsoflife/proc/transform_crowbar(mob/user)
+/obj/item/jawsoflife/syndicate/transform_crowbar(mob/user)
 	tool_behaviour = TOOL_CROWBAR
 	icon = 'modular_dripstation/icons/obj/tools.dmi'
 	icon_state = "syndie_pry"
@@ -104,7 +104,7 @@
 		to_chat(user, span_notice("You attach the pry jaws to [src]."))
 	update_appearance(UPDATE_ICON)
 
-/obj/item/jawsoflife/proc/transform_cutters(mob/user)
+/obj/item/jawsoflife/syndicate/transform_cutters(mob/user)
 	attack_verb = list("pinched", "nipped")
 	icon_state = "syndie_cutter"
 	hitsound = 'sound/items/jaws_cut.ogg'
