@@ -222,3 +222,14 @@
 /obj/item/clothing/suit/space/pirate/captain
 	icon_state = "hgpirate"
 	item_state = "hgpirate"
+
+
+
+
+/obj/item/clothing/head/helmet/space/plasmaman
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
+
+/obj/item/clothing/suit/space/eva/plasmaman
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
