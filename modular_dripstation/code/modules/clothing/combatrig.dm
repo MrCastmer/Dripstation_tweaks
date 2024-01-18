@@ -2,7 +2,7 @@
 //Starting with original sindi one
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	name = "blood-red hardsuit helmet"
-	desc = "A dual-mode advanced helmet designed for work in special operations. Property of Gorlex Marauders."
+	desc = "A dual-mode advanced helmet designed for special operations. Property of Gorlex Marauders."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
@@ -91,7 +91,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi
 	name = "blood-red hardsuit"
-	desc = "A dual-mode advanced hardsuit designed for work in special operations. Original design by Gorlex Marauders."
+	desc = "A dual-mode advanced hardsuit designed for special operations. Original design by Gorlex Marauders."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
@@ -251,7 +251,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert
 	name = "elite emergency response team hardsuit helmet (operative)"
-	desc = "Advanced helmet for operative of emergency response team Gamma."
+	desc = "Advanced helmet issued to operative of emergency response team Gamma."
 	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25)
 	strip_delay = 130
 	light_range = 7
@@ -272,7 +272,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert
 	name = "elite emergency response team hardsuit (operative)"
-	desc = "Advanced rig for operative of emergency response team Gamma."
+	desc = "Advanced rig issued to operative of emergency response team Gamma."
 	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec
 
@@ -280,12 +280,16 @@
 //////Commander//////
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com
 	name = "elite emergency response team hardsuit helmet (squad leader)"
-	desc = "Advanced helmet for officer of emergency response team Gamma. \
-			Engraved on the back: \
-			In this particular show you have to be armed to enforce your authority. \
-			But you're not to use your weapon under any circumstances."
+	desc = "Advanced helmet issued to officer of emergency response team Gamma."
 	armor = list(MELEE = 65, BULLET = 65, LASER = 70, ENERGY = 70, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25)
 	var/hit_reflect_chance = 40
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com/examine(mob/user)
+	. = ..()
+	if(user.mind && user.mind.has_antag_datum(/datum/antagonist/ert))
+		. += "Engraved on the back: \
+			In this particular shitshow you have to be armed to enforce your authority. \
+			But you're not required to use your weapon under any circumstances."
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -315,7 +319,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/com
 	name = "elite emergency response team hardsuit (squad leader)"
-	desc = "Advanced rig for officer of emergency response team Gamma. Made from superior materials, one of the latest in the modern combat rigs line."
+	desc = "Advanced rig issued to officer of emergency response team Gamma. Made from superior materials, one of the latest in the modern combat rigs line."
 	armor = list(MELEE = 65, BULLET = 65, LASER = 70, ENERGY = 60, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com
 	var/hit_reflect_chance = 40

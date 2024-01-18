@@ -3,8 +3,8 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70)
 	icon_state = "helm-spaceold"
 	item_state = "helm-spaceold"
-	icon = 'modular_dripstation/icons/obj/bayicon.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/bay/bayrig.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/helmets.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/spacesuits/helmets.dmi'
 
 
 /obj/item/clothing/suit/space
@@ -12,7 +12,8 @@
 	icon_state = "spaceold"
 	item_state = "spaceold"
 	desc = "A suit that protects against low pressure environments. Has a big 13 on the back."
-
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/spacesuits/suits.dmi'
 
 //////STANDART NT//////
 /obj/item/clothing/head/helmet/space/eva

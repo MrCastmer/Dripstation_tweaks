@@ -15,6 +15,7 @@
 	slowdown = 0.5
 
 /obj/item/clothing/suit/space/hardsuit/deathsquad
+	armor = list(MELEE = 100, BULLET = 100, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	slowdown = 0.7
 
 
@@ -42,8 +43,6 @@
 	icon_state = "hvymining_helm0"
 	item_state = "hvymining_helm"
 	hardsuit_type = "heavymining"
-	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	armor = list(MELEE = 70, BULLET = 25, LASER = 20, ENERGY = 20, BOMB = 70, BIO = 100, RAD = 60, FIRE = 100, ACID = 100, WOUND = 15)
@@ -58,8 +57,6 @@
 	item_state = "hvymining_hardsuit"
 	icon_state = "hvymining_hardsuit"
 	hardsuit_type = "heavymining"
-	icon = 'modular_dripstation/icons/obj/clothing/hardsuits.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hardsuits.dmi'
 	slowdown = 0.5
 	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
