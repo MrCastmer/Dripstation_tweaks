@@ -1,3 +1,4 @@
+#include "code\datums\status_effects\debuffs\speech_debuffs.dm"
 #include "code\modules\antagonists\cult\cult_items.dm"
 #include "code\modules\antagonists\cult\cult_structures.dm"
 #include "code\modules\antagonists\wizard\equipment\wizard_spellbook.dm"
