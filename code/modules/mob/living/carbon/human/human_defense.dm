@@ -512,11 +512,11 @@
 					BP.brute_dam += 6*(2 - round(bomb_part_armor/60, 0.05))	//2-12 damage total depending on bomb armor
 					var/datum/wound/blunt/critical/fracture = new
 					fracture.apply_wound(BP)
-				else	//dripstation edit end
+				else
 					BP.brute_dam = BP.max_damage
 					BP.dismember()
+				probability -= 10	//dripstation edit end
 				max_limb_loss--
-				probability -= 10
 				if(!max_limb_loss)
 					break
 
