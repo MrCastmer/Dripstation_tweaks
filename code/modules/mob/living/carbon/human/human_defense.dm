@@ -497,21 +497,26 @@
 				probability = 50
 				violent = TRUE
 		if(HAS_TRAIT(src, TRAIT_EASYDISMEMBER))
-			probability =+ 20
+			max_limb_loss += 1
+			probability += 20
 		for(var/X in bodyparts)
 			var/obj/item/bodypart/BP = X
+			if(probability <= 0)
+				break
 			if(prob(probability) && BP.body_zone != BODY_ZONE_HEAD)
 				if(BP.body_zone == BODY_ZONE_CHEST && !violent)
 					continue
 				var/bomb_part_armor = getarmor(BP, BOMB)
-				if(prob(bomb_part_armor))
-					BP.brute_dam =+ 6*(2 - round(bomb_part_armor/60, 0.05))	//2-12 damage total depending on bomb armor
+				var/fracture_probability = 50 - probability + round(bomb_part_armor/1.5, 10)	//EXPLODE_LIGHT = 20% chance, EXPLODE_HEAVY = 10+(armor/1.5)%
+				if(fracture_probability >= 100 || prob(fracture_probability))
+					BP.brute_dam += 6*(2 - round(bomb_part_armor/60, 0.05))	//2-12 damage total depending on bomb armor
 					var/datum/wound/blunt/critical/fracture = new
 					fracture.apply_wound(BP)
 				else	//dripstation edit end
 					BP.brute_dam = BP.max_damage
 					BP.dismember()
 				max_limb_loss--
+				probability -= 10
 				if(!max_limb_loss)
 					break
 
