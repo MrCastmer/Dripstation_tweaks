@@ -15,7 +15,7 @@
 	slowdown = 0.5
 
 /obj/item/clothing/suit/space/hardsuit/deathsquad
-	armor = list(MELEE = 100, BULLET = 100, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
+	armor = list(MELEE = 80, BULLET = 100, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	slowdown = 0.7
 
 
