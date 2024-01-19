@@ -507,7 +507,7 @@
 				if(BP.body_zone == BODY_ZONE_CHEST && !violent)
 					continue
 				var/bomb_part_armor = getarmor(BP, BOMB)
-				var/fracture_probability = 50 - probability + round(bomb_part_armor/1.5, 10)	//EXPLODE_LIGHT = 20% chance, EXPLODE_HEAVY = 10+(armor/1.5)%
+				var/fracture_probability = 70 - probability + round(bomb_part_armor/1.5, 10)	//EXPLODE_LIGHT = 20% chance, EXPLODE_HEAVY = 10+(armor/1.5)%
 				if(fracture_probability >= 100 || prob(fracture_probability))
 					BP.brute_dam += 6*(2 - round(bomb_part_armor/60, 0.05))	//2-12 damage total depending on bomb armor
 					var/datum/wound/blunt/critical/fracture = new
