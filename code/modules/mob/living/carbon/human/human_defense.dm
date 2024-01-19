@@ -478,13 +478,39 @@
 	take_overall_damage(brute_loss,burn_loss)
 
 	//attempt to dismember bodyparts
-	if(severity <= 2 || HAS_TRAIT(src, TRAIT_EASYDISMEMBER)) //light explosions only can dismember those with easy dismember
-		var/max_limb_loss = round(4/severity) //so you don't lose more than 2 limbs on severity 2
+	if(severity == EXPLODE_HEAVY || severity == EXPLODE_DEVASTATE || !bomb_armor)	//dripstation edit start, tg-like bomb defence, more violent
+		var/max_limb_loss = 0
+		var/probability = 0
+		var/violent = FALSE
+		switch(severity)
+			if(EXPLODE_NONE)
+				max_limb_loss = 1
+				probability = 20
+			if(EXPLODE_LIGHT)
+				max_limb_loss = 2
+				probability = 30
+			if(EXPLODE_HEAVY)
+				max_limb_loss = 3
+				probability = 40
+			if(EXPLODE_DEVASTATE)
+				max_limb_loss = 4
+				probability = 50
+				violent = TRUE
+		if(HAS_TRAIT(src, TRAIT_EASYDISMEMBER))
+			probability =+ 20
 		for(var/X in bodyparts)
 			var/obj/item/bodypart/BP = X
-			if(prob(50/severity) && !prob(getarmor(BP, BOMB)) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
-				BP.brute_dam = BP.max_damage
-				BP.dismember()
+			if(prob(probability) && BP.body_zone != BODY_ZONE_HEAD)
+				if(BP.body_zone == BODY_ZONE_CHEST && !violent)
+					continue
+				var/bomb_part_armor = getarmor(BP, BOMB)
+				if(prob(bomb_part_armor))
+					BP.brute_dam =+ 6*(2 - round(bomb_part_armor/60, 0.05))	//2-12 damage total depending on bomb armor
+					var/datum/wound/blunt/critical/fracture = new
+					fracture.apply_wound(BP)
+				else	//dripstation edit end
+					BP.brute_dam = BP.max_damage
+					BP.dismember()
 				max_limb_loss--
 				if(!max_limb_loss)
 					break
