@@ -1,3 +1,5 @@
+#include "code\modules\antagonists\_common\antag_spawner.dm"
+#include "code\game\gamemodes\nuclear\nuclear.dm"
 #include "code\modules\antagonists\cult\cult_items.dm"
 #include "code\modules\antagonists\cult\cult_structures.dm"
 #include "code\modules\antagonists\wizard\equipment\wizard_spellbook.dm"
