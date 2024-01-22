@@ -1,3 +1,6 @@
+/datum/outfit/syndicate
+	id = /obj/item/card/id/syndicate/nuke
+
 /datum/outfit/syndicate/no_crystals
 	var/faction = "The Syndicate"
 
