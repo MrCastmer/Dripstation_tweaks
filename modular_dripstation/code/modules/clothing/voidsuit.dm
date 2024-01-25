@@ -3,7 +3,7 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70)
 	icon_state = "helm-spaceold"
 	item_state = "helm-spaceold"
-	icon = 'modular_dripstation/icons/obj/clothing/helmets.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/spacesuits/helmets.dmi'
 
 
@@ -94,7 +94,7 @@
 
 /obj/item/clothing/suit/space/cosmonaut/combat
 	icon_state = "cosmonaut-combat"
-	item_state = "cosmonaut-combat
+	item_state = "cosmonaut-combat"
 	desc = "A special combat suit that protects against low pressure environments. Lacks laser protection. Has a identification chevron of USSP military forces."
 	armor = list(MELEE = 40, BULLET = 50, LASER = 0, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 65, WOUND = 10)
 	slowdown = 0.5
