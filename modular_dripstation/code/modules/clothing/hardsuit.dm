@@ -128,6 +128,7 @@
 	icon_state = "rescue_hardsuit"
 	item_state = "rescue_hardsuit"
 	hardsuit_type = "rescue"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical/rescue
 	slowdown = 0.7
 
 //Research Director hardsuit
@@ -217,25 +218,29 @@
 	icon_state = "sechos_helm0"
 	item_state = "sechos_helm"
 	hardsuit_type = "sechos"
-	armor = list(MELEE = 45, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 60, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25, ELECTRIC = 100)
+	armor = list(MELEE = 45, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
 	name = "head of security's hardsuit"
 	desc = "A special bulky suit that protects against various hazardous, low pressure environments. Heavy armoured, space ready and somewhat fire resistant."
 	icon_state = "sechos_hardsuit"
 	item_state = "sechos_hardsuit"
-	armor = list(MELEE = 45, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 60, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25, ELECTRIC = 100)
+	armor = list(MELEE = 45, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25, ELECTRIC = 100)
 	slowdown = 1.1
 
 
 //ERT
 /obj/item/clothing/head/helmet/space/hardsuit/ert
+	name = "emergency response team helmet"
+	desc = "The integrated helmet of an ERT hardsuit."
 	icon_state = "nt_combathard_helm0"
 	item_state = "nt_combathard_helm"
 	hardsuit_type = "nt_combathard"
 	armor = list(MELEE = 45, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/ert
+	name = "emergency response team hardsuit"
+	desc = "The standard issue hardsuit of the ERT. Offers superb protection against environmental hazards."
 	icon_state = "nt_combat_hardsuit"
 	item_state = "nt_combat_hardsuit"
 	armor = list(MELEE = 45, BULLET = 40, LASER = 40, ENERGY = 35, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 10, ELECTRIC = 100)
@@ -243,12 +248,14 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/command
 	name = "emergency response team commander helmet"
+	desc = "The integrated helmet of an ERT hardsuit, this one has blue highlights."
 	icon_state = "ert_commandhard_helm0"
 	item_state = "ert_commandhard_helm"
 	hardsuit_type = "ert_commandhard"
 
 /obj/item/clothing/suit/space/hardsuit/ert/command
 	name = "emergency response team commander hardsuit"
+	desc = "The standard issue hardsuit of the ERT, this one has blue highlights. Offers superb protection against environmental hazards."
 	icon_state = "ert_command_hardsuit"
 	item_state = "ert_command_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/command
@@ -272,8 +279,8 @@
 	hardsuit_type = "ert_engihard"
 
 /obj/item/clothing/suit/space/hardsuit/ert/engi
-	icon_state = "ert_security_hardsuit"
-	item_state = "ert_security_hardsuit"
+	icon_state = "ert_engineer_hardsuit"
+	item_state = "ert_engineer_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/engi
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/med
@@ -283,23 +290,27 @@
 
 /obj/item/clothing/suit/space/hardsuit/ert/med
 	icon_state = "ert_medical_hardsuit"
-	item_state = "ert_security_hardsuit"
+	item_state = "ert_medical_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/med
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/jani
-	icon_state = "ert_sechard_helm0"
-	item_state = "ert_sechard_helm"
+	icon_state = "ert_janitorhard_helm0"
+	item_state = "ert_janitorhard_helm"
 	hardsuit_type = "ert_security"
 
 /obj/item/clothing/suit/space/hardsuit/ert/jani
-	icon_state = "ert_security_hardsuit"
-	item_state = "ert_security_hardsuit"
+	icon_state = "ert_janitor_hardsuit"
+	item_state = "ert_janitor_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/jani
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/plated
+	name = "emergency response team plated helmet"
+	desc = "The integrated helmet of an ERT hardsuit, this one has reinforced plasceramic plating."
 	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 40, BOMB = 60, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/ert/plated
+	name = "emergency response team plated hardsuit"
+	desc = "Special plated hardsuit of the ERT. Offers superb protection against environmental hazards."
 	icon_state = "nt_combat_plated_hardsuit"
 	item_state = "nt_combat_plated_hardsuit"
 	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 35, BOMB = 60, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 10, ELECTRIC = 100)
@@ -314,9 +325,48 @@
 
 /obj/item/clothing/suit/space/hardsuit/ert/plated/command
 	name = "emergency response team commander hardsuit"
-	icon_state = "ert_command_hardsuit"
-	item_state = "ert_command_hardsuit"
+	icon_state = "ert_command_plated_hardsuit"
+	item_state = "ert_command_plated_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/plated/command
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/plated/sec
+	icon_state = "ert_sechard_helm0"
+	item_state = "ert_sechard_helm"
+	hardsuit_type = "ert_sechard"
+
+/obj/item/clothing/suit/space/hardsuit/ert/plated/sec
+	icon_state = "ert_security_plated_hardsuit"
+	item_state = "ert_security_plated_hardsuit"
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/plated/engi
+	icon_state = "ert_engihard_helm0"
+	item_state = "ert_engihard_helm"
+	hardsuit_type = "ert_engihard"
+
+/obj/item/clothing/suit/space/hardsuit/ert/plated/engi
+	icon_state = "ert_security_plated_hardsuit"
+	item_state = "ert_security_plated_hardsuit"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/engi
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/plated/med
+	icon_state = "ert_medicalhard_helm0"
+	item_state = "ert_medicalhard_helm"
+	hardsuit_type = "ert_medicalhard"
+
+/obj/item/clothing/suit/space/hardsuit/ert/plated/med
+	icon_state = "ert_medical_plated_hardsuit"
+	item_state = "ert_security_plated_hardsuit"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/med
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/plated/jani
+	icon_state = "ert_sechard_helm0"
+	item_state = "ert_sechard_helm"
+	hardsuit_type = "ert_security"
+
+/obj/item/clothing/suit/space/hardsuit/ert/plated/jani
+	icon_state = "ert_security_plated_hardsuit"
+	item_state = "ert_security_plated_hardsuit"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/jani
 
 	//SWAT MKII
 //The main idea of these suits: Nanotrasen original design, spaceworthy, robust, heavy. On station will be present only one - swat/captain/mk3
@@ -374,7 +424,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/swat/mk4
 	name = "\improper Prototype MK.IV SWAT Helmet"
 	desc = "An advanced tactical SWAT helmet MK.III."
-	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
+	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 55, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
 	icon_state = "swat4_helm"
 	item_state = "swat4_helm"
 	hardsuit_type = "swat4"
@@ -384,7 +434,7 @@
 	desc = "A new line of SWAT suits designed to replace the ageing MK.II SWAT suit. \
 		Based on the streamlined MK.II model, the traditional ceramic and graphene plate construction\
 		was replaced with modern plasceramics, providing superior armor against most threats, as well as lighter weight."
-	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
+	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 55, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
 	icon_state = "swat4_hardsuit"
 	item_state = "swat4_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat/mk4
@@ -404,7 +454,7 @@
 	icon_state = "swat4_cap_helm0"
 	item_state = "swat4_cap_helm"
 	hardsuit_type = "swat4_cap"
-	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
+	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 55, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
 	
 /obj/item/clothing/suit/space/hardsuit/swat/captain/mk4
 	name = "\improper MK.IV captain's SWAT suit"
@@ -415,7 +465,7 @@
 	icon_state = "swat4_cap_hardsuit"
 	item_state = "swat4_cap_hardsuit"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/swat/captain/mk4
-	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
+	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 55, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
 	slowdown = 0.7
 
 

@@ -17,6 +17,60 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode, /datum/action/item_action/toggle_rig_light)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 	visor_flags = STOPSPRESSUREDAMAGE
+	var/list/list_of_modes = null
+
+/obj/item/clothing/suit/space/hardsuit/Initialize(mapload)
+	if(jetpack && ispath(jetpack))
+		jetpack = new jetpack(src)
+	. = ..()
+
+/obj/item/clothing/suit/space/hardsuit/attack_self(mob/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	..()
+
+/obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/tank/jetpack/suit))
+		if(jetpack)
+			to_chat(user, span_warning("[src] already has a jetpack installed."))
+			return
+		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING)) //Make sure the player is not wearing the suit before applying the upgrade.
+			to_chat(user, span_warning("You cannot install the upgrade to [src] while wearing it."))
+			return
+
+		if(user.transferItemToLoc(I, src))
+			jetpack = I
+			to_chat(user, span_notice("You successfully install the jetpack into [src]."))
+			return
+	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		if(!jetpack)
+			to_chat(user, span_warning("[src] has no jetpack installed."))
+			return
+		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING))
+			to_chat(user, span_warning("You cannot remove the jetpack from [src] while wearing it."))
+			return
+
+		jetpack.turn_off(user)
+		jetpack.forceMove(drop_location())
+		jetpack = null
+		to_chat(user, span_notice("You successfully remove the jetpack from [src]."))
+		return
+	return ..()
+
+
+/obj/item/clothing/suit/space/hardsuit/equipped(mob/user, slot)
+	..()
+	if(jetpack && istype(jetpack))
+		if(slot == ITEM_SLOT_OCLOTHING)
+			for(var/X in jetpack.actions)
+				var/datum/action/A = X
+				A.Grant(user)
+
+/obj/item/clothing/suit/space/hardsuit/dropped(mob/user)
+	..()
+	if(jetpack && istype(jetpack))
+		for(var/X in jetpack.actions)
+			var/datum/action/A = X
+			A.Remove(user)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/Initialize()
 	. = ..()
@@ -82,6 +136,10 @@
 	return TRUE
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/AltClick(mob/user)
+	light_toggling_proc(user)
+	user.update_inv_head()
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/light_toggling_proc(user)
 	if(!on)
 		return FALSE
 	light_status = !light_status
@@ -94,11 +152,7 @@
 /datum/action/item_action/toggle_rig_light/Trigger()
 	var/obj/item/clothing/head/helmet/space/hardsuit/syndi/rig = target
 	if(istype(rig))
-		if(!rig.on)
-			return FALSE
-		rig.light_status = !rig.light_status
-		rig.icon_state = "[initial(rig.icon_state)]_sealed[rig.light_status ? "_light":""]"
-		rig.set_light_on(rig.light_status)
+		rig.light_toggling_proc(owner)
 		//rig.update_appearance(UPDATE_ICON)
 		owner.update_inv_head()
 
@@ -129,6 +183,7 @@
 				linkedsuit.flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 			REMOVE_TRAIT(linkedsuit, TRAIT_NODROP, SEALED_RIG_TRAIT)
 
+		linkedsuit.hardon = on	//Tracking current mode on suit
 		linkedsuit.icon_state = "[linkedsuit.hardsuit_type]_rig[on ? "_sealed":""]"
 		linkedsuit.update_appearance(UPDATE_ICON)
 		user.update_inv_wear_suit()
@@ -141,6 +196,7 @@
 	item_state = "scarlet_rig"
 	hardsuit_type = "scarlet"
 	w_class = WEIGHT_CLASS_NORMAL
+	var/hardon = FALSE				//Tracking current mode on suit, handles by helmet on
 	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 25, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
@@ -161,14 +217,176 @@
 	if(lightweight)
 		flags_inv &= ~(HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT)
 
-/obj/item/clothing/suit/space/hardsuit/syndi/canStrip(mob/stripper, mob/owner)
-	SHOULD_BE_PURE(TRUE)
-	return !HAS_TRAIT_FROM(src, TRAIT_NODROP, SEALED_RIG_TRAIT)
+///obj/item/clothing/suit/space/hardsuit/syndi/canStrip(mob/stripper, mob/owner)
+//	SHOULD_BE_PURE(TRUE)
+//	return !HAS_TRAIT_FROM(src, TRAIT_NODROP, SEALED_RIG_TRAIT)
 
-/obj/item/clothing/suit/space/hardsuit/syndi/doStrip(mob/stripper, mob/owner)
-	SuitRestartHandle()
-	playsound(src.loc, 'modular_dripstation/sound/servo_motor.ogg', 50, 1)
-	return owner.dropItemToGround(src)
+///obj/item/clothing/suit/space/hardsuit/syndi/doStrip(mob/stripper, mob/owner)
+//	SuitRestartHandle()
+//	playsound(src.loc, 'modular_dripstation/sound/servo_motor.ogg', 50, 1)
+//	return owner.dropItemToGround(src)
+
+
+
+//////////////////////////////////////////
+/////////Shielded dualmod (no mode)///////
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded
+	var/current_charges = 3
+	var/max_charges = 3 //How many charges total the shielding has
+	var/recharge_delay = 200 //How long after we've been shot before we can start recharging. 20 seconds here
+	var/recharge_cooldown = 0 //Time since we've last been shot
+	var/recharge_rate = 1 //How quickly the shield recharges once it starts charging
+	var/shield_state = "shield-red"
+	var/shield_on = "shield-red"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	recharge_cooldown = world.time + recharge_delay
+	if(current_charges > 0)
+		var/datum/effect_system/spark_spread/s = new
+		s.set_up(2, 1, src)
+		s.start()
+		owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!"))
+		current_charges--
+		if(recharge_rate)
+			START_PROCESSING(SSobj, src)
+		if(current_charges <= 0)
+			owner.visible_message("[owner]'s shield overloads!")
+			shield_state = "broken"
+			owner.update_inv_wear_suit()
+		return 1
+	return 0
+
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/process()
+	if(world.time > recharge_cooldown && current_charges < max_charges)
+		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
+		playsound(loc, 'sound/magic/charge.ogg', 50, 1)
+		if(current_charges == max_charges)
+			playsound(loc, 'sound/machines/ding.ogg', 50, 1)
+			STOP_PROCESSING(SSobj, src)
+		shield_state = "[shield_on]"
+		if(ishuman(loc))
+			var/mob/living/carbon/human/C = loc
+			C.update_inv_wear_suit()
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/worn_overlays(isinhands)
+	. = list()
+	if(!isinhands)
+		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded
+
+
+
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded/bloodred
+	name = "blood-red RIG helmet"
+	desc = "A dual-mode advanced helmet designed for special operations. Property of Gorlex Marauders."
+	icon_state = "bloodred_helm"
+	item_state = "bloodred_helm"
+	hardsuit_type = "bloodred"
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
+	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred
+	name = "blood-red shielded RIG"
+	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt shielding module. Original design by Gorlex Marauders."
+	icon_state = "bloodred_rig"
+	item_state = "bloodred_rig"
+	hardsuit_type = "bloodred"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded/bloodred
+	jetpack = /obj/item/tank/jetpack/suit
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
+	combat_slowdown = 0
+	lightweight = 0
+
+/obj/item/clothing/suit/space/hardsuit/shielded/syndi/Initialize(mapload)
+	. = ..()
+	var/obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred/shielded = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred
+	new shielded(drop_location())
+	qdel(src)
+
+////////////////////////////////////////////
+/////////DEATHSQUAD SHIELDED DUAL-MOD///////
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
+	name = "elite emergency response team RIG helmet (blackops)"
+	desc = "Advanced helmet issued to black ops team operator."
+	icon_state = "nt_deathsquad_helm"
+	item_state = "nt_deathsquad_helm"
+	hardsuit_type = "nt_deathsquad"
+	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 35, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
+	light_range = 7
+	heat_protection = HEAD
+	resistance_flags = FIRE_PROOF
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	var/hit_reflect_chance = 50
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_MEDICAL]
+		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		SHUD.show_to(user)
+		DHUD.show_to(user)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/dropped(mob/living/carbon/human/user)
+	..()
+	if (user.head == src)
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_MEDICAL]
+		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		SHUD.hide_from(user)
+		DHUD.hide_from(user)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, antimagic_flags = MAGIC_RESISTANCE_MIND, inventory_flags = ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/IsReflect(def_zone)
+	if(!(def_zone in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_EYES))) //If not shot where ablative is covering you, you don't get the reflection bonus!
+		return FALSE
+	if (prob(hit_reflect_chance))
+		return TRUE
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
+	name = "elite emergency response team RIG (blackops)"
+	desc = "Advanced RIG issued to black ops team operator. Made from superior materials, one of the latest in the modern combat rigs line."
+	icon_state = "nt_deathsquad_rig"
+	item_state = "nt_deathsquad_rig"
+	hardsuit_type = "nt_deathsquad"
+	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 25, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	combat_slowdown = 0.3
+	lightweight = 1
+	helmettype = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
+	var/hit_reflect_chance = 50
+	combat_slowdown = 0.2
+	shield_state = "shield-old"
+	shield_on = "shield-old"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, antimagic_flags = MAGIC_RESISTANCE|MAGIC_RESISTANCE_HOLY, inventory_flags = ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/IsReflect(def_zone)
+	if(!(def_zone in list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN))) //If not shot where ablative is covering you, you don't get the reflection bonus!
+		return FALSE
+	if (prob(hit_reflect_chance))
+		return TRUE
+
+/obj/item/clothing/suit/space/hardsuit/shielded/swat/Initialize(mapload)
+	. = ..()
+	var/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
+	new shielded(drop_location())
+	qdel(src)
+
 
 //The Owl Hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
@@ -178,6 +396,187 @@
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	combat_slowdown = 0
 	lightweight = 0
+
+////////////////////////////////
+/////////NORMAL DUAL-MODS///////
+////////////////////////////////
+////////////////////////////////
+
+///////Medical dual-mods///////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/medical
+	name = "medical RIG helmet"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for medical extractions in hasard areas."
+	icon_state = "medical_helm"
+	item_state = "medical_helm"
+	hardsuit_type = "medical"
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 60, FIRE = 60, ACID = 75, WOUND = 10, ELECTRIC = 100)
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | HEADINTERNALS
+
+/obj/item/clothing/suit/space/hardsuit/syndi/medical
+	name = "medical RIG"
+	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Built with lightweight materials for easier movement. Expensive in production and maintaining."
+	icon_state = "medical_rig"
+	item_state = "medical_rig"
+	hardsuit_type = "medical"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 60, FIRE = 60, ACID = 75, WOUND = 10, ELECTRIC = 100)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/medical
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/medical/rescue
+	name = "rescue RIG helmet"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for rescue attempts in hasard areas."
+	icon_state = "rescue_helm"
+	item_state = "rescue_helm"
+	hardsuit_type = "rescue"
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/medical/rescue/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		var/datum/atom_hud/MHUD = GLOB.huds[DATA_HUD_MEDICAL_BASIC]
+		MHUD.show_to(user)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/medical/rescue/dropped(mob/living/carbon/human/user)
+	..()
+	if (user.head == src)
+		var/datum/atom_hud/MHUD = GLOB.huds[DATA_HUD_MEDICAL_BASIC]
+		MHUD.hide_from(user)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/medical/rescue
+	name = "rescue RIG"
+	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Built with lightweight materials for easier movement. Expensive in production and maintaining."
+	icon_state = "rescue_rig"
+	item_state = "rescue_rig"
+	hardsuit_type = "rescue"
+	slowdown = 0.4
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/medical/rescue
+
+////////////////////////////
+//////Mining Dual-mod//////
+////////////////////////////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/mining
+	name = "mining RIG helmet"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for mining operations in hasard areas."
+	icon_state = "mining_helm"
+	item_state = "mining_helm"
+	hardsuit_type = "mining"
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	visor_flags_inv = HIDEEYES|HIDEFACE
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/mining/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/mining
+	name = "mining RIG helmet"
+	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Used by mining groups across human space. Expensive in production and maintaining."
+	icon_state = "mining_rig"
+	item_state = "mining_rig"
+	hardsuit_type = "mining"
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/mining
+
+/obj/item/clothing/suit/space/hardsuit/syndi/mining/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+
+//////////////////////////////
+//////Security Dual-mods//////
+//////////////////////////////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/security
+	name = "security RIG helmet"
+	icon_state = "sec_helm"
+	item_state = "sec_helm"
+	hardsuit_type = "sec"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for security operations in hasard AO`s."
+	armor = list(MELEE = 30, BULLET = 25, LASER = 30, ENERGY = 10, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+
+/obj/item/clothing/suit/space/hardsuit/syndi/security
+	name = "security RIG"
+	icon_state = "sec_rig"
+	item_state = "sec_rig"
+	hardsuit_type = "sec"
+	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Used by paramilitary groups and PMC alike across human space. Expensive in production and maintaining."
+	armor = list(MELEE = 30, BULLET = 25, LASER = 30, ENERGY = 10, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/security
+
+/obj/item/clothing/suit/space/hardsuit/syndi/security/Initialize(mapload)
+	. = ..()
+	allowed = GLOB.security_hardsuit_allowed
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/security/brigmed
+	name = "security brigmed RIG helmet"
+	icon_state = "brigmed_helm"
+	item_state = "brigmed_helm"
+	hardsuit_type = "brigmed"
+	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for medical extractions from combat zones."
+	armor = list(MELEE = 25, BULLET = 15, LASER = 20, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/security/brigmed
+	name = "security brigmed RIG"
+	icon_state = "brigmed_rig"
+	item_state = "brigmed_rig"
+	hardsuit_type = "brigmed"
+	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Used by paramedics of paramilitary groups and PMC alike across human space. Expensive in production and maintaining."
+	armor = list(MELEE = 25, BULLET = 15, LASER = 20, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/security/brigmed
+	combat_slowdown = 0.4
+
+
+
+//////Gorlex Sec suit//////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/security/gorlex
+	name = "\improper Gorlex security RIG helmet"
+	icon_state = "secsyndi_helm"
+	item_state = "secsyndi_helm"
+	hardsuit_type = "secsyndi"
+	desc = "Bulletproof dual-mode helmet derived from more advanced special operations helmets. Designed for private military operations in hasard AO`s. Gorlex Security brunch property."
+	armor = list(MELEE = 35, BULLET = 45, LASER = 15, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/security/gorlex
+	name = "\improper Gorlex security RIG"
+	icon_state = "secsyndi_rig"
+	item_state = "secsyndi_rig"
+	hardsuit_type = "secsyndi"
+	desc = "Bulletproof dual-mode RIG derived from more advanced special operations hardsuits. Used by Gorlex Security groups across human space. Lacks laser protection. Expensive in production and maintaining."
+	armor = list(MELEE = 30, BULLET = 40, LASER = 15, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/security/gorlex
+	combat_slowdown = 0.3
+
+//////Vahlen Sec suit//////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/security/vahlen
+	name = "vahlen corpsman RIG helmet"
+	desc = "A dual-mode advanced helmet designed for medical extractions. Original design by Vahlen Pharmaceuticals."
+	icon_state = "vahlencorpsman_helm"
+	item_state = "vahlencorpsman_helm"
+	hardsuit_type = "vahlencorpsman"
+	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	armor = list(MELEE = 30, BULLET = 40, LASER = 40, ENERGY = 30, BOMB = 40, BIO = 100, RAD = 90, FIRE = 75, ACID = 90, WOUND = 20, ELECTRIC = 100)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/security/vahlen
+	name = "vahlen corpsman RIG"
+	desc = "A dual-mode advanced RIG designed for medical extractions. Original design by Vahlen Pharmaceuticals."
+	icon_state = "vahlencorpsman_rig"
+	item_state = "vahlencorpsman_rig"
+	hardsuit_type = "vahlencorpsman"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/security/vahlen
+	jetpack = /obj/item/tank/jetpack/suit
+	armor = list(MELEE = 30, BULLET = 40, LASER = 40, ENERGY = 30, BOMB = 40, BIO = 100, RAD = 90, FIRE = 75, ACID = 90, WOUND = 20, ELECTRIC = 100)
+	combat_slowdown = 0.3
+	lightweight = 0
+
+
+
+/////////////////////////////////////////
+//////Special Operations Dual-mods//////
+/////////////////////////////////////////
+/////////////////////////////////////////
 
 //////Bloodred Syndie suit//////
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred
@@ -201,27 +600,141 @@
 	combat_slowdown = 0
 	lightweight = 0
 
-//////Vahlen Sec suit//////
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred
-	name = "vahlen corpsman RIG helmet"
-	desc = "A dual-mode advanced helmet designed for special operations. Property of Gorlex Marauders."
-	icon_state = "bloodred_helm"
-	item_state = "bloodred_helm"
-	hardsuit_type = "bloodred"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
-	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 
-/obj/item/clothing/suit/space/hardsuit/syndi/bloodred
-	name = "blood-red RIG"
-	desc = "A dual-mode advanced RIG designed for special operations. Original design by Gorlex Marauders."
-	icon_state = "bloodred_rig"
-	item_state = "bloodred_rig"
-	hardsuit_type = "bloodred"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred
-	jetpack = /obj/item/tank/jetpack/suit
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
-	combat_slowdown = 0
-	lightweight = 0
+//////Bloodred Unathi suit//////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/unathi
+	name = "blood-red unathi RIG helmet"
+	desc = "A dual-mode advanced helmet designed for special operations. Moded for users with elongated skull proportions. Property of Gorlex Marauders."
+	icon_state = "bloodred_unathi_helm"
+	item_state = "bloodred_unathi_helm"
+	hardsuit_type = "bloodred_unathi"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/unathi
+	name = "blood-red unathi RIG"
+	desc = "A dual-mode advanced RIG designed for special operations. Moded for users with digitigrade legs. Original design by Gorlex Marauders."
+	icon_state = "bloodred_unathi_rig"
+	item_state = "bloodred_unathi_rig"
+	hardsuit_type = "bloodred_unathi"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/unathi
+	mutantrace_variation = MUTANTRACE_VARIATION
+
+//////Bloodred Waffle Co suit//////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle
+	name = "waffle specops RIG helmet"
+	desc = "A dual-mode advanced helmet designed for special operations. Property of Waffle Co."
+	icon_state = "wafflebloodred_helm"
+	item_state = "wafflebloodred_helm"
+	hardsuit_type = "wafflebloodred"
+	var/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/magsuit = null
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/Initialize()
+	. = ..()
+	if(istype(loc, /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle))
+		magsuit = loc
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/toggle_hardsuit_mode(mob/user) //Helmet Toggles Suit Mode
+	. = ..()
+	if(magsuit)
+		if(on)
+			magsuit.slowdown = magsuit.eva_slowdown + (magsuit.magpulse * magsuit.slowdown_magactive)
+		else
+			magsuit.slowdown = magsuit.combat_slowdown + (magsuit.magpulse * magsuit.slowdown_magactive)
+		magsuit.icon_state = "[initial(magsuit.icon_state)][magsuit.hardon ? "_sealed" : ""][magsuit.magpulse ? "_active" : ""]"
+		//magsuit.update_appearance(UPDATE_ICON)
+		user.update_inv_wear_suit()
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle
+	name = "waffle specops RIG"
+	desc = "A dual-mode advanced RIG designed for special operations with integrated track pulse system. Original design by Waffle Co."
+	icon_state = "wafflebloodred_rig"
+	item_state = "wafflebloodred_rig"
+	hardsuit_type = "wafflebloodred"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle
+	var/slowdown_magactive = 1
+	var/magpulse = 0
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/verb/toggle()
+	set name = "Toggle Magboots"
+	set category = "Object"
+	set src in usr
+	if(!can_use(usr))
+		return
+	AltClick(usr)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/AltClick(mob/user)
+	if(magpulse)
+		clothing_flags &= ~NOSLIP
+		slowdown -= slowdown_magactive
+	else
+		clothing_flags |= NOSLIP
+		slowdown += slowdown_magactive
+	magpulse = !magpulse
+	icon_state = "[initial(icon_state)][hardon ? "_sealed" : ""][magpulse ? "_active" : ""]"
+	//update_appearance(UPDATE_ICON)
+	user.update_inv_wear_suit()
+	to_chat(user, span_notice("You [magpulse ? "enable" : "disable"] the mag-pulse traction system."))
+	user.update_gravity(user.has_gravity())
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.build_all_button_icons()
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/negates_gravity()
+	return clothing_flags & NOSLIP
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/examine(mob/user)
+	. = ..()
+	. += "Its mag-pulse traction system appears to be [magpulse ? "enabled" : "disabled"]."
+
+
+//////Bloodred Waffle Co Unathi suit//////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi
+	name = "blood-red unathi RIG helmet"
+	desc = "A dual-mode advanced helmet designed for special operations. Moded for users with elongated skull proportions. Property of Waffle Co."
+	icon_state = "wafflebloodred_unathi_helm"
+	item_state = "wafflebloodred_unathi_helm"
+	hardsuit_type = "wafflebloodred_unathi"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi
+	name = "blood-red unathi RIG"
+	desc = "A dual-mode advanced RIG designed for special operations with integrated track pulse system. Moded for users with digitigrade legs. Original design by Waffle Co."
+	icon_state = "wafflebloodred_unathi_rig"
+	item_state = "wafflebloodred_unathi_rig"
+	hardsuit_type = "wafflebloodred_unathi"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi
+	//mutantrace_variation = MUTANTRACE_VARIATION
+
+//////Bloodred Waffle Co Unathi Breach suit//////
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi/breach
+	name = "blood-red unathi Breach RIG helmet"
+	desc = "A dual-mode advanced helmet designed for breach squads. Moded for users with elongated skull proportions. Property of Waffle Co."
+	icon_state = "wafflebloodred_unathi_breacher_helm"
+	item_state = "wafflebloodred_unathi_breacher_helm"
+	hardsuit_type = "wafflebloodred_unathi_breacher"
+	armor = list(MELEE = 80, BULLET = 70, LASER = 50, ENERGY = 60, BOMB = 100, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach
+	name = "blood-red unathi Breach RIG"
+	desc = "A dual-mode advanced RIG designed for breach squads with integrated track pulse system. Moded for users with digitigrade legs. Provides ability to breach through walls. Original design by Waffle Co."
+	icon_state = "wafflebloodred_unathi_breacher_rig"
+	item_state = "wafflebloodred_unathi_breacher_rig"
+	hardsuit_type = "wafflebloodred_unathi_breacher"
+	armor = list(MELEE = 80, BULLET = 70, LASER = 50, ENERGY = 60, BOMB = 100, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi/breach
+	//mutantrace_variation = MUTANTRACE_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		RegisterSignal(user, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/dropped(mob/living/carbon/human/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		UnregisterSignal(user, COMSIG_ATOM_ATTACK_HAND)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/proc/on_attack_hand(atom/target, mob/living/carbon/human/user, proximity)
+	if(proximity) //no telekinetic breacher attack
+		return target.attack_hulk(user)
 
 
 //////Elite hardsuit//////
@@ -432,7 +945,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	combat_slowdown = 0.3
-	lightweight = 0
+	lightweight = 1
 
 //////Emergency Response Team suits//////
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert
@@ -466,6 +979,7 @@
 	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert
 	jetpack = /obj/item/tank/jetpack/suit
+	lightweight = 0
 
 //////Security//////
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec
@@ -561,21 +1075,59 @@
 
 
 //////Deathsquad//////
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com/deathsquad
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad
 	name = "elite emergency response team RIG helmet (blackops)"
 	desc = "Advanced helmet issued to black ops team operator."
 	icon_state = "nt_deathsquad_helm"
 	item_state = "nt_deathsquad_helm"
 	hardsuit_type = "nt_deathsquad"
+	var/hit_reflect_chance = 50
 
-/obj/item/clothing/suit/space/hardsuit/syndi/military/ert/com/deathsquad
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_MEDICAL]
+		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		SHUD.show_to(user)
+		DHUD.show_to(user)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad/dropped(mob/living/carbon/human/user)
+	..()
+	if (user.head == src)
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_MEDICAL]
+		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		SHUD.hide_from(user)
+		DHUD.hide_from(user)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, antimagic_flags = MAGIC_RESISTANCE_MIND, inventory_flags = ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad/IsReflect(def_zone)
+	if(!(def_zone in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_EYES))) //If not shot where ablative is covering you, you don't get the reflection bonus!
+		return FALSE
+	if (prob(hit_reflect_chance))
+		return TRUE
+
+/obj/item/clothing/suit/space/hardsuit/syndi/military/ert/deathsquad
 	name = "elite emergency response team RIG (blackops)"
 	desc = "Advanced RIG issued to black ops team operator. Made from superior materials, one of the latest in the modern combat rigs line."
 	icon_state = "nt_deathsquad_rig"
 	item_state = "nt_deathsquad_rig"
 	hardsuit_type = "nt_deathsquad"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com/deathsquad
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad
+	var/hit_reflect_chance = 50
 	combat_slowdown = 0.2
+
+/obj/item/clothing/suit/space/hardsuit/syndi/military/ert/deathsquad/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, antimagic_flags = MAGIC_RESISTANCE|MAGIC_RESISTANCE_HOLY, inventory_flags = ITEM_SLOT_OCLOTHING)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/military/ert/deathsquad/IsReflect(def_zone)
+	if(!(def_zone in list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN))) //If not shot where ablative is covering you, you don't get the reflection bonus!
+		return FALSE
+	if (prob(hit_reflect_chance))
+		return TRUE
 
 
 //////Engineer//////

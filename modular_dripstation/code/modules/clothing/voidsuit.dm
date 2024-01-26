@@ -1,6 +1,6 @@
 //////Void suits//////
 /obj/item/clothing/head/helmet/space
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70, WOUND = 0, ELECTRIC = 50)
 	icon_state = "helm-spaceold"
 	item_state = "helm-spaceold"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
@@ -8,7 +8,7 @@
 
 
 /obj/item/clothing/suit/space
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70, WOUND = 0, ELECTRIC = 50)
 	icon_state = "spaceold"
 	item_state = "spaceold"
 	desc = "A suit that protects against low pressure environments. Has a big 13 on the back."
@@ -31,14 +31,14 @@
 	icon_state = "helm-explorer"
 	item_state = "helm-explorer"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays. The helmet materials seams a bit reinforced."
-	armor = list(MELEE = 15, BULLET = 15, LASER = 0, ENERGY = 0, BOMB = 20, BIO = 100, RAD = 70, FIRE = 60, ACID = 65)
+	armor = list(MELEE = 15, BULLET = 15, LASER = 0, ENERGY = 0, BOMB = 20, BIO = 100, RAD = 70, FIRE = 60, ACID = 65, WOUND = 0, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/explorer
 	name = "explorer space suit"
 	icon_state = "explorer"
 	item_state = "explorer"
 	desc = "A suit that protects against low pressure environments. Has a big NT logo on the back. This variation has reinforced bulletproof plating."
-	armor = list(MELEE = 25, BULLET = 25, LASER = 0, ENERGY = 0, BOMB = 20, BIO = 100, RAD = 70, FIRE = 60, ACID = 65)
+	armor = list(MELEE = 25, BULLET = 25, LASER = 0, ENERGY = 0, BOMB = 20, BIO = 100, RAD = 70, FIRE = 60, ACID = 65, WOUND = 0, ELECTRIC = 100)
 
 
 //////PARAMEDIC NT//////
@@ -47,12 +47,14 @@
 	icon_state = "helm-paramedic"
 	item_state = "helm-paramedic"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays."
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70, WOUND = 0, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/paramedic
 	name = "rescue space suit"
 	desc = "A suit that protects against low pressure environments. Has a big NT logo on the back. Seams lightweight."
 	icon_state = "paramedic"
 	item_state = "paramedic"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 70, WOUND = 0, ELECTRIC = 100)
 	slowdown = 0.7
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -63,14 +65,14 @@
 	icon_state = "helm-command"
 	item_state = "helm-command"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays. The helmet materials seams reinforced."
-	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65)
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 0, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/heads
 	name = "command space suit"
 	icon_state = "command"
 	item_state = "command"
 	desc = "A suit that protects against low pressure environments. Has a big NT logo on the back. This variation has reinforced seams."
-	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 10, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65)
+	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 10, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 0, ELECTRIC = 100)
 
 
 //////Space Slav//////
@@ -78,25 +80,25 @@
 	icon_state = "helm-cosmonaut"
 	item_state = "helm-cosmonaut"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays. Has a red star on the forehead."
-	armor = list(MELEE = 15, BULLET = 20, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 10)
+	armor = list(MELEE = 15, BULLET = 20, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/cosmonaut
 	icon_state = "cosmonaut"
 	item_state = "cosmonaut"
 	desc = "A suit that protects against low pressure environments. Seams reinforced. Likely slav-made."
-	armor = list(MELEE = 15, BULLET = 20, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 10)
+	armor = list(MELEE = 15, BULLET = 20, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/head/helmet/space/cosmonaut/combat
 	icon_state = "helm-cosmonaut-combat"
 	item_state = "helm-cosmonaut-combat"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays. Has a red star on the forehead."
-	armor = list(MELEE = 40, BULLET = 50, LASER = 0, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 65, WOUND = 10)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 0, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 65, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/cosmonaut/combat
 	icon_state = "cosmonaut-combat"
 	item_state = "cosmonaut-combat"
 	desc = "A special combat suit that protects against low pressure environments. Lacks laser protection. Has a identification chevron of USSP military forces."
-	armor = list(MELEE = 40, BULLET = 50, LASER = 0, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 65, WOUND = 10)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 0, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 65, WOUND = 10, ELECTRIC = 100)
 	slowdown = 0.5
 
 
@@ -142,12 +144,12 @@
 /obj/item/clothing/head/helmet/space/syndicate
 	icon_state = "helm-syndicate"
 	item_state = "helm-syndicate"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30,ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30,ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/syndicate
 	icon_state = "syndicate"
 	item_state = "syndicate"
-	armor = list(MELEE = 40, BULLET = 50, LASER = 30,ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10)
+	armor = list(MELEE = 40, BULLET = 50, LASER = 30,ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
 
 
 //Black syndicate space suit

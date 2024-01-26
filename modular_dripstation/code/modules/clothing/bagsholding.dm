@@ -1,3 +1,14 @@
+/obj/item/boh_shell
+	var/insertion_output = /obj/item/storage/backpack/holding
+
+/obj/item/boh_shell/attackby(obj/item/I, mob/user, params)
+	..()
+	if(istype(I, /obj/item/assembly/signaler/anomaly))
+		to_chat(user, "[src] roars to life as you insert the anomaly core!")
+		new insertion_output(get_turf(src))
+		qdel(src)
+		qdel(I)
+
 /obj/item/boh_shell/duffel
 	name = "duffel bag of holding shell"
 	desc = "An inert shell, it looks like you could activate it with an anomaly core."

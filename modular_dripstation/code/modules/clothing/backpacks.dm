@@ -208,3 +208,42 @@
 	icon_state = "duffel-chemistry"
 	item_state = "duffel-chemistry"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+
+/obj/item/storage/backpack/cargo
+	name = "cargo backpack"
+	desc = "For corporate cargoman usage."
+	icon_state = "backpack-cargo"
+	item_state = "backpack-cargo"
+
+/obj/item/storage/backpack/cargo/tactical
+	name = "cargo tactical backpack"
+	desc = "UNITE WE STAND! Uh oh, shitsecs..."
+	icon_state = "backpack-cargo_tactiical"
+	item_state = "backpack-cargo_tactiical"
+
+/obj/item/storage/backpack/satchel/cargo
+	name = "cargo satchel"
+	desc = "For those whose burden is heavy."
+	icon_state = "satchel-cargo"
+	item_state = "satchel-cargo"
+
+/obj/item/storage/backpack/duffelbag/cargo
+	name = "cargo duffelbag"
+	desc = "A duffelbag designed to hold cargo. Heavy cargo."
+	icon_state = "duffelbag-cargo"
+	item_state = "duffelbag-cargo"
+
+/obj/item/storage/backpack/syndie
+	name = "suspicious backpack"
+	desc = "Stand by for your task, operative."
+	icon_state = "syndicate_pack_combat"
+	item_state = "syndicate_pack_combat"
+
+/obj/item/storage/backpack/satchel/syndie
+	name = "suspicious satchel"
+	desc = "For operatives, who operating operatively and overthrow monopolists."
+	icon_state = "satchel_syndie"
+	item_state = "satchel_syndie"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
