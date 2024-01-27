@@ -355,7 +355,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
 	name = "elite emergency response team RIG (blackops)"
-	desc = "Advanced RIG issued to black ops team operator. Made from superior materials, one of the latest in the modern combat rigs line."
+	desc = "Advanced RIG issued to black ops team operator. Made from superior materials, one of the latest in the modern combat rigs line. Has inbuilt shielding module."
 	icon_state = "nt_deathsquad_rig"
 	item_state = "nt_deathsquad_rig"
 	hardsuit_type = "nt_deathsquad"

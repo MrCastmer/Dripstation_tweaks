@@ -174,7 +174,7 @@
 	icon_state = "pilot_helm0"
 	item_state = "pilot_helm"
 	hardsuit_type = "pilot"
-	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 0, BOMB = 50, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20)
+	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 0, BOMB = 50, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20, ELECTRIC = 100)
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/pilot/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -193,8 +193,9 @@
 	desc = "A special security suit designed for long-term operations in hazardous, low pressure environments. Has an additional layer of armor for wildlife encounters."
 	icon_state = "pilot_hardsuit"
 	item_state = "pilot_hardsuit"
-	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 0, BOMB = 50, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20)
+	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 0, BOMB = 50, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/pilot
+	jetpack = /obj/item/tank/jetpack/suit
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/warden
 	name = "warden's hardsuit helmet"
@@ -202,14 +203,14 @@
 	icon_state = "warden_helm0"
 	item_state = "warden_helm"
 	hardsuit_type = "warden"
-	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 45, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20)
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 45, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/security/warden
 	name = "warden's hardsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has additional energy protection."
 	icon_state = "warden_hardsuit"
 	item_state = "warden_hardsuit"
-	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 45, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20)
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 45, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/warden
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
