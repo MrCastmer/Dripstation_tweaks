@@ -67,11 +67,12 @@
 	force = 8
 
 /obj/item/weldingtool/hugetank/nuke
-	desc = "An upgraded welder based of the industrial welder. Has remarkable painting."
+	desc = "An upgraded welder based of the industrial welder. Has remarkable painting and more stealthy welding flash."
 	icon = 'modular_dripstation/icons/obj/tools.dmi'
 	icon_state = "syndiewelder"
 	item_state = "syndiewelder"
 	toolspeed = 0.5
+	light_range = 1
 
 /obj/item/inducer/nuke
 	desc = "A tool for inductively charging internal power cells. This one has a suspicious colour scheme, and seems to be rigged to transfer charge at a much faster rate."
