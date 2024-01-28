@@ -25,6 +25,27 @@
 /obj/item/clothing/shoes/magboots/security
 	armor = list(MELEE = 15, BULLET = 10, LASER = 5, ENERGY = 10, BOMB = 15, BIO = 20, RAD = 0, FIRE = 20, ACID = 50)
 
+/obj/item/clothing/shoes/magboots/security/advanced
+	name = "SWAT magboots"
+	desc = "High speed, no drag combat-edition magboots issued by Nanotrasen Black Ops for extravehicular missions."
+	armor = list(MELEE = 40, BULLET = 30, LASER = 25, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 30, FIRE = 90, ACID = 50, ELECTRIC = 100)
+	icon_state = "cmagboots0"
+	magboot_state = "cmagboots"
+	slowdown_active = 0.5
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/shoes/magboots/security/advanced/attack_self(mob/user)
+	. = ..()
+	if(magpulse)
+		clothing_flags &= ~NOSLIP | ~NOSLIP_ICE
+	else
+		clothing_flags |= NOSLIP | NOSLIP_ICE
+
+/obj/item/clothing/shoes/magboots/security/advanced/synd
+	name = "Syndicate Black Ops magboots"
+	desc = "High speed, no drag combat-edition magboots issued by Syndicate Black Ops for extravehicular missions. DEFINITELY not stolen from a rival corporation."
+	slowdown_active = 0.8
+
 /obj/item/clothing/shoes/magboots/security/captain
 	desc = "A relic predating magboots, these ornate greaves have retractable spikes in the soles to maintain grip."
 	name = "captain's greaves"

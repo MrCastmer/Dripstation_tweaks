@@ -1,5 +1,9 @@
 /obj/item/boh_shell
 	var/insertion_output = /obj/item/storage/backpack/holding
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 
 /obj/item/boh_shell/attackby(obj/item/I, mob/user, params)
 	..()
@@ -8,6 +12,18 @@
 		new insertion_output(get_turf(src))
 		qdel(src)
 		qdel(I)
+
+/obj/item/storage/backpack/holding
+	slot_flags = ITEM_SLOT_BACK	// yogs, I love and I hate you, THE FUCK YOU WOULD PUT ON YOUR HEAD BIG FUCKING TECHNOLOGICAL DEVICE THAT INVERTS SPACE INTO YOUR FUCKING BAG, WHATS WRONG WITH YOU?
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/holding/Initialize(mapload)
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	//FUCKING GIVE ME SPRITE BACK, I JUST WANNA MY FUNNY SPRITE BACK
+
+/obj/item/disabled_boh/Initialize(mapload)
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	//FUCKING GIVE ME SPRITE BACK, I JUST WANNA MY FUNNY SPRITE BACK
 
 /obj/item/boh_shell/duffel
 	name = "duffel bag of holding shell"

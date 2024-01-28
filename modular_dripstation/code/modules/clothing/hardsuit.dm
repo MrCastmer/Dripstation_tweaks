@@ -15,12 +15,10 @@
 	icon_state = "engineering_helm0"
 	item_state = "engineering_helm"
 	hardsuit_type = "engineering"
-	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 10, ELECTRIC = 100) //WHY fireres?
-	resistance_flags = null // Just WHY?
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/engine
-	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 10, ELECTRIC = 100) //WHY fireres?
-	resistance_flags = null // Just WHY?
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
 	icon_state = "atmospherics_helm0"
@@ -370,7 +368,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/jani
 
 	//SWAT MKII
-//The main idea of these suits: Nanotrasen original design, spaceworthy, robust, heavy. On station will be present only one - swat/captain/mk3
+//The main idea of these suits: Nanotrasen original design, spaceworthy, robust, heavy. On station will be present only one - swat/captain/mk4
 /obj/item/clothing/head/helmet/space/hardsuit/swat
 	icon_state = "swat2_helm"
 	item_state = "swat2_helm"
@@ -469,6 +467,9 @@
 	armor = list(MELEE = 40, BULLET = 60, LASER = 50, ENERGY = 30, BOMB = 55, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 20, ELECTRIC = 100)
 	slowdown = 0.7
 
+/obj/item/clothing/suit/space/hardsuit/swat/captain/mk4/Initialize(mapload)
+	. = ..()
+	allowed = list(/obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/flashlight, /obj/item/gun/ballistic, /obj/item/gun/energy, /obj/item/melee/baton, /obj/item/melee/classic_baton, /obj/item/reagent_containers/spray/pepper, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/tank/jetpack/oxygen/captain)
 
 	//SWAT MKIV Deathsquad
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/mk5

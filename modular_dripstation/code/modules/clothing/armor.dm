@@ -136,6 +136,18 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	if (prob(hit_reflect_chance))
 		return TRUE
 
+/obj/item/clothing/head/hooded/ablative/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+		SHUD.show_to(user)
+
+/obj/item/clothing/head/hooded/ablative/dropped(mob/living/carbon/human/user)
+	..()
+	if (user.head == src)
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_MADVANCED]
+		SHUD.hide_from(user)
+
 /obj/item/clothing/suit/hooded/ablative
 	name = "ablative trenchcoat"
 	desc = "Experimental trenchcoat specially crafted to reflect and absorb laser and disabler shots. Don't expect it to do all that much against an axe or a shotgun, however."

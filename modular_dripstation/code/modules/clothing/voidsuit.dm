@@ -75,6 +75,22 @@
 	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 10, BOMB = 0, BIO = 100, RAD = 50, FIRE = 40, ACID = 65, WOUND = 0, ELECTRIC = 100)
 
 
+//////AMBER NT//////
+/obj/item/clothing/head/helmet/space/amber
+	name = "amber space helmet"
+	icon_state = "helm-amber"
+	item_state = "helm-amber"
+	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays. The helmet materials seams reinforced. Has a tag on it: NT military property."
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30,ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
+
+/obj/item/clothing/suit/space/amber
+	name = "amber space helmet"
+	icon_state = "space-amber"
+	item_state = "space-amber"
+	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays. The suit materials seams reinforced. Has a tag on it: NT military property."
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30,ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
+
+
 //////Space Slav//////
 /obj/item/clothing/head/helmet/space/cosmonaut
 	icon_state = "helm-cosmonaut"
