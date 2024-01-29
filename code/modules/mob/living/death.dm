@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(permadeath, FALSE)
 	if(stat != DEAD)
 		death(TRUE)
 
-	unequip_everything()
+//	unequip_everything()	//dripstation edit. Umm, yogs, fuck off
 
 	if(!prev_lying)
 		gib_animation()

@@ -17,9 +17,11 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode, /datum/action/item_action/toggle_rig_light)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 	visor_flags = STOPSPRESSUREDAMAGE
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	var/list/list_of_modes = null
 	var/toggled_for_heat_protecting = TRUE	//tipically all that nonlightweight
-	var/winter_mod = FALSE
+	var/winter_mod = FALSE	//protects from cold when toggled in combat mode
+
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/Initialize()
 	. = ..()
@@ -44,6 +46,7 @@
 	flags_inv |= visor_flags_inv
 	if(!winter_mod)
 		cold_protection |= HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	if(toggled_for_heat_protecting)
 		heat_protection |= HEAD
 	user.update_inv_head()
@@ -89,7 +92,7 @@
 		flags_inv &= ~visor_flags_inv
 		if(!winter_mod)
 			cold_protection &= ~HEAD
-		min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+		min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 		if(toggled_for_heat_protecting)
 			heat_protection &= ~HEAD
 	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
@@ -146,7 +149,7 @@
 			linkedsuit.clothing_flags |= STOPSPRESSUREDAMAGE
 			if(!winter_mod)
 				linkedsuit.cold_protection |= CHEST | GROIN | LEGS | FEET | ARMS | HANDS
-			min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+			linkedsuit.min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 			if(toggled_for_heat_protecting)
 				linkedsuit.heat_protection |= CHEST | GROIN | LEGS | FEET | ARMS | HANDS
 			linkedsuit.strip_delay += 50
@@ -158,7 +161,7 @@
 			linkedsuit.clothing_flags &= ~STOPSPRESSUREDAMAGE
 			if(!winter_mod)
 				linkedsuit.cold_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
-			min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+			linkedsuit.min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 			if(toggled_for_heat_protecting)
 				linkedsuit.heat_protection &= ~(CHEST | GROIN | LEGS | FEET | ARMS | HANDS)
 			linkedsuit.strip_delay -= 50
@@ -186,11 +189,12 @@
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = null
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	var/toggled_for_heat_protecting = TRUE
 	var/combat_slowdown = 0.5 //slowdown when in combat mode
 	var/eva_slowdown = 1 //slowdown when in eva mode
 	var/lightweight = 1 //used for flags when toggling
-	var/winter_mod = FALSE
+	var/winter_mod = FALSE	//protects from cold when toggled in combat mode
 
 /obj/item/clothing/suit/space/hardsuit/syndi/Initialize()
 	. = ..()
@@ -1022,6 +1026,20 @@
 	icon_state = "relite_rig_sealed"
 	item_state = "relite_rig_sealed"
 
+////Vahlen elite
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/vahlen
+	name = "elite Vahlen operative RIG helmet"
+	icon_state = "vahlenop_helm"
+	item_state = "vahlenop_helm"
+	hardsuit_type = "vahlenop"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/vahlen
+	name = "elite Vahlen operative RIG"
+	icon_state = "vahlenop_rig"
+	item_state = "vahlenop_rig"
+	hardsuit_type = "vahlenop"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/vahlen
+
 // Optical military
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/optical
 	name = "experimental elite helmet"
@@ -1106,6 +1124,21 @@
 
 	animate(H,alpha = 85, alpha = 255, time = 10)
 
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/optical/cs
+	name = "elite Cybersun Industries RIG helmet"
+	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing."
+	icon_state = "cselite_helm"
+	item_state = "cselite_helm"
+	hardsuit_type = "cselite"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/optical/cs
+	name = "elite Cybersun Industries RIG"
+	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding."
+	icon_state = "cselite_rig"
+	item_state = "cselite_rig"
+	hardsuit_type = "cselite"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/optical/cs
+
 
 //////Medical Elite hardsuit//////
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/med
@@ -1122,6 +1155,22 @@
 	item_state = "smedelite_rig"
 	hardsuit_type = "smedelite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/med
+
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/med/cs
+	name = "elite medical Cybersun Industries RIG helmet"
+	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing."
+	icon_state = "cselite_med_helm"
+	item_state = "cselite_med_helm"
+	hardsuit_type = "cselite_med"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/med/cs
+	name = "elite medical Cybersun Industries RIG"
+	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding."
+	icon_state = "cselite_rig"
+	item_state = "cselite_rig"
+	hardsuit_type = "cselite"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/med/cs
 
 
 //////Bloody elite hardsuit//////
@@ -1212,18 +1261,6 @@
 	strip_delay = 130
 	light_range = 7
 	toggled_for_heat_protecting = FALSE
-
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if (slot == ITEM_SLOT_HEAD)
-		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_BASIC]
-		SHUD.show_to(user)
-
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec/dropped(mob/living/carbon/human/user)
-	..()
-	if (user.head == src)
-		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_BASIC]
-		SHUD.hide_from(user)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert
 	name = "elite emergency response team RIG (operative)"

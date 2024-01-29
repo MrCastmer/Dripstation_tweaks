@@ -163,7 +163,7 @@
 	department = "synd"	
 
 /obj/machinery/suit_storage_unit/syndicate/winter
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/winter
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/winter
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	tank_type = /obj/item/tank/jetpack/oxygen/harness
 	department = "synd"	
@@ -175,7 +175,7 @@
 	department = "synd"	
 
 /obj/machinery/suit_storage_unit/syndicate/waffle
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/waffle
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	tank_type = /obj/item/tank/jetpack/oxygen/harness
 	department = "synd"	
@@ -204,28 +204,28 @@
 /obj/machinery/suit_storage_unit/amber
 	suit_type = /obj/item/clothing/suit/space/amber
 	helmet_type = /obj/item/clothing/head/helmet/space/amber
-	mask_type = /obj/item/clothing/mask/breath/sechailer
+	mask_type = /obj/item/clothing/mask/gas/sechailer
 	tank_type = /obj/item/tank/internals/oxygen/tactical
 	magboots_type = /obj/item/clothing/shoes/magboots/security
 	department = "central"
 
 /obj/machinery/suit_storage_unit/ert
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert
-	mask_type = /obj/item/clothing/mask/breath/sechailer
+	mask_type = /obj/item/clothing/mask/gas/sechailer
 	tank_type = /obj/item/tank/internals/oxygen/tactical
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "centralcom"	
 
 /obj/machinery/suit_storage_unit/ert/command
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/command
-	mask_type = /obj/item/clothing/mask/breath/sechailer
+	mask_type = /obj/item/clothing/mask/gas/sechailer
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "centralcom"	
 
 /obj/machinery/suit_storage_unit/ert/security
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/sec
-	mask_type = /obj/item/clothing/mask/breath/sechailer
+	mask_type = /obj/item/clothing/mask/gas/sechailer
 	tank_type = /obj/item/tank/internals/oxygen/tactical
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "central"	
@@ -245,36 +245,36 @@
 	department = "ntmed"	
 
 /obj/machinery/suit_storage_unit/ert/highalert
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert
-	mask_type = /obj/item/clothing/mask/sechailer/swat
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/military/ert
+	mask_type = /obj/item/clothing/mask/gas/sechailer/swat
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "ntblackops"	
 
 /obj/machinery/suit_storage_unit/ert/highalert/command
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/command
-	mask_type = /obj/item/clothing/mask/sechailer/swat
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/com
+	mask_type = /obj/item/clothing/mask/gas/sechailer/swat
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "ntblackops"	
 
 /obj/machinery/suit_storage_unit/ert/highalert/security
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec
-	mask_type = /obj/item/clothing/mask/sechailer/swat
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/sec
+	mask_type = /obj/item/clothing/mask/gas/sechailer/swat
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "ntblackops"	
 
 /obj/machinery/suit_storage_unit/ert/highalert/engineer
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/engi
-	mask_type = /obj/item/clothing/mask/sechailer/swat
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/engi
+	mask_type = /obj/item/clothing/mask/gas/sechailer/swat
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "ntblackops"	
 
 /obj/machinery/suit_storage_unit/ert/highalert/medical
-	suit_type = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/med
-	mask_type = /obj/item/clothing/mask/sechailer/swat
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/med
+	mask_type = /obj/item/clothing/mask/gas/sechailer/swat
 	tank_type = /obj/item/tank/internals/emergency_oxygen/double
 	magboots_type = /obj/item/clothing/shoes/magboots/security/advanced
 	department = "ntblackops"	
@@ -386,7 +386,7 @@
 	else
 		target.visible_message(span_warning("[user] starts shoving [target] into [src]!"), span_userdanger("[user] starts shoving you into [src]!"))
 
-	if(do_mob(user, target, 30))
+	if(do_after(user, target, 30))
 		if(occupant || helmet || suit || tank || magboots)
 			return
 		if(target == user)

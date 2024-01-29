@@ -471,7 +471,7 @@
 	. = ..()
 	allowed = list(/obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/flashlight, /obj/item/gun/ballistic, /obj/item/gun/energy, /obj/item/melee/baton, /obj/item/melee/classic_baton, /obj/item/reagent_containers/spray/pepper, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/tank/jetpack/oxygen/captain)
 
-	//SWAT MKIV Deathsquad
+	//SWAT MKV Deathsquad
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/mk5
 	name = "\improper MK.V SWAT helmet"
 	desc = "The most advanced tactical helmet. EVER. MADE."

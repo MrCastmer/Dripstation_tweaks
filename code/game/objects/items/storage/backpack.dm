@@ -52,7 +52,7 @@
 		to_chat(user, "[src] roars to life as you insert the anomaly core!")
 		new /obj/item/storage/backpack/holding(get_turf(src))
 		qdel(src)
-		qdel(I)*/
+		qdel(I)
 */
 /obj/item/storage/backpack/holding
 	name = "bag of holding"

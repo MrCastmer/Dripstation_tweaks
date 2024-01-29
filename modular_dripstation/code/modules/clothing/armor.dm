@@ -145,7 +145,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 /obj/item/clothing/head/hooded/ablative/dropped(mob/living/carbon/human/user)
 	..()
 	if (user.head == src)
-		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_MADVANCED]
+		var/datum/atom_hud/SHUD = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
 		SHUD.hide_from(user)
 
 /obj/item/clothing/suit/hooded/ablative
