@@ -334,23 +334,20 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred
 	name = "blood-red shielded RIG"
-	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt shielding module. Original design by Gorlex Marauders."
+	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt shielding module and advanced combat leg servomotors. Original design by Gorlex Marauders."
 	icon_state = "bloodred_rig"
 	item_state = "bloodred_rig"
 	hardsuit_type = "bloodred"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded/bloodred
-	jetpack = /obj/item/tank/jetpack/suit
+	jetpack = /obj/item/tank/jetpack/suit	//downgraded jet
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/tank/jetpack/oxygen/harness)
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
-	combat_slowdown = 0
+	combat_slowdown = -0.2
 	lightweight = 0
 	toggled_for_heat_protecting = FALSE
-
-///obj/item/clothing/suit/space/hardsuit/shielded/syndi/Initialize(mapload)
-//	. = ..()
-//	var/obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred/shielded = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred
-//	new shielded(drop_location())
-//	qdel(src)
+	current_charges = 1	//How many charges suit starting with
+	max_charges = 1 //How many charges total the shielding has
+	recharge_delay = 100 //How long after we've been shot before we can start recharging. 10 seconds here
 
 ////////////////////////////////////////////
 /////////DEATHSQUAD SHIELDED DUAL-MOD///////
@@ -423,12 +420,6 @@
 		return FALSE
 	if (prob(hit_reflect_chance))
 		return TRUE
-
-///obj/item/clothing/suit/space/hardsuit/shielded/swat/Initialize(mapload)
-//	. = ..()
-//	var/obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad/shielded = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
-//	new shielded(drop_location())
-//	qdel(src)
 
 
 //The Owl Hardsuit
@@ -803,7 +794,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/bloodred
 	name = "blood-red RIG"
-	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt advanced combat leg servomotors. Original design by Gorlex Marauders."
+	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt advanced combat leg servomotors and jetpack. Original design by Gorlex Marauders."
 	icon_state = "bloodred_rig"
 	item_state = "bloodred_rig"
 	hardsuit_type = "bloodred"
@@ -983,9 +974,9 @@
 	if(slot == ITEM_SLOT_OCLOTHING)
 		UnregisterSignal(user, COMSIG_ATOM_ATTACK_HAND)
 
-/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/proc/on_attack_hand(atom/target, mob/living/carbon/human/user, proximity)
-	if(proximity) //no telekinetic breacher attack
-		return target.attack_hulk(user)
+///obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/proc/on_attack_hand(atom/target, mob/living/carbon/human/user, proximity)//don`t work
+//	if(proximity) //no telekinetic breacher attack
+//		return target.attack_hulk(user)
 
 
 //////Elite hardsuit//////
