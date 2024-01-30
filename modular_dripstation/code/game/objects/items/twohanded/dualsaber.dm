@@ -1,12 +1,11 @@
-block_chance = 50
-force_wielded = 40
-desc = "A more powerful version on the energy sword, it is more capable of blocking energy projectiles in throw mode than its single bladed counterpart. 'At last we will have revenge' is carved on the side of the handle."
+/obj/item/melee/dualsaber
+	block_chance = 50
+	force_wielded = 40
+	desc = "A more powerful version on the energy sword, it is more capable of blocking energy projectiles in throw mode than its single bladed counterpart. 'At last we will have revenge' is carved on the side of the handle."
 
 /obj/item/melee/dualsaber/IsReflect(mob/user)
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		if(user.in_throw_mode)
-			return TRUE
-		else(prob(75))
+		if(prob(75))
 			return TRUE
 	return FALSE
 
