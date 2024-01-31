@@ -3,7 +3,7 @@
 
 /obj/item/gun/energy/laser/hitscan
 	name = "laser gun"
-	desc = "The NT-L4 is a basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
+	desc = "The NT-L5 is a basic energy-based laser gun that uses full potential of light and hits targets through glass and thin metal."
 	icon_state = "laser_hitscan"
 	item_state = LASER
 	w_class = WEIGHT_CLASS_NORMAL

@@ -83,12 +83,26 @@
 	fire_sound = 'modular_dripstation/sound/weapons/pistol/shot_alt.ogg'
 	fire_delay = 1
 
+/obj/item/gun/ballistic/automatic/pistol/glock18
+	name = "\improper Glock-18"
+	desc = "Terra Gov burst firing cheap polymer pistol chambered in 9x19mm. Its heavy duty barrel affects firerate."
+	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	icon_state = "glock18"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
+	starting_mag_type = /obj/item/ammo_box/magazine/pistolm9mm/pmag
+	can_suppress = FALSE
+	fire_sound = 'modular_dripstation/sound/weapons/pistol/shot_alt.ogg'
+	burst_size = 3
+	fire_delay = 2
+
 /obj/item/gun/ballistic/automatic/pistol/fn45
 	name = "\improper FNX-45 Tactical"
 	desc = "Tactical modern Terra Gov service pistol. Better, faster, stronger than other service pistols. \
 	Do not as iconic as M1911, but reliable and modern. Chambered in .45 caliber. Has a threaded barrel for suppressors."
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 	icon_state = "fnx"
+	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/fn45
 	starting_mag_type = /obj/item/ammo_box/magazine/fn45
