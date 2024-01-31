@@ -5,6 +5,7 @@
 	nodamage = TRUE
 	hitsound = 'sound/weapons/taserhit.ogg'
 	range = 7
+	reflectable = NONE	//Yeah, it`s phisical, not energy
 	tracer_type = /obj/effect/projectile/tracer/stun
 	muzzle_type = /obj/effect/projectile/muzzle/stun
 	impact_type = /obj/effect/projectile/impact/stun
