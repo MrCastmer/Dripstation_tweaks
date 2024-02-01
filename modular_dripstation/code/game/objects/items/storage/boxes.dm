@@ -33,7 +33,7 @@
 	STR.max_items = 7
 	STR.set_holdable(list(/obj/item/ammo_casing/shotgun))
 
-/obj/item/storage/box/incendiary/Initialize()
+/obj/item/storage/box/incendiary/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/incendiary(src)
 
@@ -50,6 +50,6 @@
 	STR.max_items = 7
 	STR.set_holdable(list(/obj/item/ammo_casing/shotgun))
 
-/obj/item/storage/box/laserbuckshot/Initialize()
+/obj/item/storage/box/laserbuckshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/laserbuckshot(src)
