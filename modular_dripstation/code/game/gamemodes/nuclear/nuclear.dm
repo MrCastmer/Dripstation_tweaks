@@ -1,6 +1,14 @@
 /datum/outfit/syndicate
 	id = /obj/item/card/id/syndicate/nuke
 
+/datum/outfit/syndicate/leader
+	gloves = /obj/item/clothing/gloves/combat
+
+/datum/outfit/syndicate/leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	var/datum/martial_art/cqc/justanop = new
+	justanop.teach(H)
+
 /datum/outfit/syndicate/no_crystals
 	var/faction = "The Syndicate"
 
