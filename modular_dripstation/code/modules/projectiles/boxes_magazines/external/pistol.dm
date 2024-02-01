@@ -34,7 +34,7 @@
 	desc = "A 15-round 9mm magazine designed for the A Stechkin APS Pistol. Loaded with rounds which trade lethality for ignition of target."
 	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
-/obj/item/ammo_box/magazine/pistolm9mm/ap/update_icon_state()
+/obj/item/ammo_box/magazine/pistolm9mm/fire/update_icon_state()
 	. = ..()
 	icon_state = "9x19pI-[ammo_count() ? "10" : "0"]"
 
