@@ -171,9 +171,9 @@
 	var/turf/T = get_turf(owner)
 	for(var/datum/light_source/LS in T.get_affecting_lights())
 		var/atom/LO = LS.source_atom
-		//if(isitem(LO))		//dripstation edit
-		//	extinguishItem(LO)	//dripstation edit
-		//	continue			//dripstation edit
+		/*if(isitem(LO))		//dripstation edit start
+			extinguishItem(LO)	
+			continue*/			//dripstation edit end
 		if(istype(LO, /obj/machinery/light))
 			var/obj/machinery/light/L = LO
 			L.on = FALSE
@@ -181,30 +181,30 @@
 			L.update(0)
 			L.set_light(0)
 			continue
-		//if(istype(LO, /obj/machinery/computer) || istype(LO, /obj/machinery/power/apc))	//dripstation edit start
-		//	LO.set_light(0)
-		//	LO.visible_message(span_warning("[LO] grows dim, its screen barely readable."))
-		//	continue
-		//if(ismob(LO))
-		//	extinguish_mob(LO)
-		//if(istype(LO, /mob/living/silicon/robot))
-		//	var/mob/living/silicon/robot/borg = LO
-		//	if(!borg.lamp_cooldown)
-		//		borg.smash_headlamp()
-		//if(istype(LO, /obj/machinery/camera))
-		//	LO.set_light(0)
-		//	if(prob(10))
-		//		LO.emp_act(2)
-		//	continue
-		//if(istype(LO, /obj/mecha))
-		//	var/obj/mecha/M = LO
-		//	M.set_light(0)
-		//	M.lights = FALSE
-		//if(istype(LO, /obj/machinery/power/floodlight))
-		//	var/obj/machinery/power/floodlight/FL = LO
-		//	FL.change_setting(2) // Set floodlight to lowest setting
-		//if(istype(LO, /obj/structure/light_prism))
-		//	qdel(LO)
+		/*if(istype(LO, /obj/machinery/computer) || istype(LO, /obj/machinery/power/apc))	//dripstation edit start
+			LO.set_light(0)
+			LO.visible_message(span_warning("[LO] grows dim, its screen barely readable."))
+			continue
+		if(ismob(LO))
+			extinguish_mob(LO)
+		if(istype(LO, /mob/living/silicon/robot))
+			var/mob/living/silicon/robot/borg = LO
+			if(!borg.lamp_cooldown)
+				borg.smash_headlamp()
+		if(istype(LO, /obj/machinery/camera))
+			LO.set_light(0)
+			if(prob(10))
+				LO.emp_act(2)
+			continue
+		if(istype(LO, /obj/mecha))
+			var/obj/mecha/M = LO
+			M.set_light(0)
+			M.lights = FALSE
+		if(istype(LO, /obj/machinery/power/floodlight))
+			var/obj/machinery/power/floodlight/FL = LO
+			FL.change_setting(2) // Set floodlight to lowest setting
+		if(istype(LO, /obj/structure/light_prism))
+			qdel(LO)*/													//dripstation edit end
 		if(istype(LO, /obj/machinery))
 			var/obj/machinery/M = LO
 			M.light_on = FALSE
@@ -546,13 +546,13 @@
 		empower.Grant(M)
 		var/datum/action/cooldown/spell/blindness_smoke/smoke = new(M)
 		smoke.Grant(M)
-	//if(thralls >= CEILING(7 * SSticker.mode.thrall_ratio, 1) && !null_charge_acquired)	//dripstation edit start
-	//	null_charge_acquired = TRUE
-	//	to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Null Charge</b> ability. This ability will drain an APC's contents to the void, preventing it from recharging \
-	//	or sending power until repaired.</i></span>")
-	//	var/datum/action/cooldown/spell/null_charge/null_charge = new(M)
-	//	null_charge.Grant(M)
-	//if(thralls >= CEILING(9 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)
+	/*if(thralls >= CEILING(7 * SSticker.mode.thrall_ratio, 1) && !null_charge_acquired)	//dripstation edit start
+		null_charge_acquired = TRUE
+		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Null Charge</b> ability. This ability will drain an APC's contents to the void, preventing it from recharging \
+		or sending power until repaired.</i></span>")
+		var/datum/action/cooldown/spell/null_charge/null_charge = new(M)
+		null_charge.Grant(M)
+	if(thralls >= CEILING(9 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)*/
 	if(thralls >= CEILING(7 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)
 		reviveThrallAcquired = TRUE
 		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Black Recuperation</b> ability. This will, after a short time, bring a dead thrall completely back to life \

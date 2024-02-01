@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(thrall_spell_types, typecacheof(list(/datum/action/cooldown/spe
 	var/datum/action/cooldown/spell/pointed/lesser_glare/lglare = new(owner.current)
 	lglare.Grant(owner.current)
 
-	var/datum/action/cooldown/spell/jaunt/lesser_shadow_walk/walk = new(owner.current)
+	var/datum/action/cooldown/spell/lesser_shadow_walk/walk = new(owner.current)
 	walk.Grant(owner.current)
 
 	var/datum/objective/helpsling/O = new

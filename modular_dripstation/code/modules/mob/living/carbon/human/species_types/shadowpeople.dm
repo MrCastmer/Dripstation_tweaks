@@ -2,7 +2,6 @@
 #define HEART_SPECIAL_SHADOWIFY 2
 #define LIGHT_HEAL_THRESHOLD 2
 #define LIGHT_DAMAGE_TAKEN 6
-#define LIGHT_DAM_THRESHOLD 0.25
 
 /datum/species/shadow
 	burnmod = 1.1
