@@ -1688,7 +1688,16 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		else
 			target.Move(target_shove_turf, shove_dir)
 			if(get_turf(target) != target_shove_turf)
-				shove_blocked = TRUE
+				for(var/obj/O in target_shove_turf)		//dripstation edit start
+						if(istype(O, /obj/structure/table))
+							shove_on_table = TRUE
+				if(shove_on_table)
+					target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
+					to_chat(src, span_danger("You shove [target.name] onto \the table!"))
+					target.throw_at(target_shove_turf, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
+					log_combat(user, target, "shoved", "onto (table)")
+				else
+					shove_blocked = TRUE			//dripstation edit end
 
 		if(target.IsKnockdown() && !target.IsParalyzed())
 			var/armor_block = target.run_armor_check(affecting, MELEE, "Your armor prevents your fall!", "Your armor softens your fall!")
@@ -1716,12 +1725,12 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				var/obj/item/I = target.get_active_held_item()
 				if(target.dropItemToGround(I))					//dripstation edit start
 					user.visible_message(span_danger("[user.name] shoves [target.name], disarming [target.p_them()]!"),
-						span_userdanger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
+						span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
 					to_chat(src, span_danger("You shove [target.name], disarming [target.p_them()]!"))
 					log_combat(src, target, "shoved", "disarming them")
 				else
 					user.visible_message(span_danger("[user.name] shoves [target.name], knocking [target.p_them()] down!"),
-						span_userdanger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
+						span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
 					to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
 					log_combat(src, target, "shoved", "knocking them down")
 				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)	//dripstation edit end
