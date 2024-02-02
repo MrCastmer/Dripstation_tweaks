@@ -174,7 +174,7 @@
 		pushed_mob.pass_flags &= ~PASSTABLE
 	if(pushed_mob.loc != loc) //Something prevented the tabling
 		return
-	pushed_mob.Paralyze(40)
+	//pushed_mob.Paralyze(40)
 	pushed_mob.visible_message(span_danger("[user] pushes [pushed_mob] onto [src]."), \
 								span_userdanger("[user] pushes [pushed_mob] onto [src]."))
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
@@ -182,6 +182,7 @@
 		return
 	var/mob/living/carbon/human/H = pushed_mob
 	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
+	H.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/rsf)) // Stops RSF from placing itself instead of glasses

@@ -1714,10 +1714,17 @@ GLOBAL_LIST_EMPTY(features_by_species)
 							break
 			if(!bothstanding || directional_blocked)
 				var/obj/item/I = target.get_active_held_item()
-				if(target.dropItemToGround(I))
-					user.visible_message(span_danger("[user.name] shoves [target.name], disarming them!"),
-						span_danger("You shove [target.name], disarming them!"), null, COMBAT_MESSAGE_RANGE)
-					log_combat(user, target, "shoved", "disarming them")
+				if(target.dropItemToGround(I))					//dripstation edit start
+					user.visible_message(span_danger("[user.name] shoves [target.name], disarming [target.p_them()]!"),
+						span_userdanger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
+					to_chat(src, span_danger("You shove [target.name], disarming [target.p_them()]!"))
+					log_combat(src, target, "shoved", "disarming them")
+				else
+					user.visible_message(span_danger("[user.name] shoves [target.name], knocking [target.p_them()] down!"),
+						span_userdanger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
+					to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
+					log_combat(src, target, "shoved", "knocking them down")
+				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)	//dripstation edit end
 			else if(bothstanding)
 				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 				if(!target_collateral_human.is_shove_knockdown_blocked())
