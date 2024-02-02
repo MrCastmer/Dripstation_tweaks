@@ -310,7 +310,7 @@
 		D.apply_damage(damage2deal, OXY) // respect oxygen damage mods
 		if(D.getOxyLoss() >= 50)
 			return TRUE
-
+/*	I hate yog coders, just check handspells on this shit, dripstation edit, check CQC file in dripstation module
 ///CQC counter: attacker's weapon is placed in the defender's offhand and they are knocked down
 /datum/martial_art/cqc/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker) //I am going to fucking gut whoever did the old counter system also whoever made martial arts
 	if(!can_use(user))
@@ -326,7 +326,7 @@
 			I.forceMove(get_turf(attacker))
 	attacker.Knockdown(60)
 	user.adjustStaminaLoss(10)	//Can't block forever. Really, if this becomes a problem you're already screwed.
-
+*/
 /**
   * CQC help proc
   *

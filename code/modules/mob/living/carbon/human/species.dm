@@ -1679,7 +1679,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		var/turf/target_shove_turf = get_step(target.loc, shove_dir)
 		var/mob/living/carbon/human/target_collateral_human
 		var/shove_blocked = FALSE //Used to check if a shove is blocked so that if it is knockdown logic can be applied
-		var/shove_on_table = FALSE //Used for table check
+		var/shove_on_table = FALSE //Used for table check, dripstation edit
 
 		//Thank you based whoneedsspace
 		target_collateral_human = locate(/mob/living/carbon/human) in target_shove_turf.contents

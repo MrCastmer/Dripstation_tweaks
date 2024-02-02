@@ -8,6 +8,7 @@
 #include "code\modules\uplink\velvetfu.dm"
 #include "code\datums\martial\velvetfu.dm"
 #include "code\datums\martial\trained.dm"
+#include "code\datums\martial\cqc.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\binary_devices.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\unary_devices.dm"
 #include "code\modules\atmospherics\machinery\portable\scrubber.dm"
