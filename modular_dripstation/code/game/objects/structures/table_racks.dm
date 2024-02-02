@@ -11,7 +11,7 @@
 	pushed_mob.apply_damage(60, STAMINA)
 	take_damage(50)
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
-	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s [banged_limb.plaintext_zone] against \the [src]!"),
-								span_userdanger("[user] smashes your [banged_limb.plaintext_zone] against \the [src]"))
+	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s [banged_limb.name] against \the [src]!"),
+								span_userdanger("[user] smashes your [banged_limb.name] against \the [src]"))
 	log_combat(user, pushed_mob, "slammed", null, "against [src]")
 	//pushed_mob.add_mood_event("table", /datum/mood_event/table_limbsmash, banged_limb)
