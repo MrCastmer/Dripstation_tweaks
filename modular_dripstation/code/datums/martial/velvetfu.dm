@@ -9,7 +9,6 @@
 	name = "Velvet-Fu"
 	id = MARTIALART_VELVETFU
 	help_verb = /mob/living/proc/velvetfu_help
-	display_combos = TRUE
 	allow_temp_override = FALSE
 	var/datum/action/receding_stance/recedingstance = new/datum/action/receding_stance()
 	var/datum/action/twisted_stance/twistedstance = new/datum/action/twisted_stance()
@@ -102,7 +101,7 @@
 			span_userdanger("You twist yourself even further!"),
 		)
 		user.adjustStaminaLoss(-40)
-		user.apply_damage(8, BRUTE, BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
+		user.apply_damage(8, BRUTE, BODY_ZONE_CHEST)
 		return
 	owner.visible_message(
 		span_danger("[owner] suddenly twists and turns, what a strange stance!"),
@@ -110,7 +109,7 @@
 	)
 	owner.mind.martial_art.streak = TWISTED_STANCE
 	user.adjustStaminaLoss(-40)
-	user.apply_damage(18, BRUTE, BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
+	user.apply_damage(18, BRUTE, BODY_ZONE_CHEST)
 	addtimer(CALLBACK(src, PROC_REF(untwist)), 15 SECONDS)
 
 /datum/action/twisted_stance/proc/untwist()
@@ -142,11 +141,11 @@
 	)
 	to_chat(A, span_danger("You flying kick [D]!"))
 	A.adjustStaminaLoss(50)
+	var/obj/item/bodypart/limb = D.get_bodypart(ran_zone(A.zone_selected))
 	if(prob(70))
-		var/obj/item/bodypart/limb = D.get_bodypart(ran_zone(A.zone_selected))
-		var/datum/wound/slash/flesh/moderate/crit_wound = new
+		var/datum/wound/blunt/moderate/crit_wound = new
 		crit_wound.apply_wound(limb)
-	D.apply_damage(15, A.get_attack_type(), wound_bonus = CANT_WOUND)
+	D.apply_damage(15, BRUTE, limb)
 	playsound(get_turf(A), 'sound/weapons/slice.ogg', 50, TRUE, -1)
 	return TRUE
 
@@ -160,7 +159,7 @@
 		COMBAT_MESSAGE_RANGE, A,
 	)
 	to_chat(A, span_danger("You swiftly headbutt [D]!"))
-	A.apply_damage(18, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
+	A.apply_damage(18, BRUTE, BODY_ZONE_HEAD)
 	A.adjustStaminaLoss(20)
 	if(prob(60) && !D.stat)
 		D.Paralyze(3 SECONDS)
@@ -168,7 +167,7 @@
 	/// Tell them in big text that they failed, since the effects aren't instantly visible like the others.
 	else
 		to_chat(A, span_userdanger("You fail to stun [D]!"))
-	D.apply_damage(10, A.get_attack_type(), BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
+	D.apply_damage(10, BRUTE, BODY_ZONE_CHEST)
 	playsound(get_turf(A), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
 	return TRUE
 
@@ -185,7 +184,7 @@
 	A.adjustStaminaLoss(60)
 	if(prob(70) && !D.stat)
 		D.Knockdown(4 SECONDS)
-	D.apply_damage(10, A.get_attack_type(), BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
+	D.apply_damage(10, BRUTE, BODY_ZONE_CHEST)
 	playsound(get_turf(A), 'sound/weapons/cqchit1.ogg', 50, TRUE, -1)
 	return TRUE
 
@@ -201,9 +200,9 @@
 	to_chat(A, span_danger("You swiftly and repeatedly slash at [D], truly a master attack!"))
 	A.adjustStaminaLoss(80)
 	var/obj/item/bodypart/limb = D.get_bodypart(ran_zone(A.zone_selected))
-	var/datum/wound/slash/flesh/moderate/crit_wound = new
+	var/datum/wound/blunt/moderate/crit_wound = new
 	crit_wound.apply_wound(limb)
-	D.apply_damage(30, A.get_attack_type(), wound_bonus = CANT_WOUND)
+	D.apply_damage(30, BRUTE, limb)
 	playsound(get_turf(A), 'sound/weapons/bladeslice.ogg', 50, TRUE, -1)
 	return TRUE
 
@@ -231,7 +230,7 @@
 	if(D.body_position == LYING_DOWN)
 		bonus_damage += 8
 		picked_hit_type = "iron hoov"
-	D.apply_damage(bonus_damage, A.get_attack_type())
+	D.apply_damage(bonus_damage, STAMINA)
 	D.visible_message(
 		span_danger("[A] [picked_hit_type]ed [D]!"),
 		span_userdanger("You're [picked_hit_type]ed by [A]!"),
@@ -254,7 +253,7 @@
 	log_combat(A, D, "grabbed (Velvet-Fu)")
 	A.do_attack_animation(D)
 	var/picked_hit_type = pick("ascending claw", "descending claw")
-	D.apply_damage(10, A.get_attack_type())
+	D.apply_damage(10, STAMINA)
 	D.visible_message(
 		span_danger("[A] [picked_hit_type]ed [D]!"),
 		span_userdanger("You're [picked_hit_type]ed by [A]!"),
@@ -274,7 +273,7 @@
 		return TRUE
 	log_combat(A, D, "harmed (Velvet-Fu)")
 	A.do_attack_animation(D)
-	D.apply_damage(10, A.get_attack_type())
+	D.apply_damage(10, BRUTE)
 	D.visible_message(
 		span_danger("[A] silken wrists [D]!"),
 		span_userdanger("You're silken wristed by [A]!"),

@@ -1679,6 +1679,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		var/turf/target_shove_turf = get_step(target.loc, shove_dir)
 		var/mob/living/carbon/human/target_collateral_human
 		var/shove_blocked = FALSE //Used to check if a shove is blocked so that if it is knockdown logic can be applied
+		var/shove_on_table = FALSE //Used for table check
 
 		//Thank you based whoneedsspace
 		target_collateral_human = locate(/mob/living/carbon/human) in target_shove_turf.contents
@@ -1688,8 +1689,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		else
 			target.Move(target_shove_turf, shove_dir)
 			if(get_turf(target) != target_shove_turf)
-				var/shove_on_table = FALSE			//dripstation edit start
-				for(var/obj/O in target_shove_turf)
+				for(var/obj/O in target_shove_turf)	//dripstation edit start
 					if(istype(O, /obj/structure/table))
 						shove_on_table = TRUE
 				if(shove_on_table)
@@ -1700,7 +1700,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				else
 					shove_blocked = TRUE			//dripstation edit end
 
-		if(target.IsKnockdown() && !target.IsParalyzed())
+		if(target.IsKnockdown() && !target.IsParalyzed() && !shove_on_table)
 			var/armor_block = target.run_armor_check(affecting, MELEE, "Your armor prevents your fall!", "Your armor softens your fall!")
 			target.apply_effect(SHOVE_CHAIN_PARALYZE, EFFECT_PARALYZE, armor_block)
 			target.visible_message(span_danger("[user.name] kicks [target.name] onto their side!"),
@@ -1723,18 +1723,17 @@ GLOBAL_LIST_EMPTY(features_by_species)
 							directional_blocked = TRUE
 							break
 			if(!bothstanding || directional_blocked)
-				var/obj/item/I = target.get_active_held_item()
-				if(target.dropItemToGround(I))					//dripstation edit start
-					user.visible_message(span_danger("[user.name] shoves [target.name], disarming [target.p_them()]!"),
-						span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
-					to_chat(src, span_danger("You shove [target.name], disarming [target.p_them()]!"))
-					log_combat(src, target, "shoved", "disarming them")
-				else
-					user.visible_message(span_danger("[user.name] shoves [target.name], knocking [target.p_them()] down!"),
-						span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
-					to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
-					log_combat(src, target, "shoved", "knocking them down")
-				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)	//dripstation edit end
+/*				var/obj/item/I = target.get_active_held_item()	//dripstation edit start
+				if(target.dropItemToGround(I))
+					user.visible_message(span_danger("[user.name] shoves [target.name], disarming them!"),
+						span_danger("You shove [target.name], disarming them!"), null, COMBAT_MESSAGE_RANGE)
+					log_combat(user, target, "shoved", "disarming them")
+*/
+				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
+				target.visible_message(span_danger("[user.name] shoves [target.name], knocking [target.p_them()] down!"),
+					span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
+				to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
+				log_combat(user, target, "shoved", "knocking them down")						//dripstation edit end
 			else if(bothstanding)
 				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 				if(!target_collateral_human.is_shove_knockdown_blocked())

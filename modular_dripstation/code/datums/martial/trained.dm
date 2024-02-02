@@ -2,12 +2,11 @@
 #define LOW_RESTRAIN_COMBO "GG"
 
 /datum/martial_art/trained
-	name = "Trained"
+	name = "Trained Combat"
 	id = MARTIALART_TRAINED
-	//help_verb = /mob/living/carbon/human/proc/CQC_help
+	help_verb = /mob/living/carbon/human/proc/trained_help
 	block_chance = 50 //Don't get into melee with someone trained for melee and prepared for your attacks
 	nonlethal = TRUE //all attacks deal solely stamina damage or knock out before dealing lethal amounts of damage
-	var/datum/action/leg_sweep/legsweep = new/datum/action/leg_sweep()
 
 /datum/martial_art/trained/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!(can_use(A) || can_use(D)))
@@ -24,10 +23,10 @@
 	if(!can_use(A))
 		return FALSE
 	if(!D.stat)
-		log_combat(A, D, "restrained (CQC)")
+		log_combat(A, D, "restrained (Trained Combat)")
 		D.visible_message(span_warning("[A] locks [D] into a restraining position!"), \
 							span_userdanger("[A] locks you into a restraining position!"))
-		D.Stun(1 SECONDS)
+		D.Stun(2 SECONDS)
 		if(!(A.pulling == D))
 			D.grabbedby(A, 1)
 		if(A.grab_state < GRAB_AGGRESSIVE)
@@ -35,14 +34,37 @@
 		restraining = TRUE
 	return TRUE
 
-///CQC grab, stuns for 1.5 seconds on use
+/datum/martial_art/trained/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(!(can_use(A) || can_use(D)))
+		return FALSE
+	log_combat(A, D, "attacked (Trained Combat)")
+	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
+	var/picked_hit_type = pick("punched effectively", "kicked effectively", "tacticooled")
+	var/effective_damage = A.get_punchdamagehigh()
+	D.apply_damage(effective_damage, STAMINA)
+	playsound(get_turf(D), 'sound/weapons/cqchit1.ogg', 50, 1, -1)
+	D.visible_message(span_danger("[A] [picked_hit_type] [D]!"), \
+					  span_userdanger("[A] [picked_hit_type] you!"))
+	D.Immobilize(15)
+	log_combat(A, D, "[picked_hit_type] (Trained Combat)")
+	if(!(A.mobility_flags & MOBILITY_STAND) && (D.mobility_flags & MOBILITY_STAND))
+		D.visible_message("<span class='warning'>[A] leg sweeps [D]!", \
+							span_userdanger("[A] leg sweeps you!"))
+		playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, 1, -1)
+		D.Knockdown(30)
+		A.set_resting(FALSE)
+		A.SetKnockdown(0)
+		log_combat(A, D, "sweeped (Trained Combat)")
+	return TRUE
+
+///CQC grab, no stun
 /datum/martial_art/trained/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(A.a_intent == INTENT_GRAB && A!=D && (can_use(A) && can_use(D))) // A!=D prevents grabbing yourself
 		add_to_streak("G",D)
 		if(check_streak(A,D)) //if a combo is made no grab upgrade is done
 			return TRUE
 		if(D.grabbedby(A))
-            D.drop_all_held_items()
+			D.drop_all_held_items()
 		if(A.grab_state < 1)
 			restraining = FALSE
 		return TRUE
@@ -65,19 +87,18 @@
 	attacker.Knockdown(60)
 	user.adjustStaminaLoss(10)	//Can't block forever. Really, if this becomes a problem you're already screwed.
 
-/datum/action/leg_sweep
-	name = "Leg Sweep - Trips the victim, knocking them down for a brief moment."
-	button_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "legsweep"
 
-/datum/action/leg_sweep/Trigger()
-	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't use [name] while you're incapacitated."))
-		return
-	var/mob/living/carbon/human/H = owner
-	if (H.mind.martial_art.streak == "leg_sweep")
-		owner.visible_message(span_danger("[owner] assumes a neutral stance."), "<b><i>Your next attack is cleared.</i></b>")
-		H.mind.martial_art.streak = ""
-	else
-		owner.visible_message(span_danger("[owner] assumes the Leg Sweep stance!"), "<b><i>Your next attack will be a Leg Sweep.</i></b>")
-		H.mind.martial_art.streak = "leg_sweep"
+/mob/living/carbon/human/proc/trained_help()
+	set name = "Remember The Basics"
+	set desc = "You try to remember some of the basics of your combat trainings."
+	set category = "No Martial Art"
+	to_chat(usr, "<b><i>You try to remember some of the basics of your combat trainings.</i></b>")
+
+	to_chat(usr, span_notice("<b>All of your unarmed attacks deal stamina damage instead of your normal physical damage type</b>"))
+
+	to_chat(usr, span_notice("<b>Grab Intent</b> Allow you to quickly increase the strength of your grabs"))
+	to_chat(usr, span_notice("<b>Harm Intent</b> Will deal a competitive amount of stamina damage, and hitting a standing opponent while you are prone will both knock them down and stand you up"))
+
+	to_chat(usr, "[span_notice("Restrain")]: Grab Grab. Locks opponents into a restraining position, making your grab harder to break out of.")
+
+	to_chat(usr, "<b><i>In addition, by having your throw mode on when being attacked, you enter an active defense mode where you have a chance to counter attacks done to you. Beware, counter-attacks are tiring and you won't be able to defend yourself forever!</i></b>")

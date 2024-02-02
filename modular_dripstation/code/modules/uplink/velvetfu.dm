@@ -10,7 +10,7 @@
 /obj/item/book/granter/martial/velvetfu
 	martial = /datum/martial_art/velvetfu
 	name = "Hollywood VHS tape"
-	martialname = "velvet-fu"
+	martial_name = "velvet-fu"
 	desc = "A VHS tape labelled 'Grand-Master's Course'. This seems modified, causing it to beam the content straight into your eyes."
 	icon = 'modular_dripstation/icons/obj/velvetfu.dmi'
 	icon_state = "velvet"
@@ -26,9 +26,9 @@
 		"...But remember the style!",
 	)
 
-/obj/item/book/granter/martial/velvetfu/onlearned(mob/living/carbon/user)
+/obj/item/book/granter/martial/velvetfu/on_reading_finished(mob/living/carbon/user)
 	. = ..()
-	if(oneuse)
+	if(!uses)
 		desc = "A VHS tape labelled 'Grand-Master's Course'. The film seems ripped out, and can't be put back in."
 		name = "Broken VHS tape"
 		icon_state = "velvet_used"
