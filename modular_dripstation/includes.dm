@@ -24,6 +24,8 @@
 #include "code\modules\projectiles\guns\ballistic\flamethrower.dm"
 #include "code\modules\projectiles\guns\ballistic\rifle.dm"
 #include "code\modules\projectiles\guns\ballistic\shotgun.dm"
+#include "code\game\objects\items\wielded\sledgehammer.dm"
+#include "code\game\objects\items\errata.dm"
 #include "code\game\objects\items\storage\boxes.dm"
 #include "code\game\objects\items\twohanded\dualsaber.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\binary_devices.dm"
