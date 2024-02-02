@@ -1689,8 +1689,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			target.Move(target_shove_turf, shove_dir)
 			if(get_turf(target) != target_shove_turf)
 				for(var/obj/O in target_shove_turf)		//dripstation edit start
-						if(istype(O, /obj/structure/table))
-							shove_on_table = TRUE
+					if(istype(O, /obj/structure/table))
+						shove_on_table = TRUE
 				if(shove_on_table)
 					target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 					to_chat(src, span_danger("You shove [target.name] onto \the table!"))
