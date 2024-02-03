@@ -5,7 +5,7 @@
 	name = "Trained Combat"
 	id = MARTIALART_TRAINED
 	help_verb = /mob/living/carbon/human/proc/trained_help
-	block_chance = 70 //Don't get into melee with someone trained for melee and prepared for your attacks
+	block_chance = 60 //Don't get into melee with someone trained for melee and prepared for your attacks
 	nonlethal = TRUE //all attacks deal solely stamina damage or knock out before dealing lethal amounts of damage
 
 /datum/martial_art/trained/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
@@ -73,7 +73,6 @@
 
 ///CQC-like counter: attacker's weapon is placed in the defender's offhand and they are knocked down
 /datum/martial_art/trained/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
-	SIGNAL_HANDLER
 	if(!can_use(user))
 		return
 	user.adjustStaminaLoss(35)	//Can't block forever. Not so effective as real CQC, can do it only a few times before screw up
