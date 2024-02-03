@@ -73,7 +73,6 @@
 
 ///CQC-like counter: attacker's weapon is placed in the defender's offhand and they are knocked down
 /datum/martial_art/trained/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
-	SIGNAL_HANDLER
 	if(!can_use(user))
 		return
 	user.adjustStaminaLoss(35)	//Can't block forever. Not so effective as real CQC, can do it only a few times before screw up

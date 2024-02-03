@@ -2,7 +2,6 @@ block_chance = 100 //Carp evades freak shit like shoves and hands, 50% dodges ot
 
 ///Carp conter: carp evades freak shit like shoves and hands, 50% dodges other unarmed attacks
 /datum/martial_art/the_sleeping_carp/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
-	SIGNAL_HANDLER
 	if(!can_use(user))
 		return
 	var/obj/item/I = attacker.get_active_held_item()
