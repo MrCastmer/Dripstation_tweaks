@@ -175,6 +175,7 @@
 	user.visible_message("<span class='warning'>In a flash of red, [user] draws [user.p_their()] blade!</span>", "<span class='notice'>You dash forward while drawing your weapon!</span>", "<span class='warning'>You hear a blade slice through the air at impossible speeds!</span>")
 
 /obj/item/storage/belt/errata/update_icon_state()
+	. = ..()
 	icon_state = "errata_sheath"
 	item_state = "errata_sheath"
 	if(contents.len)
