@@ -69,7 +69,6 @@
   * handles unique stuff on a martial art melee counter activating
   */
 /datum/martial_art/proc/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
-	SIGNAL_HANDLER	//dripstation edit
 	return
 
 /**

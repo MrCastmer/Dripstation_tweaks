@@ -1,5 +1,6 @@
 ///CQC counter: attacker's weapon is placed in the defender's offhand and they are knocked down
 /datum/martial_art/cqc/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
+	SIGNAL_HANDLER
 	if(!can_use(user))
 		return
 	user.adjustStaminaLoss(10)	//Can't block forever. Really, if this becomes a problem you're already screwed.
