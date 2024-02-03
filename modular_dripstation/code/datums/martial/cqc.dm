@@ -3,6 +3,7 @@
 	SIGNAL_HANDLER
 	if(!can_use(user))
 		return
+	user.adjustStaminaLoss(10)	//Can't block forever. Really, if this becomes a problem you're already screwed.
 	var/obj/item/I = attacker.get_active_held_item()
 	if(I && istype(I, /obj/item/melee/touch_attack))
 		attacker.visible_message(span_warning("[user] twists [attacker]'s arm, sending their [I] back towards them!"), \
@@ -12,7 +13,8 @@
 		var/datum/action/cooldown/spell/touch/touch_spell = touch_weapon.spell_which_made_us?.resolve()
 		if(!touch_spell)
 			return
-		INVOKE_ASYNC(touch_spell, /datum/action/cooldown/spell/touch.proc/do_hand_hit, attacker, attacker, touch_weapon)
+		INVOKE_ASYNC(touch_spell, /datum/action/cooldown/spell/touch.proc/do_hand_hit, touch_weapon, attacker, attacker)
+		return COMPONENT_NO_AFTERATTACK
 	else
 		user.do_attack_animation(attacker, ATTACK_EFFECT_DISARM)
 		attacker.visible_message(span_warning("[user] grabs [attacker]'s arm as they attack and throws them to the ground!"), \
@@ -23,5 +25,4 @@
 				var/hand = user.get_inactive_hand_index()
 				if(!user.put_in_hand(I, hand))
 					I.forceMove(get_turf(attacker))
-	attacker.Knockdown(60)
-	user.adjustStaminaLoss(10)	//Can't block forever. Really, if this becomes a problem you're already screwed.
+		attacker.Knockdown(60)

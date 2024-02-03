@@ -5,7 +5,7 @@
 	name = "Trained Combat"
 	id = MARTIALART_TRAINED
 	help_verb = /mob/living/carbon/human/proc/trained_help
-	block_chance = 50 //Don't get into melee with someone trained for melee and prepared for your attacks
+	block_chance = 70 //Don't get into melee with someone trained for melee and prepared for your attacks
 	nonlethal = TRUE //all attacks deal solely stamina damage or knock out before dealing lethal amounts of damage
 
 /datum/martial_art/trained/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
@@ -76,6 +76,8 @@
 	SIGNAL_HANDLER
 	if(!can_use(user))
 		return
+	user.adjustStaminaLoss(35)	//Can't block forever. Not so effective as real CQC, can do it only a few times before screw up
+	user.do_attack_animation(attacker, ATTACK_EFFECT_DISARM)
 	var/obj/item/I = attacker.get_active_held_item()
 	if(I && istype(I, /obj/item/melee/touch_attack))
 		attacker.visible_message(span_warning("[user] twists [attacker]'s arm, sending their [I] back towards them!"), \
@@ -85,9 +87,9 @@
 		var/datum/action/cooldown/spell/touch/touch_spell = touch_weapon.spell_which_made_us?.resolve()
 		if(!touch_spell)
 			return
-		INVOKE_ASYNC(touch_spell, /datum/action/cooldown/spell/touch.proc/do_hand_hit, attacker, attacker, touch_weapon)
+		INVOKE_ASYNC(touch_spell, /datum/action/cooldown/spell/touch.proc/do_hand_hit, touch_weapon, attacker, attacker)
+		return COMPONENT_NO_AFTERATTACK
 	else
-		user.do_attack_animation(attacker, ATTACK_EFFECT_DISARM)
 		attacker.visible_message(span_warning("[user] grabs [attacker]'s arm as they attack and throws them to the ground!"), \
 							span_userdanger("[user] grabs your arm as you attack and throws you to the ground!"))
 		playsound(get_turf(attacker), 'sound/weapons/cqchit1.ogg', 50, 1, -1)
@@ -96,8 +98,7 @@
 				var/hand = user.get_inactive_hand_index()
 				if(!user.put_in_hand(I, hand))
 					I.forceMove(get_turf(attacker))
-	attacker.Knockdown(60)
-	user.adjustStaminaLoss(10)	//Can't block forever. Really, if this becomes a problem you're already screwed.
+		attacker.Knockdown(60)
 
 
 /mob/living/carbon/human/proc/trained_help()
