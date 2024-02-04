@@ -480,8 +480,18 @@
 
 	take_overall_damage(brute_loss,burn_loss)
 
-	//attempt to dismember bodyparts
-	//dripstation edit start, tg-like bomb defence, more violent
+/*	//attempt to dismember bodyparts
+	if(severity <= 2 || HAS_TRAIT(src, TRAIT_EASYDISMEMBER)) //light explosions only can dismember those with easy dismember
+		var/max_limb_loss = round(4/severity) //so you don't lose more than 2 limbs on severity 2
+		for(var/X in bodyparts)
+			var/obj/item/bodypart/BP = X
+			if(prob(50/severity) && !prob(getarmor(BP, BOMB)) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
+				BP.brute_dam = BP.max_damage
+				BP.dismember()
+				max_limb_loss--
+				if(!max_limb_loss)
+					break
+*/	//dripstation edit start, tg-like bomb defence, more violent
 	var/max_limb_loss = 0
 	var/probability = 0
 	var/violent = FALSE
