@@ -13,7 +13,7 @@
 	name = "5.56mm TGov SSA AP bullet"
 	damage = 29
 	armour_penetration = 60
-	penetrating = TRUE //Goes through a single mob before ending on the next target
+	penetration_flags = PENETRATE_MOBS
 	penetrations = 1
 	wound_bonus = -45
 
