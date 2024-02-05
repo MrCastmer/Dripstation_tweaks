@@ -1,4 +1,5 @@
-/*/obj/projectile/energy/electrode
+/*
+/obj/projectile/energy/electrode
 	name = "electrode"
 	icon_state = "spark"
 	color = "#FFFF00"
