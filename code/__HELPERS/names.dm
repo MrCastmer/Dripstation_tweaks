@@ -200,6 +200,15 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	)
 
 	var/list/safety = list(1,2,3)//Tells the proc which options to remove later on.
+/*
+	var/nouns = strings(ION_FILE, "ionabstract")
+	var/objects = strings(ION_FILE, "ionobjects")
+	var/adjectives = strings(ION_FILE, "ionadjectives")
+	var/threats = strings(ION_FILE, "ionthreats")
+	var/foods = strings(ION_FILE, "ionfood")
+	var/drinks = strings(ION_FILE, "iondrinks")
+	var/list/locations = GLOB.teleportlocs.len ? GLOB.teleportlocs : drinks //if null, defaults to drinks instead.
+*/
 	var/nouns = strings(CODEWORDS_FILE, "abstract")	//dripstation edit
 	var/objects = strings(CODEWORDS_FILE, "objects")	//dripstation edit
 	var/adjectives = strings(CODEWORDS_FILE, "adjectives")	//dripstation edit
