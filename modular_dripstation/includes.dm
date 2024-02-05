@@ -7,6 +7,7 @@
 #include "code\datum\strong_pull.dm"
 #include "code\game\effects\effects_foam.dm"
 #include "code\game\mecha\cargo_hauler.dm"
+#include "code\game\objects\items\melee\energy.dm"
 #include "code\game\objects\items\bepis_items\boomerang.dm"
 #include "code\game\objects\items\bepis_items\eng_gloves.dm"
 #include "code\game\objects\items\bepis_items\explorerpin.dm"

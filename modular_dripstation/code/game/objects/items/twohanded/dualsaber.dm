@@ -1,4 +1,5 @@
 /obj/item/melee/dualsaber
+	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
 	block_chance = 50
 	force_wielded = 40
 	desc = "A more powerful version on the energy sword, it is more capable of blocking energy projectiles in throw mode than its single bladed counterpart. 'At last we will have revenge' is carved on the side of the handle."

@@ -1,5 +1,5 @@
 /obj/item/melee/errata
-	name = "Errata"
+	name = "\improper Errata"
 	desc = "Glorious nippon steel, folded 1000 times."
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
@@ -107,6 +107,10 @@
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
+/obj/item/storage/belt/errata/attack_hand(mob/user)
+	AltClick(user)
+	return
+
 /obj/item/storage/belt/errata/attack_self(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
@@ -186,10 +190,5 @@
 		item_state += "-sabre"
 
 /obj/item/storage/belt/errata/PopulateContents()
-	//Time to generate names now that we have the sword
-	var/n_title = pick(GLOB.ninja_titles)
-	var/n_name = pick(GLOB.ninja_names)
-	var/obj/item/melee/errata/sword = new /obj/item/melee/errata(src)
-	sword.name = "[n_title] blade of clan [n_name]"
-	name = "[n_title] scabbard of clan [n_name]"
+	new /obj/item/melee/errata(src)
 	update_icon()
