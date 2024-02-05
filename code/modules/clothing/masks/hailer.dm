@@ -33,45 +33,7 @@
 		'sound/voice/cpdeath/die3.ogg',
 		'sound/voice/cpdeath/die4.ogg',
 	)
-/*
-	///List of all lines that can be said by the sechailer, with their respective sound file.
-	var/static/list/sechailer_voicelines = list(
-		"Affirmative" = 'sound/voice/cpvoicelines/affirmative.ogg',
-		"Copy" = 'sound/voice/cpvoicelines/copy.ogg',
-		"Alright, you can go" = 'sound/voice/cpvoicelines/allrightyoucango.ogg',
-		"Backup" = 'sound/voice/cpvoicelines/backup.ogg',
-		"Anticitizen" = 'sound/voice/cpvoicelines/anticitizen.ogg',
-		"Citizen" = 'sound/voice/cpvoicelines/citizen.ogg',
-		"Get down" = 'sound/voice/cpvoicelines/getdown.ogg',
-		"Get out of here" = 'sound/voice/cpvoicelines/getoutofhere.ogg',
-		"Grenade" = 'sound/voice/cpvoicelines/grenade.ogg',
-		"Help" = 'sound/voice/cpvoicelines/help.ogg',
-		"Hold it" = 'sound/voice/cpvoicelines/holdit.ogg',
-		"In position" = 'sound/voice/cpvoicelines/inposition.ogg',
-		"I said move along" = 'sound/voice/cpvoicelines/isaidmovealong.ogg',
-		"Keep moving" = 'sound/voice/cpvoicelines/keepmoving.ogg',
-		"Lookout" = 'sound/voice/cpvoicelines/Lookout.ogg',
-		"Move along" = 'sound/voice/cpvoicelines/movealong.ogg',
-		"Move back right now" = 'sound/voice/cpvoicelines/movebackrightnow.ogg',
-		"Move it" = 'sound/voice/cpvoicelines/moveit2.ogg',
-		"Now get out of here" = 'sound/voice/cpvoicelines/nowgetoutofhere.ogg',
-		"Pick up that can" = 'sound/voice/cpvoicelines/pickupthecan1.ogg',
-		"I said pick up the can" = 'sound/voice/cpvoicelines/pickupthecan3.ogg',
-		"Suspect prepare to receive civil judgement" = 'sound/voice/cpvoicelines/prepareforjudgement.ogg',
-		"Now put it in the trash can" = 'sound/voice/cpvoicelines/putitinthetrash1.ogg',
-		"Responding" = 'sound/voice/cpvoicelines/responding2.ogg',
-		"Roger that" = 'sound/voice/cpvoicelines/rodgerthat.ogg',
-		"Shit" = 'sound/voice/cpvoicelines/shit.ogg',
-		"Take cover" = 'sound/voice/cpvoicelines/takecover.ogg',
-		"You knocked it over, pick it up" = 'sound/voice/cpvoicelines/youknockeditover.ogg',
-		"Searching for suspect" = 'sound/voice/cpvoicelines/searchingforsuspect.ogg',
-		"First warning, move away" = 'sound/voice/cpvoicelines/firstwarningmove.ogg',
-		"Sentence delivered" = 'sound/voice/cpvoicelines/sentencedelivered.ogg',
-		"Issuing malcompliant citation" = 'sound/voice/cpvoicelines/issuingmalcompliantcitation.ogg',
-		"Apply" = 'sound/voice/cpvoicelines/apply.ogg',
-		"Hehe" = 'sound/voice/cpvoicelines/chuckle.ogg',
-	)
-*/	//dripstation edit start
+	//dripstation edit start
 	var/static/list/sechailer_voicelines = list(
 		"Принято" = 'sound/voice/cpvoicelines/affirmative.ogg',
 		"Понял" = 'sound/voice/cpvoicelines/copy.ogg',
@@ -119,6 +81,45 @@
 		'modular_dripstation/sound/voice/sechailer_off4.ogg',
 	)
 	//dripstation edit end
+/*
+	///List of all lines that can be said by the sechailer, with their respective sound file.
+	var/static/list/sechailer_voicelines = list(
+		"Affirmative" = 'sound/voice/cpvoicelines/affirmative.ogg',
+		"Copy" = 'sound/voice/cpvoicelines/copy.ogg',
+		"Alright, you can go" = 'sound/voice/cpvoicelines/allrightyoucango.ogg',
+		"Backup" = 'sound/voice/cpvoicelines/backup.ogg',
+		"Anticitizen" = 'sound/voice/cpvoicelines/anticitizen.ogg',
+		"Citizen" = 'sound/voice/cpvoicelines/citizen.ogg',
+		"Get down" = 'sound/voice/cpvoicelines/getdown.ogg',
+		"Get out of here" = 'sound/voice/cpvoicelines/getoutofhere.ogg',
+		"Grenade" = 'sound/voice/cpvoicelines/grenade.ogg',
+		"Help" = 'sound/voice/cpvoicelines/help.ogg',
+		"Hold it" = 'sound/voice/cpvoicelines/holdit.ogg',
+		"In position" = 'sound/voice/cpvoicelines/inposition.ogg',
+		"I said move along" = 'sound/voice/cpvoicelines/isaidmovealong.ogg',
+		"Keep moving" = 'sound/voice/cpvoicelines/keepmoving.ogg',
+		"Lookout" = 'sound/voice/cpvoicelines/Lookout.ogg',
+		"Move along" = 'sound/voice/cpvoicelines/movealong.ogg',
+		"Move back right now" = 'sound/voice/cpvoicelines/movebackrightnow.ogg',
+		"Move it" = 'sound/voice/cpvoicelines/moveit2.ogg',
+		"Now get out of here" = 'sound/voice/cpvoicelines/nowgetoutofhere.ogg',
+		"Pick up that can" = 'sound/voice/cpvoicelines/pickupthecan1.ogg',
+		"I said pick up the can" = 'sound/voice/cpvoicelines/pickupthecan3.ogg',
+		"Suspect prepare to receive civil judgement" = 'sound/voice/cpvoicelines/prepareforjudgement.ogg',
+		"Now put it in the trash can" = 'sound/voice/cpvoicelines/putitinthetrash1.ogg',
+		"Responding" = 'sound/voice/cpvoicelines/responding2.ogg',
+		"Roger that" = 'sound/voice/cpvoicelines/rodgerthat.ogg',
+		"Shit" = 'sound/voice/cpvoicelines/shit.ogg',
+		"Take cover" = 'sound/voice/cpvoicelines/takecover.ogg',
+		"You knocked it over, pick it up" = 'sound/voice/cpvoicelines/youknockeditover.ogg',
+		"Searching for suspect" = 'sound/voice/cpvoicelines/searchingforsuspect.ogg',
+		"First warning, move away" = 'sound/voice/cpvoicelines/firstwarningmove.ogg',
+		"Sentence delivered" = 'sound/voice/cpvoicelines/sentencedelivered.ogg',
+		"Issuing malcompliant citation" = 'sound/voice/cpvoicelines/issuingmalcompliantcitation.ogg',
+		"Apply" = 'sound/voice/cpvoicelines/apply.ogg',
+		"Hehe" = 'sound/voice/cpvoicelines/chuckle.ogg',
+	)
+*/
 
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol
 	name = "spacepol mask"
