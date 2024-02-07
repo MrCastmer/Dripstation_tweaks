@@ -147,3 +147,28 @@
 	//if(slot == ITEM_SLOT_SUITSTORE)
 	//	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
 	update_appearance(UPDATE_ICON)
+
+/obj/item/melee/sabre
+	name = "officer's rapier"
+	desc = "An elegant weapon, for a more civilized age. Ceremonial version issued to NanoTrasen finest."
+
+/obj/item/storage/belt/sabre
+	name = "rapier sheath"
+	desc = "An ornate sheath designed to hold an officer's rapier."
+
+/obj/item/melee/sabre/mono
+	name = "\improper monomolecular NanoTrasen rapier"
+	desc = "An elegant combat ready weapon of NanoTrasen finest, its monomolecular edge is capable of cutting through flesh and bone with ease."
+	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	icon_state = "rapier"
+	force = 30
+	block_chance = 60
+	armour_penetration = 100
+
+/obj/item/storage/belt/sabre/mono
+	name = "rapier sheath"
+	desc = "An ornate sheath designed to preserve monomolecular edge of combat rapier."
+
+/obj/item/storage/belt/sabre/mono/PopulateContents()
+	new /obj/item/melee/sabre/mono(src)
+	update_appearance(UPDATE_ICON)

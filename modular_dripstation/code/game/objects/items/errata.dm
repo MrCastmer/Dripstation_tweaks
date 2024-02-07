@@ -191,4 +191,4 @@
 
 /obj/item/storage/belt/errata/PopulateContents()
 	new /obj/item/melee/errata(src)
-	update_icon()
+	update_appearance(UPDATE_ICON)
