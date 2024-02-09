@@ -36,6 +36,13 @@
 		if(prob(0.05))
 			add_event(null, "jolly", /datum/mood_event/jolly)
 			clear_event(null, "depression")
+	if(HAS_TRAIT(owner, TRAIT_PSYCHOPATHIC))
+		if(prob(0.005))
+			add_event(null, "depression", /datum/mood_event/depression_moderate)
+			clear_event(null, "jolly")
+		if(prob(0.005))
+			add_event(null, "jolly", /datum/mood_event/jolly)
+			clear_event(null, "depression")
 
 	HandleNutrition(owner)
 

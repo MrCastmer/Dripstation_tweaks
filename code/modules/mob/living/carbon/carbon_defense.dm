@@ -510,7 +510,13 @@
 			adjust_wet_stacks(averagestacks)
 			M.adjust_wet_stacks(-averagestacks)
 			to_chat(src, span_notice("The hug [M] gave you was a little wet..."))
+		if(HAS_TRAIT(src, TRAIT_BADTOUCH))	//dripstation edit
+			to_chat(M, span_warning("[src] looks visibly upset as you hug [p_them()]."))	//dripstation edit
+		if(HAS_TRAIT(src, TRAIT_PSYCHOPATHIC) || HAS_TRAIT(src, TRAIT_APATHETIC))	//dripstation edit
+			to_chat(M, span_warning("[src] have no visual reaction to your hug."))	//dripstation edit
 
+	SEND_SIGNAL(src, COMSIG_CARBON_HELP_ACT, M)	//dripstation edit
+	SEND_SIGNAL(M, COMSIG_CARBON_HELPED, src)	//dripstation edit
 	adjust_status_effects_on_shake_up()
 
 	adjustStaminaLoss(-10) //dripstation edit, now shakes and hugs recovers stamina again
