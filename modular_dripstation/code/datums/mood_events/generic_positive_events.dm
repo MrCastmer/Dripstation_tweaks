@@ -19,8 +19,3 @@
 	description ="<span class='nicegreen'>Your patrons are pleased with this offering!</span>\n"
 	mood_change = 5
 	timeout = 3 MINUTES
-
-/datum/mood_event/sacrifice_chaplain
-	description ="<span class='nicegreen'>[GLOB.deity] is pleased with this offering!</span>\n"
-	mood_change = 5
-	timeout = 3 MINUTES
