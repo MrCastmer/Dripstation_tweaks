@@ -78,6 +78,8 @@
 						return BULLET_ACT_BLOCK
 					else
 						P.firer = src
+						if(P.hitscan)
+							P.store_hitscan_collision(P.trajectory.copy_to())
 						P.setAngle(rand(0, 360))//SHING
 						return BULLET_ACT_FORCE_PIERCE
 
@@ -86,6 +88,8 @@
 			if(check_reflect(def_zone)) // Checks if you've passed a reflection% check
 				visible_message(span_danger("The [P.name] gets reflected by [src]!"), \
 								span_userdanger("The [P.name] gets reflected by [src]!"))
+				if(P.hitscan) // hitscan check
+					P.store_hitscan_collision(P.trajectory.copy_to())
 				// Find a turf near or on the original location to bounce to
 				if(!isturf(loc)) //Open canopy mech (ripley) check. if we're inside something and still got hit
 					P.force_hit = TRUE //The thing we're in passed the bullet to us. Pass it back, and tell it to take the damage.
@@ -125,8 +129,11 @@
 	return 0
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0, damage_type = BRUTE)
+	//YOGS EDIT BEGIN
+	if(SEND_SIGNAL(src, COMSIG_MOB_CHECK_SHIELDS, AM, damage, attack_text, attack_type, armour_penetration))	
+		return TRUE 
+	//YOGS EDIT END
 	var/block_chance_modifier = round(damage / -3)
-
 	for(var/obj/item/I in held_items)
 		if(!istype(I, /obj/item/clothing))
 			var/final_block_chance = I.block_chance - (clamp((armour_penetration-I.armour_penetration)/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example
@@ -198,8 +205,6 @@
 		if(I.force && I.damtype != STAMINA && affecting.status == BODYPART_ROBOTIC) // Bodpart_robotic sparks when hit, but only when it does real damage
 			if(I.force >= 5)
 				do_sparks(1, FALSE, loc)
-				if(prob(25))
-					new /obj/effect/decal/cleanable/oil(loc)
 
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 
@@ -475,8 +480,52 @@
 				adjustEarDamage(15,60)
 			Knockdown(max(120 - (bomb_armor * 2),0))	//60 bomb armor prevents knockdown entirely
 
-	take_overall_damage(brute_loss,burn_loss)
+		if (EXPLODE_NONE)						//dripstation edit
+			Knockdown(max(60 - bomb_armor,0))	//short knock, 60 bomb armor prevents knockdown entirely, dripstation edit
 
+	take_overall_damage(brute_loss,burn_loss)
+//dripstation edit start, tg-like bomb defence, more violent
+	var/max_limb_loss = 0
+	var/probability = 0
+	var/violent = FALSE
+	switch(severity)
+		if(EXPLODE_NONE)
+			max_limb_loss = 1
+			probability = 20
+		if(EXPLODE_LIGHT)
+			max_limb_loss = 2
+			probability = 30
+		if(EXPLODE_HEAVY)
+			max_limb_loss = 3
+			probability = 40
+		if(EXPLODE_DEVASTATE)
+			max_limb_loss = 4
+			probability = 50
+			violent = TRUE
+	if(HAS_TRAIT(src, TRAIT_EASYDISMEMBER))
+		max_limb_loss += 1
+		probability += 20
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(probability <= 0)
+			break
+		if(prob(probability) && BP.body_zone != BODY_ZONE_HEAD)
+			if(BP.body_zone == BODY_ZONE_CHEST && !violent)
+				continue
+			var/bomb_part_armor = getarmor(BP, BOMB)
+			var/fracture_probability = 70 - probability + round(bomb_part_armor/1.5, 10)	//EXPLODE_LIGHT = 40+(armor/1.5)% chance, EXPLODE_HEAVY = 30+(armor/1.5)%
+			if(severity == EXPLODE_NONE || fracture_probability >= 100 || prob(fracture_probability))
+				BP.brute_dam += 6*(2 - round(bomb_part_armor/60, 0.05))	//2-12 damage total depending on bomb armor
+				var/datum/wound/blunt/critical/fracture = new
+				fracture.apply_wound(BP)
+			else
+				BP.brute_dam = BP.max_damage
+				BP.dismember()
+			probability -= 10
+			max_limb_loss--
+			if(!max_limb_loss)
+				break				//dripstation edit end
+/*
 	//attempt to dismember bodyparts
 	if(severity <= 2 || HAS_TRAIT(src, TRAIT_EASYDISMEMBER)) //light explosions only can dismember those with easy dismember
 		var/max_limb_loss = round(4/severity) //so you don't lose more than 2 limbs on severity 2
@@ -488,6 +537,7 @@
 				max_limb_loss--
 				if(!max_limb_loss)
 					break
+*/
 
 
 /mob/living/carbon/human/blob_act(obj/structure/blob/B)
@@ -501,6 +551,8 @@
 
 //Added a safety check in case you want to shock a human mob directly through electrocute_act.
 /mob/living/carbon/human/electrocute_act(shock_damage, obj/source, siemens_coeff = 1, zone = BODY_ZONE_R_ARM, override = FALSE, tesla_shock = FALSE, illusion = FALSE, stun = TRUE, gib = FALSE)
+	if(!override)
+		siemens_coeff *= physiology.siemens_coeff
 	. = ..()
 	if(.)
 		electrocution_animation(40)
