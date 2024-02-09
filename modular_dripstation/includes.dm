@@ -63,6 +63,7 @@
 #include "code\modules\assembly\holder.dm"
 #include "code\modules\assembly\signaler.dm"
 #include "code\datums\mood_events\generic_negative_events.dm"
+#include "code\datums\mood_events\generic_positive_events.dm"
 #include "code\modules\surgery\surgery_step.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\binary_devices.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\unary_devices.dm"
