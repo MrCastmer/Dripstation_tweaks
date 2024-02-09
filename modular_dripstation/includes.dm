@@ -6,6 +6,7 @@
 #include "code\datum\component\transforming.dm"
 #include "code\datum\reagent\baldium.dm"
 #include "code\datum\reagent\chemoverride.dm"
+#include "code\datum\component\mood.dm"
 #include "code\datum\reagent\leadacetate.dm"
 #include "code\datum\strong_pull.dm"
 #include "code\datum\keybinding\communication.dm"
