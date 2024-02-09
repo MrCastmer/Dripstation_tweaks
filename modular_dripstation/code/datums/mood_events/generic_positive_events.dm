@@ -2,7 +2,7 @@
 	mood_change = 10	//Used for syndies, nukeops etc so they can focus on their goals
 
 /datum/mood_event/slaughter
-	description ="<span class='nicegreen'>These pitiful NanoTrasen scam will drink vacuum! Slaughter... THEM... ALL!!</span>\n"
+	description ="<span class='alertsyndie'>These pitiful NanoTrasen scam will have to drink vacuum sooner or later. Slaughter... THEM... ALL!!</span>\n"
 	mood_change = 15
 
 /datum/mood_event/heretics
