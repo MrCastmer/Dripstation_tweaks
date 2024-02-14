@@ -1,7 +1,7 @@
 // ###### HOS ######
 /obj/item/clothing/under/rank/head_of_security
-	icon = 'dripstation/icons/obj/clothing/uniform/security/hos.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/security/hos.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/hos.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/hos.dmi'
 
 /obj/item/clothing/under/rank/head_of_security/skirt
 	can_adjust = TRUE
@@ -23,25 +23,25 @@
 /obj/item/clothing/mask/gas/sechailer/swat/hos
 	name = "\improper HOS SWAT mask"
 	icon_state = "hosmask"	
-	icon = 'dripstation/icons/obj/clothing/masks.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/masks.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/masks.dmi'	
 
 /obj/item/clothing/head/HoS
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
 /obj/item/clothing/head/HoS/beret
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/HoS/dictator
 	icon_state = "policechiefcap"	
 	item_state = "policechiefcap"	
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	name = "dictator head of security cap"
 	desc = "Kill your own, to keep enemy in fear."
 
 /obj/item/clothing/suit/armor/hos/trenchcoat
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 /obj/item/clothing/suit/armor/hos/trenchcoat/winter
@@ -57,8 +57,8 @@
 
 /obj/item/clothing/under/rank/warden
 	name = "warden's jumpsuit"
-	icon = 'dripstation/icons/obj/clothing/uniform/security/warden.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/security/warden.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/warden.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/warden.dmi'
 
 /obj/item/clothing/under/rank/warden/skirt
 	name = "warden's jumpskirt"
@@ -88,27 +88,31 @@
 /obj/item/clothing/mask/gas/sechailer/swat/warden
 	name = "\improper Warden SWAT mask"
 	icon_state = "wardenmask"	
-	icon = 'dripstation/icons/obj/clothing/masks.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/masks.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/masks.dmi'	
 
 /obj/item/clothing/under/rank/warden/navyblue
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 
 /obj/item/clothing/suit/armor/wardenjacket
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+
+/obj/item/clothing/suit/armor/vest/warden
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/vest/warden/alt
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/vest/warden/winter
 	name = "warden's winter coat"
 	desc = "High fashion is required even if the armory is a literal freezer."
 	icon_state = "coatwarden" 
 	item_state = "coatwarden"
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -120,19 +124,19 @@
 	desc = "A short, armored jacket, perfect for desk duty."
 	icon_state = "wardenjacket"
 	item_state = "wardenjacket"
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 /obj/item/clothing/head/warden
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	armor = list(MELEE = 35, BULLET = 30, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 10, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)	
 
 /obj/item/clothing/head/beret/sec/navywarden
 	armor = list(MELEE = 35, BULLET = 30, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 10, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 
 /obj/item/clothing/head/warden/drill
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
 /obj/item/clothing/gloves/krav_maga/sec
 	name = "krav maga gloves"
@@ -149,8 +153,8 @@
 // ###### OFFICER ######
 
 /obj/item/clothing/under/rank/security
-	icon = 'dripstation/icons/obj/clothing/uniform/security/security.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/uniform/security/security.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/security.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/security.dmi'
 
 /obj/item/clothing/under/rank/security/redshirt
 	name = "white classic security uniform"
@@ -176,35 +180,35 @@
 	desc = "It's a baseball hat in corporate colours."
 	icon_state = "corpsoft"
 	soft_type = "corp"
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'		
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'		
 
 /obj/item/clothing/head/officer
 	name = "officer's cap"
 	desc = "A red cap with an old-fashioned badge on the front for establishing that you are, in fact, the law."
 	icon_state = "customshelm"
 	item_state = "customshelm"
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 	armor = list(MELEE = 30, BULLET = 25, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 20, ACID = 50)
 	strip_delay = 60
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/beret/sec
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 	armor = list(MELEE = 30, BULLET = 25, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 20, ACID = 50)
 
 
 /obj/item/clothing/suit/armor/officerjacket
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
 
 /obj/item/clothing/shoes/jackboots/jacksandal
 	name = "jacksandals"
 	desc = "Nanotrasen-issue Security combat sandals for combat scenarios. They're jacksandals, however that works."
 	icon_state = "jacksandal"
-	icon = 'dripstation/icons/obj/clothing/shoes.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/shoes.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'	
 	pocket_storage_component_path = null
 
 /obj/item/clothing/head/helmet/sec

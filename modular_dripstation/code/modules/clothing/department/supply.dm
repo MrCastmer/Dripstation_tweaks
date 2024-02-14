@@ -3,8 +3,8 @@
 	name = "quartermaster`s winter coat"
 	desc = "placeholder."
 	icon_state = "coatqm"
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
 	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/box/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter, /obj/item/melee/classic_baton)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/QM
 
@@ -27,8 +27,8 @@
 	name = "quartermaster`s winter hood"
 	desc = "placeholder."
 	icon_state = "winterhood_qm"
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/suit/hooded/wintercoat/QM/armored
 	name = "quartermaster`s armored winter coat"
@@ -60,8 +60,8 @@
 	name = "Quartermaster`s coat"
 	desc = "Modern multi-purpose trenchcoat, enchanced with naturall fur. Someone who wears this means really serious business."
 	icon_state = "trenchcoatqm_open"
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	clothing_flags = THICKMATERIAL
 	mutantrace_variation = MUTANTRACE_VARIATION
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -77,8 +77,8 @@
 	desc = "A painted welding helmet, this one looks like it's calling you to hit someone with a sledgehammer."
 	icon_state = "tagillawelding"	
 	item_state = "tagillawelding"	
-	icon = 'dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hats.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 obj/item/clothing/suit/hooded/wintercoat/cargo
 	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/box/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter)

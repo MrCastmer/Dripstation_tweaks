@@ -1,9 +1,9 @@
 // ###### HOS ######
 /obj/item/clothing/suit/hazardvest
-	icon = 'dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/suits.dmi'
-	lefthand_file = 'dripstation/icons/mob/inhands/suits_lefthand.dmi'
-	righthand_file = 'dripstation/icons/mob/inhands/suits_righthand.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/suits_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/suits_righthand.dmi'
 
 /obj/item/clothing/suit/hazardvest/white
 	name = "white hazard vest"

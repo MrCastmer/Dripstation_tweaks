@@ -7,17 +7,58 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/vest
+	icon_state = "armor_sec"
+	item_state = "armor_sec"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+
+/obj/item/clothing/suit/armor/vest/alt
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+
+/obj/item/clothing/suit/armor/vest/rycliesarmour
+	name = "war armour"
+	desc = "Good for protecting your chest during war."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "rycliesarmour"
+	item_state = "rycliesarmour"
+
+/obj/item/clothing/suit/armor/vest/namflakjacket
+	name = "nam flak jacket"
+	desc = "Good for protecting your chest from napalm and toolboxes!"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "namflakjacket"
+	item_state = "namflakjacket"
+
+/obj/item/clothing/suit/armor/vest/redcoatcoat
+	name = "redcoat coat"
+	desc = "Security is coming! Security is coming! Also padded with kevlar for protection."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	item_state = "red_coat_coat"
+
+/obj/item/clothing/suit/armor/vest/secmiljacket
+	name = "sec military jacket"
+	desc = "Aviators not included. Now with extra padding!"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "secmiljacket"
+	item_state = "secmiljacket"
 
 /obj/item/clothing/suit/armor/riot
 	icon_state = "riot"
 	item_state = "riot"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	armor = list(MELEE = 50, BULLET = 10, LASER = 10, ENERGY = 40, BOMB = 0, BIO = 0, RAD = 0, FIRE = 80, ACID = 80, WOUND = 30)
 
 /obj/item/clothing/head/helmet/riot
 	icon_state = "riot"
 	item_state = "riot"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	armor = list(MELEE = 45, BULLET = 15, LASER = 5, ENERGY = 35, BOMB = 5, BIO = 2, RAD = 0, FIRE = 50, ACID = 50, WOUND = 15)
 
 
@@ -25,10 +66,17 @@
 
 //////////////////SWAT//////////////////
 /obj/item/clothing/head/helmet/swat
+	icon_state = "swatsyndie"
+	item_state = "swatsyndie"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	desc = "An extremely robust helmet in a nefarious red and black stripe pattern."
 
 obj/item/clothing/head/helmet/swat/nanotrasen
+	icon_state = "swat"
+	item_state = "swat"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	desc = "An extremely robust helmet with the Nanotrasen logo emblazoned on the top."
 
 /obj/item/clothing/suit/space/swat
