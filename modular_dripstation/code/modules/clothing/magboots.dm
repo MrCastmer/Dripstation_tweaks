@@ -2,6 +2,7 @@
 	alternate_worn_layer = BELT_LAYER
 	var/magpulse_name = "mag-pulse traction system"
 	item_state = "magboots"
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'
