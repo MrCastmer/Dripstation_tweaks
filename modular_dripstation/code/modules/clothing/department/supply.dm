@@ -49,8 +49,8 @@
 	usr.visible_message("[usr] removes armor from [src].", span_notice("You remove armor from [src]."))
 	new I(get_turf(src))
 	var/obj/item/nonarmored = new /obj/item/clothing/suit/hooded/wintercoat/QM
-	if(slot == SLOT_WEAR_SUIT)
-		if(usr.equip_to_slot_if_possible(nonarmored,SLOT_WEAR_SUIT,0,0,1))
+	if(slot == ITEM_SLOT_OCLOTHING)
+		if(usr.equip_to_slot_if_possible(nonarmored,ITEM_SLOT_OCLOTHING,0,0,1))
 			return 1
 	else
 		usr.put_in_hands(nonarmored)

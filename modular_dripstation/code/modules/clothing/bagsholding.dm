@@ -19,12 +19,6 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 
-/obj/item/storage/backpack/holding/Initialize(mapload)
-	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	//FUCKING GIVE ME SPRITE BACK, I JUST WANNA MY FUNNY SPRITE BACK
-
-/obj/item/disabled_boh/Initialize(mapload)
-	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	//FUCKING GIVE ME SPRITE BACK, I JUST WANNA MY FUNNY SPRITE BACK
-
 /obj/item/boh_shell/duffel
 	name = "duffel bag of holding shell"
 	desc = "An inert shell, it looks like you could activate it with an anomaly core."

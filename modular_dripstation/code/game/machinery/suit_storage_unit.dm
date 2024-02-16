@@ -312,7 +312,7 @@
 		tank = new tank_type(src)
 	if(magboots_type)
 		magboots = new magboots_type(src)		
-	update_icon()
+	update_appearance(UPDATE_ICON)
 
 /obj/machinery/suit_storage_unit/Destroy()
 	QDEL_NULL(suit)
