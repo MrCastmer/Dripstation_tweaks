@@ -214,7 +214,7 @@
 	name = "spare bear pelt"
 	desc = "It shimmers in the light"
 	icon_state = "sparebearpelt"
-	icon = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'	
 
 /obj/item/clothing/mask/gas/captain

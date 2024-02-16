@@ -322,7 +322,7 @@
 	QDEL_NULL(magboots)
 	return ..()
 
-/obj/machinery/suit_storage_unit/update_icon()
+/obj/machinery/suit_storage_unit/update_overlays()
 	cut_overlays()
 	overlays.len = 0
 
