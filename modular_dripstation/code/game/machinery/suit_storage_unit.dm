@@ -323,9 +323,7 @@
 	return ..()
 
 /obj/machinery/suit_storage_unit/update_overlays()
-	cut_overlays()
-	overlays.len = 0
-
+	. = ..()
 	if(uv)
 		if(uv_super)
 			add_overlay("super")
