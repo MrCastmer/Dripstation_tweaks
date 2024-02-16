@@ -194,14 +194,14 @@
 
 /obj/item/clothing/gloves/color/captain
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 
 /obj/item/clothing/head/caphat
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/caphat/parade
-	icon = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
 
 /obj/item/clothing/head/beret/captain

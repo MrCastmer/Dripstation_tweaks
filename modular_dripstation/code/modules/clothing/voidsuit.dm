@@ -245,9 +245,9 @@
 
 
 /obj/item/clothing/head/helmet/space/plasmaman
-	icon = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
 
 /obj/item/clothing/suit/space/eva/plasmaman
-	icon = 'icons/obj/clothing/suits.dmi'
+	icon = 'icons/obj/clothing/suits/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'

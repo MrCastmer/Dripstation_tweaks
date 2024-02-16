@@ -964,15 +964,15 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi/breach
 	//mutantrace_variation = MUTANTRACE_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if(slot == ITEM_SLOT_OCLOTHING)
-		RegisterSignal(user, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
+///obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/equipped(mob/living/carbon/human/user, slot)
+//	..()
+//	if(slot == ITEM_SLOT_OCLOTHING)
+//		RegisterSignal(user, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 
-/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/dropped(mob/living/carbon/human/user, slot)
-	..()
-	if(slot == ITEM_SLOT_OCLOTHING)
-		UnregisterSignal(user, COMSIG_ATOM_ATTACK_HAND)
+///obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/dropped(mob/living/carbon/human/user, slot)
+//	..()
+//	if(slot == ITEM_SLOT_OCLOTHING)
+//		UnregisterSignal(user, COMSIG_ATOM_ATTACK_HAND)
 
 ///obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi/breach/proc/on_attack_hand(atom/target, mob/living/carbon/human/user, proximity)//don`t work
 //	if(proximity) //no telekinetic breacher attack

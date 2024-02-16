@@ -232,8 +232,8 @@
 					/obj/item/clothing/under/rank/security/corporate = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/security = 3,					
 					/obj/item/clothing/suit/armor/vest/secmiljacket = 2,
-					/obj/item/clothing/suit/toggle/bomber/secbomber/soft = 2,
-					/obj/item/clothing/suit/poncho/sec = 2,					
+					/*/obj/item/clothing/suit/toggle/bomber/secbomber/soft = 2,
+					/obj/item/clothing/suit/poncho/sec = 2,*/					
 					/obj/item/clothing/shoes/jackboots = 3,
 					/obj/item/clothing/shoes/jackboots/jacksandal = 3,
 					/obj/item/clothing/shoes/xeno_wraps/jackboots = 3,

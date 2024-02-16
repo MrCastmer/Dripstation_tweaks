@@ -82,7 +82,7 @@
 	icon_state = "coatrobotics"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
-	allowed = list(/obj/item/analyzer, /obj/item/jawsoflife, /obj/item/screwdriver, /obj/item/wirecutters, /obj/item/weldingtool, /obj/item/wrench, /obj/item/crowbar, /obj/item/handdrill,  /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/beaker, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/toy, /obj/item/storage/box/fancy/cigarettes, /obj/item/lighter, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant)
+	allowed = list(/obj/item/analyzer, /obj/item/jawsoflife, /obj/item/screwdriver, /obj/item/wirecutters, /obj/item/weldingtool, /obj/item/wrench, /obj/item/crowbar, /obj/item/handdrill,  /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/beaker, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/science/robotics
 
 /obj/item/clothing/head/hooded/winterhood/science/robotics
@@ -121,8 +121,8 @@
 					/obj/item/clothing/suit/hooded/wintercoat/science = 3,
 					/obj/item/clothing/suit/toggle/labcoat = 5,					
 					/obj/item/clothing/suit/toggle/labcoat/science = 5,
-					/obj/item/clothing/suit/poncho/sci = 2,
-					/obj/item/clothing/suit/toggle/bomber/scibomber = 2,
+					/*/obj/item/clothing/suit/poncho/sci = 2,
+					/obj/item/clothing/suit/toggle/bomber/scibomber = 2,*/
 					/obj/item/clothing/head/beret/sci = 3,					
 					/obj/item/clothing/shoes/sneakers/white = 3,
 					/obj/item/clothing/shoes/sandal/white = 3,
