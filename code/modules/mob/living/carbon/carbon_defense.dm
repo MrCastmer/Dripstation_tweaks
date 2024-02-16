@@ -1,7 +1,7 @@
 /mob/living/carbon/get_eye_protection()
 	. = ..()
-	if(HAS_TRAIT(src, TRAIT_BLIND))
-		return INFINITY //Can't get flashed if you cant see
+	if(is_blind() && !HAS_TRAIT_FROM(src, TRAIT_BLIND, UNCONSCIOUS_TRAIT) && !HAS_TRAIT_FROM(src, TRAIT_BLIND, HYPNOCHAIR_TRAIT))	//dripstation edit
+		return INFINITY //For all my homies that can not see in the world
 	var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
 	if(!E)
 		return INFINITY //Can't get flashed without eyes
@@ -36,6 +36,14 @@
 
 /mob/living/carbon/check_projectile_dismemberment(obj/projectile/P, def_zone)
 	var/obj/item/bodypart/affecting = get_bodypart(def_zone)
+	if(P.damtype == BRUTE)	// dripstation edit start
+		var/brute_armor = getarmor(affecting, BULLET)	// so here we hardblocking projectile-based dismemberment if the armor protection is 60 and more. On station it`s only bulletproof helmet, that protects head from violent falling
+		if(brute_armor >= BULLET_DISMEMBER_THRESHOLD)
+			return ..()
+	if(P.damtype == BURN)
+		var/burn_armor = getarmor(affecting, LASER)
+		if(burn_armor >= LASER_DISMEMBER_THRESHOLD)
+			return ..()	// dripstation edit end
 	if(affecting && affecting.dismemberable && affecting.get_damage() >= (affecting.max_damage - P.dismemberment))
 		affecting.dismember(P.damtype)
 
@@ -470,9 +478,9 @@
 		M.visible_message(span_notice("[M] shakes [src] trying to get [p_them()] up!"), \
 						span_notice("You shake [src] trying to get [p_them()] up!"))
 
-	else if(check_zone(M.zone_selected) == BODY_ZONE_L_ARM || check_zone(M.zone_selected) == BODY_ZONE_R_ARM) //Headpats are too extreme, we have to pat shoulders on yogs
-		M.visible_message(span_notice("[M] gives [src] a pat on the shoulder to make [p_them()] feel better!"), \
-					span_notice("You give [src] a pat on the shoulder to make [p_them()] feel better!"))
+	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //For the f sake, yogs, stop this. dripstation edit
+		M.visible_message(span_notice("[M] gives [src] a headpat to make [p_them()] feel better!"), \
+					span_notice("You give [src] a a headpat to make [p_them()] feel better!"))	//dripstation edit
 
 	else
 		M.visible_message(span_notice("[M] hugs [src] to make [p_them()] feel better!"), \
@@ -505,7 +513,7 @@
 
 	adjust_status_effects_on_shake_up()
 
-//	adjustStaminaLoss(-10) if you want hugs to recover stamina damage, uncomment this
+	adjustStaminaLoss(-10) //dripstation edit, now shakes and hugs recovers stamina again
 	set_resting(FALSE)
 
 	playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
@@ -602,7 +610,7 @@
 /mob/living/carbon/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)
 	if(damage_type != BRUTE && damage_type != BURN)
 		return
-	damage_amount *= 0.5 //0.5 multiplier for balance reason, we don't want clothes to be too easily destroyed
+	damage_amount *= 0.2 //0.5 multiplier for balance reason, we don't want clothes to be too easily destroyed, dripstation edited for 0.2
 	if(!def_zone || def_zone == BODY_ZONE_HEAD)
 		var/obj/item/clothing/hit_clothes
 		if(wear_mask)
