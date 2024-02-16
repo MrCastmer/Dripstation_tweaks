@@ -35,7 +35,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 
-
 /obj/item/clothing/under/rank/head_of_personnel/turtleneck
 	name = "head of personnel's turtleneck"
 	desc = "A dark teal turtleneck and black khakis, for a second with a superior sense of style."
@@ -43,12 +42,19 @@
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
 
+/obj/item/clothing/under/rank/head_of_personnel/turtleneck/alt
+	icon_state = "hopturtle_alt"
+
 /obj/item/clothing/under/rank/head_of_personnel/turtleneck/skirt
 	name = "head of personnel's turtleneck skirt"
 	desc = "A dark teal turtleneck and tanblack khaki skirt, for a second with a superior sense of style."
 	icon_state = "hopturtle_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/rank/head_of_personnel/skirt/secretary
+	name = "head of personnel's secretary skirt"
+	icon_state = "hop_secretary"
 
 /obj/item/clothing/shoes/leather
 	name = "leather shoes"
@@ -108,6 +114,19 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
 
+/obj/item/clothing/under/rank/captain/formal
+	name = "captain's formal uniform"
+	desc = "Parade version of station captain`s uniform."
+	icon_state = "station_captain"
+	item_state = "station_captain"
+
+/obj/item/clothing/under/rank/captain/formal/skirt
+	name = "captain's formal skirt"
+	desc = "Parade version of station captain`s skirt."
+	icon_state = "station_captain_skirt"
+	item_state = "station_captain_skirt"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION	
+
 /obj/item/clothing/under/rank/captain/kilt
 	desc = "Not a skirt, it is, however, armoured and decorated with a tartan sash."
 	name = "captain's kilt"
@@ -116,7 +135,7 @@
 
 /obj/item/clothing/under/rank/captain/dress
 	name = "captain's dress"
-	icon_state = "dress_cap_s"
+	icon_state = "cap_secretary"
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP	
 	body_parts_covered = CHEST|GROIN|ARMS	
@@ -125,20 +144,21 @@
 /obj/item/clothing/suit/armor/vest/capcarapace
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
-	item_state = "capspacesuit"	
+	item_state = "capcarapace"	
 
 /obj/item/clothing/suit/armor/vest/capcarapace/alt
-	icon = 'icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
+	name = "captain's bulletproof carapace"
+	desc = "A fireproof armored chestpiece reinforced with modern plasceramic plates to provide maximum bullet protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest, although it does chafe your nipples."
+	icon_state = "capcarapace_bulletproof"
+	body_parts_covered = CHEST|GROIN
+	armor = list(MELEE = 30, BULLET = 60, LASER = 30, ENERGY = 10, BOMB = 30, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
+	dog_fashion = null
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/vest/capcarapace/tunic
 	name = "captain's parade tunic"
 	desc = "Worn by a Captain to show their class."
 	icon_state = "captunic"
-
-/obj/item/clothing/suit/armor/vest/capcarapace/tunic/white
-	name = "captain's white tunic"
-	icon_state = "captain_white"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/jacket
 	name = "captain's jacket"
@@ -163,25 +183,32 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'	
 
+/obj/item/clothing/shoes/laceup/cap
+	name = "command laceup shoes"
+	icon_state = "cap_laceups"
+	item_state = "cap_laceups"
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/shoes_righthand.dmi'	
+
 /obj/item/clothing/gloves/color/captain
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/gloves.dmi'
 
 /obj/item/clothing/head/caphat
-	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
-
-/obj/item/clothing/head/caphat/formal
-	name = "captain's formal cap"
-	desc = "Worn only by Captains with an abundance of class."
-	icon_state = "capcap"
-
-/obj/item/clothing/head/beret/captain
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/caphat/parade
 	icon = 'icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
+
+/obj/item/clothing/head/beret/captain
+	name = "captain's formal beret"
+	desc = "If you wanna feel yourself a beet younger."
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/bearpelt
 	name = "spare bear pelt"
@@ -198,3 +225,65 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/masks.dmi'
 	armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 0, BIO = 50, FIRE = 20, ACID = 10)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+
+////////Formal coat////////
+/obj/item/clothing/suit/toggle/capformal
+	name = "captain's formal coat"
+	desc = "For when an armoured vest isn't fashionable enough."
+	icon_state = "capformal"
+	item_state = "capcarapace"	
+	blood_overlay_type = "coat"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	togglename = "buttons"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|HANDS
+	heat_protection = CHEST|GROIN|ARMS|HANDS
+	armor = list(MELEE = 40, BULLET = 35, LASER = 40, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
+	resistance_flags = FIRE_PROOF
+	mutantrace_variation = MUTANTRACE_VARIATION	
+
+/obj/item/clothing/suit/toggle/capformal/Initialize(mapload)
+	. = ..()
+	if(!allowed)
+		allowed = GLOB.security_vest_allowed
+
+/obj/item/clothing/suit/toggle/capformal/hos
+	name = "armored formal coat"
+	icon_state = "hos_formal"
+	desc = "A formal coat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 20)
+	strip_delay = 80
+	clothing_flags = THICKMATERIAL
+
+/obj/item/clothing/suit/toggle/capformal/hop
+	name = "head of personal's formal coat"
+	icon_state = "hop_formal"
+	desc = "Lightly armored coat in corporate colors."
+	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 10)
+	allowed = list(
+		/obj/item/melee/classic_baton,
+	)
+
+/obj/item/clothing/suit/toggle/capformal/centcom
+	name = "\improper CentCom formal coat"
+	desc = "A CentCom green alteration of the captain's formal coat. Issued only to Nanotrasen's finest!"
+	icon_state = "centcom_formal"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	strip_delay = 80
+	clothing_flags = THICKMATERIAL
+	blocks_shove_knockdown = TRUE
+
+/obj/item/clothing/suit/toggle/capformal/centcom/alt
+	icon_state = "centcom_formalalt"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION	
+
+/obj/item/clothing/suit/toggle/capformal/centcom/soo
+	name = "special operations officer`s coat"
+	desc = "Highly protective armor with bluespace enhanced plaskevlar plating stylized as a leather coat. Has special operations officer insignia attached to it."
+	icon_state = "soo_coat"
+	item_state = "detective"
+	armor = list(MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 35)
+	slowdown = -0.2
+	mutantrace_variation = NO_MUTANTRACE_VARIATION	

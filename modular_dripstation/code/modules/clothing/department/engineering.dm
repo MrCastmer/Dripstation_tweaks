@@ -1,4 +1,4 @@
-// ###### HOS ######
+// ###### hazard vests ######
 /obj/item/clothing/suit/hazardvest
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
