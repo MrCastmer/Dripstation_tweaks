@@ -1,6 +1,6 @@
 /*
- * Fox ears
- */
+* Fox ears
+*/
 /obj/item/clothing/head/fox
 	name = "fox ears"
 	desc = "A pair of fox ears. Meow!"
@@ -12,9 +12,9 @@
 
 
 /*
- * Fixing helmets
- */
- /obj/item/clothing/head/helmet/blueshirt
+* Fixing helmets
+*/
+/obj/item/clothing/head/helmet/blueshirt
 	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
 
@@ -22,7 +22,7 @@
 	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
 
- /obj/item/clothing/head/helmet/thunderdome
+/obj/item/clothing/head/helmet/thunderdome
 	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
 
