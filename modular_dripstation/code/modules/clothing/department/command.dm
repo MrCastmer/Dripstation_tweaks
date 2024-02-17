@@ -155,7 +155,7 @@
 	dog_fashion = null
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/armor/vest/capcarapace/tunic
+/obj/item/clothing/suit/captunic
 	name = "captain's parade tunic"
 	desc = "Worn by a Captain to show their class."
 	icon_state = "captunic"

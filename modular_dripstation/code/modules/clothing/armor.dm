@@ -7,12 +7,22 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/vest
-	icon_state = "armor_sec"
-	item_state = "armor_sec"
+	icon_state = "armor"
+	item_state = "armor"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
+/obj/item/clothing/suit/armor/vest/light
+	icon_state = "armorlight"
+	item_state = "armorlight"
+
+/obj/item/clothing/suit/armor/vest/old
+	icon_state = "armorlight"
+	item_state = "armorlight"
+
 /obj/item/clothing/suit/armor/vest/alt
+	icon_state = "armoralt"
+	item_state = "armoralt"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
@@ -61,7 +71,9 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	armor = list(MELEE = 45, BULLET = 15, LASER = 5, ENERGY = 35, BOMB = 5, BIO = 2, RAD = 0, FIRE = 50, ACID = 50, WOUND = 15)
 
-
+/obj/item/clothing/suit/armor/riot/chaplain
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
 
 
 //////////////////SWAT//////////////////
@@ -243,8 +255,8 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	desc = "A simple yet effective bulletproof armor. The most minimalistic design offers reliable protection of the chest."
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
-	icon_state = "slick"
-	item_state = "slick"
+	icon_state = "plate-armor"
+	item_state = "plate-armor"
 	body_parts_covered = CHEST
 	blood_overlay_type = "armor"
 	armor = list(MELEE = 5, BULLET = 80, LASER = 30, ENERGY = 20, BOMB = 60, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)

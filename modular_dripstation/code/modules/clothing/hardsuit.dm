@@ -35,6 +35,12 @@
 	item_state = "metalh2_helm"
 	hardsuit_type = "metalh2"
 
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
+	icon_state = "owl_helm"
+
+/obj/item/clothing/suit/space/hardsuit/syndi/owl
+	icon_state = "owl_rig"
+
 //Mining hardsuit, now explorer hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/mining
 	name = "explorer hardsuit helmet"
