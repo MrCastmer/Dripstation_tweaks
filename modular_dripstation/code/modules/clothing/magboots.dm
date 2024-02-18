@@ -57,4 +57,60 @@
 	slowdown_active = 2	
 
 /obj/item/clothing/shoes/magboots/syndie
+	name = "suspecious magboots"
 	slowdown_active = 1.5
+	var/morphable = TRUE
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/shoes/magboots/syndie/ui_action_click(mob/user)
+	if(!istype(user) || user.incapacitated())
+		return
+	var/list/options = list()
+	var/list/radial_display = list()
+	for(var/obj/item/clothing/shoes/magboots/syndie/all_magboots as anything in typesof(/obj/item/clothing/shoes/magboots/syndie))
+		if(!initial(all_magboots.morphable))
+			continue
+		options[initial(all_magboots.name)] = all_magboots
+		var/datum/radial_menu_choice/option = new
+		option.image = image(icon = initial(all_magboots.icon), icon_state = initial(all_magboots.icon_state))
+		option.info = "[initial(all_magboots.name)] - [span_boldnotice(initial(all_magboots.desc))]"
+		radial_display[initial(all_magboots.name)] = option
+
+	var/choice = show_radial_menu(user, user, radial_display)
+	var/obj/item/clothing/shoes/magboots/syndie/chosen_magboots = options[choice]
+	if(QDELETED(src) || QDELETED(user))
+		return FALSE
+	if(!chosen_magboots)
+		to_chat(user, span_announce("You choose not to choose."))
+		return
+	if(src && chosen_magboots && !user.incapacitated() && in_range(user,src))
+		name = chosen_magboots.name
+		desc = chosen_magboots.desc
+		item_state = chosen_magboots.item_state
+		icon_state = chosen_magboots.icon_state
+		user.update_inv_belt()
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.build_all_button_icons()
+		to_chat(user, span_notice("Your webbing has now morphed into [chosen_magboots.name]!"))
+		return TRUE
+
+/obj/item/clothing/shoes/magboots/syndie/elite
+	name = "elite magboots"
+	icon_state = "gsyndiemag"
+
+/obj/item/clothing/shoes/magboots/syndie/blred
+	name = "blood-red magboots"
+	icon_state = "brsyndiemag"
+
+/obj/item/clothing/shoes/magboots/paramedic
+	name = "paramedic magboots"
+	desc = "Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle. This ones painted in paramedic colors."
+	item_state = "para_magboots"
+	slowdown_active = 1.8
+
+/obj/item/clothing/shoes/magboots/wizard
+	name = "paramedic magboots"
+	desc = "Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle. This ones enchanted."
+	item_state = "wizmag"
+	slowdown_active = 1

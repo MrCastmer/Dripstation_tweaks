@@ -1,5 +1,12 @@
 /obj/item/clothing/gloves/color/black
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	var/fingerless_variation = /obj/item/clothing/gloves/fingerless
+
+/obj/item/clothing/gloves/color/black/forensic
+	icon = 'icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/black/goliath
+	icon = 'icons/obj/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/color/black/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
@@ -11,14 +18,25 @@
 			qdel(src)
 	..()
 
+/obj/item/clothing/gloves/combat
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+	icon_state = "combat"
+
+/obj/item/clothing/gloves/color/latex
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+
+/obj/item/clothing/gloves/color/captain/black
+	desc = "Regal black gloves, with a nice silver trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
+	icon_state = "silver"
 
 /obj/item/clothing/gloves/color/black/tactifool
 	name = "tactical black gloves"
 	desc = "Standart tactical gloves issued for use with security low rank personnel."
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
-	icon_state = "combat"
-	item_state = "black_tactifool"
+	icon_state = "black_tactifool"
 	can_be_cut = 1
 	fingerless_variation = /obj/item/clothing/gloves/fingerless/tactifool
 
@@ -27,8 +45,7 @@
 	desc = "Plain tactical gloves issued for use with security low rank personnel. These are without fingertips."
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
-	icon_state = "combat_fingerless"
-	item_state = "fingerless_tactifool"
+	icon_state = "fingerless_tactifool"
 
 /obj/item/clothing/gloves/fingerless/bigboss/combat
 	name = "\improper tactical fingerless gloves"
@@ -36,7 +53,6 @@
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "combat_fingerless"
-	item_state = "tacticalgloves"
 	cold_protection = ARMS|HANDS
 	heat_protection = ARMS|HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT

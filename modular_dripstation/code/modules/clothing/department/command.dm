@@ -226,6 +226,75 @@
 	armor = list(MELEE = 5, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 0, BIO = 50, FIRE = 20, ACID = 10)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
+/////////NT Rep
+/obj/item/clothing/under/rank/centcom_officer/ntrep
+	desc = "Gold trim on space-black cloth, this uniform bears [station_name()] on the left shoulder."
+	name = "\improper Formal Nanotrasen Representative's Uniform"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
+
+
+/////////Magistrate
+/obj/item/clothing/under/rank/centcom_officer/magistrate
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears \"N.S.S. Cyberiad\" on the left shoulder."
+	name = "\improper Formal Magistrate's Uniform"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
+
+////////Blue Shield////////
+/obj/item/clothing/suit/armor/vest/blueshield
+	name = "blueshield security armor"
+	desc = "An armored vest with the badge of a Blueshield Lieutenant."
+	icon_state = "armor_bs"
+
+/obj/item/clothing/suit/armor/bulletproof/blueshield
+	name = "blueshield bulletproof armor"
+	desc = "An armored bulletproof vest with the badge of a Blueshield Lieutenant."
+	icon_state = "bulletproof_bs"
+
+/obj/item/clothing/suit/storage/blueshield
+	name = "blueshield coat"
+	desc = "NT deluxe ripoff. You finally have your own coat."
+	icon_state = "blueshieldcoat"
+	item_state = "blueshieldcoat"
+	blood_overlay_type = "coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	allowed = list(/obj/item/gun/energy,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/restraints/handcuffs,/obj/item/flashlight/seclite,/obj/item/melee/classic_baton/telescopic)
+	armor = list(MELEE = 25, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 0, BIO = 20, RAD = 0, FIRE = 20, ACID = 45, WOUND = 10)
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+	name = "blueshield's uniform"
+	desc = "A short-sleeved black uniform, paired with grey digital-camo cargo pants, all made out of a sturdy material. Blueshield standard issue."
+	icon_state = "blueshield"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/blueshield.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/blueshield.dmi'
+
+/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield/skirt
+	name = "blueshield's skirt"
+	desc = "A short, black and grey with blue markings skirted uniform. For the feminine Blueshield."
+	icon_state = "blueshield_skirt"
+
+/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+	name = "blueshield's jumpsuit"
+	desc = "A short-sleeved grey jumpsuit, paired with grey digital-camo cargo pants, all made out of a sturdy material. Blueshield ERT-style."
+	icon_state = "shield_urban"
+
+/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+	name = "blueshield's turtle"
+	desc = "A short-sleeved grey turtle, paired with grey digital-camo cargo pants, all made out of a sturdy material. Blueshield tactical-style."
+	icon_state = "blueshield_turtle_grey"
+
+/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+	name = "blueshield's skirtle"
+	desc = "A short, black and grey with blue markings skirted tactical skirtle. For the feminine Blueshield."
+	icon_state = "blueshield_turtle_grey_skirt"
+
+/obj/item/clothing/head/beret/blueshield
+	name = "blueshield bulletproof armor"
+	desc = "An armored bulletproof vest with the badge of a Blueshield Lieutenant."
+	icon_state = "bulletproof_bs"
 
 ////////Formal coat////////
 /obj/item/clothing/suit/toggle/capformal
