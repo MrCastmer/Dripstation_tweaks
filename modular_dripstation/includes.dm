@@ -77,6 +77,7 @@
 #include "code\modules\clothing\backpacks.dm"
 #include "code\modules\clothing\belt.dm"
 #include "code\modules\clothing\mask.dm"
+#include "code\modules\clothing\corporate.dm"
 #include "code\modules\clothing\department\security.dm"
 #include "code\modules\clothing\department\command.dm"
 #include "code\modules\clothing\department\research.dm"
