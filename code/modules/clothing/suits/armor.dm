@@ -463,6 +463,7 @@
 
 	var/obj/item/kevlar_plating/K = I
 
+	icon_state = "[initial(icon_state)]-[K.icon_state]"		//dripstation edit
 	name = "[K.name_set] plated armor vest"
 	slowdown = K.slowdown_set
 
