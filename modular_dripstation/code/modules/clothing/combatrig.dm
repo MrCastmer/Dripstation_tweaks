@@ -328,6 +328,7 @@
 	icon_state = "bloodred_helm"
 	item_state = "bloodred_helm"
 	hardsuit_type = "bloodred"
+	light_range = 6
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	toggled_for_heat_protecting = FALSE
@@ -555,6 +556,7 @@
 	icon_state = "sindengi_helm"
 	item_state = "sindengi_helm"
 	hardsuit_type = "sindengi"
+	light_range = 6
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 15, ELECTRIC = 100)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	heat_protection = HEAD
@@ -659,6 +661,7 @@
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for mining operations in hasard areas."
 	icon_state = "mining_helm"
 	item_state = "mining_helm"
+	light_range = 7
 	hardsuit_type = "mining"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
@@ -694,6 +697,7 @@
 	icon_state = "sec_helm"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
+	light_range = 5
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for security operations in hasard AO`s."
 	armor = list(MELEE = 30, BULLET = 25, LASER = 30, ENERGY = 10, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
@@ -788,6 +792,7 @@
 	icon_state = "bloodred_helm"
 	item_state = "bloodred_helm"
 	hardsuit_type = "bloodred"
+	light_range = 6
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	toggled_for_heat_protecting = FALSE
@@ -986,6 +991,7 @@
 	icon_state = "relite_helm"
 	item_state = "relite_helm"
 	hardsuit_type = "relite"
+	light_range = 6
 	armor = list(MELEE = 60, BULLET = 60, LASER = 50, ENERGY = 35, BOMB = 90, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -1187,6 +1193,7 @@
 	icon_state = "sbo_helm"
 	item_state = "sbo_helm"
 	hardsuit_type = "sbo"
+	light_range = 7
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/sbo
 	name = "\improper Syndicate Black Ops syndicate RIG"

@@ -15,7 +15,7 @@
 /obj/item/clothing/under/rank/centcom_officer
 	icon_state = "centcom_officer"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/nanotrasen.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/uniform/corporate/nanotrasen.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/nanotrasen.dmi'
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 20, ACID = 30)
 
 /obj/item/clothing/under/rank/centcom_officer/skirt
@@ -75,13 +75,15 @@
 	icon_state = "centcom_shield_turtle_skirt"
 
 /obj/item/clothing/under/rank/centcom_officer/specops_blue
-	desc = "It's a turtleneck worn by NT Special Operations Department."
+	desc = "It's a turtleneck worn by operatives of NT Special Operations Department. It's got exotic materials for protection."
 	name = "\improper NT SOD Officer's turtleneck"
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon_state = "specops_blue"
 
 /obj/item/clothing/under/rank/centcom_officer/specops_combat
-	desc = "It's a black turtleneck worn by NT Special Operations Department."
-	name = "\improper NT SOD Officer's turtleneck"
+	desc = "It's a black turtleneck worn by elite of NT Special Operations Department. It's got exotic materials for protection."
+	name = "\improper NT Black Ops Officer's turtleneck"
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon_state = "specops_combat"
 
 /obj/item/clothing/under/rank/centcom_commander
@@ -90,22 +92,25 @@
 	icon_state = "naval_fleet_captain"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 20, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/nanotrasen.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/uniform/corporate/nanotrasen.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/nanotrasen.dmi'
 
 /obj/item/clothing/under/rank/centcom_commander/ensign
 	icon_state = "naval_ensign"
 
 /obj/item/clothing/under/rank/centcom_admiral
-	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Captain\". Worn exclusively by officers of the Nanotrasen Navy. It's got exotic materials for protection."
-	name = "\improper Nanotrasen Naval Captain Uniform"
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Admiral\". Worn exclusively by officers of the Nanotrasen Navy. It's got exotic materials for protection."
+	name = "\improper Nanotrasen Naval Admiral Uniform"
 	icon_state = "naval_fleet_admiral"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 40, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/nanotrasen.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/uniform/corporate/nanotrasen.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/nanotrasen.dmi'
 
 /obj/item/clothing/under/rank/centcom_admiral/grand
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Grand Admiral\". Worn exclusively by officers of the Nanotrasen Navy. It's got exotic materials for protection."
+	name = "\improper Nanotrasen Naval Grand Admiral Uniform"
 	icon_state = "naval_command"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 100, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
+
 
 
 ////Helldivers////

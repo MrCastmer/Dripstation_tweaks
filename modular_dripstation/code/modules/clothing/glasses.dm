@@ -21,9 +21,9 @@
 	var/can_toggle = TRUE
 	var/hud_type = null
 	var/on = FALSE
-	var/darkness_view_off = 0
+	var/lighting_cutoff_off = null
 	var/flash_protect_off = 2
-	var/lighting_alpha_off = LIGHTING_PLANE_ALPHA_INVISIBLE
+	var/color_cutoffs_off = null
 	var/glass_colour_type_off = null
 
 /datum/action/item_action/toggle_nvg
@@ -60,18 +60,18 @@
 	if(can_toggle)
 		on = FALSE
 		actions_types = list(/datum/action/item_action/toggle_nvg)
-		darkness_view = darkness_view_off
+		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
-		lighting_alpha = lighting_alpha_off
+		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		update_appearance(UPDATE_ICON)
 
 /obj/item/clothing/glasses/night/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if(slot == ITEM_SLOT_EYES && on)
-		darkness_view = initial(darkness_view)
+		lighting_cutoff = initial(lighting_cutoff)
 		flash_protect = initial(flash_protect)
-		lighting_alpha = initial(lighting_alpha)
+		color_cutoffs = initial(color_cutoffs)
 		glass_colour_type = initial(glass_colour_type)
 		if(hud_type)
 			var/datum/atom_hud/H = GLOB.huds[hud_type]
@@ -81,9 +81,9 @@
 	..()
 	if(istype(user) && user.glasses == src && on)
 		on = FALSE
-		darkness_view = darkness_view_off
+		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
-		lighting_alpha = lighting_alpha_off
+		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		if(hud_type)
 			var/datum/atom_hud/H = GLOB.huds[hud_type]
@@ -99,17 +99,17 @@
 		return
 	on = !on
 	if(on)
-		darkness_view = initial(darkness_view)
+		lighting_cutoff = initial(lighting_cutoff)
 		flash_protect = initial(flash_protect)
-		lighting_alpha = initial(lighting_alpha)
+		color_cutoffs = initial(color_cutoffs)
 		glass_colour_type = initial(glass_colour_type)
 		if(hud_type && slot == ITEM_SLOT_EYES && on)
 			var/datum/atom_hud/H = GLOB.huds[hud_type]
 			H.show_to(user)
 	else
-		darkness_view = darkness_view_off
+		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
-		lighting_alpha = lighting_alpha_off
+		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		if(hud_type)
 			var/datum/atom_hud/H = GLOB.huds[hud_type]
@@ -146,9 +146,9 @@
 	icon_state = "tact-thermal_nvg"
 	var/can_toggle = TRUE
 	var/on = FALSE
-	var/darkness_view_off = 0
+	var/lighting_cutoff_off = 0
 	var/flash_protect_off = 2
-	var/lighting_alpha_off = LIGHTING_PLANE_ALPHA_INVISIBLE
+	var/color_cutoffs_off = null
 	var/glass_colour_type_off = null
 	var/vision_flags_off = null
 
@@ -169,9 +169,9 @@
 	if(can_toggle)
 		on = FALSE
 		actions_types = list(/datum/action/item_action/toggle_nvg)
-		darkness_view = darkness_view_off
+		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
-		lighting_alpha = lighting_alpha_off
+		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		vision_flags = vision_flags_off
 		update_appearance(UPDATE_ICON)
@@ -179,9 +179,9 @@
 /obj/item/clothing/glasses/thermal/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if(can_toggle && slot == ITEM_SLOT_EYES && on)
-		darkness_view = initial(darkness_view)
+		lighting_cutoff = initial(lighting_cutoff)
 		flash_protect = initial(flash_protect)
-		lighting_alpha = initial(lighting_alpha)
+		color_cutoffs = initial(color_cutoffs)
 		glass_colour_type = initial(glass_colour_type)
 		vision_flags = initial(vision_flags)
 
@@ -189,9 +189,9 @@
 	..()
 	if(can_toggle && istype(user) && user.glasses == src && on)
 		on = FALSE
-		darkness_view = darkness_view_off
+		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
-		lighting_alpha = lighting_alpha_off
+		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		vision_flags = vision_flags_off
 
@@ -205,15 +205,15 @@
 		return
 	on = !on
 	if(on)
-		darkness_view = initial(darkness_view)
+		lighting_cutoff = initial(lighting_cutoff)
 		flash_protect = initial(flash_protect)
-		lighting_alpha = initial(lighting_alpha)
+		color_cutoffs = initial(color_cutoffs)
 		glass_colour_type = initial(glass_colour_type)
 		vision_flags = initial(vision_flags)
 	else
-		darkness_view = darkness_view_off
+		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
-		lighting_alpha = lighting_alpha_off
+		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		vision_flags = vision_flags_off
 

@@ -1,4 +1,7 @@
 //override light toggle
+/obj/item/clothing/head/helmet/space/hardsuit
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+
 /obj/item/clothing/head/helmet/space/hardsuit/attack_self(mob/user)
 	on = !on
 	icon_state = "[hardsuit_type]_helm[on]"
@@ -166,6 +169,7 @@
 	icon_state = "sec_helm0"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
+	light_range = 5
 
 /obj/item/clothing/suit/space/hardsuit/security
 	desc = "A standart issue security suit that protects against hazardous, low pressure environments. Has an additional layer of armor."

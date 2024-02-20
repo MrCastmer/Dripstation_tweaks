@@ -228,18 +228,23 @@
 
 /////////NT Rep
 /obj/item/clothing/under/rank/centcom_officer/ntrep
-	desc = "Gold trim on space-black cloth, this uniform bears [station_name()] on the left shoulder."
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears station name on the left shoulder."
 	name = "\improper Formal Nanotrasen Representative's Uniform"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
 
+/obj/item/clothing/under/rank/centcom_officer/ntrep/Initialize()
+	desc = "Gold trim on space-black cloth, this uniform bears [station_name()] on the left shoulder."
 
 /////////Magistrate
 /obj/item/clothing/under/rank/centcom_officer/magistrate
-	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears \"N.S.S. Cyberiad\" on the left shoulder."
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears station name on the left shoulder."
 	name = "\improper Formal Magistrate's Uniform"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
+
+/obj/item/clothing/under/rank/centcom_officer/magistrate/Initialize()
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears [station_name()] on the left shoulder."
 
 ////////Blue Shield////////
 /obj/item/clothing/suit/armor/vest/blueshield
@@ -258,11 +263,11 @@
 	icon_state = "blueshieldcoat"
 	item_state = "blueshieldcoat"
 	blood_overlay_type = "coat"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	allowed = list(/obj/item/gun/energy,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/restraints/handcuffs,/obj/item/flashlight/seclite,/obj/item/melee/classic_baton/telescopic)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	allowed = list(/obj/item/gun/energy,/obj/item/reagent_containers/spray/pepper,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/restraints/handcuffs,/obj/item/flashlight/seclite,/obj/item/melee/classic_baton/telescopic)
 	armor = list(MELEE = 25, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 0, BIO = 20, RAD = 0, FIRE = 20, ACID = 45, WOUND = 10)
-	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	heat_protection = CHEST|GROIN|LEGS|ARMS
 
 /obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
 	name = "blueshield's uniform"
