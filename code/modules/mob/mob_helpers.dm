@@ -56,6 +56,7 @@
   *
   * This proc is dangerously laggy, avoid it or die
   */
+/* //Dripstation edit - russian language support
 /proc/stars(n, pr)
 	n = html_encode(n)
 	if (pr == null)
@@ -233,6 +234,7 @@
 
 
 
+*/
 ///Shake the camera of the person viewing the mob SO REAL!
 /proc/shake_camera(mob/M, duration, strength=1)
 	if(!M || !M.client || duration < 1)
@@ -612,3 +614,8 @@
 		if(chosen_bodypart.status < BODYPART_ROBOTIC)
 			amount += chosen_bodypart.burn_dam
 	return amount
+
+/mob/proc/default_lighting_cutoff()
+	if(client?.combo_hud_enabled && client?.prefs?.toggles & COMBOHUD_LIGHTING)
+		return LIGHTING_CUTOFF_FULLBRIGHT
+	return initial(lighting_cutoff)
