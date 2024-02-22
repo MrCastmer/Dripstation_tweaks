@@ -37,7 +37,6 @@
 /datum/martial_art/trained/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!(can_use(A) || can_use(D)))
 		return FALSE
-	log_combat(A, D, "attacked (Trained Combat)")
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	var/picked_hit_type = pick("punched effectively", "kicked effectively", "tacticooled")
 	var/effective_damage = A.get_punchdamagehigh()
@@ -45,7 +44,6 @@
 	playsound(get_turf(D), 'sound/weapons/cqchit1.ogg', 50, 1, -1)
 	D.visible_message(span_danger("[A] [picked_hit_type] [D]!"), \
 					  span_userdanger("[A] [picked_hit_type] you!"))
-	D.Immobilize(15)
 	log_combat(A, D, "[picked_hit_type] (Trained Combat)")
 	if(!(A.mobility_flags & MOBILITY_STAND) && (D.mobility_flags & MOBILITY_STAND))
 		D.visible_message("<span class='warning'>[A] leg sweeps [D]!", \
@@ -54,7 +52,7 @@
 		D.Knockdown(30)
 		A.set_resting(FALSE)
 		A.SetKnockdown(0)
-		log_combat(A, D, "sweeped (Trained Combat)")
+		log_combat(A, D, "leg sweeped (Trained Combat)")
 	return TRUE
 
 ///CQC grab, no stun
