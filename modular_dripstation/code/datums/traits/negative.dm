@@ -28,3 +28,25 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/very_bad_touch)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/bad_touch)
+
+/datum/quirk/prosthetic_limb
+	value = -0.5
+
+/datum/quirk/prosthetic_limb/check_quirk(datum/preferences/prefs)
+	var/species_type = prefs.read_preference(/datum/preference/choiced/species)
+
+	if(species_type == /datum/species/ipc) // IPCs are already cybernetic
+		return "You already have cybernetic limbs!"
+	
+	var/datum/species/species = new species_type
+	var/list/temp = organ_list.Copy()
+	if(TRAIT_TOXINLOVER in species.inherent_traits)
+		temp -= ORGAN_SLOT_LIVER
+	if(TRAIT_NOBREATH in species.inherent_traits)
+		temp -= ORGAN_SLOT_LUNGS
+	if(NOBLOOD in species.species_traits)
+		temp -= ORGAN_SLOT_HEART
+	if(temp.len <= 0)
+		return "You have no organs to replace!"
+
+	return FALSE
