@@ -30,7 +30,7 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/bad_touch)
 
 /datum/quirk/prosthetic_limb
-	value = -0.5
+	value = -1
 
 /datum/quirk/prosthetic_limb/check_quirk(datum/preferences/prefs)
 	var/species_type = prefs.read_preference(/datum/preference/choiced/species)
@@ -38,3 +38,15 @@
 	if(species_type == /datum/species/ipc) // IPCs are already cybernetic
 		return "You already have cybernetic limbs!"
 	return FALSE
+
+/datum/quirk/prosthetic_limb/left_arm
+	value = -0.5
+
+/datum/quirk/prosthetic_limb/right_arm
+	value = -0.5
+
+/datum/quirk/prosthetic_limb/left_leg
+	value = -0.5
+
+/datum/quirk/prosthetic_limb/right_leg
+	value = -0.5
