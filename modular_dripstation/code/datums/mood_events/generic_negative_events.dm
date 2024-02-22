@@ -5,11 +5,11 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/bad_touch
-	description = "I don't like when people touch me."
+	description = "<span class='warning'>I don't like when people touch me.</span>\n"
 	mood_change = -3
 	timeout = 4 MINUTES
 
 /datum/mood_event/very_bad_touch
-	description = "I really don't like when people touch me."
+	description = "<span class='warning'>I really don't like when people touch me.</span>\n"
 	mood_change = -5
 	timeout = 4 MINUTES
