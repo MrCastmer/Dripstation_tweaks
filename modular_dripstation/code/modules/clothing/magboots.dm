@@ -30,8 +30,8 @@
 	name = "SWAT magboots"
 	desc = "High speed, no drag combat-edition magboots issued by Nanotrasen Black Ops for extravehicular missions."
 	armor = list(MELEE = 40, BULLET = 30, LASER = 25, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 30, FIRE = 90, ACID = 50, ELECTRIC = 100)
-	icon_state = "cmagboots0"
-	magboot_state = "cmagboots"
+	icon_state = "advcmag0"
+	magboot_state = "advcmag"
 	slowdown_active = 0.5
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
@@ -46,6 +46,8 @@
 	name = "Syndicate Black Ops magboots"
 	desc = "High speed, no drag combat-edition magboots issued by Syndicate Black Ops for extravehicular missions. DEFINITELY not stolen from a rival corporation."
 	slowdown_active = 0.8
+	icon_state = "advsyndiemag0"
+	magboot_state = "advsyndiemag"
 
 /obj/item/clothing/shoes/magboots/security/captain
 	desc = "A relic predating magboots, these ornate greaves have retractable spikes in the soles to maintain grip."
