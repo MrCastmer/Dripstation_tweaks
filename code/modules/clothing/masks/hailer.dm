@@ -35,7 +35,7 @@
 	)
 	//dripstation edit start
 	var/static/list/sechailer_voicelines = list(
-		"Принято" = 'sound/voice/cpvoicelines/affirmative.ogg',
+		"Принял" = 'sound/voice/cpvoicelines/affirmative.ogg',
 		"Понял" = 'sound/voice/cpvoicelines/copy.ogg',
 		"Можешь идти" = 'sound/voice/cpvoicelines/allrightyoucango.ogg',
 		"Поддержка" = 'sound/voice/cpvoicelines/backup.ogg',
@@ -45,29 +45,29 @@
 		"Пошёл прочь" = 'sound/voice/cpvoicelines/getoutofhere.ogg',
 		"Граната" = 'sound/voice/cpvoicelines/grenade.ogg',
 		"Помощь" = 'sound/voice/cpvoicelines/help.ogg',
-		"Hold it" = 'sound/voice/cpvoicelines/holdit.ogg',
+		"Стоп" = 'sound/voice/cpvoicelines/holdit.ogg',
 		"На позиции" = 'sound/voice/cpvoicelines/inposition.ogg',
-		"Я сказал проходи" = 'sound/voice/cpvoicelines/isaidmovealong.ogg',
-		"Иди куда шёл" = 'sound/voice/cpvoicelines/keepmoving.ogg',
-		"Бдительность" = 'sound/voice/cpvoicelines/Lookout.ogg',
+		"Проходи" = 'sound/voice/cpvoicelines/isaidmovealong.ogg',
+		"Иди" = 'sound/voice/cpvoicelines/keepmoving.ogg',
+		"Бдительно" = 'sound/voice/cpvoicelines/Lookout.ogg',
 		"Проходи мимо" = 'sound/voice/cpvoicelines/movealong.ogg',
 		"Повернулся" = 'sound/voice/cpvoicelines/movebackrightnow.ogg',
 		"Шевелись" = 'sound/voice/cpvoicelines/moveit2.ogg',
 		"Пошёл отсюда" = 'sound/voice/cpvoicelines/nowgetoutofhere.ogg',
 		"Подними" = 'sound/voice/cpvoicelines/pickupthecan1.ogg',
-		"Я сказал подними" = 'sound/voice/cpvoicelines/pickupthecan3.ogg',
-		"Готовься к казни" = 'sound/voice/cpvoicelines/prepareforjudgement.ogg',
-		"Положи в мусорку" = 'sound/voice/cpvoicelines/putitinthetrash1.ogg',
+		"Подбери" = 'sound/voice/cpvoicelines/pickupthecan3.ogg',
+		"Казни" = 'sound/voice/cpvoicelines/prepareforjudgement.ogg',
+		"В мусорку" = 'sound/voice/cpvoicelines/putitinthetrash1.ogg',
 		"Реагирую" = 'sound/voice/cpvoicelines/responding2.ogg',
-		"Вас понял" = 'sound/voice/cpvoicelines/rodgerthat.ogg',
-		"Блядь" = 'sound/voice/cpvoicelines/shit.ogg',
+		"Принято" = 'sound/voice/cpvoicelines/rodgerthat.ogg',
+		"Бля" = 'sound/voice/cpvoicelines/shit.ogg',
 		"Пригнись" = 'sound/voice/cpvoicelines/takecover.ogg',
-		"Ты его опрокинул, подними" = 'sound/voice/cpvoicelines/youknockeditover.ogg',
-		"Ищем подозреваемого" = 'sound/voice/cpvoicelines/searchingforsuspect.ogg',
-		"Первое предупреждение, проходи мимо" = 'sound/voice/cpvoicelines/firstwarningmove.ogg',
-		"Приговор вынесен" = 'sound/voice/cpvoicelines/sentencedelivered.ogg',
-		"У меня нет слов" = 'sound/voice/cpvoicelines/issuingmalcompliantcitation.ogg',
-		"Применя" = 'sound/voice/cpvoicelines/apply.ogg',
+		"Опрокинул" = 'sound/voice/cpvoicelines/youknockeditover.ogg',
+		"Подозреваем" = 'sound/voice/cpvoicelines/searchingforsuspect.ogg',
+		"Первое предупреждение" = 'sound/voice/cpvoicelines/firstwarningmove.ogg',
+		"Приговор" = 'sound/voice/cpvoicelines/sentencedelivered.ogg',
+		"Нет слов" = 'sound/voice/cpvoicelines/issuingmalcompliantcitation.ogg',
+		"Применяю" = 'sound/voice/cpvoicelines/apply.ogg',
 		"Хах" = 'sound/voice/cpvoicelines/chuckle.ogg',
 	)
 	var/static/list/speach_on_sounds = list(
@@ -195,7 +195,7 @@
 	for(var/lines in sechailer_voicelines)
 		if(findtext(full_message, lines))
 			playsound(source, sechailer_voicelines[lines], 50, FALSE)
-			continue // only play the first. dripstation edit
+			return // only play the first.
 	sleep(0.2 SECONDS)								//dripstation edit
 	playsound(loc, pick(speach_off_sounds), 50, 0)	//dripstation edit
 
