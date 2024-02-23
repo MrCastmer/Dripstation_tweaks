@@ -176,6 +176,7 @@
 					screen_obj.color = "#2eeb9a"
 			break
 
+/*
 /datum/component/mood/process(delta_time) //Called on SSmood process
 	var/mob/living/owner = parent
 	if(!owner)
@@ -259,6 +260,7 @@
 			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY, TRUE)
 			sanity_level = 1
 	update_mood_icon()
+*/
 
 /datum/component/mood/proc/setInsanityEffect(newval)
 	if(newval == insanity_effect)
@@ -314,7 +316,7 @@
 	screen_obj_sanity = new
 	hud.infodisplay += screen_obj
 	hud.infodisplay += screen_obj_sanity
-	RegisterSignal(hud, COMSIG_PARENT_QDELETING, PROC_REF(unmodify_hud))
+	RegisterSignal(hud, COMSIG_QDELETING, PROC_REF(unmodify_hud))
 	RegisterSignal(screen_obj, COMSIG_CLICK, PROC_REF(hud_click))
 
 /datum/component/mood/proc/unmodify_hud(datum/source)
