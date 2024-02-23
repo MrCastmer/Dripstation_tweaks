@@ -1748,8 +1748,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 						if(O.flags_1 & ON_BORDER_1 && O.dir == turn(shove_dir, 180) && O.density)
 							directional_blocked = TRUE
 							break
-			if(!bothstanding || directional_blocked)
-/*				var/obj/item/I = target.get_active_held_item()	//dripstation edit start
+			if((!bothstanding || directional_blocked) && (target.mobility_flags & MOBILITY_STAND))
+/*				//dripstation edit start
+				var/obj/item/I = target.get_active_held_item()
 				if(target.dropItemToGround(I))
 					user.visible_message(span_danger("[user.name] shoves [target.name], disarming them!"),
 						span_danger("You shove [target.name], disarming them!"), null, COMBAT_MESSAGE_RANGE)
