@@ -527,7 +527,6 @@
 	icon_state = "holocane"
 	item_state = "holocane"
 	force = 0
-	w_class_on = WEIGHT_CLASS_NORMAL
 	attack_verb = list("hit", "poked")
 
 /obj/item/melee/hardlight_cane/Initialize(mapload)

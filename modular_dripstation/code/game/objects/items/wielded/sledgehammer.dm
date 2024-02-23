@@ -1,3 +1,16 @@
+/obj/item/melee/sledgehammer
+	var/force_wielded_twohand = 15
+
+/obj/item/melee/sledgehammer/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/two_handed, \
+		force_wielded = force_wielded_twohand, \
+		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
+		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
+		require_twohands = TRUE, \
+		wielded_stats = list(SWING_SPEED = 1.5, ENCUMBRANCE = 0.5, ENCUMBRANCE_TIME = 1 SECONDS, REACH = 1, DAMAGE_LOW = 0, DAMAGE_HIGH = 0), \
+	)
+
 /obj/item/melee/sledgehammer/security
 	name = "/improper security kuvalda"
 	desc = "Tactical version of sledgehammer with more unbalanced weight. Was designed to harm walls, not crewmembers."
@@ -13,18 +26,7 @@
 	throw_range = 3 		//Doesn't throw very far
 	wound_bonus = -10		//So it`s somewhat combat
 	bare_wound_bonus = 20	//So it`s somewhat combat
-
-/obj/item/melee/sledgehammer/security/Initialize(mapload)
-	. = ..()
-	var/datum/component/two_handed/TH_old = GetComponent(/datum/component/two_handed)
-	TH_old.RemoveComponent()
-	AddComponent(/datum/component/two_handed, \
-		force_wielded = 25, \
-		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
-		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
-		require_twohands = TRUE, \
-		wielded_stats = list(SWING_SPEED = 1.5, ENCUMBRANCE = 0.5, ENCUMBRANCE_TIME = 1 SECONDS, REACH = 1, DAMAGE_LOW = 0, DAMAGE_HIGH = 0), \
-	)
+	force_wielded_twohand = 25
 
 /obj/item/melee/sledgehammer/security/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
