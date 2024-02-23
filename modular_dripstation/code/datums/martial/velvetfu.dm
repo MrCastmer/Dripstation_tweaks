@@ -224,10 +224,10 @@
 	if(check_streak(A,D))
 		return TRUE
 	log_combat(A, D, "disarmed (Velvet-Fu)")
-	A.do_attack_animation(D)
+	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	var/picked_hit_type = "side kick"
 	var/bonus_damage = 10 // Kicking deals more damage
-	if(D.body_position == LYING_DOWN)
+	if(!(D.mobility_flags & MOBILITY_STAND)&& (A.mobility_flags & MOBILITY_STAND))
 		bonus_damage += 8
 		picked_hit_type = "iron hoov"
 	D.apply_damage(bonus_damage, STAMINA)
@@ -251,7 +251,7 @@
 	if(check_streak(A,D))
 		return TRUE
 	log_combat(A, D, "grabbed (Velvet-Fu)")
-	A.do_attack_animation(D)
+	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	var/picked_hit_type = pick("ascending claw", "descending claw")
 	D.apply_damage(10, STAMINA)
 	D.visible_message(
@@ -272,7 +272,7 @@
 	if(check_streak(A,D))
 		return TRUE
 	log_combat(A, D, "harmed (Velvet-Fu)")
-	A.do_attack_animation(D)
+	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.apply_damage(10, BRUTE)
 	D.visible_message(
 		span_danger("[A] silken wrists [D]!"),
@@ -290,7 +290,7 @@
 	set category = "VelvetFu"
 
 	to_chat(usr, span_notice("<b><i>You try to remember the VHS tapes of Velvet-Fu...</i></b>\n\
-	Iron Hoof: Disarm/Grab/Harm while opponent is down, though Disarm works best.\n\
+	Iron Hoof: Disarm while opponent is down.\n\
 	Flying Axe Kick: Harm Disarm. Deals damage and causes bleeding. Costs 50 Stamina.\n\
 	Goat Headbutt: Disarm Grab. Deals brute while stunning your opponent. Costs 20 Stamina and 18 Brute.\n\
 	Full Thrust: Grab Harm. Deals brute and has a chance to knock your opponent down. Costs 60 Stamina.\n\
