@@ -336,6 +336,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 				to_chat(M, span_cultlarge("\"I accept this sacrifice.\""))
 			else
 				to_chat(M, span_cultlarge("\"I accept this meager sacrifice.\""))
+		var/mob/living/carbon/carbon_user = M		//dripstation edit
+		SEND_SIGNAL(carbon_user, COMSIG_ADD_MOOD_EVENT, "geometeroffer", /datum/mood_event/sacrifice_geometer)	//dripstation edit
 
 	var/obj/item/soulstone/stone = new /obj/item/soulstone(get_turf(src))
 	if(sacrificial.mind && !sacrificial.suiciding)
@@ -525,6 +527,12 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/narsie/conceal() //can't hide this, and you wouldn't want to
 	return
 
+GLOBAL_VAR_INIT(narsie_effect_last_modified, 0)
+GLOBAL_VAR_INIT(narsie_summon_count, 0)
+/proc/set_narsie_count(new_count)
+	GLOB.narsie_summon_count = new_count
+	SEND_GLOBAL_SIGNAL(COMSIG_NARSIE_SUMMON_UPDATE, GLOB.narsie_summon_count)
+
 /obj/effect/rune/narsie/attack_hand(mob/living/user)
 	if(user.mind?.has_antag_datum(/datum/antagonist/cult/master))
 		req_cultists -= 4 //leader counts as 5 cultists if they are the invoker
@@ -681,7 +689,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	invocation = "Khari'd! Eske'te tannin!"
 	icon_state = "4"
 	color = RUNE_COLOR_DARKRED
-	CanAtmosPass = ATMOS_PASS_DENSITY
+	can_atmos_pass = ATMOS_PASS_DENSITY
 	var/datum/timedevent/density_timer
 	var/recharging = FALSE
 

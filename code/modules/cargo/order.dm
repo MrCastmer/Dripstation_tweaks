@@ -32,7 +32,7 @@
 	var/datum/bank_account/paying_account
 
 /datum/supply_order/New(datum/supply_pack/pack, orderer, orderer_rank, orderer_ckey, reason, paying_account, budget)
-	id = SSshuttle.ordernum++
+	id = SSshuttle.order_number++
 	src.pack = pack
 	src.orderer = orderer
 	src.orderer_rank = orderer_rank
@@ -108,7 +108,7 @@
 	if(paying_account)
 		account_holder = paying_account.account_holder
 	else
-		account_holder = "Cargo"
+		account_holder = "Cargo Budget"						//dripstation edit
 	var/obj/structure/closet/crate/C = pack.generate(A, paying_account)
 	generateManifest(C, account_holder, pack)
 	return C
