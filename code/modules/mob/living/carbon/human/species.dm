@@ -1720,7 +1720,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 						shove_on_table = TRUE
 				if(shove_on_table)
 					target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
-					to_chat(src, span_danger("You shove [target.name] onto \the table!"))
+					user.visible_message(span_danger("[user.name] shoves [target.name] onto \the table!"),
+				span_danger("You shove [target.name] onto \the table!"), null, COMBAT_MESSAGE_RANGE)
 					target.throw_at(target_shove_turf, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
 					log_combat(user, target, "shoved", "onto (table)")
 				else
@@ -1735,7 +1736,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), reset_timer)
 			log_combat(user, target, "kicks", "onto their side (paralyzing)")
 
-		if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
+		else if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
 			var/directional_blocked = FALSE
 			if(shove_dir in GLOB.cardinals) //Directional checks to make sure that we're not shoving through a windoor or something like that
 				var/target_turf = get_turf(target)
@@ -1759,7 +1760,6 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 				target.visible_message(span_danger("[user.name] shoves [target.name], knocking [target.p_them()] down!"),
 					span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
-				to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
 				log_combat(user, target, "shoved", "knocking them down")						//dripstation edit end
 			else if(bothstanding)
 				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
@@ -1768,7 +1768,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				user.visible_message(span_danger("[user.name] shoves [target.name] into [target_collateral_human.name]!"),
 					span_danger("You shove [target.name] into [target_collateral_human.name]!"), null, COMBAT_MESSAGE_RANGE)
 				log_combat(user, target, "shoved", "into [target_collateral_human.name]")
-		else
+			else
+				to_chat(user, span_danger("You try to shove [target.name], but you can`t do anything to [target.p_them()]!"))
+		else if(!shove_on_table)
 			user.visible_message(span_danger("[user.name] shoves [target.name]!"),
 				span_danger("You shove [target.name]!"), null, COMBAT_MESSAGE_RANGE)
 			var/target_held_item = target.get_active_held_item()
