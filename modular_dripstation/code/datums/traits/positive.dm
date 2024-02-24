@@ -2,7 +2,7 @@
 /datum/quirk/combattraining //low rank CQC
 	name = "Unarmed combat trainings"
 	desc = "You try to remember some basics of unarmed combat... It`s hard enough."
-	icon = "utensils"
+	icon = "chevron-up"
 	value = 6
 	medical_record_text = "During physical examination, patient was found to have muscles strengthened by years of training."
 
