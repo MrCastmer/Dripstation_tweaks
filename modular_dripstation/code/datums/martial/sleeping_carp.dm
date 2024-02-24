@@ -1,4 +1,4 @@
-block_chance = 100 //Carp evades freak shit like shoves and hands, 50% dodges other unarmed attacks
+block_chance = 90 //Carp evades freak shit like shoves and hands, 50% dodges other unarmed attacks
 
 ///Carp conter: carp evades freak shit like shoves and hands, 50% dodges other unarmed attacks
 /datum/martial_art/the_sleeping_carp/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
