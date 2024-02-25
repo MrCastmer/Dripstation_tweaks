@@ -8,4 +8,5 @@
 	)
 
 /datum/outfit/job/quartermaster
+	id_type = /obj/item/card/id/head
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1)
