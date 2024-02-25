@@ -1,4 +1,7 @@
 /obj/projectile/beam/laser/hitscan
+	tracer_type = /obj/effect/projectile/tracer/laser/hitscan
+	muzzle_type = /obj/effect/projectile/muzzle/laser/hitscan
+	impact_type = /obj/effect/projectile/impact/laser/hitscan
 	hitscan = TRUE
 	eyeblur = 0
 

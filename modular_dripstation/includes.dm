@@ -101,6 +101,7 @@
 #include "code\modules\awaymissions\mission_code\Academy.dm"
 #include "code\modules\clothing\_neck.dm"
 #include "code\game\objects\structures\crates_lockers\closets.dm"
+#include "code\game\effects\temporary_visuals\projectiles.dm"
 #include "code\modules\economy\pay_stand.dm"
 #include "code\modules\events\wizard\greentext.dm"
 #include "code\modules\research\stock_parts.dm"

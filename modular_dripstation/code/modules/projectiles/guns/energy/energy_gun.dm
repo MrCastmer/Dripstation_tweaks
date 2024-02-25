@@ -62,3 +62,8 @@
 
 /obj/item/gun/energy/e_gun/turret
 	icon = 'icons/obj/guns/energy.dmi'
+
+/obj/item/gun/energy/e_gun/stun
+	desc = "Military issue energy gun, is able to fire stun rounds."
+	desc = "The NT-ME5 hybrid energy gun is the newest generation of standardized energy equipment for use by NT private military forces. This hybrid energy gun comes equipped with two settings: disable and kill."
+	pin = /obj/item/firing_pin/implant/mindshield
