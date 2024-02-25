@@ -234,6 +234,7 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
 
 /obj/item/clothing/under/rank/centcom_officer/ntrep/Initialize()
+	. = ..()
 	desc = "Gold trim on space-black cloth, this uniform bears [station_name()] on the left shoulder."
 
 /////////Magistrate
@@ -244,6 +245,7 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
 
 /obj/item/clothing/under/rank/centcom_officer/magistrate/Initialize()
+	. = ..()
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears [station_name()] on the left shoulder."
 
 ////////Blue Shield////////
