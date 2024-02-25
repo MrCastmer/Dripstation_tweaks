@@ -23,7 +23,7 @@
 		return
 	M.show_message(span_userdanger("BANG"), MSG_AUDIBLE)
 	var/distance = max(0,get_dist(get_turf(src),T))
-	if(!distance || loc == M || loc == M.loc)	//Stop allahu akbarring rooms with this.
+	if(!distance || distance == 1 || loc == M || loc == M.loc)	//Stop allahu akbarring rooms with this. 1 tile long stun, dripstation edit
 		M.Knockdown(20 SECONDS)
 		M.soundbang_act(1, 20, 10, 15)
 		return
