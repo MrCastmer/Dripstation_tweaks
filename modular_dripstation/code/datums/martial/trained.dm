@@ -73,6 +73,8 @@
 /datum/martial_art/trained/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
 	if(!can_use(user))
 		return
+	if(!(A.mobility_flags & MOBILITY_STAND))	//counter attack stance works only when standing 
+		return
 	user.adjustStaminaLoss(35)	//Can't block forever. Not so effective as real CQC, can do it only a few times before screw up
 	user.do_attack_animation(attacker, ATTACK_EFFECT_DISARM)
 	var/obj/item/I = attacker.get_active_held_item()
