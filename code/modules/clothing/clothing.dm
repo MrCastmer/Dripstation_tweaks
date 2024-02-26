@@ -12,7 +12,7 @@
 	var/visor_flags_inv = 0		//same as visor_flags, but for flags_inv
 	var/visor_flags_cover = 0	//same as above, but for flags_cover
 //what to toggle when toggled with weldingvisortoggle()
-	var/visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | VISOR_VISIONFLAGS | VISOR_DARKNESSVIEW | VISOR_INVISVIEW
+	var/visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | VISOR_VISIONFLAGS | VISOR_INVISVIEW
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	var/alt_desc = null
@@ -25,6 +25,8 @@
 	var/blocks_shove_knockdown = FALSE //Whether wearing the clothing item blocks the ability for shove to knock down.
 
 	var/clothing_flags = NONE
+
+	var/can_be_bloody = TRUE
 
 	/// What items can be consumed to repair this clothing (must by an /obj/item/stack)
 	var/repairable_by = /obj/item/stack/sheet/cloth
@@ -61,6 +63,8 @@
 	. = ..()
 	if(ispath(pocket_storage_component_path))
 		LoadComponent(pocket_storage_component_path)
+	if(can_be_bloody && ((body_parts_covered & FEET) || (flags_inv & HIDESHOES)))
+		LoadComponent(/datum/component/bloodysoles)
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()
