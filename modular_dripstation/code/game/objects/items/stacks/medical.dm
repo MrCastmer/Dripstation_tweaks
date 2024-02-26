@@ -21,7 +21,7 @@
 	. = ..()
 	update_appearance(UPDATE_ICON)
 
-/obj/machinery/iv_drip/update_icon_state()
+/obj/item/reagent_containers/medspray/update_icon_state()
 	. = ..()
 	switch(volume)
 		if(30)
