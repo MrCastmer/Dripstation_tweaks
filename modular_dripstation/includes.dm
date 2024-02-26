@@ -137,6 +137,7 @@
 #include "code\game\objects\items\devices\laserpointer.dm"
 #include "code\game\objects\items\devices\advpinpointer.dm"
 #include "code\game\objects\items\stacks\cash.dm"
+#include "code\game\objects\items\stacks\medical.dm"
 #include "code\game\objects\items\implants\implant.dm"
 #include "code\game\objects\items\implants\implanter.dm"
 #include "code\game\objects\items\implants\implant_misc.dm"
