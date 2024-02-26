@@ -26,7 +26,7 @@
 	switch(volume)
 		if(30)
 			icon_state = "[initial(icon_state)]_full"
-        if(0)
+		if(0)
 			icon_state = "[initial(icon_state)]_empty"
-        else
+		else
 			icon_state = "[initial(icon_state)]"
