@@ -118,6 +118,11 @@
 		to_chat(user, span_notice("You attach the cutting jaws to [src]."))
 	update_appearance(UPDATE_ICON)
 
+/obj/item/construction/rcd/combat
+	name = "combat RCD"
+	delay_mod = 0.8
+	icon = 'modular_dripstation/icons/obj/tools.dmi'
+
 /obj/item/multitool/ai_detect/red
 	name = "obvious device"
 	desc = "Syndicate device disguised as a multitool. Something is definitely wrong with it."
