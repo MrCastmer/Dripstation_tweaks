@@ -106,7 +106,7 @@
 		user.visible_message("<span class='warning'>[user] invades [H]'s personal space, thrusting [src] into [H.p_their()] face insistently.</span>",
 		"<span class='warning'>You invade [H]'s personal space, thrusting [src] into [H.p_their()] face insistently. You are the law.</span>")
 
-/obj/item/badge/security/officer1/attackby(obj/item/I, mob/user, params)
+/obj/item/badge/security/cadet/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/card/id) || istype(I, /obj/item/pda))
 
 		var/obj/item/card/id/id_card = null

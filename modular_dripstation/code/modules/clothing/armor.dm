@@ -262,3 +262,19 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	armor = list(MELEE = 5, BULLET = 80, LASER = 30, ENERGY = 20, BOMB = 60, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 	strip_delay = 70
 	equip_delay_other = 50
+
+/obj/item/clothing/suit/armor/plated/attack_self(mob/user)
+	. = ..()
+	update_appearance(UPDATE_ICON)
+	user.update_inv_wear_suit()
+
+/obj/item/clothing/suit/armor/plated/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	update_appearance(UPDATE_ICON)
+	user.update_inv_wear_suit()
+
+/obj/item/clothing/suit/armor/plated/update_icon_state()
+	if(plating)
+		icon_state = "[initial(icon_state)]-[plating.icon_state]"
+	else
+		icon_state = initial(icon_state)
