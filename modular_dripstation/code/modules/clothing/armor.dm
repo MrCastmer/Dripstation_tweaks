@@ -274,6 +274,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	user.update_inv_wear_suit()
 
 /obj/item/clothing/suit/armor/plated/update_icon_state()
+	. = ..()
 	if(plating)
 		icon_state = "[initial(icon_state)]-[plating.icon_state]"
 	else
