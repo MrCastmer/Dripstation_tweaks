@@ -14,12 +14,12 @@
 		return FALSE
 
 	RegisterSignal(owner, COMSIG_LIVING_DEATH, PROC_REF(clear_staggered))
-	owner.add_movespeed_modifier(STAGGERED_SLOWDOWN_STRENGTH)
+	owner.add_movespeed_modifier(MOVESPEED_ID_STAGGERED, TRUE, 100, multiplicative_slowdown=STAGGERED_SLOWDOWN_STRENGTH)
 	return TRUE
 
 /datum/status_effect/staggered/on_remove()
 	UnregisterSignal(owner, COMSIG_LIVING_DEATH)
-	owner.remove_movespeed_modifier(STAGGERED_SLOWDOWN_STRENGTH)
+	owner.remove_movespeed_modifier(MOVESPEED_ID_STAGGERED, TRUE)
 	// Resetting both X on remove so we're back to normal
 	owner.pixel_x = owner.base_pixel_x
 

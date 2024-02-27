@@ -224,8 +224,8 @@
 			target.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 2, 10 SECONDS)
 
 		if(21 to 49) // really good hit, the target is definitely worse off here. Without positive modifiers, this is as good a tackle as you can land
-			user.visible_message(span_warning("[user] lands an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet with a passive grip!"), span_userdanger("You land an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on your feet with a passive grip!"), ignored_mobs = target)
-			to_chat(target, span_userdanger("[user] lands an expert [tackle_word] on you, knocking you down hard and maintaining a passive grab!"))
+			user.visible_message(span_warning("[user] lands an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet with a aggressive grip!"), span_userdanger("You land an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on your feet with a aggressive grip!"), ignored_mobs = target)
+			to_chat(target, span_userdanger("[user] lands an expert [tackle_word] on you, knocking you down hard and maintaining a aggressive grab!"))
 
 			// Ignore_canstun has to be true, or else a stunimmune user would stay knocked down.
 			user.SetKnockdown(0, ignore_canstun = TRUE)
@@ -236,8 +236,10 @@
 			target.Knockdown(3 SECONDS)
 			target.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 2, 10 SECONDS)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(human_sacker, TYPE_PROC_REF(/mob/living, set_pull_offsets), human_target)
-				human_sacker.grab_state = GRAB_AGGRESSIVE
+				if(!(human_sacker.pulling == human_target))
+					human_target.grabbedby(human_sacker, 1)
+				if(human_sacker.grab_state < GRAB_AGGRESSIVE)
+					human_sacker.grab_state = GRAB_AGGRESSIVE
 
 		if(50 to INFINITY) // absolutely BODIED
 			var/stamcritted_user = HAS_TRAIT_FROM(user, TRAIT_INCAPACITATED, STAMINA)
@@ -262,8 +264,10 @@
 				target.Knockdown(3 SECONDS)
 				target.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 3, 10 SECONDS)
 				if(ishuman(target) && ishuman(user))
-					INVOKE_ASYNC(human_sacker, TYPE_PROC_REF(/mob/living, set_pull_offsets), human_target)
-				human_sacker.grab_state = GRAB_AGGRESSIVE
+					if(!(human_sacker.pulling == human_target))
+						human_target.grabbedby(human_sacker, 1)
+					if(human_sacker.grab_state < GRAB_AGGRESSIVE)
+						human_sacker.grab_state = GRAB_AGGRESSIVE
 
 /**
  * Our neutral tackling outcome.
@@ -600,7 +604,7 @@
 	if(W.type in list(/obj/structure/window, /obj/structure/window/fulltile, /obj/structure/window/unanchored, /obj/structure/window/fulltile/unanchored)) // boring unreinforced windows
 		for(var/i in 1 to speed)
 			var/obj/item/shard/shard = new /obj/item/shard(get_turf(user))
-			shard.embedding = list(embed_chance = 100, ignore_throwspeed_threshold = TRUE, impact_pain_mult=3, pain_chance=5)
+			shard.embedding = shard.embedding.setRating(embed_chance = 100, embedded_ignore_throwspeed_threshold = TRUE, embedded_unsafe_removal_time = 1 SECONDS, embedded_pain_multiplier = 3, embedded_impact_pain_multiplier=1, embedded_pain_chance = 4, embedded_bleed_rate = 0.5)
 			//shard.updateEmbedding()
 			user.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
 			shard.embedding = null

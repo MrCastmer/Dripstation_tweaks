@@ -158,6 +158,14 @@
 	if(H.get_item_by_slot(ITEM_SLOT_GLOVES) == src)
 		QDEL_NULL(tackler)
 
+/obj/item/clothing/gloves/tackler/security
+	name = "security gripper gloves"
+	desc = "Special gloves that manipulate the blood vessels in the wearer's hands, granting them the ability to launch headfirst into walls. Fireproof to boot!"
+	cold_protection = HANDS
+	heat_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+
 /obj/item/clothing/gloves/tackler/tactical
 	name = "tactical gripper fingerless gloves"
 	desc = "Special gloves that manipulate the blood vessels on insane level and give the user an edge in close combat."
