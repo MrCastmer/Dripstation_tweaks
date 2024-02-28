@@ -44,7 +44,7 @@
 
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large/redpill/attack(mob/living/M, mob/user)
 	. = ..()
-	if(reagents.total_volume)
+	if(reagents.total_volume && istype(M, /mob/living/carbon/human))
 		var/enlightenment = pick(strings(REDPILL_FILE, "redpill_questions"))
 		M.forcesay(enlightenment)
 
