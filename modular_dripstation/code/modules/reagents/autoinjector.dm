@@ -46,7 +46,7 @@
 	. = ..()
 	if(reagents.total_volume)
 		var/enlightenment = pick(strings(REDPILL_FILE, "redpill_questions"))
-		H.forcesay(enlightenment)
+		M.forcesay(enlightenment)
 
 /obj/item/reagent_containers/autoinjector/medipen/ekit/traitor
 	name = "syndicate emergency autoinjector"
