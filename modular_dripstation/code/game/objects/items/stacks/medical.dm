@@ -2,7 +2,7 @@
 	icon = 'modular_dripstation/icons/obj/aid.dmi'
 
 /obj/item/stack/medical/gauze/improvised
-	icon = 'icons/obj/stack_medical.dmi'
+	icon_state = "improvised_gauze"
 
 /obj/item/stack/medical/bruise_pack
 	icon = 'modular_dripstation/icons/obj/aid.dmi'
