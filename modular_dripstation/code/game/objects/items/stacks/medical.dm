@@ -1,5 +1,12 @@
 /obj/item/stack/medical/gauze
 	icon = 'modular_dripstation/icons/obj/aid.dmi'
+	max_amount = 6
+	amount = 6
+
+/obj/item/stack/medical/gauze/twelve
+	desc = "A roll of elastic cloth, perfect for stabilizing all kinds of wounds, from cuts and burns, to broken bones. Surprisingly there's a lot more packed than there should be."
+	max_amount = 12
+	amount = 12
 
 /obj/item/stack/medical/gauze/improvised
 	icon_state = "improvised_gauze"
