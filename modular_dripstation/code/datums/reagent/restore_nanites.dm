@@ -1,3 +1,6 @@
+/datum/reagent/medicine/syndicate_nanites //Used exclusively by Syndicate medical cyborgs
+	name = "Restorative Nanite Serum"
+
 /datum/reagent/medicine/coagulant/blood_restoring_nanites
 	name = "Blood Regeneration Nanite Serum"
 	description = "A serum of nanites capable of coagulant wounds and restore blood volume to safe levels."
@@ -5,19 +8,29 @@
 	can_synth = FALSE
 	clot_rate = 0.5
 	passive_bleed_modifier = 0.5
-	overdose_threshold = null
+	reagent_state = SOLID
+	color = "#555555"
+	overdose_threshold = 30
 
 /datum/reagent/medicine/coagulant/blood_restoring_nanites/on_mob_life(mob/living/carbon/M)
 	if(M.blood_volume < BLOOD_VOLUME_SAFE(M))
 		M.blood_volume += 2
 
+/datum/reagent/medicine/coagulant/blood_restoring_nanites/overdose_process(mob/living/carbon/M) //wtb flavortext messages that hint that you're vomitting up robots
+	if(prob(25))
+		M.reagents.remove_reagent(type, metabolization_rate*15) // ~5 units at a rate of 0.4 but i wanted a nice number in code
+		M.vomit(20) // nanite safety protocols make your body expel them to prevent harmies
+	..()
+	. = 1
 
 /datum/reagent/medicine/bone_restoring_nanites
 	name = "Bone Restoration Nanite Serum"
 	description = "A serum of nanites capable of coagulant wounds and restore blood volume to safe levels."
 	taste_description = "a bunch of tiny robots"
 	can_synth = FALSE
-	overdose_threshold = null
+	reagent_state = SOLID
+	color = "#555555"
+	overdose_threshold = 30
 
 /datum/reagent/medicine/bone_restoring_nanites/on_mob_life(mob/living/carbon/C)
 	for(var/X in C.bodyparts)
@@ -42,12 +55,21 @@
 					C.AdjustUnconscious(12 SECONDS)
 			W.remove_wound()
 
+/datum/reagent/medicine/bone_restoring_nanites/overdose_process(mob/living/carbon/M) //wtb flavortext messages that hint that you're vomitting up robots
+	if(prob(25))
+		M.reagents.remove_reagent(type, metabolization_rate*15) // ~5 units at a rate of 0.4 but i wanted a nice number in code
+		M.vomit(20) // nanite safety protocols make your body expel them to prevent harmies
+	..()
+	. = 1
+
 /datum/reagent/medicine/cellular_restoring_nanites
 	name = "Сellular Regenerator Nanite Serum"
 	description = "A serum of nanites capable of regenerate limbs, remove scars and treat wounds."
 	taste_description = "a bunch of tiny robots"
 	can_synth = FALSE
-	overdose_threshold = null
+	reagent_state = SOLID
+	color = "#555555"
+	overdose_threshold = 30
 
 /datum/reagent/medicine/cellular_restoring_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustCloneLoss(-2)
@@ -87,3 +109,10 @@
 			M.emote("scream")
 			iter_wound.remove_wound()
 	return TRUE
+
+/datum/reagent/medicine/cellular_restoring_nanites/overdose_process(mob/living/carbon/M) //wtb flavortext messages that hint that you're vomitting up robots
+	if(prob(25))
+		M.reagents.remove_reagent(type, metabolization_rate*15) // ~5 units at a rate of 0.4 but i wanted a nice number in code
+		M.vomit(20) // nanite safety protocols make your body expel them to prevent harmies
+	..()
+	. = 1
