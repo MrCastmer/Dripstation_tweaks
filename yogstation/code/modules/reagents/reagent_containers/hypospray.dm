@@ -25,6 +25,7 @@
 	amount_per_transfer_from_this = 25
 	list_reagents = list(/datum/reagent/medicine/stimulants = 75)
 
+/*
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large/update_icon_state()
 	. = ..()
 	if(reagents.total_volume > 25)
@@ -33,6 +34,7 @@
 		icon_state = "[initial(icon_state)]25"
 	else
 		icon_state = "[initial(icon_state)]0"
+*/
 
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large/redpill
 	name = "Red Pill injector"

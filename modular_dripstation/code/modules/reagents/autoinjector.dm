@@ -31,6 +31,15 @@
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large
 	icon = 'modular_dripstation/icons/obj/syringe.dmi'
 
+/obj/item/reagent_containers/autoinjector/medipen/stimpack/large/update_icon_state()
+	. = ..()
+	if(reagents.total_volume > 50)
+		icon_state = initial(icon_state)
+	else if(reagents.total_volume)
+		icon_state = "[initial(icon_state)]50"
+	else
+		icon_state = "[initial(icon_state)]0"
+
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large/redpill
 	icon = 'modular_dripstation/icons/obj/syringe.dmi'
 	icon_state = "hypo_redpill"
