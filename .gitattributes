@@ -10,7 +10,6 @@ code/__DEFINES/rust_g.dm eol=lf
 ## Enforce text mode and LF line breaks
 *.bat text eol=lf
 *.cjs text eol=lf
-*.css text eol=lf
 *.dm text eol=lf
 *.dme text eol=lf
 *.dmf text eol=lf
