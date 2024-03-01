@@ -48,16 +48,16 @@
 /obj/item/clothing/head/helmet/space/hardsuit/mining
 	name = "explorer hardsuit helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights."
-	icon_state = "explorer_helm0"
-	item_state = "explorer_helm"
-	hardsuit_type = "explorer"
+	icon_state = "explorer_light_helm0"
+	item_state = "explorer_light_helm"
+	hardsuit_type = "explorer_light"
 	armor = list(MELEE = 30, BULLET = 10, LASER = 15, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 75, WOUND = 15, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/mining
 	name = "explorer hardsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters."
-	icon_state = "explorer_hardsuit"
-	item_state = "explorer_hardsuit"
+	icon_state = "explorer_light_hardsuit"
+	item_state = "explorer_light_hardsuit"
 	armor = list(MELEE = 30, BULLET = 10, LASER = 15, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 75, WOUND = 15, ELECTRIC = 100)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 
