@@ -21,7 +21,7 @@
 	. = ..()
 	dir = C.dir
 	if(C.buckled)
-		pixel_y = (C.buckled.buckle_offset + 10)
+		pixel_y = (C.get_standard_pixel_y_offset(C.lying) + 10)
 	if(dir == NORTH)
 		layer = BELOW_MOB_LAYER
 	flick("breath_[C.lying_prev]", src)

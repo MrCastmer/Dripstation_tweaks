@@ -129,8 +129,6 @@
 
 	if(breath)
 		loc.assume_air(breath)
-		if(ishuman(src) && !HAS_TRAIT(src, TRAIT_NOBREATH) && !internal && environment.temperature < 278 && environment.return_pressure() > 20)
-			new /obj/effect/frosty_breath(loc, src)
 
 /mob/living/carbon/proc/has_smoke_protection()
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))
