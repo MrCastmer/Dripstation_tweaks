@@ -61,3 +61,13 @@
 		qdel(old_appendix)
 
 	old_appendix = null
+
+/datum/quirk/surgeon
+	name = "Professional Surgeon"
+	desc = "You have spend a lot more time than others to get used to the modern surgery. Your skill allows you to avoid critical failurs, but you still causes some mess when performing operations on alive and contious patients."
+	icon = "notes-medical"
+	value = 5
+	mob_trait = TRAIT_MEDIC
+	gain_text = span_danger("You getting ready to show your absolute medical skill.")
+	lose_text = span_notice("Okey, time to touch some grass.")
+	medical_record_text = "The patient has a skill to perform sugeries without failurs."
