@@ -135,11 +135,11 @@
 
 /datum/quirk/surgeon
 	name = "No Surgery"
-	desc = "You skipped modern surgery courses when get your job in Nanotrasen research programm. Even a monkey would perform better surgery than you."
+	desc = "You skipped modern surgery courses when get your job in Nanotrasen research space programm. Even a monkey would perform better surgery than you."
 	icon = "notes-medical"
 	value = -4
 	mob_trait = TRAIT_NOSURGERY
 	gain_text = span_danger("And remember: under any circumstances you should NOT touch surgery tools.")
 	lose_text = span_notice("You suddenly feel like you can perform surgeries again!")
 	medical_record_text = "The patient has no skill in performing sugeries."
-	job_blacklist = list("Head of Security", "Security Officer", "Warden")
+	job_blacklist = list("Chief Medical Officer", "Medical Doctor")
