@@ -104,7 +104,7 @@
 	gain_text = span_notice("You feel at home in space.")
 	lose_text = span_danger("You feel homesick.")
 	icon = "user-astronaut"
-	value = 7
+	value = 6
 	/// How long on a planet before we get averse effects
 	var/planet_period = 3 MINUTES
 	/// TimerID for time spend on a planet
@@ -144,12 +144,12 @@
 	//if(!isnull(spacer_account))
 	//	spacer_account.payday_modifier *= 1.25
 	//	to_chat(quirk_holder, span_info("Given your background as a Spacer, \
-	//		you are awarded with a 25% hazard pay bonus due to your [on_a_planet ?  "station" : "occupational"] assignment."))
+			you are awarded with a 25% hazard pay bonus due to your [on_a_planet ?  "station" : "occupational"] assignment."))
 
 	// Supply them with some patches to help out on their new assignment
 	var/obj/item/storage/pill_bottle/ondansetron/disgust_killers = new()
 	disgust_killers.desc += " Best to take one when travelling to a planet's surface."
-	if(quirk_holder.equip_to_slot_if_possible(disgust_killers, ITEM_SLOT_BACKPACK, qdel_on_fail = TRUE, initial = TRUE, indirect_action = TRUE))
+	if(quirk_holder.equip_to_slot_if_possible(disgust_killers, ITEM_SLOT_BACKPACK, qdel_on_fail = TRUE, initial = TRUE))
 		to_chat(quirk_holder, span_info("You have been given some anti-emetic patches to assist in adjusting to planetary gravity."))
 
 /datum/quirk/spacer_born/remove()
