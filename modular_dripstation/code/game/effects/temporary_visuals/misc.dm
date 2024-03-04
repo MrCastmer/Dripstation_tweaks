@@ -17,12 +17,12 @@
 	layer = ABOVE_MOB_LAYER
 	anchored = TRUE
 
-/obj/effect/frosty_breath/Initialize(mapload, mob/living/carbon/C)
+/obj/effect/frosty_breath/Initialize(mapload, mob/living/carbon/human/H)
 	. = ..()
-	dir = C.dir
-	if(C.buckled)
-		pixel_y = (C.get_standard_pixel_y_offset(C.lying) + 10)
+	dir = H.dir
+	if(H.buckled)
+		pixel_y = (H.get_standard_pixel_y_offset(H.lying) + 10)
 	if(dir == NORTH)
 		layer = BELOW_MOB_LAYER
-	flick("breath_[C.lying_prev]", src)
+	flick("breath_[H.lying_prev]", src)
 	QDEL_IN(src, 2 SECONDS)
