@@ -23,8 +23,8 @@
 
 // ###### Engineer ######
 /obj/item/clothing/under/rank/engineer
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/engineer.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/engineer.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/engineer.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/engineer.dmi'
 
 /obj/item/clothing/under/rank/engineer/skirt
 	can_adjust = TRUE
@@ -36,8 +36,8 @@
 
 // ###### Atmostech ######
 /obj/item/clothing/under/rank/atmospheric_technician
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/atmos.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/atmos.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/atmos.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/atmos.dmi'
 
 /obj/item/clothing/under/rank/atmospheric_technician/skirt
 	can_adjust = TRUE
@@ -49,8 +49,8 @@
 
 // ######  Signaltech ######
 /obj/item/clothing/under/yogs/rank/network_admin
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/signaltech.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/signaltech.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/signaltech.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/signaltech.dmi'
 
 /obj/item/clothing/under/rank/network_admin/skirt
 	can_adjust = TRUE
@@ -62,8 +62,8 @@
 
 // ###### Chief Engineer ######
 /obj/item/clothing/under/rank/chief_engineer
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/chief.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/chief.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/chief.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/chief.dmi'
 
 /obj/item/clothing/under/rank/chief_engineer/skirt
 	can_adjust = TRUE

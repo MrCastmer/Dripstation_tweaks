@@ -114,8 +114,6 @@
 /obj/item/clothing/gloves/combat/maid
 	name = "combat maid sleeves"
 	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hands.dmi'
-	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
 	icon_state = "syndimaid_arms"
 	item_state = "syndimaid_arms"
 
@@ -163,8 +161,8 @@
 /obj/item/clothing/gloves/maid
 	name = "maid sleeves"
 	desc = "Just cute sleeves."
-	mob_overlay_icon = 'dripstation/icons/mob/clothing/hands.dmi'
-	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "maid_arms"
 	item_state = "maid_arms"
 
