@@ -143,8 +143,7 @@
 	//var/datum/bank_account/spacer_account = quirk_holder.get_bank_account()
 	//if(!isnull(spacer_account))
 	//	spacer_account.payday_modifier *= 1.25
-	//	to_chat(quirk_holder, span_info("Given your background as a Spacer, \
-			you are awarded with a 25% hazard pay bonus due to your [on_a_planet ?  "station" : "occupational"] assignment."))
+	//	to_chat(quirk_holder, span_info("Given your background as a Spacer, you are awarded with a 25% hazard pay bonus due to your [on_a_planet ?  "station" : "occupational"] assignment."))
 
 	// Supply them with some patches to help out on their new assignment
 	var/obj/item/storage/pill_bottle/ondansetron/disgust_killers = new()
