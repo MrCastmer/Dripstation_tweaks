@@ -95,6 +95,39 @@
 					/obj/item/suppressor)
 		new item(C)
 
+/datum/supply_pack/costumes_toys/randomised/syndicate
+	name = "Tactical Crate"
+	desc = "(*!&@#UH THIS IS ANOTHER OPTION. YOU WANNA HAVE SOME DRIP? WELL, ITS YOURS, BUT FOR THE FAIR PRICE, OPERATIVE.#@*$"
+	hidden = TRUE
+	cost = 2000
+	num_contained = 1
+	contains = list(/obj/item/storage/box/donkdrip,
+					/obj/item/storage/box/donkdrip/combat,
+					/obj/item/storage/box/donkdrip/maid)
+	crate_name = "crate"
+
+/datum/supply_pack/security/tackler
+	name = "Gripper Gloves Crate"
+	desc = "Contains three pairs of gripper gloves. Requires Security access to open."
+	cost = 1000
+	contains = list(/obj/item/clothing/gloves/tackler,
+					/obj/item/clothing/gloves/tackler,
+					/obj/item/clothing/gloves/tackler)
+	crate_name = "gripper crate"
+
+/datum/supply_pack/security/armory/swat
+	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by Terragov and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and NT brand tackler gloves. Requires Armory access to open."
+	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen,
+					/obj/item/clothing/head/helmet/swat/nanotrasen,
+					/obj/item/clothing/suit/space/swat,
+					/obj/item/clothing/suit/space/swat,
+					/obj/item/clothing/mask/gas/sechailer/swat,
+					/obj/item/clothing/mask/gas/sechailer/swat,
+					/obj/item/storage/belt/military/assault,
+					/obj/item/storage/belt/military/assault,
+					/obj/item/clothing/gloves/tackler/nt,
+					/obj/item/clothing/gloves/tackler/nt)
+
 /datum/supply_pack/security/armory/laser		//dripstation mooving lethals to the armory
 	name = "Lasers Crate"
 	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."

@@ -65,6 +65,12 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	cryo_preserve = TRUE
 
+/obj/item/clothing/gloves/krav_maga/combatglovesplus
+	name = "combat gloves plus"
+	icon_state = "combat_plus"
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+
 /obj/item/clothing/gloves/color/black
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	var/fingerless_variation = /obj/item/clothing/gloves/fingerless
@@ -104,6 +110,14 @@
 
 /obj/item/clothing/gloves/combat/cybersun/bloody
 	icon_state = "cybersun_combat_bloody"
+
+/obj/item/clothing/gloves/combat/maid
+	name = "combat maid sleeves"
+	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/hands.dmi'
+	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
+	icon_state = "syndimaid_arms"
+	item_state = "syndimaid_arms"
 
 /obj/item/clothing/gloves/combat/odst	//robust
 	name = "\improper ODST gloves"
@@ -146,6 +160,14 @@
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 
+/obj/item/clothing/gloves/maid
+	name = "maid sleeves"
+	desc = "Just cute sleeves."
+	mob_overlay_icon = 'dripstation/icons/mob/clothing/hands.dmi'
+	icon = 'dripstation/icons/obj/clothing/gloves.dmi'
+	icon_state = "maid_arms"
+	item_state = "maid_arms"
+
 /obj/item/clothing/gloves/color/captain/black
 	desc = "Regal black gloves, with a nice silver trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
 	icon_state = "silver"
@@ -185,11 +207,11 @@
 	desc = "Special gloves that manipulate the blood vessels in the wearer's hands, granting them the ability to launch headfirst into walls."
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
-	icon_state = "black_tactifool"
+	icon_state = "black"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	resistance_flags = NONE
-	custom_premium_price = 600
+	custom_premium_price = 400
 	/// For storing our tackler datum so we can remove it after
 	var/datum/component/tackler
 	/// See: [/datum/component/tackler/var/stamina_cost]
@@ -228,6 +250,7 @@
 /obj/item/clothing/gloves/tackler/security
 	name = "security gripper gloves"
 	desc = "Special gloves that manipulate the blood vessels in the wearer's hands, granting them the ability to launch headfirst into walls. Fireproof to boot!"
+	icon_state = "black_tactifool"
 	cold_protection = HANDS
 	heat_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -285,7 +308,19 @@
 	resistance_flags = NONE
 	armor = list(MELEE = 15, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 15, BIO = 5, RAD = 5, FIRE = 80, ACID = 50, WOUND = 0, ELECTRIC = 100)
 
-/obj/item/clothing/gloves/tackler/combat/nt
+/obj/item/clothing/gloves/tackler/nt
+	name = "\improper NT gripper gloves"
+	desc = "NT brand tackler gloves, granting the user ability to launch headfirst into walls and letting the user sail through the hallways."
+	icon_state = "nt_combat"
+
+	tackle_stam_cost = 15
+	base_knockdown = 0.5 SECONDS
+	tackle_range = 5
+	tackle_speed = 2
+	min_distance = 2
+	skill_mod = -2
+
+/obj/item/clothing/gloves/tackler/combat/nt_elite
 	name = "\improper NT elite gripper gloves"
 	desc = "Superior quality combative gloves, good for performing tackle takedowns as well as absorbing electrical shocks."
 	icon_state = "nt_combat"
@@ -294,6 +329,7 @@
 	base_knockdown = 1 SECONDS
 	tackle_range = 5
 	skill_mod = 3
+
 
 /obj/item/clothing/gloves/tackler/combat/waffle
 	name = "\improper Waffle Co rocket gloves"

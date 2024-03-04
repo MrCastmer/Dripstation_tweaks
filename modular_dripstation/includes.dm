@@ -89,6 +89,7 @@
 #include "code\modules\atmospherics\machinery\portable\pump.dm"
 #include "code\modules\atmospherics\machinery\other\meter.dm"
 #include "code\modules\awaymissions\mission_code\Academy.dm"
+#include "code\modules\clothing\accessories.dm"
 #include "code\modules\clothing\armor.dm"
 #include "code\modules\clothing\_neck.dm"
 #include "code\modules\clothing\voidsuit.dm"

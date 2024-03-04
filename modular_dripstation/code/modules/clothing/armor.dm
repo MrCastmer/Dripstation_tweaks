@@ -93,7 +93,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 
 /obj/item/clothing/suit/space/swat
 	name = "MK.I SWAT Suit"
-	desc = "A tactical suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 2XXX for military operations. It has a minor slowdown, but offers decent protection."
+	desc = "A tactical suit first developed in a joint effort by Terragov and Nanotrasen in 2XXX for military operations. It has a minor slowdown, but offers decent protection."
 	icon_state = "heavy"
 	item_state = "swat_suit"
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'

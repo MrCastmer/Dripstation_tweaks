@@ -20,3 +20,58 @@
 	name = "blue hazard vest"
 	desc = "A high-visibility vest used in work zones. This one is blue!"
 	icon_state = "hazard_b"
+
+// ###### Engineer ######
+/obj/item/clothing/under/rank/engineer
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/engineer.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/engineer.dmi'
+
+/obj/item/clothing/under/rank/engineer/skirt
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/engineer/gorka
+	icon_state = "engine_gorka"
+	can_adjust = FALSE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+// ###### Atmostech ######
+/obj/item/clothing/under/rank/atmospheric_technician
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/atmos.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/atmos.dmi'
+
+/obj/item/clothing/under/rank/atmospheric_technician/skirt
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/atmospheric_technician/gorka
+	icon_state = "atmos_gorka"
+	can_adjust = FALSE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+// ######  Signaltech ######
+/obj/item/clothing/under/yogs/rank/network_admin
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/signaltech.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/signaltech.dmi'
+
+/obj/item/clothing/under/rank/network_admin/skirt
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/network_admin/gorka
+	icon_state = "signaltech_gorka"
+	can_adjust = FALSE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+// ###### Chief Engineer ######
+/obj/item/clothing/under/rank/chief_engineer
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engeneering/chief.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engeneering/chief.dmi'
+
+/obj/item/clothing/under/rank/chief_engineer/skirt
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/chief_engineer/alt
+	icon_state = "chiefengineer_alt"
+
+/obj/item/clothing/under/rank/chief_engineer/gorka
+	icon_state = "chiefengineer_gorka"
+	can_adjust = FALSE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION

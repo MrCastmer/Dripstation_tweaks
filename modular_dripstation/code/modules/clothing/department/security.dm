@@ -212,7 +212,32 @@
 	pocket_storage_component_path = null
 
 // ###### VENDORS ######
+/obj/machinery/vending/security
+	req_access = list(ACCESS_SECURITY)
+	products = list(/obj/item/clothing/head/helmet/plated = 6,
+					/obj/item/clothing/suit/armor/plated = 6,
+					/obj/item/restraints/handcuffs = 8,
+					/obj/item/clothing/neck/anti_magic_collar = 3,
+					/obj/item/restraints/handcuffs/cable/zipties = 10,
+					/obj/item/grenade/flashbang = 4,
+					/obj/item/assembly/flash/handheld = 5,
+					/obj/item/reagent_containers/food/snacks/donut = 12,
+					/obj/item/storage/box/evidence = 6,
+					/obj/item/flashlight/seclite = 4,
+					/obj/item/restraints/legcuffs/bola/energy = 7)
+	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
+					  /obj/item/storage/fancy/donut_box = 2)
+	premium = list(/obj/item/storage/belt/security/webbing = 5,
+					/obj/item/clothing/gloves/tackler/security = 3,
+				   /obj/item/coin/antagtoken = 1,
+				   /obj/item/clothing/head/helmet/warhelmet = 5,
+				   /obj/item/clothing/suit/armor/vest/rycliesarmour = 5,
+				   /obj/item/clothing/head/helmet/blueshirt = 5,
+				   /obj/item/clothing/suit/armor/vest/blueshirt = 5)
+
+
 /obj/machinery/vending/wardrobe/sec_wardrobe
+	req_access = list(ACCESS_SECURITY)
 	products = list(/obj/item/storage/backpack/security = 3,
 					/obj/item/storage/backpack/satchel/sec = 3,
 					/obj/item/storage/backpack/duffelbag/sec = 3,
@@ -233,7 +258,8 @@
 					/obj/item/clothing/head/officer = 3,
 					/obj/item/clothing/head/soft/sec = 3,
 					/obj/item/clothing/head/soft/sec/corp = 3,
-					/obj/item/clothing/mask/bandana/red = 3)
+					/obj/item/clothing/mask/bandana/red = 3,
+					/obj/item/badge/security/cadet = 3)
 	premium = list(/obj/item/clothing/under/rank/security/navyblue = 3,
 					/obj/item/clothing/suit/armor/officerjacket = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 3)

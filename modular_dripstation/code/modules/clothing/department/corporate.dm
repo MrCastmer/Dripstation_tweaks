@@ -144,3 +144,207 @@
 	icon = 'modular_dripstation/icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/neck.dmi'
 	icon_state = "helldivercloak"
+
+
+
+//////////////////////////////
+//////////Syndicate///////////
+//////////////////////////////
+/obj/item/clothing/under/syndicate
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
+
+/obj/item/clothing/under/syndicate/camo
+	name = "camouflage fatigues"
+	desc = "A desert military camouflage uniform."
+	icon_state = "terragov_multicam"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/terragov/terragov.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/terragov/terragov.dmi'
+
+/obj/item/clothing/under/syndicate/soviet
+	name = "soviet uniform"
+	desc = "Badly translated labels tell you to clean this in Vodka. Great for squatting in."
+	icon_state = "soviet"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/spaceslav/spaceslav.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/spaceslav/spaceslav.dmi'
+
+/obj/item/clothing/under/syndicate/rus_army
+	name = "ratnik 5 tracksuit"
+	icon_state = "slav_combat"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/spaceslav/spaceslav.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/spaceslav/spaceslav.dmi'
+
+/////Donk Co//////
+/obj/item/clothing/under/syndicate/donk
+	name = "Donk! Co. employee uniform"
+	desc = "The standard employee uniform of Donk Co. Smells like minimum wage."
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
+	icon_state = "donk_cargo"
+	alt_covers_chest = TRUE
+	can_adjust = FALSE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/donk/qm
+	name = "Donk! Co. manager uniform"
+	desc = "The standard uniform of Donk Co. managers. Direct all complaints here."
+	icon_state = "donk_qm"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/donk/combat
+	name = "Donk! Co. combat uniform"
+	desc = "Donk! Co. combat uniform. Urban camouflage, tear resistant, operation ready. May be a bit of suspicious to find one on NanoTrasen facilities."
+	icon_state = "donk_combat"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/donk/maid
+	name = "tactical maid outfit"
+	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
+	icon_state = "syndimaid"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/donk/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/syndicate/A = new (src)
+	attach_accessory(A)
+
+/obj/item/clothing/suit/hazardvest/donk
+	name = "Donk! Co. employee vest"
+	desc = "A vest used to easily identify employees. It has a name tag attached. It reads: 'Hello! My name is...' It's not filled in."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "donk_cargo_vest"
+
+/obj/item/clothing/suit/hazardvest/donk/qm
+	name = "Donk! Co. manager vest"
+	desc = "A vest used to easily identify managers. It has a name tag attached. It reads: 'Hello! My name is... THE BOSS'"
+	icon_state = "donk_qm_vest"
+
+/obj/item/clothing/accessory/maidapron/syndicate
+	name = "tactical maid apron"
+	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/accessories.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/accessories.dmi'
+	icon_state = "maidapronsynd"
+
+/obj/item/clothing/head/maidheadband/syndicate
+	name = "tactical maid headband"
+	desc = "Tacticute."
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "syndieheadband"
+
+//////Gorlex//////////
+/obj/item/clothing/under/syndicate/combat
+	name = "Gorlex combat uniform"
+	icon_state = "gorlex_combat"
+
+/obj/item/clothing/under/syndicate/gorlex
+	name = "Gorlex wrecker uniform"
+	desc = "Originally worn by the miners of the Gorlex VII colony, it is now donned by salvagers of Gorlex Marauders."
+	icon_state = "gorlex_salvage"
+
+/obj/item/clothing/under/syndicate/gorlex/security
+	name = "Gorlex Security uniform"
+	icon_state = "gorlex_watcher"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	desc = "Standart issue Gorlex uniform worn by security operatives of Gorlex Marauders. With this thing in your hands you feel like you are ready to operate."
+
+/obj/item/clothing/under/syndicate/gorlex/elite
+	name = "Gorlex executioner uniform"
+	icon_state = "gorlex_executioner"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	desc = "A black and red uniform worn by the officers of the Gorlex Marauders 2nd Battlegroup."
+
+//////Cybersun//////////
+/obj/item/clothing/under/syndicate/cybersun
+	name = "Cybersun clerk uniform"
+	desc = "Standart uniform worn by personnel employed by Cybersun industries."
+	icon_state = "cybersun_combat"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/cybersun/lab
+	name = "Cybersun research coveralls"
+	desc = "Nomex coveralls worn by workers and research personnel employed by Cybersun industries."
+	icon_state = "cybersun_lab"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 0, FIRE = 60, ACID = 100, WOUND = 0, ELECTRIC = 100)
+
+/obj/item/clothing/under/syndicate/cybersun/med
+	name = "Cybersun medical jumpsuit"
+	desc = "Sterile jumpsuit worn by Cybersun Industries field medics for protection against biological hazards."
+	icon_state = "cybersun_med"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 30, BIO = 10, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0, ELECTRIC = 0)
+
+/obj/item/clothing/under/syndicate/cybersun/formal
+	name = "Cybersun formal uniform"
+	desc = "Standart uniform worn by middle-management executives employed by Cybersun industries. This one smells like white collar."
+	icon_state = "cybersun_formal"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/cybersun/combat
+	name = "Cybersun combat uniform"
+	desc = "Nomex combat uniform worn by operatives employed by Cybersun industries."
+	icon_state = "cybersun_combat"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 60, ACID = 100, WOUND = 10, ELECTRIC = 0)
+
+//////////Waffle Co//////////////
+/obj/item/clothing/under/syndicate/waffle
+	name = "Waffle Co combat uniform"
+	desc = "Combat uniform worn by operatives employed by Waffle Co."
+	icon_state = "waffle_combat"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/waffle/cargo
+	name = "Waffle Co uniform"
+	desc = "Combat uniform worn by personal employed by Waffle Co."
+	icon_state = "waffle_cargo"
+	can_adjust = FALSE
+	mutantrace_variation = MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/waffle/cargo/qm
+	name = "Waffle Co chief uniform"
+	desc = "Combat uniform worn by middle-management executives employed by Waffle Co."
+	icon_state = "qmwaffle"
+
+/obj/item/clothing/under/syndicate/waffle/officer
+	name = "Waffle Co combat uniform"
+	desc = "Combat uniform worn by high-ranking operatives employed by Waffle Co."
+	icon_state = "waffle_officer"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 10, BULLET = 10, LASER = 20, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30, WOUND = 10, ELECTRIC = 0)
+
+//////////Global Engineering Consorcium//////////////
+/obj/item/clothing/under/syndicate/tacticool/engineer
+	name = "engineer turtleneck"
+	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking engineers."
+	icon_state = "gec_engi_overalls"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/tacticool/atmos
+	name = "atmostech turtleneck"
+	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking atmostech."
+	icon_state = "gec_atmos_overalls"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/tacticool/atmos
+	name = "network admin turtleneck"
+	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking signaltech."
+	icon_state = "gec_signaltech_overalls"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/syndicate/gec
+	name = "GEC engineer uniform"
+	desc = "An official uniform worn by GEC engineers. This one is worn by middle ranking engineers."
+	icon_state = "gec_engineer"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 60, ACID = 20, WOUND = 0, ELECTRIC = 0)
+
+/obj/item/clothing/under/syndicate/gec/chief_engineer
+	name = "GEC chief engineer uniform"
+	desc = "An official uniform worn by GEC engineers. This one is worn by high ranking engineers."
+	icon_state = "gec_ce"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 80, ACID = 40, WOUND = 0, ELECTRIC = 0)
