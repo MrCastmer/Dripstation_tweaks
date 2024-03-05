@@ -69,8 +69,8 @@
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/clicked_atom, list/modifiers)
-	SIGNAL_HANDLER
 	set waitfor = 0
+	SIGNAL_HANDLER
 
 	if(modifiers["middle"] && modifiers["alt"] && modifiers["shift"] && modifiers["ctrl"])
 		return
@@ -139,8 +139,8 @@
  * Finally, we return a bitflag to [COMSIG_MOVABLE_IMPACT] that forces the hitpush to false so that we don't knock them away.
 */
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
-	SIGNAL_HANDLER
 	set waitfor = 0
+	SIGNAL_HANDLER
 
 	var/datum/thrownthing/tackle = tackle_ref?.resolve()
 	if(!tackling || !tackle)
@@ -631,8 +631,8 @@
 
 ///Check to see if we hit a table, and if so, make a big mess!
 /datum/component/tackler/proc/checkObstacle(mob/living/carbon/owner)
-	SIGNAL_HANDLER
 	set waitfor = 0
+	SIGNAL_HANDLER
 
 	if(!tackling)
 		return
