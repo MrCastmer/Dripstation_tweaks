@@ -525,7 +525,7 @@
 			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack! Fucking shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack! Fucking shit!"))
 			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
 			if(hed)
-				hed.receive_damage(brute=40, updating_health=FALSE, wound_bonus = 40)
+				hed.receive_damage(brute = 40, updating_health=FALSE, wound_bonus = 40)
 			else
 				user.adjustBruteLoss(40, updating_health=FALSE)
 			user.adjustStaminaLoss(30)
@@ -541,7 +541,7 @@
 			user.visible_message(span_danger("[user] slams skull-first into [hit] with a sound like crumpled paper, revealing a horrifying breakage in [user.p_their()] cranium! Holy shit!"), span_userdanger("You slam skull-first into [hit] and your senses are filled with warm goo flooding across your face! Your skull is open!"))
 			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
 			if(hed)
-				hed.receive_damage(brute = 30, FALSE, wound_bonus = 25)
+				hed.receive_damage(WOUND_BLUNT, 30, updating_health=FALSE, wound_bonus = 25)
 			else
 				user.adjustBruteLoss(40, FALSE)
 			user.adjustStaminaLoss(30)
@@ -604,7 +604,7 @@
 	if(W.type in list(/obj/structure/window, /obj/structure/window/fulltile, /obj/structure/window/unanchored, /obj/structure/window/fulltile/unanchored)) // boring unreinforced windows
 		for(var/i in 1 to speed)
 			var/obj/item/shard/shard = new /obj/item/shard(get_turf(user))
-			shard.embedding = shard.embedding.setRating(embed_chance = 100, embedded_ignore_throwspeed_threshold = TRUE, embedded_unsafe_removal_time = 1 SECONDS, embedded_pain_multiplier = 3, embedded_impact_pain_multiplier=1, embedded_pain_chance = 4, embedded_bleed_rate = 0.5)
+			shard.embedding = shard.embedding.setRating(embed_chance = 100, embedded_ignore_throwspeed_threshold = TRUE, embedded_unsafe_removal_time = 1 SECONDS, embedded_pain_multiplier = 3, embedded_impact_pain_multiplier=1, embedded_pain_chance = 4)
 			//shard.updateEmbedding()
 			user.hitby(shard, skipcatch = TRUE, hitpush = FALSE)
 			shard.embedding = null
