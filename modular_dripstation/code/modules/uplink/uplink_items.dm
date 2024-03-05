@@ -1,6 +1,6 @@
 /datum/uplink_item/suits/hardsuit
 	name = "Blood-red RIG"
-	desc = "The feared suit of a Syndicate nuclear agent. Features slightly better armoring and a built in jetpack \
+	desc = "The feared suit of a Syndicate nuclear operative. Features slightly better armoring and a built in jetpack \
 			that runs off standard atmospheric tanks. Toggling the suit in and out of \
 			combat mode will allow you all the mobility of a loose fitting uniform without sacrificing armoring. \
 			Additionally the suit is collapsible, making it small enough to fit within a backpack. \
@@ -23,17 +23,17 @@
 
 /datum/uplink_item/suits/hardsuit/elite
 	name = "Elite Syndicate RIG"
-	desc = "An upgraded, elite version of the Syndicate hardsuit. It features fireproofing, and also \
-			provides the user with superior armor and mobility compared to the standard Syndicate hardsuit."
+	desc = "An upgraded, elite version of the Syndicate RIG. It features fireproofing, and also \
+			provides the user with superior armor and mobility compared to the blood-red RIG."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 	cost = 8
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	exclude_modes = list()
 
 /datum/uplink_item/suits/hardsuit/shielded
-	name = "Shielded Bloodred RIG"
-	desc = "An upgraded version of the standard Syndicate hardsuit. It features a built-in energy shielding system. \
-			The shields can handle up to three impacts within a short duration and will rapidly recharge while not under fire."
+	name = "Shielded Blood-red RIG"
+	desc = "An upgraded version of the blood-red RIG. It features a built-in energy shielding system. \
+			The shield can handle only one impacts within a short duration but will rapidly recharge while not under fire."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred
 	cost = 20
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
