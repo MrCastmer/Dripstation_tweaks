@@ -6,7 +6,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
 	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter, /obj/item/melee/classic_baton)
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/QM
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/qm
 
 /obj/item/clothing/suit/hooded/wintercoat/qm/attackby(obj/item/I, params)
 	if(!istype(I, /obj/item/clothing/suit/armor/vest/alt))
@@ -17,7 +17,7 @@
 		usr.visible_message("[usr] attaches [I] to [src].", span_notice("You attach [I] to [src]."))
 		qdel(src)
 		qdel(I)
-		var/obj/item/armor = new /obj/item/clothing/suit/hooded/wintercoat/QM/armored
+		var/obj/item/armor = new /obj/item/clothing/suit/hooded/wintercoat/qm/armored
 		usr.put_in_hands(armor)
 	else
 		to_chat(usr, span_info("You should hold [src] in your hands."))
@@ -48,7 +48,7 @@
 	I = src.armor_type
 	usr.visible_message("[usr] removes armor from [src].", span_notice("You remove armor from [src]."))
 	new I(get_turf(src))
-	var/obj/item/nonarmored = new /obj/item/clothing/suit/hooded/wintercoat/QM
+	var/obj/item/nonarmored = new /obj/item/clothing/suit/hooded/wintercoat/qm
 	if(slot == ITEM_SLOT_OCLOTHING)
 		if(usr.equip_to_slot_if_possible(nonarmored,ITEM_SLOT_OCLOTHING,0,0,1))
 			return 1
@@ -74,8 +74,8 @@
 	name = "quartermaster's formal hat"
 	desc = "Classic hat issued to quartermaster."
 	icon_state = "qmhat"
-	icon = 'modular_dripstation/icons/obj/clothing/hats/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/head/head.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/beret/quartermaster
 	name = "quartermaster's formal beret"
