@@ -82,3 +82,31 @@
 /obj/item/clothing/head/helmet/elder_atmosian
 	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
+
+obj/item/clothing/head/bio_hood
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+obj/item/clothing/head/bio_hood/general
+	icon_state = "hazmat_suit_general"
+    
+obj/item/clothing/head/bio_hood/virology
+	icon_state = "hazmat_suit_virology"
+
+obj/item/clothing/head/bio_hood/security
+	icon_state = "hazmat_suit_sec"
+
+obj/item/clothing/head/bio_hood/janitor
+	icon_state = "hazmat_suit_janitor"
+
+obj/item/clothing/head/bio_hood/scientist
+	icon_state = "hazmat_suit_scientist"
+
+obj/item/clothing/head/bio_hood/cmo
+	icon_state = "hazmat_suit_cmo"
+
+obj/item/clothing/head/bio_hood/cyan
+	icon_state = "hazmat_suit_cyan"
+
+obj/item/clothing/head/bio_hood/white
+	icon_state = "hazmat_suit_white"

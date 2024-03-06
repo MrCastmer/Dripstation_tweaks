@@ -93,6 +93,16 @@
 #define ACCESS_PSYCH 77 // For the psych's back office area with the flashes/chem machines
 #define ACCESS_RND 78 //rnd console
 
+//Dripstation: 
+#define ACCESS_CLOWN 79 // Vending, locker, airlocks and some other related stuff
+#define ACCESS_MIME 80 // Vending, locker, airlocks and some other related stuff
+#define ACCESS_POD_PILOT 81 // Locker, airlock, pod related stuff
+#define ACCESS_BLUESHIELD 82 // Locker, airlock
+#define ACCESS_NTREP 83 // Locker, airlock
+#define ACCESS_MAGISTRATE 84 // Locker, airlock
+#define ACCESS_HAZARD_TECH 85 // Hazard technician stuff
+#define ACCESS_ARTIST 86 // Artist stuff, mostly door and vendor
+
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
 	Mostly for admin fun times.*/

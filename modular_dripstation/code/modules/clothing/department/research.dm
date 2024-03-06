@@ -74,6 +74,8 @@
 /obj/item/clothing/head/beret/sci/robotics
 	name = "roboticist's beret"
 	desc = "A roboticist's beret. It strongly smells of oil."
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	icon_state = "beretrobo"
 
 /obj/item/clothing/suit/hooded/wintercoat/science/robotics

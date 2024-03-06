@@ -6,7 +6,7 @@
 	name = "scarlet RIG helmet"
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Manufactured by Donk Co."
 	icon_state = "scarlet_helm"
-	item_state = "scarlet_helm"
+	//item_state = "scarlet_helm"
 	hardsuit_type = "scarlet"
 	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 25, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	on = FALSE
@@ -181,7 +181,7 @@
 	name = "scarlet RIG"
 	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Manufactured by Donk Co."
 	icon_state = "scarlet_rig"
-	item_state = "scarlet_rig"
+	//item_state = "scarlet_rig"
 	hardsuit_type = "scarlet"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/hardon = FALSE				//Tracking current mode on suit, handles by helmet on
@@ -326,7 +326,7 @@
 	name = "blood-red RIG helmet"
 	desc = "A dual-mode advanced helmet designed for special operations. Property of Gorlex Marauders."
 	icon_state = "bloodred_helm"
-	item_state = "bloodred_helm"
+	//item_state = "bloodred_helm"
 	hardsuit_type = "bloodred"
 	light_range = 6
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
@@ -337,7 +337,7 @@
 	name = "blood-red shielded RIG"
 	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt shielding module and advanced combat leg servomotors. Original design by Gorlex Marauders."
 	icon_state = "bloodred_rig"
-	item_state = "bloodred_rig"
+	//item_state = "bloodred_rig"
 	hardsuit_type = "bloodred"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded/bloodred
 	jetpack = /obj/item/tank/jetpack/suit	//downgraded jet
@@ -356,7 +356,7 @@
 	name = "elite emergency response team RIG helmet (blackops)"
 	desc = "Advanced helmet issued to black ops team operator."
 	icon_state = "nt_deathsquad_helm"
-	item_state = "nt_deathsquad_helm"
+	//item_state = "nt_deathsquad_helm"
 	hardsuit_type = "nt_deathsquad"
 	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 35, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	light_range = 7
@@ -397,7 +397,7 @@
 	name = "elite emergency response team RIG (blackops)"
 	desc = "Advanced RIG issued to black ops team operator. Made from superior materials, one of the latest in the modern combat rigs line. Has inbuilt shielding module."
 	icon_state = "nt_deathsquad_rig"
-	item_state = "nt_deathsquad_rig"
+	//item_state = "nt_deathsquad_rig"
 	hardsuit_type = "nt_deathsquad"
 	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 25, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -442,7 +442,7 @@
 	name = "engineering RIG helmet"
 	desc = "A modern helmet designed for isolation from the hazardous, low-pressure environment. Has radiation shielding."
 	icon_state = "engineering_helm"
-	item_state = "engineering_helm"
+	//item_state = "engineering_helm"
 	hardsuit_type = "engineering"
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF
@@ -452,7 +452,8 @@
 	name = "engineering RIG"
 	desc = "A modern rig designed for isolation from the hazardous, low pressure environments. Has radiation shielding."
 	icon_state = "engineering_rig"
-	item_state = "engineering_rig"
+	//item_state = "engineering_rig"
+	item_state = "eng_hardsuit"
 	hardsuit_type = "engineering"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
@@ -464,7 +465,7 @@
 	name = "mechanic RIG helmet"
 	desc = "A modern helmet designed for isolation from the hazardous, low-pressure environment. Has radiation shielding and improved bulletproof covering."
 	icon_state = "mechanic_helm"
-	item_state = "mechanic_helm"
+	//item_state = "mechanic_helm"
 	hardsuit_type = "mechanic"
 	armor = list(MELEE = 30, BULLET = 15, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 50, ACID = 75, WOUND = 10, ELECTRIC = 100)
 
@@ -484,7 +485,7 @@
 	name = "mechanic RIG"
 	desc = "A modern rig designed for isolation from the hazardous, low pressure environments. Has radiation shielding and improved bulletproof covering."
 	icon_state = "engineering_rig"
-	item_state = "engineering_rig"
+	//item_state = "engineering_rig"
 	hardsuit_type = "engineering"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	armor = list(MELEE = 30, BULLET = 15, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 50, ACID = 75, WOUND = 10, ELECTRIC = 100)
@@ -496,7 +497,7 @@
 	desc = "A modern helmet designed for isolation from the hazardous, low-pressure environment. Has thermal shielding."
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 25, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
 	icon_state = "atmospheric_helm"
-	item_state = "atmospheric_helm"
+	//item_state = "atmospheric_helm"
 	hardsuit_type = "atmospheric"
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEEARS
 	heat_protection = HEAD
@@ -507,7 +508,8 @@
 	desc = "A modern rig designed for isolation from the hazardous, low pressure environments. Has thermal shielding."
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 25, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
 	icon_state = "atmospheric_rig"
-	item_state = "atmospheric_rig"
+	//item_state = "atmospheric_rig"
+	item_state = "atmo_hardsuit"
 	hardsuit_type = "atmospheric"
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -516,12 +518,12 @@
 //Atmospherics black
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/engineering/atmospheric/alt
 	icon_state = "atmosphericalt_helm"
-	item_state = "atmosphericalt_helm"
+	//item_state = "atmosphericalt_helm"
 	hardsuit_type = "atmosphericalt"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/engineering/atmospheric/alt
 	icon_state = "atmosphericalt_rig"
-	item_state = "atmosphericalt_rig"
+	//item_state = "atmosphericalt_rig"
 	hardsuit_type = "atmosphericalt"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/engineering/atmospheric/alt
 
@@ -530,7 +532,7 @@
 	name = "elite utility RIG helmet"
 	desc = "An advanced helmet designed for work in a hazardous, low pressure environment. Shines with a high polish."
 	icon_state = "ce_helm"
-	item_state = "ce_helm"
+	//item_state = "ce_helm"
 	hardsuit_type = "ce"
 	armor = list(MELEE = 40, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 90, WOUND = 10, ELECTRIC = 100)
 	visor_flags_inv = null
@@ -541,7 +543,8 @@
 	name = "elite utility RIG"
 	desc = "An advanced rig that protects against hazardous, low pressure environments. Shines with a high polish."
 	icon_state = "ce_rig"
-	item_state = "ce_rig"
+	//item_state = "ce_rig"
+	item_state = "ce_hardsuit"
 	hardsuit_type = "ce"
 	armor = list(MELEE = 40, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 90, WOUND = 10, ELECTRIC = 100)
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -554,7 +557,7 @@
 	name = "GEC RIG helmet"
 	desc = "A modern helmet designed for isolation from the hazardous, low-pressure environment. Global Engineering Consortium production."
 	icon_state = "sindengi_helm"
-	item_state = "sindengi_helm"
+	//item_state = "sindengi_helm"
 	hardsuit_type = "sindengi"
 	light_range = 6
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 15, ELECTRIC = 100)
@@ -579,7 +582,7 @@
 	name = "GEC RIG"
 	desc = "A modern rig designed for isolation from the hazardous, low pressure environments. Global Engineering Consortium production. Unite for best working conditions."
 	icon_state = "sindengi_rig"
-	item_state = "sindengi_rig"
+	//item_state = "sindengi_rig"
 	hardsuit_type = "sindengi"
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 15, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/engineering/syndicate
@@ -593,14 +596,14 @@
 	name = "winter GEC RIG helmet"
 	desc = "A modern helmet designed for isolation from the hazardous, low-pressure environment. Global Engineering Consortium production."
 	icon_state = "sindengiwinter_helm"
-	item_state = "sindengiwinter_helm"
+	//item_state = "sindengiwinter_helm"
 	hardsuit_type = "sindengiwinter"
 	winter_mod = TRUE
 
 /obj/item/clothing/suit/space/hardsuit/syndi/engineering/syndicate/winter
 	name = "winter GEC RIG"
 	icon_state = "sindengiwinter_rig"
-	item_state = "sindengiwinter_rig"
+	//item_state = "sindengiwinter_rig"
 	hardsuit_type = "sindengiwinter"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/engineering/syndicate/winter
 	winter_mod = TRUE
@@ -610,7 +613,7 @@
 	name = "medical RIG helmet"
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for medical extractions in hasard areas."
 	icon_state = "medical_helm"
-	item_state = "medical_helm"
+	//item_state = "medical_helm"
 	hardsuit_type = "medical"
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 60, FIRE = 60, ACID = 75, WOUND = 10, ELECTRIC = 100)
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | HEADINTERNALS
@@ -619,7 +622,8 @@
 	name = "medical RIG"
 	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Built with lightweight materials for easier movement. Expensive in production and maintaining."
 	icon_state = "medical_rig"
-	item_state = "medical_rig"
+	//item_state = "medical_rig"
+	item_state = "medical_hardsuit"
 	hardsuit_type = "medical"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 60, FIRE = 60, ACID = 75, WOUND = 10, ELECTRIC = 100)
@@ -629,7 +633,7 @@
 	name = "rescue RIG helmet"
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for rescue attempts in hasard areas."
 	icon_state = "rescue_helm"
-	item_state = "rescue_helm"
+	//item_state = "rescue_helm"
 	hardsuit_type = "rescue"
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/medical/rescue/equipped(mob/living/carbon/human/user, slot)
@@ -648,7 +652,7 @@
 	name = "rescue RIG"
 	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Built with lightweight materials for easier movement. Expensive in production and maintaining."
 	icon_state = "rescue_rig"
-	item_state = "rescue_rig"
+	//item_state = "rescue_rig"
 	hardsuit_type = "rescue"
 	slowdown = 0.4
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/medical/rescue
@@ -660,7 +664,7 @@
 	name = "mining RIG helmet"
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for mining operations in hasard areas."
 	icon_state = "mining_helm"
-	item_state = "mining_helm"
+	//item_state = "mining_helm"
 	light_range = 7
 	hardsuit_type = "mining"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
@@ -676,7 +680,8 @@
 	name = "mining RIG helmet"
 	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Used by mining groups across human space. Expensive in production and maintaining."
 	icon_state = "mining_rig"
-	item_state = "mining_rig"
+	//item_state = "mining_rig"
+	item_state = "mining_hardsuit"
 	hardsuit_type = "mining"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
@@ -695,7 +700,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/security
 	name = "security RIG helmet"
 	icon_state = "sec_helm"
-	item_state = "sec_helm"
+	//item_state = "sec_helm"
 	hardsuit_type = "sec"
 	light_range = 5
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for security operations in hasard AO`s."
@@ -705,7 +710,8 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/security
 	name = "security RIG"
 	icon_state = "sec_rig"
-	item_state = "sec_rig"
+	//item_state = "sec_rig"
+	item_state = "sec_hardsuit"
 	hardsuit_type = "sec"
 	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Used by paramilitary groups and PMC alike across human space. Expensive in production and maintaining."
 	armor = list(MELEE = 30, BULLET = 25, LASER = 30, ENERGY = 10, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
@@ -718,7 +724,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/security/brigmed
 	name = "security brigmed RIG helmet"
 	icon_state = "brigmed_helm"
-	item_state = "brigmed_helm"
+	//item_state = "brigmed_helm"
 	hardsuit_type = "brigmed"
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for medical extractions from combat zones."
 	armor = list(MELEE = 25, BULLET = 15, LASER = 20, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
@@ -726,7 +732,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/security/brigmed
 	name = "security brigmed RIG"
 	icon_state = "brigmed_rig"
-	item_state = "brigmed_rig"
+	//item_state = "brigmed_rig"
 	hardsuit_type = "brigmed"
 	desc = "A standardized dual-mode RIG derived from more advanced special operations hardsuits. Used by paramedics of paramilitary groups and PMC alike across human space. Expensive in production and maintaining."
 	armor = list(MELEE = 25, BULLET = 15, LASER = 20, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
@@ -739,7 +745,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/security/gorlex
 	name = "\improper Gorlex security RIG helmet"
 	icon_state = "secsyndi_helm"
-	item_state = "secsyndi_helm"
+	//item_state = "secsyndi_helm"
 	hardsuit_type = "secsyndi"
 	desc = "Bulletproof dual-mode helmet derived from more advanced special operations helmets. Designed for private military operations in hasard AO`s. Gorlex Security brunch property."
 	armor = list(MELEE = 35, BULLET = 45, LASER = 15, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
@@ -747,7 +753,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/security/gorlex
 	name = "\improper Gorlex security RIG"
 	icon_state = "secsyndi_rig"
-	item_state = "secsyndi_rig"
+	//item_state = "secsyndi_rig"
 	hardsuit_type = "secsyndi"
 	desc = "Bulletproof dual-mode RIG derived from more advanced special operations hardsuits. Used by Gorlex Security groups across human space. Lacks laser protection. Expensive in production and maintaining."
 	armor = list(MELEE = 30, BULLET = 40, LASER = 15, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
@@ -759,7 +765,7 @@
 	name = "vahlen corpsman RIG helmet"
 	desc = "A dual-mode advanced helmet designed for medical extractions. Original design by Vahlen Pharmaceuticals."
 	icon_state = "vahlencorpsman_helm"
-	item_state = "vahlencorpsman_helm"
+	//item_state = "vahlencorpsman_helm"
 	hardsuit_type = "vahlencorpsman"
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEEARS
 	toggled_for_heat_protecting = FALSE
@@ -769,7 +775,7 @@
 	name = "vahlen corpsman RIG"
 	desc = "A dual-mode advanced RIG designed for medical extractions. Original design by Vahlen Pharmaceuticals."
 	icon_state = "vahlencorpsman_rig"
-	item_state = "vahlencorpsman_rig"
+	//item_state = "vahlencorpsman_rig"
 	hardsuit_type = "vahlencorpsman"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/security/vahlen
 	jetpack = /obj/item/tank/jetpack/suit
@@ -790,7 +796,7 @@
 	name = "blood-red RIG helmet"
 	desc = "A dual-mode advanced helmet designed for special operations. Property of Gorlex Marauders."
 	icon_state = "bloodred_helm"
-	item_state = "bloodred_helm"
+	//item_state = "bloodred_helm"
 	hardsuit_type = "bloodred"
 	light_range = 6
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
@@ -801,7 +807,7 @@
 	name = "blood-red RIG"
 	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt advanced combat leg servomotors and jetpack. Original design by Gorlex Marauders."
 	icon_state = "bloodred_rig"
-	item_state = "bloodred_rig"
+	//item_state = "bloodred_rig"
 	hardsuit_type = "bloodred"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred
 	jetpack = /obj/item/tank/jetpack/suit/bloodred
@@ -818,11 +824,11 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/preview
 	icon_state = "bloodred_helm_sealed_light"
-	item_state = "bloodred_helm_sealed_light"
+	//item_state = "bloodred_helm_sealed_light"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/preview
 	icon_state = "bloodred_rig_sealed"
-	item_state = "bloodred_rig_sealed"
+	//item_state = "bloodred_rig_sealed"
 
 
 //////Winter bloodred Syndie suit//////
@@ -830,7 +836,7 @@
 	name = "winter Gorlex RIG helmet"
 	desc = "A dual-mode advanced helmet designed for special operations. Property of Gorlex Marauders."
 	icon_state = "bloodwinter_helm"
-	item_state = "bloodwinter_helm"
+	//item_state = "bloodwinter_helm"
 	hardsuit_type = "bloodwinter"
 	winter_mod = TRUE
 
@@ -838,7 +844,7 @@
 	name = "winter Gorlex RIG"
 	desc = "A dual-mode advanced RIG designed for special operations. Has inbuilt advanced combat leg servomotors and improved cold resistant. Original design by Gorlex Marauders."
 	icon_state = "bloodwinter_rig"
-	item_state = "bloodwinter_rig"
+	//item_state = "bloodwinter_rig"
 	hardsuit_type = "bloodwinter"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/winter
 	toggled_for_heat_protecting = FALSE
@@ -849,14 +855,14 @@
 	name = "blood-red unathi RIG helmet"
 	desc = "A dual-mode advanced helmet designed for special operations. Moded for users with elongated skull proportions. Property of Gorlex Marauders."
 	icon_state = "bloodred_unathi_helm"
-	item_state = "bloodred_unathi_helm"
+	//item_state = "bloodred_unathi_helm"
 	hardsuit_type = "bloodred_unathi"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/unathi
 	name = "blood-red unathi RIG"
 	desc = "A dual-mode advanced RIG designed for special operations. Moded for users with digitigrade legs. Original design by Gorlex Marauders."
 	icon_state = "bloodred_unathi_rig"
-	item_state = "bloodred_unathi_rig"
+	//item_state = "bloodred_unathi_rig"
 	hardsuit_type = "bloodred_unathi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/unathi
 	mutantrace_variation = MUTANTRACE_VARIATION
@@ -866,7 +872,7 @@
 	name = "waffle specops RIG helmet"
 	desc = "A dual-mode advanced helmet designed for special operations. Property of Waffle Co."
 	icon_state = "wafflebloodred_helm"
-	item_state = "wafflebloodred_helm"
+	//item_state = "wafflebloodred_helm"
 	hardsuit_type = "wafflebloodred"
 	armor = list(MELEE = 30, BULLET = 50, LASER = 40, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	var/obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/magsuit = null
@@ -891,7 +897,7 @@
 	name = "waffle specops RIG"
 	desc = "A dual-mode advanced RIG designed for special operations with integrated track pulse system. Original design by Waffle Co."
 	icon_state = "wafflebloodred_rig"
-	item_state = "wafflebloodred_rig"
+	//item_state = "wafflebloodred_rig"
 	hardsuit_type = "wafflebloodred"
 	armor = list(MELEE = 30, BULLET = 50, LASER = 40, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle
@@ -938,14 +944,14 @@
 	name = "blood-red unathi RIG helmet"
 	desc = "A dual-mode advanced helmet designed for special operations. Moded for users with elongated skull proportions. Property of Waffle Co."
 	icon_state = "wafflebloodred_unathi_helm"
-	item_state = "wafflebloodred_unathi_helm"
+	//item_state = "wafflebloodred_unathi_helm"
 	hardsuit_type = "wafflebloodred_unathi"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/waffle/unathi
 	name = "blood-red unathi RIG"
 	desc = "A dual-mode advanced RIG designed for special operations with integrated track pulse system. Moded for users with digitigrade legs. Original design by Waffle Co."
 	icon_state = "wafflebloodred_unathi_rig"
-	item_state = "wafflebloodred_unathi_rig"
+	//item_state = "wafflebloodred_unathi_rig"
 	hardsuit_type = "wafflebloodred_unathi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi
 	//mutantrace_variation = MUTANTRACE_VARIATION
@@ -955,7 +961,7 @@
 	name = "blood-red unathi Breach RIG helmet"
 	desc = "A dual-mode advanced helmet designed for breach squads. Moded for users with elongated skull proportions. Property of Waffle Co."
 	icon_state = "wafflebloodred_unathi_breacher_helm"
-	item_state = "wafflebloodred_unathi_breacher_helm"
+	//item_state = "wafflebloodred_unathi_breacher_helm"
 	hardsuit_type = "wafflebloodred_unathi_breacher"
 	armor = list(MELEE = 80, BULLET = 70, LASER = 50, ENERGY = 60, BOMB = 100, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 
@@ -963,7 +969,7 @@
 	name = "blood-red unathi Breach RIG"
 	desc = "A dual-mode advanced RIG designed for breach squads with integrated track pulse system. Moded for users with digitigrade legs. Provides ability to breach through walls. Original design by Waffle Co."
 	icon_state = "wafflebloodred_unathi_breacher_rig"
-	item_state = "wafflebloodred_unathi_breacher_rig"
+	//item_state = "wafflebloodred_unathi_breacher_rig"
 	hardsuit_type = "wafflebloodred_unathi_breacher"
 	armor = list(MELEE = 80, BULLET = 70, LASER = 50, ENERGY = 60, BOMB = 100, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/bloodred/waffle/unathi/breach
@@ -989,7 +995,7 @@
 	name = "elite syndicate RIG helmet"
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing."
 	icon_state = "relite_helm"
-	item_state = "relite_helm"
+	//item_state = "relite_helm"
 	hardsuit_type = "relite"
 	light_range = 6
 	armor = list(MELEE = 60, BULLET = 60, LASER = 50, ENERGY = 35, BOMB = 90, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
@@ -1003,7 +1009,7 @@
 	name = "elite syndicate RIG"
 	desc = "An elite version of the syndicate RIG, with improved armour and fireproofing."
 	icon_state = "relite_rig"
-	item_state = "relite_rig"
+	//item_state = "relite_rig"
 	hardsuit_type = "relite"
 	jetpack = /obj/item/tank/jetpack/suit
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -1017,23 +1023,23 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/preview
 	icon_state = "relite_helm_sealed"
-	item_state = "relite_helm_sealed"
+	//item_state = "relite_helm_sealed"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/preview
 	icon_state = "relite_rig_sealed"
-	item_state = "relite_rig_sealed"
+	//item_state = "relite_rig_sealed"
 
 ////Vahlen elite
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/vahlen
 	name = "elite Vahlen operative RIG helmet"
 	icon_state = "vahlenop_helm"
-	item_state = "vahlenop_helm"
+	//item_state = "vahlenop_helm"
 	hardsuit_type = "vahlenop"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/vahlen
 	name = "elite Vahlen operative RIG"
 	icon_state = "vahlenop_rig"
-	item_state = "vahlenop_rig"
+	//item_state = "vahlenop_rig"
 	hardsuit_type = "vahlenop"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/vahlen
 
@@ -1041,7 +1047,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/optical
 	name = "experimental elite helmet"
 	icon_state = "optical_helm"
-	item_state = "optical_helm"
+	//item_state = "optical_helm"
 	hardsuit_type = "optical"
 	desc = "Strange looking, smoothly contoured helmet. It looks a bit blurry."
 	armor = list(MELEE = 35, BULLET = 60, LASER = 60, ENERGY = 50, BOMB = 90, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
@@ -1056,7 +1062,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/optical
 	name = "experimental elite rig"
 	icon_state = "optical_rig"
-	item_state = "optical_rig"
+	//item_state = "optical_rig"
 	hardsuit_type = "optical"
 	desc = "Strange black hardsuit, with some devices attached to it. It looks a bit blurry. Property of Cybersun Industries."
 	armor = list(MELEE = 35, BULLET = 60, LASER = 60, ENERGY = 50, BOMB = 90, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
@@ -1125,14 +1131,14 @@
 	name = "elite Cybersun Industries RIG helmet"
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing."
 	icon_state = "cselite_helm"
-	item_state = "cselite_helm"
+	//item_state = "cselite_helm"
 	hardsuit_type = "cselite"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/optical/cs
 	name = "elite Cybersun Industries RIG"
 	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding."
 	icon_state = "cselite_rig"
-	item_state = "cselite_rig"
+	//item_state = "cselite_rig"
 	hardsuit_type = "cselite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/optical/cs
 
@@ -1142,14 +1148,14 @@
 	name = "elite medical syndicate RIG helmet"
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing. This one has medical paint pattern."
 	icon_state = "smedelite_helm"
-	item_state = "smedelite_helm"
+	//item_state = "smedelite_helm"
 	hardsuit_type = "smedelite"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/med
 	name = "elite medical syndicate RIG"
 	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding. This one has medical paint pattern."
 	icon_state = "smedelite_rig"
-	item_state = "smedelite_rig"
+	//item_state = "smedelite_rig"
 	hardsuit_type = "smedelite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/med
 
@@ -1158,14 +1164,14 @@
 	name = "elite medical Cybersun Industries RIG helmet"
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing."
 	icon_state = "cselite_med_helm"
-	item_state = "cselite_med_helm"
+	//item_state = "cselite_med_helm"
 	hardsuit_type = "cselite_med"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/med/cs
 	name = "elite medical Cybersun Industries RIG"
 	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding."
 	icon_state = "cselite_rig"
-	item_state = "cselite_rig"
+	//item_state = "cselite_rig"
 	hardsuit_type = "cselite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/med/cs
 
@@ -1174,13 +1180,13 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/bloodred
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing. This one reminds deathsquad style."
 	icon_state = "elite_bloodred_helm"
-	item_state = "elite_bloodred_helm"
+	//item_state = "elite_bloodred_helm"
 	hardsuit_type = "elite_bloodred"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/bloodred
 	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding. This one reminds deathsquad style."
 	icon_state = "elite_bloodred_helm"
-	item_state = "elite_bloodred_helm"
+	//item_state = "elite_bloodred_helm"
 	hardsuit_type = "elite_bloodred"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/bloodred
 
@@ -1191,7 +1197,7 @@
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing. Classic black."
 	armor = list(MELEE = 70, BULLET = 70, LASER = 50, ENERGY = 40, BOMB = 100, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	icon_state = "sbo_helm"
-	item_state = "sbo_helm"
+	//item_state = "sbo_helm"
 	hardsuit_type = "sbo"
 	light_range = 7
 
@@ -1200,7 +1206,7 @@
 	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding. Classic black."
 	armor = list(MELEE = 70, BULLET = 70, LASER = 50, ENERGY = 40, BOMB = 100, BIO = 100, RAD = 70, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	icon_state = "sbo_rig"
-	item_state = "sbo_rig"
+	//item_state = "sbo_rig"
 	hardsuit_type = "sbo"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/sbo
 
@@ -1209,14 +1215,14 @@
 	name = "\improper Comms Officer elite syndicate RIG helmet"
 	desc = "An elite version of the syndicate helmet, with improved armour and fireproofing. This one has contractor style."
 	icon_state = "commsoff_helm"
-	item_state = "commsoff_helm"
+	//item_state = "commsoff_helm"
 	hardsuit_type = "commsoff"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/sbo/commsoff
 	name = "\improper Comms Officer elite syndicate RIG"
 	desc = "An elite version of the syndicate RIG, with improved armour and fire shielding. This one has contractor style."
 	icon_state = "commsoff_rig"
-	item_state = "commsoff_rig"
+	//item_state = "commsoff_rig"
 	hardsuit_type = "commsoff"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/sbo/commsoff
 
@@ -1226,7 +1232,7 @@
 	name = "military RIG helmet"
 	desc = "An austere tactical helmet used by paramilitary groups and real soldiers alike across human space."
 	icon_state = "military_helm"
-	item_state = "military_helm"
+	//item_state = "military_helm"
 	hardsuit_type = "military"
 	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 35, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	light_range = 7
@@ -1239,7 +1245,7 @@
 	name = "military RIG"
 	desc = "An austere RIG used by paramilitary groups and real soldiers alike across human space."
 	icon_state = "military_rig"
-	item_state = "military_rig"
+	//item_state = "military_rig"
 	hardsuit_type = "military"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military
 	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 25, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
@@ -1253,7 +1259,7 @@
 	name = "elite emergency response team RIG helmet (operative)"
 	desc = "Advanced helmet issued to operative of emergency response team Gamma."
 	icon_state = "nt_combat_helm"
-	item_state = "nt_combat_helm"
+	//item_state = "nt_combat_helm"
 	hardsuit_type = "nt_combat"
 	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	strip_delay = 130
@@ -1264,7 +1270,7 @@
 	name = "elite emergency response team RIG (operative)"
 	desc = "Advanced RIG issued to operative of emergency response team Gamma."
 	icon_state = "nt_combat_rig"
-	item_state = "nt_combat_rig"
+	//item_state = "nt_combat_rig"
 	hardsuit_type = "nt_combat"
 	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert
@@ -1276,7 +1282,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec
 	name = "elite emergency response team hardsuit helmet (security)"
 	icon_state = "ert_security_helm"
-	item_state = "ert_security_helm"
+	//item_state = "ert_security_helm"
 	hardsuit_type = "ert_security"
 	desc = "Advanced helmet issued to security specialist of emergency response team Gamma."
 
@@ -1295,7 +1301,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/sec
 	name = "elite emergency response team RIG (security)"
 	icon_state = "ert_security_rig"
-	item_state = "ert_security_rig"
+	//item_state = "ert_security_rig"
 	hardsuit_type = "ert_security"
 	desc = "Advanced RIG issued to security specialist of emergency response team Gamma."
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/sec
@@ -1304,7 +1310,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com
 	name = "elite emergency response team RIG helmet (squad leader)"
 	icon_state = "ert_commander_helm"
-	item_state = "ert_commander_helm"
+	//item_state = "ert_commander_helm"
 	hardsuit_type = "ert_commander"
 	desc = "Advanced helmet issued to officer of emergency response team Gamma."
 	armor = list(MELEE = 65, BULLET = 65, LASER = 70, ENERGY = 70, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
@@ -1350,7 +1356,7 @@
 	armor = list(MELEE = 65, BULLET = 65, LASER = 70, ENERGY = 60, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "ert_commander_rig"
-	item_state = "ert_commander_rig"
+	//item_state = "ert_commander_rig"
 	hardsuit_type = "ert_commander"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/com
 	var/hit_reflect_chance = 40
@@ -1372,7 +1378,7 @@
 	name = "elite emergency response team RIG helmet (blackops)"
 	desc = "Advanced helmet issued to black ops team operator."
 	icon_state = "nt_deathsquad_helm"
-	item_state = "nt_deathsquad_helm"
+	//item_state = "nt_deathsquad_helm"
 	hardsuit_type = "nt_deathsquad"
 	var/hit_reflect_chance = 50
 
@@ -1406,7 +1412,7 @@
 	name = "elite emergency response team RIG (blackops)"
 	desc = "Advanced RIG issued to black ops team operator. Made from superior materials, one of the latest in the modern combat rigs line."
 	icon_state = "nt_deathsquad_rig"
-	item_state = "nt_deathsquad_rig"
+	//item_state = "nt_deathsquad_rig"
 	hardsuit_type = "nt_deathsquad"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad
 	var/hit_reflect_chance = 50
@@ -1427,7 +1433,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/engi
 	name = "elite emergency response team RIG helmet (field engineer)"
 	icon_state = "ert_engineer_helm"
-	item_state = "ert_engineer_helm"
+	//item_state = "ert_engineer_helm"
 	hardsuit_type = "ert_engineer"
 	armor = list(MELEE = 55, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF
@@ -1447,7 +1453,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/engi
 	name = "elite emergency response team RIG (field engineer)"
 	icon_state = "ert_engineer_rig"
-	item_state = "ert_engineer_rig"
+	//item_state = "ert_engineer_rig"
 	hardsuit_type = "ert_engineer"
 	armor = list(MELEE = 55, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF
@@ -1458,7 +1464,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/med
 	name = "elite emergency response team RIG helmet (field medic)"
 	icon_state = "ert_medical_helm"
-	item_state = "ert_medical_helm"
+	//item_state = "ert_medical_helm"
 	hardsuit_type = "ert_medical"
 	armor = list(MELEE = 45, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 100, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = ACID_PROOF
@@ -1483,7 +1489,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/med
 	name = "elite emergency response team RIG (field medic)"
 	icon_state = "ert_medical_rig"
-	item_state = "ert_medical_rig"
+	//item_state = "ert_medical_rig"
 	hardsuit_type = "ert_medical"
 	armor = list(MELEE = 45, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 100, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = ACID_PROOF
@@ -1494,7 +1500,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/paradimentional
 	name = "elite emergency response team RIG helmet (paradimentional specialist)"
 	icon_state = "ert_paradimentional_helm"
-	item_state = "ert_paradimentional_helm"
+	//item_state = "ert_paradimentional_helm"
 	hardsuit_type = "ert_paradimentional"
 	armor = list(MELEE = 60, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 80, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -1508,7 +1514,7 @@
 	armor = list(MELEE = 60, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 80, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "ert_paradimentional_rig"
-	item_state = "ert_paradimentional_rig"
+	//item_state = "ert_paradimentional_rig"
 	hardsuit_type = "ert_paradimentional"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/paradimentional
 
@@ -1521,25 +1527,25 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/jani
 	name = "elite emergency response team RIG helmet (field janitor)"
 	icon_state = "ert_janitor_helm"
-	item_state = "ert_janitor_helm"
+	//item_state = "ert_janitor_helm"
 	hardsuit_type = "ert_janitor"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/jani
 	name = "elite emergency response team RIG (field janitor)"
 	icon_state = "ert_janitor_rig"
-	item_state = "ert_janitor_rig"
+	//item_state = "ert_janitor_rig"
 	hardsuit_type = "ert_janitor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/jani
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/clown
 	name = "elite emergency response team RIG helmet (honksquad operative)"
 	icon_state = "ert_clown_helm"
-	item_state = "ert_clown_helm"
+	//item_state = "ert_clown_helm"
 	hardsuit_type = "ert_clown"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/clown
 	name = "elite emergency response team RIG (honksquad operative)"
 	icon_state = "ert_clown_rig"
-	item_state = "ert_clown_rig"
+	//item_state = "ert_clown_rig"
 	hardsuit_type = "ert_clown"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/clown

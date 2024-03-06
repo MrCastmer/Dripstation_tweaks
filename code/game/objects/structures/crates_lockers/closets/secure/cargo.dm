@@ -1,3 +1,4 @@
+/*
 /obj/structure/closet/secure_closet/quartermaster
 	name = "\proper quartermaster's locker"
 	req_access = list(ACCESS_QM)
@@ -26,3 +27,4 @@
 	new /obj/item/circuitboard/machine/ore_silo(src)
 	new /obj/item/card/id/departmental_budget/car(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/qm(src)
+*/

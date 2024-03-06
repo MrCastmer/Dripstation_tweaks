@@ -1,3 +1,4 @@
+/*
 /obj/structure/closet/secure_closet/captains
 	name = "\proper captain's locker"
 	req_access = list(ACCESS_CAPTAIN)
@@ -117,7 +118,7 @@
 	new /obj/item/radio/security(src)
 	new /obj/item/clipboard/yog/paperwork/security(src)
 	new /obj/item/barrier_taperoll/police(src)
-
+*/
 /obj/structure/closet/secure_closet/security/sec
 
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()

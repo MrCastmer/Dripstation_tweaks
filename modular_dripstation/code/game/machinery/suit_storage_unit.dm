@@ -350,6 +350,7 @@
 		add_overlay("human")
 		overlays += closeimage
 	else if(!state_open)
+		add_overlay("[initial(icon_state)]")
 		overlays += closeimage
 	
 /obj/machinery/suit_storage_unit/proc/dump_contents()

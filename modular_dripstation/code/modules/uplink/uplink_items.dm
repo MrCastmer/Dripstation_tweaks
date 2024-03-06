@@ -1,3 +1,4 @@
+////////////Syndicate/////////////
 /datum/uplink_item/suits/hardsuit
 	name = "Blood-red RIG"
 	desc = "The feared suit of a Syndicate nuclear operative. Features slightly better armoring and a built in jetpack \
@@ -21,6 +22,51 @@
 	cost = 6
 	exclude_modes = list()
 
+/datum/uplink_item/suits/hardsuit/winter
+	name = "White Gorlex RIG"
+	desc = "Not as famous as a standard blood-red Gorlex rig, this one provides some additional abilities. \
+			Features additional termoregulation in combat mode, allowing operate in extremely cold regions of outer space. \
+			Toggling the suit in and out of	combat mode will allow you all the mobility of a loose fitting uniform \
+			without sacrificing armoring. Additionally the suit is collapsible, making it small enough to fit within a backpack."
+	manufacturer = /datum/corporation/gorlex
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/winter
+	cost = 9
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/infiltration) //you can't buy it in nuke, because the elite hardsuit costs the same while being better // yogs: infiltration
+
+/datum/uplink_item/role_restricted/hardsuit
+	name = "GEC Blood-Red RIG"
+	desc = "Hardsuit of Global Engineering Consortium, represented in Syndicate as a minor force. Freedom for Engineers!"
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/engineering/syndicate
+	cost = 4
+	restricted_roles = list("Station Engineer","Atmospheric Technician","Network Admin","Chief Engineer")
+
+/datum/uplink_item/role_restricted/hardsuit/winter
+	name = "White GEC RIG"
+	desc = "Cold-proof hardsuit of Global Engineering Consortium, represented in Syndicate as a minor force. Unite the Engineers!"
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/engineering/syndicate/winter
+	cost = 5
+
+/datum/uplink_item/race_restricted/digirig
+	name = "Degitagrade Blood-Red RIG"
+	desc = "Recently Gorlex started to employ degitagrade specimen in their ranks. This suit constructed for this kind of agents within Syndicate."
+	cost = 8
+	manufacturer = /datum/corporation/gorlex
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/unathi
+	restricted_species = list("lizard", "draconid", "polysmorph")
+
+/datum/uplink_item/race_restricted/humantofelinid
+	name = "Felinid Mutation Toxin"
+	desc = "Oh, so... You really want this?"
+	cost = 2
+	manufacturer = /datum/corporation/traitor/vahlen
+	item = /obj/item/reagent_containers/syringe/felinid
+	restricted_species = list("human")
+
+/obj/item/reagent_containers/syringe/felinid
+	name = "syringe (felinid)"
+	desc = "Contains felinid mutation toxin."
+	list_reagents = list(/datum/reagent/mutationtoxin/felinid = 15)
+
 /datum/uplink_item/suits/hardsuit/elite
 	name = "Elite Syndicate RIG"
 	desc = "An upgraded, elite version of the Syndicate RIG. It features fireproofing, and also \
@@ -39,7 +85,40 @@
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	exclude_modes = list()
 
+/datum/uplink_item/device_tools/tacklers
+	name = "Combat Tackler Gloves"
+	desc = "Combat gloves, that are good at performing tackle takedowns as well as absorbing electrical shocks."
+	item = /obj/item/clothing/gloves/tackler/combat
+	cost = 2
 
+/datum/uplink_item/device_tools/tacklers/waffle
+	name = "Waffle Tackler Gloves"
+	desc = "Faimous rocket gloves, allows user to accelerate and reach high speed in seconds."
+	item = /obj/item/clothing/gloves/tackler/combat/waffle
+	cost = 3
+
+/datum/uplink_item/device_tools/tactical_gloves
+	exclude_modes = list(/datum/game_mode/nuclear) //you can't buy it in nuke, because they have another pair that costs the same while being better
+
+/datum/uplink_item/device_tools/tactical_gloves/combat
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list()
+	item = /obj/item/clothing/gloves/fingerless/bigboss/combat
+
+/datum/uplink_item/infiltration/access_kit
+	cost = 4
+
+/datum/uplink_item/infiltration/gloves
+	name = "Tackler Chameleon Gloves"
+	desc = "An infiltration tackler gloves, capable of changing it's appearance instantly. Will be helpfull in cases when you need to run."
+	item = /obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon
+	cost = 2
+
+
+
+
+
+///////NT///////////
 /datum/uplink_item/nt/hardsuit/standard
 	name = "ERT RIG"
 	desc = "Trully NT Marine."

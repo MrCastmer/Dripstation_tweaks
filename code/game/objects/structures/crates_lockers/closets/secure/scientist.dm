@@ -1,3 +1,4 @@
+/*
 /obj/structure/closet/secure_closet/RD
 	name = "\proper research director's locker"
 	req_access = list(ACCESS_RD)
@@ -23,3 +24,4 @@
 	new /obj/item/clipboard/yog/paperwork/rd(src)
 	new /obj/item/storage/backpack/duffelbag/clothing/rd(src)
 	new /obj/item/multitool/tricorder(src)
+*/

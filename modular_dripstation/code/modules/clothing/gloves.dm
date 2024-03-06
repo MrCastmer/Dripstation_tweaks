@@ -75,6 +75,10 @@
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	var/fingerless_variation = /obj/item/clothing/gloves/fingerless
 
+/obj/item/clothing/gloves/color/yellow
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+
 /obj/item/clothing/gloves/color/black/forensic
 	icon = 'icons/obj/clothing/gloves.dmi'
 
@@ -185,6 +189,10 @@
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "fingerless_tactifool"
+
+/obj/item/clothing/gloves/fingerless/tactifool/qm
+	name = "tacticool fingerless gloves"
+	desc = "Plain tactical gloves issued for use with security low rank personnel. QM`s personal property."
 
 /obj/item/clothing/gloves/fingerless/bigboss/combat
 	name = "\improper tactical fingerless gloves"
@@ -352,3 +360,24 @@
 	tackle_speed = 2
 	min_distance = 2
 	skill_mod = -2
+
+/obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon
+	var/datum/action/item_action/chameleon/change/chameleon_action
+	syndicate = TRUE
+
+/obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon/Initialize(mapload)
+	. = ..()
+	chameleon_action = new(src)
+	if(syndicate)
+		chameleon_action.syndicate = TRUE
+	chameleon_action.chameleon_type = /obj/item/clothing/gloves
+	chameleon_action.chameleon_name = "Gloves"
+	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/gloves, /obj/item/clothing/gloves/color, /obj/item/clothing/gloves/changeling), only_root_path = TRUE)
+	chameleon_action.initialize_disguises()
+	add_item_action(chameleon_action)
+
+/obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	chameleon_action.emp_randomise()
