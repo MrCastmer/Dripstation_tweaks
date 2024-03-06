@@ -109,8 +109,7 @@
 /obj/item/clothing/suit/armor/vest/warden/winter
 	name = "warden's winter coat"
 	desc = "High fashion is required even if the armory is a literal freezer."
-	icon_state = "coatwarden" 
-	item_state = "coatwarden"
+	icon_state = "coatwarden"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -122,8 +121,7 @@
 /obj/item/clothing/suit/armor/vest/warden/short
 	name = "Warden's short jacket"
 	desc = "A short, armored jacket, perfect for desk duty."
-	icon_state = "wardenjacket"
-	item_state = "wardenjacket"
+	icon_state = "wardensjacket"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION

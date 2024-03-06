@@ -1,5 +1,5 @@
 // ###### QM ######
-/obj/item/clothing/suit/hooded/wintercoat/QM
+/obj/item/clothing/suit/hooded/wintercoat/qm
 	name = "quartermaster`s winter coat"
 	desc = "placeholder."
 	icon_state = "coatqm"
@@ -8,7 +8,7 @@
 	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter, /obj/item/melee/classic_baton)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/QM
 
-/obj/item/clothing/suit/hooded/wintercoat/QM/attackby(obj/item/I, params)
+/obj/item/clothing/suit/hooded/wintercoat/qm/attackby(obj/item/I, params)
 	if(!istype(I, /obj/item/clothing/suit/armor/vest/alt))
 		return
 	if(!usr.canUseTopic(src, BE_CLOSE))
@@ -23,14 +23,14 @@
 		to_chat(usr, span_info("You should hold [src] in your hands."))
 		return
 
-/obj/item/clothing/head/hooded/winterhood/QM
+/obj/item/clothing/head/hooded/winterhood/qm
 	name = "quartermaster`s winter hood"
 	desc = "placeholder."
 	icon_state = "winterhood_qm"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
-/obj/item/clothing/suit/hooded/wintercoat/QM/armored
+/obj/item/clothing/suit/hooded/wintercoat/qm/armored
 	name = "quartermaster`s armored winter coat"
 	desc = "placeholder. This one is reinforced with real bulletproof armor platening."
 	icon_state = "coatqm_armored"
@@ -38,11 +38,11 @@
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 10, RAD = 0, FIRE = 50, ACID = 50, WOUND = 15)
 	var/armor_type = /obj/item/clothing/suit/armor/vest/alt
 
-/obj/item/clothing/suit/hooded/wintercoat/QM/armored/Initialize()
+/obj/item/clothing/suit/hooded/wintercoat/qm/armored/Initialize()
 	. = ..()
 	allowed |= GLOB.security_vest_allowed
 
-/obj/item/clothing/suit/hooded/wintercoat/QM/armored/AltClick(slot, obj/item/I, params)
+/obj/item/clothing/suit/hooded/wintercoat/qm/armored/AltClick(slot, obj/item/I, params)
 	if(!usr.canUseTopic(src, BE_CLOSE))
 		return
 	I = src.armor_type
@@ -71,11 +71,11 @@
 	allowed = list(/obj/item/pickaxe, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/boxcutter, /obj/item/export_scanner, /obj/item/cargo_teleporter, /obj/item/melee/classic_baton)
 
 /obj/item/clothing/head/qmhat
-	name = "quartermaster's formal beret"
+	name = "quartermaster's formal hat"
 	desc = "Classic hat issued to quartermaster."
 	icon_state = "qmhat"
-	icon = 'icons/obj/clothing/hats/hats.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/head/head.dmi'
 
 /obj/item/clothing/head/beret/quartermaster
 	name = "quartermaster's formal beret"

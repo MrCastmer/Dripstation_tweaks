@@ -17,6 +17,8 @@
 	name = "research director white beret"
 	desc = "A white beret with a golden science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."
 	icon_state = "beretrd"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/glasses/sunglasses/reagent/sci
 	name = "science glasses"
@@ -44,6 +46,24 @@
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
+
+/obj/item/clothing/under/rank/research_director
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/rd.dmi'		
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/rd.dmi'
+
+/obj/item/clothing/under/rank/research_director/skirt
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/research_director/alt
+	icon_state = "director_jumpsuit"
+	mutantrace_variation = MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/research_director/alt/skirt
+	icon_state = "director_jumpskirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/research_director/turtleneck/skirt
+	can_adjust = TRUE
 
 // ###### SCIENTIST ######
 

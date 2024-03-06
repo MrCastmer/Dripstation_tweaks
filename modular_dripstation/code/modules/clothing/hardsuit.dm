@@ -456,7 +456,7 @@
 	name = "\improper MK.IV captain's hardsuit helmet"
 	desc = "A prototype SWAT helmet issued for use with the station High Lord himself. \
 		The predatory helmet design evokes the chain of command. \
-		Helmet`s armor granting protection against corrosive liquids, explosive blasts, \
+		Helmet`s armor grants protection against corrosive liquids, explosive blasts, \
 		fires, electrical shocks, and contempt from the rest of the crew. \
 		Be responsible for the station, manage your Heads of Staff, \
 		keep the crew alive, be prepared to do anything and everything or die \
