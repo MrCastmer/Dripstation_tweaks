@@ -33,6 +33,21 @@
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
+/obj/machinery/vending/wardrobe/hydro_wardrobe
+	products = list(/obj/item/storage/backpack/botany = 2,
+					/obj/item/storage/backpack/satchel/hyd = 2,
+					/obj/item/clothing/suit/hooded/wintercoat/hydro = 2,
+					/obj/item/clothing/suit/apron = 2,
+					/obj/item/clothing/suit/apron/overalls = 3,
+					/obj/item/clothing/under/yogs/botanyuniform = 3,
+					/obj/item/clothing/under/rank/hydroponics = 3,
+					/obj/item/clothing/under/rank/hydroponics/skirt = 3,
+					/obj/item/clothing/mask/bandana = 3,
+					/obj/item/clothing/accessory/armband/hydro = 3)
+	premium = list(/obj/item/clothing/under/rank/hydroponics/turtleneck = 1,
+					/obj/item/clothing/under/rank/hydroponics/turtleneckalt = 1,
+					/obj/item/clothing/under/rank/hydroponics/turtleneckalt/skirt = 1)
+
 // ###### Janitor ######
 /obj/item/clothing/under/rank/janitor
 	icon_state = "janitor"

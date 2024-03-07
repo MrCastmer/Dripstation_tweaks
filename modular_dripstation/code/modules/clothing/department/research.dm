@@ -89,6 +89,48 @@
 /obj/item/clothing/suit/toggle/labcoat/mad
 	icon_state = "labcoat_green"
 
+/obj/item/clothing/under/rank/scientist
+	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a toxin researcher."
+	name = "toxin researcher's jumpsuit"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/science.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/science.dmi'
+
+/obj/item/clothing/under/rank/scientist/skirt
+	name = "toxin researcher's jumpskirt"
+	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a toxin researcher."
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/scientist/alt
+	icon_state = "science"
+	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a scientist."
+	name = "scientist's jumpsuit"
+
+/obj/item/clothing/under/rank/scientist/skirt/alt
+	icon_state = "science_skirt"
+	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a scientist."
+	name = "scientist's jumpskirt"
+
+/obj/item/clothing/under/rank/scientist/utility
+	name = "science utility uniform"
+	desc = "Old standart issue research uniform. Looks like real science."
+	can_adjust = FALSE
+	icon_state = "util_sci"
+
+/obj/item/clothing/under/rank/scientist/nanite
+	name = "nanite specialist uniform"
+	desc = "You are here to deal with nanites."
+	icon_state = "nanite"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/nanite.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/nanite.dmi'
+
+/obj/item/clothing/under/rank/scientist/skirt/nanite
+	name = "nanite specialist skirt"
+	desc = "You are here to deal with nanites."
+	can_adjust = FALSE
+	icon_state = "nanite_skirt"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/nanite.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/nanite.dmi'
+
 // ###### ROBOTICIST ######
 
 /obj/item/clothing/head/beret/sci/robotics
@@ -131,6 +173,49 @@
 	desc = "A painted welding helmet, has some oriental symbols on it."
 	icon_state = "yuki_matsuda"	
 
+/obj/item/clothing/under/rank/roboticist
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/robotist.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/robotist.dmi'
+
+/obj/item/clothing/under/rank/roboticist/senior
+	name = "senior roboticist`s uniform"
+	desc = "You are in chanrge here."
+	icon_state = "senior_roboticist"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/roboticist/biomech
+	name = "biomech engineer`s uniform"
+	desc = "You are here to repair bionics and upgrade silicons."
+	icon_state = "biomech_engineer"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/roboticist/mech
+	name = "biomech engineer`s uniform"
+	desc = "You are here to make mechs great again."
+	icon_state = "biomech_engineer"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/roboticist/skirt
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/roboticist/skirt/senior
+	name = "senior roboticist`s skirt"
+	desc = "You are in chanrge here."
+	icon_state = "senior_roboticist"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/roboticist/skirt/biomech
+	name = "biomech engineer`s skirt"
+	desc = "You are here to repair bionics and upgrade silicons."
+	icon_state = "biomech_engineer"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/roboticist/skirt/mech
+	name = "biomech engineer`s skirt"
+	desc = "You are here to make mechs great again."
+	icon_state = "biomech_engineer"
+	can_adjust = FALSE
+
 // ###### VENDORS ######
 
 /obj/machinery/vending/wardrobe/science_wardrobe
@@ -138,8 +223,13 @@
 					/obj/item/storage/backpack/science = 3,
 					/obj/item/storage/backpack/satchel/tox = 3,
 					/obj/item/storage/backpack/duffelbag/science = 3,
-					/obj/item/clothing/under/rank/scientist = 5,
-					/obj/item/clothing/under/rank/scientist/skirt = 5,					
+					/obj/item/clothing/under/rank/scientist = 3,
+					/obj/item/clothing/under/rank/scientist/skirt = 3,		
+					/obj/item/clothing/under/rank/scientist/alt = 2,
+					/obj/item/clothing/under/rank/scientist/skirt/alt = 2,
+					/obj/item/clothing/under/rank/scientist/utility = 1,
+					/obj/item/clothing/under/rank/scientist/nanite = 1,
+					/obj/item/clothing/under/rank/scientist/skirt/nanite = 1,			
 					/obj/item/clothing/suit/hooded/wintercoat/science = 3,
 					/obj/item/clothing/suit/toggle/labcoat = 5,					
 					/obj/item/clothing/suit/toggle/labcoat/science = 5,
@@ -161,6 +251,12 @@
 					/obj/item/clothing/glasses/hud/diagnostic = 2,
 					/obj/item/clothing/under/rank/roboticist = 2,
 					/obj/item/clothing/under/rank/roboticist/skirt = 2,
+					/obj/item/clothing/under/rank/roboticist/senior = 1,
+					/obj/item/clothing/under/rank/roboticist/biomech = 1,
+					/obj/item/clothing/under/rank/roboticist/mech = 1,
+					/obj/item/clothing/under/rank/roboticist/skirt/senior = 1,
+					/obj/item/clothing/under/rank/roboticist/skirt/biomech = 1,
+					/obj/item/clothing/under/rank/roboticist/skirt/mech = 1,
 					/obj/item/clothing/suit/toggle/labcoat = 2,
 					/obj/item/clothing/suit/toggle/labcoat/wardtlab = 2,
 					/obj/item/clothing/suit/toggle/labcoat/aeneasrinil = 2,
