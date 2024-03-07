@@ -29,7 +29,7 @@
 	anyone = TRUE
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 	registered_age = null
-	icon_state = "syndie"
+	icon_state = "syndie_com"
 
 /obj/item/card/id/syndicate_command
 	icon_state = "commander"

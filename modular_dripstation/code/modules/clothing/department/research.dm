@@ -233,8 +233,8 @@
 					/obj/item/clothing/suit/hooded/wintercoat/science = 3,
 					/obj/item/clothing/suit/toggle/labcoat = 5,					
 					/obj/item/clothing/suit/toggle/labcoat/science = 5,
-					/*/obj/item/clothing/suit/poncho/sci = 2,
-					/obj/item/clothing/suit/toggle/bomber/scibomber = 2,*/
+					/obj/item/clothing/suit/poncho/sci = 2,
+					/obj/item/clothing/suit/toggle/bomber/scibomber = 2,
 					/obj/item/clothing/head/beret/sci = 3,					
 					/obj/item/clothing/shoes/sneakers/white = 3,
 					/obj/item/clothing/shoes/sandal/white = 3,
