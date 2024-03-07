@@ -62,6 +62,39 @@
 	can_adjust = TRUE
 
 
+// ###### Chemistry ######
+/obj/item/clothing/under/rank/chemist
+	icon_state = "chemistry"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/chemistry.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/chemistry.dmi'
+
+/obj/item/clothing/under/rank/chemist/skirt
+	icon_state = "chemistry_skirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/chemist/pharma
+	desc = "It's made of a special fiber that gives special protection against biohazards. It has a pharmacist rank stripe on it."
+	name = "pharmacist's jumpsuit"
+	icon_state = "pharma"
+
+/obj/item/clothing/under/rank/chemist/utility
+	desc = "It's made of a special fiber that gives special protection against biohazards."
+	name = "chemical protection undersuit"
+	icon_state = "chem_protect"
+
+/obj/machinery/vending/wardrobe/chem_wardrobe
+	products = list(/obj/item/clothing/under/rank/chemist = 2,
+					/obj/item/clothing/under/rank/chemist/skirt = 2,
+					/obj/item/clothing/under/rank/chemist/pharma = 1,
+					/obj/item/clothing/under/rank/chemist/utility = 1,
+					/obj/item/clothing/shoes/sneakers/white = 2,
+					/obj/item/clothing/suit/toggle/labcoat/chemist = 2,
+					/obj/item/clothing/suit/hooded/wintercoat/medical/chemistry = 2,
+					/obj/item/clothing/head/beret/chem = 2,
+					/obj/item/storage/backpack/chemistry = 2,
+					/obj/item/storage/backpack/satchel/chem = 2,
+					/obj/item/storage/bag/chemistry = 4)
+
 // ###### MD ######
 /obj/item/clothing/under/rank/nursesuit
 
