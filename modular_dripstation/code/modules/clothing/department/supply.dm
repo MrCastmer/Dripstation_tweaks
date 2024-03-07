@@ -209,10 +209,13 @@
 	icon_state = "turtleneck_miner"
 	custom_premium_price = 80
 
-/obj/item/clothing/under/rank/miner/turtleneck/skirt
+/obj/item/clothing/under/rank/miner/skirt
 	name = "miner tactical skirtleneck"
 	desc = "It's a tactical skirt with a sturdy set of pants. It is very dirty."
 	icon_state = "skirtleneck_miner_skirt"
+	can_adjust = TRUE
+	fitted = FEMALE_UNIFORM_TOP
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 // ###### CARGO STAFF ######
 
@@ -245,6 +248,8 @@ obj/item/clothing/suit/hooded/wintercoat/cargo
 					/obj/item/clothing/under/rank/cargotech/delivery = 3,
 					/obj/item/clothing/under/rank/cargotech/skirt/delivery = 3,
 					/obj/item/clothing/under/rank/miner = 2,
+					/obj/item/clothing/under/rank/miner/skirt = 2,
+					/obj/item/clothing/under/rank/miner/lavaland = 2,
 					/obj/item/clothing/shoes/sneakers/black = 3,
 					/obj/item/clothing/shoes/xeno_wraps/cargo = 3,
 					/obj/item/clothing/gloves/fingerless = 3,
@@ -253,7 +258,6 @@ obj/item/clothing/suit/hooded/wintercoat/cargo
 					/obj/item/clothing/accessory/armband/cargo = 3,
 					/obj/item/storage/bag/mail = 3)
 	premium = list(/obj/item/clothing/under/rank/miner/turtleneck = 1,
-					/obj/item/clothing/under/rank/miner/turtleneck/skirt = 1,
 					/obj/item/clothing/under/rank/cargotech/turtleneck = 1,
 					/obj/item/clothing/under/rank/cargotech/skirt/turtleneck = 1,
 					/obj/item/clothing/gloves/cargo_gauntlet = 2,
