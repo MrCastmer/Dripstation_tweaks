@@ -1,3 +1,11 @@
+/obj/item/clothing/suit/hooded/explorer
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+
+/obj/item/clothing/head/hooded/explorer
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
 /obj/item/clothing/suit/toggle/labcoat
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'

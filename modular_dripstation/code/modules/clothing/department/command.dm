@@ -337,7 +337,8 @@
 
 /obj/item/clothing/suit/toggle/capformal/hos
 	name = "armored formal coat"
-	icon_state = "hosformal"
+	icon_state = "hos_formal"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 	desc = "A formal coat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 20)
 	strip_delay = 80
@@ -345,7 +346,8 @@
 
 /obj/item/clothing/suit/toggle/capformal/hop
 	name = "head of personal's formal coat"
-	icon_state = "hop_formal"
+	icon_state = "hopformal"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
 	desc = "A luxurious deep blue jacket for the Head of Personnel, woven with a red trim. It smells of bureaucracy."
 	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 25, BOMB = 15, BIO = 0, RAD = 0, FIRE = 40, ACID = 35, WOUND = 10)
 	allowed = list(

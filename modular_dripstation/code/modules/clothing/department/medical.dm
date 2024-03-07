@@ -66,8 +66,8 @@
 /obj/item/clothing/under/rank/nursesuit
 
 /obj/item/clothing/under/rank/medical
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/virology.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/virology.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
 
 /obj/item/clothing/under/rank/medical/blue
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'

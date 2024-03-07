@@ -27,8 +27,17 @@
 	var/flash_protect_off = 2
 	var/color_cutoffs_off = null
 	var/glass_colour_type_off = null
+	actions_types = list(/datum/action/item_action/toggle_nvg)
 
-/datum/action/item_action/toggle_nvg
+/obj/item/clothing/glasses/night/verb/toggle()
+	set name = "Toggle NV"
+	set category = "Object"
+	set src in usr
+	if(!can_use(usr))
+		return
+	attack_self(usr)
+
+/datum/action/item_action/toggle_nvg()
 	name = "Toggle NVG"
 
 /datum/action/item_action/toggle_nvg/IsAvailable(mob/living/carbon/human/user, feedback = FALSE)
@@ -159,6 +168,27 @@
 	var/color_cutoffs_off = null
 	var/glass_colour_type_off = null
 	var/vision_flags_off = null
+	actions_types = list(/datum/action/item_action/toggle_t)
+
+/obj/item/clothing/glasses/thermal/verb/toggle()
+	set name = "Toggle Thermal"
+	set category = "Object"
+	set src in usr
+	if(!can_use(usr))
+		return
+	attack_self(usr)
+
+/datum/action/item_action/toggle_t()
+	name = "Toggle Thermal"
+
+/datum/action/item_action/toggle_t/IsAvailable(mob/living/carbon/human/user, feedback = FALSE)
+	if(!ishuman(user))
+		return FALSE
+	var/mob/living/carbon/human/wearer = user
+	if (wearer.glasses != src)
+		to_chat(src, span_warning("You need to put on your NVG before doing that!"))
+		return FALSE
+	return ..()
 
 /obj/item/clothing/glasses/thermal/update_overlays()
 	..()
@@ -345,3 +375,4 @@
 	icon_state = "skillhud"
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	hud_type = DATA_HUD_SECURITY_BASIC

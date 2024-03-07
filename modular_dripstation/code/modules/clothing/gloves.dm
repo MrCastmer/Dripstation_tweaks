@@ -58,6 +58,7 @@
 /obj/item/clothing/gloves/cargo_gauntlet/qm
 	name = "\improper QM`s cargo gauntlets"
 	desc = "These rubberized gauntlets have high adhesion to the metal surface that allows you to drag crates and lockers with more confidence on them not getting nabbed from you. Provides additional protection to QM`s hands."
+	icon_state = "cargogloves_qm"
 	body_parts_covered = ARMS|HANDS
 	clothing_traits = list(TRAIT_STRONG_GRIP)
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 50, ELECTRIC = 60)
@@ -85,6 +86,10 @@
 	var/fingerless_variation = /obj/item/clothing/gloves/fingerless
 
 /obj/item/clothing/gloves/color/yellow
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+
+/obj/item/clothing/gloves/atmos/ce
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 
