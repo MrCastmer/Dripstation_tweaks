@@ -30,6 +30,8 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/rank/engineer/gorka
+	name = "engineer`s gorka"
+	desc = "Gorka undersuit for hard work."
 	icon_state = "engine_gorka"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
@@ -43,6 +45,8 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/rank/atmospheric_technician/gorka
+	name = "atmospheric technician`s gorka"
+	desc = "Gorka undersuit for hard work."
 	icon_state = "atmos_gorka"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
@@ -56,6 +60,8 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/rank/network_admin/gorka
+	name = "network admin`s gorka"
+	desc = "Gorka undersuit for hard work."
 	icon_state = "signaltech_gorka"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
@@ -72,6 +78,8 @@
 	icon_state = "chiefengineer_alt"
 
 /obj/item/clothing/under/rank/chief_engineer/gorka
+	name = "chief`s gorka"
+	desc = "Gorka undersuit for hard work."
 	icon_state = "chiefengineer_gorka"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION

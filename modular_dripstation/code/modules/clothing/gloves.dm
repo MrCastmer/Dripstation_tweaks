@@ -5,6 +5,8 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "cargogloves"
 	item_state = "cargogloves"
+	custom_premium_price = 300
+	cryo_preserve = TRUE
 	cold_protection = HANDS
 	heat_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -53,6 +55,13 @@
 	QDEL_NULL(pull_component_weakref)
 
 
+/obj/item/clothing/gloves/cargo_gauntlet/qm
+	name = "\improper QM`s cargo gauntlets"
+	desc = "These rubberized gauntlets have high adhesion to the metal surface that allows you to drag crates and lockers with more confidence on them not getting nabbed from you. Provides additional protection to QM`s hands."
+	body_parts_covered = ARMS|HANDS
+	clothing_traits = list(TRAIT_STRONG_GRIP)
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 50, ELECTRIC = 60)
+
 /obj/item/clothing/gloves/krav_maga/sec
 	name = "krav maga gloves"
 	desc = "These gloves can teach you to perform Krav Maga using nanochips."
@@ -99,6 +108,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "combat"
+	cryo_preserve = TRUE
 
 /obj/item/clothing/gloves/combat/militech
 	icon_state = "militech_combat"
@@ -193,6 +203,7 @@
 /obj/item/clothing/gloves/fingerless/tactifool/qm
 	name = "tacticool fingerless gloves"
 	desc = "Plain tactical gloves issued for use with security low rank personnel. QM`s personal property."
+	cryo_preserve = TRUE
 
 /obj/item/clothing/gloves/fingerless/bigboss/combat
 	name = "\improper tactical fingerless gloves"
@@ -218,6 +229,7 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	resistance_flags = NONE
 	custom_premium_price = 400
+	cryo_preserve = TRUE
 	/// For storing our tackler datum so we can remove it after
 	var/datum/component/tackler
 	/// See: [/datum/component/tackler/var/stamina_cost]

@@ -1,2 +1,5 @@
 /datum/outfit/job/cargo_tech
-	backpack_contents = list(/obj/item/boxcutter)
+	backpack_contents = list(/obj/item/boxcutter = 1)
+	backpack = /obj/item/storage/backpack/cargo
+	satchel = /obj/item/storage/backpack/satchel/cargo
+	duffelbag = /obj/item/storage/backpack/duffelbag/cargo

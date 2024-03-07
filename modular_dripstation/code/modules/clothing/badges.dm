@@ -117,7 +117,7 @@
 			var/obj/item/pda/pda = I
 			id_card = pda.id
 
-		if(ACCESS_SEC_DOORS in id_card.access)
+		if(ACCESS_BRIG in id_card.access)
 			to_chat(user, "<span class='notice'>You imprint your ID details onto the badge.</span>")
 			owner_string = id_card.registered_name
 		else

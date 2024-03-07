@@ -7,25 +7,25 @@
 	icon_state = "hazmat_suit_general"
     
 /obj/item/clothing/suit/bio_suit/virology
-	icon_state = "hazmat_suit_virology"
+	icon_state = "hazmat_virology"
 
 /obj/item/clothing/suit/bio_suit/security
-	icon_state = "hazmat_suit_sec"
+	icon_state = "hazmat_sec"
 
 /obj/item/clothing/suit/bio_suit/janitor
-	icon_state = "hazmat_suit_janitor"
+	icon_state = "hazmat_janitor"
 
 /obj/item/clothing/suit/bio_suit/scientist
-	icon_state = "hazmat_suit_scientist"
+	icon_state = "hazmat_scientist"
 
 /obj/item/clothing/suit/bio_suit/cmo
-	icon_state = "hazmat_suit_cmo"
+	icon_state = "hazmat_cmo"
 
 /obj/item/clothing/suit/bio_suit/cyan
-	icon_state = "hazmat_suit_cyan"
+	icon_state = "hazmat_cyan"
 
 /obj/item/clothing/suit/bio_suit/white
-	icon_state = "hazmat_suit_white"
+	icon_state = "hazmat_white"
 
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit
 	icon = 'icons/obj/clothing/suits/suits.dmi'

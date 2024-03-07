@@ -215,10 +215,11 @@
 	desc = "For corporate cargoman usage."
 	icon_state = "backpack-cargo"
 	item_state = "backpack-cargo"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
 /obj/item/storage/backpack/cargo/tactical
 	name = "cargo tactical backpack"
-	desc = "UNITE WE STAND! Uh oh, shitsecs..."
+	desc = "UNITE WE STAND! Beware of the shitsecs..."
 	icon_state = "backpack-cargo_tactiical"
 	item_state = "backpack-cargo_tactiical"
 
@@ -239,6 +240,7 @@
 	desc = "Stand by for your task, operative."
 	icon_state = "syndicate_pack_combat"
 	item_state = "syndicate_pack_combat"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
 /obj/item/storage/backpack/satchel/syndie
 	name = "suspicious satchel"

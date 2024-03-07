@@ -8,8 +8,10 @@
 
 /obj/item/clothing/glasses/meson/sunglasses/ce
 	name = "advanced engineering aviators"
-	desc = "A meson scanner, diagnostic HUD, and reactive welding shield built into a pair of aviators."
+	desc = "A meson scanner built into a pair of aviators."
 	icon_state = "aviator_meson"
+	flash_protect = 1
+	hud_type = null
 
 /obj/item/clothing/glasses/science
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
@@ -135,6 +137,12 @@
 	icon = 'icons/obj/clothing/glasses.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/eyes/eyes.dmi'
 
+/obj/item/clothing/glasses/material/aviator
+	name = "material chemical aviators"
+	desc = "Science aviators with a reagent scanner. Can see through materials, nothing special though."
+	icon_state = "aviator_sci"
+	clothing_flags = SCAN_REAGENTS
+
 /obj/item/clothing/glasses/sunglasses/reagent
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
@@ -233,19 +241,54 @@
 	icon_state = "thermalpatch_combat"
 	can_toggle = FALSE
 
+/obj/item/clothing/glasses/welding
+	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+
 /////HUDs///////
+/obj/item/clothing/glasses/sunglasses/aviators
+	name = "aviators"
+	desc = "Protect your vision with stile!"
+
 /obj/item/clothing/glasses/hud/health
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	hud_type = DATA_HUD_MEDICAL_BASIC
+
+/obj/item/clothing/glasses/hud/health/prescription
+	name = "prescription medicalHUD glasses"
+	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. Also corrects your vision."
+	icon_state = "healthhudpresc"
+	item_state = "glasses"
+	vision_correction = 1 //corrects nearsightedness
+
+/obj/item/clothing/glasses/hud/health/military
+	name = "military health HUDs"
+	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. This ones are military grade."
+	icon_state = "healthhud_military"
+	hud_type = DATA_HUD_MEDICAL_ADVANCED
 
 /obj/item/clothing/glasses/hud/health/sunglasses/cmo
 	name = "medical advanced HUDaviators"
 	desc = "Aviators with a medical HUD. This one is augmented with a reagent scanner."
+	icon_state = "aviator_cmo"
+	hud_type = DATA_HUD_MEDICAL_ADVANCED
+
+/obj/item/clothing/glasses/hud/health/sunglasses/aviators
+	name = "medical HUDaviators"
+	desc = "Aviators with a medical HUD."
 	icon_state = "aviator_med"
+	custom_premium_price = 200
 
 /obj/item/clothing/glasses/hud/diagnostic
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+
+/obj/item/clothing/glasses/hud/diagnostic/military
+	name = "military diagnostic HUDs"
+	desc = "A heads-up display capable of analyzing the integrity and status of robotics and exosuits. This ones are military grade."
+	icon_state = "diagnostichud_military"
+	hud_type = DATA_HUD_DIAGNOSTIC_ADVANCED
 
 /obj/item/clothing/glasses/hud/diagnostic/sunglasses/rd
 	name = "diagnostic advanced HUDaviators"
@@ -253,9 +296,26 @@
 	icon_state = "aviator_rd"
 	clothing_flags = SCAN_REAGENTS
 
+/obj/item/clothing/glasses/hud/diagnostic/sunglasses/aviators
+	name = "diagnostic HUDaviators"
+	desc = "Aviators with a diagnostic HUD."
+	icon_state = "aviator_diagnostic"
+	custom_premium_price = 200
+
 /obj/item/clothing/glasses/hud/security
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+
+/obj/item/clothing/glasses/hud/security/military
+	name = "military security HUDs"
+	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records. This ones are military grade."
+	icon_state = "securityhud_military"
+
+/obj/item/clothing/glasses/hud/security/sunglasses/aviators
+	name = "security HUDaviators"
+	desc = "Aviators with a security HUD."
+	icon_state = "aviator_sec"
+	custom_premium_price = 200
 
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 	icon = 'icons/obj/clothing/glasses.dmi'
@@ -271,5 +331,17 @@
 	mob_overlay_icon = 'icons/mob/clothing/eyes/eyes.dmi'
 
 /obj/item/clothing/glasses/hud/toggle/thermal
+	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+
+/obj/item/clothing/glasses/hud/personnel
+	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	icon_state = "sunhudskill"
+
+/obj/item/clothing/glasses/hud/skill
+	name = "skills HUDs"
+	desc = "A heads-up display with a personnel HUD. This one is military grade."
+	icon_state = "skillhud"
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'

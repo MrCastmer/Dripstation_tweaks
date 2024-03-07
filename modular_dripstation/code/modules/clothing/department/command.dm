@@ -76,26 +76,15 @@
 	icon_state = "coathopformal"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/hop/formal
 
-/obj/item/clothing/suit/armor/vest/hopjacket
-	name = "head of personnel's parade jacket"
-	desc = "A luxurious deep blue jacket for the Head of Personnel, woven with a red trim. It smells of bureaucracy."
-	icon_state = "hopformal"
-	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
-	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list(MELEE = 10, BULLET = 15, LASER = 15, ENERGY = 25, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 35)
-	allowed = list(
-		/obj/item/melee/classic_baton,
-	)
-	dog_fashion = null
-
-/obj/item/clothing/suit/armor/vest/hopjacket/dress
-	name = "head of personnel's parade jacket"
-	desc = "A luxurious deep blue jacket for the Head of Personnel, woven with a red trim. It smells of bureaucracy."
-	icon_state = "hopformal_t"
-
 /obj/item/clothing/head/beret/hop
-	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'	
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "beret_hop"
+
+/obj/item/clothing/head/hopcap
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "hopcap"
 
 /obj/item/clothing/suit/armor/vest/alt
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
@@ -160,7 +149,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
-/obj/item/clothing/suit/hooded/winterhood/captain
+/obj/item/clothing/head/hooded/winterhood/captain
 	icon_state = "winterhoodalt_cap"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
@@ -219,8 +208,17 @@
 /obj/item/clothing/head/beret/captain
 	name = "captain's formal beret"
 	desc = "If you wanna feel yourself a beet younger."
+	icon_state = "capberet"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+
+/obj/item/clothing/head/beret/captain/white
+	name = "captain's black beret"
+	icon_state = "capberet_black"
+
+/obj/item/clothing/head/beret/captain/black
+	name = "captain's white beret"
+	icon_state = "capberet_white"
 
 /obj/item/clothing/head/bearpelt
 	name = "spare bear pelt"
@@ -328,7 +326,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|ARMS|HANDS
 	heat_protection = CHEST|GROIN|ARMS|HANDS
-	armor = list(MELEE = 40, BULLET = 35, LASER = 40, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
+	armor = list(MELEE = 40, BULLET = 35, LASER = 40, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
 	resistance_flags = FIRE_PROOF
 	mutantrace_variation = MUTANTRACE_VARIATION	
 
@@ -339,17 +337,17 @@
 
 /obj/item/clothing/suit/toggle/capformal/hos
 	name = "armored formal coat"
-	icon_state = "hos_formal"
+	icon_state = "hosformal"
 	desc = "A formal coat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
-	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 20)
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 20)
 	strip_delay = 80
 	clothing_flags = THICKMATERIAL
 
 /obj/item/clothing/suit/toggle/capformal/hop
 	name = "head of personal's formal coat"
 	icon_state = "hop_formal"
-	desc = "Lightly armored coat in corporate colors."
-	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 10)
+	desc = "A luxurious deep blue jacket for the Head of Personnel, woven with a red trim. It smells of bureaucracy."
+	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 25, BOMB = 15, BIO = 0, RAD = 0, FIRE = 40, ACID = 35, WOUND = 10)
 	allowed = list(
 		/obj/item/melee/classic_baton,
 	)

@@ -149,7 +149,7 @@
 					/obj/item/clothing/shoes/sneakers/white = 3,
 					/obj/item/clothing/shoes/sandal/white = 3,
 					/obj/item/clothing/shoes/xeno_wraps/science = 3,
-					/obj/item/radio/headset/headset_sci = 5,
+					/obj/item/radio/headset/headset_sci = 3,
 					/obj/item/clothing/mask/gas = 3,
 					/obj/item/clothing/neck/scarf/purple = 2,
 					/obj/item/clothing/accessory/armband/science = 2)
@@ -176,4 +176,5 @@
 					/obj/item/clothing/shoes/sneakers/black = 2,
 					/obj/item/clothing/gloves/fingerless = 2,
 					/obj/item/clothing/head/soft/black = 2,
+					/obj/item/radio/headset/headset_rob = 2,
 					/obj/item/clothing/mask/bandana/skull = 2)

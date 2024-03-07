@@ -17,6 +17,7 @@
 /obj/item/clothing/under/rank/chief_medical_officer/skirt/alt
 	icon_state = "cmo_alt_skirt"
 	can_adjust = TRUE
+
 /obj/item/clothing/under/rank/chief_medical_officer/turtleneck
 	icon_state = "cmoturtle"
 	can_adjust = TRUE
@@ -43,3 +44,54 @@
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
 // ###### PARAMED ######
+
+// ###### Genecist ######
+/obj/item/clothing/under/rank/geneticist
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/genetics.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/genetics.dmi'
+
+/obj/item/clothing/under/rank/geneticist/skirt
+	can_adjust = TRUE
+
+// ###### Virology ######
+/obj/item/clothing/under/rank/virologist
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/virology.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/virology.dmi'
+
+/obj/item/clothing/under/rank/virologist/skirt
+	can_adjust = TRUE
+
+
+// ###### MD ######
+/obj/item/clothing/under/rank/nursesuit
+
+/obj/item/clothing/under/rank/medical
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/virology.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/virology.dmi'
+
+/obj/item/clothing/under/rank/medical/blue
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+
+/obj/item/clothing/under/rank/medical/green
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+
+/obj/item/clothing/under/rank/medical/purple
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+
+/obj/item/clothing/under/rank/medical/black
+	name = "medical scrubs"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in black."
+	icon_state = "scrubsblack"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/medical/scrcmo
+	name = "medical scrubs"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in CMO colors."
+	icon_state = "scrubscmo"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/under/rank/medical/skirt
+	can_adjust = TRUE

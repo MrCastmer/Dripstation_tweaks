@@ -76,6 +76,9 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 		return FALSE
 
 // ###### HOS ######
+/obj/structure/closet/secure_closet/hos
+	anchored = TRUE	//i commited crime with this shit
+
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
 	new /obj/item/cartridge/hos(src)
@@ -89,10 +92,11 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/gun/energy/e_gun/hos(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
+	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/clothing/gloves/combat(src)
 	new /obj/item/storage/belt/security/chief/full(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/hos(src)	
-	new /obj/item/clothing/shoes/xeno_wraps/jackboots(src)
+	new /obj/item/clothing/shoes/xeno_wraps/jackboots/combat(src)
 	new /obj/item/circuitboard/machine/techfab/department/armory(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/clipboard/yog/paperwork/hos(src)
@@ -100,6 +104,9 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/bag/garment/hos(src)
 
 // ###### WARDEN ######
+/obj/structure/closet/secure_closet/warden
+	anchored = TRUE	//i commited crime with this shit
+
 /obj/structure/closet/secure_closet/warden/PopulateContents()
 	..()
 	new /obj/item/radio/headset/headset_sec(src)
@@ -131,6 +138,9 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/barrier_taperoll/police(src)
 
 // ###### HOP ######
+/obj/structure/closet/secure_closet/hop
+	anchored = TRUE	//i commited crime with this shit
+
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
 	new /obj/item/storage/lockbox/medal/service(src)
@@ -154,6 +164,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/bag/garment/hop(src)
 
 // ###### CAPTAIN ######
+/obj/structure/closet/secure_closet/captains
+	anchored = TRUE	//i commited crime with this shit
 
 /obj/structure/closet/secure_closet/captains/PopulateContents()
 	..()
@@ -166,13 +178,18 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/storage/belt/sabre(src)
+	new /obj/item/clothing/glasses/hud/skill(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/storage/photo_album/Captain(src)
 	new /obj/item/clipboard/yog/paperwork/captain(src)
 	new /obj/item/radio/security(src)
 	new /obj/item/storage/bag/garment/captain(src)
+	new /obj/item/clothing/shoes/laceup/brown(src)
+	new /obj/item/clothing/shoes/laceup/cap(src)
 
 // ###### RD ######
+/obj/structure/closet/secure_closet/RD
+	anchored = TRUE	//i commited crime with this shit
 
 /obj/structure/closet/secure_closet/RD/PopulateContents()
 	..()
@@ -324,6 +341,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 // ###### QUARTERMASTER ######
 /obj/structure/closet/secure_closet/quartermaster
+	anchored = TRUE	//i commited crime with this shit
 
 /obj/structure/closet/secure_closet/quartermaster/PopulateContents()
 	..()
@@ -338,8 +356,65 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/door_remote/quartermaster(src)
 	new /obj/item/storage/bag/garment/quartermaster(src)
+	new /obj/item/storage/backpack/cargo/tactical(src)
 	new /obj/item/circuitboard/machine/techfab/department/cargo(src)
 	new /obj/item/storage/photo_album/QM(src)
 	new /obj/item/circuitboard/machine/ore_silo(src)
 	new /obj/item/card/id/departmental_budget/car(src)
 	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/suit/fire/firefighter(src)
+
+/obj/structure/closet/secure_closet/CMO
+	anchored = TRUE	//i commited crime with this shit
+
+/obj/structure/closet/secure_closet/CMO/PopulateContents()
+	..()
+	new /obj/item/storage/backpack/duffelbag/med(src)
+	new /obj/item/cartridge/cmo(src)
+	new /obj/item/radio/headset/heads/cmo(src)
+	new /obj/item/megaphone/command(src)
+	new /obj/item/defibrillator/compact/loaded(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/storage/firstaid/hypospray/deluxe/cmo(src)
+	new /obj/item/autosurgeon/cmo(src)
+	new /obj/item/door_remote/chief_medical_officer(src)
+	new /obj/item/clothing/neck/petcollar(src)
+	new /obj/item/pet_carrier(src)
+	new /obj/item/wallframe/defib_mount(src)
+	new /obj/item/circuitboard/machine/techfab/department/medical(src)
+	new /obj/item/storage/photo_album/CMO(src)
+	new /obj/item/clipboard/yog/paperwork/cmo(src)
+	new /obj/item/storage/bag/garment/chief_medical(src)
+	new /obj/item/storage/belt/medical/chief/full(src)
+	new /obj/item/storage/lockbox/medal/med(src)
+
+/obj/structure/closet/secure_closet/engineering_chief
+	anchored = TRUE	//i commited crime with this shit
+
+/obj/structure/closet/secure_closet/engineering_chief/PopulateContents()
+	..()
+	new /obj/item/tank/jetpack/suit(src)
+	new /obj/item/cartridge/ce(src)
+	new /obj/item/radio/headset/heads/ce(src)
+	new /obj/item/storage/toolbox/mechanical(src)
+	new /obj/item/megaphone/command(src)
+	new /obj/item/areaeditor/blueprints(src)
+	new /obj/item/airlock_painter(src)
+	new /obj/item/holosign_creator/atmos(src)
+	new /obj/item/multitool/tricorder(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/construction/rcd/loaded(src)
+	new /obj/item/door_remote/chief_engineer(src)
+	new /obj/item/pipe_dispenser(src)
+	new /obj/item/inducer(src)
+	new /obj/item/storage/belt/utility/chief/full(src)
+	new /obj/item/circuitboard/machine/techfab/department/engineering(src)
+	new /obj/item/extinguisher/advanced(src)
+	new /obj/item/storage/photo_album/CE(src)
+	new /obj/item/energy_harvester(src)
+	new /obj/item/clipboard/yog/paperwork/ce(src)
+	new /obj/item/poster/firstsingularity(src)
+	new /obj/item/storage/bag/garment/engineering_chief(src)
+	new /obj/item/storage/lockbox/medal/eng(src)
+	new /obj/item/barrier_taperoll/engineering(src)
+	new /obj/item/multisurgeon/magboots(src)

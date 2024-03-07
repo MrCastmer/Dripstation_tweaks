@@ -49,6 +49,7 @@
 	req_access = list(ACCESS_CMO)
 	icon_state = "cmo"
 
+/*
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
 	new /obj/item/storage/backpack/duffelbag/med(src)
@@ -70,6 +71,7 @@
 	new /obj/item/clipboard/yog/paperwork/cmo(src)
 	new /obj/item/storage/backpack/duffelbag/clothing/med/chief(src)
 	new /obj/item/storage/lockbox/medal/med(src)
+*/
 
 
 /obj/structure/closet/secure_closet/paramedic

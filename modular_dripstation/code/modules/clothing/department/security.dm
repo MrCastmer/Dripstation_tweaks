@@ -154,6 +154,11 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/security.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/security.dmi'
 
+/obj/item/clothing/under/rank/security/alt
+	name = "black security uniform"
+	desc = "A jumpsuit made of strong material, providing robust protection."
+	icon_state = "bsecurity"
+
 /obj/item/clothing/under/rank/security/redshirt
 	name = "white classic security uniform"
 	desc = "A jumpsuit made of strong material, providing robust protection."
@@ -161,7 +166,7 @@
 
 /obj/item/clothing/under/rank/security/corporate
 	name = "corporate security uniform"
-	desc = "Standart issue fancy corporate uniform issued to the Head of Security."
+	desc = "Standart issue fancy corporate uniform issued to offcers."
 	icon_state = "sec_corporate"
 
 /obj/item/clothing/under/rank/security/classic
@@ -169,7 +174,12 @@
 	desc = "Old issue fancy security uniform, this one has silver lining."
 	icon_state = "clsecurity"
 
+/obj/item/clothing/under/rank/security/navyblue
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform/uniform.dmi'
+
 /obj/item/clothing/under/rank/security/navyblue/russian
+	icon_state = "officertanclothes"
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/uniform/uniform.dmi'
 	
@@ -227,6 +237,7 @@
 					  /obj/item/storage/fancy/donut_box = 2)
 	premium = list(/obj/item/storage/belt/security/webbing = 5,
 					/obj/item/clothing/gloves/tackler/security = 3,
+					/obj/item/clothing/glasses/hud/security/sunglasses/aviators = 1,
 				   /obj/item/coin/antagtoken = 1,
 				   /obj/item/clothing/head/helmet/warhelmet = 5,
 				   /obj/item/clothing/suit/armor/vest/rycliesarmour = 5,
@@ -236,15 +247,19 @@
 
 /obj/machinery/vending/wardrobe/sec_wardrobe
 	req_access = list(ACCESS_SECURITY)
+	default_price = 50
 	products = list(/obj/item/storage/backpack/security = 3,
 					/obj/item/storage/backpack/satchel/sec = 3,
 					/obj/item/storage/backpack/duffelbag/sec = 3,
 					/obj/item/clothing/under/rank/security = 3,
+					/obj/item/clothing/under/rank/security/alt = 3,
 					/obj/item/clothing/under/rank/security/skirt = 3,
 					/obj/item/clothing/under/rank/security/grey = 3,
 					/obj/item/clothing/under/rank/security/redshirt = 3,
 					/obj/item/clothing/under/rank/security/classic = 3,
 					/obj/item/clothing/under/rank/security/corporate = 3,
+					/obj/item/clothing/under/rank/security/navyblue = 3,
+					/obj/item/clothing/under/rank/security/navyblue/russian = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/security = 3,					
 					/obj/item/clothing/suit/armor/vest/secmiljacket = 2,
 					/*/obj/item/clothing/suit/toggle/bomber/secbomber/soft = 2,

@@ -3,8 +3,9 @@
 	department_head = list("Captain")
 	supervisors = "the captain"
 	req_admin_notify = 1
-	added_access = list(ACCESS_SECURITY)
-	base_access = list(ACCESS_SEC_DOORS, ACCESS_VAULT, ACCESS_EVA, ACCESS_HEADS,
+	added_access = list(ACCESS_SECURITY, ACCESS_BAR, ACCESS_TECH_STORAGE, ACCESS_CAPTAIN)
+	base_access = list(ACCESS_SEC_DOORS, ACCESS_VAULT, ACCESS_EVA, ACCESS_HEADS, ACCESS_WEAPONS, ACCESS_RC_ANNOUNCE, ACCESS_GATEWAY,
+						ACCESS_MECH_MEDICAL, ACCESS_MEDICAL, 
 						ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, 
 						ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM)
 	mail_goodies = list(
@@ -22,4 +23,7 @@
 /datum/outfit/job/quartermaster
 	id_type = /obj/item/card/id/head
 	ears = /obj/item/radio/headset/qm
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/boxcutter = 1)
+	backpack = /obj/item/storage/backpack/cargo
+	satchel = /obj/item/storage/backpack/satchel/cargo
+	duffelbag = /obj/item/storage/backpack/duffelbag/cargo

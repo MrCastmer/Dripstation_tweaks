@@ -76,13 +76,17 @@
 	icon_state = "qmhat"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+	body_parts_covered = HEAD
+	armor = list(MELEE = 15, BULLET = 0, LASER = 0, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 
 /obj/item/clothing/head/beret/quartermaster
 	name = "quartermaster's formal beret"
 	desc = "Classic beret issued to quartermaster."
 	icon_state = "beretqm"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	body_parts_covered = HEAD
+	armor = list(MELEE = 15, BULLET = 0, LASER = 0, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 
 /obj/item/clothing/under/rank/cargo
 	icon_state = "qm"
@@ -158,6 +162,35 @@
 	icon_state = "deliveries_officer_skirt"
 	desc = "Skirt issued to Cargonia delivery officials. Deliver with style!"
 
+/obj/item/clothing/suit/customs
+	name = "customs jacket"
+	icon_state = "customs_coat"
+	desc = "A slim armored jacket issued to cargonian customs officers. Provides minor melee protection."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	custom_premium_price = 100
+	body_parts_covered = CHEST|GROIN
+	armor = list(MELEE = 15, BULLET = 0, LASER = 0, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
+
+/obj/item/clothing/suit/gorka_jacket
+	name = "gorka jacket"
+	icon_state = "gorka_jacket"
+	desc = "Gorka jacket."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	cold_protection = CHEST|GROIN|ARMS|HANDS
+	heat_protection = CHEST|GROIN|ARMS|HANDS
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	min_cold_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+
+/obj/item/clothing/suit/gorka_jacket/supply
+	name = "cargo gorka jacket"
+	icon_state = "gorka_jacket_supply"
+	desc = "Gorka jacket with additional anti-crate protection."
+	custom_premium_price = 100
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list(MELEE = 5, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
+
 /////Miner//////
 /obj/item/clothing/under/rank/miner
 	name = "miner tactical overalls"
@@ -174,7 +207,7 @@
 	name = "miner tactical turtleneck"
 	desc = "It's a tactical jumpsuit with a sturdy set of pants. It is very dirty."
 	icon_state = "turtleneck_miner"
-	custom_price = 80
+	custom_premium_price = 80
 
 /obj/item/clothing/under/rank/miner/turtleneck/skirt
 	name = "miner tactical skirtleneck"
@@ -200,6 +233,7 @@ obj/item/clothing/suit/hooded/wintercoat/cargo
 	icon_state = "cargodrobe"
 	product_ads = "Upgraded Style! Pick yours today!;These shorts are comfy and easy to wear, get yours now!"
 	vend_reply = "Thank you for using the CargoDrobe!"
+	default_price = 50
 	products = list(/obj/item/clothing/suit/hooded/wintercoat/cargo = 3,
 					/obj/item/clothing/under/rank/cargotech = 3,
 					/obj/item/clothing/under/rank/cargotech/skirt = 3,
@@ -222,5 +256,8 @@ obj/item/clothing/suit/hooded/wintercoat/cargo
 					/obj/item/clothing/under/rank/miner/turtleneck/skirt = 1,
 					/obj/item/clothing/under/rank/cargotech/turtleneck = 1,
 					/obj/item/clothing/under/rank/cargotech/skirt/turtleneck = 1,
+					/obj/item/clothing/gloves/cargo_gauntlet = 2,
+					/obj/item/clothing/suit/customs = 2,
+					/obj/item/clothing/suit/gorka_jacket/supply = 2,
 					/obj/item/clothing/shoes/workboots/cargo = 2,
 					/obj/item/clothing/shoes/workboots/mining = 2)
