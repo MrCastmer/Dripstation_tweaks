@@ -89,6 +89,7 @@
 #include "code\modules\mob\living\human\species_types\dripstation_blacklist.dm"
 #include "code\modules\mob\mob_helpers.dm"
 #include "code\modules\uplink\uplink_devices.dm"
+#include "code\modules\uplink\uplink_items.dm"
 #include "code\modules\paperwork\folders.dm"
 #include "code\modules\paperwork\photocopier.dm"
 #include "code\modules\power\supermatter\supermatter.dm"
