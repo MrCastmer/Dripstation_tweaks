@@ -135,7 +135,6 @@
 	new /obj/item/clothing/head/HoS(src)
 	new /obj/item/clothing/head/HoS/dictator(src)
 	new /obj/item/clothing/mask/gas/sechailer/swat/hos(src)
-	new /obj/item/clothing/suit/toggle/capformal/hos(src)
 
 /obj/item/storage/bag/garment/warden/PopulateContents()
 	new /obj/item/clothing/under/rank/warden(src)

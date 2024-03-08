@@ -37,16 +37,16 @@
 		return
 	attack_self(usr)
 
-/datum/action/item_action/toggle_nvg()
+/datum/action/item_action/toggle_nvg
 	name = "Toggle NVG"
 
 /datum/action/item_action/toggle_nvg/IsAvailable(mob/living/carbon/human/user, feedback = FALSE)
 	if(!ishuman(user))
 		return FALSE
-	var/mob/living/carbon/human/wearer = user
-	if (wearer.glasses != src)
-		to_chat(src, span_warning("You need to put on your NVG before doing that!"))
-		return FALSE
+	//var/mob/living/carbon/human/wearer = user
+	//if (wearer.glasses != src)
+	//	to_chat(src, span_warning("You need to put on your NVG before doing that!"))
+	//	return FALSE
 	return ..()
 
 /obj/item/clothing/glasses/night/emp_act(severity)
@@ -105,9 +105,9 @@
 		return
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/wearer = user
-	if (wearer.glasses != src || slot == ITEM_SLOT_EYES)
-		return
+	//var/mob/living/carbon/human/wearer = user
+	//if (wearer.glasses != src || slot == ITEM_SLOT_EYES)
+	//	return
 	on = !on
 	if(on)
 		lighting_cutoff = initial(lighting_cutoff)
@@ -178,7 +178,7 @@
 		return
 	attack_self(usr)
 
-/datum/action/item_action/toggle_t()
+/datum/action/item_action/toggle_t
 	name = "Toggle Thermal"
 
 /datum/action/item_action/toggle_t/IsAvailable(mob/living/carbon/human/user, feedback = FALSE)
@@ -238,9 +238,9 @@
 		return
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/wearer = user
-	if (wearer.glasses != src || slot == ITEM_SLOT_EYES)
-		return
+	//var/mob/living/carbon/human/wearer = user
+	//if (wearer.glasses != src || slot == ITEM_SLOT_EYES)
+	//	return
 	on = !on
 	if(on)
 		lighting_cutoff = initial(lighting_cutoff)

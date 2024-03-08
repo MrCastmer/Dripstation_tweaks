@@ -221,7 +221,7 @@
 
 // ###### VENDORS ######
 /obj/machinery/vending/security
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_BRIG)
 	products = list(/obj/item/clothing/head/helmet/plated = 6,
 					/obj/item/clothing/suit/armor/plated = 6,
 					/obj/item/restraints/handcuffs = 8,
@@ -247,7 +247,6 @@
 
 /obj/machinery/vending/wardrobe/sec_wardrobe
 	req_access = list(ACCESS_SECURITY)
-	default_price = 50
 	products = list(/obj/item/storage/backpack/security = 3,
 					/obj/item/storage/backpack/satchel/sec = 3,
 					/obj/item/storage/backpack/duffelbag/sec = 3,

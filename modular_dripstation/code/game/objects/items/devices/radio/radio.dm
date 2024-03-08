@@ -53,6 +53,9 @@
 /obj/item/radio/headset/heads/hop
 	icon_state = "hop_headset"
 
+/obj/item/radio/headset/headset_rob
+	icon_state = "sci_headset"
+
 /obj/item/radio/headset/qm
 	name = "quartermaster`s radio headset"
 	desc = "The headset of the guy who will one day be second on command."

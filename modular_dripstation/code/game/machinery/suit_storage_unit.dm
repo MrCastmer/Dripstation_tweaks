@@ -324,6 +324,7 @@
 
 /obj/machinery/suit_storage_unit/update_overlays()
 	. = ..()
+	cut_overlays(TRUE)
 	if(uv)
 		if(uv_super)
 			add_overlay("super")
@@ -350,7 +351,8 @@
 		add_overlay("human")
 		overlays += closeimage
 	else if(!state_open)
-		add_overlay("[initial(icon_state)]")
+		if(locked)
+			add_overlay("secure")
 		overlays += closeimage
 	
 /obj/machinery/suit_storage_unit/proc/dump_contents()

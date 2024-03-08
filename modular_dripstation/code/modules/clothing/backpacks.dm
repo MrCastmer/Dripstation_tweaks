@@ -216,24 +216,34 @@
 	icon_state = "backpack-cargo"
 	item_state = "backpack-cargo"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 
 /obj/item/storage/backpack/cargo/tactical
 	name = "cargo tactical backpack"
 	desc = "UNITE WE STAND! Beware of the shitsecs..."
 	icon_state = "backpack-cargo_tactiical"
 	item_state = "backpack-cargo_tactiical"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 
 /obj/item/storage/backpack/satchel/cargo
 	name = "cargo satchel"
 	desc = "For those whose burden is heavy."
 	icon_state = "satchel-cargo"
 	item_state = "satchel-cargo"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 
 /obj/item/storage/backpack/duffelbag/cargo
 	name = "cargo duffelbag"
 	desc = "A duffelbag designed to hold cargo. Heavy cargo."
 	icon_state = "duffelbag-cargo"
 	item_state = "duffelbag-cargo"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 
 /obj/item/storage/backpack/syndie
 	name = "suspicious backpack"

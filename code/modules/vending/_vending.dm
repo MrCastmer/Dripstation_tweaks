@@ -837,9 +837,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(LAZYLEN(R.returned_products))
 				price_to_use = 0 //returned items are free
 
+/*
 			if(!charge_user(price_to_use, R.name, is_premium))
 				vend_ready = TRUE
 				return
+*/
 
 			if(onstation && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
@@ -848,6 +850,12 @@ GLOBAL_LIST_EMPTY(vending_products)
 				if(!C)
 					vend_ready = TRUE
 					return
+
+				if(!allowed(usr))	//dripstation edit
+					say("Access denied.")	//dripstation edit
+					flick(icon_deny,src)	//dripstation edit
+					vend_ready = TRUE	//dripstation edit
+					return	//dripstation edit
 
 				if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))
 					say("You are not of legal age to purchase [R.name].")
@@ -858,6 +866,10 @@ GLOBAL_LIST_EMPTY(vending_products)
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
+
+			if(!charge_user(price_to_use, R.name, is_premium))	//dripstation edit
+				vend_ready = TRUE	//dripstation edit
+				return	//dripstation edit
 
 			thank_user("Thank you for shopping with [src]!")
 			finish_vend()
@@ -1087,7 +1099,7 @@ GLOBAL_LIST_EMPTY(vending_products)
   */
 /obj/machinery/vending/proc/compartmentLoadAccessCheck(mob/user)
 	if(!canload_access_list)
-		return TRUE
+		return FALSE	//dripstation edit	
 	else
 		if((obj_flags & EMAGGED) || !scan_id)
 			return TRUE

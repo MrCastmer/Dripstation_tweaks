@@ -1,7 +1,7 @@
 // ###### QM ######
 /obj/item/clothing/suit/hooded/wintercoat/qm
 	name = "quartermaster`s winter coat"
-	desc = "placeholder."
+	desc = "Winter coat for filling out documents in hazardous environment. Can be reinforsed with standart armor jacket."
 	icon_state = "coatqm"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
@@ -25,14 +25,14 @@
 
 /obj/item/clothing/head/hooded/winterhood/qm
 	name = "quartermaster`s winter hood"
-	desc = "placeholder."
+	desc = "Winter hood for filling out documents in hazardous environment."
 	icon_state = "winterhood_qm"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/suit/hooded/wintercoat/qm/armored
 	name = "quartermaster`s armored winter coat"
-	desc = "placeholder. This one is reinforced with real bulletproof armor platening."
+	desc = "Winter hood for filling out documents in hazardous environment. This one is reinforced with real armor platening."
 	icon_state = "coatqm_armored"
 	body_parts_covered = CHEST
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 10, RAD = 0, FIRE = 50, ACID = 50, WOUND = 15)
@@ -204,6 +204,9 @@
 
 /obj/item/clothing/under/rank/miner/lavaland
 	desc = "A green uniform for operating in hazardous environments. Real classic."
+	icon_state = "miner"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/cargo/miner.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/cargo/miner.dmi'
 
 /obj/item/clothing/under/rank/miner/turtleneck
 	name = "miner tactical turtleneck"
@@ -214,7 +217,7 @@
 /obj/item/clothing/under/rank/miner/skirt
 	name = "miner tactical skirtleneck"
 	desc = "It's a tactical skirt with a sturdy set of pants. It is very dirty."
-	icon_state = "skirtleneck_miner_skirt"
+	icon_state = "skirtleneck_miner"
 	can_adjust = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
