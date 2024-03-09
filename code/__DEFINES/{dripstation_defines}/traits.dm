@@ -2,3 +2,4 @@
 #define TRAIT_APATHETIC			"apathetic"
 #define TRAIT_MEDIC				"medic"
 #define TRAIT_NOSURGERY		"no_surgery"
+#define TRAIT_NOGUNS_QUIRK		"nogun_quirk"

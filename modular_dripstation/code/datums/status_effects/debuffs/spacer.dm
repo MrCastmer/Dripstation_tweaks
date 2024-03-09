@@ -90,16 +90,16 @@
 	category = "spacer"
 
 /datum/mood_event/spacer/in_space
-	description = "Space is long and dark and empty, but it's my home."
+	description = "<span class='nicegreen'>Space is long and dark and empty, but it's my home.</span>\n"
 
 /datum/mood_event/spacer/on_planet
-	description = "I'm on a planet. The gravity here makes me uncomfotable."
+	description = "<span class='warning'>I'm on a planet. The gravity here makes me uncomfotable.</span>\n"
 	mood_change = -2
 
 /datum/mood_event/spacer/on_planet/too_long
-	description = "I've been on this planet for too long. I need to get back to space."
+	description = "<span class='boldwarning'>I've been on this planet for too long. I need to get back to space.</span>\n"
 	mood_change = -4
 
 /datum/mood_event/spacer/on_planet/nerfed
-	description = "I'm stationed on a planet. I'd love to be back in space."
+	description = "<span class='warning'>I'm stationed on a planet. I'd love to be back in space.</span>\n"
 	mood_change = -3

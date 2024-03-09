@@ -129,11 +129,11 @@
 	lose_text = span_notice("You suddenly feel like you can use guns again!")
 	medical_record_text = "Patient is unable to use firearms. Reasoning unknown."
 	value = -6
-	mob_trait = TRAIT_NOGUNS
+	mob_trait = TRAIT_NOGUNS_QUIRK
 	icon = "gun"
 	job_blacklist = list("Head of Security", "Security Officer", "Warden")
 
-/datum/quirk/surgeon
+/datum/quirk/nosurgery
 	name = "No Surgery"
 	desc = "You skipped modern surgery courses when get your job in Nanotrasen research space programm. Even a monkey would perform better surgery than you."
 	icon = "notes-medical"
