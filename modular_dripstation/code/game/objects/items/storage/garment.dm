@@ -208,6 +208,8 @@
 	new /obj/item/clothing/under/rank/chief_engineer/skirt(src)
 	new /obj/item/clothing/under/rank/chief_engineer/alt(src)
 	new /obj/item/clothing/under/rank/chief_engineer/gorka(src)
+	new /obj/item/clothing/under/rank/chief_engineer/formal(src)
+	new /obj/item/clothing/under/rank/chief_engineer/skirt/formal(src)
 	new /obj/item/clothing/neck/cloak/ce(src)
 	new /obj/item/clothing/head/hardhat/white(src)
 	new /obj/item/clothing/head/hardhat/weldhat/white(src)

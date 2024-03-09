@@ -329,7 +329,7 @@
 	icon_state = "gec_atmos_overalls"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
-/obj/item/clothing/under/syndicate/tacticool/atmos
+/obj/item/clothing/under/syndicate/tacticool/sig
 	name = "network admin turtleneck"
 	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking signaltech."
 	icon_state = "gec_signaltech_overalls"
