@@ -61,6 +61,7 @@
 	desc = "The headset of the guy who will one day be second on command."
 	icon_state = "qm_headset"
 	keyslot = new /obj/item/encryptionkey/heads/qm
+	command = TRUE
 
 /obj/item/radio/headset/qm/alt
 	name = "quartermaster`s bowman headset"
