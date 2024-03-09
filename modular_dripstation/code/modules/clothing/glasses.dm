@@ -27,6 +27,7 @@
 	var/flash_protect_off = 2
 	var/color_cutoffs_off = null
 	var/glass_colour_type_off = null
+/*
 	actions_types = list(/datum/action/item_action/toggle_nvg)
 
 /obj/item/clothing/glasses/night/verb/toggle()
@@ -70,7 +71,6 @@
 	..()
 	if(can_toggle)
 		on = FALSE
-		actions_types = list(/datum/action/item_action/toggle_nvg)
 		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
 		color_cutoffs = color_cutoffs_off
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/glasses/night/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if(slot == ITEM_SLOT_EYES && on)
+	if(slot == ITEM_SLOT_EYES)
 		lighting_cutoff = initial(lighting_cutoff)
 		flash_protect = initial(flash_protect)
 		color_cutoffs = initial(color_cutoffs)
@@ -90,15 +90,14 @@
 
 /obj/item/clothing/glasses/night/dropped(mob/living/carbon/human/user)
 	..()
-	if(istype(user) && user.glasses == src && on)
-		on = FALSE
-		lighting_cutoff = lighting_cutoff_off
-		flash_protect = flash_protect_off
-		color_cutoffs = color_cutoffs_off
-		glass_colour_type = glass_colour_type_off
-		if(hud_type)
-			var/datum/atom_hud/H = GLOB.huds[hud_type]
-			H.hide_from(user)
+	on = FALSE
+	lighting_cutoff = lighting_cutoff_off
+	flash_protect = flash_protect_off
+	color_cutoffs = color_cutoffs_off
+	glass_colour_type = glass_colour_type_off
+	if(hud_type)
+		var/datum/atom_hud/H = GLOB.huds[hud_type]
+		H.hide_from(user)
 
 /obj/item/clothing/glasses/night/attack_self(mob/user, slot)
 	if(!can_toggle)
@@ -125,7 +124,7 @@
 		if(hud_type)
 			var/datum/atom_hud/H = GLOB.huds[hud_type]
 			H.hide_from(user)
-
+*/
 /obj/item/clothing/glasses/night/security
 	icon_state = "tact-securityhudnight"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
@@ -168,8 +167,8 @@
 	var/color_cutoffs_off = null
 	var/glass_colour_type_off = null
 	var/vision_flags_off = null
-	actions_types = list(/datum/action/item_action/toggle_t)
 
+/*
 /obj/item/clothing/glasses/thermal/verb/toggle()
 	set name = "Toggle Thermal"
 	set category = "Object"
@@ -206,7 +205,7 @@
 	..()
 	if(can_toggle)
 		on = FALSE
-		actions_types = list(/datum/action/item_action/toggle_nvg)
+		actions_types = list(/datum/action/item_action/toggle_t)
 		lighting_cutoff = lighting_cutoff_off
 		flash_protect = flash_protect_off
 		color_cutoffs = color_cutoffs_off
@@ -254,7 +253,7 @@
 		color_cutoffs = color_cutoffs_off
 		glass_colour_type = glass_colour_type_off
 		vision_flags = vision_flags_off
-
+*/
 /obj/item/clothing/glasses/thermal/xray
 	name = "syndicate xray goggles"
 	desc = "A pair of xray goggles manufactured by the Syndicate."
