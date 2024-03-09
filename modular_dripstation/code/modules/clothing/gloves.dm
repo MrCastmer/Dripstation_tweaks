@@ -56,8 +56,8 @@
 
 
 /obj/item/clothing/gloves/cargo_gauntlet/qm
-	name = "\improper QM`s cargo gauntlets"
-	desc = "These rubberized gauntlets have high adhesion to the metal surface that allows you to drag crates and lockers with more confidence on them not getting nabbed from you. Provides additional protection to QM`s hands."
+	name = "\improper advanced cargo gauntlets"
+	desc = "These rubberized gauntlets have high adhesion to the metal surface that allows you to drag crates and lockers with more confidence on them not getting nabbed from you. Provides additional melee protection to hands."
 	icon_state = "cargogloves_qm"
 	body_parts_covered = ARMS|HANDS
 	clothing_traits = list(TRAIT_STRONG_GRIP)

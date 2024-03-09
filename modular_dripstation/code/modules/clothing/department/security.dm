@@ -136,18 +136,6 @@
 /obj/item/clothing/head/warden/drill
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
-/obj/item/clothing/gloves/krav_maga/sec
-	name = "krav maga gloves"
-	desc = "These gloves can teach you to perform Krav Maga using nanochips."
-	icon_state = "fightgloves"
-	item_state = "fightgloves"
-	cold_protection = HANDS
-	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
-	heat_protection = HANDS
-	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	cryo_preserve = TRUE
-
 // ###### OFFICER ######
 
 /obj/item/clothing/under/rank/security
