@@ -221,15 +221,15 @@
 
 //////Space pirate outfit//////
 /obj/item/clothing/head/helmet/space/pirate
-	icon_state = "pirate"
+	icon_state = "helm-pirate"
 	//item_state = "pirate"
 
 /obj/item/clothing/head/helmet/space/pirate/bandana
-	icon_state = "bandana"
+	icon_state = "helm-bandana"
 	//item_state = "bandana"
 
 /obj/item/clothing/head/helmet/space/pirate/captain
-	icon_state = "hgpiratecap"
+	icon_state = "helm-hgpiratecap"
 	//item_state = "hgpiratecap"
 
 /obj/item/clothing/suit/space/pirate

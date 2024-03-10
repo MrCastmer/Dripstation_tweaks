@@ -75,6 +75,16 @@
 	icon = 'icons/obj/clothing/suits/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
 
+/obj/item/clothing/head/helmet/abductor
+	icon = 'icons/obj/clothing/hats/hats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
+
+/obj/item/clothing/suit/armor/abductor/vest
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/head/helmet/changeling
+	dynamic_hair_suffix = ""
 
 //////////////////SWAT//////////////////
 /obj/item/clothing/head/helmet/swat
