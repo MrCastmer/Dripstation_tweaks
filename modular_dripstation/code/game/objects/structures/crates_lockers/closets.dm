@@ -373,7 +373,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/cartridge/cmo(src)
 	new /obj/item/radio/headset/heads/cmo(src)
 	new /obj/item/megaphone/command(src)
-	new /obj/item/defibrillator/compact/loaded(src)
+	new /obj/item/defibrillator/compact/advanced/loaded(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/storage/firstaid/hypospray/deluxe/cmo(src)
 	new /obj/item/autosurgeon/cmo(src)

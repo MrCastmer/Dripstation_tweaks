@@ -147,6 +147,7 @@
 	else
 		safety = TRUE
 		to_chat(user, span_notice("You silently enable [src]'s safety protocols with the cryptographic sequencer."))
+	update_appearance(UPDATE_ICON)	//dripstation edit
 	return TRUE
 
 /obj/item/defibrillator/emp_act(severity)
@@ -266,11 +267,13 @@
 	combat = TRUE
 	safety = FALSE
 
+/*	dripstation edit
 /obj/item/defibrillator/compact/combat/loaded/Initialize(mapload)
 	. = ..()
 	paddles = make_paddles()
 	cell = new /obj/item/stock_parts/cell/infinite(src)
 	update_appearance(UPDATE_ICON)
+*/
 
 /obj/item/defibrillator/compact/combat/loaded/attackby(obj/item/W, mob/user, params)
 	if(W == paddles)
