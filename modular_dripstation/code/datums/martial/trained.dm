@@ -63,6 +63,7 @@
 			return TRUE
 		if(D.grabbedby(A))
 			D.drop_all_held_items()
+			//D.Stun(0.5 SECONDS)
 		if(A.grab_state < 1)
 			restraining = FALSE
 		return TRUE
@@ -103,10 +104,10 @@
 /mob/living/carbon/human/proc/trained_help()
 	set name = "Remember The Basics"
 	set desc = "You try to remember some of the basics of your combat trainings."
-	set category = "No Martial Art"
+	set category = "Combat Trainings"
 	to_chat(usr, "<b><i>You try to remember some of the basics of your combat trainings.</i></b>")
 
-	to_chat(usr, span_notice("<b>All of your unarmed attacks deal stamina damage instead of your normal physical damage type</b>"))
+	to_chat(usr, span_notice("<b>All of your unarmed attacks deal the most effective stamina damage you can perform while punching someone instead of your normal physical damage type</b>"))
 
 	to_chat(usr, span_notice("<b>Grab Intent</b> Allow you to quickly increase the strength of your grabs"))
 	to_chat(usr, span_notice("<b>Harm Intent</b> Will deal a competitive amount of stamina damage, and hitting a standing opponent while you are prone will both knock them down and stand you up"))
