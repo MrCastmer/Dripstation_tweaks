@@ -124,6 +124,7 @@
 		playsound(src,'sound/weapons/punch1.ogg',50,1)
 
 
+/*
 //Throwing stuff
 /mob/living/carbon/proc/toggle_throw_mode()
 	if(stat)
@@ -149,6 +150,7 @@
 	in_throw_mode = 1
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
+*/
 
 /mob/proc/throw_item(atom/target)
 	SEND_SIGNAL(src, COMSIG_MOB_THROW, target)

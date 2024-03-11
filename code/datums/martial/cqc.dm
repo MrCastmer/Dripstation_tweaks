@@ -193,6 +193,7 @@
 		D.apply_damage(consecutivedamage, STAMINA)
 	return TRUE
 
+/*
 ///CQC grab, stuns for 1.5 seconds on use
 /datum/martial_art/cqc/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(A.a_intent == INTENT_GRAB && A!=D && (can_use(A) && can_use(D))) // A!=D prevents grabbing yourself
@@ -206,6 +207,7 @@
 		return TRUE
 	else
 		return FALSE
+*/
 
 ///CQC harm intent, deals 15 stamina damage and immobilizes for 1.5 seconds, if the attacker is prone, they knock the defender down and stand up
 /datum/martial_art/cqc/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)

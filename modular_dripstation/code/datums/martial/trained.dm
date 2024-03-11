@@ -63,6 +63,7 @@
 			return TRUE
 		if(D.grabbedby(A))
 			D.drop_all_held_items()
+			//A.changeNext_move(CLICK_CD_RAPID)
 			//D.Stun(0.5 SECONDS)
 		if(A.grab_state < 1)
 			restraining = FALSE
@@ -112,6 +113,6 @@
 	to_chat(usr, span_notice("<b>Grab Intent</b> Allow you to quickly increase the strength of your grabs"))
 	to_chat(usr, span_notice("<b>Harm Intent</b> Will deal a competitive amount of stamina damage, and hitting a standing opponent while you are prone will both knock them down and stand you up"))
 
-	to_chat(usr, "[span_notice("Restrain")]: Grab Grab. Locks opponents into a restraining position, making your grab harder to break out of.")
+	to_chat(usr, "[span_notice("Restrain")]: <i>Grab Grab. Locks opponents into a restraining position, making your grab harder to break out of.</i>")
 
 	to_chat(usr, "<b><i>In addition, by having your throw mode on when being attacked, you enter an active defense mode where you have a chance to counter attacks done to you. Beware, counter-attacks are tiring and you won't be able to defend yourself forever!</i></b>")

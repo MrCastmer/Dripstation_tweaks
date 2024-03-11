@@ -1,3 +1,17 @@
+/datum/martial_art/cqc/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(A.a_intent == INTENT_GRAB && A!=D && (can_use(A) && can_use(D))) // A!=D prevents grabbing yourself
+		add_to_streak("G",D)
+		if(check_streak(A,D)) //if a combo is made no grab upgrade is done
+			return TRUE
+		if(D.grabbedby(A))
+			D.Stun(0.5 SECONDS)
+			A.changeNext_move(CLICK_CD_RAPID)
+		if(A.grab_state < 1)
+			restraining = FALSE
+		return TRUE
+	else
+		return FALSE
+
 ///CQC counter: attacker's weapon is placed in the defender's offhand and they are knocked down
 /datum/martial_art/cqc/handle_counter(mob/living/carbon/human/user, mob/living/carbon/human/attacker)
 	if(!can_use(user))

@@ -217,6 +217,7 @@
 #include "code\__DEFINES\dcs\signals\signals_mob\signals_tools.dm"
 #include "code\__DEFINES\dcs\signals\signals_mob\signals_xenobiology.dm"
 #include "code\__DEFINES\{dripstation_defines}\melee.dm"
+#include "code\__DEFINES\{dripstation_defines}\mobs.dm"
 #include "code\__DEFINES\traits\declarations.dm"
 #include "code\__DEFINES\traits\sources.dm"
 #include "code\__DEFINES\{dripstation_defines}\blackmarket.dm"
