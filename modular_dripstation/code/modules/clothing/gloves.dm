@@ -174,8 +174,80 @@
 	. = FALSE
 
 /obj/item/clothing/gloves/color/latex
+	desc = "Cheap sterile gloves made from latex. Assists in carrying people around and helps performing surgery a bit quicker."
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+
+/obj/item/clothing/gloves/color/latex/black
+	icon_state = "latex_black"
+
+/obj/item/clothing/gloves/color/latex/fireproof
+	name = "fireproof latex gloves"
+	desc = "Durable, thicker and head-resistant sterile gloves. Designed for medical first responders to fire emergencies. Assists via nanochips in carrying people around and helps performing surgery a little bit quicker."
+	clothing_flags = THICKMATERIAL
+
+/obj/item/clothing/gloves/color/latex/nitrile
+	desc = "Pricey sterile gloves that are stronger than latex. Provides user the ability to perform paramedic techniques and surgery much faster."
+
+/obj/item/clothing/gloves/color/latex/nitrile/advanced
+	name = "advanced nitrile surgery gloves"
+	body_parts_covered = ARMS|HANDS
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	icon_state = "nitrile_advansed"
+	desc = "Pricey sterile gloves that reach up to the elbows, with advanced electronics. Transfers amplified surgery and paramedic knowledge into the user via advanced nanochips connected to the neural interface."
+	surgeryspeed = 0.7
+
+/obj/item/clothing/gloves/color/latex/nitrile/black
+	name = "combat nitrile surgery gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, colored in pure black. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_black"
+	clothing_flags = THICKMATERIAL
+	resistance_flags = FIRE_PROOF|FREEZE_PROOF
+	body_parts_covered = ARMS|HANDS
+	armor = list(MELEE = 20, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 0, BIO = 80, RAD = 0, FIRE = 100, ACID = 90, WOUND = 5, ELECTRIC = 100)
+
+/obj/item/clothing/gloves/color/latex/nitrile/black/fireproof
+	name = "combat nitrile paramedic gloves"
+	desc = "Durable thick head-resistant sterile gloves, colored in black. Transfers combat paramedic knowledge into the user via nanochips."
+	icon_state = "combat_paramedic"
+	surgeryspeed = 0.85
+	resistance_flags = FIRE_PROOF|LAVA_PROOF|FREEZE_PROOF
+	clothing_traits = list(TRAIT_QUICKEST_CARRY, TRAIT_RESISTHEATHANDS)
+
+/obj/item/clothing/gloves/color/latex/nitrile/syndycate
+	name = "red nitrile surgery gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers evil medic knowledge into the user via nanochips."
+	icon_state = "syndycate_nitrile"
+	clothing_flags = THICKMATERIAL
+	body_parts_covered = ARMS|HANDS
+	resistance_flags = ACID_PROOF
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 80, RAD = 0, FIRE = 80, ACID = 100, WOUND = 0, ELECTRIC = 80)
+
+/obj/item/clothing/gloves/color/latex/nitrile/syndycate/fireproof
+	name = "red nitrile paramedic gloves"
+	desc = "Durable thick head-resistant sterile gloves, in exactly the same color as fresh blood. Transfers evil paramedic knowledge into the user via nanochips."
+	item_state = "syndycate_paramedic"
+	resistance_flags = FIRE_PROOF|ACID_PROOF
+	clothing_traits = list(TRAIT_QUICKEST_CARRY, TRAIT_RESISTHEATHANDS)
+	surgeryspeed = 0.85
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 80, RAD = 0, FIRE = 100, ACID = 100, WOUND = 0, ELECTRIC = 100)
+
+/obj/item/clothing/gloves/color/latex/hazmat
+	clothing_flags = THICKMATERIAL
+	body_parts_covered = ARMS|HANDS
+	resistance_flags = ACID_PROOF
+	surgeryspeed = 0.95
+	item_state = "hazmat_gloves"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 80, FIRE = 30, ACID = 100, ELECTRIC = 60)
+
+/obj/item/clothing/gloves/color/latex/hazmat/cyan
+	item_state = "hazmat_gloves_cyan"
+
+/obj/item/clothing/gloves/color/latex/hazmat/sec
+	item_state = "hazmat_gloves_sec"
+
+/obj/item/clothing/gloves/color/latex/hazmat/white
+	item_state = "hazmat_gloves_white"
 
 /obj/item/clothing/gloves/maid
 	name = "maid sleeves"

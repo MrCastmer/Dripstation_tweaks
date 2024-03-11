@@ -191,7 +191,7 @@
 	new /obj/item/clothing/shoes/sneakers/brown	(src)
 	new /obj/item/clothing/shoes/laceup/brown(src)
 	new /obj/item/clothing/shoes/xeno_wraps/command(src)
-	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+	new /obj/item/clothing/gloves/color/latex/nitrile/advanced(src)
 	new /obj/item/clothing/glasses/hud/health/sunglasses/cmo(src)
 	new /obj/item/clothing/under/rank/chief_medical_officer(src)
 	new /obj/item/clothing/under/rank/chief_medical_officer/skirt(src)

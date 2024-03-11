@@ -2,6 +2,8 @@
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	icon_state = "hazmat_suit"
+	body_parts_covered = CHEST|GROIN
+	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "hazmat_suit_general"

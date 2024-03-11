@@ -49,3 +49,35 @@
 	name = "aerostatic boots"
 	desc = "Steel-toed Nanotrasen-issue Cargo lace-up work boots for operating in hazardous environments. This ones perform more fashion, being pre-polished!"
 	icon_state = "aerostatic"
+
+/obj/item/clothing/shoes/galoshes
+	slowdown = SHOES_SLOWDOWN+0.75
+	clothing_flags = THICKMATERIAL|NOSLIP
+	body_parts_covered = LEGS|FEET
+	resistance_flags = ACID_PROOF
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 80, FIRE = 40, ACID = 100, ELECTRIC = 100)
+
+/obj/item/clothing/shoes/galoshes/general
+	desc = "A pair of yellow rubber boots, designed to protect against biological contamination."
+	name = "standart galoshes"
+	slowdown = SHOES_SLOWDOWN
+	clothing_flags = THICKMATERIAL
+
+/obj/item/clothing/shoes/galoshes/cyan
+	desc = "A pair of cyan rubber boots, designed to protect against biological contamination."
+	name = "cyan galoshes"
+	slowdown = SHOES_SLOWDOWN
+	clothing_flags = THICKMATERIAL
+
+/obj/item/clothing/shoes/galoshes/white
+	desc = "A pair of white rubber boots, designed to protect against biological contamination."
+	name = "white galoshes"
+	slowdown = SHOES_SLOWDOWN
+	clothing_flags = THICKMATERIAL
+
+/obj/item/clothing/shoes/galoshes/sec
+	desc = "A pair of black rubber boots, designed to protect against biological contamination."
+	name = "galoshes"
+	slowdown = SHOES_SLOWDOWN
+	clothing_flags = THICKMATERIAL
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 80, FIRE = 40, ACID = 100, ELECTRIC = 100)

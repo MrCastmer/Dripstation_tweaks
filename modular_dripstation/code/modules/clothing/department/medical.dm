@@ -91,6 +91,9 @@
 					/obj/item/clothing/suit/toggle/labcoat/chemist = 2,
 					/obj/item/clothing/suit/hooded/wintercoat/medical/chemistry = 2,
 					/obj/item/clothing/head/beret/chem = 2,
+					/obj/item/clothing/shoes/sneakers/white = 2,
+					/obj/item/clothing/shoes/xeno_wraps/medical = 2,
+					/obj/item/clothing/gloves/color/latex = 2,
 					/obj/item/storage/backpack/chemistry = 2,
 					/obj/item/storage/backpack/satchel/chem = 2,
 					/obj/item/storage/bag/chemistry = 4)
@@ -103,16 +106,16 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
 
 /obj/item/clothing/under/rank/medical/blue
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform/uniform.dmi'
 
 /obj/item/clothing/under/rank/medical/green
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform/uniform.dmi'
 
 /obj/item/clothing/under/rank/medical/purple
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform/uniform.dmi'
 
 /obj/item/clothing/under/rank/medical/black
 	name = "medical scrubs"
@@ -128,3 +131,29 @@
 
 /obj/item/clothing/under/rank/medical/skirt
 	can_adjust = TRUE
+
+/obj/machinery/vending/wardrobe/medi_wardrobe
+	products = list(/obj/item/clothing/accessory/pocketprotector = 4,
+					/obj/item/storage/backpack/duffelbag/med = 4,
+					/obj/item/storage/backpack/medic = 4,
+					/obj/item/storage/backpack/satchel/med = 4,
+					/obj/item/clothing/head/beret/med = 4,
+					/obj/item/clothing/suit/hooded/wintercoat/medical = 4,
+					/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic = 4,
+					/obj/item/clothing/under/rank/nursesuit = 4,
+					/obj/item/clothing/head/nursehat = 4,
+					/obj/item/clothing/under/yogs/nursedress = 4,
+					/obj/item/clothing/under/rank/medical/skirt= 4,
+					/obj/item/clothing/under/rank/medical/blue = 4,
+					/obj/item/clothing/under/rank/medical/green = 4,
+					/obj/item/clothing/under/rank/medical/purple = 4,
+					/obj/item/clothing/under/rank/medical = 4,
+					/obj/item/clothing/suit/toggle/labcoat/md = 4,
+					/obj/item/clothing/suit/toggle/labcoat/emt = 4,
+					/obj/item/clothing/shoes/sneakers/white = 4,
+					/obj/item/clothing/shoes/xeno_wraps/medical = 4,
+					/obj/item/clothing/gloves/color/latex = 4,
+					/obj/item/clothing/head/soft/emt = 4,
+					/obj/item/clothing/suit/apron/surgical = 4,
+					/obj/item/clothing/mask/surgical = 4,
+					/obj/item/clothing/accessory/armband/medblue = 2)

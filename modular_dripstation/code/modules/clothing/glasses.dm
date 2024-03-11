@@ -302,6 +302,7 @@
 	desc = "Aviators with a medical HUD. This one is augmented with a reagent scanner."
 	icon_state = "aviator_cmo"
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
+	clothing_flags = null	//comment this if you want to enable scanreagents for cmo
 
 /obj/item/clothing/glasses/hud/health/sunglasses/aviators
 	name = "medical HUDaviators"
@@ -323,7 +324,7 @@
 	name = "diagnostic advanced HUDaviators"
 	desc = "Aviators with a diagnostic HUD. This one is augmented with a reagent scanner."
 	icon_state = "aviator_rd"
-	clothing_flags = SCAN_REAGENTS
+	clothing_flags = null	//comment this if you want to enable scanreagents for rd
 
 /obj/item/clothing/glasses/hud/diagnostic/sunglasses/aviators
 	name = "diagnostic HUDaviators"
@@ -352,8 +353,9 @@
 
 /obj/item/clothing/glasses/hud/security/sunglasses/hos
 	name = "security advanced HUDaviators"
-	desc = "Aviators with a security HUD. This one is augmented with a medical scanner."
+	desc = "Aviators with a security HUD. For the station finest."
 	icon_state = "aviator_sechos"
+	hud_type = DATA_HUD_SECURITY_ADVANCED	//comment this if you want to enable medhud for hos
 
 /obj/item/clothing/glasses/hud/security/sunglasses/gars
 	icon = 'icons/obj/clothing/glasses.dmi'
