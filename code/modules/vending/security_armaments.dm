@@ -2,7 +2,7 @@
 /obj/machinery/armaments_dispenser
 	name = "armaments dispenser"
 	desc = "A standard issue security armaments dispenser."
-	icon = 'icons/obj/vending.dmi'
+	icon = 'yogstation/icons/obj/vending.dmi'
 	icon_state = "armament" // BAIOMU REPLACE THIS WITH YOUR SPRITE
 	layer = 2.9
 	density = TRUE
@@ -53,6 +53,10 @@
 					log_admin("[ADMIN_LOOKUP(usr)] attempted to purchase a [wep] from the armaments dispenser.")
 					return FALSE
 				new wep(loc)
+//DRIPSTATION EDIT START
+				flick("armament_vend",src)
+				playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+//DRIPSTATION EDIT END
 				if(params["magazine"] && ispath(text2path(params["magazine"])))
 					var/mag = text2path(params["magazine"])
 					if(!(mag in allowed_types))

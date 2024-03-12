@@ -16,6 +16,7 @@
 		or homing beacons. Additionally, remove any privately ordered crates from the shuttle."
 	var/blockade_warning = "Bluespace instability detected. Shuttle movement impossible."
 	var/self_paid = FALSE
+	req_access = list(ACCESS_CARGO)		//dripstation edit
 
 /obj/machinery/computer/cargo/request
 	name = "supply request console"
@@ -25,6 +26,7 @@
 	requestonly = TRUE
 	can_send = FALSE
 	can_approve_requests = FALSE
+	req_access = list()		//dripstation edit
 
 /obj/machinery/computer/cargo/Initialize(mapload)
 	. = ..()
@@ -50,6 +52,7 @@
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
+	do_sparks(8, FALSE, loc)	//dripstation edit
 
 	// This also permamently sets this on the circuit board
 	var/obj/item/circuitboard/computer/cargo/board = circuit
@@ -80,11 +83,11 @@
 	var/message = "Remember to stamp and send back the supply manifests."
 	if(SSshuttle.centcom_message)
 		message = SSshuttle.centcom_message
-	if(SSshuttle.supplyBlocked)
+	if(SSshuttle.supply_blocked)
 		message = blockade_warning
 	data["message"] = message
 	data["cart"] = list()
-	for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
+	for(var/datum/supply_order/SO in SSshuttle.shopping_list)
 		data["cart"] += list(list(
 			"object" = SO.pack.name,
 			"cost" = SO.pack.get_cost(),
@@ -95,7 +98,7 @@
 		))
 
 	data["requests"] = list()
-	for(var/datum/supply_order/SO in SSshuttle.requestlist)
+	for(var/datum/supply_order/SO in SSshuttle.request_list)
 		data["requests"] += list(list(
 			"object" = SO.pack.name,
 			"cost" = SO.pack.get_cost(),
@@ -133,12 +136,15 @@
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
+	if(!allowed(usr) && can_approve_requests)	//dripstation edit
+		say("Access denied.")					//dripstation edit
+		return									//dripstation edit
 	switch(action)
 		if("send")
 			if(!SSshuttle.supply.canMove())
 				say(safety_warning)
 				return
-			if(SSshuttle.supplyBlocked)
+			if(SSshuttle.supply_blocked)
 				say(blockade_warning)
 				return
 			if(SSshuttle.supply.getDockedId() == "supply_home")
@@ -148,13 +154,13 @@
 				investigate_log("[key_name(usr)] sent the supply shuttle away.", INVESTIGATE_CARGO)
 			else
 				investigate_log("[key_name(usr)] called the supply shuttle.", INVESTIGATE_CARGO)
-				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
+				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(10)] seconds.")	//dripstation edit
 				SSshuttle.moveShuttle("supply", "supply_home", TRUE)
 			. = TRUE
 		if("loan")
 			if(!SSshuttle.shuttle_loan)
 				return
-			if(SSshuttle.supplyBlocked)
+			if(SSshuttle.supply_blocked)
 				say(blockade_warning)
 				return
 			else if(SSshuttle.supply.mode != SHUTTLE_IDLE)
@@ -170,6 +176,12 @@
 			var/self_paid = text2num(params["self_paid"])
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
 			if(!istype(pack))
+				return
+			if(pack.times_ordered >= pack.order_limit && pack.order_limit != -1) //If the crate has reached the limit, do not allow it to be ordered.
+				say("[pack.name] is out of stock and can no longer be ordered.")
+				return
+			if(pack.times_ordered_in_one_order >= pack.order_limit_in_one_order && pack.order_limit_in_one_order != -1)
+				say("[pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.")
 				return
 			if((pack.hidden && !(obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.DropPodOnly)
 				return
@@ -207,39 +219,54 @@
 			var/datum/supply_order/SO = new(pack, name, rank, ckey, reason, account)
 			SO.generateRequisition(T)
 			if(requestonly && !self_paid)
-				SSshuttle.requestlist += SO
+				SSshuttle.request_list += SO
 			else
-				SSshuttle.shoppinglist += SO
+				SSshuttle.shopping_list += SO
+				SO.pack.times_ordered += 1	//dripstation edit
+				SO.pack.times_ordered_in_one_order += 1	//dripstation edit
 				if(self_paid)
 					say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
 			. = TRUE
 		if("remove")
 			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
+			for(var/datum/supply_order/SO in SSshuttle.shopping_list)
 				if(SO.id == id)
-					SSshuttle.shoppinglist -= SO
+					SSshuttle.shopping_list -= SO
+					SO.pack.times_ordered -= 1	//dripstation edit
+					SO.pack.times_ordered_in_one_order -= 1	//dripstation edit
 					. = TRUE
 					break
 		if("clear")
-			SSshuttle.shoppinglist.Cut()
+			for(var/datum/supply_order/SO in SSshuttle.shopping_list)	//dripstation edit
+				SO.pack.times_ordered -= 1								//dripstation edit
+				SO.pack.times_ordered_in_one_order = 0					//dripstation edit
+			SSshuttle.shopping_list.Cut()
 			. = TRUE
 		if("approve")
 			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.requestlist)
+			for(var/datum/supply_order/SO in SSshuttle.request_list)
 				if(SO.id == id)
-					SSshuttle.requestlist -= SO
-					SSshuttle.shoppinglist += SO
+					if(SO.pack.times_ordered >= SO.pack.order_limit && SO.pack.order_limit != -1) //If the crate has reached the limit, do not allow it to be ordered.	dripstation edit start
+						say("[SO.pack.name] is out of stock and can no longer be ordered.")
+						return
+					if(SO.pack.times_ordered_in_one_order >= SO.pack.order_limit_in_one_order && SO.pack.order_limit_in_one_order != -1) 
+						say("[SO.pack.name] is out of stock for now and can no longer be ordered in this package. Try again later.")
+						return	//dripstation edit end
+					SSshuttle.request_list -= SO
+					SSshuttle.shopping_list += SO
+					SO.pack.times_ordered += 1	//dripstation edit
+					SO.pack.times_ordered_in_one_order += 1	//dripstation edit
 					. = TRUE
 					break
 		if("deny")
 			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.requestlist)
+			for(var/datum/supply_order/SO in SSshuttle.request_list)
 				if(SO.id == id)
-					SSshuttle.requestlist -= SO
+					SSshuttle.request_list -= SO
 					. = TRUE
 					break
 		if("denyall")
-			SSshuttle.requestlist.Cut()
+			SSshuttle.request_list.Cut()
 			. = TRUE
 		if("toggleprivate")
 			self_paid = !self_paid

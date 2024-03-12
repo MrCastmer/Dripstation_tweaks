@@ -4,9 +4,12 @@
 /obj/machinery/vending/fishing
 	name = "\improper Tackle Box 2000"	
 	desc = "Fishing peaked in 2000!"
+	/* dripstation edit
 	icon = 'yogstation/icons/obj/vending.dmi'
+	*/
 	icon_state = "fishing"
 	icon_deny = "fishing-deny"
+	panel_type = "panel-fish"
 	product_slogans = "Don't tell my wife which bank I went to!;Fish fear me. Women love me.;If you want me to listen to you... talk about FISHING!;Good things come to those who bait.;Why did the lizard cross the road?"
 	vend_reply = "Go get 'em, tiger!"
 	products = list(/obj/item/fishingrod = 3,

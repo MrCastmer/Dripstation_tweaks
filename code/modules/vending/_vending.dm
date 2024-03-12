@@ -78,6 +78,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	circuit = /obj/item/circuitboard/machine/vendor
 	clicksound = 'sound/machines/pda_button1.ogg'
 	payment_department = ACCOUNT_SRV
+	light_power = 0.7
+	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	/// Is the machine active (No sales pitches if off)!
 	var/active = 1
 	///Are we ready to vend?? Is it time??
@@ -86,13 +88,24 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/purchase_message_cooldown
 	///Last mob to shop with us
 	var/last_shopper
+	///Whether the vendor is tilted or not
 	var/tilted = FALSE
+	/// If tilted, this variable should always be the rotation that was applied when we were tilted. Stored for the purposes of unapplying it.
+	var/tilted_rotation = 0
+	///Whether this vendor can be tilted over or not
 	var/tiltable = TRUE
+	///Damage this vendor does when tilting onto an atom
 	var/squish_damage = 75
+	/// The chance, in percent, of this vendor performing a critical hit on anything it crushes via [tilt].
+	var/crit_chance = 15
+	/// If set to a critical define in crushing.dm, anything this vendor crushes will always be hit with that effect.
 	var/forcecrit = 0
+	///Number of glass shards the vendor creates and tries to embed into an atom it tilted onto
 	var/num_shards = 7
+	///List of mobs stuck under the vendor
 	var/list/pinned_mobs = list()
-
+	///Icon for the maintenance panel overlay
+	var/panel_type = "panel1"
 
 	/**
 	  * List of products this machine sells
@@ -185,6 +198,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// how many items have been inserted in a vendor
 	var/loaded_items = 0
 	
+	///Name of lighting mask for the vending machine
+	var/light_mask
+	
 	/// used for narcing on underages
 	var/obj/item/radio/alertradio
 
@@ -214,6 +230,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		build_inventory(products, product_records)
 		build_inventory(contraband, hidden_records)
 		build_inventory(premium, coin_records)
+
+	vend_reply = "Thank you for shopping with [src]!" //dripstation edit
+	panel_type = "[initial(icon_state)]-panel"
 
 	slogan_list = splittext(product_slogans, ";")
 	small_ads = splittext(product_ads, ";")
@@ -266,17 +285,28 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	else
 		..()
 
-/obj/machinery/vending/update_icon_state()
+/obj/machinery/vending/update_appearance(updates=ALL)
 	. = ..()
 	if(stat & BROKEN)
-		icon_state = "[initial(icon_state)]-broken"
+		set_light(0)
 		return
+	set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
 
-	if(powered())
-		icon_state = initial(icon_state)
-	else
-		icon_state = "[initial(icon_state)]-off"
+/obj/machinery/vending/update_icon_state()
+	if(stat & BROKEN)
+		icon_state = "[initial(icon_state)]-broken"
+		return ..()
+	icon_state = "[initial(icon_state)][powered() ? null : "-off"]"
+	return ..()
 
+/* Dripstation edit
+/obj/machinery/vending/update_overlays()
+	. = ..()
+	if(panel_open)
+		. += panel_type
+	if(light_mask && !(stat & BROKEN) && powered())
+		. += emissive_appearance(icon, light_mask, src)
+*/
 
 /obj/machinery/vending/obj_break(damage_flag)
 	. = ..()
@@ -422,7 +452,14 @@ GLOBAL_LIST_EMPTY(vending_products)
 		default_deconstruction_screwdriver(user, icon_state, icon_state, I)
 		cut_overlays()
 		if(panel_open)
+			/* //dripstation edit
 			add_overlay("[initial(icon_state)]-panel")
+			*/
+		//dripstation ADDITION START
+			update_appearance(UPDATE_OVERLAYS)
+		else
+			update_appearance(UPDATE_OVERLAYS)
+		//dripstation ADDITION END
 		updateUsrDialog()
 	else
 		to_chat(user, span_warning("You must first secure [src]."))
@@ -609,7 +646,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	M.Turn(0)
 	transform = M
 
-/obj/machinery/vending/unbuckle_mob(mob/living/buckled_mob, force=FALSE)
+/obj/machinery/vending/unbuckle_mob(mob/living/buckled_mob, force = FALSE, can_fall = TRUE)
 	if(!force)
 		return
 	. = ..()
@@ -779,6 +816,14 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(panel_open)
 				to_chat(usr, span_warning("The vending machine cannot dispense products while its service panel is open!"))
 				return
+//DRIPSTATION EDIT START
+			if((!allowed(usr)) && !(obj_flags & EMAGGED) && scan_id)	//For SECURE VENDING MACHINES YEAH  != EMAGGED
+				to_chat(usr, span_warning("Access denied."))//Unless emagged of course
+				flick(icon_deny, src)
+				playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3)
+				vend_ready = TRUE
+				return
+//DRIPSTATION EDIT END
 			vend_ready = FALSE //One thing at a time!!
 			var/datum/data/vending_product/R = locate(params["ref"])
 			var/list/record_to_check = product_records + coin_records
@@ -801,6 +846,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if (R.amount <= 0)
 				say("Sold out of [R.name].")
 				flick(icon_deny,src)
+				playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3) //dripstation edit
 				vend_ready = TRUE
 				return
 
@@ -831,15 +877,24 @@ GLOBAL_LIST_EMPTY(vending_products)
 						alertradio.talk_into(src, "SECURITY ALERT: Underaged crewmember [H] recorded attempting to purchase [R.name] in [get_area(src)]. Please watch for substance abuse.", FREQ_SECURITY)
 						GLOB.narcd_underages += H
 					flick(icon_deny,src)
+					playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3) //dripstation edit
 					vend_ready = TRUE
 					return
 
+/* dripstation edit
 			thank_user("Thank you for shopping with [src]!")
+*/
+			thank_user(vend_reply) //dripstation edit
 			finish_vend()
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, ui_act), R, usr), vend_delay) //dripstation edit
 
 			var/obj/item/vended_item
 			if(!LAZYLEN(R.returned_products)) //always give out free returned stuff first, e.g. to avoid walling a traitor objective in a bag behind paid items
 				vended_item = new R.product_path(get_turf(src))
+// DRIPSTATION EDIT START
+				if(usr.CanReach(src) && usr.put_in_hands(vended_item))
+					to_chat(usr, span_notice("You take [R.name] out of the slot."))
+// DRIPSTATION EDIT END
 			else
 				vended_item = LAZYACCESS(R.returned_products, LAZYLEN(R.returned_products)) //first in, last out
 				LAZYREMOVE(R.returned_products, vended_item)
@@ -894,10 +949,12 @@ GLOBAL_LIST_EMPTY(vending_products)
 		if(!C)
 			say("No card found.")
 			flick(icon_deny,src)
+			playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3) //dripstation edit
 			return FALSE
 		else if (!C.registered_account)
 			say("No account found.")
 			flick(icon_deny,src)
+			playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3) //dripstation edit
 			return FALSE
 		var/datum/bank_account/account = C.registered_account
 		if(!always_charge && account.account_job && account.account_job.paycheck_department == payment_department)
@@ -905,6 +962,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		if(price && !account.adjust_money(-price))
 			say("You do not possess the funds to purchase \the [item_name].")
 			flick(icon_deny,src)
+			playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3) //dripstation edit
 			return FALSE
 		var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
 		if(D)
@@ -929,6 +987,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(icon_vend) //Show the vending animation if needed
 		flick(icon_vend,src)
 	playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+	sleep(vend_delay)
 
 /obj/machinery/vending/process(delta_time)
 	if(stat & (BROKEN|NOPOWER))
@@ -1083,7 +1142,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 					return TRUE
 
 		to_chat(user, span_warning("[src]'s input compartment blinks red: Access denied."))
+//DRIPSTATION EDIT START
+		flick(icon_deny, src)
+		playsound(src, 'sound/machines/deniedbeep.ogg', 50, TRUE, extrarange = -3)
+//DRIPSTATION EDIT END
 		return FALSE
-
-/obj/machinery/vending/onTransitZ()
-	return
