@@ -166,6 +166,9 @@
 	icon_state = "capjacket"
 	body_parts_covered = CHEST|ARMS
 
+/obj/item/clothing/shoes/laceup
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+
 /obj/item/clothing/shoes/laceup/brown
 	name = "brown laceup shoes"
 	icon_state = "oxford_brown"
