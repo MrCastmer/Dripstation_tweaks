@@ -118,6 +118,7 @@
 #include "code\modules\clothing\mask.dm"
 #include "code\modules\clothing\badges.dm"
 #include "code\modules\clothing\toggles.dm"
+#include "code\modules\clothing\underwear.dm"
 #include "code\modules\clothing\department\corporate.dm"
 #include "code\modules\clothing\department\security.dm"
 #include "code\modules\clothing\department\command.dm"

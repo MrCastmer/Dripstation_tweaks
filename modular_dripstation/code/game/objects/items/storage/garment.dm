@@ -99,7 +99,7 @@
 	new /obj/item/clothing/under/rank/head_of_personnel/parade(src)
 	new /obj/item/clothing/under/rank/head_of_personnel/parade/skirt(src)
 	new /obj/item/clothing/under/rank/head_of_personnel/turtleneck(src)
-	new /obj/item/clothing/under/rank/head_of_personnel/turtleneck/skirt(src)
+	new /obj/item/clothing/under/rank/head_of_personnel/skirt/turtleneck(src)
 	new /obj/item/clothing/under/rank/head_of_personnel/paradefancy(src)
 	new /obj/item/clothing/under/yogs/hopcasual(src)
 	new /obj/item/clothing/suit/toggle/capformal/hop(src)

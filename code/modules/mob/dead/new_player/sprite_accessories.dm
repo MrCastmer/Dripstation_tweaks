@@ -1268,6 +1268,7 @@
 	icon_state = null
 	gender = NEUTER
 
+/*
 ///////////////////////////
 // Underwear Definitions //
 ///////////////////////////
@@ -1959,6 +1960,7 @@
 /datum/sprite_accessory/socks/white_thigh
 	name = "Thigh-high (White)"
 	icon_state = "white_thigh"
+*/
 
 //////////.//////////////////
 // MutantParts Definitions //

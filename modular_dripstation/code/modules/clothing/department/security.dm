@@ -5,6 +5,7 @@
 
 /obj/item/clothing/under/rank/head_of_security/skirt
 	can_adjust = TRUE
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/head_of_security/corporate
 	name = "head of security's corporate uniform"
@@ -18,7 +19,7 @@
 	desc = "Standart issue fancy corporate dress issued to the Head of Security."
 	icon_state = "hos_corporatef"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/mask/gas/sechailer/swat/hos
 	name = "\improper HOS SWAT mask"
@@ -63,6 +64,7 @@
 /obj/item/clothing/under/rank/warden/skirt
 	name = "warden's jumpskirt"
 	can_adjust = TRUE
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/warden/corporate
 	name = "warden's corporate uniform"
@@ -141,6 +143,10 @@
 /obj/item/clothing/under/rank/security
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/security.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/security.dmi'
+
+/obj/item/clothing/under/rank/security/skirt
+	can_adjust = TRUE
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/security/alt
 	name = "black security uniform"

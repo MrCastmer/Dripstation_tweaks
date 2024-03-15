@@ -70,6 +70,7 @@
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/clicked_atom, list/modifiers)
 	set waitfor = 0
+	SHOULD_NOT_SLEEP(TRUE)
 	SIGNAL_HANDLER
 
 	if(modifiers["middle"] && modifiers["alt"] && modifiers["shift"] && modifiers["ctrl"])
@@ -140,6 +141,7 @@
 */
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
 	set waitfor = 0
+	SHOULD_NOT_SLEEP(TRUE)
 	SIGNAL_HANDLER
 
 	var/datum/thrownthing/tackle = tackle_ref?.resolve()
@@ -632,6 +634,7 @@
 ///Check to see if we hit a table, and if so, make a big mess!
 /datum/component/tackler/proc/checkObstacle(mob/living/carbon/owner)
 	set waitfor = 0
+	SHOULD_NOT_SLEEP(TRUE)
 	SIGNAL_HANDLER
 
 	if(!tackling)

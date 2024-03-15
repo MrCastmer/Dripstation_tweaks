@@ -79,6 +79,18 @@
 /datum/preference/choiced/facial_hairstyle/init_possible_values()
 	return generate_possible_values_for_sprite_accessories_on_head(GLOB.facial_hair_styles_list)
 
+/datum/preference/choiced/facial_hairstyle/create_default_value()	//dripstation edit
+	return "Shaved"	//dripstation edit
+
+/datum/preference/choiced/facial_hairstyle/is_accessible(datum/preferences/preferences)	//dripstation edit
+	if (!..(preferences))		//dripstation edit
+		return FALSE		//dripstation edit
+
+	var/datum/G = preferences.read_preference(/datum/preference/choiced/gender)	//dripstation edit
+	if(G && G == FEMALE)		//dripstation edit
+		return FALSE		//dripstation edit
+	return TRUE		//dripstation edit
+
 /datum/preference/choiced/facial_hairstyle/apply_to_human(mob/living/carbon/human/target, value)
 	target.facial_hair_style = value
 

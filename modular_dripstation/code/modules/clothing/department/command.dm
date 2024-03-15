@@ -6,6 +6,7 @@
 /obj/item/clothing/under/rank/head_of_personnel/skirt
 	can_adjust = TRUE
 	mutantrace_variation = MUTANTRACE_VARIATION	
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/head_of_personnel/dress
 	name = "head of personnel's dress"
@@ -45,16 +46,17 @@
 /obj/item/clothing/under/rank/head_of_personnel/turtleneck/alt
 	icon_state = "hopturtle_alt"
 
-/obj/item/clothing/under/rank/head_of_personnel/turtleneck/skirt
+/obj/item/clothing/under/rank/head_of_personnel/skirt/turtleneck
 	name = "head of personnel's turtleneck skirt"
 	desc = "A dark teal turtleneck and tanblack khaki skirt, for a second with a superior sense of style."
 	icon_state = "hopturtle_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/head_of_personnel/skirt/secretary
 	name = "head of personnel's secretary skirt"
 	icon_state = "hop_secretary"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/shoes/leather
 	name = "leather shoes"
@@ -103,6 +105,10 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
 
+/obj/item/clothing/under/rank/captain/skirt
+	can_adjust = TRUE
+	fitted = NO_FEMALE_UNIFORM
+
 /obj/item/clothing/under/rank/captain/formal
 	name = "captain's formal uniform"
 	desc = "Parade version of station captain`s uniform."
@@ -115,6 +121,7 @@
 	icon_state = "station_captain_skirt"
 	item_state = "station_captain_skirt"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/captain/kilt
 	desc = "Not a skirt, it is, however, armoured and decorated with a tartan sash."
@@ -126,7 +133,7 @@
 	name = "captain's dress"
 	icon_state = "cap_secretary"
 	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP	
+	fitted = NO_FEMALE_UNIFORM
 	body_parts_covered = CHEST|GROIN|ARMS	
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 
@@ -168,6 +175,7 @@
 
 /obj/item/clothing/shoes/laceup
 	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
 
 /obj/item/clothing/shoes/laceup/brown
 	name = "brown laceup shoes"
