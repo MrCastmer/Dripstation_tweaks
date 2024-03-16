@@ -1,7 +1,7 @@
 /proc/generate_lizard_side_shots(list/sprite_accessories, key, include_snout = TRUE)
 	var/list/values = list()
 
-	var/icon/lizard = icon('icons/mob/human_parts_greyscale.dmi', "lizard_head_m", EAST)
+	var/icon/lizard = icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "lizard_head_m", EAST)	//dripstation edit
 
 	var/icon/eyes = icon('icons/mob/human_face.dmi', "eyes", EAST)
 	eyes.Blend(COLOR_GRAY, ICON_MULTIPLY)
@@ -39,7 +39,7 @@
 /datum/preference/choiced/lizard_body_markings/init_possible_values()
 	var/list/values = list()
 
-	var/icon/lizard = icon('icons/mob/human_parts_greyscale.dmi', "lizard_chest_m")
+	var/icon/lizard = icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "lizard_chest_m")	//dripstation edit
 
 	for (var/name in GLOB.body_markings_list)
 		var/datum/sprite_accessory/sprite_accessory = GLOB.body_markings_list[name]
@@ -102,6 +102,9 @@
 	savefile_key = "feature_lizard_legs"
 	savefile_identifier = PREFERENCE_CHARACTER
 	relevant_mutant_bodypart = "legs"
+
+/datum/preference/choiced/lizard_legs/create_default_value()
+	return "Digitigrade Legs"
 
 /datum/preference/choiced/lizard_legs/init_possible_values()
 	return assoc_to_keys(GLOB.legs_list)

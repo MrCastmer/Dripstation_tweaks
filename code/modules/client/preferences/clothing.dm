@@ -2,7 +2,7 @@
 	var/icon/lower_half = icon('icons/blanks/32x32.dmi', "nothing")
 
 	for (var/icon in icons)
-		lower_half.Blend(icon('icons/mob/human_parts_greyscale.dmi', icon), ICON_OVERLAY)
+		lower_half.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', icon), ICON_OVERLAY)	//dripstation edit
 
 	var/list/values = list()
 
@@ -113,13 +113,13 @@
 	return "Nude"	//dripstation edit
 
 /datum/preference/choiced/undershirt/init_possible_values()
-	var/icon/body = icon('icons/mob/human_parts_greyscale.dmi', "human_r_leg")
-	body.Blend(icon('icons/mob/human_parts_greyscale.dmi', "human_l_leg"), ICON_OVERLAY)
-	body.Blend(icon('icons/mob/human_parts_greyscale.dmi', "human_r_arm"), ICON_OVERLAY)
-	body.Blend(icon('icons/mob/human_parts_greyscale.dmi', "human_l_arm"), ICON_OVERLAY)
-	body.Blend(icon('icons/mob/human_parts_greyscale.dmi', "human_r_hand"), ICON_OVERLAY)
-	body.Blend(icon('icons/mob/human_parts_greyscale.dmi', "human_l_hand"), ICON_OVERLAY)
-	body.Blend(icon('icons/mob/human_parts_greyscale.dmi', "human_chest_m"), ICON_OVERLAY)
+	var/icon/body = icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_r_leg") 				//dripstation edit
+	body.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_l_leg"), ICON_OVERLAY)	//dripstation edit
+	body.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_r_arm"), ICON_OVERLAY)	//dripstation edit
+	body.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_l_arm"), ICON_OVERLAY) 	//dripstation edit
+	body.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_r_hand"), ICON_OVERLAY)	//dripstation edit
+	body.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_l_hand"), ICON_OVERLAY)	//dripstation edit
+	body.Blend(icon('modular_dripstation/icons/mob/human_parts_greyscale.dmi', "human_chest_m"), ICON_OVERLAY)	//dripstation edit
 
 	var/list/values = list()
 
