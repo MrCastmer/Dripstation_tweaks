@@ -123,7 +123,7 @@
 /obj/item/clothing/suit/armor/vest/warden/short
 	name = "Warden's short jacket"
 	desc = "A short, armored jacket, perfect for desk duty."
-	icon_state = "wardensjacket"
+	icon_state = "warden_sjacket"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION

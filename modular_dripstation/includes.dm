@@ -149,6 +149,8 @@
 #include "code\modules\mob\living\simple_animal\bot\cleanbot.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mimic.dm"
 #include "code\modules\mob\living\human\species_types\dripstation_blacklist.dm"
+#include "code\modules\mob\living\human\species_types\lizardpeople.dm"
+#include "code\modules\mob\living\human\species_types\polysmorphs.dm"
 #include "code\modules\mob\mob_helpers.dm"
 #include "code\modules\uplink\uplink_devices.dm"
 #include "code\modules\paperwork\faxmachine.dm"
