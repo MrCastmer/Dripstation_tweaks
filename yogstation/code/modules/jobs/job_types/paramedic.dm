@@ -47,7 +47,9 @@
 
 	backpack_contents = list(/obj/item/storage/firstaid/regular)
 	ears = /obj/item/radio/headset/headset_med
+/* dripstation edit
 	belt = /obj/item/storage/belt/medical
+*/
 	uniform = /obj/item/clothing/under/rank/medical
 	uniform_skirt = /obj/item/clothing/under/rank/medical/skirt
 	suit = /obj/item/clothing/suit/toggle/labcoat/emt
@@ -55,7 +57,9 @@
 	l_hand = /obj/item/roller
 	l_pocket = /obj/item/flashlight/pen/paramedic
 	r_pocket = /obj/item/gps
+/* dripstation edit
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+*/

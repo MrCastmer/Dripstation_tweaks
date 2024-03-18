@@ -316,6 +316,35 @@
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 	armor = list(MELEE = 10, BULLET = 10, LASER = 20, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30, WOUND = 10, ELECTRIC = 0)
 
+//////////Vahlen//////////////
+/obj/item/clothing/under/syndicate/vahlen
+	name = "medical doctor's jumpsuit"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel of Vahlen Pharmaceuticals."
+	icon_state = "vahlen_med"
+	item_state = "w_suit"
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 10, BOMB = 0, BIO = 20, FIRE = 0, ACID = 30, WOUND = 0, ELECTRIC = 0)
+
+/obj/item/clothing/under/syndicate/vahlen/skirt
+	name = "nurse's suit"
+	desc = "It's a jumpsuit commonly worn by nursing staff employed by Vahlen Pharmaceuticals."
+	icon_state = "vahlen_med_skirt"
+
+/obj/item/clothing/under/syndicate/vahlen/sec
+	name = "Vahlen`s security jumpsuit"
+	desc = "A tactical security jumpsuit for officers employed by Vahlen Pharmaceuticals."
+	icon_state = "vahlen_sec"
+
+/obj/item/clothing/under/syndicate/vahlen/combat
+	name = "Vahlen`s combat uniform"
+	desc = "A tactical combat jumpsuit with cargo pants for operatives employed by Vahlen Pharmaceuticals."
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 10, BOMB = 0, BIO = 20, FIRE = 20, ACID = 30, WOUND = 10, ELECTRIC = 0)
+
+/obj/item/clothing/under/syndicate/vahlen/chief_medical_officer
+	name = "chief medical officer's turtleneck jumpsuit"
+	desc = "It's a jumpsuit worn by those with the experience, and the style, to be \"Chief Medical Officer\". It provides minor biological protection. Property of Vahlen Pharmaceuticals."
+	icon_state = "vahlen_cmoturtle"
+	armor = list(MELEE = 10, BULLET = 10, LASER = 20, ENERGY = 10, BOMB = 10, BIO = 20, FIRE = 20, ACID = 30, WOUND = 10, ELECTRIC = 0)
+
 //////////Global Engineering Consorcium//////////////
 /obj/item/clothing/under/syndicate/tacticool/engineer
 	name = "engineer turtleneck"

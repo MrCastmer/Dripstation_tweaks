@@ -35,6 +35,7 @@
 	req_access = list(ACCESS_SURGERY)
 	icon_state = "med_secure"
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/medical3/PopulateContents()
 	..()
 	new /obj/item/radio/headset/headset_med(src)
@@ -43,13 +44,14 @@
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/gun/syringe(src)
+*/
 
 /obj/structure/closet/secure_closet/CMO
 	name = "\proper chief medical officer's locker"
 	req_access = list(ACCESS_CMO)
 	icon_state = "cmo"
 
-/*
+/*	dripstation edit
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
 	new /obj/item/storage/backpack/duffelbag/med(src)
@@ -121,6 +123,7 @@
 	icon = 'yogstation/icons/obj/closet.dmi'
 	icon_state = "medic"
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/mmedical/PopulateContents()
 	..()
 	if(prob(50))
@@ -147,6 +150,7 @@
 	var/obj/item/key/K = new(src)
 	K.name = "ATV key"
 	K.desc = "It's a small grey key. Don't let those goddamn ashwalkers or plantpeople get it."
+*/
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control"

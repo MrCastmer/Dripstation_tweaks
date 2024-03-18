@@ -16,6 +16,19 @@
 /obj/item/clothing/suit/toggle/labcoat/emt/explorer
 	icon_state = "labcoat_mm"
 
+/obj/item/clothing/suit/toggle/labcoat/cmo
+	desc = "Standart labcpat with blue markings."
+
+/obj/item/clothing/suit/toggle/labcoat/cmo/alt
+	name = "chief medical officer's labcoat"
+	desc = "Bluer than the standard model."
+	icon_state = "labcoat_cmo_alt"
+
+/obj/item/clothing/suit/toggle/labcoat/cmo/long
+	name = "chief medical officer's labcoat"
+	desc = "Long standard model in chief medical colors."
+	icon_state = "labcoat_long_cmo"
+
 /obj/item/clothing/suit/toggle/browntrenchcoat
 	name = "brown trench coat"
 	desc = "It makes you stand out. Just the opposite of why it's typically worn. Nice try trying to blend in while wearing it."

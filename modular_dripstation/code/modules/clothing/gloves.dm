@@ -188,6 +188,7 @@
 
 /obj/item/clothing/gloves/color/latex/nitrile
 	desc = "Pricey sterile gloves that are stronger than latex. Provides user the ability to perform paramedic techniques and surgery much faster."
+	custom_premium_price = 600
 
 /obj/item/clothing/gloves/color/latex/nitrile/advanced
 	name = "advanced nitrile surgery gloves"

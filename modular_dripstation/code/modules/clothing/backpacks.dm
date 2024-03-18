@@ -24,6 +24,9 @@
 	icon_state = "duffel_hop"
 	item_state = "duffel_hop" 	
 
+/obj/item/storage/backpack/captain
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
 /obj/item/storage/backpack/satchel/vir
 	item_state = "satchel-vir"
 
@@ -35,12 +38,57 @@
 
 /obj/item/storage/backpack/medic
 	item_state = "medicalpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
 /obj/item/storage/backpack/duffelbag/med
 	item_state = "duffel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
 /obj/item/storage/backpack/satchel/med
 	item_state = "satchel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/emt
+	name = "emt backpack"
+	desc = "A exclusive backpack issued to emergency medical staff."
+	icon_state = "emtpack"
+	item_state = "medicalpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/satchel/emt
+	name = "emt satchel"
+	desc = "A exclusive satchel issued to emergency medical staff."
+	icon_state = "satchel-emt"
+	item_state = "satchel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/emt
+	name = "emt duffelbag"
+	desc = "A robust duffelbag issued to emergency medical staff."
+	icon_state = "duffel_emt"
+	item_state = "duffel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/bmed
+	name = "brig physician backpack"
+	desc = "A exclusive backpack issued to security recovery staff."
+	icon_state = "bmpack"
+	item_state = "medicalpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/satchel/bmed
+	name = "brig physician satchel"
+	desc = "A exclusive satchel issued to security recovery staff."
+	icon_state = "satchel-bm"
+	item_state = "satchel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/bmed
+	name = "brig physician duffelbag"
+	desc = "A robust duffelbag issued to security recovery staff."
+	icon_state = "duffel-bm"
+	item_state = "duffel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
 /obj/item/storage/backpack/satchel/eng
 	item_state = "satchel-eng"
@@ -73,6 +121,10 @@
 
 /obj/item/storage/backpack/satchel/cap
 	item_state = "satchel-cap"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/captain
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
 /obj/item/storage/backpack/satchel/flat
 	item_state = "satchel-flat"

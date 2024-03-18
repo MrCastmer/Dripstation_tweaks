@@ -29,6 +29,7 @@
 	icon_state = "defibnt"
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	combat = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/defibrillator/compact/advanced/make_paddles()
 	return new /obj/item/shockpaddles/advanced(src)
@@ -58,17 +59,24 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_EMPPROOF_SELF, "innate_empproof")
 
+/obj/item/shockpaddles
+	var/heart_attack_chance = 70
 
 /obj/item/shockpaddles/combat
 	name = "combat defibrillator paddles"
 	desc = "A pair of high-tech paddles with flat plasteel surfaces to revive deceased operatives (unless they exploded). They possess both the ability to penetrate armor and to deliver powerful or disabling shocks offensively."
 	icon_state = "syndiepaddles0"
-	item_state = "syndiepaddles0"
 	base_icon_state = "syndiepaddles"
+	icon = 'modular_dripstation/icons/obj/defib.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/equipment/paddles_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/equipment/paddles_righthand.dmi'
 
 /obj/item/shockpaddles/advanced
 	name = "advanced defibrillator paddles"
 	desc = "A pair of high-tech paddles with flat plasteel surfaces that are used to deliver powerful electric shocks. They possess the ability to penetrate armor to deliver shock."
 	icon_state = "ntpaddles0"
-	item_state = "ntpaddles0"
 	base_icon_state = "ntpaddles"
+	heart_attack_chance = 90
+	icon = 'modular_dripstation/icons/obj/defib.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/equipment/paddles_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/equipment/paddles_righthand.dmi'

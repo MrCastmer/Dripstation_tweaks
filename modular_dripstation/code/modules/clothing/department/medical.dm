@@ -33,15 +33,27 @@
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	icon_state = "beretcmowhite"
 
-/obj/item/clothing/suit/hooded/wintercoat/medical/cmo/alt
-	icon_state = "coatcmo_alt"
+/obj/item/clothing/suit/hooded/wintercoat/medical/cmo
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
-/obj/item/clothing/head/hooded/winterhood/medical/cmo/alt
-	icon_state = "winterhood_cmo_alt"
+/obj/item/clothing/head/hooded/winterhood/medical/cmo
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/cmo/long
+	icon_state = "coatcmo_alt"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/cmo/long
+
+/obj/item/clothing/head/hooded/winterhood/medical/cmo/long
+	icon_state = "winterhood_cmo_alt"
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/cmo/alt
+	icon_state = "coatalt_cmo"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/cmo/alt
+
+/obj/item/clothing/head/hooded/winterhood/medical/cmo/alt
+	icon_state = "winterhoodalt_cmo"
 
 // ###### PARAMED ######
 
@@ -133,6 +145,7 @@
 	can_adjust = TRUE
 
 /obj/machinery/vending/wardrobe/medi_wardrobe
+	extra_price = 150
 	products = list(/obj/item/clothing/accessory/pocketprotector = 4,
 					/obj/item/storage/backpack/duffelbag/med = 4,
 					/obj/item/storage/backpack/medic = 4,
@@ -157,3 +170,4 @@
 					/obj/item/clothing/suit/apron/surgical = 4,
 					/obj/item/clothing/mask/surgical = 4,
 					/obj/item/clothing/accessory/armband/medblue = 2)
+	premium = list(/obj/item/clothing/gloves/color/latex/nitrile = 2)

@@ -123,6 +123,9 @@
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 	fitted = NO_FEMALE_UNIFORM
 
+/obj/item/clothing/under/yogs/victoriouscaptainuniform 
+	can_adjust = FALSE
+
 /obj/item/clothing/under/rank/captain/kilt
 	desc = "Not a skirt, it is, however, armoured and decorated with a tartan sash."
 	name = "captain's kilt"
@@ -136,6 +139,10 @@
 	fitted = NO_FEMALE_UNIFORM
 	body_parts_covered = CHEST|GROIN|ARMS	
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
+
+/obj/item/clothing/under/captainparade
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
 
 /obj/item/clothing/suit/armor/vest/capcarapace
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
@@ -152,14 +159,20 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/hooded/wintercoat/captain
-	icon_state = "coatalt_cap"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+
+/obj/item/clothing/suit/hooded/wintercoat/captain/alt
+	icon_state = "coatalt_cap"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/captain/alt
 
 /obj/item/clothing/head/hooded/winterhood/captain
 	icon_state = "winterhoodalt_cap"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+
+/obj/item/clothing/head/hooded/winterhood/captain/alt
+	icon_state = "winterhoodalt_cap"
 
 /obj/item/clothing/suit/captunic
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
@@ -167,6 +180,7 @@
 	name = "captain's parade tunic"
 	desc = "Worn by a Captain to show their class."
 	icon_state = "captunic"
+	flags_inv = null
 
 /obj/item/clothing/suit/armor/vest/capcarapace/jacket
 	name = "captain's jacket"

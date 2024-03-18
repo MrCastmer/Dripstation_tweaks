@@ -2,6 +2,7 @@
 #include "code\modules\antagonists\_common\antag_spawner.dm"
 #include "code\game\gamemodes\nuclear\nuclear.dm"
 #include "code\modules\antagonists\nukeop\nukeop.dm"
+#include "code\modules\antagonists\abductor\equipment\abduction_outfits.dm"
 #include "code\controllers\subsystem\blackmarket.dm"
 #include "code\datums\brain_damage\severe.dm"
 #include "code\datums\component\transforming.dm"

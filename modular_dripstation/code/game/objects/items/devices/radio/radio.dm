@@ -29,6 +29,12 @@
 	name = "supply radio headset"
 	desc = "A headset used by QM`s slaves."
 
+/obj/item/radio/headset/headset_medcargo
+	icon_state = "medcargo_headset"
+
+/obj/item/radio/headset/headset_medsec
+	icon_state = "medsec_headset"
+
 /obj/item/radio/headset/heads/captain
 	icon_state = "cap_headset"
 

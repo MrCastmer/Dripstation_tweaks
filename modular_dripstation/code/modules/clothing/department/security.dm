@@ -213,6 +213,39 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'	
 	pocket_storage_component_path = null
 
+/*
+ *Physician
+ */
+
+/obj/item/clothing/under/yogs/rank/physician
+	name = "brig recovery medic's undersuit"
+	desc = "A verstile red and white uniform honored to hard working recovery medics in hazardous environments. It has minor protection against biohazards."
+	icon_state = "recovery_bm"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/brig_physician.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/brig_physician.dmi'
+
+/obj/item/clothing/under/yogs/rank/physician/white
+	icon_state = "security_medic"
+	desc = "White formal jumpsuit that connects you to your medsci brothers and sisters."
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/brig_physician.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/brig_physician.dmi'
+
+/obj/item/clothing/under/yogs/rank/physician/white/skirt
+	icon_state = "security_medic_skirt"
+	desc = "White formal jumpskirt that connects you to your medsci brothers and sisters."
+
+/obj/item/clothing/under/yogs/rank/physician/turtle
+	name = "brig physician's turtleneck"
+	desc = "A stylish turtleneck complete with tactical pants."
+	icon_state = "security_medic_turtleneck"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/brig_physician.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/brig_physician.dmi'
+
+/obj/item/clothing/under/yogs/rank/physician/turtle/skirt
+	name = "brig physician's turtleneck skirt"
+	desc = "A stylish turtleneck complete with tactical skirt."
+	icon_state = "security_medic_turtleneck_skirt"
+
 // ###### VENDORS ######
 /obj/machinery/vending/security
 	req_access = list(ACCESS_BRIG)
@@ -256,7 +289,8 @@
 					/obj/item/clothing/suit/hooded/wintercoat/security = 3,					
 					/obj/item/clothing/suit/armor/vest/secmiljacket = 2,
 					/obj/item/clothing/suit/toggle/bomber/secbomber/soft = 2,
-					/obj/item/clothing/suit/poncho/sec = 2,				
+					/obj/item/clothing/suit/poncho/sec = 2,	
+					/obj/item/clothing/gloves/color/black/tactifool = 3,		
 					/obj/item/clothing/shoes/jackboots = 3,
 					/obj/item/clothing/shoes/jackboots/jacksandal = 3,
 					/obj/item/clothing/shoes/xeno_wraps/jackboots = 3,

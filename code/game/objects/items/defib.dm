@@ -458,7 +458,7 @@
 /obj/item/shockpaddles/proc/shock_touching(dmg, mob/H)
 	if(isliving(H.pulledby))		//CLEAR!
 		var/mob/living/M = H.pulledby
-		if(M.electrocute_act(30, src))
+		if(M.electrocute_act(dmg, src))	//dripstation edit
 			M.visible_message(span_danger("[M] is electrocuted by [M.p_their()] contact with [H]!"))
 			M.emote("scream")
 
@@ -526,9 +526,17 @@
 				if(!H.stat)
 					H.visible_message(span_warning("[H] thrashes wildly, clutching at [H.p_their()] chest!"),
 						span_userdanger("You feel a horrible agony in your chest!"))
+				/*
 				H.set_heartattack(TRUE)
+				*/
+				if((combat || defib.combat) && prob(heart_attack_chance))	//dripstation edit
+					H.set_heartattack(TRUE)	//dripstation edit
+					log_combat(user, H, "overloaded the heart of", defib)	//dripstation edit
 			H.apply_damage(50, BURN, BODY_ZONE_CHEST)
+			log_combat(user, H, "shocks harmfully", defib)	//dripstation edit
+			/*
 			log_combat(user, H, "overloaded the heart of", defib)
+			*/
 			H.Paralyze(100)
 			H.adjust_jitter(100 SECONDS)
 			if(req_defib)
@@ -555,7 +563,7 @@
 		var/tplus = world.time - H.timeofdeath	//length of time spent dead
 		var/obj/item/organ/heart = H.getorgan(/obj/item/organ/heart)
 		if(do_after(user, 1.5 SECONDS, H))
-			if(user.job == "Medical Doctor" || user.job == "Paramedic" || user.job == "Chief Medical Officer")
+			if(user.job in GLOB.medical_positions)	//dripstation edit
 				user.say("Clear!", forced = "defib")
 		if(do_after(user, 0.5 SECONDS, H)) //Counting the delay for "Clear", revive time is 5sec total
 			for(var/obj/item/carried_item in H.contents)

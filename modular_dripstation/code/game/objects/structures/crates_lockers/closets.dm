@@ -78,7 +78,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 // ###### HOS ######
 /obj/structure/closet/secure_closet/hos
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
@@ -99,9 +99,9 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/glasses/hud/security/sunglasses/hos(src)	
 	new /obj/item/clothing/shoes/xeno_wraps/jackboots/combat(src)
 	new /obj/item/circuitboard/machine/techfab/department/armory(src)
-	new /obj/item/storage/backpack/head_of_personnel(src)
-	new /obj/item/storage/backpack/satchel/head_of_personnel(src)
-	new /obj/item/storage/backpack/duffelbag/head_of_personnel(src)
+	new /obj/item/storage/backpack/security(src)
+	new /obj/item/storage/backpack/satchel/sec(src)
+	new /obj/item/storage/backpack/duffelbag/sec(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/clipboard/yog/paperwork/hos(src)
 	new /obj/item/radio/security(src)
@@ -109,7 +109,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 // ###### WARDEN ######
 /obj/structure/closet/secure_closet/warden
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/warden/PopulateContents()
 	..()
@@ -122,6 +122,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/shoes/jackboots/warden(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
 	new /obj/item/clipboard/yog/paperwork/warden(src)
@@ -143,10 +145,15 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 // ###### HOP ######
 /obj/structure/closet/secure_closet/hop
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
+	if(prob(50))
+		new /obj/item/storage/backpack/head_of_personnel(src)
+	else
+		new /obj/item/storage/backpack/satchel/head_of_personnel(src)
+	new /obj/item/storage/backpack/duffelbag/head_of_personnel(src)
 	new /obj/item/storage/lockbox/medal/service(src)
 	new /obj/item/cartridge/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
@@ -166,14 +173,20 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clipboard/yog/paperwork/hop(src)
 	new /obj/item/gun/energy/e_gun/mini(src)
 	new /obj/item/storage/bag/garment/hop(src)
+	new /obj/item/clothing/shoes/leather(src)
+	new /obj/item/clothing/shoes/laceup(src)
 
 // ###### CAPTAIN ######
 /obj/structure/closet/secure_closet/captains
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/captains/PopulateContents()
 	..()
-	new /obj/item/storage/backpack/captain(src)
+	if(prob(50))
+		new /obj/item/storage/backpack/captain(src)
+	else
+		new /obj/item/storage/backpack/satchel/cap(src)
+	new /obj/item/storage/backpack/duffelbag/captain(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/cartridge/captain(src)
@@ -182,7 +195,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/storage/belt/sabre(src)
-	new /obj/item/clothing/glasses/hud/skill(src)
+	new /obj/item/clothing/glasses/hud/personnel(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/storage/photo_album/Captain(src)
 	new /obj/item/clipboard/yog/paperwork/captain(src)
@@ -193,7 +206,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 // ###### RD ######
 /obj/structure/closet/secure_closet/RD
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/RD/PopulateContents()
 	..()
@@ -211,6 +224,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/photo_album/RD(src)
 	new /obj/item/clipboard/yog/paperwork/rd(src)
 	new /obj/item/storage/bag/garment/research_director(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/shoes/sneakers/white(src)
 	new /obj/item/multitool/tricorder(src)
 
 // ###### MIME ######
@@ -262,15 +277,69 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 /obj/structure/closet/secure_closet/medical3
 	icon = 'modular_dripstation/icons/obj/closet.dmi'
 
-// ###### BRIG PHYSICIAN ######
-/obj/structure/closet/secure_closet/physician
-	icon = 'modular_dripstation/icons/obj/closet.dmi'
-	icon_state = "brigphys"
+/obj/structure/closet/secure_closet/medical3/PopulateContents()
+	..()
+	new /obj/item/radio/headset/headset_med(src)
+	new /obj/item/defibrillator/loaded(src)
+	new /obj/item/clothing/gloves/color/latex(src)
+	new /obj/item/storage/belt/medical(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/gun/syringe(src)
+
+
+// ###### MINING MEDIC ######
+/obj/structure/closet/secure_closet/mmedical/PopulateContents()
+	..()
+	if(prob(50))
+		new /obj/item/storage/backpack/emt(src)
+	else
+		new /obj/item/storage/backpack/satchel/emt(src)
+	new /obj/item/storage/backpack/duffelbag/emt(src)
+	new /obj/item/defibrillator/loaded(src)
+	new /obj/item/clothing/suit/toggle/labcoat/emt/explorer(src)
+	new /obj/item/clothing/head/beret/emt/mining(src)
+	new /obj/item/clothing/under/yogs/rank/miner/medic(src)
+	new /obj/item/clothing/suit/toggle/labcoat/explorer(src)
+	new /obj/item/storage/belt/medical/mining(src)
+	new /obj/item/clothing/glasses/hud/health/meson(src)
+	new /obj/item/clothing/gloves/color/latex/fireproof(src)
+	new /obj/item/clothing/shoes/sneakers/white(src)
+	new	/obj/item/radio/headset/headset_medcargo(src)
+	new /obj/item/clothing/mask/gas/explorer(src)
+	new /obj/item/storage/firstaid/hypospray/qmc(src)
+	new /obj/item/binoculars(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/sensor_device(src)
+	new /obj/item/bodybag/environmental(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/reagent_containers/medspray/synthflesh(src)
+	var/obj/item/key/K = new(src)
+	K.name = "ATV key"
+	K.desc = "It's a small grey key. Don't let those goddamn ashwalkers or plantpeople get it."
 
 // ###### BRIG PHYSICIAN ######
 /obj/structure/closet/secure_closet/physician
 	icon = 'modular_dripstation/icons/obj/closet.dmi'
 	icon_state = "brigphys"
+
+/obj/structure/closet/secure_closet/physician/PopulateContents()
+	..()
+	new /obj/item/storage/bag/garment/physician(src)
+	new /obj/item/cartridge/medical(src)
+	new /obj/item/radio/headset/headset_medsec(src)
+	new /obj/item/storage/belt/medical(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/sensor_device(src)
+	new /obj/item/storage/box/bodybags(src)
+	new /obj/item/tank/internals/anesthetic(src)
+	new /obj/item/clothing/mask/breath/medical(src)
+	new /obj/item/defibrillator/loaded(src)
+	new /obj/item/modular_computer/laptop/preset/paramedic/brig_physician(src)
+	new /obj/item/storage/backpack/bmed(src)
+	new /obj/item/storage/backpack/satchel/bmed(src)
+	new /obj/item/storage/backpack/duffelbag/bmed(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/shoes/xeno_wraps/jackboots(src)
 
 // ###### CHAPLAIN ######
 /obj/structure/closet/secure_closet/chaplain
@@ -345,7 +414,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 // ###### QUARTERMASTER ######
 /obj/structure/closet/secure_closet/quartermaster
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/quartermaster/PopulateContents()
 	..()
@@ -369,7 +438,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/suit/fire/firefighter(src)
 
 /obj/structure/closet/secure_closet/CMO
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
@@ -389,11 +458,16 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/photo_album/CMO(src)
 	new /obj/item/clipboard/yog/paperwork/cmo(src)
 	new /obj/item/storage/bag/garment/chief_medical(src)
+	new /obj/item/clothing/suit/bio_suit/cmo(src)
+	new /obj/item/clothing/head/bio_hood/cmo(src)
+	new /obj/item/clothing/shoes/sneakers/brown	(src)
+	new /obj/item/clothing/shoes/laceup/brown(src)
+	new /obj/item/clothing/shoes/xeno_wraps/command(src)
 	new /obj/item/storage/belt/medical/chief/full(src)
 	new /obj/item/storage/lockbox/medal/med(src)
 
 /obj/structure/closet/secure_closet/engineering_chief
-	anchored = TRUE	//i commited crime with this shit
+	anchored = TRUE	//i`ve commited crime with this
 
 /obj/structure/closet/secure_closet/engineering_chief/PopulateContents()
 	..()
@@ -419,6 +493,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clipboard/yog/paperwork/ce(src)
 	new /obj/item/poster/firstsingularity(src)
 	new /obj/item/storage/bag/garment/engineering_chief(src)
+	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/clothing/shoes/xeno_wraps/command(src)
 	new /obj/item/storage/lockbox/medal/eng(src)
 	new /obj/item/barrier_taperoll/engineering(src)
 	new /obj/item/multisurgeon/magboots(src)
