@@ -46,7 +46,9 @@
 	name = "Brig Physician"
 	jobtype = /datum/job/brigphysician
 
+/* dripstation edit
 	pda_type = /obj/item/modular_computer/tablet/pda/preset/paramed
+*/
 
 	backpack_contents = list(/obj/item/roller = 1)
 /* dripstation edit

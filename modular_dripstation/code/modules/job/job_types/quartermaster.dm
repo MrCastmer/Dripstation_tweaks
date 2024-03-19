@@ -28,3 +28,5 @@
 	backpack = /obj/item/storage/backpack/cargo
 	satchel = /obj/item/storage/backpack/satchel/cargo
 	duffelbag = /obj/item/storage/backpack/duffelbag/cargo
+
+	pda_type = /obj/item/modular_computer/tablet/phone/preset/cargo
