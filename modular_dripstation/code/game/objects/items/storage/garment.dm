@@ -113,6 +113,7 @@
 	new /obj/item/clothing/neck/cloak/hop(src)
 	new /obj/item/clothing/head/hopcap(src)
 	new /obj/item/clothing/head/beret/hop(src)
+	new /obj/item/clothing/head/hopcap/alt(src)
 	new /obj/item/clothing/gloves/color/white(src)
 	new /obj/item/clothing/gloves/color/black(src)
 

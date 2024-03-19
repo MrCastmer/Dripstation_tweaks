@@ -91,6 +91,9 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	icon_state = "hopcap"
 
+/obj/item/clothing/head/hopcap/alt
+	icon_state = "hopcap_alt"
+
 /obj/item/clothing/suit/armor/vest/alt
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
