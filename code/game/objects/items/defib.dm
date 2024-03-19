@@ -157,7 +157,7 @@
 	. = ..()
 
 	if(cell && !(. & EMP_PROTECT_CONTENTS))
-		deductcharge(500 * severity)
+		deductcharge(2500 * severity)	//dripstation edit
 
 	if (. & EMP_PROTECT_SELF)
 		return
@@ -406,6 +406,7 @@
 		playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
 		return
 	
+	/* nah, revive via stunbaton, dripstation edit
 	var/has_rod = FALSE
 	for(var/obj/item/rod_of_asclepius/rod in user.held_items)
 		if(istype(rod) && rod.activated)
@@ -413,6 +414,8 @@
 			break
 
 	if(!(HAS_TRAIT(src, TRAIT_WIELDED) || has_rod))
+	*/
+	if(!(HAS_TRAIT(src, TRAIT_WIELDED)))//dripstation edit
 		if(iscyborg(user))
 			to_chat(user, span_warning("You must activate the paddles in your active module before you can use them on someone!"))
 		else
@@ -451,8 +454,10 @@
 		H.grab_ghost() // Shove them back in their body.
 	else if(H.can_defib(FALSE))
 		H.notify_ghost_cloning("Your heart is being defibrillated. Re-enter your corpse if you want to be revived!", source = src)
+	/* dripstation edit, f asclepius rod
 	if(has_rod && !HAS_TRAIT(src, TRAIT_WIELDED))
 		to_chat(user, span_notice("Your snake holds the other paddle in its mouth and places it on [H]'s chest."))
+	*/
 	do_help(H, user)
 
 /obj/item/shockpaddles/proc/shock_touching(dmg, mob/H)

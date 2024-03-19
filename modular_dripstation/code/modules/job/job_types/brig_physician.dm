@@ -1,3 +1,6 @@
+/datum/job/brigphysician
+	department_head = list("Chief Medical Officer", "Head of Security")
+
 /datum/outfit/job/brigphysician
 	uniform = /obj/item/clothing/under/yogs/rank/physician/white
 	gloves = /obj/item/clothing/gloves/color/latex/black

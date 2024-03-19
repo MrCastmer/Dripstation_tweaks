@@ -1,3 +1,6 @@
+/datum/job/cargo_tech
+	department_head = list("Quartermaster")
+
 /datum/outfit/job/cargo_tech
 	backpack_contents = list(/obj/item/boxcutter = 1)
 	backpack = /obj/item/storage/backpack/cargo

@@ -9,6 +9,35 @@
 /obj/item/clothing/suit/toggle/labcoat
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/labcoat
+
+/datum/component/storage/concrete/pockets/labcoat
+	quickdraw = FALSE
+	max_combined_w_class = 2
+
+/datum/component/storage/concrete/pockets/labcoat/Initialize()
+	. = ..()
+	set_holdable(list(	/obj/item/analyzer,
+						/obj/item/multitool/tricorder,
+						/obj/item/stack/medical,
+						/obj/item/dnainjector,
+						/obj/item/reagent_containers/dropper,
+						/obj/item/reagent_containers/syringe,
+						/obj/item/reagent_containers/autoinjector,
+						/obj/item/healthanalyzer,
+						/obj/item/flashlight/pen,
+						/obj/item/reagent_containers/glass/bottle,
+						/obj/item/reagent_containers/glass/beaker,
+						/obj/item/reagent_containers/pill,
+						/obj/item/storage/pill_bottle,
+						/obj/item/paper,
+						/obj/item/melee/classic_baton/telescopic,
+						/obj/item/soap,
+						/obj/item/sensor_device,
+						/obj/item/tank/internals/emergency_oxygen,
+						/obj/item/tank/internals/plasmaman,
+						/obj/item/tank/internals/ipc_coolant,
+						/obj/item/hypospray))
 
 /obj/item/clothing/suit/toggle/labcoat/emt/paramedic
 	icon_state = "labcoat_paramedic"

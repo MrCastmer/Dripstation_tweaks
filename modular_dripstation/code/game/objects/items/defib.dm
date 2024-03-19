@@ -37,7 +37,7 @@
 /obj/item/defibrillator/compact/advanced/loaded/Initialize(mapload)
 	. = ..()
 	paddles = make_paddles()
-	cell = new /obj/item/stock_parts/cell/bluespace/advanced(src)
+	cell = new /obj/item/stock_parts/cell/super/advanced(src)
 	ADD_TRAIT(src, TRAIT_EMPPROOF_SELF, "innate_empproof")
 	update_appearance(UPDATE_ICON)
 
@@ -47,20 +47,19 @@
 		update_appearance(UPDATE_ICON)
 		return
 
-/obj/item/stock_parts/cell/bluespace/advanced
-	name = "hyper-capacity selfrecharge advanced power cell"
-	desc = "An An experimental transdimensional power cell. Selfrecharge and EMP-proof included."
-	maxcharge = 40000
-	chargerate = 4000
+/obj/item/stock_parts/cell/super/advanced
+	name = "super-capacity selfrecharge advanced power cell"
+	desc = "An experimental transdimensional power cell. Selfrecharge and EMP-proof included."
 	rating = 6 //self-recharge makes these desirable
 	self_recharge = 1 // Infused slime cores self-recharge, over time
 
-/obj/item/stock_parts/cell/bluespace/advanced/Initialize(mapload)
+/obj/item/stock_parts/cell/super/advanced/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_EMPPROOF_SELF, "innate_empproof")
 
 /obj/item/shockpaddles
 	var/heart_attack_chance = 70
+	revivecost = 2500
 
 /obj/item/shockpaddles/combat
 	name = "combat defibrillator paddles"

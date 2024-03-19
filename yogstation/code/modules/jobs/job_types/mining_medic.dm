@@ -51,7 +51,9 @@
 		/obj/item/reagent_containers/autoinjector/medipen/survival = 1,\
 		/obj/item/modular_computer/laptop/preset/paramedic/mining_medic = 1)
 
+/* dripstation edit
 	belt = /obj/item/storage/belt/medical/mining
+*/
 	ears = /obj/item/radio/headset/headset_medcargo
 /* dripstation edit
 	glasses = /obj/item/clothing/glasses/hud/health/meson
