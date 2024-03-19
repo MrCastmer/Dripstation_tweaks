@@ -130,6 +130,7 @@
 	new /obj/item/clothing/suit/toggle/capformal/hos(src)
 	new /obj/item/clothing/suit/armor/vest/hosjacket(src)	
 	new /obj/item/clothing/suit/armor/hos(src)
+	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/hos(src)
 	new /obj/item/clothing/neck/mantle/hosmantle(src)
 	new /obj/item/clothing/neck/cloak/hos(src)

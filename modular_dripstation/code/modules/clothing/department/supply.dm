@@ -123,6 +123,7 @@
 // ###### CARGO TECH ######
 /obj/item/clothing/under/rank/cargotech
 	custom_price = 50
+	alt_covers_chest = TRUE
 	icon_state = "cargotech"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/cargo/cargotech.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/cargo/cargotech.dmi'
@@ -131,6 +132,7 @@
 	name = "customs uniform"
 	icon_state = "customs_uniform"
 	desc = "Slick uniform issued to Cargonia guard."
+	alt_covers_chest = FALSE
 
 /obj/item/clothing/under/rank/cargotech/mail
 	name = "mailman uniform"

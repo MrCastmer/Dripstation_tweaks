@@ -90,6 +90,27 @@
 	item_state = "duffel-med"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
+/obj/item/storage/backpack/cmo
+	name = "Chief Medical Officer`s backpack"
+	desc = "A exclusive backpack issued to Chief Medical Officer."
+	icon_state = "cmopack"
+	item_state = "medicalpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/satchel/cmo
+	name = "Chief Medical Officer`s satchel"
+	desc = "A exclusive satchel issued to Chief of Healing."
+	icon_state = "satchel-cmo"
+	item_state = "satchel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/cmo
+	name = "Chief Medical Officer`s duffelbag"
+	desc = "A robust duffelbag issued to the medical mastermind."
+	icon_state = "duffel-cmo"
+	item_state = "duffel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
 /obj/item/storage/backpack/satchel/eng
 	item_state = "satchel-eng"
 

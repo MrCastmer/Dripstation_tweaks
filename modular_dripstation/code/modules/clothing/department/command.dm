@@ -2,11 +2,13 @@
 /obj/item/clothing/under/rank/head_of_personnel
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/hop.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/hop.dmi'
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/head_of_personnel/skirt
 	can_adjust = TRUE
 	mutantrace_variation = MUTANTRACE_VARIATION	
 	fitted = NO_FEMALE_UNIFORM
+	alt_covers_chest = FALSE
 
 /obj/item/clothing/under/rank/head_of_personnel/dress
 	name = "head of personnel's dress"
@@ -57,6 +59,7 @@
 	name = "head of personnel's secretary skirt"
 	icon_state = "hop_secretary"
 	fitted = NO_FEMALE_UNIFORM
+	alt_covers_chest = FALSE
 
 /obj/item/clothing/shoes/leather
 	name = "leather shoes"
@@ -104,9 +107,11 @@
 /obj/item/clothing/under/rank/captain
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
+	alt_covers_chest = FALSE
 
 /obj/item/clothing/under/rank/captain/skirt
 	can_adjust = TRUE
+	alt_covers_chest = TRUE
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/captain/formal
@@ -114,6 +119,7 @@
 	desc = "Parade version of station captain`s uniform."
 	icon_state = "station_captain"
 	item_state = "station_captain"
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/captain/formal/skirt
 	name = "captain's formal skirt"
@@ -131,6 +137,7 @@
 	name = "captain's kilt"
 	icon_state = "capkilt"
 	item_state = "kilt"
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/captain/dress
 	name = "captain's dress"

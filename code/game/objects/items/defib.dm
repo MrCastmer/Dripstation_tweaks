@@ -497,7 +497,7 @@
 		span_warning("You overcharge the paddles and begin to place them onto [H]'s chest..."))
 	busy = TRUE
 	update_appearance(UPDATE_ICON)
-	if(do_after(user, 3 SECONDS, H))
+	if(do_after(user, (req_defib && defib.combat ? 1 SECONDS : 3 SECONDS), H))	//dripstation edit
 		user.visible_message(span_notice("[user] places [src] on [H]'s chest."),
 			span_warning("You place [src] on [H]'s chest and begin to charge them."))
 		var/turf/T = get_turf(defib)
@@ -532,6 +532,9 @@
 				if((combat || defib.combat) && prob(heart_attack_chance))	//dripstation edit
 					H.set_heartattack(TRUE)	//dripstation edit
 					log_combat(user, H, "overloaded the heart of", defib)	//dripstation edit
+				else if (prob(10))	//dripstation edit
+					H.set_heartattack(TRUE)	//dripstation edit
+					log_combat(user, H, "gives the heart hard time with", defib)	//dripstation edit
 			H.apply_damage(50, BURN, BODY_ZONE_CHEST)
 			log_combat(user, H, "shocks harmfully", defib)	//dripstation edit
 			/*
@@ -555,7 +558,7 @@
 	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest."), span_warning("You begin to place [src] on [H]'s chest..."))
 	busy = TRUE
 	update_appearance(UPDATE_ICON)
-	if(do_after(user, 3 SECONDS, H)) //beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
+	if(do_after(user, (req_defib && defib.combat ? 1 SECONDS : 3 SECONDS), H)) //beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process, dripstation edit
 		user.visible_message(span_notice("[user] places [src] on [H]'s chest."), span_warning("You place [src] on [H]'s chest."))
 		playsound(src, 'sound/machines/defib_charge.ogg', 75, 0)
 		var/total_burn	= 0

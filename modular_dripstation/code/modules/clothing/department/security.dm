@@ -58,13 +58,21 @@
 
 /obj/item/clothing/under/rank/warden
 	name = "warden's jumpsuit"
+	alt_covers_chest = FALSE
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/warden.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/warden.dmi'
 
 /obj/item/clothing/under/rank/warden/skirt
 	name = "warden's jumpskirt"
+	alt_covers_chest = TRUE
 	can_adjust = TRUE
 	fitted = NO_FEMALE_UNIFORM
+
+/obj/item/clothing/under/rank/warden/alt
+	name = "black warden uniform"
+	desc = "A jumpsuit made of strong material, providing robust protection."
+	icon_state = "bwarden"
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/warden/corporate
 	name = "warden's corporate uniform"
@@ -72,6 +80,7 @@
 	icon_state = "warden_corporate"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/warden/classic
 	name = "warden's classic uniform"
@@ -79,6 +88,7 @@
 	icon_state = "warden-collar"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/warden/corporate/skirt
 	name = "head of security's corporate dress"
@@ -103,10 +113,12 @@
 /obj/item/clothing/suit/armor/vest/warden
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "warden_jacket"
 
 /obj/item/clothing/suit/armor/vest/warden/alt
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "warden_alt"
 
 /obj/item/clothing/suit/armor/vest/warden/winter
 	name = "warden's winter coat"

@@ -94,7 +94,10 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 
 /obj/item/clothing/gloves/color/black/forensic
-	icon = 'icons/obj/clothing/gloves.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/botanic_leather
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/color/black/goliath
 	icon = 'icons/obj/clothing/gloves.dmi'
