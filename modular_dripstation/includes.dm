@@ -158,6 +158,8 @@
 #include "code\modules\modular_computers\computers\item\pda\pda_presets.dm"
 #include "code\modules\modular_computers\computers\item\phone\phone.dm"
 #include "code\modules\modular_computers\computers\item\phone\phone_presets.dm"
+#include "code\modules\modular_computers\computers\item\tablet\tablet.dm"
+#include "code\modules\modular_computers\computers\item\tablet\tablet_presets.dm"
 #include "code\modules\mob\living\simple_animal\bot\mulebot.dm"
 #include "code\modules\mob\living\simple_animal\bot\cleanbot.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mimic.dm"
