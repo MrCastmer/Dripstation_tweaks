@@ -33,7 +33,7 @@
 	/*	dripstation edit
 	var/unlock_budget = TRUE
 	*/
-	unlock_budget = FALSE
+	var/unlock_budget = FALSE
 
 /datum/computer_file/program/budgetorders/proc/get_export_categories()
 	. = EXPORT_CARGO
