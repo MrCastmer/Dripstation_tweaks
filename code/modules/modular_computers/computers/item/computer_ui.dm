@@ -51,7 +51,9 @@
 	data["device_theme"] = device_theme
 	data["login"] = list()
 	var/obj/item/computer_hardware/card_slot/cardholder = all_components[MC_CARD]
+	var/obj/item/computer_hardware/hard_drive/role/ssd = all_components[MC_HDD_JOB] //Dripstation edit
 	data["cardholder"] = FALSE
+
 	if(cardholder)
 		data["cardholder"] = TRUE
 		var/obj/item/card/id/stored_card = cardholder.GetID()
@@ -66,6 +68,19 @@
 				IDName = stored_name,
 				IDJob = stored_title,
 			)
+
+//DRIPSTATION EDIT START
+	if(ssd)
+		data["disk"] = ssd
+		data["disk_name"] = ssd.name
+
+		for(var/datum/computer_file/program/prog in ssd.stored_files)
+			var/background_running = FALSE
+			if(prog in idle_threads)
+				background_running = TRUE
+
+			data["disk_programs"] += list(list("name" = prog.filename, "desc" = prog.filedesc, "running" = background_running, "icon" = prog.program_icon, "alert" = prog.alert_pending))
+//DRIPSTATION EDIT END
 
 	data["removable_media"] = list()
 	if(all_components[MC_SDD])
@@ -137,9 +152,16 @@
 		if("PC_runprogram")
 			var/prog = params["name"]
 			var/datum/computer_file/program/P = null
+			var/is_disk = params["is_disk"] //Dripstation edit
+			var/obj/item/computer_hardware/hard_drive/role/ssd = all_components[MC_HDD_JOB] //Dripstation edit
 			var/mob/user = usr
+			/*
 			if(hard_drive)
+			*/
+			if(hard_drive && !is_disk) //Dripstation edit
 				P = hard_drive.find_file_by_name(prog)
+			if(ssd && is_disk) //Dripstation edit
+				P = ssd.find_file_by_name(prog) //Dripstation edit
 			play_interact_sound()
 			if(!P || !istype(P)) // Program not found or it's not executable program.
 				to_chat(user, span_danger("\The [src]'s screen shows \"I/O ERROR - Unable to run program\" warning."))
@@ -203,6 +225,16 @@
 					if(uninstall_component(portable_drive, usr))
 						user.put_in_hands(portable_drive)
 						playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50)
+				//DRIPSTATION EDIT START
+				if("job disk")
+					var/obj/item/computer_hardware/hard_drive/role/ssd = all_components[MC_HDD_JOB]
+					if(!ssd)
+						return
+					if(uninstall_component(ssd, usr, TRUE))
+						user.put_in_hands(ssd)
+						playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50)
+					return TRUE
+				//DRIPSTATION EDIT END
 				if("intelliCard")
 					var/obj/item/computer_hardware/ai_slot/intelliholder = all_components[MC_AI]
 					if(!intelliholder)

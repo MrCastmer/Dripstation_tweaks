@@ -86,6 +86,8 @@
 #include "code\modules\mining\machine_stacking.dm"
 #include "code\modules\mining\mint.dm"
 #include "code\modules\mining\equipment\mining_tools.dm"
+#include "code\modules\modular_computers\hardware\_hardware.dm"
+#include "code\modules\modular_computers\hardware\job_disk.dm"
 #include "code\modules\modular_computers\computers\machinery\console\modular_console.dm"
 #include "code\modules\modular_computers\file_system\program.dm"
 #include "code\modules\mob\living\simple_animal\bot\mulebot.dm"

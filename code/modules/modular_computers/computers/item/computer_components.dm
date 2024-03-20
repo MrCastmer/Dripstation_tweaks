@@ -14,11 +14,20 @@
 			to_chat(user, "<span class='warning'>The computer immediately ejects /the [try_install] and flashes an error: \"Hardware Address Conflict\".</span>")
 			return FALSE
 
+/* //Dripstation edit
 	if(all_components[try_install.device_type])
 		to_chat(user, span_warning("This computer's hardware slot is already occupied by \the [all_components[try_install.device_type]]."))
 		return FALSE
 	return TRUE
+*/
 
+//DRIPSTATION EDIT START
+	var/obj/item/computer_hardware/existing = all_components[try_install.device_type]
+	if(existing && (!istype(existing) || !existing.hotswap))
+		to_chat(user, "<span class='warning'>This computer's hardware slot is already occupied by \the [existing].</span>")
+		return FALSE
+	return TRUE
+//DRIPSTATION EDIT END
 
 /// Installs component.
 /obj/item/modular_computer/proc/install_component(obj/item/computer_hardware/install, mob/living/user = null)
