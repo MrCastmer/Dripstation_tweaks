@@ -156,18 +156,22 @@
 	name = "corporate warden beret"
 	desc = "A special black beret with a warden's insignia in the middle. This one is commonly worn by wardens of the corporation."
 	icon = 'yogstation/icons/obj/clothing/hats.dmi'
+	/*
 	mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
 	icon_state = "beret_corporate_warden"
 	armor = list(melee = 40, bullet = 30, laser = 30, energy = 10, bomb = 25, bio = 0, rad = 0, fire = 30, acid = 60)
+	*/
 	strip_delay = 60
 
 /obj/item/clothing/head/beret/corpsec
 	name = "corporate security beret"
 	desc = "A special black beret for the mundane life of a corporate security officer."
 	icon = 'yogstation/icons/obj/clothing/hats.dmi'
+	/*
 	mob_overlay_icon = 'yogstation/icons/mob/clothing/head/head.dmi'
 	icon_state = "beret_corporate_officer"
 	armor = list(melee = 40, bullet = 30, laser = 30,energy = 10, bomb = 25, bio = 0, rad = 0, fire = 20, acid = 50)
+	*/
 	strip_delay = 60
 
 /obj/item/clothing/head/beret/eng

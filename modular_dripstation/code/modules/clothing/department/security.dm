@@ -150,6 +150,11 @@
 /obj/item/clothing/head/warden/drill
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
+/obj/item/clothing/head/beret/corpwarden
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "beret_corporate_warden"
+	armor = list(MELEE = 35, BULLET = 30, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 10, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
+
 // ###### OFFICER ######
 
 /obj/item/clothing/under/rank/security
@@ -212,6 +217,10 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 	armor = list(MELEE = 30, BULLET = 25, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 20, ACID = 50)
 
+/obj/item/clothing/head/beret/corpsec
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "beret_corporate_officer"
+	armor = list(MELEE = 30, BULLET = 25, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 20, ACID = 50)
 
 /obj/item/clothing/suit/armor/officerjacket
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
