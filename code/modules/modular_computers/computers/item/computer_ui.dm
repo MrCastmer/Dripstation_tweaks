@@ -41,7 +41,10 @@
 			headername = "Syndix Main Menu"
 		else
 			headername = "NtOS Main Menu"
+/*
 		ui = new(user, src, "NtosMain", headername, 400, 500)
+*/
+		ui = new(user, src, "NtosMain", headername, 500, 600)
 		if(ui.open())
 			ui.send_asset(get_asset_datum(/datum/asset/simple/headers))
 
@@ -56,6 +59,7 @@
 
 	if(cardholder)
 		data["cardholder"] = TRUE
+		data["auto_imprint"] = saved_auto_imprint	//dripstation edit
 		var/obj/item/card/id/stored_card = cardholder.GetID()
 		if(stored_card)
 			var/stored_name = stored_card.registered_name
@@ -64,10 +68,20 @@
 				stored_name = "Unknown"
 			if(!stored_title)
 				stored_title = "Unknown"
+//DRIPSTATION EDIT START
+/*
 			data["login"] = list(
+*/
+			data["proposed_login"] = list(
 				IDName = stored_name,
 				IDJob = stored_title,
 			)
+//DRIPSTATION EDIT START
+	data["login"] = list(
+		IDName = saved_identification,
+		IDJob = saved_job,
+	)
+//DRIPSTATION EDIT END
 
 //DRIPSTATION EDIT START
 	if(ssd)
@@ -107,8 +121,18 @@
 	return data
 
 
+//DRIPSTATION EDIT START
+/obj/item/modular_computer/ui_static_data(mob/user)
+	var/list/data = ..()
+	data["show_imprint"] = show_us_imprint
+	return data
+//DRIPSTATION EDIT END
+
 // Handles user's GUI input
+/*
 /obj/item/modular_computer/ui_act(action, params)
+*/
+/obj/item/modular_computer/ui_act(action, params, datum/tgui/ui)	//dripstation edit
 	if(..())
 		return
 	var/obj/item/computer_hardware/hard_drive/hard_drive = all_components[MC_HDD]
@@ -254,6 +278,29 @@
 					cardholder.try_eject(user)
 					playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50)
 
+		//DRIPSTATION EDIT START
+			if(user && istype(user) && ui)
+				ui.close()
+				ui_interact(user)
+			update_appearance(UPDATE_ICON)
+		if("PC_Imprint_ID")
+			var/obj/item/computer_hardware/card_slot/cardholder = all_components[MC_CARD]
+			if(!cardholder)
+				return
+			var/obj/item/card/id/stored_card = cardholder.GetID()
+			saved_identification = stored_card.registered_name
+			saved_job = stored_card.assignment
+
+			update_appearance(UPDATE_ICON)
+
+			playsound(src, 'sound/machines/terminal_prompt.ogg', 15, TRUE)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_prompt_confirm.ogg', 15, TRUE), 1.3 SECONDS)
+		
+		if("PC_Toggle_Auto_Imprint")
+			saved_auto_imprint = !saved_auto_imprint
+			if(saved_auto_imprint)
+				update_identification()
+		//DRIPSTATION EDIT END
 
 		else
 			return
