@@ -15,3 +15,5 @@
 	backpack = /obj/item/storage/backpack/cmo
 	satchel = /obj/item/storage/backpack/satchel/cmo
 	duffelbag = /obj/item/storage/backpack/duffelbag/cmo
+
+	pda_slot = ITEM_SLOT_LPOCKET

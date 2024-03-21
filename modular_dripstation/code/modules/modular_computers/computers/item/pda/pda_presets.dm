@@ -87,4 +87,4 @@
 	finish_color = "network"
 
 /obj/item/modular_computer/tablet/pda/preset/paramed/miningmed
-	finish_color = "pda-miningmed"
+	finish_color = "miningmed"

@@ -30,3 +30,13 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/cargo
 
 	pda_type = /obj/item/modular_computer/tablet/phone/preset/cargo
+
+/datum/outfit/job/plasmaman/quartermaster
+	id_type = /obj/item/card/id/head
+	ears = /obj/item/radio/headset/qm
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/boxcutter = 1)
+	backpack = /obj/item/storage/backpack/cargo
+	satchel = /obj/item/storage/backpack/satchel/cargo
+	duffelbag = /obj/item/storage/backpack/duffelbag/cargo
+
+	pda_type = /obj/item/modular_computer/tablet/phone/preset/cargo
