@@ -87,8 +87,8 @@
 			unlock_budget = FALSE //cargo tech is already using the same budget.
 		if(id_card?.registered_account?.account_job?.paycheck_department && budget_order)
 			buyer = SSeconomy.get_dep_account(id_card.registered_account.account_job.paycheck_department)
-		if(id_card?.registered_account?.account_job && self_paid)	//dripstation edit
-			buyer = SSeconomy.get_dep_account(id_card.registered_account.account_job)	//dripstation edit
+		if(id_card?.registered_account && self_paid)	//dripstation edit
+			buyer = id_card.registered_account	//dripstation edit
 		if(ACCESS_QM in id_card.access)	//dripstation edit
 			requestonly = FALSE	//dripstation edit
 			can_approve_requests = TRUE	//dripstation edit
