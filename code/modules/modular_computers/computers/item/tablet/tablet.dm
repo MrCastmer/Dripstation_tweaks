@@ -76,6 +76,8 @@
 	var/obj/item/computer_hardware/hard_drive/role/disk = all_components[MC_HDD_JOB]
 	if(istype(disk))
 		uninstall_component(disk, user, TRUE)
+		user.put_in_hands(disk)
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50)
 ///MOVE TO MODULE///MOVE TO MODULE///MOVE TO MODULE///MOVE TO MODULE///MOVE TO MODULE///MOVE TO MODULE///MOVE TO MODULE
 
 /obj/item/modular_computer/tablet/update_icon_state()

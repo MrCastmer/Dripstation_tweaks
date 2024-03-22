@@ -37,6 +37,16 @@
 	if(user && !user.transferItemToLoc(install, src))
 		return FALSE
 
+//DRIPSTATION EDIT START
+	var/obj/item/computer_hardware/existing = all_components[install.device_type]
+	if(istype(existing) && existing.hotswap)
+		if(!uninstall_component(existing, user, TRUE))
+			// ABORT!!
+			install.forceMove(get_turf(user))
+			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50)
+			return FALSE
+//DRIPSTATION EDIT END
+
 	if(install.expansion_hw)
 		LAZYSET(expansion_bays, install.device_type, install)
 	all_components[install.device_type] = install
