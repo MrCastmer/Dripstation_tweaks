@@ -128,6 +128,44 @@
 					/obj/item/clothing/gloves/tackler/nt,
 					/obj/item/clothing/gloves/tackler/nt)
 
+/datum/supply_pack/security/securityclothes
+	contains = list(/obj/item/clothing/under/rank/security/navyblue,
+					/obj/item/clothing/under/rank/security/navyblue,
+					/obj/item/clothing/suit/armor/officerjacket,
+					/obj/item/clothing/suit/armor/officerjacket,
+					/obj/item/clothing/head/beret/sec/navyofficer,
+					/obj/item/clothing/head/beret/sec/navyofficer,
+					/obj/item/clothing/under/rank/warden/navyblue,
+					/obj/item/clothing/suit/armor/wardenjacket,
+					/obj/item/clothing/head/beret/sec/navywarden)
+
+/datum/supply_pack/security/armory/laserarmor
+	name = "Reflective Armor Crate"
+	desc = "Contains two vests and two helmets of highly reflective material. Each armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely. Requires Armory access to open."
+	cost = 3000
+	contains = list(/obj/item/clothing/suit/armor/laserproof,
+					/obj/item/clothing/suit/armor/laserproof,
+					/obj/item/clothing/head/helmet/laserproof,
+					/obj/item/clothing/head/helmet/laserproof)
+
+/datum/supply_pack/clearance/heavymining
+	name = "Old Mining Hardsuit Crate"
+	desc = "Contains one old specialised piece of equipment."
+	cost = 3000
+	order_limit = 1
+	contains = list(/obj/item/clothing/suit/space/hardsuit/heavymining)
+
+/datum/supply_pack/security/armory/hos
+	name = "Head of Security Armor Crate"
+	desc = "Contains set of HoS heavy armor."
+	cost = 5000
+	order_limit = 1
+	special = TRUE
+	crate_type = /obj/structure/closet/crate/secure/weapon
+	contains = list(/obj/item/clothing/head/helmet/HoS,
+					/obj/item/clothing/suit/armor/riot/hos)
+	crate_name = "hos supply crate"
+
 /datum/supply_pack/security/armory/laser		//dripstation mooving lethals to the armory
 	name = "Lasers Crate"
 	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."

@@ -3,3 +3,5 @@
 	icon_state = "pda-basic"
 	slot_flags = ITEM_SLOT_BELT
 
+/obj/item/modular_computer/tablet/phone
+	slot_flags = ITEM_SLOT_BELT

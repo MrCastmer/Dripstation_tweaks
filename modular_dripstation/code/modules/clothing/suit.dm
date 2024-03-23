@@ -95,3 +95,52 @@
 	icon_state = "cargoponcho"
 	item_state = "cargoponcho"
 	allowed = list(/obj/item/clipboard, /obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/radio)
+
+/obj/item/clothing/suit/judgerobe
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	flags_inv = null
+
+/obj/item/clothing/head/judge_wig
+	name = "\improper judge wig"
+	desc = "Judgement is here."
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "jwig"
+	item_state = "pwig"
+
+/obj/item/clothing/under/maid
+	name = "maid costume"
+	desc = "Maid in USSP."
+
+/obj/item/clothing/suit/maiddress
+	name = "maid dress"
+	desc = "Classic maid dress for working woman."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "maiddress"
+	item_state = "maid"
+
+/obj/item/clothing/suit/apron
+	name = "green apron"
+	desc = "You can put it on your naked body!"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "apron_green"
+	item_state = "maidapron"
+
+/obj/item/clothing/suit/apron/red
+	name = "red apron"
+	icon_state = "apron_red"
+
+/obj/item/clothing/suit/apron/purple
+	name = "purple apron"
+	icon_state = "apron_purple"
+
+/obj/item/clothing/suit/apron/teal
+	name = "teal apron"
+	icon_state = "apron_teal"
+
+/obj/item/clothing/suit/apron/yellow
+	name = "yellow apron"
+	icon_state = "apron_yellow"

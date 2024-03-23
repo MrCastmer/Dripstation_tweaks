@@ -30,6 +30,26 @@
 /obj/item/clothing/head/HoS
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
+/obj/item/clothing/head/helmet/HoS
+	name = "\improper HOS SWAT helmet"
+	desc = "It's a helmet specifically designed to protect against all types of attacks. Exclusive for station Head of Security."
+	icon_state = "hosswat"
+	item_state = "swat"
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 90, RAD = 20, FIRE = 70, ACID = 90, WOUND = 15)
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+
+/obj/item/clothing/suit/armor/riot/hos
+	name = "\improper HOS SWAT suit"
+	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding and plastitanium inserts to protect against both melee and range attacks. Helps the wearer resist shoving in close quarters."
+	icon_state = "armor_hos"
+	item_state = "hos"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 15)
+	slowdown = 0.2
+
 /obj/item/clothing/head/HoS/beret
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 

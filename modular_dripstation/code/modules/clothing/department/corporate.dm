@@ -112,6 +112,40 @@
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 100, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 
 
+//////SHELGUARD//////
+/obj/item/clothing/head/helmet/shellguard_sallet
+	name = "Shellguard Sallet Helmet"
+	desc = "A head cover designed to protect the wearer completely from space-arc eye."
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "shelg_sallet"
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	item_state = "welding"
+	flash_protect = 2
+	tint = 4
+	armor = list(MELEE = 20, BULLET = 0, LASER = 0, ENERGY = 30, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100, WOUND = 10, ELECTRIC = 100)
+	var/alt_armor = list(MELEE = 60, BULLET = 30, LASER = 30, ENERGY = 50, BOMB = 40, BIO = 100, RAD = 40, FIRE = 100, ACID = 100, WOUND = 10, ELECTRIC = 100)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	actions_types = list(/datum/action/item_action/toggle)
+	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = FIRE_PROOF|ACID_PROOF
+	hattable = FALSE
+	var/toggle_sound = 'sound/items/change_jaws.ogg'
+
+/obj/item/clothing/head/helmet/shellguard_sallet/attack_self(mob/user)
+	weldingvisortoggle(user)
+	playsound(src, "[toggle_sound]", 70, 0)
+	if(up)
+		armor = initial(armor)
+	else
+		armor = alt_armor
+
+/obj/item/clothing/head/helmet/shellguard_sallet/combat
+	name = "Shellguard Combat Sallet Helmet"
+	desc = "Combat head cover designed to protect the wearer completely from space-arc eye."
+	icon_state = "shelg_sallet_visor"
+	tint = 5
 
 ////Helldivers////
 /obj/item/storage/belt/military/helldiver
@@ -153,26 +187,6 @@
 /obj/item/clothing/under/syndicate
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
-
-/obj/item/clothing/under/syndicate/camo
-	name = "camouflage fatigues"
-	desc = "A desert military camouflage uniform."
-	icon_state = "terragov_multicam"
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/terragov/terragov.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/terragov/terragov.dmi'
-
-/obj/item/clothing/under/syndicate/soviet
-	name = "soviet uniform"
-	desc = "Badly translated labels tell you to clean this in Vodka. Great for squatting in."
-	icon_state = "soviet"
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/spaceslav/spaceslav.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/spaceslav/spaceslav.dmi'
-
-/obj/item/clothing/under/syndicate/rus_army
-	name = "ratnik 5 tracksuit"
-	icon_state = "slav_combat"
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/spaceslav/spaceslav.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/spaceslav/spaceslav.dmi'
 
 /////Donk Co//////
 /obj/item/clothing/under/syndicate/donk

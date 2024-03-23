@@ -28,3 +28,11 @@
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/terragov/terragov.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/terragov/terragov.dmi'
+
+////Terragov Army////
+/obj/item/clothing/under/syndicate/camo
+	name = "camouflage fatigues"
+	desc = "A desert military camouflage uniform."
+	icon_state = "terragov_multicam"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/terragov/terragov.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/terragov/terragov.dmi'

@@ -111,3 +111,26 @@ obj/item/clothing/head/bio_hood/cyan
 
 obj/item/clothing/head/bio_hood/white
 	icon_state = "hazmat_white"
+
+/obj/item/clothing/head/fedora
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/fedora/white
+	name = "white fedora"
+	icon_state = "wfedora"
+	desc = "A really cool hat if you're a mobster. A really lame hat if you're not. White as snow."
+
+/obj/item/clothing/head/fedora/black
+	name = "black fedora"
+	icon_state = "bfedora"
+	desc = "A really cool hat if you're a mobster. A really lame hat if you're not. Black as night."
+
+/obj/item/clothing/head/fedora/brown
+	icon_state = "brfedora"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/fedora/det_hat
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
