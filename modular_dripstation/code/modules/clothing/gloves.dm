@@ -81,6 +81,40 @@
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 
+/obj/item/clothing/gloves/fingerless
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+
+/obj/item/clothing/gloves/fingerless/weaver
+	mob_overlay_icon = 'icons/mob/clothing/hands/hands.dmi'
+
+/obj/item/clothing/gloves/color/orange
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/red
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/rainbow
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/blue
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/purple
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/green
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/grey
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/light_brown
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
+/obj/item/clothing/gloves/color/brown
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+
 /obj/item/clothing/gloves/color/black
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
 	var/fingerless_variation = /obj/item/clothing/gloves/fingerless
@@ -237,21 +271,25 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 80, RAD = 0, FIRE = 100, ACID = 100, WOUND = 0, ELECTRIC = 100)
 
 /obj/item/clothing/gloves/color/latex/hazmat
+	name = "hazmat latex gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, designed to protect against biological contamination."
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = ARMS|HANDS
 	resistance_flags = ACID_PROOF
 	surgeryspeed = 0.95
-	item_state = "hazmat_gloves"
+	icon_state = "hazmat_gloves"
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 80, FIRE = 30, ACID = 100, ELECTRIC = 60)
 
 /obj/item/clothing/gloves/color/latex/hazmat/cyan
-	item_state = "hazmat_gloves_cyan"
+	icon_state = "hazmat_gloves_cyan"
 
 /obj/item/clothing/gloves/color/latex/hazmat/sec
-	item_state = "hazmat_gloves_sec"
+	icon_state = "hazmat_gloves_sec"
 
 /obj/item/clothing/gloves/color/latex/hazmat/white
-	item_state = "hazmat_gloves_white"
+	icon_state = "hazmat_gloves_white"
 
 /obj/item/clothing/gloves/maid
 	name = "maid sleeves"

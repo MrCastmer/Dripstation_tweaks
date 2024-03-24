@@ -60,24 +60,35 @@
 /obj/item/clothing/shoes/galoshes/general
 	desc = "A pair of yellow rubber boots, designed to protect against biological contamination."
 	name = "standart galoshes"
-	slowdown = SHOES_SLOWDOWN
+	slowdown = SHOES_SLOWDOWN+0.1
 	clothing_flags = THICKMATERIAL
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
 
 /obj/item/clothing/shoes/galoshes/cyan
 	desc = "A pair of cyan rubber boots, designed to protect against biological contamination."
 	name = "cyan galoshes"
-	slowdown = SHOES_SLOWDOWN
-	clothing_flags = THICKMATERIAL
+	icon_state = "galoshes_cyan"
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
+	slowdown = SHOES_SLOWDOWN+0.1
+	clothing_flags = THICKMATERIAL|NOSLIP
+	armor = list(MELEE = 20, BULLET = 0, LASER = 0, ENERGY = 30, BOMB = 0, BIO = 100, RAD = 80, FIRE = 40, ACID = 100, ELECTRIC = 100)
 
 /obj/item/clothing/shoes/galoshes/white
 	desc = "A pair of white rubber boots, designed to protect against biological contamination."
 	name = "white galoshes"
-	slowdown = SHOES_SLOWDOWN
+	icon_state = "galoshes_white"
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
+	slowdown = SHOES_SLOWDOWN+0.1
 	clothing_flags = THICKMATERIAL
 
 /obj/item/clothing/shoes/galoshes/sec
 	desc = "A pair of black rubber boots, designed to protect against biological contamination."
 	name = "galoshes"
-	slowdown = SHOES_SLOWDOWN
+	icon_state = "galoshes_sec"
+	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
+	slowdown = SHOES_SLOWDOWN+0.1
 	clothing_flags = THICKMATERIAL
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 80, FIRE = 40, ACID = 100, ELECTRIC = 100)

@@ -2,8 +2,10 @@
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	icon_state = "hazmat_suit"
-	body_parts_covered = CHEST|GROIN
-	flags_inv = HIDEJUMPSUIT
+	slowdown = 0.33
+	body_parts_covered = HEAD|CHEST|GROIN
+	flags_inv = HIDEJUMPSUIT|HIDEHAIR|HIDEEARS
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "hazmat_suit_general"
@@ -121,26 +123,27 @@
 	icon_state = "maiddress"
 	item_state = "maid"
 
-/obj/item/clothing/suit/apron
+/obj/item/clothing/suit/apron/maid
 	name = "green apron"
 	desc = "You can put it on your naked body!"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'	
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	icon_state = "apron_green"
 	item_state = "maidapron"
+	allowed = list(/obj/item/kitchen)
 
-/obj/item/clothing/suit/apron/red
+/obj/item/clothing/suit/apron/maid/red
 	name = "red apron"
 	icon_state = "apron_red"
 
-/obj/item/clothing/suit/apron/purple
+/obj/item/clothing/suit/apron/maid/purple
 	name = "purple apron"
 	icon_state = "apron_purple"
 
-/obj/item/clothing/suit/apron/teal
+/obj/item/clothing/suit/apron/maid/teal
 	name = "teal apron"
 	icon_state = "apron_teal"
 
-/obj/item/clothing/suit/apron/yellow
+/obj/item/clothing/suit/apron/maid/yellow
 	name = "yellow apron"
 	icon_state = "apron_yellow"

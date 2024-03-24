@@ -216,7 +216,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/storage/lockbox/medal/sci(src)
-	new /obj/item/clothing/suit/armor/reactive/teleport(src)
+	new /obj/item/reactive_armor_shell/random(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/laser_pointer(src)
 	new /obj/item/door_remote/research_director(src)
@@ -442,7 +442,11 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
-	new /obj/item/storage/backpack/duffelbag/med(src)
+	if(prob(50))
+		new /obj/item/storage/backpack/cmo(src)
+	else
+		new /obj/item/storage/backpack/satchel/cmo(src)
+	new /obj/item/storage/backpack/duffelbag/cmo(src)
 	new /obj/item/cartridge/cmo(src)
 	new /obj/item/radio/headset/heads/cmo(src)
 	new /obj/item/megaphone/command(src)
@@ -460,6 +464,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/bag/garment/chief_medical(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)
+	new /obj/item/clothing/shoes/galoshes/white(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat/white(src)
 	new /obj/item/clothing/shoes/sneakers/brown	(src)
 	new /obj/item/clothing/shoes/laceup/brown(src)
 	new /obj/item/clothing/shoes/xeno_wraps/command(src)
@@ -498,3 +504,74 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/lockbox/medal/eng(src)
 	new /obj/item/barrier_taperoll/engineering(src)
 	new /obj/item/multisurgeon/magboots(src)
+
+/obj/structure/closet/l3closet/PopulateContents()
+	new /obj/item/storage/bag/bio(src)
+	new /obj/item/clothing/suit/bio_suit/general(src)
+	new /obj/item/clothing/head/bio_hood/general(src)
+	new /obj/item/clothing/shoes/galoshes/general(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/oxygen(src)
+
+
+/obj/structure/closet/l3closet/virology
+	icon_state = "bio_viro"
+
+/obj/structure/closet/l3closet/virology/PopulateContents()
+	new /obj/item/storage/bag/bio(src)
+	new /obj/item/clothing/suit/bio_suit/virology(src)
+	new /obj/item/clothing/head/bio_hood/virology(src)
+	new /obj/item/clothing/shoes/galoshes/white(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat/white(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/oxygen(src)
+
+
+/obj/structure/closet/l3closet/security
+	icon_state = "bio_sec"
+
+/obj/structure/closet/l3closet/security/PopulateContents()
+	new /obj/item/clothing/suit/bio_suit/security(src)
+	new /obj/item/clothing/head/bio_hood/security(src)
+	new /obj/item/clothing/shoes/galoshes/sec(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat/sec(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/oxygen(src)
+
+
+/obj/structure/closet/l3closet/janitor
+	icon_state = "bio_jan"
+
+/obj/structure/closet/l3closet/janitor/PopulateContents()
+	new /obj/item/clothing/suit/bio_suit/janitor(src)
+	new /obj/item/clothing/head/bio_hood/janitor(src)
+	new /obj/item/clothing/shoes/galoshes/white(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat/white(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/oxygen(src)
+
+
+/obj/structure/closet/l3closet/scientist
+	icon_state = "bio_viro"
+
+/obj/structure/closet/l3closet/scientist/PopulateContents()
+	new /obj/item/storage/bag/bio(src)
+	new /obj/item/clothing/suit/bio_suit/scientist(src)
+	new /obj/item/clothing/head/bio_hood/scientist(src)
+	new /obj/item/clothing/shoes/galoshes/white(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat/white(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/oxygen(src)
+
+/obj/structure/closet/l3closet/vahlen
+	icon_state = "bio_viro"
+
+/obj/structure/closet/l3closet/vahlen/PopulateContents()
+	new /obj/item/storage/bag/bio(src)
+	new /obj/item/clothing/suit/bio_suit/cyan(src)
+	new /obj/item/clothing/head/bio_hood/cyan(src)
+	new /obj/item/clothing/shoes/galoshes/cyan(src)
+	new /obj/item/clothing/gloves/color/latex/hazmat/cyan(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/oxygen(src)

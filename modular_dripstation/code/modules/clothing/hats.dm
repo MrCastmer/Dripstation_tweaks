@@ -87,6 +87,7 @@ obj/item/clothing/head/bio_hood
 	icon_state = "hazmat"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	dynamic_hair_suffix = ""
 
 obj/item/clothing/head/bio_hood/general
 	icon_state = "hazmat_general"
