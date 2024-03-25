@@ -8,7 +8,11 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/ears.dmi'
 
 /obj/item/radio/headset/syndicate/obv
-	icon_state = "syn_headset"
+	icon_state = "syndie_headset"
+
+/obj/item/radio/headset/syndicate/alt
+	icon_state = "syndie_headset_alt"
+	
 
 /obj/item/radio/headset/abductors
 	name = "abductor radio headset"

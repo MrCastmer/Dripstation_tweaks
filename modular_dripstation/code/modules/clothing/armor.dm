@@ -1,6 +1,7 @@
 /obj/item/clothing/head/helmet
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	flags_cover = null	//HEADCOVERSEYES
 
 /obj/item/clothing/suit/armor
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
@@ -76,6 +77,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
 
 /obj/item/clothing/head/helmet/abductor
+	flags_cover = HEADCOVERSEYES
 	icon = 'icons/obj/clothing/hats/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/head.dmi'
 
@@ -84,6 +86,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
 
 /obj/item/clothing/head/helmet/changeling
+	flags_cover = HEADCOVERSEYES
 	dynamic_hair_suffix = ""
 
 //////////////////SWAT//////////////////
@@ -93,6 +96,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	desc = "An extremely robust helmet in a nefarious red and black stripe pattern."
+	flags_cover = HEADCOVERSEYES
 
 obj/item/clothing/head/helmet/swat/nanotrasen
 	icon_state = "swat"
@@ -242,7 +246,8 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 /obj/item/clothing/suit/armor/vest/bulletproof
 	armor = list(MELEE = 15, BULLET = 60, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 
-/obj/item/clothing/head/helmet/bulletproof
+/obj/item/clothing/head/helmet/alt
+	flags_cover = HEADCOVERSEYES
 	armor = list(MELEE = 15, BULLET = 60, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 
 /obj/item/clothing/suit/armor/vest/combat

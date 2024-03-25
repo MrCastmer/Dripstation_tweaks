@@ -202,7 +202,7 @@
 
 /obj/item/clothing/under/rank/security/classic
 	name = "classic security uniform"
-	desc = "Old issue fancy security uniform, this one has silver lining."
+	desc = "Old issue fancy security uniform, this one has gold lining."
 	icon_state = "clsecurity"
 
 /obj/item/clothing/under/rank/security/navyblue
@@ -325,8 +325,6 @@
 					/obj/item/clothing/under/rank/security/redshirt = 3,
 					/obj/item/clothing/under/rank/security/classic = 3,
 					/obj/item/clothing/under/rank/security/corporate = 3,
-					/obj/item/clothing/under/rank/security/navyblue = 3,
-					/obj/item/clothing/under/rank/security/navyblue/russian = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/security = 3,					
 					/obj/item/clothing/suit/armor/vest/secmiljacket = 2,
 					/obj/item/clothing/suit/toggle/bomber/secbomber/soft = 2,
@@ -342,6 +340,7 @@
 					/obj/item/clothing/mask/bandana/red = 3,
 					/obj/item/badge/security/cadet = 3)
 	premium = list(/obj/item/clothing/under/rank/security/navyblue = 3,
+					/obj/item/clothing/under/rank/security/navyblue/russian = 3,
 					/obj/item/clothing/suit/armor/officerjacket = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 3)
 

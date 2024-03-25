@@ -5,6 +5,10 @@
 /obj/item/clothing/glasses/meson/gar
 	icon = 'icons/obj/clothing/glasses.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/eyes/eyes.dmi'
+	flags_cover = null //GLASSESCOVERSEYES
+
+/obj/item/clothing/glasses/meson/sunglasses
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/meson/sunglasses/ce
 	name = "advanced engineering aviators"
@@ -144,12 +148,14 @@
 /obj/item/clothing/glasses/material/mining/gar
 	icon = 'icons/obj/clothing/glasses.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/eyes/eyes.dmi'
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/material/aviator
 	name = "material chemical aviators"
 	desc = "Science aviators with a reagent scanner. Can see through materials, nothing special though."
 	icon_state = "aviator_sci"
 	clothing_flags = SCAN_REAGENTS
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/sunglasses/reagent
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
@@ -265,16 +271,38 @@
 
 /obj/item/clothing/glasses/thermal/monocle
 	can_toggle = FALSE
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/thermal/eyepatch
 	icon_state = "thermalpatch_combat"
 	can_toggle = FALSE
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/welding
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 
+/obj/item/clothing/glasses/regular
+	flags_cover = null //GLASSESCOVERSEYES
+
+/obj/item/clothing/glasses/orange
+	flags_cover = null //GLASSESCOVERSEYES
+
+/obj/item/clothing/glasses/red
+	flags_cover = null //GLASSESCOVERSEYES
+
+/obj/item/clothing/glasses/ballistic
+	name = "ballistic glasses"
+	desc = "Basic tight-fitting goggles that protect vision organs from splinters and dust."
+	icon_state = "ballistic"
+	flags_cover = GLASSESCOVERSEYES
+	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+
 /////HUDs///////
+/obj/item/clothing/glasses/sunglasses
+	flags_cover = null //GLASSESCOVERSEYES
+
 /obj/item/clothing/glasses/sunglasses/aviators
 	name = "aviators"
 	desc = "Protect your vision with stile!"
@@ -283,6 +311,14 @@
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 	hud_type = DATA_HUD_MEDICAL_BASIC
+	flags_cover = null //GLASSESCOVERSEYES
+
+/obj/item/clothing/glasses/hud/health/regular
+	name = "prescription health glasses"
+	desc = "Protect your vision with stile!"
+	icon_state = "glasses"
+	item_state = "glasses"
+	vision_correction = 1 //corrects nearsightedness
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription medicalHUD glasses"
@@ -313,6 +349,7 @@
 /obj/item/clothing/glasses/hud/diagnostic
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/hud/diagnostic/military
 	name = "military diagnostic HUDs"
@@ -335,11 +372,18 @@
 /obj/item/clothing/glasses/hud/security
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/hud/security/military
 	name = "military security HUDs"
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records. This ones are military grade."
 	icon_state = "securityhud_military"
+
+/obj/item/clothing/glasses/hud/security/ballistic
+	name = "ballistic security glasses"
+	desc = "Basic tight-fitting goggles that protect vision organs from splinters and dust. Security hud integrated."
+	icon_state = "securityballistic"
+	flags_cover = GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/hud/security/sunglasses/aviators
 	name = "security HUDaviators"
@@ -369,6 +413,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 	icon_state = "sunhudskill"
+	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/hud/skill
 	name = "skills HUDs"
@@ -377,3 +422,4 @@
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 	hud_type = DATA_HUD_SECURITY_BASIC
+	flags_cover = null //GLASSESCOVERSEYES
