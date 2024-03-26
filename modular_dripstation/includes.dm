@@ -172,6 +172,7 @@
 #include "code\modules\mob\living\human\species_types\dripstation_blacklist.dm"
 #include "code\modules\mob\living\human\species_types\lizardpeople.dm"
 #include "code\modules\mob\living\human\species_types\polysmorphs.dm"
+#include "code\modules\mob\dead\new_player\sprite_accessories.dm"
 #include "code\modules\mob\mob_helpers.dm"
 #include "code\modules\uplink\uplink_devices.dm"
 #include "code\modules\paperwork\faxmachine.dm"
