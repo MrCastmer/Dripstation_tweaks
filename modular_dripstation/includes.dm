@@ -95,7 +95,6 @@
 #include "code\modules\projectiles\guns\ballistic\shotgun.dm"
 #include "code\game\objects\items\wielded\sledgehammer.dm"
 #include "code\game\objects\items\errata.dm"
-#include "code\game\objects\items\storage\boxes.dm"
 #include "code\game\objects\items\twohanded\dualsaber.dm"
 #include "code\datums\mood_events\generic_negative_events.dm"
 #include "code\datums\mood_events\generic_positive_events.dm"
