@@ -113,7 +113,6 @@
 #include "code\modules\power\singularity\collector.dm"
 #include "code\modules\power\singularity\generator.dm"
 #include "code\modules\religion\religion_structures.dm"
-#include "code\modules\reagents\reagent_containers\spray.dm"
 #include "code\modules\food_and_drinks\food\condiment.dm"
 #include "code\modules\food_and_drinks\food\snacks_seafood.dm"
 #include "code\modules\food_and_drinks\food\snacks_vend.dm"
