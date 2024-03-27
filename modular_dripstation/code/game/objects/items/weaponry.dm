@@ -1,7 +1,6 @@
 /obj/item/ectoplasm
 	icon = 'modular_dripstation/icons/obj/wizard.dmi'
 
-
 /obj/item/vibro_weapon
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
 
@@ -542,3 +541,9 @@
 		w_class_on = WEIGHT_CLASS_NORMAL, \
 		attack_verb_on = list("cuted", "stabed", "slashed"), \
 	)
+
+/obj/item/phone
+	icon = 'modular_dripstation/icons/obj/misc.dmi'
+
+/obj/item/access_kit
+	icon = 'modular_dripstation/icons/obj/misc.dmi'
