@@ -61,7 +61,7 @@
 	if(cpu && !(cpu.resistance_flags & INDESTRUCTIBLE))
 		if(cpu.resistance_flags & ON_FIRE)
 			. += span_warning("The CPU is on fire!")
-		var/healthpercent = (cpu.obj_integrity/cpu.max_integrity) * 100
+		var/healthpercent = (cpu.get_integrity()/cpu.max_integrity) * 100
 		switch(healthpercent)
 			if(50 to 99)
 				. += "The CPU looks slightly damaged."
@@ -101,11 +101,18 @@
 
 	if(cpu.enabled)
 		. += cpu.active_program?.program_icon_state || screen_icon_state_menu
+		//Dripstation edit start
+		. += emissive_appearance(icon, "[cpu?.active_program?.program_icon_state || screen_icon_state_menu]", src) 
+		light_color = cpu.active_program?.program_color 
+		update_light()
+		//Dripstation edit end
 	else if(!(stat & NOPOWER))
 		. += screen_icon_screensaver
+		. += emissive_appearance(icon, screen_icon_screensaver, src) //Dripstation edit
 
-	if(cpu.obj_integrity <= cpu.integrity_failure)
+	if(cpu.get_integrity() <= cpu.integrity_failure)
 		. += "bsod"
+		. += emissive_appearance(icon, "bsod", src) //Dripstation edit
 		. += "broken"
 	return .
 
