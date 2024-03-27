@@ -92,6 +92,7 @@
 #include "code\modules\job\job_types\geneticist.dm"
 #include "code\modules\job\job_types\virologist.dm"
 #include "code\modules\job\job_types\network_admin.dm"
+#include "code\modules\job\job_types\station_engineer.dm"
 #include "code\modules\job\job_types\shaft_miner.dm"
 #include "code\modules\job\job_types\warden.dm"
 #include "code\modules\job\job_types\medical_doctor.dm"

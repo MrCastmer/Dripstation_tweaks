@@ -14,14 +14,34 @@
 	icon_state = "boxer_black"
 	gender = MALE
 
-/datum/sprite_accessory/underwear/male_grey
+/datum/sprite_accessory/underwear/male_gray
 	name = "Men's Grey Boxer"
 	icon_state = "boxer_gray"
+	gender = MALE
+
+/datum/sprite_accessory/underwear/male_white
+	name = "Men's White Boxer"
+	icon_state = "boxers_white"
 	gender = MALE
 
 /datum/sprite_accessory/underwear/male_stripe
 	name = "Men's Stripe Boxer"
 	icon_state = "boxer_stripe"
+	gender = MALE
+
+/datum/sprite_accessory/underwear/midway_black
+	name = "Men's Black Midway"
+	icon_state = "midway_black"
+	gender = MALE
+
+/datum/sprite_accessory/underwear/midway_gray
+	name = "Men's Grey Midway"
+	icon_state = "midway_gray"
+	gender = MALE
+
+/datum/sprite_accessory/underwear/midway_white
+	name = "Men's White Midway"
+	icon_state = "midway_white"
 	gender = MALE
 
 /datum/sprite_accessory/underwear/panties_norm
@@ -473,6 +493,36 @@
 	icon_state = "black_thigh"
 	gender = FEMALE
 
+/datum/sprite_accessory/socks/white_short
+	name = "Short (White)"
+	icon_state = "white_short"
+	gender = MALE
+
+/datum/sprite_accessory/socks/white_norm
+	name = "Normal (White)"
+	icon_state = "white_norm"
+	gender = MALE
+
+/datum/sprite_accessory/socks/white_knee
+	name = "Knee-high (White)"
+	icon_state = "white_knee"
+	gender = NEUTER
+
+/datum/sprite_accessory/socks/white_thigh
+	name = "Thigh-high (White)"
+	icon_state = "white_thigh"
+	gender = FEMALE
+
+/datum/sprite_accessory/socks/fishnet_knee
+	name = "Knee-high (Fishnet)"
+	icon_state = "fishnet_knee"
+	gender = FEMALE
+
+/datum/sprite_accessory/socks/fishnet_thigh
+	name = "Thigh-high (Fishnet)"
+	icon_state = "fishnet_thigh"
+	gender = FEMALE
+
 /datum/sprite_accessory/socks/thin_knee
 	name = "Knee-high (Thin)"
 	icon_state = "thin_knee"
@@ -486,6 +536,11 @@
 /datum/sprite_accessory/socks/stockings
 	name = "Stockings (Normal)"
 	icon_state = "stockings"
+	gender = FEMALE
+
+/datum/sprite_accessory/socks/stockings_fishnet
+	name = "Stockings (Fishnet)"
+	icon_state = "fishnet_full"
 	gender = FEMALE
 
 /datum/sprite_accessory/socks/stockings_ripped
