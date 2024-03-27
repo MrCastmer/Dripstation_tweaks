@@ -1,7 +1,9 @@
 /obj/machinery/vending/gifts
 	name = "\improper Gift Vendor"
 	desc = "A vending machine for the gift shop."
+	/* dripstation edit
 	icon = 'yogstation/icons/obj/vending.dmi'
+	*/
 	icon_state = "gifts"
 	icon_deny = "gifts-deny"
 	panel_type = "panel-gift"
@@ -62,7 +64,7 @@
 					/obj/item/flashlight/flare/signal = 1,
 					/obj/item/storage/toolbox/mechanical = 1,
 					/obj/item/stack/cable_coil/random = 4,
-					/obj/item/pda = 8,
+					/obj/item/pda = 8, //Keeping these so the clerk can still sell their amazing "antique PDAs"
 					/obj/item/cartridge/engineering = 2,
 					/obj/item/cartridge/atmos = 2,
 					/obj/item/cartridge/medical = 2,
@@ -93,4 +95,6 @@
 	default_price = 50
 	extra_price = 75
 	payment_department = ACCOUNT_SRV
+	/* dripstation edit
 	light_mask = "gifts-light-mask"
+	*/
