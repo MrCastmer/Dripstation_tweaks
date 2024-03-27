@@ -48,7 +48,10 @@
 	if(!clockwork)
 		clockwork = TRUE
 		icon_screen = "ratvar[rand(1, 4)]"
+		/* //Dripstation edit
 		icon_keyboard = "ratvar_key[rand(1, 6)]"
+		*/
+		icon_keyboard = "ratvar_key[rand(1, 2)]" //Dripstation edit
 		icon_state = "ratvarcomputer[rand(1, 4)]"
 		update_appearance()
 
@@ -96,7 +99,7 @@
 			. += "[icon_keyboard]_off"
 		else
 			. += icon_keyboard
-
+			. += emissive_appearance(icon, icon_keyboard, src) //Dripstation edit
 	if(stat & BROKEN)
 		. += mutable_appearance(icon, "[icon_state]_broken")
 		return // If we don't do this broken computers glow in the dark.
@@ -138,7 +141,7 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, 1)
 
-/obj/machinery/computer/obj_break(damage_flag)
+/obj/machinery/computer/atom_break(damage_flag)
 	if(!circuit) //no circuit, no breaking
 		return
 	. = ..()
@@ -151,7 +154,7 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(prob(5 * severity))
-		obj_break(ENERGY)
+		atom_break(ENERGY)
 
 /obj/machinery/computer/deconstruct(disassembled = TRUE, mob/user)
 	on_deconstruction()
