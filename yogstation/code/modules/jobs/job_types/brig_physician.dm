@@ -47,7 +47,7 @@
 	jobtype = /datum/job/brigphysician
 
 /* dripstation edit
-	pda_type = /obj/item/modular_computer/tablet/pda/preset/paramed
+	pda_type = /obj/item/modular_computer/tablet/pda/preset/medical/paramed
 */
 
 	backpack_contents = list(/obj/item/roller = 1)
@@ -61,7 +61,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/jackboots
 /* dripstation edit
-	uniform = /obj/item/clothing/under/yogs/rank/miner/medic
+	uniform = /obj/item/clothing/under/yogs/rank/physician/white
 */
 	uniform_skirt = /obj/item/clothing/under/yogs/rank/physician/white/skirt
 	suit = /obj/item/clothing/suit/toggle/labcoat/emt/physician

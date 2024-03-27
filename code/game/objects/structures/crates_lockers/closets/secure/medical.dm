@@ -55,7 +55,6 @@
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
 	new /obj/item/storage/backpack/duffelbag/med(src)
-	new /obj/item/cartridge/cmo(src)
 	new /obj/item/radio/headset/heads/cmo(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/clothing/neck/cloak/cmo(src)
@@ -79,7 +78,9 @@
 /obj/structure/closet/secure_closet/paramedic
 	name = "paramedical closet"
 	desc = "It's a secure storage unit for paramedical supplies."
+	/* //Dripstation edit
 	icon = 'yogstation/icons/obj/closet.dmi'
+	*/
 	icon_state = "paramed"
 	req_access = list(ACCESS_PARAMEDIC)
 
@@ -120,7 +121,9 @@
 /obj/structure/closet/secure_closet/mmedical
 	name = "mining medic's locker"
 	req_access = list(ACCESS_MEDICAL)
+	/* //Dripstation edit
 	icon = 'yogstation/icons/obj/closet.dmi'
+	*/
 	icon_state = "medic"
 
 /*	dripstation edit

@@ -8,7 +8,6 @@
 	..()
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
-	new /obj/item/cartridge/captain(src)
 	new /obj/item/storage/box/silver_ids(src)
 	new /obj/item/clothing/neck/cloak/cap(src)
 	new /obj/item/radio/headset/heads/captain/alt(src)
@@ -30,7 +29,6 @@
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
 	new /obj/item/storage/lockbox/medal/service(src)
-	new /obj/item/cartridge/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
@@ -58,7 +56,6 @@
 /*
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
-	new /obj/item/cartridge/hos(src)
 	new /obj/item/radio/headset/heads/hos/alt(src)
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/storage/lockbox/medal/sec(src)
@@ -313,7 +310,9 @@
 /obj/structure/closet/secure_closet/physician
 	name = "\improper brig physician's cabinet"
 	req_access = list(ACCESS_BRIG_PHYS)
+	/* //Dripstation edit
 	icon = 'yogstation/icons/obj/closet.dmi'
+	*/
 	icon_state = "physician"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -322,7 +321,6 @@
 /obj/structure/closet/secure_closet/physician/PopulateContents()
 	..()
 	new /obj/item/storage/backpack/duffelbag/clothing/sec/physician(src)
-	new /obj/item/cartridge/medical(src)
 	new /obj/item/radio/headset/headset_medsec(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/pinpointer/crew(src)

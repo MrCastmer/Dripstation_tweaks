@@ -37,7 +37,7 @@
 	jobtype = /datum/job/network_admin
 
 /* //Dripstation edit
-	pda_type = /obj/item/modular_computer/tablet/pda/preset/basic
+	pda_type = /obj/item/modular_computer/tablet/pda/preset/network_admin
 */
 
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -53,6 +53,6 @@
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	box = /obj/item/storage/box/engineer
+	box = /obj/item/storage/box/survival/engineer
 
 	pda_slot = ITEM_SLOT_LPOCKET
