@@ -35,7 +35,6 @@
 #include "code\game\objects\items\cargo_inducer.dm"
 #include "code\game\objects\items\cargo_teleporter.dm"
 #include "code\game\objects\items\cigs_lighters.dm"
-#include "code\game\objects\items\clothing\gloves.dm"
 #include "code\game\objects\items\devices\PDA\PDA_types.dm"
 #include "code\game\objects\items\projectiles\guns\ballistic\rifle.dm"
 #include "code\game\objects\items\tanks\watertank.dm"
