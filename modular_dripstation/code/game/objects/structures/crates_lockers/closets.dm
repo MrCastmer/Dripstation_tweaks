@@ -1,6 +1,38 @@
 GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	/obj/item/gun/energy/plasmacutter)))
 
+/obj/structure/closet
+	icon = 'modular_dripstation/icons/obj/closet.dmi'
+	var/locked_state = "locked"
+	var/unlocked_state = "unlocked"
+	//var/emagged_state = "emagged"
+
+/obj/structure/closet/secure_closet/freezer
+	locked_state = "freezer_locked"
+	unlocked_state = "freezer_unlocked"
+	//var/emagged_state = "freezer_emagged"
+
+/obj/structure/closet/secure_closet/psych
+	locked_state = "cabinet_locked"
+	unlocked_state = "cabinet_unlocked"
+
+/obj/structure/closet/secure_closet/personal/cabinet
+	locked_state = "cabinet_locked"
+	unlocked_state = "cabinet_unlocked"
+	door_anim_time = 0 // no animation
+
+/obj/structure/closet/secure_closet/detective
+	locked_state = "cabinet_locked"
+	unlocked_state = "cabinet_unlocked"
+
+/obj/structure/closet/secure_closet/bar
+	locked_state = "cabinet_locked"
+	unlocked_state = "cabinet_unlocked"
+
+/obj/structure/closet/secure_closet/lethalshots
+	icon_state = "armory"
+
+/*
 /obj/structure/closet/secure_closet/tool_interact(obj/item/W, mob/user, proximity)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
 	if(opened)
@@ -41,8 +73,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 				user.visible_message(span_notice("[user] melts the lock of \the [src]."),
 						span_notice("You melting the lock of \the [src] with \the [W]."),
 						span_italics("You hear welding."))
-				obj_integrity -= 40
-		if(obj_integrity <= integrity_failure)
+				atom_integrity -= 40
+		if(atom_integrity <= integrity_failure)
 			bust_open()
 	else if(W.tool_behaviour == TOOL_WELDER && can_weld_shut)
 		if(!W.tool_start_check(user, amount=0))
@@ -75,3 +107,4 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 			togglelock(user)
 	else
 		return FALSE
+*/
