@@ -1,3 +1,24 @@
+////Sneakers////
+/obj/item/clothing/shoes/sneakers
+
+/obj/item/clothing/shoes/sneakers/brown
+	greyscale_colors = "#592d01#ffffff"
+
+/obj/item/clothing/shoes/sneakers/black
+	greyscale_colors = "#1B1B1B#ffffff"
+
+/obj/item/clothing/shoes/sneakers/orange
+	greyscale_colors = "#ef8100#ffffff"
+
+/datum/greyscale_config/sneakers
+	name = "Sneakers"
+	icon_file = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
+
+/datum/greyscale_config/sneakers_worn
+	name = "Worn Sneakers"
+	icon_file = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
+
+////Combat////
 /obj/item/clothing/shoes/combat
 	icon_state = "combat"
 	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
@@ -18,6 +39,7 @@
 	equip_delay_other = 2.5 SECONDS // Half time
 	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 25, BIO = 30, RAD = 0, FIRE = 35, ACID = 20, ELECTRIC = 0)
 
+////Jackboots////
 /obj/item/clothing/shoes/jackboots
 	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'
