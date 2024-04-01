@@ -15,8 +15,8 @@
 	
 
 /obj/item/radio/headset/abductors
-	name = "abductor radio headset"
-	desc = "A headset used by aliens."
+	name = "psychic headset"
+	desc = "A headset designed to boost psychic powers. Protects ears from flashbangs"
 	icon_state = "abductor_headset_alt"
 	keyslot = new /obj/item/encryptionkey/abductors
 

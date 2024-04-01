@@ -80,6 +80,10 @@
 	icon_state = "slavturtlegreen_combat"
 
 ////Vostok////
-/obj/item/clothing/under/syndicate/rus_army/vostok
-	name = "Vostok combat turtleneck"
-	icon_state = "vostok_combat"
+/obj/item/clothing/under/vostok
+	name = "Vostok cadet uniform"
+	icon_state = "vos_cadet"
+	can_adjust = TRUE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/spaceslav/spaceslav.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/spaceslav/spaceslav.dmi'
