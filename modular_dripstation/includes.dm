@@ -39,6 +39,7 @@
 #include "code\game\objects\items\projectiles\guns\ballistic\rifle.dm"
 #include "code\game\objects\items\tanks\watertank.dm"
 #include "code\game\objects\items\control_wand.dm"
+#include "code\game\objects\items\holotool.dm"
 #include "code\game\turfs\simulated\walls.dm"
 #include "code\modules\antagonists\changeling\panacea.dm"
 #include "code\modules\antagonists\horror\horror_chemicals.dm"

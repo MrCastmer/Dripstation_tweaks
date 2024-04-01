@@ -12,6 +12,10 @@
 	icon = 'icons/obj/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
 
+/obj/item/storage/belt/medical/mining
+	icon = 'icons/obj/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+
 /obj/item/storage/belt/security
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'

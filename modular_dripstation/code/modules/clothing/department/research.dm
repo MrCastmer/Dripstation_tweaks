@@ -7,6 +7,14 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
+/obj/item/clothing/suit/toggle/labcoat/science/brown
+	name = "research directors brown labcoat"
+	desc = "A Nanotrasen standart brown labcoat for Research Directors."
+	icon_state = "labcoat_rd_brown"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
 /obj/item/clothing/head/beret/rd
 	desc = "A brown beret with a science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."	
 	icon_state = "beretrdalt"
@@ -50,6 +58,9 @@
 /obj/item/clothing/under/rank/research_director
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/rd.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/rd.dmi'
+
+/obj/item/clothing/under/rank/research_director/dark
+	icon_state = "director_dark"
 
 /obj/item/clothing/under/rank/research_director/skirt
 	can_adjust = TRUE

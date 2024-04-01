@@ -13,12 +13,17 @@
 
 /datum/component/storage/concrete/pockets/labcoat
 	quickdraw = FALSE
-	max_combined_w_class = 2
+	max_items = 2
+	silent = TRUE
 
 /datum/component/storage/concrete/pockets/labcoat/Initialize()
 	. = ..()
 	set_holdable(list(	/obj/item/analyzer,
-						/obj/item/multitool/tricorder,
+						/obj/item/multitool,
+						/obj/item/screwdriver,
+						/obj/item/card,
+						/obj/item/storage/wallet, 
+						/obj/item/toy/cards/deck, 
 						/obj/item/stack/medical,
 						/obj/item/dnainjector,
 						/obj/item/reagent_containers/dropper,
@@ -26,12 +31,16 @@
 						/obj/item/reagent_containers/autoinjector,
 						/obj/item/healthanalyzer,
 						/obj/item/flashlight/pen,
+						/obj/item/holotool,
 						/obj/item/reagent_containers/glass/bottle,
 						/obj/item/reagent_containers/glass/beaker,
 						/obj/item/reagent_containers/pill,
 						/obj/item/storage/pill_bottle,
 						/obj/item/paper,
 						/obj/item/melee/classic_baton/telescopic,
+						/obj/item/laser_pointer, 
+						/obj/item/assembly/flash/handheld, 
+						/obj/item/assembly/flash/hypnotic, 
 						/obj/item/soap,
 						/obj/item/sensor_device,
 						/obj/item/tank/internals/emergency_oxygen,

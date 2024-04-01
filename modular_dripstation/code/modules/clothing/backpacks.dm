@@ -147,6 +147,24 @@
 /obj/item/storage/backpack/duffelbag/captain
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
+/obj/item/storage/backpack/science/rd
+	name = "research director`s backpack"
+	desc = "A sleek, industrial-strength backpack issued to research and development high rank personnel. Smells like real science."
+	icon_state = "rdpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	
+
+/obj/item/storage/backpack/satchel/tox/rd
+	name = "research director`s satchel"
+	desc = "A sleek, industrial-strength satchel issued to research and development high rank personnel. Smells like real science."
+	icon_state = "satchel-rd"	
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/science/rd
+	name = "research director`s duffel bag"
+	desc = "A large duffel bag for holding extra scientific components. Smells like real science."
+	icon_state = "duffel-rd"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
 /obj/item/storage/backpack/satchel/flat
 	item_state = "satchel-flat"
 
