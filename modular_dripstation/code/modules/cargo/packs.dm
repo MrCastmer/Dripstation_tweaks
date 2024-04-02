@@ -106,6 +106,14 @@
 					/obj/item/storage/box/donkdrip/maid)
 	crate_name = "crate"
 
+/datum/supply_pack/costumes_toys/wardrobes/security
+	name = "Law and Order Wardrobe Supply Crate"
+	desc = "This crate contains refills for the SecDrobe, DetDrobe and LawDrobe."
+	cost = 2000
+	contains = list(/obj/item/vending_refill/wardrobe/sec_wardrobe,
+					/obj/item/vending_refill/wardrobe/law_wardrobe,
+					/obj/item/vending_refill/wardrobe/det_wardrobe)
+
 /datum/supply_pack/security/tackler
 	name = "Gripper Gloves Crate"
 	desc = "Contains three pairs of gripper gloves. Requires Security access to open."

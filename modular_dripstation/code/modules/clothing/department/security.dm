@@ -364,3 +364,58 @@
 					/obj/item/clothing/suit/armor/officerjacket = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 3)
 
+/obj/machinery/vending/wardrobe/det_wardrobe
+	name = "\improper DetDrobe"
+	desc = "A machine for all your detective needs, as long as you need clothes."
+	icon_state = "detdrobe"
+	icon_vend = "detdrobe-vend"
+	icon_deny = "detdrobe_deny"
+	product_ads = "Apply your brilliant deductive methods in style!"
+	vend_reply = "Thank you for using the DetDrobe!"
+	light_mask = "detdrobe-light-mask"
+	req_access = list(ACCESS_FORENSICS_LOCKERS)
+	products = list(/obj/item/clothing/under/rank/det = 1,
+					/obj/item/clothing/under/rank/det/skirt = 1,
+					/obj/item/clothing/under/rank/det/grey = 1,
+					/obj/item/clothing/under/rank/det/grey/skirt = 1,
+					/obj/item/clothing/under/rank/det/yogs = 1,
+					/obj/item/clothing/suit/det_suit = 1,
+					/obj/item/clothing/suit/det_suit/grey = 1,
+					/obj/item/clothing/suit/det_suit/noir = 1,
+					/obj/item/clothing/suit/det_suit/tan = 1,
+					/obj/item/clothing/suit/det_suit/yogs = 1,
+					/obj/item/clothing/suit/det_suit/yogs/golddetective = 1,
+					/obj/item/clothing/suit/det_suit/yogs/bluedetective = 1,
+					/obj/item/clothing/head/fedora/det_hat 
+					/obj/item/clothing/head/fedora/det_hat/grey = 1,
+					/obj/item/clothing/head/fedora/det_hat/black = 1,
+					/obj/item/clothing/head/fedora/det_hat/tan = 1,
+					/obj/item/clothing/gloves/color/black = 2,
+					/obj/item/clothing/gloves/color/latex = 2,
+					/obj/item/clothing/shoes/laceup = 1,
+					/obj/item/clothing/shoes/laceup/brown = 1,
+					/obj/item/clothing/shoes/laceup/grey  = 1,
+					/obj/item/clothing/shoes/sneakers/brown = 2)
+					// /obj/item/clothing/suit/det_suit/dark = 1,					
+					// /obj/item/clothing/under/rank/security/detective = 2,
+					// /obj/item/clothing/under/rank/security/detective/skirt = 2,
+					// /obj/item/clothing/under/rank/security/detective/noir = 2,
+					// /obj/item/clothing/under/rank/security/detective/noir/skirt = 2,					
+					// /obj/item/clothing/under/rank/security/detective/disco = 1,
+					// /obj/item/clothing/suit/det_suit/disco = 1,
+					// /obj/item/clothing/shoes/discoshoes = 1,
+					// /obj/item/clothing/neck/tie/disco = 1,
+					// /obj/item/clothing/under/rank/security/detective/kim = 1,
+					// /obj/item/clothing/suit/det_suit/kim = 1,
+					// /obj/item/clothing/shoes/kim = 1,
+					// /obj/item/clothing/gloves/kim = 1,
+					// /obj/item/clothing/glasses/regular/kim = 1
+	premium = list(/obj/item/clothing/head/flatcap = 1,
+					/obj/item/reagent_containers/food/drinks/flask/det)
+	refill_canister = /obj/item/vending_refill/wardrobe/det_wardrobe
+	extra_price = PAYCHECK_COMMAND * 1.75
+	payment_department = ACCOUNT_SEC
+
+/obj/item/vending_refill/wardrobe/det_wardrobe
+	machine_name = "DetDrobe"
+

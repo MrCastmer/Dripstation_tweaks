@@ -1,6 +1,5 @@
 /datum/outfit/job/detective
 	shoes = /obj/item/clothing/shoes/laceup
-	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/headset_sec
 
 	pda_type = /obj/item/modular_computer/tablet/pda/preset/basic/det
@@ -13,7 +12,6 @@
 
 /datum/outfit/job/plasmaman/detective
 	shoes = /obj/item/clothing/shoes/laceup
-	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/headset_sec
 
 	pda_type = /obj/item/modular_computer/tablet/pda/preset/basic/det

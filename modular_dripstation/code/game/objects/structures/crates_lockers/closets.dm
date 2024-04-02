@@ -179,7 +179,6 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
 	new /obj/item/melee/classic_baton(src)
-	new /obj/item/reagent_containers/food/drinks/flask/det(src)
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/clothing/shoes/laceup/brown(src)
 	new /obj/item/storage/box/evidence(src)
