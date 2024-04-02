@@ -337,7 +337,6 @@ SEE_PIXELS// if an object is located on an unlit area, but some of its pixels ar
 BLIND     // can't see anything
 */
 
-
 /proc/generate_female_clothing(index, t_color, icon, type) //In a shellnut, blends the uniform sprite with a pre-made sprite in uniform.dmi that's mostly white pixels with a few empty ones to trim off the pixels in the empty spots
 	var/icon/female_clothing_icon = icon("icon" = icon, "icon_state" = t_color) // and make the uniform the "female" shape. female_s is either the top-only one (for jumpskirts and the like) or the full one (for jumpsuits)
 	var/icon/female_s = icon("icon" = 'modular_dripstation/icons/effects/clothing.dmi', "icon_state" = "[(type == FEMALE_UNIFORM_FULL) ? "female_full" : "female_top"]")	//dripstation edit

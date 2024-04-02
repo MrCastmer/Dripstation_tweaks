@@ -45,6 +45,7 @@
 	item_state = "brokenpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+
 /*
 /obj/item/boh_shell/attackby(obj/item/I, mob/user, params)
 	..()
@@ -54,6 +55,7 @@
 		qdel(src)
 		qdel(I)
 */
+
 /obj/item/storage/backpack/holding
 	name = "bag of holding"
 	desc = "A backpack that opens into a localized pocket of bluespace."
