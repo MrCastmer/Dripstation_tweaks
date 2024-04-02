@@ -265,6 +265,45 @@
 	resistance_flags = FIRE_PROOF
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	
 
+/obj/item/storage/backpack/satchel/signal
+	name = "network admin`s satchel"
+	desc = "A fireproof satchel for keeping gear safe."
+	icon_state = "satchel-signal"	
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	
+
+/obj/item/storage/backpack/industrial/signal
+	name = "network admin`s backpack"
+	desc = "It's a fireproof backpack for Signal Staff."
+	icon_state = "signalpack"	
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/engineering/signal
+	name = "network admin`s duffelbag"
+	desc = "A duffelbag designed to hold tools. This one is specially designed for signal engineer."
+	icon_state = "duffel-signal"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/satchel/ce
+	name = "chief engineer`s satchel"
+	desc = "A fireproof satchel for keeping gear safe."
+	icon_state = "satchel-ce"	
+	resistance_flags = FIRE_PROOF	
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	
+
+/obj/item/storage/backpack/industrial/ce
+	name = "chief engineer`s backpack"
+	desc = "It's a fireproof backpack for Engi Chief."
+	icon_state = "cepack"
+	resistance_flags = FIRE_PROOF	
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/backpack/duffelbag/engineering/ce
+	name = "chief engineer`s duffelbag"
+	desc = "A duffelbag designed to hold tools. This one is specially designed for superior engineer."
+	icon_state = "duffel-ce"
+	resistance_flags = FIRE_PROOF
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
 /obj/item/storage/backpack/duffelbag/explorer
 	name = "explorer duffel bag"
 	desc = "A large duffel bag for holding extra exotic treasures."
