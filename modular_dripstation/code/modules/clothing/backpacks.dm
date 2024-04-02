@@ -267,13 +267,13 @@
 
 /obj/item/storage/backpack/satchel/signal
 	name = "network admin`s satchel"
-	desc = "A fireproof satchel for keeping gear safe."
+	desc = "An industrial satchel for keeping gear safe."
 	icon_state = "satchel-signal"	
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	
 
 /obj/item/storage/backpack/industrial/signal
 	name = "network admin`s backpack"
-	desc = "It's a fireproof backpack for Signal Staff."
+	desc = "It's an industrial backpack for Signal Staff."
 	icon_state = "signalpack"	
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 

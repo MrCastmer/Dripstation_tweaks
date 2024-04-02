@@ -1,7 +1,7 @@
 /datum/outfit/job/ce
 	id_type = /obj/item/card/id/head
 	belt = null
-	gloves = null
+	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses/aviators
 	backpack = /obj/item/storage/backpack/industrial/ce

@@ -29,6 +29,11 @@
 	desc = "A bag for storing extra clothes and gloves. This one belongs to the warden."
 	icon_state = "garment_bag_hos"
 
+/obj/item/storage/bag/garment/detective
+	name = "detective's garment bag"
+	desc = "A bag for storing extra clothes and gloves. This one belongs to the detective."
+	icon_state = "garment_bag_hos"
+
 /obj/item/storage/bag/garment/physician
 	name = "brig physician's garment bag"
 	desc = "A bag for storing extra clothes and gloves. This one belongs to the brig physician."
@@ -261,3 +266,22 @@
 	new /obj/item/clothing/head/beret/quartermaster(src)
 	new /obj/item/clothing/head/qmhat(src)
 	new /obj/item/clothing/neck/cloak/qm(src)
+
+/obj/item/storage/bag/garment/detective/PopulateContents()
+	new /obj/item/clothing/suit/det_suit(src)
+	new /obj/item/clothing/suit/det_suit/grey(src)
+	new /obj/item/clothing/suit/det_suit/noir(src)
+	new /obj/item/clothing/suit/det_suit/tan(src)
+	new /obj/item/clothing/suit/det_suit/yogs(src)
+	new /obj/item/clothing/suit/det_suit/yogs/golddetective(src)
+	new /obj/item/clothing/suit/det_suit/yogs/bluedetective(src)
+	new /obj/item/clothing/head/fedora/det_hat(src)
+	new /obj/item/clothing/head/fedora/det_hat/grey(src)
+	new /obj/item/clothing/head/fedora/det_hat/black(src)
+	new /obj/item/clothing/head/fedora/det_hat/tan(src)
+	new /obj/item/clothing/gloves/color/black/forensic(src)
+	new /obj/item/clothing/under/rank/det(src)
+	new /obj/item/clothing/under/rank/det/skirt(src)
+	new /obj/item/clothing/under/rank/det/grey(src)
+	new /obj/item/clothing/under/rank/det/grey/skirt(src)
+	new /obj/item/clothing/under/rank/det/yogs(src)

@@ -65,6 +65,12 @@
 	icon_state = "signaltech_gorka"
 	can_adjust = FALSE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/signaltech.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/signaltech.dmi'
+
+/obj/item/clothing/suit/hooded/wintercoat/engineering/tcomms
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 // ###### Chief Engineer ######
 /obj/item/clothing/under/rank/chief_engineer
@@ -122,21 +128,21 @@
 
 /obj/machinery/vending/wardrobe/atmos_wardrobe
 	products = list(/obj/item/clothing/accessory/pocketprotector = 2,
-					/obj/item/storage/backpack/duffelbag/engineering = 2,
-					/obj/item/storage/backpack/satchel/eng = 2,
-					/obj/item/storage/backpack/industrial = 2,
-					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,
-					/obj/item/clothing/head/beret/atmos = 3,
-					/obj/item/clothing/under/rank/atmospheric_technician = 3,
-					/obj/item/clothing/under/rank/atmospheric_technician/skirt = 3,
-					/obj/item/clothing/under/rank/atmospheric_technician/gorka = 3,
-					/obj/item/clothing/shoes/sneakers/black = 3)
+					/obj/item/storage/backpack/duffelbag/engineering/atmos = 2,
+					/obj/item/storage/backpack/satchel/atmos = 2,
+					/obj/item/storage/backpack/industrial/atmos = 2,
+					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 2,
+					/obj/item/clothing/head/beret/atmos = 2,
+					/obj/item/clothing/under/rank/atmospheric_technician = 2,
+					/obj/item/clothing/under/rank/atmospheric_technician/skirt = 2,
+					/obj/item/clothing/under/rank/atmospheric_technician/gorka = 2,
+					/obj/item/clothing/shoes/workboots = 2)
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool/atmos = 1)
 
 /obj/machinery/vending/wardrobe/sig_wardrobe
-	products = list(/obj/item/storage/backpack/duffelbag/engineering = 1,
-					/obj/item/storage/backpack/industrial = 1,
-					/obj/item/storage/backpack/satchel/eng = 1,
+	products = list(/obj/item/storage/backpack/duffelbag/engineering/signal = 1,
+					/obj/item/storage/backpack/industrial/signal = 1,
+					/obj/item/storage/backpack/satchel/signal = 1,
 					/obj/item/clothing/suit/hooded/wintercoat/engineering/tcomms = 1,
 					/obj/item/clothing/under/yogs/rank/network_admin = 1,
 					/obj/item/clothing/shoes/workboots = 1,

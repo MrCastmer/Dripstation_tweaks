@@ -287,6 +287,26 @@
 	desc = "A stylish turtleneck complete with tactical skirt."
 	icon_state = "security_medic_turtleneck_skirt"
 
+////Detective////
+/obj/item/clothing/under/rank/det 
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/detective.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/detective.dmi'
+
+/obj/item/clothing/under/rank/det/grey
+	icon_state = "noirdet"
+
+/obj/item/clothing/under/rank/det/grey/skirt
+	icon_state = "noirdet_skirt"
+
+/obj/item/clothing/suit/det_suit
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	armor = list(MELEE = 25, BULLET = 15, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 45, WOUND = 10)
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/suit/det_suit/noir
+	icon_state = "noir_detective"
+
 // ###### VENDORS ######
 /obj/machinery/vending/security
 	req_access = list(ACCESS_BRIG)

@@ -176,6 +176,25 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clipboard/yog/paperwork/security(src)
 	new /obj/item/barrier_taperoll/police(src)
 
+/obj/structure/closet/secure_closet/detective/PopulateContents()
+	..()
+	new /obj/item/melee/classic_baton(src)
+	new /obj/item/reagent_containers/food/drinks/flask/det(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/shoes/laceup/brown(src)
+	new /obj/item/storage/box/evidence(src)
+	new /obj/item/radio/headset/headset_sec(src)
+	new /obj/item/detective_scanner(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/holosign_creator/security(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/clothing/suit/armor/vest/det_suit(src)
+	new /obj/item/storage/belt/holster/full(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/binoculars(src)
+	new /obj/item/storage/bag/garment/detective(src)
+	new /obj/item/barrier_taperoll/police(src)
+
 // ###### HOP ######
 /obj/structure/closet/secure_closet/hop
 	anchored = TRUE	//i`ve commited crime with this
