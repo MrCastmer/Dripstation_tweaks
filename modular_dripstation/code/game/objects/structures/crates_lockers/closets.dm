@@ -191,7 +191,6 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/belt/holster/full(src)
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/binoculars(src)
-	new /obj/item/storage/bag/garment/detective(src)
 	new /obj/item/barrier_taperoll/police(src)
 
 // ###### HOP ######
@@ -340,14 +339,15 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 // ###### MINING MEDIC ######
 /obj/structure/closet/secure_closet/mmedical/PopulateContents()
 	..()
-	if(prob(50))
-		new /obj/item/storage/backpack/emt(src)
-	else
-		new /obj/item/storage/backpack/satchel/emt(src)
+	new /obj/item/storage/backpack/emt(src)
+	new /obj/item/storage/backpack/satchel/emt(src)
 	new /obj/item/storage/backpack/duffelbag/emt(src)
 	new /obj/item/defibrillator/loaded(src)
 	new /obj/item/clothing/suit/toggle/labcoat/emt/explorer(src)
 	new /obj/item/clothing/head/beret/emt/mining(src)
+	new /obj/item/clothing/under/rank/miner/mmedic/alt(src)
+	new /obj/item/clothing/under/rank/miner/mmedic/alt(src)
+	new /obj/item/clothing/under/rank/miner/mmedic/alt/skirt(src)
 	new /obj/item/clothing/under/yogs/rank/miner/medic(src)
 	new /obj/item/clothing/suit/toggle/labcoat/explorer(src)
 	new /obj/item/storage/belt/medical/mining(src)

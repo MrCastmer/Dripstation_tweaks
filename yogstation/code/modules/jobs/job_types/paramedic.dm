@@ -49,10 +49,10 @@
 	ears = /obj/item/radio/headset/headset_med
 /* dripstation edit
 	belt = /obj/item/storage/belt/medical
-*/
 	uniform = /obj/item/clothing/under/rank/medical
 	uniform_skirt = /obj/item/clothing/under/rank/medical/skirt
 	suit = /obj/item/clothing/suit/toggle/labcoat/emt
+*/
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	l_hand = /obj/item/roller
 	l_pocket = /obj/item/flashlight/pen/paramedic

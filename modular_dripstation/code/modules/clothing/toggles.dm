@@ -172,6 +172,51 @@
 	item_state = "med_dep_jacket"
 	allowed = list(/obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/autoinjector, /obj/item/healthanalyzer, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/soap, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant, /obj/item/hypospray)
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 35, RAD = 0, FIRE = 35, ACID = 35)
-	
+
+
+/obj/item/clothing/suit/toggle/emt_vest
+	name = "emt vest"
+	desc = "A hazard vest used in the recovery of bodies."
+	icon_state = "paramedic-vest"
+	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/labcoat
+	allowed = list(/obj/item/flashlight, 
+					/obj/item/radio,
+					/obj/item/analyzer,
+					/obj/item/stack/medical,
+					/obj/item/dnainjector,
+					/obj/item/reagent_containers/dropper,
+					/obj/item/reagent_containers/syringe,
+					/obj/item/reagent_containers/autoinjector,
+					/obj/item/healthanalyzer,
+					/obj/item/reagent_containers/glass/bottle,
+					/obj/item/reagent_containers/glass/beaker,
+					/obj/item/reagent_containers/pill,
+					/obj/item/storage/pill_bottle,
+					/obj/item/paper,
+					/obj/item/melee/classic_baton/telescopic,
+					/obj/item/laser_pointer, 
+					/obj/item/assembly/flash/handheld, 
+					/obj/item/assembly/flash/hypnotic, 
+					/obj/item/soap,
+					/obj/item/sensor_device,
+					/obj/item/tank/internals/emergency_oxygen,
+					/obj/item/tank/internals/plasmaman,
+					/obj/item/tank/internals/ipc_coolant,
+					/obj/item/hypospray)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,	ENERGY = 0, BOMB = 0, BIO = 35, RAD = 0, FIRE = 35, ACID = 35)
+
+/obj/item/clothing/suit/toggle/emt_vest/jacket
+	name = "paramedic jacket"
+	desc = "A hazard jacket used in the recovery of bodies."
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+
 /obj/item/clothing/head/hooded/winterhood
 	dynamic_hair_suffix = ""

@@ -639,6 +639,7 @@
 		/obj/machinery/vending/autodrobe = "AutoDrobe",
 		/obj/machinery/vending/wardrobe/sec_wardrobe = "SecDrobe",
 		/obj/machinery/vending/wardrobe/medi_wardrobe = "MediDrobe",
+		/obj/machinery/vending/wardrobe/para_wardrobe = "ParaDrobe",
 		/obj/machinery/vending/wardrobe/engi_wardrobe = "EngiDrobe",
 		/obj/machinery/vending/wardrobe/atmos_wardrobe = "AtmosDrobe",
 		/obj/machinery/vending/wardrobe/cargo_wardrobe = "CargoDrobe",

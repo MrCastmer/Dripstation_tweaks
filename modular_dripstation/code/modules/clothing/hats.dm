@@ -145,3 +145,26 @@ obj/item/clothing/head/bio_hood/white
 	name = "white fedora"
 	icon_state = "wfedora"
 	desc = "A really cool hat if you're a mobster. A really lame hat if you're not. White as snow."
+
+/obj/item/clothing/head/fedora/det_hat/brown
+	name = "brown fedora"
+	icon_state = "brfedora"
+	desc = "A really cool hat if you're a mobster. A really lame hat if you're not. Brown as your life."
+
+/obj/item/clothing/head/soft/emt
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/soft/emt/paramed
+	name = "parameds's cap"
+	desc = "It's a standart blue baseball hat."
+	icon_state = "paramedsoft"
+
+/obj/item/clothing/head/beret/emt
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/emt/paramed
+	name = "paramedical beret"
+	desc = "A blue beret with a white cross finely threaded into it. It has that sterile smell about it."
+	icon_state = "paramedberet"

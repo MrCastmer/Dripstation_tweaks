@@ -272,3 +272,44 @@ obj/item/clothing/suit/hooded/wintercoat/cargo
 					/obj/item/clothing/suit/gorka_jacket/supply = 2,
 					/obj/item/clothing/shoes/workboots/cargo = 2,
 					/obj/item/clothing/shoes/workboots/mining = 2)
+
+
+// ###### MINING MEDIC ######
+/obj/item/clothing/under/rank/miner/mmedic
+	name = "mining medic's jumpsuit"
+	desc = "A standart stationary uniform issued to mining medics. It has minor protection against biohazards."
+	mutantrace_variation = MUTANTRACE_VARIATION
+	icon_state = "mining_medic"
+	can_adjust = TRUE
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/cargo/miningmed.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/cargo/miningmed.dmi'
+	sensor_mode = 3
+	random_sensor = FALSE
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 15, RAD = 0, FIRE = 80, ACID = 0, WOUND = 10)
+
+/obj/item/clothing/under/rank/miner/mmedic/skirt
+	name = "mining medic's jumpskirt"
+	icon_state = "mining_medic_skirt"
+	desc = "A standart stationary uniform issued with study skirt issued to mining medics. It has minor protection against biohazards."
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/rank/miner/mmedic/alt
+	desc = "A verstile brown uniform issued to mining medics in hazardous environments. It has minor protection against biohazards."
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	icon_state = "mining_medical"
+
+/obj/item/clothing/under/rank/miner/mmedic/alt/skirt
+	desc = "A verstile brown uniform with study skirt issued to mining medics in hazardous environments. It has minor protection against biohazards."
+	icon_state = "miningmed_skirt"
+	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/head/soft/emt/mining
+	icon_state = "exploresoft"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/emt/mining
+	icon_state = "exploreberet"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'

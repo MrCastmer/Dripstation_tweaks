@@ -265,11 +265,25 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/brig_physician.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/brig_physician.dmi'
 
+/obj/item/clothing/under/yogs/rank/physician/alt
+	name = "brig recovery medic's undersuit"
+	desc = "A verstile black and red uniform honored to hard working recovery medics in hazardous environments. It has minor protection against biohazards."
+	icon_state = "brig_medical"
+	can_adjust = TRUE
+	alt_covers_chest = FALSE
+
+/obj/item/clothing/under/yogs/rank/physician/alt/skirt
+	name = "brig recovery medic's underskirt"
+	icon_state = "brigmed_skirt"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	fitted = FEMALE_UNIFORM_TOP
+
 /obj/item/clothing/under/yogs/rank/physician/white
 	icon_state = "security_medic"
 	desc = "White formal jumpsuit that connects you to your medsci brothers and sisters."
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/brig_physician.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/brig_physician.dmi'
+	can_adjust = TRUE
 
 /obj/item/clothing/under/yogs/rank/physician/white/skirt
 	icon_state = "security_medic_skirt"
@@ -281,11 +295,14 @@
 	icon_state = "security_medic_turtleneck"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/security/brig_physician.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/security/brig_physician.dmi'
+	can_adjust = TRUE
 
 /obj/item/clothing/under/yogs/rank/physician/turtle/skirt
 	name = "brig physician's turtleneck skirt"
 	desc = "A stylish turtleneck complete with tactical skirt."
 	icon_state = "security_medic_turtleneck_skirt"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	fitted = FEMALE_UNIFORM_TOP
 
 ////Detective////
 /obj/item/clothing/under/rank/det 
@@ -386,10 +403,10 @@
 					/obj/item/clothing/suit/det_suit/yogs = 1,
 					/obj/item/clothing/suit/det_suit/yogs/golddetective = 1,
 					/obj/item/clothing/suit/det_suit/yogs/bluedetective = 1,
-					/obj/item/clothing/head/fedora/det_hat 
+					/obj/item/clothing/head/fedora/det_hat = 1,
 					/obj/item/clothing/head/fedora/det_hat/grey = 1,
 					/obj/item/clothing/head/fedora/det_hat/black = 1,
-					/obj/item/clothing/head/fedora/det_hat/tan = 1,
+					/obj/item/clothing/head/fedora/det_hat/brown = 1,
 					/obj/item/clothing/gloves/color/black = 2,
 					/obj/item/clothing/gloves/color/latex = 2,
 					/obj/item/clothing/shoes/laceup = 1,
