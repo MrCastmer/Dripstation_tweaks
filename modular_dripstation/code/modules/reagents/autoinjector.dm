@@ -30,6 +30,7 @@
 
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large
 	icon = 'modular_dripstation/icons/obj/syringe.dmi'
+	icon_state = "stimpakpen"
 
 /obj/item/reagent_containers/autoinjector/medipen/stimpack/large/update_icon_state()
 	. = ..()
