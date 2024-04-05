@@ -240,10 +240,11 @@
 	borrow_brokers += B
 
 /datum/stock/proc/modifyAccount(whose, by, force=0)
-	if (SSeconomy.get_dep_account(ACCOUNT_CAR).account_balance)
-		if (by < 0 && SSeconomy.get_dep_account(ACCOUNT_CAR).account_balance + by < 0 && !force)
+	var/acc = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	if (acc.account_balance)
+		if (by < 0 && acc.account_balance + by < 0 && !force)
 			return 0
-		SSeconomy.get_dep_account(ACCOUNT_CAR).account_balance += by
+		acc.account_balance += by
 		GLOB.stockExchange.balanceLog(whose, by)
 		return 1
 	return 0

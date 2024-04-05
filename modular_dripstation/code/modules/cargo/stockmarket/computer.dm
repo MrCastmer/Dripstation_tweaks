@@ -48,7 +48,8 @@
 /obj/machinery/computer/stockexchange/proc/balance()
 	if (!logged_in)
 		return 0
-	return SSeconomy.get_dep_account(ACCOUNT_CAR).account_balance
+	var/acc = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	return acc.account_balance
 
 ///// MAIN TGUI SCREEN /////
 
@@ -279,7 +280,8 @@
 	if (!li)
 		to_chat(user, "<span class='danger'>No active account on the console!</span>")
 		return
-	var/b = SSeconomy.get_dep_account(ACCOUNT_CAR).account_balance
+	var/acc = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	var/b = acc.account_balance
 	var/avail = S.shareholders[logged_in]
 	if (!avail)
 		to_chat(user, "<span class='danger'>This account does not own any shares of [S.name]!</span>")
@@ -294,7 +296,7 @@
 		return
 	if (li != logged_in)
 		return
-	b = SSeconomy.get_dep_account(ACCOUNT_CAR).account_balance
+	b = acc.account_balance
 	if (!isnum(b))
 		to_chat(user, "<span class='danger'>No active account on the console!</span>")
 		return
