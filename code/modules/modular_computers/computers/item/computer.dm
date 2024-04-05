@@ -126,7 +126,7 @@
 	saved_job = stored_card.assignment
 	update_appearance()
 	playsound(src, 'sound/machines/terminal_prompt.ogg', 15, TRUE)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_prompt_confirm.ogg', 15, TRUE), 1.3 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/machines/terminal_prompt_confirm.ogg', 15, TRUE), 1.3 SECONDS)
 //DRIPSTATION EDIT END
 
 /obj/item/modular_computer/Destroy()
