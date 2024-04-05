@@ -4,17 +4,17 @@
 
 /obj/item/reagent_containers/autoinjector/combat
 	icon = 'modular_dripstation/icons/obj/syringe.dmi'
-	icon_state = "hypo_ntcombat"
+	icon_state = "hypo_nt_combat"
 
 /obj/item/reagent_containers/autoinjector/combat/nanites
 	icon_state = "hypo_nt_quantum"
 
 /obj/item/reagent_containers/autoinjector/combat/healermech
-	icon_state = "hypo_ntcombat"
+	icon_state = "hypo_nt_combat"
 
 /obj/item/reagent_containers/autoinjector/medipen/resurrector
 	icon = 'modular_dripstation/icons/obj/syringe.dmi'
-	icon_state = "hypo_ntcombat"
+	icon_state = "hypo_nt_combat"
 
 /obj/item/reagent_containers/autoinjector/magillitis
 	icon = 'modular_dripstation/icons/obj/syringe.dmi'
