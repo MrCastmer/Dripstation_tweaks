@@ -363,18 +363,24 @@
 /obj/item/clothing/under/syndicate/tacticool/engineer
 	name = "engineer turtleneck"
 	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking engineers."
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/engineer.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/engineer.dmi'
 	icon_state = "gec_engi_overalls"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 /obj/item/clothing/under/syndicate/tacticool/atmos
 	name = "atmostech turtleneck"
 	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking atmostech."
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/atmos.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/atmos.dmi'
 	icon_state = "gec_atmos_overalls"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 /obj/item/clothing/under/syndicate/tacticool/sig
 	name = "network admin turtleneck"
 	desc = "Standart uniform worn by GEC engineers. This one is worn by low ranking signaltech."
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/engineering/signaltech.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/engineering/signaltech.dmi'
 	icon_state = "gec_signaltech_overalls"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 

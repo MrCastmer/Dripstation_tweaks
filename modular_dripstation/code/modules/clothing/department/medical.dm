@@ -136,6 +136,7 @@
 
 /obj/item/clothing/under/rank/virologist/skirt
 	can_adjust = TRUE
+	icon_state = "virology_skirt"
 
 
 // ###### Chemistry ######
@@ -145,7 +146,7 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/chemistry.dmi'
 
 /obj/item/clothing/under/rank/chemist/skirt
-	icon_state = "chemistry_skirt"
+	icon_state = "chem_skirt"
 	can_adjust = TRUE
 
 /obj/item/clothing/under/rank/chemist/pharma
