@@ -350,7 +350,7 @@
 	custom_premium_price = 400
 	cryo_preserve = TRUE
 	/// For storing our tackler datum so we can remove it after
-	var/datum/component/tackler
+//	var/datum/component/tackler
 	/// See: [/datum/component/tackler/var/stamina_cost]
 	var/tackle_stam_cost = 25
 	/// See: [/datum/component/tackler/var/base_knockdown]
@@ -363,7 +363,7 @@
 	var/tackle_speed = 1
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 1
-
+/*	tacklers off - needs to include #include "code\datums\component\tackle.dm"
 /obj/item/clothing/gloves/tackler/Destroy()
 	tackler = null
 	return ..()
@@ -383,7 +383,7 @@
 	var/mob/living/carbon/human/H = user
 	if(H.get_item_by_slot(ITEM_SLOT_GLOVES) == src)
 		QDEL_NULL(tackler)
-
+*/
 /obj/item/clothing/gloves/tackler/security
 	name = "security gripper gloves"
 	desc = "Special gloves that manipulate the blood vessels in the wearer's hands, granting them the ability to launch headfirst into walls. Fireproof to boot!"
