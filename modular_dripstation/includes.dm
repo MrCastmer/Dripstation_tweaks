@@ -179,7 +179,6 @@
 #include "code\modules\mob\living\simple_animal\bot\floorbot.dm"
 #include "code\modules\mob\living\simple_animal\bot\honkbot.dm"
 #include "code\modules\mob\living\simple_animal\bot\medbot.dm"
-#include "code\modules\mob\living\simple_animal\bot\mulebot.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mimic.dm"
 #include "code\modules\mob\living\human\species_types\dripstation_blacklist.dm"
 #include "code\modules\mob\living\human\species_types\lizardpeople.dm"

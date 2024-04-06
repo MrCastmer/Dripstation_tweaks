@@ -4,4 +4,4 @@
 	uniform_skirt = /obj/item/clothing/under/rank/warden/skirt
 
 /datum/outfit/job/plasmaman/warden
-	/obj/item/modular_computer/tablet/pda/preset/warden
+	//pda_type = /obj/item/modular_computer/tablet/pda/preset/warden
