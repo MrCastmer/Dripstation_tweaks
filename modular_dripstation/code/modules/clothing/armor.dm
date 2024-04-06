@@ -294,3 +294,19 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 		icon_state = "[initial(icon_state)]-[plating.icon_state]"
 	else
 		icon_state = initial(icon_state)
+
+/obj/item/clothing/suit/armor/vest/durathread
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/tribalcoat
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/pathfinder
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/elder_atmosian
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit/suit.dmi'
