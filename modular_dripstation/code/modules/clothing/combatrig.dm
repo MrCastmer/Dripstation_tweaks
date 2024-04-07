@@ -10,6 +10,7 @@
 	hardsuit_type = "scarlet"
 	armor = list(MELEE = 35, BULLET = 25, LASER = 30, ENERGY = 25, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	on = FALSE
+	light_color = LIGHT_COLOR_GREEN
 	var/light_status = FALSE
 	var/mobility = TRUE
 	var/processing = FALSE
@@ -277,6 +278,7 @@
 	var/recharge_rate = 1 //How quickly the shield recharges once it starts charging
 	var/shield_state = "shield-red"
 	var/shield_on = "shield-red"
+	var/shield_off = "shield-flash"
 
 /obj/item/clothing/suit/space/hardsuit/syndi/shielded/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	recharge_cooldown = world.time + recharge_delay
@@ -289,8 +291,8 @@
 		if(recharge_rate)
 			START_PROCESSING(SSobj, src)
 		if(current_charges <= 0)
-			owner.visible_message("[owner]'s shield overloads!")
-			shield_state = "broken"
+			owner.visible_message(span_danger("[owner]'s shield overloads!"))
+			shield_state = "[shield_off]"
 			owner.update_inv_wear_suit()
 		return 1
 	return 0
@@ -312,12 +314,14 @@
 			var/mob/living/carbon/human/C = loc
 			C.update_inv_wear_suit()
 
-/obj/item/clothing/suit/space/hardsuit/syndi/shielded/worn_overlays(isinhands)
+/obj/item/clothing/suit/space/hardsuit/syndi/shielded/worn_overlays(isinhands = FALSE)
 	. = ..()
+	. += mutable_appearance('modular_dripstation/icons/effects/shield.dmi', shield_state, MOB_LAYER+0.01)
 	if(!isinhands)
-		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
+		//. += mutable_appearance('modular_dripstation/icons/effects/shield.dmi', shield_state, MOB_LAYER+0.01)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded
+	light_color = LIGHT_COLOR_DEFAULT
 
 
 
@@ -329,6 +333,7 @@
 	//item_state = "bloodred_helm"
 	hardsuit_type = "bloodred"
 	light_range = 6
+	light_color = LIGHT_COLOR_GREEN
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	toggled_for_heat_protecting = FALSE
@@ -358,10 +363,11 @@
 	icon_state = "nt_deathsquad_helm"
 	//item_state = "nt_deathsquad_helm"
 	hardsuit_type = "nt_deathsquad"
-	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 35, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
+	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	light_range = 7
+	light_color = LIGHT_COLOR_LIGHT_CYAN
 	heat_protection = HEAD
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF|ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	toggled_for_heat_protecting = FALSE
@@ -399,9 +405,9 @@
 	icon_state = "nt_deathsquad_rig"
 	//item_state = "nt_deathsquad_rig"
 	hardsuit_type = "nt_deathsquad"
-	armor = list(MELEE = 45, BULLET = 60, LASER = 40, ENERGY = 25, BOMB = 60, BIO = 100, RAD = 70, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
+	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF|ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	combat_slowdown = 0.3
 	lightweight = 0
@@ -427,6 +433,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
 	toggled_for_heat_protecting = FALSE
+	light_color = LIGHT_COLOR_DEFAULT
 
 /obj/item/clothing/suit/space/hardsuit/syndi/owl
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 90, WOUND = 25, ELECTRIC = 100)
@@ -447,6 +454,7 @@
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 10, ELECTRIC = 100)
 	resistance_flags = FIRE_PROOF
 	visor_flags_inv = HIDEEYES|HIDEFACE
+	light_color = LIGHT_COLOR_DEFAULT
 
 /obj/item/clothing/suit/space/hardsuit/syndi/engineering
 	name = "engineering RIG"
@@ -502,6 +510,7 @@
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEEARS
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	light_color = LIGHT_COLOR_ELECTRIC_CYAN
 
 /obj/item/clothing/suit/space/hardsuit/syndi/engineering/atmospheric
 	name = "atmospheric RIG"
@@ -617,6 +626,7 @@
 	hardsuit_type = "medical"
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 60, FIRE = 60, ACID = 75, WOUND = 10, ELECTRIC = 100)
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SCAN_REAGENTS | HEADINTERNALS
+	light_color = LIGHT_COLOR_BLUEGREEN
 
 /obj/item/clothing/suit/space/hardsuit/syndi/medical
 	name = "medical RIG"
@@ -671,6 +681,7 @@
 	resistance_flags = FIRE_PROOF
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 75, WOUND = 15, ELECTRIC = 100)
 	visor_flags_inv = HIDEEYES|HIDEFACE
+	light_color = LIGHT_COLOR_YELLOW
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/mining/Initialize(mapload)
 	. = ..()
@@ -706,6 +717,7 @@
 	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. Designed for security operations in hasard AO`s."
 	armor = list(MELEE = 30, BULLET = 25, LASER = 30, ENERGY = 10, BOMB = 40, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	light_color = LIGHT_COLOR_RED
 
 /obj/item/clothing/suit/space/hardsuit/syndi/security
 	name = "security RIG"
@@ -749,6 +761,7 @@
 	hardsuit_type = "secsyndi"
 	desc = "Bulletproof dual-mode helmet derived from more advanced special operations helmets. Designed for private military operations in hasard AO`s. Gorlex Security brunch property."
 	armor = list(MELEE = 35, BULLET = 45, LASER = 15, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 15, ELECTRIC = 100)
+	light_color = LIGHT_COLOR_GREEN
 
 /obj/item/clothing/suit/space/hardsuit/syndi/security/gorlex
 	name = "\improper Gorlex security RIG"
@@ -770,6 +783,7 @@
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEEARS
 	toggled_for_heat_protecting = FALSE
 	armor = list(MELEE = 30, BULLET = 40, LASER = 40, ENERGY = 30, BOMB = 40, BIO = 100, RAD = 90, FIRE = 75, ACID = 90, WOUND = 20, ELECTRIC = 100)
+	light_color = LIGHT_COLOR_DEFAULT
 
 /obj/item/clothing/suit/space/hardsuit/syndi/security/vahlen
 	name = "vahlen corpsman RIG"
@@ -1004,6 +1018,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	toggled_for_heat_protecting = FALSE
+	light_color = LIGHT_COLOR_DEFAULT
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite
 	name = "elite syndicate RIG"
@@ -1035,6 +1050,7 @@
 	icon_state = "vahlenop_helm"
 	//item_state = "vahlenop_helm"
 	hardsuit_type = "vahlenop"
+	light_color = LIGHT_COLOR_GREEN
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/vahlen
 	name = "elite Vahlen operative RIG"
@@ -1264,6 +1280,7 @@
 	armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 50, BOMB = 60, BIO = 100, RAD = 100, FIRE = 75, ACID = 75, WOUND = 25, ELECTRIC = 100)
 	strip_delay = 130
 	light_range = 7
+	light_color = LIGHT_COLOR_DEFAULT
 	toggled_for_heat_protecting = FALSE
 
 /obj/item/clothing/suit/space/hardsuit/syndi/military/ert
@@ -1381,6 +1398,7 @@
 	//item_state = "nt_deathsquad_helm"
 	hardsuit_type = "nt_deathsquad"
 	var/hit_reflect_chance = 50
+	light_color = LIGHT_COLOR_LIGHT_CYAN
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military/ert/deathsquad/equipped(mob/living/carbon/human/user, slot)
 	..()

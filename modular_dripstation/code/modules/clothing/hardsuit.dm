@@ -102,6 +102,7 @@
 	icon_state = "medical_helm0"
 	//item_state = "medical_helm"
 	hardsuit_type = "medical"
+	light_color = LIGHT_COLOR_BLUEGREEN
 
 /obj/item/clothing/suit/space/hardsuit/medical
 	name = "medical hardsuit"
@@ -171,6 +172,7 @@
 	//item_state = "sec_helm"
 	hardsuit_type = "sec"
 	light_range = 5
+	light_color = LIGHT_COLOR_RED
 
 /obj/item/clothing/suit/space/hardsuit/security
 	desc = "A standart issue security suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
@@ -183,6 +185,7 @@
 	icon_state = "pilot_helm0"
 	//item_state = "pilot_helm"
 	hardsuit_type = "pilot"
+	light_color = LIGHT_COLOR_LIGHT_CYAN
 	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 0, BOMB = 50, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20, ELECTRIC = 100)
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/pilot/equipped(mob/living/carbon/human/user, slot)
@@ -212,6 +215,7 @@
 	icon_state = "warden_helm0"
 	//item_state = "warden_helm"
 	hardsuit_type = "warden"
+	light_color = LIGHT_COLOR_YELLOW
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 45, BIO = 100, RAD = 50, FIRE = 85, ACID = 85, WOUND = 20, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/security/warden
@@ -228,6 +232,7 @@
 	icon_state = "sechos_helm0"
 	//item_state = "sechos_helm"
 	hardsuit_type = "sechos"
+	light_color = LIGHT_COLOR_YELLOW
 	armor = list(MELEE = 45, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 25, ELECTRIC = 100)
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
@@ -419,6 +424,7 @@
 	icon_state = "swat2_deathsquad_helm0"
 	//item_state = "swat2_deathsquad_helm"
 	hardsuit_type = "swat2_deathsquad"
+	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/clothing/suit/space/hardsuit/deathsquad
 	name = "\improper Prototype MK.III SWAT Suit"
@@ -532,6 +538,7 @@
 	icon_state = "wiz_helm0"
 	//item_state = "wiz_helm"
 	hardsuit_type = "wiz"
+	light_color = LIGHT_COLOR_PURPLE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 25, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	heat_protection = HEAD
