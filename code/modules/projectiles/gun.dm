@@ -365,6 +365,8 @@
 	for(var/obj/item/attachment/A in current_attachments)
 		A.on_gun_fire(src)
 
+	if(chambered)	//dripstation edit
+		chambered.leave_residue(user)	//dripstation edit
 	add_fingerprint(user)
 
 	if(semicd)

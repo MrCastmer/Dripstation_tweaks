@@ -13,6 +13,7 @@
 	fingerprints = LAZY_LISTS_OR(fingerprints, F.fingerprints)
 	hiddenprints = LAZY_LISTS_OR(hiddenprints, F.hiddenprints)
 	blood_DNA = LAZY_LISTS_OR(blood_DNA, F.blood_DNA)
+	blood_DNA_old = LAZY_LISTS_OR(blood_DNA_old, F.blood_DNA)	//dripstation edit
 	fibers = LAZY_LISTS_OR(fibers, F.fibers)
 	check_blood()
 	check_blood()
@@ -24,6 +25,7 @@
 	fingerprints = new_fingerprints
 	hiddenprints = new_hiddenprints
 	blood_DNA = new_blood_DNA
+	blood_DNA_old = new_blood_DNA
 	fibers = new_fibers
 	scents = new_scents
 	check_blood()
