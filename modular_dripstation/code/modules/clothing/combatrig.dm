@@ -316,9 +316,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/shielded/worn_overlays(isinhands = FALSE)
 	. = ..()
-	. += mutable_appearance('modular_dripstation/icons/effects/shield.dmi', shield_state, MOB_LAYER+0.01)
 	if(!isinhands)
-		//. += mutable_appearance('modular_dripstation/icons/effects/shield.dmi', shield_state, MOB_LAYER+0.01)
+		. += mutable_appearance('modular_dripstation/icons/effects/shield.dmi', shield_state, MOB_LAYER+0.01)
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/shielded
 	light_color = LIGHT_COLOR_DEFAULT
