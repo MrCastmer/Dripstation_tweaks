@@ -167,10 +167,10 @@ GLOBAL_LIST_INIT(alt_science_positions, list(
 	"Augmentation Theorist", "Cyborg Maintainer", "Robotics Intern", "Biomechanical Engineer", "Mechatronic Engineer", "Machinist", "Chrome Shaman", "Ripperdoc"))
 
 GLOBAL_LIST_INIT(alt_supply_positions, list(
-	/*
+	/*Dripstation edit, QM is head of supply
 	"Chief of Staff", "Head of Internal Affairs",
-	"Stock Controller", "Cargo Coordinator", "Shipping Overseer", "Postmaster General",
 	*/
+	"Stock Controller", "Cargo Coordinator", "Shipping Overseer", "Postmaster General",
 	"Deliveryperson", "Mail Service", "Exports Handler", "Cargo Trainee", "Crate Pusher", "Courier",
 	"Lavaland Scout", "Prospector", "Junior Miner", "Major Miner", "Surveyor"))
 
