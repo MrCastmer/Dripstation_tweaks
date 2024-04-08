@@ -32,6 +32,7 @@
 						/obj/item/healthanalyzer,
 						/obj/item/flashlight/pen,
 						/obj/item/holotool,
+						/obj/item/modular_computer/tablet/phone,
 						/obj/item/reagent_containers/glass/bottle,
 						/obj/item/reagent_containers/glass/beaker,
 						/obj/item/reagent_containers/pill,

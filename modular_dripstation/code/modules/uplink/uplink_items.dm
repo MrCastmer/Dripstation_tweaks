@@ -77,11 +77,12 @@
 	exclude_modes = list()
 
 /datum/uplink_item/suits/hardsuit/shielded
-	name = "Shielded Blood-red RIG"
-	desc = "An upgraded version of the blood-red RIG. It features a built-in energy shielding system. \
-			The shield can handle only one impacts within a short duration but will rapidly recharge while not under fire."
-	item = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/bloodred
-	cost = 20
+	name = "Shield RIG module"
+	desc = "Simple module that features energy shielding system. \
+			The shield can handle only one impact within a short duration \
+			but will rapidly recharge while not under fire."
+	item = /obj/item/module/shield/syndicate
+	cost = 12
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	exclude_modes = list()
 
@@ -155,14 +156,22 @@
 
 /datum/uplink_item/nt/hardsuit/ds
 	name = "SWAT MKV Deathsquad"
+	desc = "A prototype rig. Black ops here."
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/military/ert/deathsquad
+	cost = 80
+	cant_discount = TRUE
+
+/datum/uplink_item/nt/hardsuit/ds
+	name = "SWAT MKV Deathsquad"
 	desc = "A prototype hardsuit. Fully bulletproof and incredibly robust."
 	item = /obj/item/clothing/suit/space/hardsuit/deathsquad/mk5
 	cost = 100
 	cant_discount = TRUE
 
 /datum/uplink_item/nt/hardsuit/dsshield
-	name = "Shielded BlackOps emergency response team RIG"
-	desc = "A prototype RIG with shielding protection. Incredibly robust."
-	item = /obj/item/clothing/suit/space/hardsuit/syndi/shielded/deathsquad
-	cost = 150
+	name = "BlackOps shield module"
+	desc = "A prototype RIG module that provides energy shielding protection. \
+			Slowly recharges, but incredibly robust."
+	item = /obj/item/module/shield/nt
+	cost = 30
 	cant_discount = TRUE

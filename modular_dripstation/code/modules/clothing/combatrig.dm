@@ -196,6 +196,7 @@
 	var/eva_slowdown = 1 //slowdown when in eva mode
 	var/lightweight = 1 //used for flags when toggling
 	var/winter_mod = FALSE	//protects from cold when toggled in combat mode
+	var/complexity = 1	//how many modules can be attached
 
 /obj/item/clothing/suit/space/hardsuit/syndi/Initialize()
 	. = ..()
@@ -270,6 +271,7 @@
 //////////////////////////////////////////
 /////////Shielded dualmod (no mode)///////
 
+/*
 /obj/item/clothing/suit/space/hardsuit/syndi/shielded
 	var/current_charges = 3
 	var/max_charges = 3 //How many charges total the shielding has
@@ -426,7 +428,7 @@
 		return FALSE
 	if (prob(hit_reflect_chance))
 		return TRUE
-
+*/
 
 //The Owl Hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
