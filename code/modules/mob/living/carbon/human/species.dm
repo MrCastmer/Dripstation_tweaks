@@ -1760,6 +1760,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				/*	dripstation edit start
 				shove_blocked = TRUE
 				*/
+
 				for(var/obj/O in target_shove_turf)
 					if(istype(O, /obj/structure/table))
 						shove_on_table = TRUE
@@ -1782,7 +1783,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			var/reset_timer = SHOVE_CHAIN_PARALYZE * (100-armor_block)/100
 			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), reset_timer)
 			log_combat(user, target, "kicks", "onto their side (paralyzing)")
-		
+
 		/*	dripstation edit
 		if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
 		*/

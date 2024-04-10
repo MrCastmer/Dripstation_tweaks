@@ -115,7 +115,15 @@
 	item = /obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon
 	cost = 2
 
-
+/datum/uplink_item/role_restricted/velvetfu
+	name = "Velvet-Fu VHS tape"
+	desc = "Velvet-Fu is a knock-off Hollywood Martial Art.\
+			Has a notice, 'Removes the ability to Grab/Push'.\
+			Has been modified to beam its knowledge directly into your eyes, removing the need for a TV."
+	item = /obj/item/book/granter/martial/velvetfu
+	cost = 7
+	restricted_roles = list(JOB_JANITOR)
+	manufacturer = /datum/corporation/traitor/cybersun
 
 
 
