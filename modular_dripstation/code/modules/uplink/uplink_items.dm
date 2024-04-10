@@ -115,6 +115,7 @@
 	item = /obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon
 	cost = 2
 
+
 /datum/uplink_item/role_restricted/velvetfu
 	name = "Velvet-Fu VHS tape"
 	desc = "Velvet-Fu is a knock-off Hollywood Martial Art.\
