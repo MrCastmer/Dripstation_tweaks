@@ -190,7 +190,7 @@
 	STOP_PROCESSING(SSobj,src)
 
 /obj/machinery/shuttle_scrambler/update_icon_state()
-	icon_state = active ? "dominator-Blue" : "dominator"
+	icon_state = active ? "dominator-red" : "dominator"
 	return ..()
 
 /obj/machinery/shuttle_scrambler/Destroy()
@@ -224,11 +224,13 @@
 	shuttle_id = "pirateship"
 	rechargeTime = 3 MINUTES
 
+/*
 /obj/machinery/suit_storage_unit/pirate
 	suit_type = /obj/item/clothing/suit/space
 	helmet_type = /obj/item/clothing/head/helmet/space
 	mask_type = /obj/item/clothing/mask/breath
 	storage_type = /obj/item/tank/internals/oxygen
+*/
 
 /obj/machinery/loot_locator
 	name = "Booty Locator"

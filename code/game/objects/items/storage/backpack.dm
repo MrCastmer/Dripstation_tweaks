@@ -46,6 +46,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 
+/*
 /obj/item/boh_shell/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/assembly/signaler/anomaly))
@@ -53,6 +54,7 @@
 		new /obj/item/storage/backpack/holding(get_turf(src))
 		qdel(src)
 		qdel(I)
+*/
 
 /obj/item/storage/backpack/holding
 	name = "bag of holding"
@@ -672,7 +674,7 @@
 	STR.silent = TRUE
 
 /obj/item/storage/backpack/duffelbag/clown/syndie/PopulateContents()
-	new /obj/item/pda/clown(src)
+	new /obj/item/modular_computer/tablet/pda/preset/clown/syndicate (src)
 	new /obj/item/clothing/under/rank/clown(src)
 	new /obj/item/clothing/shoes/clown_shoes(src)
 	new /obj/item/clothing/mask/gas/clown_hat(src)

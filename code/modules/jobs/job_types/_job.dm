@@ -325,9 +325,6 @@
 	if (H.jumpsuit_style == PREF_SKIRT && uniform_skirt)
 		uniform = uniform_skirt
 
-	if (isplasmaman(H) && !(visualsOnly)) //this is a plasmaman fix to stop having two boxes
-		box = null
-
 	if((DIGITIGRADE in H.dna.species.species_traits) && digitigrade_shoes) 
 		shoes = digitigrade_shoes
 
@@ -361,6 +358,8 @@
 
 	var/obj/item/modular_computer/PDA = new pda_type()
 	if(istype(PDA))
+		H.equip_to_slot_if_possible(PDA, pda_slot)	//dripstatiopn edit
+		/*	//dripstatiopn edit
 		PDA.InsertID(C)
 		H.equip_to_slot_if_possible(PDA, ITEM_SLOT_ID)
 
@@ -369,6 +368,7 @@
 		PDA.update_filters()
 		
 	else
+		*/
 		H.equip_to_slot_if_possible(C, ITEM_SLOT_ID)
 
 	if(H.stat != DEAD)//if a job has a gps and it isn't a decorative corpse, rename the GPS to the owner's name

@@ -108,6 +108,7 @@
 	)
 	category = CAT_CLOTHING
 
+/* //Dripstation edit
 /datum/crafting_recipe/ashtray
 	name = "Ashtray"
 	result = /obj/item/ashtray
@@ -118,3 +119,24 @@
 	)
 	tool_paths = list(/obj/item/weldingtool)
 	category = CAT_STRUCTURES
+*/
+
+/datum/crafting_recipe/pinapolantern
+	name = "Pinap-o'-Lantern"
+	result = /obj/item/clothing/under/yogs/hawaiian_skirt
+	time = 2 SECONDS
+	reqs = list (
+		/obj/item/reagent_containers/food/snacks/grown/pineapple = 1,
+		/obj/item/flashlight/lantern = 1
+	)
+	category = CAT_MISC
+
+/datum/crafting_recipe/hawaiian_skirt
+	name = "Hawaiian Skirt"
+	result = /obj/item/clothing/under/yogs/hawaiian_skirt
+	time = 2 SECONDS
+	reqs = list (
+		/obj/item/reagent_containers/food/snacks/grown/coconut = 1,
+		/obj/item/reagent_containers/food/snacks/grown/grass = 1
+	)
+	category = CAT_CLOTHING

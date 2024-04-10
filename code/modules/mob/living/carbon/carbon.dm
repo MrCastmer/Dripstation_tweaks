@@ -95,6 +95,8 @@
 	. = ..()
 	var/hurt = TRUE
 	var/extra_speed = 0
+	if(istype(throwingdatum))	//dripstation edit
+		hurt = !throwingdatum.gentle	//dripstation edit
 	if(throwingdatum.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(istype(throwingdatum, /datum/thrownthing))
@@ -983,6 +985,9 @@
 	for(var/X in internal_organs)
 		var/obj/item/organ/I = X
 		I.Insert(src)
+
+/mob/living/carbon/proc/get_footprint_sprite()
+	return FOOTPRINT_SPRITE_PAWS
 
 /mob/living/carbon/vv_get_dropdown()
 	. = ..()

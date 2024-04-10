@@ -98,7 +98,7 @@
 #define BODYPART_SUBTYPE_ROBOTIC 2
 #define BODYPART_SUBTYPE_IPC 3
 
-#define DEFAULT_BODYPART_ICON_ORGANIC 'icons/mob/human_parts_greyscale.dmi'
+#define DEFAULT_BODYPART_ICON_ORGANIC 'modular_dripstation/icons/mob/human_parts_greyscale.dmi' //dripstation edit
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
 
 #define MONKEY_BODYPART "monkey"
@@ -421,3 +421,17 @@
 
 /// Mobs will drop everything
 #define DROP_ALL_REMAINS (DROP_BRAIN | DROP_ORGANS | DROP_BODYPARTS | DROP_ITEMS)
+
+// Sprites for photocopying butts
+#define BUTT_SPRITE_HUMAN_MALE "human_male"
+#define BUTT_SPRITE_HUMAN_FEMALE "human_female"
+#define BUTT_SPRITE_LIZARD "lizard"
+#define BUTT_SPRITE_QR_CODE "qr_code"
+#define BUTT_SPRITE_XENOMORPH "xeno"
+#define BUTT_SPRITE_DRONE "drone"
+#define BUTT_SPRITE_CAT "cat"
+#define BUTT_SPRITE_FLOWERPOT "flowerpot"
+#define BUTT_SPRITE_GREY "grey"
+#define BUTT_SPRITE_PLASMA "plasma"
+#define BUTT_SPRITE_FUZZY "fuzzy"
+#define BUTT_SPRITE_SLIME "slime"
