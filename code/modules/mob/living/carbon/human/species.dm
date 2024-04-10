@@ -1782,8 +1782,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			var/reset_timer = SHOVE_CHAIN_PARALYZE * (100-armor_block)/100
 			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), reset_timer)
 			log_combat(user, target, "kicks", "onto their side (paralyzing)")
+		
 		/*	dripstation edit
-		(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
+		if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
 		*/
 		else if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)	//dripstation edit
 			var/directional_blocked = FALSE
