@@ -1757,7 +1757,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		else
 			target.Move(target_shove_turf, shove_dir)
 			if(get_turf(target) != target_shove_turf)
-				for(var/obj/O in target_shove_turf)	//dripstation edit start
+				/*	dripstation edit start
+				shove_blocked = TRUE
+				*/
+				for(var/obj/O in target_shove_turf)
 					if(istype(O, /obj/structure/table))
 						shove_on_table = TRUE
 				if(shove_on_table)
@@ -1767,9 +1770,11 @@ GLOBAL_LIST_EMPTY(features_by_species)
 					target.throw_at(target_shove_turf, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
 					log_combat(user, target, "shoved", "onto (table)")
 				else
-					shove_blocked = TRUE			//dripstation edit end
-
-		if(target.IsKnockdown() && !target.IsParalyzed() && !shove_on_table)
+					shove_blocked = TRUE
+		/*
+		if(target.IsKnockdown() && !target.IsParalyzed())
+		*/
+		if(target.IsKnockdown() && !target.IsParalyzed() && !shove_on_table)	//dripstation edit end
 			var/armor_block = target.run_armor_check(affecting, MELEE, "Your armor prevents your fall!", "Your armor softens your fall!")
 			target.apply_effect(SHOVE_CHAIN_PARALYZE, EFFECT_PARALYZE, armor_block)
 			target.visible_message(span_danger("[user.name] kicks [target.name] onto their side!"),
@@ -1777,8 +1782,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			var/reset_timer = SHOVE_CHAIN_PARALYZE * (100-armor_block)/100
 			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), reset_timer)
 			log_combat(user, target, "kicks", "onto their side (paralyzing)")
-
-		else if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
+		/*	dripstation edit
+		(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
+		*/
+		else if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)	//dripstation edit
 			var/directional_blocked = FALSE
 			if(shove_dir in GLOB.cardinals) //Directional checks to make sure that we're not shoving through a windoor or something like that
 				var/target_turf = get_turf(target)
@@ -1791,8 +1798,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 						if(O.flags_1 & ON_BORDER_1 && O.dir == turn(shove_dir, 180) && O.density)
 							directional_blocked = TRUE
 							break
-			if((!bothstanding || directional_blocked) && (target.mobility_flags & MOBILITY_STAND))
+			if((!bothstanding || directional_blocked) && (target.mobility_flags & MOBILITY_STAND))	//dripstation edit
 /*				//dripstation edit start
+			if(!bothstanding || directional_blocked)
 				var/obj/item/I = target.get_active_held_item()
 				if(target.dropItemToGround(I))
 					user.visible_message(span_danger("[user.name] shoves [target.name], disarming them!"),
@@ -1810,9 +1818,12 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				user.visible_message(span_danger("[user.name] shoves [target.name] into [target_collateral_human.name]!"),
 					span_danger("You shove [target.name] into [target_collateral_human.name]!"), null, COMBAT_MESSAGE_RANGE)
 				log_combat(user, target, "shoved", "into [target_collateral_human.name]")
+		/*	dripstation edit start
+		else
+		*/
 			else
 				to_chat(user, span_danger("You try to shove [target.name], but you can`t do anything to [target.p_them()]!"))
-		else if(!shove_on_table)
+		else if(!shove_on_table)	//dripstation edit end
 			user.visible_message(span_danger("[user.name] shoves [target.name]!"),
 				span_danger("You shove [target.name]!"), null, COMBAT_MESSAGE_RANGE)
 			var/target_held_item = target.get_active_held_item()

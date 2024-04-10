@@ -111,10 +111,17 @@
 			if(pushed_mob.buckled)
 				to_chat(user, span_warning("[pushed_mob] is buckled to [pushed_mob.buckled]!"))
 				return
-			if(user.a_intent != INTENT_HELP)		//dripstation edit start
+			/*	dripstation edit start
+			if(user.a_intent == INTENT_GRAB)
+				if(user.grab_state < GRAB_AGGRESSIVE)
+			*/
+			if(user.a_intent != INTENT_HELP)
 				if(user.grab_state == GRAB_PASSIVE)
 					to_chat(user, span_warning("You need a better grip to do that!"))
 					return
+				/*
+				if(do_after(user, 3.5 SECONDS, pushed_mob))
+				*/
 				if(user.grab_state == GRAB_AGGRESSIVE)
 					tablepush(user, pushed_mob)
 				if(user.grab_state == GRAB_NECK || user.grab_state == GRAB_KILL)
@@ -182,7 +189,9 @@
 		pushed_mob.pass_flags &= ~PASSTABLE
 	if(pushed_mob.loc != loc) //Something prevented the tabling
 		return
-	//pushed_mob.Paralyze(40)
+	/*
+	pushed_mob.Paralyze(40)
+	*/
 	pushed_mob.visible_message(span_danger("[user] pushes [pushed_mob] onto [src]."), \
 								span_userdanger("[user] pushes [pushed_mob] onto [src]."))
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
