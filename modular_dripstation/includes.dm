@@ -150,7 +150,7 @@
 #include "code\modules\atmospherics\machinery\other\meter.dm"
 #include "code\modules\atmospherics\machinery\portable\pump.dm"
 #include "code\modules\atmospherics\machinery\portable\scrubber.dm"
-#include 
+#include "code\modules\awaymissions\mission_code\Academy.dm"
 #include "code\modules\bepis\all_nodes.dm"
 #include "code\modules\bepis\bepis_board.dm"
 #include "code\modules\bepis\bepis_designs.dm"
