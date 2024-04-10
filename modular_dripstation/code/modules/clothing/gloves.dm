@@ -350,7 +350,7 @@
 	custom_premium_price = 400
 	cryo_preserve = TRUE
 	/// For storing our tackler datum so we can remove it after
-//	var/datum/component/tackler
+	var/datum/component/tackler
 	/// See: [/datum/component/tackler/var/stamina_cost]
 	var/tackle_stam_cost = 25
 	/// See: [/datum/component/tackler/var/base_knockdown]
