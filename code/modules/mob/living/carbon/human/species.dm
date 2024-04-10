@@ -1759,8 +1759,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			if(get_turf(target) != target_shove_turf)
 				/*	dripstation edit start
 				shove_blocked = TRUE
-				*/
 
+				*/
 				for(var/obj/O in target_shove_turf)
 					if(istype(O, /obj/structure/table))
 						shove_on_table = TRUE
