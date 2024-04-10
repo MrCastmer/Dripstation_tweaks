@@ -3,6 +3,7 @@
 #include "code\datums\brain_damage\severe.dm"
 #include "code\datums\component\mood.dm"
 #include "code\datums\component\shielded.dm"
+#include "code\datums\component\tackle.dm"
 #include "code\datums\component\transforming.dm"
 #include "code\datums\keybinding\communication.dm"
 #include "code\datums\mood_events\generic_negative_events.dm"
