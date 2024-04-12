@@ -486,7 +486,6 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/defibrillator/compact/advanced/loaded(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/storage/firstaid/hypospray/deluxe/cmo(src)
-	new /obj/item/autosurgeon/cmo(src)
 	new /obj/item/door_remote/chief_medical_officer(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
@@ -536,7 +535,6 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/shoes/xeno_wraps/command(src)
 	new /obj/item/storage/lockbox/medal/eng(src)
 	new /obj/item/barrier_taperoll/engineering(src)
-	new /obj/item/multisurgeon/magboots(src)
 
 /obj/structure/closet/l3closet/PopulateContents()
 	new /obj/item/storage/bag/bio(src)

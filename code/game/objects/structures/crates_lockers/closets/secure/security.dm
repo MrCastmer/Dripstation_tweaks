@@ -174,6 +174,7 @@
 	max_integrity = 70
 	door_anim_time = 0 // no animation
 
+/*
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
 	new /obj/item/storage/box/evidence(src)
@@ -188,6 +189,7 @@
 	new /obj/item/binoculars(src)
 	new /obj/item/storage/backpack/duffelbag/clothing/sec/detective(src)
 	new /obj/item/barrier_taperoll/police(src)
+*/
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"

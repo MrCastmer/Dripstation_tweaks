@@ -22,7 +22,6 @@
 #include "code\game\effects\effects_foam.dm"
 #include "code\game\effects\temporary_visuals\misc.dm"
 #include "code\game\gamemodes\nuclear\nuclear.dm"
-#include "code\game\gamemods\nuclear\nuclear.dm"
 #include "code\game\machinery\airlock_control.dm"
 #include "code\game\machinery\aug_manipulator.dm"
 #include "code\game\machinery\bounty_board.dm"
