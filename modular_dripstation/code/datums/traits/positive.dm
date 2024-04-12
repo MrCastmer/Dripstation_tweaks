@@ -98,7 +98,7 @@
 
 /datum/quirk/surgeon
 	name = "Professional Surgeon"
-	desc = "You have spend a lot more time than others to get used to the modern surgery. Your skill allows you to avoid critical failurs, but you still causes some mess when performing operations on alive and contious patients."
+	desc = "You have spend a lot more time than others to get used to the modern surgery. Your skill allows you to avoid critical failurs, but you still causes some mess when performing operations on alive and conscious patients."
 	icon = "notes-medical"
 	value = 5
 	mob_trait = TRAIT_MEDIC
