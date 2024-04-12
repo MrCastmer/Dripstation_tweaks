@@ -16,6 +16,7 @@
 /datum/quirk/drunkhealing
 	value = 3
 
+/*
 /datum/quirk/drunkhealing/on_process()
 	var/mob/living/carbon/C = quirk_holder
 	//Prevent Prosthetic healing from liquor
@@ -29,7 +30,7 @@
 		if (61 to INFINITY)
 			C.adjustBruteLoss(-0.8, FALSE, FALSE, required_status = BODYPART_ORGANIC)
 			C.adjustFireLoss(-0.4, FALSE, FALSE, required_status = BODYPART_ORGANIC)
-
+*/
 
 /datum/quirk/psychopathic
 	name = "Psychopathic"
