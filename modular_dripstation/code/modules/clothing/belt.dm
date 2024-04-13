@@ -8,6 +8,15 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	item_state = "medicalbelt"
 
+/obj/item/storage/belt/medical/full/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/scalpel, src)
+	SSwardrobe.provide_type(/obj/item/retractor, src)
+	SSwardrobe.provide_type(/obj/item/cautery, src)
+	SSwardrobe.provide_type(/obj/item/stack/medical/gauze/twelve, src)
+	SSwardrobe.provide_type(/obj/item/stack/medical/suture, src)
+	SSwardrobe.provide_type(/obj/item/stack/medical/mesh, src)
+	SSwardrobe.provide_type(/obj/item/reagent_containers/autoinjector/medipen/ekit, src)
+
 /obj/item/storage/belt/medical/chief
 	icon = 'icons/obj/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
