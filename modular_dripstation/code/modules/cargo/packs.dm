@@ -153,8 +153,8 @@
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/head/helmet/laserproof,
-					/obj/item/clothing/head/helmet/laserproof)
+					/obj/item/clothing/head/helmet/laserproof/raised,
+					/obj/item/clothing/head/helmet/laserproof/raised)
 
 /datum/supply_pack/clearance/heavymining
 	name = "Old Mining Hardsuit Crate"
