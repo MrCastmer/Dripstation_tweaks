@@ -465,6 +465,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/backpack/cargo/tactical(src)
 	new /obj/item/circuitboard/machine/techfab/department/cargo(src)
 	new /obj/item/storage/photo_album/QM(src)
+	new /obj/item/stamp(src)
+	new /obj/item/stamp/denied(src)
 	new /obj/item/circuitboard/machine/ore_silo(src)
 	new /obj/item/card/id/departmental_budget/car(src)
 	new /obj/item/clothing/mask/gas(src)
