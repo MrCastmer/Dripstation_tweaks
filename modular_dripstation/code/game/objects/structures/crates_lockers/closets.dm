@@ -157,11 +157,10 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/clipboard/yog/paperwork/security(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/radio/security(src)
-	new /obj/item/clipboard/yog/paperwork/security(src)
-	new /obj/item/barrier_taperoll/police(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
