@@ -215,7 +215,7 @@
 	new /obj/item/clothing/under/rank/chief_medical_officer/skirt/alt(src)
 	new /obj/item/clothing/under/rank/chief_medical_officer/turtleneck(src)
 	new /obj/item/clothing/under/rank/chief_medical_officer/turtleneck/alt(src)
-	new /obj/item/clothing/under/rank/medical/scrcmo(src)
+	new /obj/item/clothing/under/rank/chief_medical_officer/scrcmo(src)
 	new /obj/item/clothing/under/rank/medical/black(src)
 
 

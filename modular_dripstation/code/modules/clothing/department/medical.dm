@@ -28,6 +28,12 @@
 	can_adjust = TRUE
 	mutantrace_variation = NO_MUTANTRACE_VARIATION	
 
+/obj/item/clothing/under/rank/chief_medical_officer/scrcmo
+	name = "chief medical scrubs"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in CMO colors."
+	icon_state = "scrubscmo"
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
 /obj/item/clothing/head/beret/cmo
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
@@ -92,8 +98,9 @@
 	product_ads = "Make those blood stains look fashionable!!"
 	vend_reply = "Thank you for using the ParaDrobe!"
 	default_price = 50
-	icon_vend = "medidrobe-vend"
-	icon_deny = "medidrobe-deny"
+	icon_state = "paradrobe"
+	icon_vend = "paradrobe-vend"
+	icon_deny = "paradrobe-deny"
 	req_access = list(ACCESS_PARAMEDIC)
 	products = list(/obj/item/clothing/under/rank/medical/paramedic = 2,
 					/obj/item/clothing/under/rank/medical/paramedic/skirt = 2,
@@ -197,12 +204,6 @@
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in black."
 	icon_state = "scrubsblack"
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
-
-/obj/item/clothing/under/rank/medical/scrcmo
-	name = "medical scrubs"
-	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in CMO colors."
-	icon_state = "scrubscmo"
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 /obj/item/clothing/under/rank/medical/skirt
