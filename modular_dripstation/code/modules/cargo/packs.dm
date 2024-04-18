@@ -125,7 +125,7 @@
 	name = "Eye Protection Crate"
 	desc = "Contains one pair of pricy real eye protection."
 	contraband = TRUE
-	cost = 1000
+	cost = 700
 	num_contained = 1
 	small_item = TRUE
 	contains = list(/obj/item/clothing/glasses/sunglasses,
@@ -136,7 +136,7 @@
 /datum/supply_pack/security/armory/sunglasses
 	name = "Sunglasses Crate"
 	desc = "Contains three pairs of pricy real sunglasses."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/clothing/glasses/sunglasses,
 					/obj/item/clothing/glasses/sunglasses,
 					/obj/item/clothing/glasses/sunglasses)

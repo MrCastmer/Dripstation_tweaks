@@ -1,7 +1,7 @@
 // ###### RD ######
 /obj/item/clothing/suit/toggle/labcoat/science/rd
 	name = "research directors labcoat"
-	desc = "A Nanotrasen special fancy labcoat for Research Directors."
+	desc = "A Nanotrasen special fancy labcoat for Research and Development finest. El Psy Kongroo!"
 	icon_state = "labcoat_rd"	
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
@@ -9,11 +9,24 @@
 
 /obj/item/clothing/suit/toggle/labcoat/science/brown
 	name = "research directors brown labcoat"
-	desc = "A Nanotrasen standart brown labcoat for Research Directors."
+	desc = "A Nanotrasen standart brown labcoat for Research Directors. You should be reasonable while wearing this."
 	icon_state = "labcoat_rd_brown"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/suit/toggle/labcoat/science/purple
+	name = "research directors purple labcoat"
+	desc = "A Nanotrasen purple labcoat for Research Directors. Why it`s in your garment?"
+	icon_state = "labcoat_purpleaf"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
+/obj/item/clothing/suit/toggle/labcoat/long
+	name = "long labcoat"
+	desc = "Standart long labcoat for mad or sad scientists. El Psy Kongroo!"
+	icon_state = "labcoat_long"
 
 /obj/item/clothing/head/beret/rd
 	desc = "A brown beret with a science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."	

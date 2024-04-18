@@ -102,6 +102,14 @@
 	desc = "It's an official version of high visibility skirt given to the finest engineers. It has minor radiation shielding."
 	icon_state = "chiefengineer_formal"
 
+/obj/item/clothing/head/beret/ce
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+
+/obj/item/clothing/head/beret/ce/alt
+	icon_state = "ceberet"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 ////////Wardrobs/////////
 /obj/machinery/vending/wardrobe/engi_wardrobe

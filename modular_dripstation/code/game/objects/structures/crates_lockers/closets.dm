@@ -231,6 +231,8 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/storage/belt/sabre(src)
+	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
+	new /obj/item/clothing/suit/armor/vest/capcarapace/alt(src)
 	new /obj/item/clothing/glasses/hud/personnel(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/storage/photo_album/Captain(src)

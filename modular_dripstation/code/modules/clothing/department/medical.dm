@@ -179,6 +179,7 @@
 					/obj/item/clothing/gloves/color/latex = 2,
 					/obj/item/storage/backpack/chemistry = 2,
 					/obj/item/storage/backpack/satchel/chem = 2,
+					/obj/item/storage/backpack/duffelbag/chemistry = 2,
 					/obj/item/storage/bag/chemistry = 4)
 
 // ###### MD ######
