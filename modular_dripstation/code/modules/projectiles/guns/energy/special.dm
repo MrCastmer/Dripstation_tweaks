@@ -11,6 +11,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/ion/weak)
 	cell_type = /obj/item/stock_parts/cell/mini_egun
 	ammo_x_offset = 2
+	charge_amount = 2
 
 /obj/item/gun/energy/ionrifle/cybersun
 	name = "compact ion rifle"

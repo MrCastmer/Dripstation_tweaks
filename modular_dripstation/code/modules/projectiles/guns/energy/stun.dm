@@ -2,7 +2,6 @@
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
 /obj/item/gun/energy/taser
-	modifystate = TRUE
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
 /obj/item/gun/energy/tesla_revolver
@@ -10,7 +9,6 @@
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
 /obj/item/gun/energy/disabler
-	modifystate = TRUE
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
 /obj/item/gun/energy/disabler/secure

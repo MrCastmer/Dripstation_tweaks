@@ -217,6 +217,7 @@
 /obj/item/shield/energy/Initialize(mapload)
 	. = ..()
 	icon_state = "[base_icon_state]0"
+
 /*
 /obj/item/shield/energy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0
@@ -224,6 +225,7 @@
 /obj/item/shield/energy/IsReflect()
 	return (active)
 */
+
 /obj/item/shield/energy/attack_self(mob/living/carbon/human/user)
 	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		to_chat(user, span_warning("You beat yourself in the head with [src]."))
