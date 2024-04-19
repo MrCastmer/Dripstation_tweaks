@@ -641,6 +641,7 @@
 		/obj/machinery/vending/autodrobe = "AutoDrobe",
 		/obj/machinery/vending/wardrobe/sec_wardrobe = "SecDrobe",
 		/obj/machinery/vending/wardrobe/medi_wardrobe = "MediDrobe",
+		/obj/machinery/vending/wardrobe/para_wardrobe = "ParaDrobe",
 		/obj/machinery/vending/wardrobe/engi_wardrobe = "EngiDrobe",
 		/obj/machinery/vending/wardrobe/atmos_wardrobe = "AtmosDrobe",
 		/obj/machinery/vending/wardrobe/cargo_wardrobe = "CargoDrobe",
@@ -672,6 +673,7 @@
 		/obj/machinery/vending/engineering = "Robco Tool Maker",
 		/obj/machinery/vending/sovietsoda = "BODA",
 		/obj/machinery/vending/security = "SecTech",
+		/obj/machinery/vending/wardrobe/det_wardrobe = "DetDrobe",	/*Dripstation edit*/
 		/obj/machinery/vending/fishing = "Tackle Box 2000")//Yogs
 		//obj/machinery/vending/modularpc = "Deluxe Silicate Selections") // Yogs comment-out, because ktlwjec is bad at merging mirrors
 
@@ -737,7 +739,7 @@
 	needs_anchored = FALSE
 // yogs start - abductor chem dispenser
 /obj/item/circuitboard/machine/chem_dispenser/abductor
-	name = "Reagent Synthetizer (Abductor Machine Board)"
+	name = "Reagent Synthetizer (Machine Board)"
 	icon_state = "abductor_mod"
 	build_path = /obj/machinery/chem_dispenser/abductor
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
@@ -860,7 +862,7 @@
 		/obj/item/stack/sheet/glass = 1)
 
 /obj/item/circuitboard/machine/protolathe/department/medical
-	name = "Departmental Protolathe (Machine Board) - Medical"
+	name = "Departmental Protolathe - Medical (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_MEDICAL
 	build_path = /obj/machinery/rnd/production/protolathe/department/medical
 
@@ -911,7 +913,7 @@
 
 /obj/item/circuitboard/machine/mindmachine_hub
 	name = "Mind Machine Hub (Machine Board)"
-	icon_state = "medical"
+	greyscale_colors = CIRCUIT_COLOR_MEDICAL
 	build_path = /obj/machinery/mindmachine_hub
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 2,
@@ -921,7 +923,7 @@
 
 /obj/item/circuitboard/machine/mindmachine_pod
 	name = "Mind Machine Pod (Machine Board)"
-	icon_state = "medical"
+	greyscale_colors = CIRCUIT_COLOR_MEDICAL
 	build_path = /obj/machinery/mindmachine_pod
 	req_components = list(
 		/obj/item/stock_parts/scanning_module = 2,
@@ -1027,7 +1029,7 @@
 	build_path = /obj/machinery/processor/slime
 
 /obj/item/circuitboard/machine/protolathe/department/science
-	name = "Departmental Protolathe (Machine Board) - Science"
+	name = "Departmental Protolathe - Science (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_SCIENCE
 	build_path = /obj/machinery/rnd/production/protolathe/department/science
 
@@ -1086,6 +1088,27 @@
 		/obj/item/stack/sheet/glass = 2,
 		/obj/item/stack/cable_coil = 1)
 
+/obj/item/circuitboard/machine/networking_machine
+	name = "Networking Machine (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_SCIENCE
+	build_path = /obj/machinery/ai/networking
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 4,
+		/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/scanning_module = 4,
+		/obj/item/stack/sheet/glass = 4,
+		/obj/item/stack/cable_coil = 1)
+
+/obj/item/circuitboard/machine/subcontroller
+	name = "Subcontroller (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_SCIENCE
+	build_path = /obj/machinery/ai/master_subcontroller
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 4,
+		/obj/item/stock_parts/scanning_module = 4,
+		/obj/item/stack/sheet/glass = 2,
+		/obj/item/stack/cable_coil = 1)
+		
 /obj/item/circuitboard/machine/ai_core_display
 	name = "AI Core Display (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_SCIENCE
@@ -1111,12 +1134,28 @@
 		/obj/item/reagent_containers/glass/beaker = 2)
 
 /obj/item/circuitboard/machine/plort
-	name = "Machine Design (Plort Redemption Machine)"
+	name = "Plort Redemption Machine (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_SCIENCE
 	build_path = /obj/machinery/plortrefinery
 	req_components = list(
 		/obj/item/stock_parts/manipulator = 3,
 		/obj/item/stack/cable_coil = 2)
+
+/obj/item/circuitboard/machine/synth_pod
+	name = "Synthetic Storage Unit (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_SCIENCE
+	build_path = /obj/machinery/synth_pod
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/manipulator = 2)
+
+/obj/item/circuitboard/machine/mass_driver
+	name = "Mass Driver (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_SCIENCE
+	build_path = /obj/machinery/mass_driver
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 1)
 
 //Security
 
@@ -1340,7 +1379,7 @@
 	req_components = list()
 
 /obj/item/circuitboard/machine/protolathe/department/cargo
-	name = "Departmental Protolathe (Machine Board) - Cargo"
+	name = "Departmental Protolathe - Cargo (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_SUPPLY
 	build_path = /obj/machinery/rnd/production/protolathe/department/cargo
 
@@ -1361,7 +1400,7 @@
 		/obj/item/stack/cable_coil = 5)
 
 /obj/item/circuitboard/machine/techfab/department/cargo
-	name = "\improper Departmental Techfab (Machine Board) - Cargo"
+	name = "\improper Departmental Techfab - Cargo (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_SUPPLY
 	build_path = /obj/machinery/rnd/production/techfab/department/cargo
 
@@ -1448,9 +1487,3 @@
 	req_components = list(
 		/obj/item/stock_parts/capacitor = 3,
 		/obj/item/stock_parts/micro_laser = 1)
-
-/obj/item/circuitboard/machine/mass_driver
-	name = "Mass Driver"
-	build_path = /obj/machinery/mass_driver
-	req_components = list(
-		/obj/item/stock_parts/capacitor = 1)

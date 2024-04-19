@@ -36,6 +36,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	/// does it use skintones or not? (spoiler alert this is only used by humans)
 	var/use_skintones = FALSE
 
+	var/forced_skintone
+
 	/// If your race wants to bleed something other than bog standard blood, change this to reagent id.
 	var/datum/reagent/exotic_blood
 	///If your race uses a non standard bloodtype (A+, O-, AB-, etc)
@@ -211,6 +213,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	//Should we preload this species's organs?
 	var/preload = TRUE
 
+	var/inherent_slowdown = 0
+
+	//for preternis + synths
+	var/draining = FALSE
 	///Does our species have colors for its' damage overlays?
 	var/use_damage_color = TRUE
 
@@ -787,6 +793,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			if(underwear)
 				if(HAS_TRAIT(H, TRAIT_SKINNY))
 					standing += wear_skinny_version(underwear.icon_state, underwear.icon, BODY_LAYER) //Neat, this works
+				else if(H.dna.species.sexes && H.gender == FEMALE) //dripstation edit
+					standing += wear_female_version(underwear.icon_state, underwear.icon, BODY_LAYER, FEMALE_UNIFORM_FULL) //dripstation edit
 				else
 					standing += mutable_appearance(underwear.icon, underwear.icon_state, -BODY_LAYER)
 
@@ -796,7 +804,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				if(HAS_TRAIT(H, TRAIT_SKINNY)) //Check for skinny first
 					standing += wear_skinny_version(undershirt.icon_state, undershirt.icon, BODY_LAYER)
 				else if(H.dna.species.sexes && H.gender == FEMALE)
-					standing += wear_female_version(undershirt.icon_state, undershirt.icon, BODY_LAYER)
+					standing += wear_female_version(undershirt.icon_state, undershirt.icon, BODY_LAYER, FEMALE_UNIFORM_FULL) //dripstation edit
 				else
 					standing += mutable_appearance(undershirt.icon, undershirt.icon_state, -BODY_LAYER)
 
@@ -925,7 +933,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			bodyparts_to_add -= "preternis_eye"
 
 	if("preternis_core" in mutant_bodyparts)
-		if(H.w_uniform || H.wear_suit)
+		if(!get_location_accessible(H, BODY_ZONE_CHEST))
 			bodyparts_to_add -= "preternis_core"
 
 	if("pod_hair" in mutant_bodyparts)
@@ -1587,6 +1595,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 					. += hungry / 50
 
 		//Moving in high gravity is very slow (Flying too)
+		. += inherent_slowdown
+
 		if(gravity > STANDARD_GRAVITY)
 			var/grav_force = min(gravity - STANDARD_GRAVITY,3)
 			. += 1 + grav_force
@@ -1647,6 +1657,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	if(!attacker_style?.nonlethal && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return FALSE
+	if(!synth_check(user, SYNTH_ORGANIC_HARM))
+		to_chat(user, span_warning("You don't want to harm [target]!"))
+		return
 	var/datum/martial_art/M = target.check_block()
 	if(M)
 		M.handle_counter(target, user)

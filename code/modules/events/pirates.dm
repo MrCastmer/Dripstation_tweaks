@@ -224,11 +224,13 @@
 	shuttle_id = "pirateship"
 	rechargeTime = 3 MINUTES
 
+/*
 /obj/machinery/suit_storage_unit/pirate
 	suit_type = /obj/item/clothing/suit/space
 	helmet_type = /obj/item/clothing/head/helmet/space
 	mask_type = /obj/item/clothing/mask/breath
 	storage_type = /obj/item/tank/internals/oxygen
+*/
 
 /obj/machinery/loot_locator
 	name = "Booty Locator"
@@ -274,10 +276,9 @@
 	var/cargo_hold_id
 
 /obj/machinery/piratepad/multitool_act(mob/living/user, obj/item/multitool/I)
-	if (istype(I))
-		to_chat(user, span_notice("You register [src] in [I]s buffer."))
-		I.buffer = src
-		return TRUE
+	to_chat(user, span_notice("You register [src] in [I]s buffer."))
+	multitool_set_buffer(user, I, src)
+	return TRUE
 
 /obj/machinery/computer/piratepad_control
 	name = "cargo hold control terminal"
@@ -295,9 +296,10 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
-	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, span_notice("You link [src] with [I.buffer] in [I] buffer."))
-		pad = I.buffer
+	var/atom/buffer_atom = multitool_get_buffer(user, I)
+	if(istype(buffer_atom, /obj/machinery/piratepad))
+		to_chat(user, span_notice("You link [src] with [buffer_atom] in [I]'s buffer."))
+		pad = buffer_atom
 		return TRUE
 
 /obj/machinery/computer/piratepad_control/LateInitialize()

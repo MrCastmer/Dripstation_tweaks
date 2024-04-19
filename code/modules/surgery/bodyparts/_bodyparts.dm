@@ -849,10 +849,14 @@
 		species_flags_list = S.species_traits
 
 		if(S.use_skintones)
-			skin_tone = H.skin_tone
+			if(S.forced_skintone)
+				skin_tone = S.forced_skintone
+			else
+				skin_tone = H.skin_tone
 			should_draw_greyscale = TRUE
 		else
 			skin_tone = ""
+
 
 		body_gender = H.gender
 		should_draw_gender = S.sexes
@@ -933,10 +937,12 @@
 
 	if((body_zone != BODY_ZONE_HEAD && body_zone != BODY_ZONE_CHEST))
 		should_draw_gender = FALSE
+		if("[species_id]" == "human")	//dripstation edit
+			should_draw_gender = TRUE
 
 	if(status == BODYPART_ORGANIC || (status == BODYPART_ROBOTIC && render_like_organic == TRUE)) // So IPC augments can be colorful without disrupting normal BODYPART_ROBOTIC render code.
 		if(should_draw_greyscale)
-			limb.icon = 'icons/mob/human_parts_greyscale.dmi'
+			limb.icon = 'modular_dripstation/icons/mob/human_parts_greyscale.dmi'	//dripstation edit
 			if(should_draw_gender)
 				limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 			else if(use_digitigrade)
@@ -954,14 +960,10 @@
 				limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 			else
 				limb.icon_state = "[species_id]_[body_zone]"
-		if(should_draw_yogs) //yogs start
-			limb.icon = 'yogstation/icons/mob/mutant_bodyparts.dmi'
-			if(should_draw_gender)
-				limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
-			else
-				limb.icon_state = "[species_id]_[body_zone]" //yogs end
 		if(aux_zone)
 			aux = image(limb.icon, "[species_id]_[aux_zone]", -aux_layer, image_dir)
+			if("[species_id]" == "human")	//dripstation edit
+				aux = image(limb.icon, "[species_id]_[aux_zone]_[icon_gender]", -aux_layer, image_dir)	//dripstation edit
 			. += aux
 
 	else
