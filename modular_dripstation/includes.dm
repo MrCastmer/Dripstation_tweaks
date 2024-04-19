@@ -324,6 +324,7 @@
 #include "code\modules\projectiles\boxes_magazines\external\shotgun.dm"
 #include "code\modules\projectiles\boxes_magazines\external\rifle.dm"
 #include "code\modules\projectiles\boxes_magazines\external\pistol.dm"
+#include "code\modules\projectiles\guns\_energy.dm"
 #include "code\modules\projectiles\guns\ballistic\automatic.dm"
 #include "code\modules\projectiles\guns\ballistic\flamethrower.dm"
 #include "code\modules\projectiles\guns\ballistic\rifle.dm"
