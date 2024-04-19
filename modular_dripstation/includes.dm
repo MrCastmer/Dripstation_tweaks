@@ -108,6 +108,7 @@
 #include "code\game\objects\items\pinpointer.dm"
 #include "code\game\objects\items\projectiles\guns\ballistic\rifle.dm"
 #include "code\game\objects\items\robot\robot_items.dm"
+#include "code\game\objects\items\shield.dm"
 #include "code\game\objects\items\stacks\cash.dm"
 #include "code\game\objects\items\stacks\medical.dm"
 #include "code\game\objects\items\stacks\wrap.dm"
