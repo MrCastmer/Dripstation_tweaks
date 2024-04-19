@@ -1,8 +1,8 @@
 /obj/item/shield/riot
-	icon = 'modular_dripstation/icons/obj/shields.dmi'
+	icon = 'modular_dripstation/icons/obj/weapons/shield.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/shields_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/shields_righthand.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_righthand.dmi'
 
 /obj/item/shield/riot/roman
 	icon = 'icons/obj/shields.dmi'
@@ -26,9 +26,9 @@
 
 /obj/item/shield/energy
 	base_icon_state = "syndieeshield"
-	icon = 'modular_dripstation/icons/obj/shields.dmi'
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/shields_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/shields_righthand.dmi'
+	icon = 'modular_dripstation/icons/obj/weapons/shield.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_righthand.dmi'
 	block_chance = 40
 
 /obj/item/shield/energy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
@@ -50,13 +50,13 @@
 
 /obj/item/shield/energy/advanced
 	base_icon_state = "eshield"
-	icon = 'modular_dripstation/icons/obj/shields.dmi'
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/shields_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/shields_righthand.dmi'
+	icon = 'modular_dripstation/icons/obj/weapons/shield.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_righthand.dmi'
 	block_chance = 65
 
 /obj/item/shield/energy/bananium
 	base_icon_state = "bananaeshield"
-	icon = 'modular_dripstation/icons/obj/shields.dmi'
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/shields_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/shields_righthand.dmi'
+	icon = 'modular_dripstation/icons/obj/weapons/shield.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/equipment/shield_righthand.dmi'
