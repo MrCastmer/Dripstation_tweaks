@@ -16,8 +16,17 @@
 /obj/item/gun/ballistic/automatic/tommygun
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 
+/obj/item/gun/ballistic/automatic/m90
+	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	mag_display_ammo = TRUE
+
 /obj/item/gun/ballistic/automatic/ar
+	mag_display = TRUE
+	can_suppress = TRUE
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	fire_sound = 'sound/weapons/rifleshot.ogg'
+	fire_sound_volume = 80
+	vary_fire_sound = 0
 
 /obj/item/gun/ballistic/automatic/wt550/armory
 	icon_state = "wt550_secure"
