@@ -297,6 +297,7 @@
 					/obj/item/gun/energy/disabler)
 	crate_name = "disabler crate"
 
+/*
 /datum/supply_pack/security/energypistol
 	name = "Energy Pistol Single-Pack"
 	desc = "Contains one energy pistol for personal defense, capable of firing both lethal and nonlethal blasts of light. Requires Security access to open."
@@ -304,6 +305,7 @@
 	access_view = ACCESS_SECURITY
 	small_item = TRUE
 	contains = list(/obj/item/gun/energy/e_gun/mini)
+*/
 
 /datum/supply_pack/security/forensics
 	name = "Forensics Crate"
