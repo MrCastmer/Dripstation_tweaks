@@ -14,14 +14,15 @@
 	shaded_charge = 1
 
 /obj/item/gun/energy/laser/captain
-	desc = "The NT-S01 laser gun is NT`s first attempt to provide an inbuilt recharger, and is the first in its line as an 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Due to how expensive it is to produce, and that the material used to do so deteriorates quickly, it was decommissioned, and the few models left are used as prizes meant to never see the light of day."
+	name = "antique energy gun"
+	desc = "The NT-S01 energy gun is NT`s first attempt to provide an inbuilt recharger, and is the first in its line as an 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Due to how expensive it is to produce, and that the material used to do so deteriorates quickly, it was decommissioned, and the few models left are used as prizes meant to never see the light of day."
 
 /obj/item/gun/energy/laser/centcom
 	name = "\improper NT-S05 Laser Service Pistol"
 	icon_state = "centcomlaser"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_NORMAL
-	desc = "The NT-S05 laser gun is NT`s real recreation of NT-S01 aiming to provide an inbuilt recharger. It also has'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Now in service with NanoTrasen`s Special Operations Department agents."
+	desc = "The NT-S05 laser gun is NT`s real recreation of NT-S01 aiming to provide an inbuilt recharger with real laser functions. It also has 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Now in service with NanoTrasen`s Special Operations Department agents."
 	force = 10
 	selfcharge = 1
 	charge_amount = 2

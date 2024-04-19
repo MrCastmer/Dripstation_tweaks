@@ -107,9 +107,11 @@
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
+/*
 /obj/item/storage/belt/errata/attack_hand(mob/user)
 	AltClick(user)
 	return
+*/
 
 /obj/item/storage/belt/errata/attack_self(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
