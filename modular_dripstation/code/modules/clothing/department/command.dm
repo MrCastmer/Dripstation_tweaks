@@ -237,8 +237,8 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/caphat/parade
-	icon = 'modular_dripstation/icons/obj/clothing/hats/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/head/head.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/caphat/parade/white
 	icon_state = "cap_parade"

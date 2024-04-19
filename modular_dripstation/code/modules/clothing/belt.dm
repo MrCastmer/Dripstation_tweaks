@@ -41,6 +41,10 @@
 
 /obj/item/storage/belt/security/chief/Initialize(mapload)
 	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+	STR.max_combined_w_class = 18
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
 		/obj/item/melee/baton,
 		/obj/item/melee/classic_baton,

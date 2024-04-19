@@ -102,6 +102,18 @@
 	desc = "It's an official version of high visibility skirt given to the finest engineers. It has minor radiation shielding."
 	icon_state = "chiefengineer_formal"
 
+/obj/item/clothing/under/rank/chief_engineer/turtle
+	name = "chief engineer's turtleneck"
+	desc = "Sleek industrial version of high visibility uniform given to the finest engineers. Provides tacticoolness."
+	icon_state = "turtleneck_chiefengineer"
+
+/obj/item/clothing/under/rank/chief_engineer/casual
+	name = "casual chief engineer uniform"
+	desc = "Even the CE has to take a break from setting up the engine somet- and the singlo is loose."
+	icon_state = "ce_suit"
+	can_adjust = FALSE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION
+
 /obj/item/clothing/head/beret/ce
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
