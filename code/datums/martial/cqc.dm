@@ -168,6 +168,7 @@
 		log_combat(A, D, "restrained (CQC)")
 		D.visible_message(span_warning("[A] locks [D] into a restraining position!"), \
 							span_userdanger("[A] locks you into a restraining position!"))
+		A.do_attack_animation(D, ATTACK_EFFECT_GRAB) //dripstation edit
 		D.Stun(20)
 		if(!(A.pulling == D))
 			D.grabbedby(A, 1)

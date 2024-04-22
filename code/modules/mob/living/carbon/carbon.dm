@@ -207,6 +207,8 @@
 	if(thrown_thing)
 		if(HAS_TRAIT(src, TRAIT_HULK))
 			power_throw++
+		do_attack_animation(target, no_effect = 1) //Dripstation edit
+		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)  //Dripstation edit
 		visible_message(span_danger("[src] throws [thrown_thing][power_throw ? " really hard!" : "."]"), \
 						span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"))
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
