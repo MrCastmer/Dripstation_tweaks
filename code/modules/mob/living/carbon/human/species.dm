@@ -1783,7 +1783,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				span_danger("You shove [target.name] onto \the table!"), null, COMBAT_MESSAGE_RANGE)
 					target.throw_at(target_shove_turf, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
 					user.do_attack_animation(target, ATTACK_EFFECT_DISARM2) //dripstation edit
-					playsound(target, 'modular_dripstation/sound/weapons/knockdown.ogg', 50, TRUE, -1) //dripstation edit
+					playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1) //dripstation edit
 					log_combat(user, target, "shoved", "onto (table)")
 				else
 					shove_blocked = TRUE
@@ -1796,7 +1796,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			target.visible_message(span_danger("[user.name] kicks [target.name] onto their side!"),
 				span_danger("[user.name] kicks you onto your side!"), null, COMBAT_MESSAGE_RANGE)
 			user.do_attack_animation(target, ATTACK_EFFECT_KICK) //dripstation edit
-			playsound(target, 'modular_dripstation/sound/weapons/knockdown.ogg', 50, TRUE, -1) //dripstation edit			
+			playsound(target, 'modular_dripstation/sound/weapons/knockdown.ogg', 25, TRUE, -1) //dripstation edit	
 			var/reset_timer = SHOVE_CHAIN_PARALYZE * (100-armor_block)/100
 			addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), reset_timer)
 			log_combat(user, target, "kicks", "onto their side (paralyzing)")
@@ -1830,7 +1830,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				target.visible_message(span_danger("[user.name] shoves [target.name], knocking [target.p_them()] down!"),
 					span_danger("You're knocked down from a shove by [name]!"), null, COMBAT_MESSAGE_RANGE)
 				user.do_attack_animation(target, ATTACK_EFFECT_DISARM2) //dripstation edit
-				playsound(target, 'modular_dripstation/sound/weapons/knockdown.ogg', 50, TRUE, -1) //dripstation edit
+				playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1) //dripstation edit
 				log_combat(user, target, "shoved", "knocking them down")						//dripstation edit end
 			else if(bothstanding)
 				target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
@@ -1839,7 +1839,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				user.visible_message(span_danger("[user.name] shoves [target.name] into [target_collateral_human.name]!"),
 					span_danger("You shove [target.name] into [target_collateral_human.name]!"), null, COMBAT_MESSAGE_RANGE)
 				user.do_attack_animation(target, ATTACK_EFFECT_DISARM2) //dripstation edit
-				playsound(target, 'modular_dripstation/sound/weapons/knockdown.ogg', 50, TRUE, -1) //dripstation edit
+				playsound(target, 'modular_dripstation/sound/weapons/knockdown.ogg', 25, TRUE, -1) //dripstation edit
 				log_combat(user, target, "shoved", "into [target_collateral_human.name]")
 		/*	dripstation edit start
 		else

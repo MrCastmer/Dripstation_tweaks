@@ -266,7 +266,7 @@
 			var/mob/living/carbon/human/H = src
 			if(H.dna.species.grab_sound)
 				sound_to_play = H.dna.species.grab_sound
-			if(HAS_TRAIT(H, TRAIT_STRONG_GRABBER))
+			if(HAS_TRAIT(H, TRAIT_STRONG_GRABBER) || HAS_TRAIT(H, TRAIT_STRONG_GRIP))		//dripstation edit
 				sound_to_play = null
 		playsound(src.loc, sound_to_play, 50, 1, -1)
 	update_pull_hud_icon()
@@ -276,7 +276,7 @@
 
 		SEND_SIGNAL(M, COMSIG_LIVING_GET_PULLED, src)	//dripstation edit
 		log_combat(src, M, "grabbed", addition="passive grab")
-		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
+		if(!supress_message && !(iscarbon(AM) && (HAS_TRAIT(src, TRAIT_STRONG_GRABBER) || HAS_TRAIT(src, TRAIT_STRONG_GRIP))))	//dripstation edit
 			visible_message(span_warning("[src] has grabbed [M] passively!"))
 		if(!iscarbon(src))
 			M.LAssailant = null
@@ -806,6 +806,7 @@
 		if(resting && pulledby.grab_state < GRAB_KILL) //If resting, resisting out of a grab is equivalent to 1 grab state higher. wont make the grab state exceed the normal max, however
 			altered_grab_state++
 		var/resist_chance = BASE_GRAB_RESIST_CHANCE // see defines/combat.dm
+		resist_chance -= HAS_TRAIT(pulledby, TRAIT_STRONG_GRIP) ? 10 : 0	//dripstation edit
 		resist_chance = max((resist_chance/altered_grab_state)-sqrt((getBruteLoss()+getFireLoss()+getOxyLoss()+getToxLoss()+getCloneLoss())*0.5+getStaminaLoss()), 0) //stamina loss is weighted twice as heavily as the other damage types in this calculation
 		if(prob(resist_chance))
 			visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"))

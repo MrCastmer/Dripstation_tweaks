@@ -3,6 +3,8 @@
 	desc = "You try to remember some basics of unarmed combat... It`s hard enough."
 	icon = "chevron-up"
 	value = 6
+	gain_text = span_danger("Yeah, I`d use some skills.")
+	lose_text = span_notice("Okey, time to touch some grass.")
 	medical_record_text = "During physical examination, patient was found to have muscles strengthened by years of training."
 
 /datum/quirk/combattraining/on_spawn()
