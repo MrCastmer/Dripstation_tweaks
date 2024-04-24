@@ -69,13 +69,13 @@
 
 /datum/martial_art/trained/proc/handle_chokehold(mob/living/carbon/human/A, mob/living/carbon/human/D) //handles the chokehold attack, dealing oxygen damage until the target is unconscious or would have less than 20 health before knocking out
 	chokehold_active = TRUE
-	var/damage2deal = 15
-	while(do_after(A, isipc(D) ? 5 SECONDS : 1 SECONDS, D)) // doesn't make sense to deal oxygen damage to IPCs so instead do a longer channel that automatically succeeds
+	var/damage2deal = 10
+	while(do_after(A, isipc(D) ? 7 SECONDS : 1 SECONDS, D)) // doesn't make sense to deal oxygen damage to IPCs so instead do a longer channel that automatically succeeds
 		if(!A.grab_state)
 			return FALSE
 		if(isipc(D)) // have you tried turning it off and on again
 			return TRUE
-		damage2deal = 15 * (1+D.getStaminaLoss()/100) //stamina damage boosts the effectiveness of an attack, making using other attacks to prepare important
+		damage2deal = 10 * (1+D.getStaminaLoss()/100) //stamina damage boosts the effectiveness of an attack, making using other attacks to prepare important
 		if(HAS_TRAIT(D, TRAIT_NOBREATH))
 			damage2deal *= 0.5 // if they don't breathe they can't be choked, but you can still cut off blood flow to the head
 		if(D.health - damage2deal < 20 || D.stat)
