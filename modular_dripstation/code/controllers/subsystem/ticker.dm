@@ -16,6 +16,9 @@
 		"https://www.youtube.com/watch?v=ljaTIhNm1MU", 						// Mareux - The Perfect Girl (Retrowave/Synthwave cover)
 		"https://www.youtube.com/watch?v=jwIWJIdpNFs", 						// Izar - Born of a Star
 		"https://www.youtube.com/watch?v=R5hCkh2AH58", 						// Helldivers 2 Main Theme - "A Cup Of Liber-Tea"
+		"https://www.youtube.com/watch?v=puUXtxxYFwM", 						// Chris Nordgren - Frogs are Friends
+		"https://www.youtube.com/watch?v=oFDjvsRPQts", 						// Invader 303 - The Long Voyage 
+		"https://www.youtube.com/watch?v=SzEp2nv6oZ4", 						// Bolgarich - Running out
 		"https://www.youtube.com/watch?v=HRsC2g79V3Y",						// Perturbator - Future Club
 		"https://www.youtube.com/watch?v=abETp8Q6H8U",						// Perturbator - Venger
 		"https://www.youtube.com/watch?v=ICjD3f-8SXE",						// iamthekidyouknowwhatimean - Run
