@@ -33,7 +33,7 @@
 		final_block_chance = block_chance / 2 //Pretty good...
 	if(prob(final_block_chance))
 		if(istype(hitby, /obj/projectile/bullet))
-			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting in dividing the bullet in half!"))
+			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
 		else
 			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
 		return 1
