@@ -1,10 +1,11 @@
 /obj/item/gun/energy/laser
+	name = "NT-E2 gun"
+	desc = "The NT-E2 is a basic energy gun that has only one mode. Kill."
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
-	modifystate = TRUE
 
 /obj/item/gun/energy/laser/hitscan
 	name = "laser gun"
-	desc = "The NT-L5 is a basic energy-based laser gun that uses full potential of light and hits targets through glass and thin metal."
+	desc = "The NT-L5 is a basic energy-based laser gun that uses full potential of beam guns and hits targets through glass and thin metal at the speed of light."
 	icon_state = "laser_hitscan"
 	item_state = LASER
 	w_class = WEIGHT_CLASS_NORMAL
@@ -32,6 +33,7 @@
 
 /obj/item/gun/energy/laser/hellgun
 	icon_state = "immolator"
+	modifystate = TRUE
 
 /obj/item/gun/energy/laser/hellgun/scattershot
 	name = "scatter shot hellfire laser rifle"

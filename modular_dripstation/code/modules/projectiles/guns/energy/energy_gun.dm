@@ -37,7 +37,7 @@
 
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
-	desc = "A small, pistol-sized version of the energy gun with a built-in flashlight. The NT-E2 functions as a popular self defense weapon among the elite due to its small size and cheap price. It has three settings: disable, stun and kill."
+	desc = "A small, pistol-sized version of the energy gun with a built-in flashlight. The NT-E4 functions as a popular self defense weapon among the elite due to its small size and cheap price. It has three settings: disable, stun and kill."
 	icon_state = "mini"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
