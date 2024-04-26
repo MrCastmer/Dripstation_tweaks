@@ -151,27 +151,55 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "combat"
 	cryo_preserve = TRUE
+	var/fingerless_variation = /obj/item/clothing/gloves/fingerless/combat
+	var/can_be_cut = TRUE
+
+/obj/item/clothing/gloves/combat/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_WIRECUTTER)
+		if(can_be_cut && icon_state == initial(icon_state))//only if not dyed
+			to_chat(user, span_notice("You snip the fingertips off of [src]."))
+			I.play_tool_sound(src)
+			var/obj/item/clothing/gloves/fingerless/FG = fingerless_variation
+			new FG(drop_location())
+			qdel(src)
+	..()
+
+/obj/item/clothing/gloves/fingerless/combat
+	name = "combat fingerless gloves"
+	desc = "These tactical gloves provide strong grip on the items they hold. Probably you won't lose anything if you accidentally find yourself on the ground."
+	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+	icon_state = "combat_fingerless"
+	clothing_traits = list(TRAIT_STRONG_GRIP)
+	body_parts_covered = ARMS|HANDS
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 60, RAD = 0, FIRE = 80, ACID = 50, WOUND = 0, ELECTRIC = 0)
 
 /obj/item/clothing/gloves/combat/militech
 	icon_state = "militech_combat"
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/shelg
 	icon_state = "shelg_combat"
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/gorlex
 	icon_state = "gorlex_combat"
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/cybersun
 	icon_state = "cybersun_combat"
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/cybersun/bloody
 	icon_state = "cybersun_combat_bloody"
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/maid
 	name = "combat maid sleeves"
 	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
 	icon_state = "syndimaid_arms"
 	item_state = "syndimaid_arms"
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/odst	//robust
 	name = "\improper ODST gloves"
@@ -185,6 +213,7 @@
 	body_parts_covered = ARMS|HANDS
 	clothing_traits = list(TRAIT_QUICKER_CARRY, TRAIT_STRONG_GRIP)
 	armor = list(MELEE = 20, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 15, BIO = 5, RAD = 5, FIRE = 80, ACID = 50, WOUND = 5, ELECTRIC = 100)
+	can_be_cut = FALSE
 
 /obj/item/clothing/gloves/combat/odst/deathsquad	//literally overpowered
 	var/tacticalspeed = 0.66 //Does channels 34% faster
@@ -447,7 +476,7 @@
 
 /obj/item/clothing/gloves/tackler/nt
 	name = "\improper NT gripper gloves"
-	desc = "NT brand tackler gloves, granting the user ability to launch headfirst into walls and letting the user sail through the hallways."
+	desc = "NT brand tackler gloves, both fireproof and insulated, granting the user ability to launch headfirst into walls and letting the user sail through the hallways."
 	icon_state = "nt_combat"
 
 	tackle_stam_cost = 15
@@ -459,12 +488,13 @@
 
 /obj/item/clothing/gloves/tackler/combat/nt_elite
 	name = "\improper NT elite gripper gloves"
-	desc = "Superior quality combative gloves, good for performing tackle takedowns as well as absorbing electrical shocks."
+	desc = "Superior quality combative gloves, good for performing tackle takedowns as well as absorbing heat and electrical shocks."
 	icon_state = "nt_combat"
 
 	tackle_stam_cost = 25
 	base_knockdown = 1 SECONDS
-	tackle_range = 5
+	tackle_range = 6
+	tackle_speed = 2
 	skill_mod = 3
 
 
