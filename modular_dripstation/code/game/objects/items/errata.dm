@@ -107,25 +107,18 @@
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
-/*
-/obj/item/storage/belt/errata/attack_hand(mob/user)
-	AltClick(user)
-	return
-*/
-
 /obj/item/storage/belt/errata/attack_self(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
-		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
 		if(primed)
-			CP.locked = FALSE
+			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 			playsound(user, 'sound/items/sheath.ogg', 25, TRUE)
 			to_chat(user, "<span class='notice'>You return your stance.</span>")
 			primed = FALSE
 			update_icon()
 		else
-			CP.locked = TRUE //Prevents normal removal of the blade while primed
+			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, TRUE)
 			playsound(user, 'sound/items/unsheath.ogg', 25, TRUE)
 			user.visible_message("<span class='warning'>[user] grips the blade within [src] and primes to attack.</span>", "<span class='warning'>You take an opening stance...</span>", "<span class='warning'>You hear a weapon being drawn...</span>")
 			primed = TRUE
