@@ -31,7 +31,13 @@
 /obj/item/melee/errata/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		final_block_chance = block_chance / 2 //Pretty good...
-	return ..()
+	if(prob(final_block_chance))
+		if(istype(hitby, /obj/projectile/bullet))
+			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting in dividing the bullet in half!"))
+		else
+			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		return 1
+	return 0
 
 /obj/item/melee/errata/attack(atom/target, blocked = FALSE)
 	if(iscarbon(target))

@@ -35,6 +35,12 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 
+/obj/item/katana/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(prob(final_block_chance) && attack_type != PROJECTILE_ATTACK)
+		owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		return 1
+	return 0
+
 /obj/item/katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
@@ -51,6 +57,17 @@
 	icon_state = "bloody_katana"
 	item_state = "bloody_katana"
 	slot_flags = null
+
+/obj/item/katana/bloody/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = block_chance / 2 //Pretty good...
+	if(prob(final_block_chance))
+		if(istype(hitby, /obj/projectile/bullet))
+			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting in dividing the bullet in half!"))
+		else
+			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		return 1
+	return 0
 
 /obj/item/katana/basalt
 	icon_state = "basalt_katana"
@@ -73,8 +90,15 @@
 	icon_state = "monomolecular"
 	item_state = "monomolecular"
 	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
-	block_chance = 50
+	block_chance = 40
 	armour_penetration = 75
+
+/obj/item/katana/murasame/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(istype(hitby, /obj/projectile/bullet) && prob(final_block_chance))
+		if(istype(hitby, /obj/projectile/bullet))
+			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting in dividing the bullet in half!"))
+			return 1
+	return 0
 
 /obj/item/katana/murasame
 	name = "\improper Murasame"
@@ -86,6 +110,17 @@
 	var/next_blow
 	var/death_imminent = FALSE
 	var/mob/living/death_wisher = null
+
+/obj/item/katana/murasame/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = block_chance / 2 //Pretty good...
+	if(prob(final_block_chance))
+		if(istype(hitby, /obj/projectile/bullet))
+			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting in dividing the bullet in half!"))
+		else
+			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		return 1
+	return 0
 
 /obj/item/katana/murasame/afterattack(atom/target, blocked)
 	. = ..()
@@ -154,6 +189,18 @@
 /obj/item/storage/belt/sabre
 	name = "rapier sheath"
 	desc = "An ornate sheath designed to hold an officer's rapier."
+
+/obj/item/storage/belt/sabre/AltClick(mob/user)
+	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(length(contents))
+		var/obj/item/I = contents[1]
+		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."))
+		user.put_in_hands(I)
+		playsound(I, 'sound/items/unsheath.ogg', 25, TRUE)
+		update_appearance(UPDATE_ICON)
+	else
+		to_chat(user, "[src] is empty.")
 
 /obj/item/melee/sabre/mono
 	name = "\improper monomolecular NanoTrasen rapier"
