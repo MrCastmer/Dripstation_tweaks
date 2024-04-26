@@ -175,6 +175,10 @@
 	crate_name = "hos supply crate"
 
 /datum/supply_pack/security/armory/laser		//dripstation mooving lethals to the armory
+/*
+	name = "Lasers Crate"
+	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."
+*/
 	name = "Lethal E-gun Crate"
 	desc = "Contains three lethal energy guns. Requires Armory access to open."
 	cost = 2000
