@@ -34,10 +34,21 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	block_chance = 50
+	var/block_projectile_mod = 0.5
 
 /obj/item/katana/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(prob(final_block_chance) && attack_type != PROJECTILE_ATTACK)
-		owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = block_chance*block_projectile_mod //Pretty good...
+	if(prob(final_block_chance))
+		if(istype(hitby, /obj/projectile/bullet))
+			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
+		else if(istype(hitby, /obj/projectile))
+			var/obj/projectile/hit = hitby
+			if(hit.hitscan)
+				owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], and he mirrors it back!"))
+		else
+			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
 		return 1
 	return 0
 
@@ -57,17 +68,7 @@
 	icon_state = "bloody_katana"
 	item_state = "bloody_katana"
 	slot_flags = null
-
-/obj/item/katana/bloody/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(attack_type == PROJECTILE_ATTACK)
-		final_block_chance = block_chance / 2 //Pretty good...
-	if(prob(final_block_chance))
-		if(istype(hitby, /obj/projectile/bullet))
-			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
-		else
-			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
-		return 1
-	return 0
+	block_projectile_mod = 1	//here for more
 
 /obj/item/katana/basalt
 	icon_state = "basalt_katana"
@@ -76,6 +77,7 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	block_projectile_mod = 0	//too heavy
 
 /obj/item/katana/cursed
 	icon_state = "cursed"
@@ -84,6 +86,7 @@
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	block_projectile_mod = 0.2	//curse uppon ya
 
 /obj/item/katana/monomolecular
 	name = "monomolecular katana"
@@ -110,17 +113,6 @@
 	var/next_blow
 	var/death_imminent = FALSE
 	var/mob/living/death_wisher = null
-
-/obj/item/katana/murasame/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(attack_type == PROJECTILE_ATTACK)
-		final_block_chance = block_chance / 2 //Pretty good...
-	if(prob(final_block_chance))
-		if(istype(hitby, /obj/projectile/bullet))
-			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
-		else
-			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
-		return 1
-	return 0
 
 /obj/item/katana/murasame/afterattack(atom/target, blocked)
 	. = ..()

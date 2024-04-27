@@ -66,6 +66,7 @@
 #include "code\game\objects\effects\effect_system\effects_explosions.dm"
 #include "code\game\objects\items\ashtray.dm"
 #include "code\game\objects\items\barriertape.dm"
+#include "code\game\objects\items\baton.dm"
 #include "code\game\objects\items\bepis_items\boomerang.dm"
 #include "code\game\objects\items\bepis_items\eng_gloves.dm"
 #include "code\game\objects\items\bepis_items\explorerpin.dm"
