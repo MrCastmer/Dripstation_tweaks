@@ -20,6 +20,10 @@
 		/obj/item/clothing/suit/hooded/wintercoat,
 		/obj/item/clothing/suit/armor/vest/warden/winter,
 		/obj/item/clothing/suit/trenchcoatqm,
+		/obj/item/clothing/suit/hooded/wintercoat/hop,
+		/obj/item/clothing/suit/hooded/wintercoat/medical/cmo/long,
+		/obj/item/clothing/suit/armor/hos/trenchcoat/winter,
+		/obj/item/clothing/suit/hooded/wintercoat/engineering/ce,
 		)
 	var/list/allowed_hats = list(
 		/obj/item/clothing/head/fedora/det_hat,
@@ -44,10 +48,10 @@
 	. = ..()
 	if(mapload)
 		for(var/obj/item/I in loc)
-			if(I.typesof in allowed_hats)
+			if(is_type_in_list(I, allowed_hats))
 				I.loc = src
 				hat = I
-			if(I.typesof in allowed_suits)
+			if(is_type_in_list(I, allowed_suits))
 				I.loc = src
 				suit = I
 	update_appearance(UPDATE_OVERLAYS)
