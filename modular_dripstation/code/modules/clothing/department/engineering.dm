@@ -93,14 +93,12 @@
 /obj/item/clothing/under/rank/chief_engineer/formal
 	name = "chief engineer's official uniform"
 	desc = "It's an official version of high visibility uniform given to the finest engineers. It has minor radiation shielding."
-	name = "network admin`s gorka"
-	desc = "Gorka undersuit for hard work."
 	icon_state = "chiefengineer_formal"
 
 /obj/item/clothing/under/rank/chief_engineer/skirt/formal
 	name = "chief engineer's official skirt"
 	desc = "It's an official version of high visibility skirt given to the finest engineers. It has minor radiation shielding."
-	icon_state = "chiefengineer_formal"
+	icon_state = "chiefengineer_formal_skirt"
 
 /obj/item/clothing/under/rank/chief_engineer/turtle
 	name = "chief engineer's turtleneck"
@@ -115,10 +113,13 @@
 	mutantrace_variation = NO_MUTANTRACE_VARIATION
 
 /obj/item/clothing/head/beret/ce
+	name = "chief engineer's white beret"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/beret/ce/alt
+	name = "chief engineer's beret"
+	desc = "A fancy beret designed exactly to the Chief Engineer's tastes, minus the LEDs."
 	icon_state = "ceberet"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
