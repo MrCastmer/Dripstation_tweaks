@@ -19,6 +19,7 @@
 		/obj/item/clothing/suit/pirate,
 		/obj/item/clothing/suit/hooded/wintercoat,
 		/obj/item/clothing/suit/armor/vest/warden/winter,
+		/obj/item/clothing/suit/trenchcoatqm,
 		)
 	var/list/allowed_hats = list(
 		/obj/item/clothing/head/fedora/det_hat,
