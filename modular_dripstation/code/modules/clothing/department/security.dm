@@ -367,6 +367,7 @@
 					/obj/item/clothing/suit/armor/vest/secmiljacket = 2,
 					/obj/item/clothing/suit/toggle/bomber/secbomber/soft = 2,
 					/obj/item/clothing/suit/poncho/sec = 2,	
+					/obj/item/clothing/glasses/hud/security/ballistic = 2,	
 					/obj/item/clothing/gloves/color/black/tactifool = 3,		
 					/obj/item/clothing/shoes/jackboots = 3,
 					/obj/item/clothing/shoes/jackboots/jacksandal = 3,
