@@ -43,10 +43,10 @@
 	. = ..()
 	if(mapload)
 		for(var/obj/item/I in loc)
-			if(I.type in allowed_hats)
+			if(I.typesof in allowed_hats)
 				I.loc = src
 				hat = I
-			if(I.type in allowed_suits)
+			if(I.typesof in allowed_suits)
 				I.loc = src
 				suit = I
 	update_appearance(UPDATE_OVERLAYS)
