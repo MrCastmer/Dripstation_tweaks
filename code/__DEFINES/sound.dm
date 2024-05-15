@@ -176,3 +176,8 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 #define SFX_KEYBOARD "keyboard"
 #define SFX_BUTTON "button"
 #define SFX_SWITCH "switch"
+
+//Dripstation edit start
+#define SFX_STAMPING "stamp_sounds"
+#define SFX_WRITING "writing_sounds"
+#define SFX_POURING "pouring_sounds"

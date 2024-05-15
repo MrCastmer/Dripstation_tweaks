@@ -197,22 +197,22 @@
 /mob/living/simple_animal/pet/cat/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	if(!stat && !buckled && !client)
 		if(prob(1))
-			emote("me", EMOTE_VISIBLE, pick("stretches out for a belly rub.", "wags its tail.", "lies down."), TRUE)
+			emote("me", 0, pick("stretches out for a belly rub.", "wags its tail.", "lies down."), TRUE)
 			sitting = FALSE
 			set_resting(TRUE)
 			update_appearance(UPDATE_ICON_STATE)
 		else if (prob(1))
-			emote("me", EMOTE_VISIBLE, pick("sits down.", "crouches on its hind legs.", "looks alert."), TRUE)
+			emote("me", 0, pick("sits down.", "crouches on its hind legs.", "looks alert."), TRUE)
 			sitting = TRUE
 			set_resting(TRUE)
 			update_appearance(UPDATE_ICON_STATE)
 		else if (prob(1))
 			if (resting)
-				emote("me", EMOTE_VISIBLE, pick("gets up and meows.", "walks around.", "stops resting."), TRUE)
+				emote("me", 0, pick("gets up and meows.", "walks around.", "stops resting."), TRUE)
 				set_resting(FALSE)
 				update_appearance(UPDATE_ICON_STATE)
 			else
-				emote("me", EMOTE_VISIBLE, pick("grooms its fur.", "twitches its whiskers.", "shakes out its coat."), TRUE)
+				emote("me", 0, pick("grooms its fur.", "twitches its whiskers.", "shakes out its coat."), TRUE)
 		else if(prob(5))
 			emote("meow", EMOTE_AUDIBLE, intentional = TRUE)
 
@@ -250,7 +250,7 @@
 					if(snack.stat == DEAD)
 						continue // already dead
 					if(resting)
-						emote("me", EMOTE_VISIBLE, pick("twitches its whiskers.", "crouches on its hind legs.", "looks alert."), TRUE)
+						emote("me", 0, pick("twitches its whiskers.", "crouches on its hind legs.", "looks alert."), TRUE)
 						set_resting(FALSE) // get up and eat the mouse!
 						update_appearance(UPDATE_ICON_STATE)
 						break

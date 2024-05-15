@@ -38,7 +38,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/sl_suit
 	desc = "It's a very amish looking suit."
@@ -91,7 +91,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/rank/mailman
 	name = "mailman's jumpsuit"
@@ -231,7 +231,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/gimmick/rank/head_of_personnel/suit
 	name = "head of personnel's suit"
@@ -249,7 +249,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/suit_jacket
 	name = "black suit"
@@ -794,7 +794,7 @@
 	desc = "A jumpsuit made from durathread, its resilient fibres provide some protection to the wearer."
 	icon = 'icons/obj/clothing/under/color.dmi'
 	icon_state = "jumpsuit"
-	mob_overlay_icon = 'icons/mob/clothing/uniform/color.dmi'
+	worn_icon = 'icons/mob/clothing/uniform/color.dmi'
 	greyscale_colors = "#8291a1"
 	greyscale_config = /datum/greyscale_config/jumpsuit
 	greyscale_config_inhand_left = /datum/greyscale_config/jumpsuit_inhand_left
@@ -963,7 +963,7 @@
 	name = "incredibly fashionable outfit"
 	desc = "Expensive-looking designer vest. It radiates an aggressively attractive aura. You feel putting this on would change you forever."
 	icon = 'icons/obj/clothing/uniforms.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/uniform/uniform.dmi'
+	worn_icon = 'icons/mob/clothing/uniform/uniform.dmi'
 	icon_state = "drippy"
 	item_state = "drippy"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, RAD = 10, FIRE = 100, ACID = 100)
