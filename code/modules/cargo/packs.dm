@@ -553,6 +553,28 @@
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
+/datum/supply_pack/security/armory/laser		//dripstation mooving lethals to the armory
+/*
+	name = "Lasers Crate"
+	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."
+*/
+	name = "Lethal E-gun Crate"
+	desc = "Contains three lethal energy guns. Requires Armory access to open."
+	cost = 2000
+	contains = list(/obj/item/gun/energy/laser,
+					/obj/item/gun/energy/laser,
+					/obj/item/gun/energy/laser)
+	crate_name = "lethal e-gun crate"
+
+/datum/supply_pack/security/armory/reallaser
+	name = "Lasers Crate"
+	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."
+	cost = 5000
+	contains = list(/obj/item/gun/energy/laser/hitscan,
+					/obj/item/gun/energy/laser/hitscan,
+					/obj/item/gun/energy/laser/hitscan)
+	crate_name = "laser crate"
+
 /datum/supply_pack/security/armory/mindshield
 	name = "Mindshield Implants Crate"
 	desc = "Prevent against radical thoughts with three Mindshield implants. Requires Armory access to open."
