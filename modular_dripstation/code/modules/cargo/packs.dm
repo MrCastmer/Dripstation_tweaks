@@ -114,34 +114,6 @@
 					/obj/item/vending_refill/wardrobe/law_wardrobe,
 					/obj/item/vending_refill/wardrobe/det_wardrobe)
 
-/datum/supply_pack/medical/gloves
-	name = "Nitrile Gloves Crate"
-	desc = "Contains one pair of pricy nitrile gloves."
-	cost = 1000
-	small_item = TRUE
-	contains = list(/obj/item/clothing/gloves/color/latex/nitrile)
-
-/datum/supply_pack/costumes_toys/randomised/sunglasses
-	name = "Eye Protection Crate"
-	desc = "Contains one pair of pricy real eye protection."
-	contraband = TRUE
-	cost = 700
-	num_contained = 1
-	small_item = TRUE
-	contains = list(/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses/aviators)
-
-/datum/supply_pack/security/armory/sunglasses
-	name = "Sunglasses Crate"
-	desc = "Contains three pairs of pricy real sunglasses."
-	cost = 1500
-	contains = list(/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses,
-					/obj/item/clothing/glasses/sunglasses)
-	crate_name = "sunglasses crate"
-
 /datum/supply_pack/security/tackler
 	name = "Gripper Gloves Crate"
 	desc = "Contains three pairs of gripper gloves. Requires Security access to open."
