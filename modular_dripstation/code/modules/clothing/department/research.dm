@@ -4,16 +4,16 @@
 	desc = "A Nanotrasen special fancy labcoat for Research and Development finest. El Psy Kongroo!"
 	icon_state = "labcoat_rd"	
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/toggle/labcoat/science/brown
 	name = "research directors brown labcoat"
 	desc = "A Nanotrasen standart brown labcoat for Research Directors. You should be reasonable while wearing this."
 	icon_state = "labcoat_rd_brown"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/toggle/labcoat/science/purple
 	name = "research directors purple labcoat"
@@ -32,21 +32,21 @@
 	desc = "A brown beret with a science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."	
 	icon_state = "beretrdalt"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'	
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/beret/rd/white
 	name = "research director white beret"
 	desc = "A white beret with a golden science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."
 	icon_state = "beretrd"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'	
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/glasses/sunglasses/reagent/sci
 	name = "science glasses"
 	desc = "A pair of tacky purple sunglasses that allow the wearer to recognize various chemical compounds with only a glance."
 	icon_state = "sunhudsci"	
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/purple
 
 /obj/item/clothing/glasses/welding/superior
@@ -57,7 +57,7 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/glasses_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/glasses_righthand.dmi'		
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'	
+	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'	
 	custom_materials = null // Don't want that to go in the autolathe
 	tint = 0
 	visor_vars_to_toggle = VISOR_FLASHPROTECT
@@ -65,12 +65,12 @@
 
 /obj/item/clothing/glasses/science/night
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/under/rank/research_director
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/rd.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/rd.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/rd.dmi'
 
 /obj/item/clothing/under/rank/research_director/dark
 	icon_state = "director_dark"
@@ -80,7 +80,7 @@
 
 /obj/item/clothing/under/rank/research_director/alt
 	icon_state = "director_jumpsuit"
-	mutantrace_variation = MUTANTRACE_VARIATION
+	mutantrace_variation = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/research_director/alt/skirt
 	icon_state = "director_jumpskirt"
@@ -96,11 +96,11 @@
 	desc = "Medical sandals that nerds wear."
 	icon_state = "medsandal"
 	icon = 'modular_dripstation/icons/obj/clothing/shoes.dmi'		
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'	
+	worn_icon = 'modular_dripstation/icons/mob/clothing/shoes.dmi'	
 
 /obj/item/clothing/head/beret/sci
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/accessory/armband/science
 	name = "science armband"
@@ -108,7 +108,7 @@
 
 /obj/item/clothing/head/cone
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/suit/toggle/labcoat/mad
 	icon_state = "labcoat_green"
@@ -117,7 +117,7 @@
 	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a toxin researcher."
 	name = "toxin researcher's jumpsuit"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/science.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/science.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/science.dmi'
 
 /obj/item/clothing/under/rank/scientist/skirt
 	name = "toxin researcher's jumpskirt"
@@ -145,7 +145,7 @@
 	desc = "You are here to deal with nanites."
 	icon_state = "nanite"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/nanite.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/nanite.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/nanite.dmi'
 
 /obj/item/clothing/under/rank/scientist/skirt/nanite
 	name = "nanite specialist skirt"
@@ -153,7 +153,7 @@
 	can_adjust = FALSE
 	icon_state = "nanite_skirt"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/nanite.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/nanite.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/nanite.dmi'
 
 // ###### ROBOTICIST ######
 
@@ -161,7 +161,7 @@
 	name = "roboticist's beret"
 	desc = "A roboticist's beret. It strongly smells of oil."
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	icon_state = "beretrobo"
 
 /obj/item/clothing/suit/hooded/wintercoat/science/robotics
@@ -169,7 +169,7 @@
 	desc = "A black winter coat with a badass flaming robotic skull for the zipper tab. This one has bright red designs and a few useless buttons."
 	icon_state = "coatrobotics"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'	
 	allowed = list(/obj/item/analyzer, /obj/item/jawsoflife, /obj/item/screwdriver, /obj/item/wirecutters, /obj/item/weldingtool, /obj/item/wrench, /obj/item/crowbar, /obj/item/handdrill,  /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/beaker, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/tank/internals/ipc_coolant)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/science/robotics
 
@@ -178,14 +178,14 @@
 	desc = "A black winter coat hood. You can pull it down over your eyes and pretend that you're an outdated, late 1980s interpretation of a futuristic mechanized police force. They'll fix you. They fix everything."
 	icon_state = "winterhood_robotics"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
 /obj/item/clothing/head/welding/flame
 	name = "flame welding helmet"
 	desc = "A painted welding helmet, this one looks like it's burning."
 	icon_state = "flamewelding"	
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/welding/flame/blue
 	name = "blue flame welding helmet"
@@ -199,25 +199,25 @@
 
 /obj/item/clothing/under/rank/roboticist
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/science/robotist.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/robotist.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/science/robotist.dmi'
 
 /obj/item/clothing/under/rank/roboticist/senior
 	name = "senior roboticist`s uniform"
 	desc = "You are in chanrge here."
 	icon_state = "senior_roboticist"
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/rank/roboticist/biomech
 	name = "biomech engineer`s uniform"
 	desc = "You are here to repair bionics and upgrade silicons."
 	icon_state = "biomech_engineer"
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/rank/roboticist/mech
 	name = "biomech engineer`s uniform"
 	desc = "You are here to make mechs great again."
 	icon_state = "biomech_engineer"
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/rank/roboticist/skirt
 	can_adjust = TRUE

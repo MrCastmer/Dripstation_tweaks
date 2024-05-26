@@ -1,11 +1,11 @@
 /obj/item/storage/belt/utility/chief
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	item_state = "utilitybelt_ce"
 
 /obj/item/storage/belt/medical
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	item_state = "medicalbelt"
 
 /obj/item/storage/belt/medical/full/PopulateContents()
@@ -19,25 +19,25 @@
 
 /obj/item/storage/belt/medical/chief
 	icon = 'icons/obj/clothing/belts.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon = 'icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/belt/medical/mining
 	icon = 'icons/obj/clothing/belts.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon = 'icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/belt/security
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/belt/security/webbing
 	icon_state = "securitywebbing"
 	item_state = "securitywebbing"
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/belt/security/chief
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/belt/security/chief/Initialize(mapload)
 	. = ..()
@@ -118,7 +118,7 @@
 	item_state = "militarybelt"
 	icon_state = "militarybelt"
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/belt/military/army
 	icon_state = "militarybelt_slav"
@@ -286,4 +286,4 @@
 	item_state = "syndicate_holster"
 	icon_state = "syndicate_holster"
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
