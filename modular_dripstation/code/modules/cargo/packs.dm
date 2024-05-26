@@ -174,11 +174,3 @@
 					/obj/item/clothing/suit/armor/riot/hos)
 	crate_name = "hos supply crate"
 
-/datum/supply_pack/security/armory/laser		//dripstation mooving lethals to the armory
-	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."
-	cost = 2000
-	contains = list(/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser)
-	crate_name = "laser crate"
