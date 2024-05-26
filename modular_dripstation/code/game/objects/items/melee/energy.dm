@@ -13,7 +13,7 @@
 	icon_state = "machete_cybersun"
 	item_state = "machete_cybersun"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 10

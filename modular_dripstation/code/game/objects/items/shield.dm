@@ -1,28 +1,28 @@
 /obj/item/shield/riot
 	icon = 'modular_dripstation/icons/obj/weapons/shield.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/shield_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/shield_righthand.dmi'
 
 /obj/item/shield/riot/roman
 	icon = 'icons/obj/shields.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	worn_icon = 'icons/mob/clothing/back.dmi'
 
 /obj/item/shield/riot/roman
 	icon = 'icons/obj/shields.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	worn_icon = 'icons/mob/clothing/back.dmi'
 
 /obj/item/shield/riot/buckler
 	icon = 'icons/obj/shields.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	worn_icon = 'icons/mob/clothing/back.dmi'
 
 /obj/item/shield/riot/goliath
 	icon = 'icons/obj/shields.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	worn_icon = 'icons/mob/clothing/back.dmi'
 
 /obj/item/shield/riot/tele
 	icon = 'icons/obj/shields.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	worn_icon = 'icons/mob/clothing/back.dmi'
 
 /obj/item/shield/energy
 	base_icon_state = "syndieeshield"

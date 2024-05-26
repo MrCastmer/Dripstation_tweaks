@@ -2,7 +2,7 @@
 	name = "\improper Errata"
 	desc = "Glorious nippon steel, folded 1000 times."
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	icon_state = "errata"
 	item_state = "errata"
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
@@ -72,7 +72,7 @@
 	name = "nanoforged blade sheath"
 	desc = "It yearns to bath in the blood of your enemies... but you hold it back!"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	icon_state = "errata_sheath"

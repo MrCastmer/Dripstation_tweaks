@@ -20,7 +20,7 @@
 	name = "/improper security kuvalda"
 	desc = "Tactical version of sledgehammer with more unbalanced weight. Was designed to harm walls, not crewmembers."
 	icon = 'modular_dripstation/icons/obj/weapons/security.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	icon_state = "sledgehammer"
 	item_state = "sledgehammer"
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'

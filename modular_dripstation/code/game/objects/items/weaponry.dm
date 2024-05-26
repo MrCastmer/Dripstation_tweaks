@@ -11,18 +11,18 @@
 	icon_state = "energy_katana"
 	item_state = "energy_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 
 /obj/item/energy_katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
-		mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	if(slot == ITEM_SLOT_BACK)
-		mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	//if(slot == ITEM_SLOT_SUITSTORE)
-	//	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
+	//	worn_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
 	update_appearance(UPDATE_ICON)
 
 /obj/item/katana
@@ -31,7 +31,7 @@
 	icon_state = "modern_katana"
 	item_state = "modern_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_chance = 50
@@ -55,11 +55,11 @@
 /obj/item/katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
-		mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	if(slot == ITEM_SLOT_BACK)
-		mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	//if(slot == ITEM_SLOT_SUITSTORE)
-	//	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
+	//	worn_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
 	update_appearance(UPDATE_ICON)
 
 /obj/item/katana/bloody
@@ -74,7 +74,7 @@
 	icon_state = "basalt_katana"
 	item_state = "basalt_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_projectile_mod = 0	//too heavy
@@ -83,7 +83,7 @@
 	icon_state = "cursed"
 	item_state = "cursed"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_projectile_mod = 0.2	//curse uppon ya
@@ -160,18 +160,18 @@
 	icon_state = "modern_katana"
 	item_state = "modern_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 
 /obj/item/toy/katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
-		mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	if(slot == ITEM_SLOT_BACK)
-		mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	//if(slot == ITEM_SLOT_SUITSTORE)
-	//	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
+	//	worn_icon = 'modular_dripstation/icons/mob/clothing/suit_storage.dmi'
 	update_appearance(UPDATE_ICON)
 
 /obj/item/melee/sabre
@@ -218,7 +218,7 @@
 	icon_state = "cane_nt"
 	item_state = "cane_nt"
 	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
