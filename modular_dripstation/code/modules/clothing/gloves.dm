@@ -168,7 +168,7 @@
 	name = "combat fingerless gloves"
 	desc = "These tactical gloves provide strong grip on the items they hold. Probably you won't lose anything if you accidentally find yourself on the ground."
 	icon = 'modular_dripstation/icons/obj/clothing/gloves.dmi'
-	mob_overlay_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hands.dmi'
 	icon_state = "combat_fingerless"
 	clothing_traits = list(TRAIT_STRONG_GRIP)
 	body_parts_covered = ARMS|HANDS
