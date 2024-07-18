@@ -96,8 +96,10 @@
 		if(powered() && !power_wire_cut)
 			stat &= ~NOPOWER
 			START_PROCESSING(SSmachines, src)
+			set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0) //Dripstation edit
 		else
 			stat |= NOPOWER
+			set_light(0) //Dripstation edit
 
 /obj/machinery/smartfridge/process()
 	if(stat & (BROKEN|NOPOWER))
@@ -159,7 +161,7 @@
 			return
 	return ..()
 
-/obj/machinery/smartfridge/obj_break(damage_flag)
+/obj/machinery/smartfridge/atom_break(damage_flag)
 	if(!(stat & BROKEN))
 		stat |= BROKEN
 		update_appearance()
@@ -195,6 +197,7 @@
 	else
 		icon_state = "[startstate]-off"
 
+/* Dripstation edit
 /obj/machinery/smartfridge/update_overlays()
 	. = ..()
 
@@ -214,6 +217,7 @@
 
 	if(!stat && has_emissive)
 		. += emissive_appearance(icon, "[initial(icon_state)]-light-mask", src, alpha = src.alpha)
+*/
 
 /obj/machinery/smartfridge/proc/animate_dispenser()
 	//visually animate the smartfridge dispensing an item
@@ -241,9 +245,9 @@
 
 	if(default_deconstruction_screwdriver(user, icon_state, icon_state, O))
 		if(panel_open)
-			add_overlay("[initial(icon_state)]-panel")
+			update_appearance(UPDATE_OVERLAYS) //dripstation edit
 		else
-			cut_overlay("[initial(icon_state)]-panel")
+			update_appearance(UPDATE_OVERLAYS) //dripstation edit
 		updateUsrDialog()
 		return
 
@@ -331,6 +335,20 @@
 	else
 		return ..()
 
+/obj/machinery/smartfridge/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(stat & BROKEN)
+		if(!I.tool_start_check(user, amount=0))
+			return
+		user.visible_message(span_notice("[user] is repairing [src]."), span_notice("You begin repairing [src]..."), span_hear("You hear welding."))
+		if(I.use_tool(src, user, 4 SECONDS))
+			if(!(stat & BROKEN))
+				return
+			to_chat(user, span_notice("You repair [src]."))
+			update_integrity(max_integrity)
+			stat &= ~BROKEN
+			update_icon()
+		return TRUE			
 
 /obj/machinery/smartfridge/proc/accept_check(obj/item/O)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/) || istype(O, /obj/item/seeds/) || istype(O, /obj/item/grown/))
