@@ -5,6 +5,7 @@
 /obj/item/clothing/head/hooded/explorer
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/suit/toggle/labcoat
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'		
