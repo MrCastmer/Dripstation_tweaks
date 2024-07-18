@@ -199,6 +199,7 @@
 #include "code\modules\clothing\bagsholding.dm"
 #include "code\modules\clothing\belt.dm"
 #include "code\modules\clothing\combatrig.dm"
+#include "code\modules\clothing\department\civilian.dm"
 #include "code\modules\clothing\department\command.dm"
 #include "code\modules\clothing\department\corporate.dm"
 #include "code\modules\clothing\department\engineering.dm"

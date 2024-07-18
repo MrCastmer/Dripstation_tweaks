@@ -72,6 +72,7 @@
 
 /obj/item/clothing/under/sexymime
 	can_adjust = FALSE
+	icon_state = "sexymime"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/service/mime.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/service/mime.dmi'
 
@@ -80,8 +81,8 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/service/mime.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/service/mime.dmi'
 	can_adjust = FALSE
-	mutantrace_variation = DIGITIGRADE_VARIATION
-	fitted = NO_FEMALE_UNIFORM
+	mutantrace_variation = NONE
+	fitted = FEMALE_UNIFORM_TOP
 
 
 /obj/machinery/vending/autodrobe
