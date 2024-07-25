@@ -69,7 +69,6 @@
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/clicked_atom, list/modifiers)
-	set waitfor = FALSE
 	SIGNAL_HANDLER
 
 	if(modifiers["middle"] && modifiers["alt"] && modifiers["shift"] && modifiers["ctrl"])
@@ -117,11 +116,14 @@
 		var/tackle_angle = get_angle(user, clicked_atom)
 		clicked_atom = get_turf_in_angle(tackle_angle, get_turf(user), min_distance)
 
-	user.Knockdown(base_knockdown, ignore_canstun = TRUE)
-	user.adjustStaminaLoss(stamina_cost)
+	userEffect(user, stamina_cost)
 	user.throw_at(clicked_atom, range, speed, user, FALSE)
 	addtimer(CALLBACK(src, PROC_REF(resetTackle)), base_knockdown, TIMER_STOPPABLE)
 	return(COMSIG_MOB_CANCEL_CLICKON)
+
+/datum/component/tackler/proc/userEffect(mob/living/carbon/user, stamina_cost)
+	user.Knockdown(base_knockdown, ignore_canstun = TRUE)
+	user.adjustStaminaLoss(stamina_cost)
 
 /**
  * sack() is called when you actually smack into something, assuming we're mid-tackle. First it deals with smacking into non-carbons, in two cases:
