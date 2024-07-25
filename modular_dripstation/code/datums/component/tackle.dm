@@ -69,6 +69,7 @@
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/clicked_atom, list/modifiers)
+	set waitfor = FALSE
 	SIGNAL_HANDLER
 
 	if(modifiers["middle"] && modifiers["alt"] && modifiers["shift"] && modifiers["ctrl"])
