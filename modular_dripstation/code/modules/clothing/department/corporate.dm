@@ -304,6 +304,12 @@
 	mutantrace_variation = NONE
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 60, ACID = 100, WOUND = 10, ELECTRIC = 0)
 
+/obj/item/clothing/under/costume/mech_suit/cybersun
+	desc = "An armored mech pilot suit, used exclusively by Cybersun mech operators."
+	icon_state = "cybersun_mech_suit"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
+
 //////////Waffle Co//////////////
 /obj/item/clothing/under/syndicate/waffle
 	name = "Waffle Co combat uniform"

@@ -122,6 +122,10 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/clothing/gloves/combat(src)
+	if(prob(50))
+		new /obj/item/clothing/neck/petcollar/spike(src)
+	else
+		new /obj/item/clothing/neck/petcollar/sec(src)
 	new /obj/item/storage/belt/security/chief/full(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/hos(src)	
 	new /obj/item/clothing/shoes/xeno_wraps/jackboots/combat(src)
@@ -207,7 +211,10 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/glasses/hud/personnel(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
-	new /obj/item/clothing/neck/petcollar(src)
+	if(prob(50))
+		new /obj/item/clothing/neck/petcollar(src)
+	else
+		new /obj/item/clothing/neck/petcollar/bell(src)
 	new /obj/item/clothing/suit/armor/vest/light(src)		
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civillian(src)
@@ -230,7 +237,10 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	else
 		new /obj/item/storage/backpack/satchel/cap(src)
 	new /obj/item/storage/backpack/duffelbag/captain(src)
-	new /obj/item/clothing/neck/petcollar(src)
+	if(prob(50))
+		new /obj/item/clothing/neck/petcollar/holo(src)
+	else
+		new /obj/item/clothing/neck/petcollar/bell(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/cartridge/captain(src)
 	new /obj/item/storage/box/silver_ids(src)
@@ -497,7 +507,10 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/storage/firstaid/hypospray/deluxe/cmo(src)
 	new /obj/item/door_remote/chief_medical_officer(src)
-	new /obj/item/clothing/neck/petcollar(src)
+	if(prob(50))
+		new /obj/item/clothing/neck/petcollar/holo(src)
+	else
+		new /obj/item/clothing/neck/petcollar/bell(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/wallframe/defib_mount(src)
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)

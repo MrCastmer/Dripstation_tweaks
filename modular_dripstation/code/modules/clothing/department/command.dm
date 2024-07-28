@@ -192,6 +192,12 @@
 	desc = "Worn by a Captain to show their class."
 	icon_state = "captunic"
 	flags_inv = null
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list(MELEE = 20, BULLET = 25, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 50)
+
+/obj/item/clothing/suit/captunic/Initialize(mapload)
+	. = ..()
+	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/suit/armor/vest/capcarapace/jacket
 	name = "captain's jacket"
