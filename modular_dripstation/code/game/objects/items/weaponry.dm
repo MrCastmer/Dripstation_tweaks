@@ -11,14 +11,14 @@
 	icon_state = "energy_katana"
 	item_state = "energy_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 
 /obj/item/energy_katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
-		worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	if(slot == ITEM_SLOT_BACK)
 		worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	//if(slot == ITEM_SLOT_SUITSTORE)
@@ -31,7 +31,7 @@
 	icon_state = "modern_katana"
 	item_state = "modern_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_chance = 50
@@ -55,7 +55,7 @@
 /obj/item/katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
-		worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	if(slot == ITEM_SLOT_BACK)
 		worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	//if(slot == ITEM_SLOT_SUITSTORE)
@@ -74,7 +74,7 @@
 	icon_state = "basalt_katana"
 	item_state = "basalt_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_projectile_mod = 0	//too heavy
@@ -83,17 +83,18 @@
 	icon_state = "cursed"
 	item_state = "cursed"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_projectile_mod = 0.2	//curse uppon ya
 
 /obj/item/katana/monomolecular
-	name = "monomolecular katana"
+	name = "molecular katana"
 	icon_state = "monomolecular"
 	item_state = "monomolecular"
-	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
-	block_chance = 40
+	desc = "An elegant weapon, its molecular edge is capable of cutting through flesh and bone with ease."
+	block_chance = 40	//pretty hard 
+	block_projectile_mod = 1.5	// 60 projectile block chance
 	armour_penetration = 75
 
 /obj/item/katana/murasame/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
@@ -107,7 +108,7 @@
 	name = "\improper Murasame"
 	icon_state = "murasame"
 	item_state = "murasame"
-	desc = "Murasame is a sword whose blade is coated with poison, which nearly instantly kills its victim. As soon as the blade's blade pierces the skin, a deadly poison is injected into the victim's wound, killing him in a matter of seconds."
+	desc = "Murasame is a katana whose blade is coated with poison, which nearly instantly kills its victim. As soon as the blade's blade pierces the skin, a deadly poison is injected into the victim's wound, killing him in a matter of seconds."
 	block_chance = 50
 	armour_penetration = 40
 	var/next_blow
@@ -160,14 +161,14 @@
 	icon_state = "modern_katana"
 	item_state = "modern_katana"
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 
 /obj/item/toy/katana/equipped(mob/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_BELT)
-		worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+		worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	if(slot == ITEM_SLOT_BACK)
 		worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	//if(slot == ITEM_SLOT_SUITSTORE)
@@ -181,6 +182,15 @@
 /obj/item/storage/belt/sabre
 	name = "rapier sheath"
 	desc = "An ornate sheath designed to hold an officer's rapier."
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	hit_reaction_chance = 20
+
+/obj/item/storage/belt/sabre/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == MELEE_ATTACK && prob(hit_reaction_chance))
+		owner.visible_message(span_danger("[owner] fends off [attack_text] with [src]!"))
+		return 1
+	return 0
 
 /obj/item/storage/belt/sabre/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -195,22 +205,52 @@
 		to_chat(user, "[src] is empty.")
 
 /obj/item/melee/sabre/mono
-	name = "\improper monomolecular NanoTrasen rapier"
-	desc = "An elegant combat ready weapon of NanoTrasen finest, its monomolecular edge is capable of cutting through flesh and bone with ease."
+	name = "\improper molecular NanoTrasen rapier"
+	desc = "An elegant combat ready weapon of NanoTrasen finest, its molecular edge is capable of cutting through flesh and bone with ease."
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
-	icon_state = "rapier"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	icon_state = "monorapier"
+	item_state = "monorapier"
 	force = 30
 	block_chance = 60
 	armour_penetration = 100
 
 /obj/item/storage/belt/sabre/mono
 	name = "rapier sheath"
-	desc = "An ornate sheath designed to preserve monomolecular edge of combat rapier."
+	desc = "An ornate sheath designed to preserve molecular edge of combat rapier."
+	icon_state = "msheath"
+	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 
 /obj/item/storage/belt/sabre/mono/PopulateContents()
 	new /obj/item/melee/sabre/mono(src)
 	update_appearance(UPDATE_ICON)
 
+/obj/item/melee/sabre/syndie
+	name = "\improper combat sabre"
+	desc = "An elegant plastitanium combat ready weapon of pirate capitans, its edge is capable of cutting through flesh and bone with ease."
+	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	icon_state = "sabre"
+	force = 30
+	block_chance = 40
+	armour_penetration = 30
+
+/obj/item/storage/belt/sabre/syndie
+	name = "sabre sheath"
+	desc = "An red and black sheath designed to preserve edge of combat sabre."
+	icon_state = "ssheath"
+	item_state = "ssheath"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
+
+/obj/item/storage/belt/sabre/syndie/PopulateContents()
+	new /obj/item/melee/sabre/syndie(src)
+	update_appearance(UPDATE_ICON)
 
 /obj/item/melee/ntrep_cane
 	name = "\improper NanoTrasen Representative`s cane"
@@ -218,7 +258,7 @@
 	icon_state = "cane_nt"
 	item_state = "cane_nt"
 	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -554,6 +594,12 @@
 	if (!(. & EMP_PROTECT_SELF))
 		deductcharge(100 * severity)
 
+/obj/item/melee/classic_baton/telescopic
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/security_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/security_righthand.dmi'
+	item_state = "telebaton_0"
+	on_item_state = "telebaton_1"
+
 /obj/item/melee/classic_baton/telescopic/cane
 	icon_state = "telecane"
 	item_state = "telecane"
@@ -580,6 +626,82 @@
 		w_class_on = WEIGHT_CLASS_NORMAL, \
 		attack_verb_on = list("cuted", "stabed", "slashed"), \
 	)
+
+/obj/item/melee/cultblade/dagger
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+
+/obj/item/melee/emergency_forcing_tool
+	name = "emergency forcing tool"
+	desc = "Basic forcing tool, capable of prying firelocks or destroing stuff in critical situations."
+	force = 20
+	armour_penetration = -30
+	throwforce = 5
+	throw_range = 2
+	throw_speed = 1
+	toolspeed = 1.2
+	demolition_mod = 2
+	usesound = 'sound/items/jaws_pry.ogg'
+	tool_behaviour = TOOL_MINING
+	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
+	icon_state = "emergency_forcing_tool"
+	item_state = "emergency_forcing_tool"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("attacked", "slashed", "sliced", "torn", "ripped", "diced")
+	sharpness = SHARP_EDGED
+	wound_bonus = -20
+	bare_wound_bonus = 20
+
+/obj/item/melee/emergency_forcing_tool/afterattack(atom/target, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(istype(target, /obj/structure/table))
+		var/obj/structure/table/T = target
+		T.deconstruct(FALSE)
+
+	else if(istype(target, /obj/machinery/computer))
+		var/obj/machinery/computer/C = target
+		C.attack_alien(user) //muh copypasta
+
+	else if(istype(target, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/A = target
+
+		if((!A.requiresID() || A.allowed(user)) && A.hasPower()) //This is to prevent stupid shit like hitting a door with an arm blade, the door opening because you have acces and still getting a "the airlocks motors resist our efforts to force it" message, power requirement is so this doesn't stop unpowered doors from being pried open if you have access
+			return
+
+		if(A.locked)
+			to_chat(user, span_warning("The airlock's bolts prevent it from being forced!"))
+			return
+		if(A.welded)
+			to_chat(user, span_warning("The airlock is welded shut, it won't budge!"))
+			return
+
+		if(A.hasPower())
+			user.visible_message(span_warning("[user] jams [src] into the airlock and starts prying it open!"), span_warning("We start forcing the airlock open."), //yogs modified description
+			span_italics("You hear a metal screeching sound."))
+			playsound(A, 'sound/machines/airlock_alien_prying.ogg', 100, 1)
+			if(!do_after(user, 6 SECONDS, A))
+				return
+		//user.say("Heeeeeeeeeerrre's Johnny!")
+		user.visible_message(span_warning("[user] forces the airlock to open with [user.p_their()] [src]!"), span_warning("We force the airlock to open."), //yogs modified description
+		span_italics("You hear a metal screeching sound."))
+		A.open(2)
+
+/obj/item/melee/emergency_forcing_tool/varyag
+	name = "Varyag"
+	desc = "Combat forcing tool, capable of prying firelocks, destroing stuff and killing someone in emergency situations."
+	force = 30
+	armour_penetration = -10
+	wound_bonus = 0
+	throwforce = 30
+	throw_range = 7
+	throw_speed = 2
+	icon_state = "varyag"
+	item_state = "varyag"
 
 /obj/item/phone
 	icon = 'modular_dripstation/icons/obj/misc.dmi'

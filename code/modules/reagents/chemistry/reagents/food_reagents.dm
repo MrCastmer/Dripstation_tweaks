@@ -334,6 +334,8 @@
 		else // Oh dear :D
 			if(prob(60))
 				victim.emote("scream")
+			else						//dripstation edit
+				victim.emote("cough")	//dripstation edit
 			victim.adjust_eye_blur(14)
 			victim.blind_eyes(10)
 			victim.set_confusion_if_lower(12 SECONDS)
