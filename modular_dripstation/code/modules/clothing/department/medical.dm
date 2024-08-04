@@ -82,6 +82,11 @@
 	name = "em technician jumpsuit"
 	icon_state = "emt"
 
+/obj/item/clothing/under/rank/medical/paramedic/emt/white
+	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained emergency medical technician."
+	name = "em technician jumpsuit (White)"
+	icon_state = "emt_white"
+
 /obj/item/clothing/under/rank/medical/paramedic/emt/skirt
 	name = "em technician jumpskirt"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained emergency medical technician."
@@ -89,10 +94,12 @@
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = NONE
 
-// /obj/item/clothing/under/rank/medical/paramedic/recovery
-// 	name = "emergency medical technician's recovery undersuit"
-// 	desc = "A verstile blue and white uniform honored to hard working recovery medics in hazardous environments. It has minor protection against biohazards."
-// 	mutantrace_variation = DIGITIGRADE_VARIATION
+/obj/item/clothing/under/rank/medical/paramedic/recovery
+	name = "emergency medical technician's recovery undersuit"
+	desc = "A verstile blue and white uniform honored to hard working recovery medics in hazardous environments. It has minor protection against biohazards."
+	mutantrace_variation = DIGITIGRADE_VARIATION
+	icon_state = "recovery_emt"
+	can_adjust = FALSE
 
 /obj/machinery/vending/wardrobe/para_wardrobe
 	name = "\improper ParaDrobe"
@@ -108,7 +115,9 @@
 					/obj/item/clothing/under/rank/medical/paramedic/skirt = 2,
 					/obj/item/clothing/under/rank/medical/paramedic/emt = 1,
 					/obj/item/clothing/under/rank/medical/paramedic/emt/skirt = 1,
-					// /obj/item/clothing/under/rank/medical/paramedic/recovery = 1,
+					/obj/item/clothing/under/rank/medical/paramedic/emt/white = 1,
+					/obj/item/clothing/under/rank/medical/paramedic/emt/skirt/white = 1,
+					/obj/item/clothing/under/rank/medical/paramedic/recovery = 1,
 					/obj/item/clothing/suit/toggle/labcoat/emt/paramedic = 2,
 					/obj/item/clothing/suit/toggle/labcoat/emt = 1,
 					/obj/item/clothing/suit/toggle/labcoat/emt/green = 1,
@@ -123,6 +132,7 @@
 					/obj/item/clothing/head/soft/emt/paramed = 1,
 					/obj/item/clothing/gloves/color/latex = 2,
 					/obj/item/clothing/shoes/sneakers/black = 2,
+					/obj/item/clothing/shoes/sneakers/blue = 2,
 					/obj/item/clothing/shoes/xeno_wraps/medical = 2,
 					/obj/item/storage/backpack/emt = 1,
 					/obj/item/storage/backpack/satchel/emt = 1,
@@ -146,6 +156,24 @@
 /obj/item/clothing/under/rank/virologist/skirt
 	can_adjust = TRUE
 	icon_state = "virology_skirt"
+
+
+// ###### Psych ######
+/obj/item/clothing/under/rank/psych
+	icon_state = "psych"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/medical.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/medical.dmi'
+	mutantrace_variation = DIGITIGRADE_VARIATION
+	can_adjust = TRUE
+
+/obj/item/clothing/under/rank/psych/skirt
+	icon_state = "psych_skirt"
+	mutantrace_variation = NONE
+	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/rank/psych/turtleneck
+	icon_state = "psychturtle"
+	mutantrace_variation = NONE	
 
 
 // ###### Chemistry ######
@@ -211,10 +239,6 @@
 
 /obj/item/clothing/under/rank/medical/skirt
 	can_adjust = TRUE
-
-/obj/item/clothing/under/rank/psych
-	icon = 'icons/obj/clothing/uniforms.dmi'
-	worn_icon = 'icons/mob/clothing/uniform/uniform.dmi'
 
 /obj/machinery/vending/wardrobe/medi_wardrobe
 	extra_price = 150

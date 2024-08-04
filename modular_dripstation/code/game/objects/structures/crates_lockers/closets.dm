@@ -630,3 +630,16 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/gloves/color/latex/hazmat/cyan(src)
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/tank/internals/oxygen(src)
+
+/////SYNDICATE/////
+/obj/structure/closet/syndicate/personal
+
+/obj/structure/closet/syndicate/personal/PopulateContents()
+	..()
+	new /obj/item/clothing/under/syndicate(src)
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/radio/headset/syndicate(src)
+	new /obj/item/ammo_box/magazine/m10mm(src)	//probably fix this in weapon update
+	new /obj/item/storage/belt/military(src)
+	new /obj/item/crowbar/red(src)
+	new /obj/item/clothing/glasses/night(src)

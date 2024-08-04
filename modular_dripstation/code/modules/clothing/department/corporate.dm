@@ -188,6 +188,21 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
 
+/obj/item/clothing/under/syndicate/sniper
+	name = "executive suit"
+	desc = "A double seamed tactical turtleneck disguised as a civilian grade silk suit. Intended for the most formal operator. The collar is really sharp."
+	icon_state = "really_black_suit"
+	item_state = "bl_suit"
+	can_adjust = FALSE
+	mutantrace_variation = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/syndicate/sniper/female
+	desc = "A double seamed tactical turtleneck disguised as a civilian grade silk suit for women. Intended for the most formal operator. The collar is really sharp."
+	icon_state = "tactical_suit_fem"
+	item_state = "black_suit_fem"
+	can_adjust = FALSE
+	mutantrace_variation = NONE
+
 /////Donk Co//////
 /obj/item/clothing/under/syndicate/donk
 	name = "Donk! Co. employee uniform"
@@ -403,3 +418,4 @@
 	icon_state = "gec_ce"
 	mutantrace_variation = NONE
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 80, ACID = 40, WOUND = 0, ELECTRIC = 0)
+
