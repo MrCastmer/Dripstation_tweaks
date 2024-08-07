@@ -319,6 +319,7 @@
 					/obj/item/toy/crayon/white,
 					/obj/item/clothing/head/fedora/det_hat)
 	crate_name = "forensics crate"
+
 /*
 /datum/supply_pack/security/laser
 	name = "Lasers Crate"
@@ -329,6 +330,7 @@
 					/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
 */
+
 /datum/supply_pack/security/secfiringpins
 	name = "Mindshield Firing Pins Crate"
 	desc = "Upgrade your arsenal with 10 mindshield firing pins. Requires Security access to open."
@@ -560,19 +562,19 @@
 */
 	name = "Lethal E-gun Crate"
 	desc = "Contains three lethal energy guns. Requires Armory access to open."
-	cost = 2000
-	contains = list(/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser)
+	cost = 1500
+	contains = list(/obj/item/gun/energy/e_gun/ancient,
+					/obj/item/gun/energy/e_gun/ancient,
+					/obj/item/gun/energy/e_gun/ancient)
 	crate_name = "lethal e-gun crate"
 
 /datum/supply_pack/security/armory/reallaser
 	name = "Lasers Crate"
 	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."
 	cost = 5000
-	contains = list(/obj/item/gun/energy/laser/hitscan,
-					/obj/item/gun/energy/laser/hitscan,
-					/obj/item/gun/energy/laser/hitscan)
+	contains = list(/obj/item/gun/energy/laser,
+					/obj/item/gun/energy/laser,
+					/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
 
 /datum/supply_pack/security/armory/mindshield

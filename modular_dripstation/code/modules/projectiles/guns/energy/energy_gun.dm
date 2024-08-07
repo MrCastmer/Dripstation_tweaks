@@ -1,6 +1,12 @@
 /obj/item/gun/energy/e_gun
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
+/obj/item/gun/energy/e_gun/ancient
+	name = "NT-E2 gun"
+	desc = "The NT-E2 is a basic energy gun that has only one mode. Kill."
+	icon_state = "energyold"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser)
+
 /obj/item/gun/energy/e_gun/nuclear
 	ammo_x_offset = 2
 
@@ -35,6 +41,21 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/laser_spec, /obj/item/ammo_casing/energy/ion)
 
+/obj/item/gun/energy/sniperrifle
+	name = "L.W.A.P. Sniper Rifle"
+	desc = "A rifle constructed of lightweight materials, fitted with a SMART aiming-system scope."
+	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	icon_state = "esniper"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/hitscan/sniper)
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
+	zoomable = TRUE
+	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
+	fire_delay = 10
+	shaded_charge = 1
+	ammo_x_offset = 2
+	pin = /obj/item/firing_pin/implant/mindshield
+
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized version of the energy gun with a built-in flashlight. The NT-E4 functions as a popular self defense weapon among the elite due to its small size and cheap price. It has three settings: disable, stun and kill."
@@ -65,6 +86,6 @@
 	icon = 'icons/obj/guns/energy.dmi'
 
 /obj/item/gun/energy/e_gun/stun
-	desc = "Military issue energy gun, is able to fire stun rounds."
+	desc = "NT-ME5 Hybrid Energy Gun"
 	desc = "The NT-ME5 hybrid energy gun is the newest generation of standardized energy equipment for use by NT private military forces. This hybrid energy gun comes equipped with two settings: disable and kill."
 	pin = /obj/item/firing_pin/implant/mindshield

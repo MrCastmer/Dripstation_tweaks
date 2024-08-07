@@ -1,16 +1,17 @@
 /obj/item/gun/ballistic/automatic/proto
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/c20r
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/wt550
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 
 /obj/item/gun/ballistic/automatic/mini_uzi
-	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
-
-/obj/item/gun/ballistic/automatic/c20r
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 
 /obj/item/gun/ballistic/automatic/tommygun
@@ -24,6 +25,8 @@
 	mag_display = TRUE
 	can_suppress = TRUE
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	fire_sound = 'sound/weapons/rifleshot.ogg'
 	fire_sound_volume = 80
 	vary_fire_sound = 0
@@ -44,7 +47,7 @@
 //STM-9
 /obj/item/gun/ballistic/automatic/stm9
 	name = "\improper Souze TM-9 Gen.3"
-	desc = "STM 9х19mm sport pistol-carbine supplied by some unknown union to TSF. Speed, accuracy and comfort recoil."
+	desc = "STM 9x19mm sport pistol-carbine supplied by some unknown union to TSF. Speed, accuracy and comfort recoil."
 	icon_state = "stm9"
 	item_state = "lwt650"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
@@ -126,3 +129,44 @@
 	
 /obj/item/gun/ballistic/automatic/pistol/ntusp
 	icon = 'icons/obj/guns/projectile.dmi'
+
+
+// L6 SAW //
+
+/obj/item/gun/ballistic/automatic/l6_saw
+	desc = "A modified 5.56x45mm light machine gun, designated 'L6 SAW'. Has 'Aussec Armoury - 2503' engraved on the receiver below the designation."
+	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
+	item_state = "l6"
+	mag_type = /obj/item/ammo_box/magazine/mm556x45_100
+
+/obj/item/gun/ballistic/automatic/l6_saw/Initialize(mapload)
+	. = ..()
+	update_appearance(UPDATE_ICON)
+
+/obj/item/gun/ballistic/automatic/l6_saw/update_icon()
+	. = ..()
+	item_state = "[initial(item_state)][cover_open ? "open" : "closed"][magazine ? "mag" : "nomag"]"
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+/obj/item/gun/ballistic/automatic/l6_saw/m60
+	name = "\improper L4 GPMG"
+	desc = "A general purpose 7.62 machine gun, designated 'L4 GPMG'. Heavyly modified for single combatant usage."
+	icon_state = "m60"
+	item_state = "m60"
+	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/mm712x82
+
+///Borg L6
+/obj/item/gun/energy/printer
+	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+
+
+///Laser rifle
+/obj/item/gun/ballistic/automatic/laser
+	name = "\improper energy carbine"

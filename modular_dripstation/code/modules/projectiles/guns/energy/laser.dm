@@ -1,12 +1,22 @@
 /obj/item/gun/energy/laser
-	name = "NT-E2 gun"
-	desc = "The NT-E2 is a basic energy gun that has only one mode. Kill."
+	name = "NT-L4 laser gun"
+	desc = "The NT-L4 is a basic energy-based laser gun that uses full potential of beam guns and hits targets through glass and thin metal at the speed of light."
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/hitscan)
 
-/obj/item/gun/energy/laser/hitscan
-	name = "laser gun"
-	desc = "The NT-L5 is a basic energy-based laser gun that uses full potential of beam guns and hits targets through glass and thin metal at the speed of light."
-	icon_state = "laser_hitscan"
+/obj/item/gun/energy/laser/practice
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice/hitscan)
+
+/obj/item/gun/energy/laser/tactical
+	name = "NT-L5 laser gun"
+	desc = "The NT-L5 is a basic energy-based laser gun that uses full potential of beam guns and hits targets through glass and thin metal at the speed of light. Has a preinstalled mindshield pin."
+	icon_state = "laser-new"
+	pin = /obj/item/firing_pin/implant/mindshield
+
+/obj/item/gun/energy/laser/cybersun
+	name = "laser carbine (Cybersun)"
+	desc = "Basic energy-based laser gun that uses full potential of beam guns and hits targets through glass and thin metal at the speed of light. Cybersun model used by contract paramilitary forces."
+	icon_state = "lasercarbine-cybersun"
 	item_state = LASER
 	w_class = WEIGHT_CLASS_NORMAL
 	materials = list(/datum/material/iron=2000)
@@ -24,6 +34,7 @@
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_NORMAL
 	desc = "The NT-S05 laser gun is NT`s real recreation of NT-S01 aiming to provide an inbuilt recharger with real laser functions. It also has 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Now in service with NanoTrasen`s Special Operations Department agents."
+	pin = /obj/item/firing_pin/implant/mindshield
 	force = 10
 	selfcharge = 1
 	charge_amount = 2
@@ -55,16 +66,10 @@
 	modifystate = TRUE
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 
-/obj/item/gun/energy/laser/retro
-	icon = 'icons/obj/guns/energy.dmi'
-
 /obj/item/gun/energy/laser/redtag
 	icon = 'icons/obj/guns/energy.dmi'
 
 /obj/item/gun/energy/laser/bluetag
-	icon = 'icons/obj/guns/energy.dmi'
-
-/obj/item/gun/energy/laser/practice
 	icon = 'icons/obj/guns/energy.dmi'
 
 /obj/item/gun/energy/laser/instakill

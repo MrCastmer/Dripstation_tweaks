@@ -1,7 +1,7 @@
 //Bulldog Shotgun
 
 /obj/item/ammo_box/magazine/m12g/slug
-	name = "shotgun magazine (12g сeramic slugs)"
+	name = "shotgun magazine (12g ceramic slugs)"
 	desc = "A drum magazine designed for the Bulldog shotgun. \
 			Ceramic AP slugs are the best armor issue choice. \
 			Armor Piercing death to the Nanotrasen scum!"

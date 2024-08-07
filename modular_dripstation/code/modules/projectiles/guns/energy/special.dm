@@ -19,6 +19,8 @@
 	icon_state = "ioncarbine-cybersun"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
+	ammo_x_offset = 3
+	charge_sections = 3
 
 /obj/item/gun/energy/temperature
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
@@ -26,3 +28,16 @@
 /obj/item/gun/energy/temperature/security
 	icon_state = "freezegun_secure"
 	pin = /obj/item/firing_pin/implant/mindshield
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow
+	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/large
+	name = "energy crossbow"
+	desc = "A weapon favored by Madmen."
+	icon_state = "crossbowlarge"
+	w_class = WEIGHT_CLASS_NORMAL
+	materials = list(/datum/material/iron=4000)
+	suppressed = null
+	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
+	pin = null
