@@ -43,7 +43,7 @@
 
 /obj/item/gun/energy/sniperrifle
 	name = "L.W.A.P. Sniper Rifle"
-	desc = "A rifle constructed of lightweight materials, fitted with a SMART aiming-system scope."
+	desc = "A beam rifle constructed of lightweight materials, fitted with a SMART aiming-system scope."
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	icon_state = "esniper"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/hitscan/sniper)
@@ -52,9 +52,24 @@
 	zoomable = TRUE
 	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
 	fire_delay = 10
-	shaded_charge = 1
 	ammo_x_offset = 2
+	charge_sections = 3
 	pin = /obj/item/firing_pin/implant/mindshield
+
+/obj/item/gun/energy/sniperrifle
+	icon_state = "esniper_black"
+
+/obj/item/gun/energy/plasmarifle
+	name = "Plasma Assault Rifle"
+	desc = "A plasma rifle constructed of lightweight materials, Cybersun Armory. Slowly fires powerful plasma projectiles."
+	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	icon_state = "cybersun_plasmarifle"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/combat)
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
+	pin = /obj/item/firing_pin/fucked
+	charge_sections = 1
+	shaded_charge = 1
 
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"

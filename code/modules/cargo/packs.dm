@@ -555,11 +555,8 @@
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
+//Dripstation
 /datum/supply_pack/security/armory/laser		//dripstation mooving lethals to the armory
-/*
-	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns. Requires Armory access to open."
-*/
 	name = "Lethal E-gun Crate"
 	desc = "Contains three lethal energy guns. Requires Armory access to open."
 	cost = 1500
@@ -576,6 +573,7 @@
 					/obj/item/gun/energy/laser,
 					/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
+//Dripstation end
 
 /datum/supply_pack/security/armory/mindshield
 	name = "Mindshield Implants Crate"

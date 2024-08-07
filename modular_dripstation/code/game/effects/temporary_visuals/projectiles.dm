@@ -27,3 +27,18 @@
 	name = "sniper laser muzzle"
 	icon_state = "muzzle_scc"
 	icon = 'modular_dripstation/icons/effects/projectiles/muzzle.dmi'
+
+/obj/effect/projectile/impact/bfg
+	name = "bfg impact"
+	icon_state = "bfg"
+	icon = 'modular_dripstation/icons/effects/projectiles/impact.dmi'
+
+/obj/effect/projectile/tracer/bfg
+	name = "bfg tracer"
+	icon_state = "bfg"
+	icon = 'modular_dripstation/icons/effects/projectiles/tracer.dmi'
+
+/obj/effect/projectile/muzzle/bfg
+	name = "bfg muzzle"
+	icon_state = "bfg"
+	icon = 'modular_dripstation/icons/effects/projectiles/muzzle.dmi'

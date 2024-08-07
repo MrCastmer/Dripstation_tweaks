@@ -52,7 +52,6 @@
 /obj/item/shield/riot/tele
 	icon = 'icons/obj/shields.dmi'
 	worn_icon = 'icons/mob/clothing/back.dmi'
-	transparent = FALSE
 
 /obj/item/shield/bulletproof
 	name = "bulletproof shield"

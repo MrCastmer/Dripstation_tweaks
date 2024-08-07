@@ -41,3 +41,16 @@
 	name = "hellfire pellet"
 	icon_state = "scatterlaser"
 	damage = 10
+
+/obj/projectile/beam/pulse
+	icon_state = "pulse"
+	icon = 'modular_dripstation/icons/effects/projectiles/projectiles.dmi'
+
+/obj/projectile/beam/pulse/pistol
+	icon_state = "pulse2"
+
+/obj/projectile/beam/pulse/shotgun
+	icon_state = "pulse1"
+
+/obj/projectile/beam/pulse/heavy
+	icon_state = "pulse_heavy"

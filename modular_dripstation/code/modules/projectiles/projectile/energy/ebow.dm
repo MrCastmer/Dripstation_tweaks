@@ -1,6 +1,9 @@
+/obj/projectile/energy/bolt
+	icon_state = "dart"
+	icon = 'modular_dripstation/icons/effects/projectiles/projectiles.dmi'
+
 /obj/projectile/energy/bolt/large //big ebow bolts
 	name = "large bolt"
-	icon_state = "cbbolt"
 	irradiate = 300
 	pass_flags = PASSGLASS
 

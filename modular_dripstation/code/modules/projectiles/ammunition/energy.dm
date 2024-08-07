@@ -6,6 +6,7 @@
 /obj/item/ammo_casing/energy/laser/hitscan/sniper
 	projectile_type = /obj/projectile/beam/laser/hitscan/sniper
 	e_cost = 200
+	delay = 15
 	select_name = "snipe"
 	fire_sound = 'sound/weapons/marauder.ogg'
 
@@ -32,3 +33,5 @@
 	e_cost = 83
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/pulse/pistol
+	projectile_type = /obj/projectile/beam/pulse/pistol

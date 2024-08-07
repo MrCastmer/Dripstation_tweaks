@@ -9,7 +9,10 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/wt550
+	item_state = "wt550"
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
@@ -33,15 +36,14 @@
 
 /obj/item/gun/ballistic/automatic/wt550/armory
 	icon_state = "wt550_secure"
+	item_state = "wt550_secure"
 	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/ballistic/automatic/c20r/cobra
 	name = "\improper Cobra 18"
 	desc = "An older model of SMG manufactured by Scarborough Arms, a predecessor to the military C-20 series. Chambered in .45. "
 	can_bayonet = FALSE
-
 	icon_state = "c18_cobra"
-	item_state = "c18_cobra"
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 
 //STM-9
@@ -134,7 +136,7 @@
 // L6 SAW //
 
 /obj/item/gun/ballistic/automatic/l6_saw
-	desc = "A modified 5.56x45mm light machine gun, designated 'L6 SAW'. Has 'Aussec Armoury - 2503' engraved on the receiver below the designation."
+	desc = "A modified 5.56x45mm light machine gun, designated 'L6 SAW'. Has 'Militech Armoury - 2503' engraved on the receiver below the designation."
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
@@ -162,10 +164,12 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
 
+/obj/item/gun/ballistic/automatic/l6_saw/m60/unrestricted
+	pin = /obj/item/firing_pin
+
 ///Borg L6
 /obj/item/gun/energy/printer
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
-
 
 ///Laser rifle
 /obj/item/gun/ballistic/automatic/laser
