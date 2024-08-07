@@ -101,6 +101,21 @@
 	icon_state = "recovery_emt"
 	can_adjust = FALSE
 
+/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
+	icon_state = "coatparamedic"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic/emt
+	icon_state = "coatemt"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/paramedic/emt
+
+/obj/item/clothing/head/hooded/winterhood/medical/paramedic
+	icon_state = "hood_paramedic"
+
+/obj/item/clothing/head/hooded/winterhood/medical/paramedic/emt
+	icon_state = "hood_emt"
+
 /obj/machinery/vending/wardrobe/para_wardrobe
 	name = "\improper ParaDrobe"
 	desc = "A vending machine rumoured to be capable of dispensing clothing for paramedical personnel."
@@ -121,9 +136,12 @@
 					/obj/item/clothing/suit/toggle/labcoat/emt/paramedic = 2,
 					/obj/item/clothing/suit/toggle/labcoat/emt = 1,
 					/obj/item/clothing/suit/toggle/labcoat/emt/green = 1,
-					/obj/item/clothing/suit/toggle/emt_vest = 2,
-					/obj/item/clothing/suit/toggle/emt_vest/jacket = 2,
-					/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic = 2,
+					/obj/item/clothing/suit/toggle/emt_vest = 1,
+					/obj/item/clothing/suit/toggle/emt_vest/jacket = 1,
+					/obj/item/clothing/suit/toggle/emt_vest/jacket/paramedic = 2,
+					/obj/item/clothing/suit/toggle/emt_vest/jacket/highvis = 1,
+					/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic = 1,
+					/obj/item/clothing/suit/hooded/wintercoat/medical/paramedic/emt = 1,
 					/obj/item/clothing/head/beret/emt = 1,
 					/obj/item/clothing/head/beret/emt/green = 1,
 					/obj/item/clothing/head/beret/emt/paramed = 1,
