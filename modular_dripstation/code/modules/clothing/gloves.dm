@@ -378,6 +378,7 @@
 	resistance_flags = NONE
 	custom_premium_price = 400
 	cryo_preserve = TRUE
+/*Tacklers switch off
 	/// For storing our tackler datum so we can remove it after
 	var/datum/component/tackler
 	/// See: [/datum/component/tackler/var/stamina_cost]
@@ -412,6 +413,7 @@
 	var/mob/living/carbon/human/H = user
 	if(H.get_item_by_slot(ITEM_SLOT_GLOVES) == src)
 		QDEL_NULL(tackler)
+*///Tacklers switch off
 
 /obj/item/clothing/gloves/tackler/security
 	name = "security gripper gloves"
@@ -427,12 +429,14 @@
 	desc = "Special gloves that manipulate the blood vessels on insane level and give the user an edge in close combat."
 	icon_state = "tacticalgloves"
 
+/*Tacklers switch off
 	tackle_stam_cost = 20
 	base_knockdown = 1.5 SECONDS
 	tackle_range = 6
 	tackle_speed = 2
 	skill_mod = 4
-	
+*///Tacklers switch off
+
 	var/tacticalspeed = 0.66 //Does channels 34% faster
 	var/worn
 	clothing_traits = list(TRAIT_QUICKER_CARRY, TRAIT_STRONG_GRIP)
@@ -462,10 +466,12 @@
 	desc = "Premium quality combative gloves, heavily reinforced to give the user an edge in close combat tackles, though they are more taxing to use than normal gripper gloves. Absorbing electrical shocks and fireproof to boot!"
 	icon_state = "combat"
 
+/*Tacklers switch off
 	tackle_stam_cost = 30
 	base_knockdown = 1.25 SECONDS
 	tackle_range = 5
 	skill_mod = 2
+*///Tacklers switch off
 
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -479,23 +485,27 @@
 	desc = "NT brand tackler gloves, both fireproof and insulated, granting the user ability to launch headfirst into walls and letting the user sail through the hallways."
 	icon_state = "nt_combat"
 
+/*Tacklers switch off
 	tackle_stam_cost = 15
 	base_knockdown = 0.5 SECONDS
 	tackle_range = 5
 	tackle_speed = 2
 	min_distance = 2
 	skill_mod = -2
+*///Tacklers switch off
 
 /obj/item/clothing/gloves/tackler/combat/nt_elite
 	name = "\improper NT elite gripper gloves"
 	desc = "Superior quality combative gloves, good for performing tackle takedowns as well as absorbing heat and electrical shocks."
 	icon_state = "nt_combat"
 
+/*Tacklers switch off
 	tackle_stam_cost = 25
 	base_knockdown = 1 SECONDS
 	tackle_range = 6
 	tackle_speed = 2
 	skill_mod = 3
+*///Tacklers switch off
 
 
 /obj/item/clothing/gloves/tackler/combat/waffle
@@ -503,24 +513,28 @@
 	desc = "The ultimate in high risk, high reward, perfect for when you need to stop target from fifty feet away or die trying. Banned in most Spinward gridiron football and rugby leagues."
 	icon_state = "waffle_combat"
 
+/*Tacklers switch off
 	tackle_stam_cost = 50
 	base_knockdown = 2 SECONDS
 	tackle_range = 10
 	min_distance = 7
 	tackle_speed = 6
 	skill_mod = 7
+*///Tacklers switch off
 
 /obj/item/clothing/gloves/tackler/combat/infiltrator
 	name = "infiltrator combat gloves"
 	desc = "Sleek, aerodynamic gripper gloves that are less effective at actually performing takedowns, but more effective at letting the user sail through the hallways."
 	icon_state = "infiltrator"
 
+/*Tacklers switch off
 	tackle_stam_cost = 15
 	base_knockdown = 0.5 SECONDS
 	tackle_range = 5
 	tackle_speed = 2
 	min_distance = 2
 	skill_mod = -2
+*///Tacklers switch off
 
 /obj/item/clothing/gloves/tackler/combat/infiltrator/chameleon
 	var/datum/action/item_action/chameleon/change/chameleon_action
