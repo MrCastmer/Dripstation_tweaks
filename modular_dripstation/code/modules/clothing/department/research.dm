@@ -102,10 +102,6 @@
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'	
 
-/obj/item/clothing/accessory/armband/science
-	name = "science armband"
-	desc = "An armband, worn by the crew to display which department they're assigned to. This one is purple."
-
 /obj/item/clothing/head/cone
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'

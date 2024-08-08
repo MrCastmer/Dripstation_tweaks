@@ -14,6 +14,40 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	icon_state = "med"
 	icon_door = "med_generic"
 
+/obj/structure/closet/secure_closet/paramedic/PopulateContents()
+	..()
+	if(prob(50))
+		new /obj/item/storage/backpack/medic(src)
+	else
+		new /obj/item/storage/backpack/satchel/med(src)
+	new /obj/item/storage/firstaid/hypospray/paramedic(src)
+	new /obj/item/clothing/shoes/sneakers/white(src)
+	switch(pick("blue", "green", "purple"))
+		if ("blue")
+			new /obj/item/clothing/under/rank/medical/doctor/blue(src)
+		if ("green")
+			new /obj/item/clothing/under/rank/medical/doctor/green(src)
+		if ("purple")
+			new /obj/item/clothing/under/rank/medical/doctor/purple(src)
+	switch(pick("blue", "green", "purple"))
+		if ("blue")
+			new /obj/item/clothing/under/rank/medical/doctor/blue(src)
+		if ("green")
+			new /obj/item/clothing/under/rank/medical/doctor/green(src)
+		if ("purple")
+			new /obj/item/clothing/under/rank/medical/doctor/purple(src)
+	new /obj/item/clothing/under/rank/medical/paramedic(src)
+	new /obj/item/clothing/suit/toggle/labcoat/emt(src)
+	new /obj/item/clothing/head/beret/emt/green(src)
+	new /obj/item/clothing/head/beret/emt(src)
+	new /obj/item/clothing/head/soft/emt(src)
+	new /obj/item/defibrillator/loaded(src)
+	new /obj/item/clothing/suit/toggle/labcoat/emt/green(src)
+	new /obj/item/clothing/head/soft/emt/green (src)
+	new /obj/item/radio/headset/headset_med(src)
+	new /obj/item/storage/belt/medical(src)
+	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+
 /obj/structure/closet/secure_closet/freezer
 	locked_state = "freezer_locked"
 	unlocked_state = "freezer_unlocked"

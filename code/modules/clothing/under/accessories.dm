@@ -295,7 +295,7 @@
 
 /obj/item/clothing/accessory/armband/medblue
 	name = "medical guard armband"
-	desc = "An armband, worn by engineers and security members to display which department they're assigned to. This one is white and green."
+	desc = "An armband, worn by engineers and security members to display which department they're assigned to. This one is white and blue."
 	icon_state = "medblueband"
 
 
