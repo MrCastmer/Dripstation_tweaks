@@ -23,6 +23,21 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	locked_state = "cabinet_locked"
 	unlocked_state = "cabinet_unlocked"
 
+/obj/structure/closet/secure_closet/psych/PopulateContents()
+	..()
+	new /obj/item/clothing/under/rank/psych(src)
+	new /obj/item/clothing/under/rank/psych/skirt(src)
+	new /obj/item/clothing/under/rank/psych/turtleneck(src)
+	new /obj/item/clothing/suit/straight_jacket(src)
+	new /obj/item/clothing/mask/muzzle(src)
+	new /obj/item/storage/pill_bottle/happiness(src)
+	new /obj/item/storage/pill_bottle/dice(src)
+	new /obj/item/storage/pill_bottle/happy(src)
+	new /obj/item/storage/pill_bottle/lsd(src)
+	new /obj/item/storage/pill_bottle/psicodine(src)
+	new /obj/item/assembly/flash(src)
+	new /obj/item/assembly/flash(src)
+
 /obj/structure/closet/secure_closet/personal/cabinet
 	locked_state = "cabinet_locked"
 	unlocked_state = "cabinet_unlocked"
@@ -559,6 +574,24 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/shoes/xeno_wraps/command(src)
 	new /obj/item/storage/lockbox/medal/eng(src)
 	new /obj/item/barrier_taperoll/engineering(src)
+
+/obj/structure/closet/secure_closet/cargotech
+	name = "\improper cargotech's locker"
+	desc = "Crates. Pull them. Lockers. Push them."
+	icon = 'modular_dripstation/icons/obj/closet.dmi'
+	req_access = list(ACCESS_CARGO)
+	icon_state = "cargo"
+
+/obj/structure/closet/secure_closet/cargo/PopulateContents()
+	..()
+	new /obj/item/clothing/under/rank/cargo/tech(src)
+	new /obj/item/clothing/under/rank/cargo/tech/skirt(src)
+	new /obj/item/clothing/shoes/workboots/cargo(src)
+	new /obj/item/storage/backpack/cargo(src)
+	new /obj/item/radio/headset/headset_cargo(src)
+	new /obj/item/export_scanner(src)
+	new /obj/item/stamp(src)
+	new /obj/item/stamp/denied(src)
 
 /obj/structure/closet/l3closet/PopulateContents()
 	new /obj/item/storage/bag/bio(src)

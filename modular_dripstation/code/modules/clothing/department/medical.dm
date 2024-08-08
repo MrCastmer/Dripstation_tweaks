@@ -94,6 +94,10 @@
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = NONE
 
+/obj/item/clothing/under/rank/medical/paramedic/emt/skirt/white
+	name = "em technician jumpskirt (White)"
+	icon_state = "emt_skirt_white"
+
 /obj/item/clothing/under/rank/medical/paramedic/recovery
 	name = "emergency medical technician's recovery undersuit"
 	desc = "A verstile blue and white uniform honored to hard working recovery medics in hazardous environments. It has minor protection against biohazards."

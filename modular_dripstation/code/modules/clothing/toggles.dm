@@ -225,7 +225,7 @@
 	name = "paramedic jacket"
 	icon_state = "paramedic_jacket"
 
-/obj/item/clothing/suit/toggle/emt_vest/jacket/paramedic
+/obj/item/clothing/suit/toggle/emt_vest/jacket/highvis
 	name = "em tech jacket"
 	desc = "A high vision jacket used in the recovery of bodies."
 	icon_state = "highvis"
