@@ -1,5 +1,6 @@
 ///Sniper///
 /obj/item/gun/ballistic/rifle/sniper_rifle
+	name = "\improper anti-material sniper rifle"
 	icon_state = "antimaterial_rifle"
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 
@@ -9,6 +10,13 @@
 /obj/item/gun/ballistic/rifle/sniper_rifle/ultrasecure
 	icon_state = "antimaterial_rifle_blc"
 
+/obj/item/gun/ballistic/rifle/sniper_rifle/waffle
+	name = "\improper anti-material sniper rifle W-7"
+	icon_state = "waffle_sniper"
+	item_state = "waffle_sniper"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
+	pin = /obj/item/firing_pin/fucked
 
 ///Boltaction///
 /obj/item/gun/ballistic/rifle/boltaction/brand_new
