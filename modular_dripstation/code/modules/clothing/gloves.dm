@@ -378,7 +378,7 @@
 	resistance_flags = NONE
 	custom_premium_price = 400
 	cryo_preserve = TRUE
-/*Tacklers switch off
+/*Tacklers switch off, to turn it on you need to include #include "code\datums\component\tackle.dm"
 	/// For storing our tackler datum so we can remove it after
 	var/datum/component/tackler
 	/// See: [/datum/component/tackler/var/stamina_cost]
