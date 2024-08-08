@@ -5,7 +5,9 @@
 	name = "ion pistol"
 	desc = "The NT-I3 Prototype Ion Projector is a compact ion pistol, built for personal defense."
 	icon_state = "ionpistol"
-	item_state = "gun"
+	item_state = null
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/ion/weak)
@@ -41,3 +43,20 @@
 	suppressed = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	pin = null
+
+/obj/item/gun/syringe
+	icon_state = "medicalsyringegun"
+	item_state = "medicalsyringegun"
+	icon = 'modular_dripstation/icons/obj/weapons/syringegun.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
+/obj/item/gun/syringe/syndicate
+	icon_state = "dartsyringegun"
+	item_state = "dartsyringegun"
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/gun/syringe/dna
+	icon_state = "dnasyringegun"
