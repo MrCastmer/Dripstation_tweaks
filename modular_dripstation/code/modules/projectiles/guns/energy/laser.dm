@@ -27,13 +27,14 @@
 /obj/item/gun/energy/laser/captain
 	name = "antique energy gun"
 	desc = "The NT-S01 energy gun is NT`s first attempt to provide an inbuilt recharger, and is the first in its line as an 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Due to how expensive it is to produce, and that the material used to do so deteriorates quickly, it was decommissioned, and the few models left are used as prizes meant to never see the light of day."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser)
 
 /obj/item/gun/energy/laser/centcom
 	name = "\improper NT-S05 Laser Service Pistol"
 	icon_state = "centcomlaser"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_NORMAL
-	desc = "The NT-S05 laser gun is NT`s real recreation of NT-S01 aiming to provide an inbuilt recharger with real laser functions. It also has 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Now in service with NanoTrasen`s Special Operations Department agents."
+	desc = "The NT-S05 laser gun is NT`s recreation of NT-S01 aiming to provide an inbuilt recharger with laser functions. It also has 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Now in service with NanoTrasen`s Special Operations Department agents."
 	pin = /obj/item/firing_pin/implant/mindshield
 	force = 10
 	selfcharge = 1
@@ -43,6 +44,8 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/gun/energy/laser/hellgun
+	name ="hellfire energy gun"
+	desc = "The NT-E2, nicknamed 'hellgun', is the second non-experimental model laser gun, built before NT began installing regulators on its laser weaponry. This pattern of laser gun became infamous for the gruesome burn wounds and fires that it caused, and was quietly discontinued once it began to affect NT's reputation."
 	icon_state = "immolator"
 	modifystate = TRUE
 
@@ -50,7 +53,7 @@
 	name = "scatter shot hellfire laser rifle"
 	icon_state = "multilensimmolator"
 	item_state = LASER
-	desc = "An military-grade heavy laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
+	desc = "The NT-E2 gun equipped with a refraction kit that spreads and precise energy bolts."
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/scatter, /obj/item/ammo_casing/energy/laser/hellfire/precise)
 	shaded_charge = 1

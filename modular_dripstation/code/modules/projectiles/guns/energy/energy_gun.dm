@@ -2,7 +2,7 @@
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
 /obj/item/gun/energy/e_gun/ancient
-	name = "NT-E2 gun"
+	name = "NT-E1 gun"
 	desc = "The NT-E2 is a basic energy gun that has only one mode. Kill."
 	icon_state = "energyold"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser)
