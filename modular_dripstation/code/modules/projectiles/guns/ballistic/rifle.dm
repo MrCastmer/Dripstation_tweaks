@@ -18,6 +18,9 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	pin = /obj/item/firing_pin/fucked
 
+/obj/item/gun/ballistic/rifle/sniper_rifle/waffle/unrestricted
+	pin = /obj/item/firing_pin
+
 ///Boltaction///
 /obj/item/gun/ballistic/rifle/boltaction/brand_new
 	desc = "A brand new Mosin Nagant issued by Nanotrasen for their interns. You would rather not to damage it."

@@ -8,6 +8,7 @@
 	icon_state = "militech_bulldogCAS"
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	mag_display_ammo = FALSE
+	pin = /obj/item/firing_pin/dna
 
 /obj/item/gun/ballistic/shotgun/bulldog/waffle
 	name = "\improper Waffle Combat Assault Shotgun W-12"
@@ -21,3 +22,6 @@
 	mag_display_ammo = FALSE
 	empty_indicator = FALSE
 	pin = /obj/item/firing_pin/fucked
+
+/obj/item/gun/ballistic/shotgun/bulldog/waffle/unrestricted
+	pin = /obj/item/firing_pin

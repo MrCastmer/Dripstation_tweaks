@@ -368,6 +368,7 @@
 #include "code\modules\projectiles\projectile\energy\ebow.dm"
 #include "code\modules\projectiles\projectile\energy\plasma.dm"
 #include "code\modules\projectiles\projectile\energy\stun.dm"
+#include "code\modules\projectiles\pins.dm"
 #include "code\modules\reagents\autoinjector.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_dispenser.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_master.dm"

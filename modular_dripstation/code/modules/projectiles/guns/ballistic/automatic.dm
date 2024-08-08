@@ -26,6 +26,9 @@
 	icon_state = "waffle_smg"
 	pin = /obj/item/firing_pin/fucked
 
+/obj/item/gun/ballistic/automatic/c20r/waffle/unrestricted
+	pin = /obj/item/firing_pin
+
 /obj/item/gun/ballistic/automatic/c20r/vector
 	name = "\improper UNN PDW-45 'Vector'"
 	desc = "A brand new SMG manufactured by UNN nicknamed Vector. Chambered in .45."
@@ -35,7 +38,7 @@
 	icon_state = "unn_vector"
 	fire_delay = 0
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
-	pin = /obj/item/firing_pin/dna
+	pin = /obj/item/firing_pin/dna/secure
 
 /obj/item/gun/ballistic/automatic/c20r/aegis
 	name = "\improper 'Aegis'"
@@ -148,6 +151,9 @@
 	desc = "A robust assault rifle used by Waffle Special Operations Division."
 	icon_state = "waffle_assault"
 	pin = /obj/item/firing_pin/fucked
+
+/obj/item/gun/ballistic/automatic/ar/waffle/unrestricted
+	pin = /obj/item/firing_pin
 
 //STM-9
 /obj/item/gun/ballistic/automatic/stm9
