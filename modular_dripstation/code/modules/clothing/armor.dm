@@ -267,6 +267,11 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	flags_cover = HEADCOVERSEYES
 	armor = list(MELEE = 15, BULLET = 60, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 
+/obj/item/clothing/suit/armor/vest/bulletproof/cybersun
+	name = "combat cybersun vest"
+	desc = "Type III bulletproof armor usually issued to paramilitary groups and real soldiers alike. Protects full body. This model has additional armor against energy based weaponry."
+	armor = list(MELEE = 15, BULLET = 60, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
+
 /obj/item/clothing/suit/armor/vest/combat
 	name = "combat vest"
 	desc = "Type III bulletproof armor usually issued to paramilitary groups and real soldiers alike. Protects full body and arms. Has additional armor against energy based weaponry."

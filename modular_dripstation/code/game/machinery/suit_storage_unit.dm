@@ -94,6 +94,16 @@
 	mask_type = /obj/item/clothing/mask/gas/explorer
 	department = "cargo"
 
+/obj/machinery/suit_storage_unit/mining/winter
+	suit_type = /obj/item/clothing/suit/hooded/explorer/winter
+	mask_type = /obj/item/clothing/mask/gas/explorer
+	department = "cargo"
+
+/obj/machinery/suit_storage_unit/mining/medic
+	suit_type = /obj/item/clothing/suit/hooded/miningmedic
+	mask_type = /obj/item/clothing/mask/gas/explorer
+	department = "med"
+
 /obj/machinery/suit_storage_unit/miningdualmod
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/mining
 	mask_type = /obj/item/clothing/mask/gas/explorer
@@ -171,6 +181,18 @@
 
 /obj/machinery/suit_storage_unit/syndicate/winter
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/winter
+	mask_type = /obj/item/clothing/mask/gas/syndicate
+	tank_type = /obj/item/tank/jetpack/oxygen/harness
+	department = "synd"	
+
+/obj/machinery/suit_storage_unit/syndicate/engi
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/engineering/syndicate
+	mask_type = /obj/item/clothing/mask/gas/syndicate
+	tank_type = /obj/item/tank/jetpack/oxygen/harness
+	department = "synd"	
+
+/obj/machinery/suit_storage_unit/syndicate/winter/engi
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/engineering/syndicate/winter
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	tank_type = /obj/item/tank/jetpack/oxygen/harness
 	department = "synd"	
