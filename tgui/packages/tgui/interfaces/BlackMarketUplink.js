@@ -10,6 +10,8 @@ export const BlackMarketUplink = (props, context) => {
     markets = [],
     items = [],
     money,
+    market_name,
+    theme_type,
     viewing_market,
     viewing_category,
   } = data;
@@ -17,12 +19,12 @@ export const BlackMarketUplink = (props, context) => {
     <Window
       width={600}
       height={480}
-      theme="hackerman"
+      theme={theme_type}
       resizable>
       <ShipmentSelector />
       <Window.Content scrollable>
         <Section
-          title="Black Market Uplink"
+          title={market_name}
           buttons={(
             <Box inline bold>
               <AnimatedNumber
@@ -70,9 +72,11 @@ export const BlackMarketUplink = (props, context) => {
                     {item.name}
                   </Flex.Item>
                   <Flex.Item color="label">
-                    {item.amount
-                      ? item.amount + " in stock"
-                      : "Out of stock"}
+                  {item.limited
+                      ? item.amount 
+                        ? item.amount + " in stock"
+                        : "Out of stock"
+                      : " Unlimited"}
                   </Flex.Item>
                   <Flex.Item>
                     {formatMoney(item.cost) + ' cr'}
@@ -117,7 +121,7 @@ const ShipmentSelector = (props, context) => {
     <Modal textAlign="center">
       <Flex mb={1}>
         {deliveryMethods.map(method => {
-          if (method.name === 'LTSRBT' && !ltsrbt_built) {
+          if ((method.name === 'LTSRBT' && !ltsrbt_built) || (method.name === 'RST' && !redpad_built)) {
             return null;
           }
           return (

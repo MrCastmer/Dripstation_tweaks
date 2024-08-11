@@ -253,7 +253,6 @@
 	icon_state = "random_terragov"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/terragov
-	random_type = POSTER_SUBTYPES
 
 /obj/structure/sign/poster/terragov/terragov_enlist
 	name = "Enlist"

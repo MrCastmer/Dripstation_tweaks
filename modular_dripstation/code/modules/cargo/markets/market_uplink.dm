@@ -5,6 +5,10 @@
 	icon_state = "uplink"
 
 	// UI variables.
+	/// What name of our uplink sistem?
+	var/market_name
+	/// What style is our uplink?
+	var/theme_type
 	/// What category is the current uplink viewing?
 	var/viewing_category
 	/// What market is currently being bought from by the uplink?
@@ -62,6 +66,8 @@
 	data["money"] = "N/A cr"
 	if(current_user)
 		data["money"] = current_user.account_balance
+	data["market_name"] = market_name
+	data["theme_type"] = theme_type
 	data["buying"] = buying
 	data["items"] = list()
 	data["viewing_category"] = viewing_category
@@ -74,6 +80,7 @@
 					"name" = I.name,
 					"cost" = I.price,
 					"amount" = I.stock,
+					"limited" = I.limitedstock,
 					"desc" = I.desc || I.name
 				))
 	return data
@@ -82,6 +89,7 @@
 	var/list/data = list()
 	data["delivery_method_description"] = SSblackmarket.shipping_method_descriptions
 	data["ltsrbt_built"] = SSblackmarket.telepads.len
+	data["redpad_built"] = SSblackmarket.redspacetelepads.len
 	data["markets"] = list()
 	for(var/M in accessible_markets)
 		var/datum/market/BM = SSblackmarket.markets[M]
@@ -149,6 +157,8 @@
 	icon = 'modular_dripstation/icons/obj/blackmarket/blackmarket.dmi'
 	icon_state = "uplink"
 	//The original black market uplink
+	market_name = "Black Market Uplink"
+	theme_type = "hackerman"
 	accessible_markets = list(/datum/market/blackmarket)
 
 
@@ -169,3 +179,12 @@
 	..()
 	blacklist |= typesof(/obj/item/radio/headset) // because we got shit like /obj/item/radio/off ... WHY!?!
 	blacklist |= typesof(/obj/item/radio/intercom)
+
+/obj/item/market_uplink/blackmarket
+	name = "\improper Sindicate Cargo Uplink"
+	desc = "An illegal market uplink."
+	icon = 'modular_dripstation/icons/obj/blackmarket/blackmarket.dmi'
+	icon_state = "uplink-syndie"
+	market_name = "Donk Co Shipping Services Uplink"
+	theme_type = "donk_co"
+	accessible_markets = list(/datum/market/syndicatecargo)
