@@ -3,13 +3,14 @@
 	req_access = list(ACCESS_QM)
 	icon_state = "qm"
 
+/*
 /obj/structure/closet/secure_closet/quartermaster/PopulateContents()
 	..()
 	new /obj/item/storage/lockbox/medal/cargo(src)
-	new /obj/item/clothing/under/rank/cargo(src)
-	new /obj/item/clothing/under/rank/cargo/skirt(src)
-	new /obj/item/clothing/under/rank/cargo/turtleneck(src)
-	new /obj/item/clothing/under/rank/cargo/skirt/turtleneck(src)
+	new /obj/item/clothing/under/rank/cargo/qm(src)
+	new /obj/item/clothing/under/rank/cargo/qm/skirt(src)
+	new /obj/item/clothing/under/rank/cargo/qm/turtleneck(src)
+	new /obj/item/clothing/under/rank/cargo/qm/skirt/turtleneck(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/suit/fire/firefighter(src)
@@ -26,3 +27,4 @@
 	new /obj/item/circuitboard/machine/ore_silo(src)
 	new /obj/item/card/id/departmental_budget/car(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/qm(src)
+*/

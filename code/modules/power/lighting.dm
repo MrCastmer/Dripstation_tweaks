@@ -287,6 +287,9 @@
 	///More stress stuff.
 	var/turning_on = FALSE
 
+	///Flicker cooldown
+	COOLDOWN_DECLARE(flicker_cooldown)
+
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
@@ -353,9 +356,6 @@
 	// Light projects out backwards from the dir of the light
 	set_light(l_dir = REVERSE_DIR(dir))
 
-	if(mapload && our_area.lights_always_start_on)
-		turn_on(trigger = FALSE, quiet = TRUE)
-
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/light/LateInitialize()
@@ -368,6 +368,8 @@
 			if(prob(5))
 				break_light_tube(TRUE)
 	update(trigger = FALSE)
+
+	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, PROC_REF(on_light_eater))
 
 /obj/machinery/light/Destroy()
 	GLOB.lights.Remove(src)
@@ -404,20 +406,22 @@
 
 /obj/machinery/light/update_overlays()
 	. = ..()
-	if(!on || status != LIGHT_OK)
-		return
-
-	. += emissive_appearance(overlay_icon, "[base_state]", src, alpha = src.alpha)
 
 	var/area/local_area = get_room_area()
 
-	if(emergency_mode || (local_area?.fire))
+	if(emergency_mode || (local_area?.fire) || (local_area?.vacuum)  || (local_area?.delta_light))
 		. += mutable_appearance(overlay_icon, "[base_state]_emergency")
+		. += emissive_appearance(overlay_icon, "[base_state]_emergency", src, alpha = src.alpha)
+		return
+	if(!on || status != LIGHT_OK)
 		return
 	if(nightshift_enabled)
 		. += mutable_appearance(overlay_icon, "[base_state]_nightshift")
+		. += emissive_appearance(overlay_icon, "[base_state]_nightshift", src, alpha = src.alpha)
 		return
-	. += mutable_appearance(overlay_icon, base_state)
+	else
+		. += mutable_appearance(overlay_icon, "[base_state]")
+		. += emissive_appearance(overlay_icon, "[base_state]", src, alpha = src.alpha)
 
 /obj/machinery/light/proc/clean_light(O,strength)
 	if(strength < CLEAN_TYPE_BLOOD)
@@ -654,7 +658,7 @@
 	newlight.setDir(dir)
 	newlight.stage = current_stage
 	if(!disassembled)
-		newlight.obj_integrity = newlight.max_integrity * 0.5
+		newlight.update_integrity(newlight.max_integrity * 0.5)
 		if(status != LIGHT_BROKEN)
 			break_light_tube()
 		if(status != LIGHT_EMPTY)
@@ -694,6 +698,13 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, 1)
 
+
+/obj/machinery/light/proc/on_light_eater(obj/machinery/light/source, datum/light_eater)
+	SIGNAL_HANDLER
+	if(status != LIGHT_EMPTY)
+		var/obj/item/light/tube = drop_light_tube()
+		tube?.burn()
+	return COMPONENT_BLOCK_LIGHT_EATER
 // returns if the light has power /but/ is manually turned off
 // if a light is turned off, it won't activate emergency power
 /obj/machinery/light/proc/turned_off()
@@ -729,8 +740,9 @@
 
 /obj/machinery/light/proc/flicker(amount = rand(10, 20))
 	set waitfor = 0
-	if(flickering)
+	if(flickering || !COOLDOWN_FINISHED(src, flicker_cooldown))
 		return
+	COOLDOWN_START(src, flicker_cooldown, 10 SECONDS)
 	flickering = 1
 	if(on && status == LIGHT_OK)
 		for(var/i = 0; i < amount; i++)
@@ -1024,7 +1036,7 @@
 	..()
 	shatter()
 
-/obj/item/light/attack_obj(obj/O, mob/living/user)
+/obj/item/light/attack_atom(obj/O, mob/living/user)
 	..()
 	shatter()
 
@@ -1075,9 +1087,9 @@
 	transfer_fingerprints_to(M)
 	qdel(src)
 
-/proc/flicker_all_lights()
+/proc/flicker_all_lights() //not QUITE all lights, but it reduces lag
 	for(var/obj/machinery/light/L in GLOB.machines)
-		if(is_station_level(L.z))
+		if(is_station_level(L.z) && prob(50))
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/obj/machinery/light, flicker), rand(3, 6)), rand(0, 15))
 
 #undef LIGHT_ON_DELAY_UPPER

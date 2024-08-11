@@ -69,6 +69,7 @@
 	icon_state = "forensic"
 	can_be_cut = 0
 
+/*
 /obj/item/clothing/gloves/color/black/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
 		if(can_be_cut && icon_state == initial(icon_state))//only if not dyed
@@ -77,6 +78,7 @@
 			new /obj/item/clothing/gloves/fingerless(drop_location())
 			qdel(src)
 	..()
+*/
 
 /obj/item/clothing/gloves/color/black/goliath
 	name = "goliath gloves"
@@ -167,7 +169,7 @@
 
 /obj/item/clothing/gloves/color/captain/centcom/admiral
 	desc = "Regal black gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
-	name = "\improper CentCom grand admiral gloves"
+	name = "\improper CentCom executive admiral gloves"
 	icon_state = "grand_admiral"
 	item_state = "grand_admiral"
 
