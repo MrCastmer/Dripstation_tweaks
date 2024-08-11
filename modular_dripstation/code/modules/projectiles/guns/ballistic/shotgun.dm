@@ -2,6 +2,9 @@
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 	icon_state = "cycler"
 
+/obj/item/gun/ballistic/shotgun/bulldog
+	desc = "A semi-auto, mag-fed Scarborough Arms shotgun for combat in narrow corridors, nicknamed the 'Bulldog' by boarding parties. Only compatible with specialized 8-round drum magazines."
+
 /obj/item/gun/ballistic/shotgun/bulldog/m12
 	name = "\improper Combat Assault Shotgun M-12"
 	desc = "A semi-auto, mag-fed Militech shotgun for combat in narrow corridors, nicknamed 'Saiga' by boarding parties. Compatible only with specialized 8-round drum magazines."
