@@ -237,16 +237,16 @@
 
 
 
-/obj/item/poster/random_erotic
+/obj/item/poster/random_terragov
 	name = "random solarian poster"
 	poster_type = /obj/structure/sign/poster/terragov/random
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
-	icon_state = "rolled_legit"
+	icon_state = "rolled_terra"
 
 /obj/structure/sign/poster/terragov
 	poster_item_name = "solarian poster"
 	poster_item_desc = "A solarian based poster, made with natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
-	poster_item_icon_state = "rolled_legit"
+	poster_item_icon_state = "rolled_terra"
 
 /obj/structure/sign/poster/terragov/random
 	name = "random solarian poster"
@@ -327,13 +327,13 @@
 	name = "random erotic poster"
 	poster_type = /obj/structure/sign/poster/erotic/random
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
-	icon_state = "rolled_abductor"
+	icon_state = "rolled_erotic"
 
 /obj/structure/sign/poster/erotic
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	poster_item_name = "erotic poster"
 	poster_item_desc = "This poster`s vulgar themes have marked it as contraband aboard Nanotrasen space facilities."
-	poster_item_icon_state = "rolled_abductor"
+	poster_item_icon_state = "rolled_erotic"
 
 /obj/structure/sign/poster/erotic/random
 	name = "random erotic poster"
