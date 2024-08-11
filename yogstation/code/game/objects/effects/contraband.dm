@@ -19,6 +19,7 @@
     poster_type = /obj/structure/sign/poster/official/neverforget
     icon_state = "rolled_legit"
 
+/* Dripstation edit
 /obj/structure/sign/poster/contraband/gorlex
 	name = "Gorlex Marauders"
 	desc = "This poster shows a member of the Gorlex Marauders brandishing an implanted blade while wearing one of their feared combat hardsuits."
@@ -29,6 +30,7 @@
 	desc = "This poster shows a member of the Gorlex Marauders brandishing an implanted blade while wearing one of their feared combat hardsuits."
 	poster_type = /obj/structure/sign/poster/contraband/gorlex
 	icon_state = "rolled_poster"
+*/
 
 /obj/structure/sign/poster/contraband/pro_self // 100110111011
 	name = "Version One"
