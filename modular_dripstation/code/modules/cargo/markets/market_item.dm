@@ -11,7 +11,7 @@
 	/// Price for the item, if not set creates a price according to the *_min and *_max vars.
 	var/price
 	/// Is this stock limited or not. 
-	var/limitedstock
+	var/limitedstock = TRUE
 	/// How many of this type of item is available, if not set creates a price according to the *_min and *_max vars.
 	var/stock
 
@@ -32,7 +32,7 @@
 /datum/market_item/New()
 	if(isnull(price))
 		price = rand(price_min, price_max)
-	if(limitedstock && isnull(stock))
+	if(isnull(stock))
 		stock = rand(stock_min, stock_max)
 
 /// Used for spawning the wanted item, override if you need to do something special with the item.

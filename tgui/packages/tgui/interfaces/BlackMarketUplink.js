@@ -72,11 +72,11 @@ export const BlackMarketUplink = (props, context) => {
                     {item.name}
                   </Flex.Item>
                   <Flex.Item color="label">
-                  {item.limited
-                      ? item.amount 
+                  {item.limited == 0
+                      ? ""
+                      : item.amount 
                         ? item.amount + " in stock"
-                        : "Out of stock"
-                      : " Unlimited"}
+                        : "Out of stock"}
                   </Flex.Item>
                   <Flex.Item>
                     {formatMoney(item.cost) + ' cr'}
@@ -105,6 +105,7 @@ const ShipmentSelector = (props, context) => {
   const {
     buying,
     ltsrbt_built,
+    redpad_built,
     money,
   } = data;
   if (!buying) {

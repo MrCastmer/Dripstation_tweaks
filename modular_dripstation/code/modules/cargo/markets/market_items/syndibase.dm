@@ -6,7 +6,7 @@
 	/// Keep it 1, if you wand it unlimited
 	stock = 1
 	/// It`s unlimited
-	limitedstock = 0
+	limitedstock = FALSE
 	/// Your crate name
 	var/crate_name
 	/// Your crate type

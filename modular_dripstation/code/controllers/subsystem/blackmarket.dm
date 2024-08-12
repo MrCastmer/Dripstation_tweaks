@@ -110,14 +110,19 @@ SUBSYSTEM_DEF(blackmarket)
 				qdel(purchase)
 			// Get the current location of the uplink if it exists, then throws the item from space at the station from a random direction.
 			if(SHIPPING_METHOD_LAUNCH)
+				var/planetary = SSmapping.is_planetary()
 				var/startSide = pick(GLOB.cardinals)
 				var/turf/T = get_turf(purchase.uplink)
 				var/pickedloc = spaceDebrisStartLoc(startSide, T.z)
-
-				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
-				item.throw_at(purchase.uplink, 3, 3, spin = FALSE)
-
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at the station from [dir2text(startSide)]."))
+				if(!planetary)
+					var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
+					item.throw_at(purchase.uplink, 3, 3, spin = FALSE)
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at the station from [dir2text(startSide)]."))
+				else
+					var/obj/structure/closet/supplypod/toLaunch = new()
+					new purchase.entry.item(toLaunch)
+					new /obj/effect/DPtarget(pickedloc, toLaunch)
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at the station in [dir2text(startSide)]. Item is probably in [pickedloc]."))
 
 				queued_purchases -= purchase
 				qdel(purchase)

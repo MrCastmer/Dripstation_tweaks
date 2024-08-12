@@ -180,7 +180,7 @@
 	blacklist |= typesof(/obj/item/radio/headset) // because we got shit like /obj/item/radio/off ... WHY!?!
 	blacklist |= typesof(/obj/item/radio/intercom)
 
-/obj/item/market_uplink/blackmarket
+/obj/item/market_uplink/syndicatecargo
 	name = "\improper Sindicate Cargo Uplink"
 	desc = "An illegal market uplink."
 	icon = 'modular_dripstation/icons/obj/blackmarket/blackmarket.dmi'
