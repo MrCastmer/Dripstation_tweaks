@@ -181,10 +181,12 @@
 	blacklist |= typesof(/obj/item/radio/intercom)
 
 /obj/item/market_uplink/syndicatecargo
-	name = "\improper Sindicate Cargo Uplink"
+	name = "\improper Syndicate Cargo Uplink"
 	desc = "An illegal market uplink."
 	icon = 'modular_dripstation/icons/obj/blackmarket/blackmarket.dmi'
 	icon_state = "uplink-syndie"
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
 	market_name = "Donk Co Shipping Services Uplink"
 	theme_type = "donk_co"
 	accessible_markets = list(/datum/market/syndicatecargo)

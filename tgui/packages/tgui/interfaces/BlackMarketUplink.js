@@ -136,21 +136,23 @@ const ShipmentSelector = (props, context) => {
               <Box mt={1}>
                 {method.description}
               </Box>
-              <Button
-                mt={2}
-                content={formatMoney(method.price) + ' cr'}
-                disabled={money < method.price}
-                onClick={() => act('buy', {
-                  method: method.name,
-                })} />
+              <Fragment>
+                <Button
+                  mt={2}
+                  content={formatMoney(method.price) + ' cr'}
+                  disabled={money < method.price}
+                  onClick={() => act('buy', {
+                    method: method.name,
+                  })} />
+                <Button
+                  content="Cancel"
+                  color="bad"
+                  onClick={() => act('cancel')} />
+              </Fragment>
             </Flex.Item>
           );
         })}
       </Flex>
-      <Button
-        content="Cancel"
-        color="bad"
-        onClick={() => act('cancel')} />
     </Modal>
   );
 };

@@ -187,12 +187,12 @@
 	item = /obj/structure/closet/crate
 
 /datum/market_item/syndibase/security/secway
-    name = "Secway Crate"
-    desc = "A stylish way to travel for all law enforcement."
-    price = CARGO_CRATE_VALUE * 14
-    contains = list(/obj/vehicle/ridden/secway,
-                    /obj/item/key/security)
-    crate_name = "secway crate"
+	name = "Secway Crate"
+	desc = "A stylish way to travel for all law enforcement."
+	price = CARGO_CRATE_VALUE * 14
+	contains = list(/obj/vehicle/ridden/secway,
+					/obj/item/key/security)
+	crate_name = "secway crate"
 	item = /obj/structure/closet/crate
 
 /datum/market_item/syndibase/security/firingpins
@@ -256,13 +256,13 @@
 
 /datum/market_item/syndibase/security/energy_crossbow
 	name = "Cybersun Miniature Energy Crossbow"
-	desc = "Well, thats a crossbow. Energy one."
+	desc = "Well, that`s the crossbow. Energy one."
 	contains = list(/obj/item/gun/energy/kinetic_accelerator/crossbow)
 	price = CARGO_CRATE_VALUE * 20
 	crate_name = "Energy Crossbow crate"
 	item = /obj/structure/closet/crate
 
-/datum/syndie_market_item/syndibases/security/armor
+/datum/market_item/syndibase/security/armor
 	name = "Armor Crate"
 	desc = "Three sets of well-rounded, decently-protective armor and helmet. Requires Security access to open."
 	contains = list(/obj/item/clothing/suit/armor/vest,
@@ -314,7 +314,7 @@
 	crate_name = "C-20r SMG Crate"
 	item = /obj/structure/closet/crate
 
-/datum/market_item/syndibase/armory/c20smg
+/datum/market_item/syndibase/armory/smgammo
 	name = "Scarborough Arms .45 SMG Magazines Crate"
 	desc = "Scarborough starndart SMG ammo."
 	contains = list(/obj/item/ammo_box/magazine/smgm45,
@@ -324,7 +324,7 @@
 	crate_name = ".45 SMG Magazines Crate"
 	item = /obj/structure/closet/crate
 
-/datum/market_item/syndibase/security/armory/iweapons
+/datum/market_item/syndibase/armory/iweapons
 	name = "Incendiary Weapons Crate"
 	desc = "Light them up with flamethrower and three plasma grenades."
 	contains = list(/obj/item/flamethrower/full,
@@ -349,7 +349,7 @@
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	price = CARGO_CRATE_VALUE * 0.5
 	crate_name = "fuel tank crate"
-	item = /obj/structure/largecrate
+	item = /obj/structure/closet/crate/large
 
 /datum/market_item/syndibase/engineering/tools
 	name = "Syndicate Toolbox Crate"
@@ -357,7 +357,7 @@
 	contains = list(/obj/item/storage/toolbox/syndicate,
 					/obj/item/storage/toolbox/syndicate,
 					/obj/item/storage/toolbox/syndicate)
-	price = CARGO_CRATE_VALUE * 0.5
+	price = CARGO_CRATE_VALUE * 4
 	crate_name = "Syndicate Toolbox crate"
 	item = /obj/structure/closet/crate
 
@@ -385,9 +385,9 @@
 	contains = list(/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
-					/obj/item/clothing/suit/storage/hazardvest,
-					/obj/item/clothing/suit/storage/hazardvest,
-					/obj/item/clothing/suit/storage/hazardvest,
+					/obj/item/clothing/suit/hazardvest,
+					/obj/item/clothing/suit/hazardvest,
+					/obj/item/clothing/suit/hazardvest,
 					/obj/item/clothing/head/welding,
 					/obj/item/clothing/head/welding,
 					/obj/item/clothing/head/welding,
@@ -429,7 +429,7 @@
 /datum/market_item/syndibase/engineering/sologamermitts
 	name = "Combat Insulated Gloves Single-Pack"
 	desc = "The backbone of modern society. Barely ever ordered for actual engineering. Single Order. Extra fashion."
-	price = CARGO_CRATE_VALUE * 3
+	price = CARGO_CRATE_VALUE * 1
 	contains = list(/obj/item/clothing/gloves/combat)
 	crate_name= "combat gloves crate"
 	item = /obj/structure/closet/crate
@@ -695,10 +695,10 @@
 	item = /obj/structure/closet/crate/large
 
 
-/datum/market_item/syndibase/medical
-	group = "Vahlen Chemicals"
+/datum/market_item/syndibase/vahlen_chem
+	category = "Vahlen Pharmaceuticals"
 
-/datum/market_item/syndibase/medical/bloodpacks
+/datum/market_item/syndibase/vahlen_chem/bloodpacks
 	name = "Blood Pack Variety Crate"
 	desc = "Contains eight different blood packs for reintroducing blood to patients."
 	price = CARGO_CRATE_VALUE * 10
@@ -715,7 +715,7 @@
 	crate_name = "blood freezer"
 	item = /obj/structure/closet/crate/freezer
 
-/datum/market_item/syndibase/medical/medipen_variety
+/datum/market_item/syndibase/vahlen_chem/medipen_variety
 	name = "Medipen Variety-Pak"
 	desc = "Contains eight different medipens in three different varieties, to assist in quickly treating seriously injured patients."
 	price = CARGO_CRATE_VALUE * 5
@@ -739,7 +739,7 @@
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 
-/datum/market_item/syndibase/medical/firstaidadvanced_single
+/datum/market_item/syndibase/vahlen_chem/firstaidadvanced_single
 	name = "Advanced Treatment Kit Single-Pack"
 	desc = "Contains one advanced first aid kit able to heal many advanced ailments."
 	price = CARGO_CRATE_VALUE * 5
@@ -747,7 +747,7 @@
 	crate_name = "ATC crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypospraykitvial_single
+/datum/market_item/syndibase/vahlen_chem/hypospraykitvial_single
 	name = "Hypospray Kit Single-Pack"
 	desc = "Contains a hypospray kit containing a hypospray and empty vials for applying reagents to patients."
 	price = CARGO_CRATE_VALUE
@@ -755,7 +755,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypovialkitbasic_single
+/datum/market_item/syndibase/vahlen_chem/hypovialkitbasic_single
 	name = "Basic Hypospray Vial Kit Single-Pack"
 	desc = "Contains a hypospray vial kit containing hypospray vials for most common situations."
 	price = CARGO_CRATE_VALUE * 0.5
@@ -763,7 +763,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypovialkitbrute_single
+/datum/market_item/syndibase/vahlen_chem/hypovialkitbrute_single
 	name = "Brute Hypospray Vial Kit Single-Pack"
 	desc = "Contains a hypospray vial kit containing hypospray vials to treat most blunt trauma."
 	price = CARGO_CRATE_VALUE * 0.5
@@ -771,7 +771,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypovialkitburn_single
+/datum/market_item/syndibase/vahlen_chem/hypovialkitburn_single
 	name = "Burn Hypospray Vial Kit Single-Pack"
 	desc = "Contains a hypospray vial kit containing hypospray vials to treat most burns."
 	price = CARGO_CRATE_VALUE * 0.5
@@ -779,7 +779,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypovialkittox_single
+/datum/market_item/syndibase/vahlen_chem/hypovialkittox_single
 	name = "Toxin Hypospray Vial Kit Single-Pack"
 	desc = "Contains a hypospray vial kit containing hypospray vials to cure toxic damage."
 	price = CARGO_CRATE_VALUE * 0.5
@@ -787,7 +787,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypovialkitoxy_single
+/datum/market_item/syndibase/vahlen_chem/hypovialkitoxy_single
 	name = "Oxygen Hypospray Vial Kit Single-Pack"
 	desc = "Contains a hypospray vial kit containing a vials to treat suffication."
 	price = CARGO_CRATE_VALUE * 0.5
@@ -795,7 +795,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/hypovialkitadv_single
+/datum/market_item/syndibase/vahlen_chem/hypovialkitadv_single
 	name = "Advanced Hypospray Vial Kit Single-Pack"
 	desc = "Contains an advanced hypospray vial kit containing vials for most situations."
 	price = CARGO_CRATE_VALUE
@@ -803,7 +803,7 @@
 	crate_name = "hypospray crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/medipen_twopak
+/datum/market_item/syndibase/vahlen_chem/medipen_twopak
 	name = "Medipen Two-Pak"
 	desc = "Contains one standard epinephrine medipen and one standard emergency first-aid kit medipen. For when you want to prepare for the worst."
 	price = CARGO_CRATE_VALUE * 2
@@ -811,7 +811,7 @@
 	crate_name = "medipen crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/chemical
+/datum/market_item/syndibase/vahlen_chem/chemical
 	name = "Chemical Starter Kit Crate"
 	desc = "Contains thirteen different chemicals, for all the fun experiments you can make."
 	price = CARGO_CRATE_VALUE * 7
@@ -834,7 +834,7 @@
 	crate_name = "chemical crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/lemoline
+/datum/market_item/syndibase/vahlen_chem/lemoline
 	name = "Lemoline Import Crate"
 	desc = "Contains a beaker of lemoline, used in the production of several powerful medicines."
 	price = CARGO_CRATE_VALUE * 3
@@ -842,15 +842,7 @@
 	crate_name = "imported chemical crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/defibs
-	name = "Combat defibrillator Crate"
-	desc = "Contains combat defibrillator for bringing the recently deceased back to life."
-	price = CARGO_CRATE_VALUE * 10
-	contains = list(/obj/item/defibrillator/compact/combat/loaded)
-	crate_name = "defibrillator crate"
-	item = /obj/structure/closet/crate/medical
-
-/datum/market_item/syndibase/medical/iv_drip
+/datum/market_item/syndibase/vahlen_chem/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip for administering blood to patients."
 	price = CARGO_CRATE_VALUE * 5
@@ -858,17 +850,28 @@
 	crate_name = "iv drip crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/surgery
+/datum/market_item/syndibase/vahlen_chem/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical duffelbag, Sterilizine spray and collapsible roller bed."
 	price = CARGO_CRATE_VALUE * 15
-	contains = list(/obj/item/storage/backpack/duffelbag/med/surgery,
+	contains = list(/obj/item/storage/backpack/duffelbag/syndie/surgery,
 					/obj/item/reagent_containers/medspray/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/salglucanister
+/datum/market_item/syndibase/cybersun_med
+	category = "Cybersun Medical Solutions"
+
+/datum/market_item/syndibase/cybersun_med/defibs
+	name = "Combat defibrillator Crate"
+	desc = "Contains combat defibrillator for bringing the recently deceased back to life."
+	price = CARGO_CRATE_VALUE * 10
+	contains = list(/obj/item/defibrillator/compact/combat/loaded)
+	crate_name = "defibrillator crate"
+	item = /obj/structure/closet/crate/medical
+
+/datum/market_item/syndibase/cybersun_med/salglucanister
 	name = "Heavy-Duty Saline Canister"
 	desc = "Contains a bulk supply of saline-glucose condensed into a single canister that should last several days, with a large pump to fill containers with. Direct injection of saline should be left to medical professionals as the pump is capable of overdosing patients. Requires medbay access to open."
 	price = CARGO_CRATE_VALUE * 15
@@ -876,7 +879,7 @@
 	crate_name = "saline canister crate"
 	item = /obj/structure/closet/crate/medical
 
-/datum/market_item/syndibase/medical/vending
+/datum/market_item/syndibase/cybersun_med/vending
 	name = "Medical Vending Crate"
 	desc = "Contains one NanoMed Plus refill, one wall-mounted NanoMed refill, and one wall-mounted HypoMed refill."
 	price = CARGO_CRATE_VALUE * 12
