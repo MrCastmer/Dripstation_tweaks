@@ -1,7 +1,8 @@
 /obj/item/melee/baton
 	var/item_state_updating = TRUE
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	icon = 'modular_dripstation/icons/obj/weapons/security.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/security_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/security_righthand.dmi'
 
 /obj/item/melee/baton/update_icon_state()
 	if(item_state_updating)
@@ -11,7 +12,70 @@
 			item_state = "[initial(item_state)]"
 	..()
 
+/obj/item/melee/baton/stunsword
+	icon_state = "stunsword"
+	item_state = "sword"
+	slot_flags = null
+
+/obj/item/melee/baton/stunsword/loaded
+	preload_cell_type = /obj/item/stock_parts/cell/high
+
+/obj/item/storage/belt/sabre/stunsword
+	name = "security sheath"
+	desc = "A statement on modern practical fashion; this limber black sheath is fitted to a lightened security belt, allowing one to look fashionable with their sword-shaped stun-baton, while of course carrying less things."
+	icon_state = "secsheath"
+	item_state = "security"
+	icon = 'modular_dripstation/icons/obj/weapons/security.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
+
+/obj/item/storage/belt/sabre/stunsword/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+	STR.max_combined_w_class = 18
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.set_holdable(list(
+		/obj/item/melee/baton/stunsword,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/restraints/handcuffs,
+		/obj/item/assembly/flash/handheld,
+		/obj/item/clothing/glasses,
+		/obj/item/ammo_casing/shotgun,
+		/obj/item/ammo_box,
+		/obj/item/storage/box/rubbershot,
+		/obj/item/storage/box/lethalshot,
+		/obj/item/storage/box/breacherslug,
+		/obj/item/storage/box/beanbag,
+		/obj/item/reagent_containers/food/snacks/donut,
+		/obj/item/kitchen/knife/combat,
+		/obj/item/flashlight/seclite,
+		/obj/item/radio,
+		/obj/item/pinpointer/tracker,
+		/obj/item/clothing/gloves,
+		/obj/item/restraints/legcuffs/bola,
+		/obj/item/gun/ballistic/revolver/tracking,
+		/obj/item/holosign_creator/security,
+		/obj/item/shield/riot/tele,
+		/obj/item/barrier_taperoll/police
+		))
+
+/obj/item/storage/belt/sabre/stunsword/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/melee/baton/stunsword/loaded, src)
+	update_appearance(UPDATE_ICON)
+
+/obj/item/storage/belt/sabre/stunsword/full/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/melee/baton/stunsword/loaded, src)
+	SSwardrobe.provide_type(/obj/item/reagent_containers/spray/pepper, src)
+	SSwardrobe.provide_type(/obj/item/restraints/handcuffs, src)
+	SSwardrobe.provide_type(/obj/item/grenade/flashbang, src)
+	SSwardrobe.provide_type(/obj/item/assembly/flash/handheld, src)
+	SSwardrobe.provide_type(/obj/item/barrier_taperoll/police, src)
+	update_appearance(UPDATE_ICON)
+
 /obj/item/melee/baton/cattleprod
+	icon = 'icons/obj/weapons/baton.dmi'
 	item_state_updating = FALSE
 
 /obj/item/melee/baton/cattleprod/tactical
@@ -91,6 +155,8 @@
 	force = 0
 	throwforce = 0
 	w_class = WEIGHT_CLASS_SMALL
+	///Active?
+	var/status = FALSE
 	///how many charges left
 	var/charge = 1
 	///how much stamina damage we deal per hit, this is combatted by energy armor
@@ -100,13 +166,29 @@
 
 /obj/item/melee/shocker/examine(mob/user)
 	. = ..()
+	if(status)
+		. += span_notice("\The [src] is activated.")
+	else
+		. += span_warning("\The [src] is deactivated.")
 	if(charge)
 		. += span_notice("\The [src] is charged.")
 	else
 		. += span_warning("\The [src] is used.")
 
+/obj/item/melee/shocker/attack_self(mob/user)
+	if(charge)
+		status = !status
+		to_chat(user, span_notice("[src] is now [status ? "on" : "off"]."))
+		playsound(loc, "sparks", 75, 1, -1)
+		do_sparks(1, TRUE, src)
+	else
+		status = FALSE
+		to_chat(user, span_warning("[src] have it`s cell depleated!"))
+	update_appearance(UPDATE_ICON)
+	add_fingerprint(user)
+
 /obj/item/melee/shocker/attack(mob/M, mob/living/carbon/human/user)
-	if(charge && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if(charge && status && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
 							span_userdanger("You accidentally hit yourself with [src]!"))
 		user.Paralyze(stunforce*3)
@@ -127,16 +209,27 @@
 			A.handle_counter(L, user)
 			return
 
+//I hate myself
 	if(user.a_intent != INTENT_HARM)
 		if(charge)
-			if(shocker_stun(M, user))
-				user.do_attack_animation(M)
-				return
+			if(status)
+				if(shocker_stun(M, user))
+					user.do_attack_animation(M)
+					return
+			else
+				to_chat(user, span_danger("[src] isn`t active!"))
 		else
 			to_chat(user, span_danger("The cell is depleted!"))
 	else
 		if(charge)
-			shocker_stun(M, user)
+			if(status)
+				shocker_stun(M, user)
+				status = FALSE
+				update_appearance(UPDATE_ICON)
+			else
+				to_chat(user, span_danger("[src] isn`t active!"))
+		else
+			to_chat(user, span_danger("The cell is depleted!"))
 		..()
 
 
