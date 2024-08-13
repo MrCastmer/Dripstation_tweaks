@@ -5,6 +5,11 @@
 /obj/item/card/id/departmental_budget/car
 	icon_state = "car_budget"
 
+/obj/item/card/id/departmental_budget/syndibase
+	icon_state = "syndibase_budget"
+	department_ID = ACCOUNT_SYNDIBASE
+	department_name = ACCOUNT_SYNDIBASE_NAME
+
 /obj/item/card/id/departmental_budget/sec
 	icon_state = "sec_budget"
 
@@ -45,6 +50,27 @@
 /obj/item/card/id/syndicate_command
 	icon_state = "commander"
 
+/obj/item/card/id/syndicate/syndibase
+	name = "operative card"
+	registered_name = "operative"
+	assignment = "SRB Team"
+	originalassignment = "SRB Team"
+	registered_age = null
+	forged = TRUE
+	anyone = TRUE
+	registered_age = null
+	icon_state = "syndie_alt"
+
+/obj/item/card/id/syndicate/syndibase_commander
+	name = "team leader card"
+	registered_name = "leader"
+	assignment = "SRB Team"
+	originalassignment = "SRB Team"
+	registered_age = null
+	forged = TRUE
+	anyone = TRUE
+	registered_age = null
+	icon_state = "commander_alt"
 
 /obj/item/card/id
 	icon = 'modular_dripstation/icons/obj/card.dmi'
@@ -97,6 +123,23 @@
 		"Bridge Assistant" = list("captain","green"),
 		"Brig Officer" = list("security","white"),
 	)
+	var/static/list/fluffblacklist = list(
+		"Deathsquad Officer",
+		"SpecOps Officer",
+		"CentCom Official",
+		"Emergency Response Team Commander",
+		"Amber Task Force",
+		"Occupying Officer",
+		"Security Response Officer",
+		"Engineer Response Officer",
+		"Medical Response Officer",
+		"Religious Response Officer",
+		"Janitorial Response Officer",
+		"Clown ERT",
+		"Nuclear Squad",
+		"Syndicate Overlord",
+		"SRB Team",
+	)
 	if(job in idfluff)
 		has_fluff = TRUE
 	else if(!job)
@@ -128,8 +171,9 @@
 	originalassignment = "Deathsquad Officer"
 	registered_age = null
 
-/obj/item/card/id/deathsquad/gamma_force
+/obj/item/card/id/gamma_force
 	name = "\improper SpecOps ID"
+	desc = "An ID straight from Nanotrasen SpecOps Division."
 	icon_state = "ERT_gamma"
 	registered_name = "SpecOps Operative"
 	assignment = "SpecOps Officer"

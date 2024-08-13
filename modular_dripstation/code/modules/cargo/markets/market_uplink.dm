@@ -19,6 +19,7 @@
 	var/buying
 	///Reference to the currently logged in user's bank account.
 	var/datum/bank_account/current_user
+	var/datum/bank_account/modified_account
 	/// List of typepaths for "/datum/market"s that this uplink can access.
 	var/list/accessible_markets = list(/datum/market/blackmarket)
 
@@ -56,6 +57,8 @@
 		id_card = livin.get_idcard()
 	if(id_card?.registered_account)
 		current_user = id_card.registered_account
+	else if (modified_account)
+		current_user = modified_account
 	else
 		current_user = null
 	data["categories"] = market ? market.categories : null
@@ -150,6 +153,17 @@
 
 			buying = FALSE
 			selected_item = null
+
+/obj/item/market_uplink/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/card/id))
+		var/obj/item/card/id/card = I
+		if(card?.registered_account)
+			modified_account = card.registered_account
+	else
+		return ..()
+
+/obj/item/market_uplink/AltClick(mob/living/user)
+	modified_account = null
 
 /obj/item/market_uplink/blackmarket
 	name = "\improper Black Market Uplink"
