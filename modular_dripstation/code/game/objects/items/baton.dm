@@ -175,6 +175,13 @@
 	else
 		. += span_warning("\The [src] is used.")
 
+/obj/item/melee/baton/update_icon_state()
+	. = ..()
+	if(status)
+		icon_state = "[initial(icon_state)]_active"
+	else
+		icon_state = "[initial(icon_state)]"
+
 /obj/item/melee/shocker/attack_self(mob/user)
 	if(charge)
 		status = !status
@@ -210,27 +217,15 @@
 			return
 
 //I hate myself
-	if(user.a_intent != INTENT_HARM)
-		if(charge)
-			if(status)
-				if(shocker_stun(M, user))
-					user.do_attack_animation(M)
-					return
-			else
-				to_chat(user, span_danger("[src] isn`t active!"))
+	if(charge)
+		if(status)
+			if(shocker_stun(M, user))
+				user.do_attack_animation(M)
 		else
-			to_chat(user, span_danger("The cell is depleted!"))
+			to_chat(user, span_danger("[src] isn`t active!"))
 	else
-		if(charge)
-			if(status)
-				shocker_stun(M, user)
-				status = FALSE
-				update_appearance(UPDATE_ICON)
-			else
-				to_chat(user, span_danger("[src] isn`t active!"))
-		else
-			to_chat(user, span_danger("The cell is depleted!"))
-		..()
+		to_chat(user, span_danger("The cell is depleted!"))
+	..()
 
 
 /obj/item/melee/shocker/proc/shocker_stun(mob/living/L, mob/user)
@@ -279,6 +274,8 @@
 
 	charge -= 1
 	playsound(loc, 'modular_dripstation/sound/weapons/taser.ogg', 40, 0, -5)
+	status = FALSE
+	update_appearance(UPDATE_ICON)
 
 	return TRUE
 
