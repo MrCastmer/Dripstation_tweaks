@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/mineral/snowmountain/icemoon,
+/turf/closed/mineral/snowmountain,
 /area/lavaland/surface/outdoors)
 "b" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -110,6 +110,9 @@
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
 /area/ruin/unpowered)
+"D" = (
+/turf/open/floor/plating/snowed/smoothed,
+/area/lavaland/surface/outdoors)
 "L" = (
 /obj/structure/closet/abductor,
 /obj/item/toy/plush/abductor,
@@ -233,11 +236,11 @@ a
 a
 a
 N
+D
 N
+D
 N
-N
-N
-N
+D
 a
 a
 "}
@@ -247,7 +250,7 @@ a
 N
 r
 N
-N
+D
 N
 N
 a
