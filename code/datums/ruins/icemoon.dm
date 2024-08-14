@@ -85,30 +85,35 @@
 	id = "dead_ratvar"
 	description = "The god himself"
 	suffix = "icemoon_surface_dead_ratvar.dmm"
+	cost = 15
 
 /datum/map_template/ruin/icemoon/engioutpost
 	name = "Engi Outpost"
 	id = "engioutpost"
 	description = "Engioutposting"
 	suffix = "icemoon_surface_engioutpost.dmm"
+	cost = 15
 
 /datum/map_template/ruin/icemoon/underground/abandonedhydrolab
 	name = "Abandoned Hydroponics Lab"
 	id = "hydroponicslab"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_hydroponics_lab.dmm"
+	cost = 15
 
 /datum/map_template/ruin/icemoon/underground/arctic_station
 	name = "Abandoned Arctic Station"
 	id = "arctic_station"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_oldstation.dmm"
+	cost = 20
 
 /datum/map_template/ruin/icemoon/underground/slimelab
 	name = "Abandoned Slime Laboratory"
 	id = "slimelab"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_slimelab.dmm"
+	cost = 20
 
 // above and below ground together
 
