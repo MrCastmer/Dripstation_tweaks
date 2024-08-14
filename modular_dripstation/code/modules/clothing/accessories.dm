@@ -35,3 +35,7 @@
 /obj/item/clothing/accessory/armband/medblue
 	name = "medical guard armband"
 	desc = "An armband, worn by station stuff members to display which department they're assigned to. This one is white and green."
+
+/obj/item/clothing/accessory/medal/silver/legal
+	name = "meritous legal medal"
+	desc = "An award issued by the Magistrate to legal staff who uphold the rule of law."

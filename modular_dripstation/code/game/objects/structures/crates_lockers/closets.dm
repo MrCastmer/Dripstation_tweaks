@@ -498,19 +498,68 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	req_access = list(ACCESS_BLUESHIELD)
 	icon_state = "bs"
 
+/obj/structure/closet/secure_closet/blueshield/PopulateContents()
+	..()
+	new /obj/item/storage/firstaid/advanced(src)
+	new /obj/item/clothing/glasses/hud/security(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/storage/box/flashbangs(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/storage/belt/military/assault/blueshield(src)
+	new /obj/item/clothing/suit/armor/bulletproof/blueshield(src)
+	new /obj/item/radio/headset/blueshield(src)
+	new /obj/item/storage/bag/garment/blueshield(src)
+	new /obj/item/clothing/shoes/laceup(src)
+
 // ###### NT REPRESENTATIVE ######
 /obj/structure/closet/secure_closet/ntrep
 	name = "\improper Nanotrasen Representative's locker"
 	icon = 'modular_dripstation/icons/obj/closet.dmi'
 	req_access = list(ACCESS_NTREP)
-	icon_state = "cc"
+	icon_state = "ntr"
+
+/obj/structure/closet/secure_closet/ntrep/PopulateContents()
+	..()
+	new /obj/item/book/manual/wiki/security_space_law(src)
+	new /obj/item/storage/secure/briefcase(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/clothing/glasses/hud/personnel(src)
+	new /obj/item/radio/headset/ntrep(src)
+	new /obj/item/storage/bag/garment/ntrep(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/taperecorder(src)
+	new /obj/item/tape(src)
+	new /obj/item/tape(src)
+	new /obj/item/tape(src)
 
 // ###### MAGISTRATE ######
 /obj/structure/closet/secure_closet/magistrate
 	name = "\improper Magistrate's locker"
 	icon = 'modular_dripstation/icons/obj/closet.dmi'
 	req_access = list(ACCESS_MAGISTRATE)
-	icon_state = "cc"
+	icon_state = "magi"
+
+/obj/structure/closet/secure_closet/magistrate/PopulateContents()
+	..()
+	new /obj/item/book/manual/wiki/security_space_law(src)
+	new /obj/item/storage/secure/briefcase(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/gavelblock(src)
+	new /obj/item/gavelhammer(src)
+	new /obj/item/clothing/accessory/medal/silver/legal(src)
+	new /obj/item/clothing/accessory/lawyers_badge(src)
+	new /obj/item/radio/headset/magistrate(src)
+	new /obj/item/megaphone(src)
+	new /obj/item/storage/bag/garment/magistrate(src)
+	new /obj/item/clothing/shoes/laceup/brown(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/taperecorder(src)
+	new /obj/item/tape(src)
+	new /obj/item/tape(src)
+	new /obj/item/tape(src)
 
 // ###### QUARTERMASTER ######
 /obj/structure/closet/secure_closet/quartermaster

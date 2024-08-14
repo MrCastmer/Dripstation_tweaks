@@ -54,6 +54,20 @@
 	desc = "A bag for storing extra clothes and gloves. This one belongs to the quartermaster."
 	icon_state = "garment_bag_qm"
 
+/obj/item/storage/bag/garment/magistrate
+	name = "magistrate's garment bag"
+	desc = "A bag for storing extra clothes and gloves. This one belongs to the Magistrate."
+	icon_state = "garment_bag_hos"
+
+/obj/item/storage/bag/garment/ntrep
+	name = "nanotrasen representative's garment bag"
+	desc = "A bag for storing extra clothes and gloves. This one belongs to the Nanotrasen Representative."
+	icon_state = "garment_bag_captain"
+
+/obj/item/storage/bag/garment/blueshield
+	name = "blueshield's garment bag"
+	desc = "A bag for storing extra clothes and gloves. This one belongs to the Blueshield."
+	icon_state = "garment_bag_bs"
 
 /obj/item/storage/bag/garment/Initialize(mapload)
 	. = ..()
@@ -259,3 +273,41 @@
 	new /obj/item/clothing/head/beret/quartermaster(src)
 	new /obj/item/clothing/head/qmhat(src)
 	new /obj/item/clothing/neck/cloak/qm(src)
+
+/obj/item/storage/bag/garment/magistrate/PopulateContents()
+	new /obj/item/clothing/under/rank/centcom_officer/magistrate(src)
+	new /obj/item/clothing/under/rank/centcom_officer/magistrate/skirt(src)
+	new /obj/item/clothing/under/rank/centcom_officer/magistrate/formal(src)
+	new /obj/item/clothing/neck/cloak/magistrate(src)
+	new /obj/item/clothing/suit/judgerobe(src)
+	new /obj/item/clothing/suit/toggle/dress_NTjacket_black(src)
+	new /obj/item/clothing/suit/toggle/NTjacket_black(src)
+	new /obj/item/clothing/head/judge_wig(src)
+	new /obj/item/clothing/gloves/color/white(src)	
+
+/obj/item/storage/bag/garment/ntrep/PopulateContents()
+	new /obj/item/clothing/under/rank/centcom_officer/ntrep(src)
+	new /obj/item/clothing/under/rank/centcom_officer/ntrep/skirt(src)
+	new /obj/item/clothing/under/rank/centcom_officer/ntrep/formal(src)
+	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
+	new /obj/item/clothing/suit/toggle/ntrep(src)
+	new /obj/item/clothing/gloves/color/white(src)	
+
+/obj/item/storage/bag/garment/blueshield/PopulateContents()
+	new /obj/item/clothing/under/rank/blueshield(src)	
+	new /obj/item/clothing/under/rank/blueshield/skirt(src)	
+	new /obj/item/clothing/under/rank/blueshield/urban(src)	
+	new /obj/item/clothing/under/rank/blueshield/grey(src)	
+	new /obj/item/clothing/under/rank/blueshield/grey/skirt(src)
+	new /obj/item/clothing/under/rank/blueshield/white(src)
+	new /obj/item/clothing/under/rank/blueshield/white/skirt(src)
+	new /obj/item/clothing/under/rank/blueshield/blue(src)
+	new /obj/item/clothing/under/rank/blueshield/blue/skirt(src)
+	new /obj/item/clothing/under/rank/blueshield/formal(src)
+	new /obj/item/clothing/under/rank/blueshield/turtle(src)
+	new /obj/item/clothing/under/rank/blueshield/turtle_skirt(src)
+	new /obj/item/clothing/neck/mantle/blueshield(src)	
+	new /obj/item/clothing/neck/cloak/blueshield(src)
+	new /obj/item/clothing/gloves/color/white(src)	
+	new /obj/item/clothing/gloves/combat(src)
+	new /obj/item/clothing/head/beret/blueshield(src)

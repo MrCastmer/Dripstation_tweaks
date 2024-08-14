@@ -47,6 +47,32 @@
 	desc = "A shawl worn by the Head of Security. Do you dare take up their mantle?"
 	icon_state = "hosmantle"
 
+/obj/item/clothing/neck/mantle/blueshield
+	name = "\proper the blueshield's shawl"
+	desc = "Worn by the Lieutenant of an elite safeguard team. Be prepared to watch everybody die horribly and stay alive to help em other day."
+	icon_state = "bsmantle"
+
+/obj/item/clothing/neck/cloak/nanotrasen_representative
+	name = "\proper the nanotrasen representative's cloak"
+	desc = "A cloak worn by the Nanotrasen Representative. Be careful and don't arouse Nanotrasen wrath upon you."
+	icon_state = "ntrcloak"
+	icon = 'modular_dripstation/icons/obj/clothing/neck.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/neck.dmi'	
+
+/obj/item/clothing/neck/cloak/magistrate
+	name = "\proper the magistrate's cloak"
+	desc = "A cloak worn by the Magistrate. And remember - The Law comes first."
+	icon_state = "magistratecloak"
+	icon = 'modular_dripstation/icons/obj/clothing/neck.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/neck.dmi'	
+
+/obj/item/clothing/neck/cloak/blueshield
+	name = "\proper the blueshield's cloak"
+	desc = "A cloak worn by the Blueshield. Bad bodyguard - dead bodyguard. Dead bodyguard - bad bodyguard. Stay alive."
+	icon_state = "blueshieldcloak"
+	icon = 'modular_dripstation/icons/obj/clothing/neck.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/neck.dmi'	
+
 /obj/item/clothing/neck/cloak/hos
 	icon = 'modular_dripstation/icons/obj/clothing/neck.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/neck.dmi'	

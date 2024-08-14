@@ -284,25 +284,83 @@
 
 /////////NT Rep
 /obj/item/clothing/under/rank/centcom_officer/ntrep
-	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears station name on the left shoulder."
-	name = "\improper Formal Nanotrasen Representative's Uniform"
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Nanotrasen Representative\" and bears station name on the left shoulder."
+	name = "\improper Nanotrasen Representative's Uniform"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/ntrep.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/ntrep.dmi'
+	icon_state = "ntrep"
 
 /obj/item/clothing/under/rank/centcom_officer/ntrep/Initialize()
 	. = ..()
 	desc = "Gold trim on space-black cloth, this uniform bears [station_name()] on the left shoulder."
 
+/obj/item/clothing/under/rank/centcom_officer/ntrep/skirt
+	name = "\improper Nanotrasen Representative's Skirt"
+	icon_state = "ntrep_skirt"
+
+/obj/item/clothing/under/rank/centcom_officer/ntrep/formal
+	name = "\improper Formal Nanotrasen Representative's Uniform"
+	icon_state = "ntrep_formal"
+
+/obj/item/clothing/suit/toggle/nt_jacket/internalaffairs
+	name = "\improper Internal Affairs jacket"
+	desc = "A smooth black jacket."
+	icon_state = "nt_jacket"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/ntrep
+	name = "\improper Nanotrasen Representative jacket"
+	desc = "A fancy black jacket; standard issue to Nanotrasen Representatives."
+	icon_state = "ntrep"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+
 /////////Magistrate
 /obj/item/clothing/under/rank/centcom_officer/magistrate
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears station name on the left shoulder."
-	name = "\improper Formal Magistrate's Uniform"
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/captain.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/captain.dmi'
+	name = "\improper Magistrate's Uniform"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/magistrate.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/magistrate.dmi'
+	icon_state = "magistrate"
 
 /obj/item/clothing/under/rank/centcom_officer/magistrate/Initialize()
 	. = ..()
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears [station_name()] on the left shoulder."
+
+/obj/item/clothing/under/rank/centcom_officer/magistrate/skirt
+	name = "\improper Nanotrasen Magistrate's Skirt"
+	icon_state = "magistrate_skirt"
+
+/obj/item/clothing/under/rank/centcom_officer/magistrate/formal
+	name = "\improper Formal Magistrate's Uniform"
+	icon_state = "magistrate_formal"
+
+/obj/item/clothing/suit/toggle/NTjacket_black
+	name = "\improper Magistrate jacket"
+	desc = "A smooth black and gold jacket."
+	icon_state = "NTjacket_black"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/toggle/dress_NTjacket_black
+	name = "\improper Magistrate dress jacket"
+	desc = "A smooth black and gold jacket."
+	icon_state = "dress_NTjacket_black"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 
 ////////Blue Shield////////
 /obj/item/clothing/suit/armor/vest/blueshield
@@ -327,37 +385,87 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+/obj/item/clothing/under/rank/blueshield
 	name = "blueshield's uniform"
 	desc = "A short-sleeved black uniform, paired with grey digital-camo cargo pants, all made out of a sturdy material. Blueshield standard issue."
 	icon_state = "blueshield"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/blueshield.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/blueshield.dmi'
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield/skirt
+/obj/item/clothing/under/rank/blueshield/skirt
 	name = "blueshield's skirt"
 	desc = "A short, black and grey with blue markings skirted uniform. For the feminine Blueshield."
 	icon_state = "blueshield_skirt"
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+/obj/item/clothing/under/rank/blueshield/urban
 	name = "blueshield's jumpsuit"
 	desc = "A short-sleeved grey jumpsuit, paired with grey digital-camo cargo pants, all made out of a sturdy material. Blueshield ERT-style."
 	icon_state = "shield_urban"
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+/obj/item/clothing/under/rank/blueshield/grey
 	name = "blueshield's turtle"
 	desc = "A short-sleeved grey turtle, paired with grey digital-camo cargo pants, all made out of a sturdy material. Blueshield tactical-style."
 	icon_state = "blueshield_turtle_grey"
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/blueshield
+/obj/item/clothing/under/rank/blueshield/grey/skirt
 	name = "blueshield's skirtle"
 	desc = "A short, black and grey with blue markings skirted tactical skirtle. For the feminine Blueshield."
 	icon_state = "blueshield_turtle_grey_skirt"
 
+/obj/item/clothing/under/rank/blueshield/white
+	name = "blueshield's turtle"
+	desc = "A short-sleeved white formal shirt, paired with black pants, all made out of a sturdy material. Blueshield regular white."
+	icon_state = "blueshield_white"
+
+/obj/item/clothing/under/rank/blueshield/white/skirt
+	name = "blueshield's skirtle"
+	desc = "A short, white shirt with blue markings and tactical skirt. For the feminine Blueshield."
+	icon_state = "blueshield_white_skirt"
+
+/obj/item/clothing/under/rank/blueshield/blue
+	name = "blueshield's blue uniform"
+	desc = "A short-sleeved blue formal shirt, paired with black pants, all made out of a sturdy material. Blueshield regular blue."
+	icon_state = "blueshieldsuit_blue"
+
+/obj/item/clothing/under/rank/blueshield/blue/skirt
+	name = "blueshield's skirtle"
+	desc = "A short, blue shirt with white markings and tactical skirt. For the feminine Blueshield."
+	icon_state = "blueshieldskirt_blue"
+
+/obj/item/clothing/under/rank/blueshield/formal
+	name = "blueshield's formal uniform"
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Close Protection\" and bears station name on the left shoulder."
+	icon_state = "blueshield_formal"
+
+/obj/item/clothing/under/rank/blueshield/formal/Initialize()
+	. = ..()
+	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Close Protection\" and bears [station_name()] on the left shoulder."
+
+/obj/item/clothing/under/rank/blueshield/turtle
+	desc = "It's a turtleneck worn by low rank Shields."
+	name = "\improper Close Protection Blueshield Lieutenant's turtleneck"
+	icon_state = "bs_turtleneck"
+
+/obj/item/clothing/under/rank/blueshield/turtle_skirt
+	desc = "It's a jumpskirt worn by low rank Shields."
+	name = "\improper Close Protection Blueshield Lieutenant's jumpskirt"
+	icon_state = "bs_skirtleneck"
+
 /obj/item/clothing/head/beret/blueshield
-	name = "blueshield bulletproof armor"
+	name = "blueshield`s bulletproof armor"
 	desc = "An armored bulletproof vest with the badge of a Blueshield Lieutenant."
 	icon_state = "bulletproof_bs"
+
+/obj/item/storage/belt/military/assault/blueshield/Initialize(mapload) // Amber-like
+	. = ..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/flashlight/flare(src)
+	new /obj/item/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/reagent_containers/medspray/synthflesh(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
 
 ////////Formal coat////////
 /obj/item/clothing/suit/toggle/capformal
