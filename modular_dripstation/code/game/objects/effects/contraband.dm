@@ -208,7 +208,7 @@
 
 /obj/structure/sign/poster/contraband/ert_bad
 	name = "Emergency Responce Oppressors"
-	desc = "Poster with a list of crimes, that NT ERT have done."
+	desc = "Poster with list of crimes, that NT ERT have done."
 	icon_state = "poster83"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
