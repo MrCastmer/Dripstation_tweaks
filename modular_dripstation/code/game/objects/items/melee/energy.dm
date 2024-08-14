@@ -1,5 +1,10 @@
+/obj/item/melee/transforming/energy
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_block_blade.ogg'
+	block_color = COLOR_BLUE
+
 /obj/item/melee/transforming/energy/axe 
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	block_color = COLOR_RED
 
 /obj/item/melee/transforming/energy/sword
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
@@ -8,10 +13,12 @@
 /obj/item/holo/esword
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_block_blade.ogg'
 
 /obj/item/toy/sword
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_block_blade.ogg'
 
 /obj/item/melee/transforming/energy/sword/saber
 	slot_flags = ITEM_SLOT_BELT

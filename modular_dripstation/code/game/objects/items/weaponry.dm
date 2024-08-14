@@ -3,9 +3,11 @@
 
 /obj/item/vibro_weapon
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
 
 /obj/item/melee/transforming/vib_blade 
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
 
 /obj/item/energy_katana
 	icon_state = "energy_katana"
@@ -14,6 +16,8 @@
 	worn_icon = 'modular_dripstation/icons/mob/clothing/weapons_on_belt.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_block_blade.ogg'
+	block_color = COLOR_GREEN
 
 /obj/item/energy_katana/equipped(mob/user, slot)
 	. = ..()
@@ -36,6 +40,7 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	block_chance = 50
 	var/block_projectile_mod = 0.5
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
 
 /obj/item/katana/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
@@ -49,6 +54,7 @@
 				owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], and he mirrors it back!"))
 		else
 			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		playsound(src, block_sound, 70, vary = TRUE)
 		return 1
 	return 0
 
@@ -101,6 +107,7 @@
 	if(istype(hitby, /obj/projectile/bullet) && prob(final_block_chance))
 		if(istype(hitby, /obj/projectile/bullet))
 			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
+			playsound(src, block_sound, 70, vary = TRUE)
 			return 1
 	return 0
 
@@ -178,6 +185,7 @@
 /obj/item/melee/sabre
 	name = "officer's rapier"
 	desc = "An elegant weapon, for a more civilized age. Ceremonial version issued to NanoTrasen finest."
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
 
 /obj/item/storage/belt/sabre
 	name = "rapier sheath"
@@ -185,10 +193,12 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	hit_reaction_chance = 20
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
 
 /obj/item/storage/belt/sabre/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == MELEE_ATTACK && prob(hit_reaction_chance))
 		owner.visible_message(span_danger("[owner] fends off [attack_text] with [src]!"))
+		playsound(src, block_sound, 70, vary = TRUE)
 		return 1
 	return 0
 

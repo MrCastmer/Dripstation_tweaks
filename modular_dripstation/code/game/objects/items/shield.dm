@@ -1,6 +1,7 @@
 /obj/item/shield
 	var/antithrow_bonus = 30
 	var/leap_block = TRUE
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_block_shield.ogg'
 
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
@@ -16,6 +17,7 @@
 	worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/shield_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/shield_righthand.dmi'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_block_shield.ogg'
 
 /obj/item/shield/riot/robust
 	name = "riot control shield"
@@ -101,6 +103,8 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/shield_righthand.dmi'
 	block_chance = 40
 	antithrow_bonus = 0
+	block_sound = 'modular_dripstation/sound/shield_drained.ogg'
+	block_color = COLOR_RED
 
 /obj/item/shield/energy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(active)
@@ -125,9 +129,11 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/shield_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/shield_righthand.dmi'
 	block_chance = 65
+	block_color = COLOR_BLUE
 
 /obj/item/shield/energy/bananium
 	base_icon_state = "bananaeshield"
 	icon = 'modular_dripstation/icons/obj/weapons/shield.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/shield_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/shield_righthand.dmi'
+	block_color = COLOR_YELLOW

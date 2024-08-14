@@ -21,6 +21,8 @@
 	block_chance = 40
 	armour_penetration = 50
 	hitsound = 'sound/weapons/bladeslice.ogg'
+	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
+	block_color = COLOR_RED
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "diced", "cut")
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
@@ -36,6 +38,7 @@
 			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
 		else
 			owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		playsound(src, block_sound, 70, vary = TRUE)
 		return 1
 	return 0
 
