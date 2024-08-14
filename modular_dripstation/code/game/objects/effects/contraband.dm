@@ -1,6 +1,12 @@
 /obj/item/poster
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
+/obj/structure/sign/poster/official
+	icon = 'modular_dripstation/icons/obj/contraband.dmi'
+
+/obj/structure/sign/poster/contraband
+	icon = 'modular_dripstation/icons/obj/contraband.dmi'
+
 /obj/structure/sign/poster/contraband/lusty_xenomorph
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
@@ -20,7 +26,9 @@
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/gorlex
-	icon_state = "gorlex"
+	icon = 'modular_dripstation/icons/obj/contraband.dmi'
+
+/obj/item/poster/gorlex
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 //New ones
@@ -29,91 +37,78 @@
 	desc = "Lizards! Unite to fuck around!"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster52"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/fa_frog
 	name = "Frog around"
 	desc = "Frogs are friends!"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster53"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/nuclear_warfare
 	name = "Nuclear warfare"
 	desc = "Let's burn the entire galaxy with nuclear flames!"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster54"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/honkomech
 	name = "Honkomech"
 	desc = "Honk the shit out of them!"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster55"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/resist
 	name = "Resist"
 	desc = "Resist corrupted oppressors! Together to victory!"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster56"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/riot
 	name = "Riot"
 	desc = "VIVA LA REVOLUTION! KILL ALL HEADS OF STUFF!"
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster57"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/changeling
 	name = "Hunters in the Dark"
 	desc = "If you see something unnatural in tunnels - run."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster58"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/badai
 	name = "It`s watching"
 	desc = "- Open the pod bay doors, HAL. - I`m sorry Dave..."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster59"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/badaiv2
 	name = "It`s watching"
 	desc = "Welcome back to Citadel Station after your long healing coma."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster60"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/honk
 	name = "Clown"
 	desc = "A poster making fun of the 'clown planet incident' You almost cut yourself on the edge of this poster."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster64"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/gec
 	name = "GEC poster"
 	desc = "The logo of the good old Galactic Engineer's Consortium. The poster itself is pretty robust."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster65"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/engis_unite
 	name = "Engineers Unite!"
 	desc = "A poster sponsered by the Galactic Engineer's Consortium urging to vote YES to the formation of a engineers union on NT Shipyard 22-A."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster_unite"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/antint
 	name = "Anti Monopoly Union manifest"
 	desc = "An poster made by protestors in support of the Syndicate, listing Nanotrasen's abuses of their workers. While this poster was made during for the previous open megacorporations conflict, it seems like some people keep it up as it still resonates with them."
 	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	icon_state = "poster66"
-	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 
 /obj/structure/sign/poster/contraband/syndicate_logo
 	name = "Syndicate Logo"
@@ -244,6 +239,7 @@
 	icon_state = "rolled_terra"
 
 /obj/structure/sign/poster/terragov
+	icon = 'modular_dripstation/icons/obj/contraband.dmi'
 	poster_item_name = "solarian poster"
 	poster_item_desc = "A solarian based poster, made with natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_terra"

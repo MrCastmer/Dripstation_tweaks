@@ -67,6 +67,49 @@
 	description = "A town populated by strange, sapient zombies."
 	suffix = "icemoon_surface_walkervillage.dmm"
 
+//Dripstation edit bellow
+/datum/map_template/ruin/icemoon/ufo_crash
+	name = "UFO Crash"
+	id = "ufo-crash"
+	description = "Turns out that keeping your abductees unconscious is really important. Who knew?"
+	suffix = "icemoon_surface_ufo_crash.dmm"
+
+/datum/map_template/ruin/icemoon/syndicatepod
+	name = "Syndicate Pod"
+	id = "syndicatepod"
+	description = "The Syndicate would pay handsomely for its contents"
+	suffix = "icemoon_surface_syndicatepod.dmm"
+
+/datum/map_template/ruin/icemoon/dead_ratvar
+	name = "Dead Ratvar"
+	id = "dead_ratvar"
+	description = "The god himself"
+	suffix = "icemoon_surface_dead_ratvar.dmm"
+
+/datum/map_template/ruin/icemoon/engioutpost
+	name = "Engi Outpost"
+	id = "engioutpost"
+	description = "Engioutposting"
+	suffix = "icemoon_surface_engioutpost.dmm"
+
+/datum/map_template/ruin/icemoon/underground/abandonedhydrolab
+	name = "Abandoned Hydroponics Lab"
+	id = "hydroponicslab"
+	description = "Who knows what lies within?"
+	suffix = "icemoon_underground_hydroponics_lab.dmm"
+
+/datum/map_template/ruin/icemoon/underground/arctic_station
+	name = "Abandoned Arctic Station"
+	id = "arctic_station"
+	description = "Who knows what lies within?"
+	suffix = "icemoon_underground_oldstation.dmm"
+
+/datum/map_template/ruin/icemoon/underground/slimelab
+	name = "Abandoned Slime Laboratory"
+	id = "slimelab"
+	description = "Who knows what lies within?"
+	suffix = "icemoon_underground_slimelab.dmm"
+
 // above and below ground together
 
 /datum/map_template/ruin/icemoon/mining_site
