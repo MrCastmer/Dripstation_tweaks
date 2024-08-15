@@ -457,6 +457,12 @@
 	desc = "An armored bulletproof vest with the badge of a Blueshield Lieutenant."
 	icon_state = "bulletproof_bs"
 
+/obj/item/clothing/mask/gas/sechailer/swat/blueshield
+	name = "\improper Close Protection SWAT mask"
+	icon_state = "blue_sechailer"	
+	icon = 'modular_dripstation/icons/obj/clothing/masks.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/masks.dmi'
+
 /obj/item/storage/belt/military/assault/blueshield/Initialize(mapload) // Amber-like
 	. = ..()
 	new /obj/item/reagent_containers/spray/pepper(src)

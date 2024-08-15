@@ -82,15 +82,10 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
-/obj/item/encryptionkey/heads/procedure
-	name = "\proper the procedure encryption key"
-	icon_state = "proc_cypherkey"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_SERVICE = 1)
-
 /obj/item/radio/headset/magistrate
 	name = "\proper the magistrate's radio headset"
 	desc = "The headset of the Magistrate."
-	icon_state = "proc_headset"
+	icon_state = "cap_headset"
 	keyslot = new /obj/item/encryptionkey/heads/procedure
 	command = TRUE
 
@@ -106,7 +101,7 @@
 /obj/item/radio/headset/ntrep
 	name = "\proper the Nanotrasen Representative's radio headset"
 	desc = "The headset of the Nanotrasen Representative."
-	icon_state = "proc_headset"
+	icon_state = "cap_headset"
 	keyslot = new /obj/item/encryptionkey/heads/procedure
 	command = TRUE
 
@@ -122,8 +117,8 @@
 /obj/item/radio/headset/blueshield
 	name = "\proper the blueshield's radio headset"
 	desc = "The headset of the Blueshield."
-	icon_state = "shield_headset"
-	keyslot = new /obj/item/encryptionkey/heads
+	icon_state = "cent_headset"
+	keyslot = new /obj/item/encryptionkey/heads/bshield
 
 /obj/item/radio/headset/blueshield/alt
 	name = "\proper the blueshield's bowman headset"

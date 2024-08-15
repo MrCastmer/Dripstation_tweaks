@@ -665,12 +665,15 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	req_access = list(ACCESS_CARGO)
 	icon_state = "cargo"
 
-/obj/structure/closet/secure_closet/cargo/PopulateContents()
+/obj/structure/closet/secure_closet/cargotech/PopulateContents()
 	..()
 	new /obj/item/clothing/under/rank/cargo/tech(src)
 	new /obj/item/clothing/under/rank/cargo/tech/skirt(src)
 	new /obj/item/clothing/shoes/workboots/cargo(src)
 	new /obj/item/storage/backpack/cargo(src)
+	new /obj/item/storage/backpack/satchel/cargo(src)
+	new /obj/item/storage/backpack/duffelbag/cargo(src)
+	new /obj/item/clothing/gloves/fingerless(src)
 	new /obj/item/radio/headset/headset_cargo(src)
 	new /obj/item/export_scanner(src)
 	new /obj/item/stamp(src)
