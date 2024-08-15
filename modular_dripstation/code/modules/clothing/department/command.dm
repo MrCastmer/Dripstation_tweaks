@@ -322,6 +322,16 @@
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 
+/obj/item/clothing/head/ntrep
+	name = "Nanotrasen Representative`s hat"
+	desc = "The hat of the Nanotrasen Representative."
+	icon_state = "ntrep"
+
+/obj/item/clothing/head/ntrep/high
+	name = "Nanotrasen Representative`s high hat"
+	desc = "The high hat of the Nanotrasen Representative."
+	icon_state = "ntrep_high"
+
 /////////Magistrate
 /obj/item/clothing/under/rank/centcom_officer/magistrate
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Magistrate\" and bears station name on the left shoulder."

@@ -290,6 +290,8 @@
 	new /obj/item/clothing/under/rank/centcom_officer/ntrep/skirt(src)
 	new /obj/item/clothing/under/rank/centcom_officer/ntrep/formal(src)
 	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
+	new /obj/item/clothing/head/ntrep(src)
+	new /obj/item/clothing/head/ntrep/high(src)
 	new /obj/item/clothing/suit/toggle/ntrep(src)
 	new /obj/item/clothing/gloves/color/white(src)	
 
