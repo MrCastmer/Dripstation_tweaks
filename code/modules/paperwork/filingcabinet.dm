@@ -13,10 +13,15 @@
 /obj/structure/filingcabinet
 	name = "filing cabinet"
 	desc = "A large cabinet with drawers."
+	/* //Dripstation edit
 	icon = 'yogstation/icons/obj/bureaucracy.dmi'
+	*/
 	icon_state = "filingcabinet"
 	density = TRUE
 	anchored = TRUE
+
+	/// List of allowed item types
+	var/allowed_types = list(/obj/item/paper, /obj/item/folder, /obj/item/photo, /obj/item/documents, /obj/item/clipboard, /obj/item/tape)
 
 /obj/structure/filingcabinet/chestdrawer
 	name = "chest drawer"
@@ -71,7 +76,7 @@
 	update_appearance(UPDATE_ICON)
 	if(mapload)
 		for(var/obj/item/I in loc)
-			if(istype(I, /obj/item/paper) || istype(I, /obj/item/folder) || istype(I, /obj/item/photo))
+			if(is_type_in_list(I, allowed_types))
 				I.forceMove(src)
 
 /obj/structure/filingcabinet/deconstruct(disassembled = TRUE)
@@ -89,7 +94,7 @@
 		else
 			name = initial(name)
 		return
-	if(istype(P, /obj/item/paper) || istype(P, /obj/item/folder) || istype(P, /obj/item/photo) || istype(P, /obj/item/documents) || istype(P, /obj/item/clipboard))
+	if(is_type_in_list(P, allowed_types))
 		if(!user.transferItemToLoc(P, src))
 			return
 		to_chat(user, span_notice("You put [P] in [src]."))

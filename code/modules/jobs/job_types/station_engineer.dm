@@ -100,8 +100,8 @@ GLOBAL_LIST_INIT(available_depts_eng, list(ENG_DEPT_MEDICAL, ENG_DEPT_SCIENCE, E
 
 	belt = /obj/item/storage/belt/utility/full/engi
 	ears = /obj/item/radio/headset/headset_eng
-	uniform = /obj/item/clothing/under/rank/engineer
-	uniform_skirt = /obj/item/clothing/under/rank/engineer/skirt
+	uniform = /obj/item/clothing/under/rank/engineering/engineer
+	uniform_skirt = /obj/item/clothing/under/rank/engineering/engineer/skirt
 	shoes = /obj/item/clothing/shoes/workboots
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/engineering
 	head = /obj/item/clothing/head/hardhat
@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(available_depts_eng, list(ENG_DEPT_MEDICAL, ENG_DEPT_SCIENCE, E
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	box = /obj/item/storage/box/engineer
+	box = /obj/item/storage/box/survival/engineer
 
 	pda_slot = ITEM_SLOT_LPOCKET
 

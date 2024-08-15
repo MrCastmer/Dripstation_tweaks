@@ -244,7 +244,7 @@
 	if(name == initial(name))
 		name = "[get_area_name(src)] Air Alarm"
 
-	update_appearance(UPDATE_ICON)
+	update_appearance()
 
 /obj/machinery/airalarm/Destroy()
 	SSradio.remove_object(src, frequency)
@@ -261,6 +261,7 @@
 /obj/machinery/airalarm/Initialize(mapload)
 	. = ..()
 	set_frequency(frequency)
+	update_appearance()
 
 /obj/machinery/airalarm/examine(mob/user)
 	. = ..()
@@ -641,8 +642,25 @@
 					"set_internal_pressure" = 0
 				), signal_source)
 
-/obj/machinery/airalarm/update_icon_state()
+/obj/machinery/airalarm/update_appearance(updates)
 	. = ..()
+
+	if(panel_open || (stat & (NOPOWER|BROKEN)) || shorted)
+		set_light(0)
+		return
+
+	var/color
+	switch(max(danger_level, A.atmosalm))
+		if(0)
+			color = "#00ff6a" // green
+		if(1)
+			color = "#FFAA00" // yellow
+		if(2)
+			color = "#FF0022" // red
+
+	set_light(1.5, 1, color)
+
+/obj/machinery/airalarm/update_icon_state()
 	if(panel_open)
 		switch(buildstage)
 			if(2)
@@ -651,19 +669,27 @@
 				icon_state = "alarm_b2"
 			if(0)
 				icon_state = "alarm_b1"
+		return ..()
+
+	icon_state = "alarmp"
+	return ..()
+
+/obj/machinery/airalarm/update_overlays()
+	. = ..()
+	if(panel_open || (stat & (NOPOWER|BROKEN)) || shorted)
 		return
 
-	if((stat & (NOPOWER|BROKEN)) || shorted)
-		icon_state = "alarmp"
-		return
-
+	var/state
 	switch(max(danger_level, A.atmosalm))
 		if(0)
-			icon_state = "alarm0"
+			state = "alarm0"
 		if(1)
-			icon_state = "alarm2" //yes, alarm2 is yellow alarm
+			state = "alarm2" //yes, alarm2 is yellow alarm
 		if(2)
-			icon_state = "alarm1"
+			state = "alarm1"
+
+	. += mutable_appearance(icon, state)
+	. += emissive_appearance(icon, state, src, alpha = src.alpha)
 
 /obj/machinery/airalarm/process()
 	if((stat & (NOPOWER|BROKEN)) || shorted)
@@ -855,6 +881,18 @@
 
 	return ..()
 
+/obj/machinery/airalarm/attack_ai(mob/user)
+	if(!isAI(user))
+		return ..()
+	
+	var/mob/living/silicon/ai/AI = user
+	if(AI.has_subcontroller_connection(get_area(src)))
+		return ..()
+
+	to_chat(AI, span_warning("No connection to subcontroller detected. Polling APC..."))
+	if(do_after(AI, 1 SECONDS, src, IGNORE_USER_LOC_CHANGE))
+		return ..()
+
 /obj/machinery/airalarm/AltClick(mob/user)
 	..()
 	if(!user.canUseTopic(src, !issilicon(user)) || !isturf(loc))
@@ -902,7 +940,7 @@
 		new /obj/item/stack/sheet/metal(loc, 2)
 		var/obj/item/I = new /obj/item/electronics/airalarm(loc)
 		if(!disassembled)
-			I.obj_integrity = I.max_integrity * 0.5
+			I.update_integrity(I.max_integrity * 0.5)
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
 

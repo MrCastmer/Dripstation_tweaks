@@ -7,6 +7,8 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 	active_power_usage = 5000
+
+	material_insertion_animation = "fab-load-"
 	
 	req_access = list(ACCESS_ROBO_CONTROL)
 	///Whether the access is hacked or not
@@ -36,6 +38,8 @@
 	var/list/build_materials
 	/// Part currently stored in the Exofab.
 	var/obj/item/stored_part
+	/// If fabricator is currently working on something, used for sprites and overlays.
+	var/working
 
 	/// Coefficient for the speed of item building. Based on the installed parts.
 	var/time_coeff = 1
@@ -56,7 +60,6 @@
 								"Cyborg",
 								"Ripley",
 								"Odysseus",
-								"Firefighter",
 								"Clarke",
 								"Gygax",
 								"Durand",
@@ -139,6 +142,10 @@
 				to_chat(user, span_notice("You reengage the safety protocols on the [src], restoring access restrictions to this terminal."))
 			update_static_data(user)
 		return
+	if(istype(I, /obj/item/stack/sheet))
+		var/datum/material/M = I
+		var/image/material_animation = image(icon, src, "[material_insertion_animation][M.name]")
+		flick_overlay_global(material_animation, GLOB.clients, 20)
 	return ..()
 /**
  * All the negative wire effects
@@ -149,6 +156,17 @@
 		if(shock(user, 100))
 			return
 	return ..()
+
+/obj/machinery/mecha_part_fabricator/update_overlays()
+	. = ..()
+	var/emissive_icon
+	if(!(stat & BROKEN) && powered())
+		if(!working)
+			emissive_icon = "fab-light_mask"
+		if(working)
+			. += mutable_appearance(icon, "fab-active")
+			emissive_icon = "fab-active"
+		. += emissive_appearance(icon, emissive_icon, src)
 
 /obj/machinery/mecha_part_fabricator/proc/wire_break(mob/user)
 	if(stat & (BROKEN|NOPOWER))
@@ -245,8 +263,6 @@
 					category_override += "Ripley"
 				if(mech_types & EXOSUIT_MODULE_ODYSSEUS)
 					category_override += "Odysseus"
-				if(mech_types & EXOSUIT_MODULE_FIREFIGHTER)
-					category_override += "Firefighter"
 				if(mech_types & EXOSUIT_MODULE_GYGAX)
 					category_override += "Gygax"
 				if(mech_types & EXOSUIT_MODULE_DURAND)
@@ -309,8 +325,9 @@
   * Adds the overlay to show the fab working and sets active power usage settings.
   */
 /obj/machinery/mecha_part_fabricator/proc/on_start_printing()
-	add_overlay("fab-active")
 	use_power = ACTIVE_POWER_USE
+	working = TRUE
+	update_appearance(UPDATE_OVERLAYS)
 
 /**
   * Intended to be called when the exofab has stopped working and is no longer printing items.
@@ -318,10 +335,11 @@
   * Removes the overlay to show the fab working and sets idle power usage settings. Additionally resets the description and turns off queue processing.
   */
 /obj/machinery/mecha_part_fabricator/proc/on_finish_printing()
-	cut_overlay("fab-active")
+	working = FALSE
 	use_power = IDLE_POWER_USE
 	desc = initial(desc)
 	process_queue = FALSE
+	update_appearance(UPDATE_OVERLAYS)
 
 /**
   * Calculates resource/material costs for printing an item based on the machine's resource coefficient.
@@ -612,7 +630,7 @@
 	data["isProcessingQueue"] = process_queue
 	data["authorization"] = authorization_override
 	data["user_clearance"] = head_or_silicon(user)
-	data["alert_level"] = GLOB.security_level 
+	data["alert_level"] = SSsecurity_level.get_current_level_as_number()
 	data["combat_parts_allowed"] = combat_parts_allowed(user)
 	data["emagged"] = (obj_flags & EMAGGED)
 	data["silicon_user"] = issilicon(user)
@@ -621,7 +639,7 @@
 
 /// Updates the various authorization checks used to determine if combat parts are available to the current user
 /obj/machinery/mecha_part_fabricator/proc/combat_parts_allowed(mob/user)
-	return authorization_override || GLOB.security_level >= SEC_LEVEL_RED || head_or_silicon(user)
+	return authorization_override || SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED || head_or_silicon(user)
 
 /// made as a lazy check to allow silicons full access always
 /obj/machinery/mecha_part_fabricator/proc/head_or_silicon(mob/user)
@@ -739,8 +757,7 @@
 
 /obj/machinery/mecha_part_fabricator/proc/AfterMaterialInsert(item_inserted, id_inserted, amount_inserted)
 	var/datum/material/M = id_inserted
-	add_overlay("fab-load-[M.name]")
-	addtimer(CALLBACK(src, /atom/proc/cut_overlay, "fab-load-[M.name]"), 10)
+	. += mutable_appearance(icon, "fab-load-[M.name]")
 
 /obj/machinery/mecha_part_fabricator/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())

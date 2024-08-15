@@ -121,8 +121,7 @@
 #define YES_DIGIT		 	2
 
 //flags for outfits that have mutantrace variants (try not to use this): Currently only needed if you're trying to add tight fitting bootyshorts
-#define NO_MUTANTRACE_VARIATION		0
-#define MUTANTRACE_VARIATION		1
+#define DIGITIGRADE_VARIATION (1<<0)
 
 #define NOT_DIGITIGRADE				0
 #define FULL_DIGITIGRADE			1
@@ -174,6 +173,7 @@ GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/lighter,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton,
+	/obj/item/storage/belt/holster,		//dripstation edit
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/storage/fancy/cigarettes,

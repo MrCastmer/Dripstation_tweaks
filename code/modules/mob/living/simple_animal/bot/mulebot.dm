@@ -189,6 +189,7 @@
 		if(BOT_NO_ROUTE)
 			data["modeStatus"] = "bad"
 		else
+			data["modeStatus"] = "unknown"
 	data["load"] = load ? load.name : null
 	data["destination"] = destination ? destination : null
 	data["home"] = home_destination
@@ -644,7 +645,7 @@
 					L.Knockdown(8 SECONDS)
 	return ..()
 
-// called from mob/living/carbon/human/Crossed()
+// called from mob/living/carbon/human/proc/on_entered()
 // when mulebot is in the same loc
 /mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
 	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
