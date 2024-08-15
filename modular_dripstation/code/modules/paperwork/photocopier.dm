@@ -55,11 +55,14 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 	desc = "Used to copy important documents and anatomy studies."
 	icon = 'modular_dripstation/icons/obj/library.dmi'
 	icon_state = "photocopier"
+	var/light_mask = "photocopier_lightmask"
 	density = TRUE
 	max_integrity = 300
-	idle_power_usage = 50
-	active_power_usage = 500
-	integrity_failure = 0.33
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 30
+	active_power_usage = 200
+	power_channel = AREA_USAGE_EQUIP
+	integrity_failure = 100
 	/// A reference to a mob on top of the photocopier trying to copy their ass. Null if there is no mob.
 	var/mob/living/ass
 	/// A reference to the toner cartridge that's inserted into the copier. Null if there is no cartridge.
@@ -84,6 +87,11 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 /obj/machinery/photocopier/Initialize(mapload)
 	. = ..()
 	toner_cartridge = new(src)
+
+/obj/machinery/photocopier/update_overlays()
+	. = ..()
+	if(!(stat & BROKEN) && powered())
+		. += emissive_appearance(icon, light_mask, src)
 
 /obj/machinery/photocopier/Exited(atom/movable/gone, direction)
 	. = ..()
@@ -317,7 +325,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 		if(isnull(copied_obj)) // something went wrong, so other copies will go wrong too
 			break
 
-		playsound(src, 'sound/effects/printer.ogg', 50, vary = FALSE)
+		playsound(src, 'modular_dripstation/sound/machines/printer.ogg', 50, vary = FALSE)
 		sleep(4 SECONDS)
 
 		// reveal our copied item
@@ -395,12 +403,39 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 
 	var/copy_colour = get_toner_color()
 
-	var/obj/item/paper/copied_paper = paper_copy.copy(empty_paper, src, FALSE, copy_colour)
-	copied_paper.name = paper_copy.name
-	copied_paper.raw_stamp_data = paper_copy.copy_raw_stamps()
-	copied_paper.stamp_cache = paper_copy.stamp_cache?.Copy()
-	copied_paper.copy_overlays(paper_copy, TRUE)
+	var/obj/item/paper/copied_paper = paper_copy.copy(empty_paper, src, copy_colour)
 	return copied_paper
+
+//PAPER EDIT
+/obj/item/paper/proc/clearcolor(text) // Breaks all font color spans in the HTML text.
+	return replacetext(replacetext(text, "<font face=\"[CRAYON_FONT]\" color=", "<font face=\"[CRAYON_FONT]\" nocolor="), "<font face=\"[PEN_FONT]\" color=", "<font face=\"[PEN_FONT]\" nocolor=") //This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
+
+/obj/item/paper/proc/is_empty()
+	return !(LAZYLEN(written) || LAZYLEN(stamps))
+
+obj/item/paper/proc/copy(paper_type = /obj/item/paper, atom/location = loc, colour)
+	var/obj/item/paper/copy = new paper_type(location)
+	if(length(info) || length(written))	//Only print and add content if the copied doc has words on it
+		copy.coloroverride = colour
+		var/copyinfo = info
+		copyinfo = clearcolor(copyinfo)
+		copy.info += copyinfo + "</font>"
+		//Now for copying the new $written var
+		for(var/L in written)
+			if(istype(L,/datum/langtext))
+				var/datum/langtext/oldL = L
+				var/datum/langtext/newL = new(clearcolor(oldL.text),oldL.lang)
+				copy.written += newL
+			else
+				copy.written += L
+		copy.name = name
+		copy.fields = fields
+		copy.update_appearance(UPDATE_ICON)
+		copy.stamps = stamps
+		if(stamped)
+			copy.stamped = stamped.Copy()
+		copy.copy_overlays(src, TRUE)
+	return copy
 
 /**
  * Handles the copying of photos, which can be printed in either color or greyscale.
@@ -439,7 +474,10 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 		printinfo += infoline
 
 	printblank.name = "paper - '[printname]'"
-	printblank.add_raw_text(printinfo, color = copy_colour)
+	printblank.coloroverride = copy_colour
+	var/copyinfo = printinfo
+	copyinfo = printblank.clearcolor(copyinfo)
+	printblank.info += copyinfo + "</font>"
 	printblank.update_appearance()
 
 	toner_cartridge.charges -= PAPER_TONER_USE
@@ -454,21 +492,10 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 /obj/machinery/photocopier/proc/make_ass_copy(mob/user)
 	if(!check_ass())
 		return null
-	var/icon/temp_img
-	if(ishuman(ass))
-		var/mob/living/carbon/human/H = ass
-		var/datum/species/spec = H.dna.species
-		if(spec.ass_image)
-			temp_img = icon(spec.ass_image)
-		else
-			temp_img = icon(H.dna.features["body_model"] == FEMALE ? 'icons/ass/assfemale.png' : 'icons/ass/assmale.png')
-	else if(isalienadult(ass)) //Xenos have their own asses, thanks to Pybro.
-		temp_img = icon('icons/ass/assalien.png')
-	else if(issilicon(ass))
-		temp_img = icon('icons/ass/assmachine.png')
-	else if(isdrone(ass)) //Drones are hot
-		temp_img = icon('icons/ass/assdrone.png')
-
+	var/butt_icon_state = ass.get_butt_sprite()
+	if(isnull(butt_icon_state))
+		return FALSE
+	var/icon/temp_img = icon('icons/mob/butts.dmi', butt_icon_state)
 	var/obj/item/photo/copied_ass = new /obj/item/photo(src)
 	var/datum/picture/toEmbed = new(name = "[ass]'s Ass", desc = "You see [ass]'s ass on the photo.", image = temp_img)
 	toEmbed.psize_x = 128
@@ -545,7 +572,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 	balloon_alert(user, "Document inserted.")
 	flick("photocopier1", src)
 
-/obj/machinery/photocopier/obj_break(damage_flag)
+/obj/machinery/photocopier/atom_break(damage_flag)
 	. = ..()
 	if(. && toner_cartridge.charges)
 		new /obj/effect/decal/cleanable/oil(get_turf(src))
