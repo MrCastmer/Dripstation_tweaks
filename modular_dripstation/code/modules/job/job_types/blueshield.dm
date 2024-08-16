@@ -57,7 +57,7 @@
 
 	id_type = /obj/item/card/id/nanotrasen
 	pda_type = /obj/item/modular_computer/tablet/phone/preset/advanced/blueshield
-Ы
+
 	glasses = /obj/item/clothing/glasses/hud/health/military
 	ears = /obj/item/radio/headset/blueshield/alt
 	uniform = /obj/item/clothing/under/rank/blueshield
