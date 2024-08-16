@@ -330,7 +330,7 @@
 /obj/item/clothing/glasses/hud/health/military
 	name = "military health HUDs"
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. This ones are military grade."
-	icon_state = "healthhud_military"
+	icon_state = "medhud_military"
 	hud_type = DATA_HUD_MEDICAL_ADVANCED
 
 /obj/item/clothing/glasses/hud/health/sunglasses/cmo

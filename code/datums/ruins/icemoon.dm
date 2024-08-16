@@ -52,7 +52,10 @@
 	name = "Syndicate Icemoon Research Outpost"
 	id = "synd_research"
 	description = "A small Syndicate research outpost in the icy wastes, sealed off from the outside."
+	/* Dripstation edit
 	suffix = "icemoon_surface_syndicate.dmm"
+	*/
+	suffix = "icemoon_surface_syndicate_new.dmm"	// Dripstation edit
 
 /datum/map_template/ruin/icemoon/seed_vault
 	name = "Seed Vault"
@@ -114,6 +117,13 @@
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_slimelab.dmm"
 	cost = 20
+
+/datum/map_template/ruin/icemoon/underground/slimelab
+	name = "Abandoned Nuclear Operatives base"
+	id = "nukiebaseabandoned"
+	description = "Who knows what lies within?"
+	suffix = "icemoon_underground_abandoned_newcops.dmm"
+	cost = 30
 
 // above and below ground together
 

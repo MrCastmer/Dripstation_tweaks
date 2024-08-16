@@ -198,7 +198,7 @@
 		if(6) //supply
 			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT, ACCESS_MAINT_TUNNELS, ACCESS_GATEWAY)	//dripstation edit
 		if(7) //command
-			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_MAINT_TUNNELS)	//dripstation edit
+			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_BLUESHIELD, ACCESS_NTREP, ACCESS_MAGISTRATE, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_MAINT_TUNNELS)	//dripstation edit
 
 /// Gets the name from region ID
 /proc/get_region_accesses_name(code)
@@ -381,6 +381,14 @@
 		if(ACCESS_SERVHALL)
 			return "Service Hall"
 		// yogs end
+		//dripstation start
+		if(ACCESS_BLUESHIELD)
+			return "Blueshield`s Office"
+		if(ACCESS_NTREP)
+			return "Nanotrasen Representative`s Office"
+		if(ACCESS_MAGISTRATE)
+			return "Magistrate`s Office"
+		//dripstation end
 
 /// Get descriptions for centcom accesses
 /proc/get_centcom_access_desc(A)
@@ -416,7 +424,7 @@
 
 /// Gets all jobs with hud icons
 /proc/get_all_job_icons() //For all existing HUD icons
-	return get_all_jobs() + list("Prisoner")
+	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate")	//dripstation edit
 
 /// Gets all centcom jobs
 /proc/get_all_centcom_jobs()

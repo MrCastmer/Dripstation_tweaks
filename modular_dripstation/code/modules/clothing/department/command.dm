@@ -326,6 +326,8 @@
 	name = "Nanotrasen Representative`s hat"
 	desc = "The hat of the Nanotrasen Representative."
 	icon_state = "ntrep"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/ntrep/high
 	name = "Nanotrasen Representative`s high hat"
@@ -394,6 +396,8 @@
 	armor = list(MELEE = 25, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 0, BIO = 20, RAD = 0, FIRE = 20, ACID = 45, WOUND = 10)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/under/rank/blueshield
 	name = "blueshield's uniform"
@@ -463,9 +467,11 @@
 	icon_state = "bs_skirtleneck"
 
 /obj/item/clothing/head/beret/blueshield
-	name = "blueshield`s bulletproof armor"
-	desc = "An armored bulletproof vest with the badge of a Blueshield Lieutenant."
-	icon_state = "bulletproof_bs"
+	name = "blueshield`s armored beret"
+	desc = "An armored beret with the badge of a Blueshield Lieutenant."
+	icon_state = "beret_blueshield"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/mask/gas/sechailer/swat/blueshield
 	name = "\improper Close Protection SWAT mask"

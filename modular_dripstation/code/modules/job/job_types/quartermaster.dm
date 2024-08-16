@@ -16,6 +16,7 @@
 		/obj/item/construction/rcd = 3,
 		/obj/item/circuitboard/machine/vending/donksofttoyvendor = 2
 	)
+	alt_titles = list("Stock Controller", "Cargo Coordinator", "Shipping Overseer")
 	paycheck = PAYCHECK_COMMAND
 	departments_list = list(
 		/datum/job_department/cargo,

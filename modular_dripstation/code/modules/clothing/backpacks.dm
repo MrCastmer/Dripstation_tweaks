@@ -389,3 +389,29 @@
 	item_state = "satchel_syndie"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 
+/obj/item/storage/backpack/blueshield
+	name = "blueshield`s backpack"
+	desc = "A robust backpack issued to Nanotrasen Protector`s finest."
+	icon_state = "blueshieldpack"
+	item_state = "blueshieldpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/satchel/blueshield
+	name = "blueshield`s satchel"
+	desc = "Your objective is simple, agent: Defend local executives at any cost."
+	icon_state = "satchel-blueshield"
+	item_state = "satchel-blueshield"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/duffelbag/blueshield
+	name = "blueshield`s duffelbag"
+	desc = "A robust backpack issued to Nanotrasen Protector`s finest. Now with extra space!"
+	icon_state = "duffel-blueshield"
+	item_state = "duffel-blueshield"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'

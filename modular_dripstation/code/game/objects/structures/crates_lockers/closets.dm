@@ -239,6 +239,15 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/binoculars(src)
 	new /obj/item/barrier_taperoll/police(src)
 
+/obj/structure/closet/secure_closet/security/external/PopulateContents()
+	..()
+	new /obj/item/clothing/suit/armor/vest/alt(src)
+	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/clipboard/yog/paperwork/security(src)
+	new /obj/item/flashlight/seclite(src)
+
 // ###### HOP ######
 /obj/structure/closet/secure_closet/hop
 	anchored = TRUE	//i`ve commited crime with this
@@ -507,8 +516,10 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/storage/belt/military/assault/blueshield(src)
-	new /obj/item/clothing/suit/armor/bulletproof/blueshield(src)
 	new /obj/item/radio/headset/blueshield(src)
+	new /obj/item/storage/backpack/blueshield(src)
+	new /obj/item/storage/backpack/satchel/blueshield(src)
+	new /obj/item/storage/backpack/duffelbag/blueshield(src)
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/clothing/shoes/laceup(src)
 
@@ -525,7 +536,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/secure/briefcase(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/hud/personnel(src)
-	new /obj/item/radio/headset/ntrep(src)
+	new /obj/item/radio/headset/heads/ntrep(src)
 	new /obj/item/storage/bag/garment/ntrep(src)
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/taperecorder(src)
@@ -551,8 +562,11 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/gavelhammer(src)
 	new /obj/item/clothing/accessory/medal/silver/legal(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)
-	new /obj/item/radio/headset/magistrate(src)
+	new /obj/item/radio/headset/heads/magistrate(src)
+	new /obj/item/clothing/glasses/hud/security(src)
+	new /obj/item/cane(src)
 	new /obj/item/megaphone(src)
+	new /obj/item/clipboard/yog/paperwork/security(src)
 	new /obj/item/storage/bag/garment/magistrate(src)
 	new /obj/item/clothing/shoes/laceup/brown(src)
 	new /obj/item/clothing/shoes/laceup(src)
