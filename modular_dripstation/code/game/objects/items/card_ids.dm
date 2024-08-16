@@ -154,7 +154,7 @@
 	overlays += idfluff[job][2]
 
 /obj/item/card/id/nanotrasen
-	icon_state = "nanotrasen"
+	icon_state = "id_nanotrasen"
 
 /obj/item/card/id/head
 	icon_state = "id_head"
