@@ -134,13 +134,13 @@
 			qdel(src)
 			return TRUE
 
-		var/obj/item/implant/I in target.implants
-		if(istype(I, /obj/item/implant/mindshield))
-			target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning! YOUR BRAIN... AGGH!!"))
-			if(istype(target, mob/living/carbon/human))
-				traumatize(target)
-			qdel(src)
-			return TRUE
+		for(var/obj/item/implant/I in target.implants)
+			if(istype(I, /obj/item/implant/mindshield))
+				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning! YOUR BRAIN... AGGH!!"))
+				if(istype(target, /mob/living/carbon/human))
+					traumatize(target)
+				qdel(src)
+				return TRUE
 
 		if(target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 			target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
