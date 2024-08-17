@@ -1,6 +1,7 @@
 /////Nanotrasen variants/////
 /////Security and export variant/////
 /obj/item/implant/mindshield
+	var/implant_visible_as = "hud_imp_loyal"
 	var/active = TRUE
 
 /obj/item/implant/mindshield/get_data()
@@ -30,6 +31,7 @@
 /obj/item/implant/mindshield/centcom
 	name = "high quality mindshield implant"
 	desc = "Protects value assets from brainwashing. Grants access to military grade weaponry."
+	implant_visible_as = "hud_imp_loyal_ert"
 
 /obj/item/implant/mindshield/centcom/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>
@@ -60,6 +62,7 @@
 	. = ..()
 	to_chat(imp_in, "You feel a faint click.")
 	active = !active
+	implant_visible_as = "[active ? "hud_imp_loyal" : null]"
 	imp_in.sec_hud_set_implants()
 
 
@@ -82,11 +85,13 @@
 /obj/item/implant/mindshield/tot_obvious
 	icon_state = "totmindshield_obv"
 	actions_types = list(/datum/action/item_action/hands_free/activate)
+	implant_visible_as = "hud_imp_loyal_totobv"
 
 /obj/item/implant/mindshield/tot_obvious/activate()
 	. = ..()
 	to_chat(imp_in, "You feel a faint click.")
 	active = !active
+	implant_visible_as = "[active ? "hud_imp_loyal_totobv" : null]"
 	imp_in.sec_hud_set_implants()
 
 /obj/item/implant/mindshield/tot_obvious/get_data()
@@ -131,16 +136,16 @@
 /obj/item/implant/amnestic/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
 	if(..())
 		if(!target.mind || target.stat == DEAD)
-			qdel(src)
+			removed(target, TRUE)
 			return TRUE
 
 		for(var/obj/item/implant/I in target.implants)
 			if(istype(I, /obj/item/implant/mindshield))
-				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning! YOUR BRAIN... AGGH!!"))
+				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning! And causes heavy influence on your brain functions!!"))
 				if(istype(target, /mob/living/carbon/human))
 					traumatize(target)
-				qdel(src)
-				return TRUE
+				removed(target, TRUE)
+				return FALSE
 
 		if(target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 			target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
@@ -186,6 +191,8 @@
 			to_chat(target, span_assimilator("You hear supernatural wailing echo throughout your mind as you are finally set free. Deep down, you can feel the lingering presence of those who enslaved you... as can they!"))
 			target.apply_status_effect(STATUS_EFFECT_HIVE_RADAR)
 			remove_hivemember(target)
+			removed(target, TRUE)
+			return TRUE
 
 		if(woke)
 			woke.one_mind.remove_member(target.mind)
@@ -194,12 +201,20 @@
 		var/datum/antagonist/rev/rev = target.mind.has_antag_datum(/datum/antagonist/rev)
 		if(rev)
 			rev.remove_revolutionary(FALSE, user)
+			removed(target, TRUE)
+			return TRUE
 		if(target.mind.has_antag_datum(/datum/antagonist/gang))
 			target.mind.remove_antag_datum(/datum/antagonist/gang)
+			removed(target, TRUE)
+			return TRUE
 		if(!silent)
 			if(target.mind in SSticker.mode.cult)
 				to_chat(target, span_warning("You feel something interfering with your mental conditioning, but you FAITH resist it!"))
-		qdel(src)
+				removed(target, TRUE)
+				return TRUE
+		
+		to_chat(target, span_warning("You feel odd. It seems you can`t remember anything about that shift..."))
+		removed(target, TRUE)
 		return TRUE
 
 /obj/item/implant/amnestic/proc/traumatize(mob/living/carbon/human/H)

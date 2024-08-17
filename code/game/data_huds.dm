@@ -235,25 +235,14 @@ Security HUDs! Basic mode shows only the job.
 			holder.icon_state = "hud_imp_chem"
 			set_hud_image_active(IMPCHEM_HUD)
 
-		else if(HAS_TRAIT(src, TRAIT_MINDSHIELD))	//Dripstation edit start
+		if(HAS_TRAIT(src, TRAIT_MINDSHIELD))
 			holder = hud_list[IMPLOYAL_HUD]
 			var/icon/IC = icon(icon, icon_state, dir)
 			holder.pixel_y = IC.Height() - world.icon_size
 			if(istype(I, /obj/item/implant/mindshield))
 				var/obj/item/implant/mindshield/MS = I
-				if(istype(MS, /obj/item/implant/mindshield/centcom))
-					holder.icon_state = "hud_imp_loyal_ert"
-				else if(istype(MS, /obj/item/implant/mindshield/tot_obvious))
-					if(MS.active)
-						holder.icon_state = "hud_imp_loyal_totobv"
-				else if(istype(MS, /obj/item/implant/mindshield/tot))
-					if(MS.active)
-						holder.icon_state = "hud_imp_loyal"
-				else
-					holder.icon_state = "hud_imp_loyal"
-			else
-				holder.icon_state = "hud_imp_loyal"
-			set_hud_image_active(IMPLOYAL_HUD)		//Dripstation edit end
+				holder.icon_state = MS.implant_visible_as
+			set_hud_image_active(IMPLOYAL_HUD)
 
 /mob/living/carbon/human/proc/sec_hud_set_security_status()
 	var/image/holder = hud_list[WANTED_HUD]

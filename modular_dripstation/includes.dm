@@ -124,6 +124,7 @@
 #include "code\game\objects\items\storage\firstaid.dm"
 #include "code\game\objects\items\storage\garment.dm"
 #include "code\game\objects\items\storage\lockbox.dm"
+#include "code\game\objects\items\pins.dm"
 #include "code\game\objects\items\supermatter_delaminator.dm"
 #include "code\game\objects\items\tanks\watertank.dm"
 #include "code\game\objects\items\teleportation.dm"
