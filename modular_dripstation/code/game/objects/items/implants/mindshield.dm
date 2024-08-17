@@ -60,8 +60,8 @@
 
 /obj/item/implant/mindshield/tot/activate()
 	. = ..()
-	to_chat(imp_in, "You feel a faint click.")
 	active = !active
+	to_chat(imp_in, "You feel a faint click as [name] [active ? "activates" : "deactivates"]")
 	implant_visible_as = "[active ? "hud_imp_loyal" : null]"
 	imp_in.sec_hud_set_implants()
 
@@ -89,8 +89,8 @@
 
 /obj/item/implant/mindshield/tot_obvious/activate()
 	. = ..()
-	to_chat(imp_in, "You feel a faint click.")
 	active = !active
+	to_chat(imp_in, "You feel a faint click as [name] [active ? "activates" : "deactivates"]")
 	implant_visible_as = "[active ? "hud_imp_loyal_totobv" : null]"
 	imp_in.sec_hud_set_implants()
 
