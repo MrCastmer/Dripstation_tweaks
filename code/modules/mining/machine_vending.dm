@@ -15,6 +15,7 @@
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "mining"
 	density = TRUE
+	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	circuit = /obj/item/circuitboard/machine/mining_equipment_vendor
 	var/icon_deny = "mining-deny"
 	var/list/prize_list = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
@@ -122,6 +123,10 @@
 	else
 		icon_state = "[initial(icon_state)]-off"
 
+/obj/machinery/mineral/equipment_vendor/update_overlays()
+	. = ..()
+	if(!(stat & BROKEN) && powered() && !panel_open)
+		. += emissive_appearance(icon, "mining_lightmask", src)
 
 /obj/machinery/mineral/equipment_vendor/ui_assets(mob/user)
 	return list(
@@ -439,8 +444,8 @@
 	..()
 
 /obj/item/card/mining_point_card/examine(mob/user)
-	..()
-	to_chat(user, "There's [points] point\s on the card.")
+	. = ..()
+	. += "There's [points] point\s on the card."
 
 ///Conscript kit
 /obj/item/card/mining_access_card

@@ -102,6 +102,12 @@
 	projectile = /obj/projectile/beam/disabler
 	fire_sound = 'sound/weapons/taser2.ogg'
 
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler/action_checks(atom/target)
+	. = ..()
+	if(. && HAS_TRAIT(chassis.occupant, TRAIT_NO_STUN_WEAPONS))
+		to_chat(chassis.occupant, span_warning("You cannot use non-lethal weapons!"))
+		return FALSE
+
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
 	equip_cooldown = 15
 	name = "\improper CH-LC \"Solaris\" laser cannon"
@@ -397,6 +403,19 @@
 	harmful = TRUE
 	ammo_type = "bfg"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/venom
+	name = "\improper K0-B3 \"Snakebite\" Carbine"
+	desc = "A weapon for combat exosuits. Shoots incendiary bullets."
+	icon_state = "mecha_venom"
+	equip_cooldown = 10
+	fire_sound = 'sound/weapons/smgshot.ogg'
+	projectile = /obj/projectile/bullet/c45/venom	//yes the same one
+	projectiles = 24
+	projectiles_cache = 24
+	projectiles_cache_max = 96
+	harmful = TRUE
+	ammo_type = "venom"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	name = "\improper SRM-8 missile rack"
