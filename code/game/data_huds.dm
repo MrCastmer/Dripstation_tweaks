@@ -235,6 +235,7 @@ Security HUDs! Basic mode shows only the job.
 			holder.icon_state = "hud_imp_chem"
 			set_hud_image_active(IMPCHEM_HUD)
 
+		//Dripstation edited
 		if(istype(I, /obj/item/implant/mindshield))
 			var/obj/item/implant/mindshield/MS = I
 			holder = hud_list[IMPLOYAL_HUD]
