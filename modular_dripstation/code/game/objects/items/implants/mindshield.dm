@@ -75,6 +75,9 @@
 				<b>Integrity:</b> Implant will last so long as the nanobots are inside the bloodstream."}
 	return dat
 
+/obj/item/implanter/mindshield/tot
+	name = "implanter"
+
 /////Syndicate operative variant/////
 /obj/item/implant/mindshield/tot_obvious
 	icon_state = "totmindshield_obv"
@@ -100,12 +103,12 @@
 
 /obj/item/implanter/tot_obvious
 	name = "implanter"
-	imp_type = /obj/item/implant/tot_obvious
+	imp_type = /obj/item/implant/mindshield/tot_obvious
 
 /obj/item/implantcase/tot_obvious
 	name = "implant case - 'Syndicate Operative Field Mentalshield'"
 	desc = "A glass case containing a Amnestic implant."
-	imp_type = /obj/item/implant/tot_obvious
+	imp_type = /obj/item/implant/mindshield/tot_obvious
 
 /////Amnestic implant/////
 /obj/item/implant/amnestic
@@ -134,7 +137,8 @@
 		var/obj/item/implant/I in target.implants
 		if(istype(I, /obj/item/implant/mindshield))
 			target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning! YOUR BRAIN... AGGH!!"))
-			traumatize(target)
+			if(istype(target, mob/living/carbon/human))
+				traumatize(target)
 			qdel(src)
 			return TRUE
 
@@ -154,7 +158,7 @@
 				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning, but your allighment lasts much more longer and can`t be reverted by this level of braiwashing!"))
 			removed(target, TRUE)
 			return FALSE
-		if(target.mind.has_antag_datum(/datum/antagonist/gang/boss) || is_shadow_or_thrall(target) || target.mind.has_antag_datum(/datum/antagonist/mindslave))
+		if(target.mind.has_antag_datum(/datum/antagonist/gang/boss) || target.mind.has_antag_datum(/datum/antagonist/mindslave))
 			if(!silent)
 				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your curent mental conditioning, but your allighment lasts much more longer and can`t be reverted by this level of braiwashing!"))
 			removed(target, TRUE)
@@ -192,8 +196,6 @@
 			rev.remove_revolutionary(FALSE, user)
 		if(target.mind.has_antag_datum(/datum/antagonist/gang))
 			target.mind.remove_antag_datum(/datum/antagonist/gang)
-		if(target.mind.has_antag_datum(/datum/antagonist/veil))
-			target.mind.remove_antag_datum(/datum/antagonist/veil)
 		if(!silent)
 			if(target.mind in SSticker.mode.cult)
 				to_chat(target, span_warning("You feel something interfering with your mental conditioning, but you FAITH resist it!"))

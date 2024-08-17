@@ -244,10 +244,10 @@ Security HUDs! Basic mode shows only the job.
 				if(istype(MS, /obj/item/implant/mindshield/centcom))
 					holder.icon_state = "hud_imp_loyal_ert"
 				else if(istype(MS, /obj/item/implant/mindshield/tot_obvious))
-					if(I.active)
+					if(MS.active)
 						holder.icon_state = "hud_imp_loyal_totobv"
 				else if(istype(MS, /obj/item/implant/mindshield/tot))
-					if(I.active)
+					if(MS.active)
 						holder.icon_state = "hud_imp_loyal"
 				else
 					holder.icon_state = "hud_imp_loyal"
