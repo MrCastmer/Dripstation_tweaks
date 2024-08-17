@@ -143,6 +143,7 @@
 #include "code\game\objects\items\implants\implant_misc.dm"
 #include "code\game\objects\items\implants\implantuplink.dm"
 #include "code\game\objects\items\implants\implantpad.dm"
+#include "code\game\objects\items\implants\mindshield.dm"
 #include "code\game\objects\items\storage\belt.dm"
 #include "code\game\objects\items\storage\book.dm"
 #include "code\game\objects\items\storage\fancy.dm"
