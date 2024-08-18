@@ -7,3 +7,4 @@
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	box = /obj/item/storage/box/captain
+	implants = list(/obj/item/implant/mindshield/centcom)
