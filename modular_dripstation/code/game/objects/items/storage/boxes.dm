@@ -394,6 +394,16 @@
 	new /obj/item/badge/security/cadet(src)
 	new /obj/item/badge/security/cadet(src)
 
+/obj/item/storage/box/security/biosig_nt
+	name = "biosignaller implant box"
+	desc = "A box claiming to contain 'Nanotrasen \"Profit Margin\" Class Employee Biosignaller' implants."
+	illustration = "implant"
+
+/obj/item/storage/box/security/biosig_nt/PopulateContents()
+	for(var/i in 1 to 6)
+		new /obj/item/implantcase/biosig_ntcommand(src)
+	new /obj/item/implanter/biosig_ntcommand(src)
+
 // Syndie kit
 /obj/item/storage/box/donkdrip
 	illustration = null	

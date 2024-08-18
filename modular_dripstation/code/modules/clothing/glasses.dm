@@ -280,7 +280,6 @@
 
 /obj/item/clothing/glasses/welding
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
 
 /obj/item/clothing/glasses/regular
 	flags_cover = null //GLASSESCOVERSEYES
