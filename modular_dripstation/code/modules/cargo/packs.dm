@@ -163,6 +163,16 @@
 	order_limit = 1
 	contains = list(/obj/item/clothing/suit/space/hardsuit/heavymining)
 
+/datum/supply_pack/security/armory/mindshield
+	desc = "Prevent against radical thoughts with three Mindshield implants. Requires Armory access to open."
+
+/datum/supply_pack/security/armory/amnestic
+	name = "Amnestic Implants Crate"
+	desc = "Revert radical thoughts with three Amnestic implants. Requires Armory access to open."
+	cost = 4000
+	contains = list(/obj/item/storage/lockbox/amnestic)
+	crate_name = "amnestic implant crate"
+
 /datum/supply_pack/security/armory/hos
 	name = "Head of Security Armor Crate"
 	desc = "Contains set of HoS heavy armor."
