@@ -92,7 +92,7 @@
 	price = CARGO_CRATE_VALUE * 4
 	contains = list(/obj/item/watertank/atmos)
 	crate_name = "firefighting backpack crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/internals
 
 /datum/market_item/syndibase/emergency/metalfoam
 	name = "Metal Foam Grenade Crate"
@@ -100,7 +100,7 @@
 	price = CARGO_CRATE_VALUE * 4
 	contains = list(/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/internals
 
 /datum/market_item/syndibase/emergency/bomb
 	name = "Explosive Emergency Crate"
@@ -113,7 +113,7 @@
 					/obj/item/wirecutters,
 					/obj/item/multitool)
 	crate_name = "bomb suit crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/internals
 
 /datum/market_item/syndibase/emergency/bio
 	name = "Biological Emergency Crate"
@@ -129,7 +129,7 @@
 					/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/clothing/gloves/color/latex/nitrile)
 	crate_name = "bio suit crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/internals
 
 /datum/market_item/syndibase/emergency/radiation
 	name = "Radiation Protection Crate"
@@ -161,14 +161,14 @@
 
 /datum/market_item/syndibase/emergency/spacesuit
 	name = "Space Suit Crate"
-	desc = "Contains one space suit from Waffle Co and a jetpack. Requires EVA access to open."
+	desc = "Contains one space suit produced by Waffle Co and an oxygen jetpack."
 	price = CARGO_CRATE_VALUE * 12
 	contains = list(/obj/item/clothing/suit/space/syndicate/black,
 					/obj/item/clothing/head/helmet/space/syndicate/black,
 					/obj/item/clothing/mask/breath,
 					/obj/item/tank/jetpack/oxygen)
 	crate_name = "space suit crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/waffle
 
 
 /////Gorlex Security Stuff
@@ -184,7 +184,7 @@
 					/obj/item/storage/box/handcuffs)
 	price = CARGO_CRATE_VALUE * 2
 	crate_name = "security supply crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/security/secway
 	name = "Secway Crate"
@@ -193,7 +193,7 @@
 	contains = list(/obj/vehicle/ridden/secway,
 					/obj/item/key/security)
 	crate_name = "secway crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/security/firingpins
 	name = "Standard Firing Pins Crate"
@@ -201,7 +201,7 @@
 	price = CARGO_CRATE_VALUE * 5
 	contains = list(/obj/item/storage/box/firingpins)
 	crate_name = "firing pins crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/security/stechkin
 	name = "Waffle Co Stechkin Pistol Crate"
@@ -212,7 +212,7 @@
 					/obj/item/ammo_box/magazine/m10mm)
 	price = CARGO_CRATE_VALUE * 12
 	crate_name = "Stechkin Pistol Crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/waffle
 
 /datum/market_item/syndibase/security/stechkin_ammo
 	name = "Waffle Co Stechkin - 10mm Magazine"
@@ -222,7 +222,7 @@
 					/obj/item/ammo_box/magazine/m10mm)
 	price = CARGO_CRATE_VALUE * 3
 	crate_name = "Stechkin - 10mm Magazine crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/waffle
 
 /datum/market_item/syndibase/security/stechkin_ammo_ap
 	name = "Waffle Co Stechkin - 10mm Armour Piercing Magazine"
@@ -232,7 +232,7 @@
 					/obj/item/ammo_box/magazine/m10mm/ap)
 	price = CARGO_CRATE_VALUE * 3
 	crate_name = "Stechkin - 10mm Armour Piercing Magazine crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/waffle
 
 /datum/market_item/syndibase/security/stechkin_ammo_fire
 	name = "Waffle Co Stechkin - 10mm Incendiary Magazine"
@@ -242,7 +242,7 @@
 					/obj/item/ammo_box/magazine/m10mm/fire)
 	price = CARGO_CRATE_VALUE * 3
 	crate_name = "Stechkin - 10mm Incendiary Magazine crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/waffle
 
 /datum/market_item/syndibase/security/stechkin_ammo_hp
 	name = "Waffle Co Stechkin - 10mm Hollow Point Magazine"
@@ -252,7 +252,7 @@
 					/obj/item/ammo_box/magazine/m10mm/hp)
 	price = CARGO_CRATE_VALUE * 3
 	crate_name = "Stechkin - 10mm Hollow Point Magazine crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/waffle
 
 /datum/market_item/syndibase/security/energy_crossbow
 	name = "Cybersun Miniature Energy Crossbow"
@@ -260,7 +260,7 @@
 	contains = list(/obj/item/gun/energy/kinetic_accelerator/crossbow)
 	price = CARGO_CRATE_VALUE * 20
 	crate_name = "Energy Crossbow crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/security/armor
 	name = "Armor Crate"
@@ -273,7 +273,7 @@
 					/obj/item/clothing/head/helmet)
 	price = CARGO_CRATE_VALUE * 6
 	crate_name = "Armor crate"
-	item = /obj/structure/closet/crate/secure/gear
+	item = /obj/structure/closet/crate/secure/syndicate
 
 /datum/market_item/syndibase/security/combat_webbing
 	name = "Combat Webbing Crate"
@@ -283,7 +283,7 @@
 					/obj/item/storage/belt/military/webbing/syndicate/morphing)
 	price = CARGO_CRATE_VALUE * 10
 	crate_name = "Combat Webbing Crate"
-	item = /obj/structure/closet/crate/secure/gear
+	item = /obj/structure/closet/crate/secure/syndicate
 
 /datum/market_item/syndibase/security/bola
 	name = "Tactical Bola's Crate"
@@ -296,7 +296,7 @@
 					/obj/item/restraints/legcuffs/bola/tactical,)
 	price = CARGO_CRATE_VALUE * 3
 	crate_name = "Tactical Bola's crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 
 
@@ -359,7 +359,7 @@
 					/obj/item/storage/toolbox/syndicate)
 	price = CARGO_CRATE_VALUE * 4
 	crate_name = "Syndicate Toolbox crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/engineering/engivend
 	name = "EngiVend Supply Crate"
@@ -367,7 +367,7 @@
 	price = CARGO_CRATE_VALUE * 2
 	contains = list(/obj/item/vending_refill/engivend)
 	crate_name = "engineering supply crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/engineering/power
 	name = "Power Cell Crate"
@@ -396,7 +396,7 @@
 					/obj/item/clothing/head/hardhat)
 	price = CARGO_CRATE_VALUE * 4
 	crate_name = "engineering gear crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/donk
 
 /datum/market_item/syndibase/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"
@@ -424,7 +424,7 @@
 					/obj/item/mecha_parts/mecha_equipment/drill,
 					/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp)
 	crate_name= "APLU MK-I kit"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/engineering/electrical
 
 /datum/market_item/syndibase/engineering/sologamermitts
 	name = "Combat Insulated Gloves Single-Pack"
@@ -432,7 +432,7 @@
 	price = CARGO_CRATE_VALUE * 1
 	contains = list(/obj/item/clothing/gloves/combat)
 	crate_name= "combat gloves crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/engineering/electrical
 
 /datum/market_item/syndibase/engineering/inducers
 	name = "NT-75 Electromagnetic Power Inducers Crate"
@@ -462,7 +462,7 @@
 		/obj/item/circuitboard/machine/space_heater
 	)
 	crate_name = "space heater crate"
-	item = /obj/structure/closet/crate
+	item = /obj/structure/closet/crate/engineering/electrical
 
 /datum/market_item/syndibase/engine
 	category = "Engines"
@@ -729,15 +729,7 @@
 					/obj/item/reagent_containers/autoinjector/medipen/blood_loss,
 	)
 	crate_name = "medipen crate"
-	item = /obj/structure/closet/crate/medical
-
-/obj/item/storage/firstaid/tactical/alt/PopulateContents()
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/hypospray/combat(src)
-	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
-	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/firstaidadvanced_single
 	name = "Advanced Treatment Kit Single-Pack"
@@ -745,7 +737,7 @@
 	price = CARGO_CRATE_VALUE * 5
 	contains = list(/obj/item/storage/firstaid/tactical/alt)
 	crate_name = "ATC crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypospraykitvial_single
 	name = "Hypospray Kit Single-Pack"
@@ -753,7 +745,7 @@
 	price = CARGO_CRATE_VALUE
 	contains = list(/obj/item/storage/firstaid/hypospray/vial)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypovialkitbasic_single
 	name = "Basic Hypospray Vial Kit Single-Pack"
@@ -761,7 +753,7 @@
 	price = CARGO_CRATE_VALUE * 0.5
 	contains = list(/obj/item/storage/firstaid/hypospray/basic)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypovialkitbrute_single
 	name = "Brute Hypospray Vial Kit Single-Pack"
@@ -769,7 +761,7 @@
 	price = CARGO_CRATE_VALUE * 0.5
 	contains = list(/obj/item/storage/firstaid/hypospray/brute)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypovialkitburn_single
 	name = "Burn Hypospray Vial Kit Single-Pack"
@@ -777,7 +769,7 @@
 	price = CARGO_CRATE_VALUE * 0.5
 	contains = list(/obj/item/storage/firstaid/hypospray/burn)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypovialkittox_single
 	name = "Toxin Hypospray Vial Kit Single-Pack"
@@ -785,7 +777,7 @@
 	price = CARGO_CRATE_VALUE * 0.5
 	contains = list(/obj/item/storage/firstaid/hypospray/toxin)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypovialkitoxy_single
 	name = "Oxygen Hypospray Vial Kit Single-Pack"
@@ -793,7 +785,7 @@
 	price = CARGO_CRATE_VALUE * 0.5
 	contains = list(/obj/item/storage/firstaid/hypospray/oxygen)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/hypovialkitadv_single
 	name = "Advanced Hypospray Vial Kit Single-Pack"
@@ -801,7 +793,7 @@
 	price = CARGO_CRATE_VALUE
 	contains = list(/obj/item/storage/firstaid/hypospray/advanced)
 	crate_name = "hypospray crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/medipen_twopak
 	name = "Medipen Two-Pak"
@@ -809,7 +801,7 @@
 	price = CARGO_CRATE_VALUE * 2
 	contains = list(/obj/item/reagent_containers/autoinjector/medipen, /obj/item/reagent_containers/autoinjector/medipen/ekit)
 	crate_name = "medipen crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/chemical
 	name = "Chemical Starter Kit Crate"
@@ -832,7 +824,7 @@
 					/obj/item/reagent_containers/dropper,
 					/obj/item/storage/box/beakers)
 	crate_name = "chemical crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/lemoline
 	name = "Lemoline Import Crate"
@@ -840,7 +832,7 @@
 	price = CARGO_CRATE_VALUE * 3
 	contains = list(/obj/item/reagent_containers/glass/beaker/large/lemoline)
 	crate_name = "imported chemical crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/iv_drip
 	name = "IV Drip Crate"
@@ -848,7 +840,7 @@
 	price = CARGO_CRATE_VALUE * 5
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/vahlen_chem/surgery
 	name = "Surgical Supplies Crate"
@@ -858,7 +850,7 @@
 					/obj/item/reagent_containers/medspray/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/vahlen
 
 /datum/market_item/syndibase/cybersun_med
 	category = "Cybersun Medical Solutions"
@@ -869,7 +861,7 @@
 	price = CARGO_CRATE_VALUE * 10
 	contains = list(/obj/item/defibrillator/compact/combat/loaded)
 	crate_name = "defibrillator crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/cybersun
 
 /datum/market_item/syndibase/cybersun_med/salglucanister
 	name = "Heavy-Duty Saline Canister"
@@ -877,7 +869,7 @@
 	price = CARGO_CRATE_VALUE * 15
 	contains = list(/obj/machinery/iv_drip/saline)
 	crate_name = "saline canister crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/cybersun
 
 /datum/market_item/syndibase/cybersun_med/vending
 	name = "Medical Vending Crate"
@@ -887,4 +879,61 @@
 					/obj/item/vending_refill/wallmed,
 					/obj/item/vending_refill/wallhypo)
 	crate_name = "medical vending crate"
-	item = /obj/structure/closet/crate/medical
+	item = /obj/structure/closet/crate/medical/cybersun
+
+/datum/market_item/syndibase/cybersun_med/borg
+	name = "Medical Borg Crate"
+	desc = "A single-use teleporter designed to reinforce stationary agents with additional crew."
+	price = CARGO_CRATE_VALUE * 20
+	contains = list(/obj/item/antag_spawner/nuke_ops/borg_tele/medical)
+	crate_name = "medical borg crate"
+	item = /obj/structure/closet/crate/medical/cybersun
+
+/datum/market_item/syndibase/cybersun_sci
+	category = "Cybersun Virtual Solutions"
+
+/datum/market_item/syndibase/cybersun_sci/borg
+	name = "Engineering Borg Crate"
+	desc = "A single-use teleporter designed to reinforce stationary agents with additional crew."
+	price = CARGO_CRATE_VALUE * 30
+	contains = list(/obj/item/antag_spawner/nuke_ops/borg_tele/saboteur)
+	crate_name = "engineering borg crate"
+	item = /obj/structure/closet/crate/science/cybersun
+
+/datum/market_item/syndibase/cybersun_sci/shieldwalls
+	name = "Shield Generator Crate"
+	desc = "These high powered Shield Wall Generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Contains four shield wall generators. Requires Teleporter access to open."
+	price = CARGO_CRATE_VALUE * 10
+	contains = list(/obj/machinery/shieldwallgen,
+					/obj/machinery/shieldwallgen,
+					/obj/machinery/shieldwallgen,
+					/obj/machinery/shieldwallgen)
+	crate_name = "shield generators crate"
+	item = /obj/structure/closet/crate/science/cybersun
+
+/datum/market_item/syndibase/cybersun_sci/plasma
+	name = "Plasma Assembly Crate"
+	desc = "Everything you need to burn something to the ground, this contains three plasma assembly sets. Each set contains a plasma tank, igniter, proximity sensor, and timer! Warranty void if exposed to high temperatures. Requires Toxins access to open."
+	price = CARGO_CRATE_VALUE * 5
+	contains = list(/obj/item/tank/internals/plasma,
+					/obj/item/tank/internals/plasma,
+					/obj/item/tank/internals/plasma,
+					/obj/item/assembly/igniter,
+					/obj/item/assembly/igniter,
+					/obj/item/assembly/igniter,
+					/obj/item/assembly/prox_sensor,
+					/obj/item/assembly/prox_sensor,
+					/obj/item/assembly/prox_sensor,
+					/obj/item/assembly/timer,
+					/obj/item/assembly/timer,
+					/obj/item/assembly/timer)
+	crate_name = "plasma assembly crate"
+	item = /obj/structure/closet/crate/science/cybersun
+
+/datum/market_item/syndibase/cybersun_sci/rped
+	name = "RPED crate"
+	desc = "Need to rebuild the ORM but science got annihialted after a bomb test?"
+	price = CARGO_CRATE_VALUE * 5
+	contains = list(/obj/item/storage/part_replacer/cargo)
+	crate_name = "\improper RPED crate"
+	item = /obj/structure/closet/crate/science/cybersun

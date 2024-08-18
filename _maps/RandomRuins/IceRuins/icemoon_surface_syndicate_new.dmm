@@ -112,7 +112,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/item/stack/spacecash/c500,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/syndicate_icemoon/dorms)
 "aW" = (
@@ -803,7 +802,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/item/stack/spacecash/c500,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/syndicate_icemoon/dorms)
 "eA" = (
@@ -1040,6 +1038,10 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/syndicate_icemoon/command)
+"fP" = (
+/obj/machinery/porta_turret/syndicate,
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/syndicate_icemoon/reactor)
 "fT" = (
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/plasteel/white,
@@ -1243,6 +1245,9 @@
 /obj/effect/turf_decal/siding/blue{
 	dir = 6
 	},
+/obj/structure/bodycontainer/crematorium{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/syndicate_icemoon/medical)
 "hf" = (
@@ -1386,6 +1391,10 @@
 	},
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/plasteel/white,
+/area/ruin/syndicate_icemoon/medical)
+"im" = (
+/obj/structure/sign/poster/contraband/lusty_xenomorph,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/syndicate_icemoon/medical)
 "ip" = (
 /obj/machinery/light{
@@ -2655,10 +2664,10 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/brute,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/storage/firstaid/tactical/alt,
 /turf/open/floor/plasteel/white,
 /area/ruin/syndicate_icemoon/medical)
 "qg" = (
@@ -3951,6 +3960,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/reactor)
+"xL" = (
+/obj/effect/turf_decal/siding/blue,
+/obj/structure/closet/l3closet/vahlen,
+/turf/open/floor/plasteel/white,
+/area/ruin/syndicate_icemoon/medical)
 "xM" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/donut_box,
@@ -4303,6 +4317,14 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/blue{
 	dir = 9
+	},
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -9;
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 5;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/syndicate_icemoon/medical)
@@ -5301,7 +5323,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/stack/spacecash/c500,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/syndicate_icemoon/dorms)
 "Fi" = (
@@ -5488,6 +5509,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/floor/plating,
 /area/ruin/syndicate_icemoon/reactor)
+"Gb" = (
+/obj/effect/turf_decal/siding/blue{
+	dir = 4
+	},
+/obj/machinery/button/crematorium{
+	pixel_x = 20;
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/syndicate_icemoon/medical)
 "Gi" = (
 /obj/machinery/door/airlock/mining/glass{
 	name = "Warehouse Office"
@@ -6615,7 +6646,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/stack/spacecash/c500,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/syndicate_icemoon/dorms)
 "Nu" = (
@@ -6654,7 +6684,6 @@
 	},
 /obj/item/megaphone/command,
 /obj/item/binoculars,
-/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/red,
 /area/ruin/syndicate_icemoon/command)
 "NK" = (
@@ -7418,7 +7447,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/stack/spacecash/c500,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/syndicate_icemoon/dorms)
 "SS" = (
@@ -8781,7 +8809,7 @@ eM
 fg
 eM
 FM
-Zu
+fP
 Zu
 Zu
 qK
@@ -11235,7 +11263,7 @@ hV
 NO
 ya
 lX
-eJ
+im
 vd
 Lp
 Ky
@@ -11460,7 +11488,7 @@ Sq
 bn
 BB
 JQ
-fT
+xL
 eJ
 FP
 Vg
@@ -11829,7 +11857,7 @@ rN
 lv
 xh
 zO
-ya
+Gb
 hd
 ED
 dc

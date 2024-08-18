@@ -72,5 +72,5 @@
 	backpack = /obj/item/storage/backpack/blueshield
 	satchel = /obj/item/storage/backpack/satchel/blueshield
 	duffelbag = /obj/item/storage/backpack/duffelbag/blueshield
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1) //yogs - removes serv budget
-	implants = list(/obj/item/implant/mindshield)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/box/security/biosig_nt)
+	implants = list(/obj/item/implant/mindshield/centcom)

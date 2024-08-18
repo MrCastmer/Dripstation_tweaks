@@ -776,3 +776,9 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/crowbar/red(src)
 	new /obj/item/clothing/glasses/night(src)
+
+/obj/structure/closet/secure_closet/syndicate
+	icon_state = "syndicatesecure"
+
+/obj/structure/closet/secure_closet/syndicate/commsoff
+	icon_state = "commsoff"

@@ -70,4 +70,4 @@
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/command
 	head = /obj/item/clothing/head/ntrep
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-	implants = list(/obj/item/implant/mindshield)
+	implants = list(/obj/item/implant/mindshield/centcom)
