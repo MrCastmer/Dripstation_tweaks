@@ -81,10 +81,6 @@
 	icon = 'icons/obj/clothing/hats/hats.dmi'
 	worn_icon = 'icons/mob/clothing/head/head.dmi'
 
-/obj/item/clothing/suit/armor/abductor/vest
-	icon = 'icons/obj/clothing/suits/suits.dmi'
-	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
-
 /obj/item/clothing/head/helmet/changeling
 	flags_cover = HEADCOVERSEYES
 	dynamic_hair_suffix = ""
@@ -142,7 +138,6 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	icon_state = "rus_carrier"
-	item_state = "rus_carrier"
 	body_parts_covered = CHEST|GROIN
 	armor = list(MELEE = 25, BULLET = 50, LASER = 25, ENERGY = 15, BOMB = 40, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 15)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/chestrig
@@ -166,7 +161,8 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 /obj/item/clothing/head/helmet/rus_ushanka
 	armor = list(MELEE = 10, BULLET = 5, LASER = 5, ENERGY = 20, BOMB = 5, BIO = 50, RAD = 20, FIRE = -10, ACID = 0, WOUND = 5)
 
-
+/obj/item/clothing/suit/armor/vest/russian_coat
+	icon_state = "sovietcoat"
 
 //////////////////ABLATIVE//////////////////
 /obj/item/clothing/head/helmet/laserproof

@@ -138,6 +138,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/card/id/departmental_budget/syndibase,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/syndicate_icemoon/command)
 "bd" = (
@@ -156,7 +157,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/syndicate_icemoon/medical)
 "bo" = (
-/obj/structure/closet/crate,
 /obj/item/storage/toolbox/electrical{
 	pixel_y = 4
 	},
@@ -166,6 +166,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/circuitboard/machine/smes,
 /obj/item/circuitboard/machine/smes,
+/obj/structure/closet/crate/donk,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "bp" = (
@@ -1160,7 +1161,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/syndicate_icemoon/command)
 "gG" = (
-/obj/structure/closet/crate,
 /obj/item/storage/box/lights/bulbs,
 /obj/item/storage/box/lights/bulbs,
 /obj/item/storage/box/lights/bulbs,
@@ -1176,6 +1176,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/donk,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "gH" = (
@@ -2053,14 +2054,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/closet/crate/secure/gear{
-	req_access_txt = "150"
-	},
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/closet/crate/secure/syndicate{
+	req_access_txt = "150";
+	name = "gear crate"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
@@ -2086,7 +2088,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/hallway)
 "mm" = (
-/obj/structure/closet/crate,
 /obj/item/storage/box/stockparts/deluxe,
 /obj/item/storage/box/stockparts/deluxe,
 /obj/item/stack/sheet/metal/fifty,
@@ -2109,6 +2110,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stock_parts/subspace/ansible,
+/obj/structure/closet/crate/science/cybersun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "mq" = (
@@ -3295,9 +3297,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/hallway)
 "ub" = (
-/obj/structure/closet/crate/secure/weapon{
-	req_access_txt = "150"
-	},
 /obj/item/ammo_box/c10mm{
 	pixel_y = 6
 	},
@@ -3323,6 +3322,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/secure/waffle{
+	req_access_txt = "150";
+	name = "weapons crate"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "ud" = (
@@ -3503,13 +3506,13 @@
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/closet/crate,
 /obj/effect/turf_decal/box/white/corners,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
+/obj/structure/closet/crate/donk,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "vC" = (
@@ -3698,6 +3701,7 @@
 /obj/effect/turf_decal/trimline/brown/filled/line/lower,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/redspacepad,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "wB" = (
@@ -4900,7 +4904,6 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/ruin/syndicate_icemoon/canteen)
 "CU" = (
-/obj/structure/closet/crate,
 /obj/item/storage/box/donkpockets{
 	pixel_x = -2;
 	pixel_y = 6
@@ -4920,6 +4923,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/donk,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "CV" = (
@@ -5067,9 +5071,6 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/obj/structure/closet/crate/secure/gear{
-	req_access_txt = "150"
-	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/storage/belt/military,
@@ -5094,6 +5095,10 @@
 /obj/item/storage/belt/military/webbing/syndicate/gorlex,
 /obj/item/clothing/gloves/combat/gorlex,
 /obj/item/clothing/gloves/combat/gorlex,
+/obj/structure/closet/crate/secure/syndicate{
+	req_access_txt = "150";
+	name = "gear crate"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "DC" = (
@@ -6939,8 +6944,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/market_uplink/blackmarket,
-/obj/item/circuitboard/machine/ltsrbt,
+/obj/item/market_uplink/syndicatecargo,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "PP" = (
@@ -8113,7 +8117,6 @@
 /turf/open/floor/engine/o2,
 /area/ruin/syndicate_icemoon/engine)
 "WP" = (
-/obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/fire{
 	pixel_x = 3;
 	pixel_y = 3
@@ -8129,6 +8132,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/medical/vahlen,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "WS" = (
@@ -13132,7 +13136,7 @@ ct
 mm
 gG
 Bq
-nH
+eM
 eM
 eM
 eM

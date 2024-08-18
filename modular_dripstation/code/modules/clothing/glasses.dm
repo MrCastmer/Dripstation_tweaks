@@ -312,6 +312,10 @@
 	hud_type = DATA_HUD_MEDICAL_BASIC
 	flags_cover = null //GLASSESCOVERSEYES
 
+/obj/item/clothing/glasses/hud/health/night/cultblind
+	icon = 'icons/obj/clothing/glasses.dmi'
+	worn_icon = 'icons/mob/clothing/eyes/eyes.dmi'
+
 /obj/item/clothing/glasses/regular
 	name = "prescription glasses"
 	desc = "Corrects your vision!"
