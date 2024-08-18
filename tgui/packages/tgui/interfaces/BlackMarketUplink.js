@@ -1,4 +1,5 @@
 import { useBackend } from '../backend';
+import { Fragment } from 'inferno';
 import { AnimatedNumber, Box, Button, Flex, Modal, Section, Tabs } from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
@@ -72,7 +73,7 @@ export const BlackMarketUplink = (props, context) => {
                     {item.name}
                   </Flex.Item>
                   <Flex.Item color="label">
-                  {item.limited == 0
+                  {item.limited === 0
                       ? ""
                       : item.amount 
                         ? item.amount + " in stock"
