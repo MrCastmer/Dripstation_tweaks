@@ -450,3 +450,21 @@
 	mutantrace_variation = NONE
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 80, ACID = 40, WOUND = 0, ELECTRIC = 0)
 
+
+//ABDUCTOR
+/obj/item/clothing/under/abductor
+	icon_state = "abductor"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
+
+//NINJA
+/obj/item/clothing/under/ninja
+	name = "black-green tactical jumpsuit"
+	desc = "A tactical black jumpsuit with green stripes."
+	icon_state = "ninja"
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 80, ACID = 40, WOUND = 0, ELECTRIC = 0)
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/syndicate.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/syndicate.dmi'
+
+/datum/outfit/ninja
+	uniform = /obj/item/clothing/under/ninja
