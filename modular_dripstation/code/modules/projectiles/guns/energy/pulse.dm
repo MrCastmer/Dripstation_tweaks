@@ -1,5 +1,6 @@
 /obj/item/gun/energy/pulse
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/energy/pulse/pistol
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse/pistol, /obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)

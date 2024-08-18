@@ -16,7 +16,7 @@
 /obj/item/gun/energy/e_gun/energyrevolver
 	name = "\improper NT-S02 Revolver Energy Gun"
 	desc = "An expensive, modern recreation of the antique laser gun, and the second of the 'S' or personal defense weapons meant for the use of high ranking Nanotrasen`s Special Operations Department personnel. Like the standard energy gun, it has a stun and kill setting, but also provides specops grade taser setting."
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 	icon_state = "energyrevolver"
 	item_state = "gun"
 	ammo_x_offset = 2
@@ -36,7 +36,7 @@
 	item_state = "gun"
 	force = 15
 	ammo_x_offset = 2
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 	cell_type = /obj/item/stock_parts/cell/pulse/pistol
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/laser_spec, /obj/item/ammo_casing/energy/ion)
@@ -86,6 +86,7 @@
 
 /obj/item/gun/energy/e_gun/mini/specops	//easy concealable gun for NT special operations department
 	cell_type = /obj/item/stock_parts/cell/pulse/pistol	//specops grade cell
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/laser_spec)
 
 /obj/item/gun/energy/e_gun/mini/practice_phaser

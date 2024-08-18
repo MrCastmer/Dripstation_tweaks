@@ -11,7 +11,7 @@
 	name = "NT-L5 laser gun"
 	desc = "The NT-L5 is a basic energy-based laser gun that uses full potential of beam guns and hits targets through glass and thin metal at the speed of light. Has a preinstalled mindshield pin."
 	icon_state = "laser-new"
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/energy/laser/cybersun
 	name = "laser carbine (Cybersun)"
@@ -35,7 +35,7 @@
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_NORMAL
 	desc = "The NT-S05 laser gun is NT`s recreation of NT-S01 aiming to provide an inbuilt recharger with laser functions. It also has 'S' or special class weapon given to Nanotrasen`s Special Operations Department members. Now in service with NanoTrasen`s Special Operations Department agents."
-	pin = /obj/item/firing_pin/implant/mindshield
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 	force = 10
 	selfcharge = 1
 	charge_amount = 2
