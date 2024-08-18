@@ -101,7 +101,7 @@
 #include "code\game\objects\items\handcuffs.dm"
 #include "code\game\objects\items\holotool.dm"
 #include "code\game\objects\items\holy_weapons.dm"
-#include "code\game\objects\items\implants\death_alarm.dm"
+#include "code\game\objects\items\implants\biosig_ntcommand.dm"
 #include "code\game\objects\items\implants\implant_misc.dm"
 #include "code\game\objects\items\implants\implant.dm"
 #include "code\game\objects\items\implants\implanter.dm"
