@@ -15,4 +15,5 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/structure/frosen_mech/Initialize(mapload)
-    src.freeze()
+	. = ..()
+	src.freeze()
