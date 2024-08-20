@@ -53,7 +53,6 @@
 	imp_type = /obj/item/implant/mindshield/centcom
 
 /obj/item/implant/mindshield/centcom/proc/toggle_activation(status = TRUE)
-	. = ..()
 	active = status
 	to_chat(imp_in, "You feel a faint click as [name] [active ? "activates" : "deactivates"]")
 	implant_visible_as = "[active ? "hud_imp_loyal_ert" : null]"
