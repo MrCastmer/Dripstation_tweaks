@@ -1788,6 +1788,9 @@
 	pixel_y = 28
 	},
 /obj/structure/closet/secure_closet/evidence,
+/obj/machinery/camera{
+	c_tag = "Evidence Storage"
+	},
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "aAS" = (
@@ -4291,7 +4294,7 @@
 /area/medical/sleeper)
 "bhX" = (
 /obj/machinery/camera{
-	c_tag = "Brig - Desk";
+	c_tag = "Magistrate`s Office";
 	dir = 8
 	},
 /obj/machinery/computer/med_data{
@@ -10285,8 +10288,7 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "cUZ" = (
-/obj/structure/closet/secure_closet/security/sec,
-/obj/effect/turf_decal/bot_red,
+/obj/machinery/vending/wardrobe/sec_wardrobe,
 /turf/open/floor/plasteel{
 	icon_state = "darkred";
 	dir = 4
@@ -12718,6 +12720,9 @@
 /obj/item/radio/intercom{
 	pixel_x = 0;
 	pixel_y = 21
+	},
+/obj/machinery/camera{
+	c_tag = "Brig Checkpoint"
 	},
 /turf/open/floor/plasteel/dark/side{
 	icon_state = "textured_dark_corner"
@@ -15232,6 +15237,10 @@
 /obj/machinery/airalarm{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/machinery/camera{
+	c_tag = "Nanotrasen representative`s Office";
+	dir = 4
 	},
 /turf/open/floor/plasteel{
 	icon_state = "darkbrown";
@@ -18763,7 +18772,7 @@
 	pixel_x = 27
 	},
 /obj/machinery/camera{
-	c_tag = "Security - Office - Starboard";
+	c_tag = "Security - Office - Ssssssstarboard";
 	dir = 8
 	},
 /turf/open/floor/plasteel{
@@ -20503,6 +20512,10 @@
 	dir = 8;
 	color = "#ff0000"
 	},
+/obj/item/ammo_box/magazine/wt550m9/wtr,
+/obj/item/ammo_box/magazine/wt550m9/wtr,
+/obj/item/ammo_box/magazine/wt550m9/wtr,
+/obj/item/ammo_box/magazine/wt550m9/wtr,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "fPq" = (
@@ -22353,7 +22366,7 @@
 "gmV" = (
 /obj/effect/turf_decal/bot_red,
 /obj/structure/closet{
-	name = "Evidence Closet 5"
+	name = "Evidence Closet"
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
@@ -35783,7 +35796,25 @@
 /area/maintenance/port/aft)
 "jOc" = (
 /obj/effect/turf_decal/bot_red,
-/obj/machinery/suit_storage_unit/warden,
+/obj/structure/rack,
+/obj/item/clothing/mask/gas/sechailer{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/clothing/mask/gas/sechailer{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/item/clothing/mask/gas/sechailer{
+	pixel_x = 2;
+	pixel_y = -4
+	},
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/reagent_containers/spray/pepper,
+/obj/item/clothing/glasses/hud/security/ballistic,
+/obj/item/clothing/glasses/hud/security/ballistic,
 /turf/open/floor/plasteel/dark/side{
 	icon_state = "textured_dark_corner";
 	dir = 1
@@ -40931,11 +40962,12 @@
 	},
 /area/hydroponics)
 "lkw" = (
-/obj/machinery/vending/security,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 26
 	},
+/obj/effect/turf_decal/bot_red,
+/obj/structure/closet/secure_closet/security/sec,
 /turf/open/floor/plasteel{
 	icon_state = "darkred";
 	dir = 4
@@ -54074,10 +54106,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/camera{
-	c_tag = "Evidence Storage"
-	},
-/obj/effect/landmark/blobstart,
 /turf/open/floor/plasteel/dark/side{
 	icon_state = "textured_dark_edge";
 	dir = 1
@@ -64505,7 +64533,7 @@
 	c_tag = "Security - Gear Room";
 	dir = 8
 	},
-/obj/machinery/vending/wardrobe/sec_wardrobe,
+/obj/machinery/armaments_dispenser,
 /turf/open/floor/plasteel{
 	icon_state = "darkred";
 	dir = 4
@@ -71798,6 +71826,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/machinery/camera{
+	c_tag = "Blueshield`s Office";
+	dir = 8
+	},
 /turf/open/floor/plasteel{
 	icon_state = "darkbluecorners";
 	dir = 8
@@ -74444,7 +74476,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/armaments_dispenser,
+/obj/machinery/vending/security,
 /turf/open/floor/plasteel{
 	icon_state = "darkred";
 	dir = 4
@@ -76869,10 +76901,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
 	},
-/obj/machinery/camera{
-	c_tag = "Security - Secure Gear Storage";
-	dir = 4
-	},
 /obj/effect/turf_decal/bot_red,
 /obj/structure/closet/secure_closet/evidence,
 /turf/open/floor/plasteel/dark,
@@ -77569,6 +77597,10 @@
 /obj/item/clothing/under/rank/security/navyblue,
 /obj/item/clothing/under/rank/security/navyblue,
 /obj/item/clothing/under/rank/security/navyblue,
+/obj/item/clothing/under/rank/security/head_of_security/navyblue,
+/obj/item/clothing/under/rank/security/warden/navyblue,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/radio/headset/headset_sec/alt,
 /turf/open/floor/plasteel/dark/side{
 	icon_state = "textured_dark_corner";
 	dir = 8
@@ -77893,8 +77925,7 @@
 	max_integrity = 350;
 	color = "#ff0000"
 	},
-/obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/head/helmet/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "vhp" = (
@@ -78845,6 +78876,10 @@
 "vuQ" = (
 /obj/effect/turf_decal/bot_red,
 /obj/machinery/flasher/portable,
+/obj/machinery/camera{
+	c_tag = "Security - Secure Gear Storage";
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark/side{
 	icon_state = "textured_dark_edge";
 	dir = 8
@@ -84837,7 +84872,6 @@
 	},
 /area/engine/atmos/distro)
 "wWV" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/bot_red,
 /obj/machinery/door/window/brigdoor{
 	dir = 4;
@@ -84857,18 +84891,9 @@
 	dir = 8;
 	color = "#ff0000"
 	},
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = 1;
-	pixel_y = -1
-	},
-/obj/item/clothing/mask/gas/sechailer{
-	pixel_x = 2;
-	pixel_y = -4
-	},
+/obj/structure/guncase/wt,
+/obj/item/gun/ballistic/automatic/wt550/armory,
+/obj/item/gun/ballistic/automatic/wt550/armory,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "wXa" = (
@@ -89040,7 +89065,7 @@
 	dir = 8
 	},
 /obj/machinery/camera{
-	c_tag = "Security - Gear Room";
+	c_tag = "Security - Processing";
 	dir = 8
 	},
 /turf/open/floor/plasteel{

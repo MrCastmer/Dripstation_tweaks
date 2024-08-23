@@ -616,10 +616,12 @@
 	on_icon_state = "telecane_active"
 	off_icon_state = "telecane"
 	on_item_state = "telecane_active"
+	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
 
 /obj/item/melee/hardlight_cane
 	icon_state = "holocane"
 	item_state = "holocane"
+	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
 	force = 0
 	attack_verb = list("hit", "poked")
 

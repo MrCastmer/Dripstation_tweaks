@@ -88,6 +88,12 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 /obj/structure/closet/secure_closet/lethalshots
 	icon_state = "armory"
 
+/obj/structure/closet/secure_closet/lethalshots/PopulateContents()
+	..()
+	for(var/i in 1 to 2)
+		new /obj/item/storage/box/lethalshot(src)
+		new /obj/item/storage/box/laserbuckshot(src)
+
 /obj/structure/closet/attackby(obj/item/attacking_item, mob/user, params)
 	if(user in src)
 		return
@@ -515,6 +521,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/gun/energy/e_gun/energyrevolver(src)
 	new /obj/item/storage/belt/military/assault/blueshield(src)
 	new /obj/item/radio/headset/blueshield(src)
 	new /obj/item/storage/backpack/blueshield(src)
@@ -538,6 +545,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/glasses/hud/personnel(src)
 	new /obj/item/radio/headset/heads/ntrep(src)
 	new /obj/item/storage/bag/garment/ntrep(src)
+	new /obj/item/melee/ntrep_cane/loaded(src)
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/taperecorder(src)
 	new /obj/item/tape(src)
@@ -564,7 +572,6 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/radio/headset/heads/magistrate(src)
 	new /obj/item/clothing/glasses/hud/security(src)
-	new /obj/item/cane(src)
 	new /obj/item/megaphone(src)
 	new /obj/item/clipboard/yog/paperwork/security(src)
 	new /obj/item/storage/bag/garment/magistrate(src)

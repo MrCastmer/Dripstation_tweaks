@@ -71,5 +71,5 @@
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/command
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic/cane=1)
 	implants = list(/obj/item/implant/mindshield/centcom)

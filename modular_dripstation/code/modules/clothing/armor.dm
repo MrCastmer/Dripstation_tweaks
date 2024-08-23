@@ -208,8 +208,8 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 
 /obj/item/clothing/head/hooded/ablative
 	name = "ablative hood"
-	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	desc = "Hood hopefully belonging to an ablative trenchcoat."
 	icon_state = "ablativehood"
 	item_state = "ablativehood"
