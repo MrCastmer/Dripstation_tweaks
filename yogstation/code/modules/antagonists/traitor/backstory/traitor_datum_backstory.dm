@@ -49,6 +49,10 @@
 	var/no_faction = isnull(faction)
 	faction = new_faction
 	employer = new_faction.employer_name
+	if(company)
+		owner.remove_employee(company)
+	company = new_faction.corporation_allighment
+	owner.add_employee(company)
 	if(no_faction)
 		if(new_faction.give_codewords)
 			give_codewords()

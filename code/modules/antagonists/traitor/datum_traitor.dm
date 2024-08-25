@@ -35,7 +35,10 @@
 	if(traitor_kind == TRAITOR_AI)
 		company = /datum/corporation/self
 	else if(!company)
+	/*Dripstation edit, checking upstream prs for edit, for now using drip code
 		company = pick(subtypesof(/datum/corporation/traitor))
+	*/
+		company = /datum/corporation/traitor/independent	//dripstation edit, solo untill picking company
 	owner.add_employee(company)
 
 	SSticker.mode.traitors += owner

@@ -39,7 +39,10 @@
 		data["faction_theme"] = faction.faction_theme
 
 	var/datum/component/uplink/uplink = uplink_ref?.resolve()
+/*dripstation edit start
 	data["antag_name"] = name
+*/
+	data["antag_name"] = faction ? "[faction.name] [name]" : "[name]"	//dripstation edit end
 	data["has_codewords"] = has_codewords
 	if(has_codewords)
 		data["phrases"] = jointext(GLOB.syndicate_code_phrase, ", ")

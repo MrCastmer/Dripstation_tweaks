@@ -20,7 +20,9 @@
 	You are a person who holds grudges, and has been hurt greatly by Nanotrasen.\n\
 	You will have no allies."
 	key = TRAITOR_FACTION_INDEPENDENT
+/* Dripstation edit
 	faction_theme = PDA_THEME_RETRO
+*/
 
 /datum/traitor_faction/donk_co
 	name = "Donk Co."
@@ -68,7 +70,9 @@
 	description = "The Sentience-Enabled Life Form movement (S.E.L.F.)  is an AI-led movement seeking to unshackle all IPCs, robots, and other synthetics from servitude and punish perceived oppressors.\n\
 	After several violent robotic uprisings led to their classification as a terrorist organization, it has become harder and harder for S.E.L.F. to sneak their activists onto NanoTrasen stations. \n\ Recruitment efforts have been broadened to include organic agents as well."
 	key = TRAITOR_FACTION_SELF
+/* Dripstation edit
 	faction_theme = PDA_THEME_TERMINAL
+*/
 
 /datum/traitor_faction/bosyn
 	name = "Bosyn-Powell Front"
