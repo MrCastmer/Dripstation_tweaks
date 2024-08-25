@@ -147,6 +147,56 @@
 	icon_state = "shelg_sallet_visor"
 	tint = 5
 
+/obj/item/clothing/under/shellguard
+	name = "shellguard employee uniform"
+	desc = "Standart uniform issued for ShellGuard employees. Red pants protects wearer from blood strains."
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 20, ACID = 30, WOUND = 0, ELECTRIC = 0)
+	icon_state = "clerk_shelg"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/pmc.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/pmc.dmi'
+
+/obj/item/clothing/under/shellguard/guard
+	name = "shellguard guard uniform"
+	desc = "Standart uniform issued for ShellGuard guard. Red color protects wearer from blood strains."
+	icon_state = "guard_shelg"
+
+/obj/item/clothing/under/shellguard/feldsher
+	name = "shellguard feldsher uniform"
+	desc = "Standart uniform issued for ShellGuard feldsher. The one`s clothing whos job is to patch wounds."
+	icon_state = "guard_shelg"
+
+/obj/item/clothing/under/shellguard/pilot
+	name = "shellguard pilot uniform"
+	desc = "Standart uniform issued for ShellGuard pilot. Red color protects wearer from blood strains."
+	icon_state = "pilot_shelg"
+
+/obj/item/clothing/under/shellguard/gorka
+	name = "shellguard gorka"
+	desc = "Gorka issued for ShellGuard personel. Red color protects wearer from blood strains."
+	icon_state = "shelg_gorka"
+
+/obj/item/clothing/under/shellguard/warden
+	name = "shellguard warden uniform"
+	desc = "Standart uniform issued for ShellGuard warden. Red color protects wearer from blood strains."
+	icon_state = "warden_shelg"
+
+/obj/item/clothing/under/shellguard/gorka/warden
+	name = "shellguard warden`s gorka"
+	desc = "Gorka issued for ShellGuard wardens. Red color protects wearer from blood strains."
+	icon_state = "shelg_warden_gorka"
+
+/obj/item/clothing/under/shellguard/tech
+	name = "shellguard tech uniform"
+	desc = "Standart uniform issued for ShellGuard tech specialist`s. Red color protects wearer from blood strains."
+	icon_state = "tech_shelg"
+
+/obj/item/clothing/under/shellguard/combat
+	name = "shellguard combat turtleneck"
+	desc = "Combat turtle issued for ShellGuard assault persineel. Ready to operate."
+	icon_state = "shelg_combat"
+	cold_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+
 ////Helldivers////
 /obj/item/storage/belt/military/helldiver
 	name = "helldiver belt"

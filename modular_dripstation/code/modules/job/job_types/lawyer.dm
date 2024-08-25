@@ -6,7 +6,7 @@
 	department_head = list("Magistrate")
 	supervisors = "the magistrate and the nanotrasen representative"
 	paycheck_department = ACCOUNT_CAR
-	department_for_prefs = /datum/job_department/central_command
+	department_for_prefs = /datum/job_department/security
 	departments_list = list(
 		/datum/job_department/security
 	)
