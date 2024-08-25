@@ -38,6 +38,8 @@
 		/obj/item/storage/box/flashbangs = 10,
 		/obj/item/storage/box/rubbershot = 10,
 		/obj/effect/spawner/lootdrop/techshell = 10,
+		/obj/item/storage/box/laserbuckshot = 10,	//dripstation edit
+		/obj/item/storage/belt/sabre/stunsword = 5,	//dripstation edit
 		/obj/item/storage/box/lethalshot = 5
 	)
 
@@ -70,11 +72,11 @@
 	name = "Warden"
 	jobtype = /datum/job/warden
 
-	pda_type = /obj/item/modular_computer/tablet/pda/preset/warden
+	pda_type = /obj/item/modular_computer/tablet/pda/preset/security/warden
 
 	ears = /obj/item/radio/headset/headset_sec/alt
-	uniform = /obj/item/clothing/under/rank/warden
-	uniform_skirt = /obj/item/clothing/under/rank/warden/skirt
+	uniform = /obj/item/clothing/under/rank/security/warden
+	uniform_skirt = /obj/item/clothing/under/rank/security/warden/skirt
 	shoes = /obj/item/clothing/shoes/jackboots
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/warden/alt
@@ -88,7 +90,7 @@
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	box = /obj/item/storage/box/security
+	box = /obj/item/storage/box/survival/security
 
 	implants = list(/obj/item/implant/mindshield)
 

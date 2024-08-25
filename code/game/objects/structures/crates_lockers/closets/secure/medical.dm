@@ -35,6 +35,7 @@
 	req_access = list(ACCESS_SURGERY)
 	icon_state = "med_secure"
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/medical3/PopulateContents()
 	..()
 	new /obj/item/radio/headset/headset_med(src)
@@ -43,16 +44,17 @@
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/gun/syringe(src)
+*/
 
 /obj/structure/closet/secure_closet/CMO
 	name = "\proper chief medical officer's locker"
 	req_access = list(ACCESS_CMO)
 	icon_state = "cmo"
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
 	new /obj/item/storage/backpack/duffelbag/med(src)
-	new /obj/item/cartridge/cmo(src)
 	new /obj/item/radio/headset/heads/cmo(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/clothing/neck/cloak/cmo(src)
@@ -70,55 +72,42 @@
 	new /obj/item/clipboard/yog/paperwork/cmo(src)
 	new /obj/item/storage/backpack/duffelbag/clothing/med/chief(src)
 	new /obj/item/storage/lockbox/medal/med(src)
+	new /obj/item/sequence_scanner(src)
+*/
 
 
 /obj/structure/closet/secure_closet/paramedic
 	name = "paramedical closet"
 	desc = "It's a secure storage unit for paramedical supplies."
+	/* //Dripstation edit
 	icon = 'yogstation/icons/obj/closet.dmi'
+	*/
 	icon_state = "paramed"
 	req_access = list(ACCESS_PARAMEDIC)
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/paramedic/PopulateContents()
 	..()
-	if(prob(50))
-		new /obj/item/storage/backpack/medic(src)
-	else
-		new /obj/item/storage/backpack/satchel/med(src)
-	new /obj/item/storage/firstaid/hypospray/paramedic(src)
-	new /obj/item/clothing/shoes/sneakers/white(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/rank/medical/blue(src)
-		if ("green")
-			new /obj/item/clothing/under/rank/medical/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/rank/medical/purple(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/rank/medical/blue(src)
-		if ("green")
-			new /obj/item/clothing/under/rank/medical/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/rank/medical/purple(src)
-	new /obj/item/clothing/under/rank/medical(src)
-	new /obj/item/clothing/suit/toggle/labcoat/emt(src)
-	new /obj/item/clothing/head/beret/emt/green(src)
-	new /obj/item/clothing/head/beret/emt(src)
-	new /obj/item/clothing/head/soft/emt(src)
+	new /obj/item/clothing/shoes/sneakers/white(src) //shoes and a jumpsuit in case something goes wrong, otherwise clothes are just in vendor
+	new /obj/item/clothing/under/rank/medical/doctor(src)
 	new /obj/item/defibrillator/loaded(src)
-	new /obj/item/clothing/suit/toggle/labcoat/emt/green(src)
-	new /obj/item/clothing/head/soft/emt/green (src)
+	new /obj/item/storage/firstaid/hypospray/paramedic(src)
 	new /obj/item/radio/headset/headset_med(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/roller(src)
+*/
 
 /obj/structure/closet/secure_closet/mmedical
 	name = "mining medic's locker"
 	req_access = list(ACCESS_MEDICAL)
+	/* //Dripstation edit
 	icon = 'yogstation/icons/obj/closet.dmi'
+	*/
 	icon_state = "medic"
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/mmedical/PopulateContents()
 	..()
 	if(prob(50))
@@ -145,6 +134,7 @@
 	var/obj/item/key/K = new(src)
 	K.name = "ATV key"
 	K.desc = "It's a small grey key. Don't let those goddamn ashwalkers or plantpeople get it."
+*/
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control"
@@ -189,6 +179,7 @@
 	req_access = list(ACCESS_PSYCH)
 	icon_state = "cabinet"
 
+/*	dripstation edit
 /obj/structure/closet/secure_closet/psych/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/straight_jacket(src)
@@ -200,3 +191,4 @@
 	new /obj/item/storage/pill_bottle/psicodine(src)
 	new /obj/item/assembly/flash(src)
 	new /obj/item/assembly/flash(src)
+*/

@@ -477,6 +477,7 @@
 	icon_state = "h2helmet"
 	item_state = "h2helmet"
 	armor = list(MELEE = 35, BULLET = 30, LASER = 25, ENERGY = 30, BOMB = 20, BIO = 10, RAD = 50, FIRE = 65, ACID = 40, WOUND = 15)
+	material_flags = MATERIAL_EFFECTS | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Can change color and add prefix
 	flags_inv = HIDEMASK | HIDEEARS | HIDEEYES | HIDEFACE | HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	cold_protection = HEAD
@@ -533,7 +534,7 @@
 	var/obj/item/kevlar_plating/K = I
 
 	name = "[K.name_set] plated helmet"
-	slowdown = K.slowdown_set
+	slowdown = K.slowdown_set/2		//dripstation edit
 	if (islist(armor) || isnull(armor))		//For an explanation see code/modules/clothing/under/accessories.dm#L39 - accessory detach proc							
 		armor = getArmor(arglist(armor))
 	if (islist(K.armor) || isnull(K.armor))
@@ -543,3 +544,4 @@
 	w_class = WEIGHT_CLASS_BULKY
 	// Does not cover additional limbs like vest does
 	plating = K
+

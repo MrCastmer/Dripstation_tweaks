@@ -37,10 +37,11 @@
 		return "r"
 	return "l"
 
-/mob/proc/held_index_to_body_zone(i)
+/// Returns HAND_LEFT or HAND_RIGHT based on whether the left or right hand is selected
+/mob/proc/held_index_to_hand(i)
 	if(!(i % 2))
-		return BODY_ZONE_R_ARM
-	return BODY_ZONE_L_ARM
+		return HAND_RIGHT
+	return HAND_LEFT
 
 //Check we have an organ for this hand slot (Dismemberment), Only relevant for humans
 /mob/proc/has_hand_for_held_index(i)
@@ -135,12 +136,6 @@
 		if(I.tool_behaviour == quality && I.toolspeed < best_quality)
 			best_item = I
 			best_quality = I.toolspeed
-//yogs start -- fucking stupid but modular holotool patch
-	if(quality == TOOL_MULTITOOL)
-		if(istype(best_item,/obj/item/holotool))
-			var/obj/item/holotool/H = best_item
-			return H.internal_multitool
-//yogs end
 	return best_item
 
 

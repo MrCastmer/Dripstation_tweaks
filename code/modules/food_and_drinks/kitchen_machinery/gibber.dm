@@ -46,10 +46,13 @@
 		return
 	if (!occupant)
 		. += "grjam"
+		. += emissive_appearance(icon, "grjam", src)
 	else if (operating)
 		. += "gruse"
+		. += emissive_appearance(icon, "gruse", src)
 	else
 		. += "gridle"
+		. += emissive_appearance(icon, "gridle", src)
 
 /obj/machinery/gibber/attack_paw(mob/user)
 	return attack_hand(user)
@@ -72,6 +75,10 @@
 
 	if(!anchored)
 		to_chat(user, span_notice("[src] cannot be used unless bolted to the ground."))
+		return
+
+	if(is_synth(user))
+		to_chat(user, span_warning("You don't want to use this!"))
 		return
 
 	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))

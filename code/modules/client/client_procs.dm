@@ -94,7 +94,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			return
 
 	var/stl = CONFIG_GET(number/second_topic_limit)
-	if (!holder && stl)
+	if (!holder && stl && href_list["window_id"] != "statbrowser")
 		var/second = round(world.time, 10)
 		if (!topiclimiter)
 			topiclimiter = new(LIMITER_SIZE)
@@ -485,6 +485,49 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 //////////////
 
 /client/Del()
+	log_access("Logout: [key_name(src)]")
+	if(holder)
+		adminGreet(1)
+		holder.owner = null
+		GLOB.permissions.admins -= src
+		if (!GLOB.permissions.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
+			var/cheesy_message = pick(
+				"I have no admins online!",\
+				"I'm all alone :(",\
+				"I'm feeling lonely :(",\
+				"I'm so lonely :(",\
+				"Why does nobody love me? :(",\
+				"I want a man :(",\
+				"Where has everyone gone?",\
+				"I need a hug :(",\
+				"Someone come hold me :(",\
+				"I need someone on me :(",\
+				"What happened? Where has everyone gone?",\
+				"Forever alone :("\
+			)
+
+			send2irc("Server", "[cheesy_message] (No admins online)")
+		qdel(holder)
+	if(ckey in GLOB.permissions.deadmins)
+		qdel(GLOB.permissions.deadmins[ckey])
+
+	GLOB.ahelp_tickets.ClientLogout(src)
+	GLOB.directory -= ckey
+	GLOB.clients -= src
+
+	SSambience.remove_ambience_client(src)
+
+	var/datum/connection_log/CL = GLOB.connection_logs[ckey]
+	if(CL)
+		CL.logout(mob)
+
+	QDEL_LIST_ASSOC_VAL(char_render_holders)
+	if(movingmob != null)
+		movingmob.client_mobs_in_contents -= mob
+		UNSETEMPTY(movingmob.client_mobs_in_contents)
+	seen_messages = null
+	Master.UpdateTickRate()
+	world.sync_logout_with_db(connection_number) // yogs - logout logging
 	if(!gc_destroyed)
 		gc_destroyed = world.time
 		if (!QDELING(src))
@@ -864,15 +907,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (clicklimiter[SECOND_COUNT] > scl)
 			to_chat(src, span_danger("Your previous click was ignored because you've done too many in a second"))
 			return
-
-	if (hotkeys)
-		// If hotkey mode is enabled, then clicking the map will automatically
-		// unfocus the text bar. This removes the red color from the text bar
-		// so that the visual focus indicator matches reality.
-		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
-
-	else
-		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
 
 	SEND_SIGNAL(src, COMSIG_CLIENT_CLICK, object, location, control, params, usr)
 

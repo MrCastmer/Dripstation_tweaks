@@ -3,9 +3,9 @@
 	req_access = list(ACCESS_RD)
 	icon_state = "rd"
 
+/*
 /obj/structure/closet/secure_closet/RD/PopulateContents()
 	..()
-	new /obj/item/cartridge/rd(src)
 	new /obj/item/clothing/gloves/color/latex(src)
 	new /obj/item/radio/headset/heads/rd(src)
 	new /obj/item/tank/internals/air(src)
@@ -23,3 +23,4 @@
 	new /obj/item/clipboard/yog/paperwork/rd(src)
 	new /obj/item/storage/backpack/duffelbag/clothing/rd(src)
 	new /obj/item/multitool/tricorder(src)
+*/

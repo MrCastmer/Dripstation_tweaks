@@ -235,12 +235,14 @@ Security HUDs! Basic mode shows only the job.
 			holder.icon_state = "hud_imp_chem"
 			set_hud_image_active(IMPCHEM_HUD)
 
-	if(HAS_TRAIT(src, TRAIT_MINDSHIELD))
-		holder = hud_list[IMPLOYAL_HUD]
-		var/icon/IC = icon(icon, icon_state, dir)
-		holder.pixel_y = IC.Height() - world.icon_size
-		holder.icon_state = "hud_imp_loyal"
-		set_hud_image_active(IMPLOYAL_HUD)
+		//Dripstation edited
+		if(istype(I, /obj/item/implant/mindshield))
+			var/obj/item/implant/mindshield/MS = I
+			holder = hud_list[IMPLOYAL_HUD]
+			var/icon/IC = icon(icon, icon_state, dir)
+			holder.pixel_y = IC.Height() - world.icon_size
+			holder.icon_state = MS.implant_visible_as
+			set_hud_image_active(IMPLOYAL_HUD)
 
 /mob/living/carbon/human/proc/sec_hud_set_security_status()
 	var/image/holder = hud_list[WANTED_HUD]
@@ -285,7 +287,7 @@ Diagnostic HUDs!
 	holder.pixel_y = I.Height() - world.icon_size
 	holder.icon_state = null
 	set_hud_image_inactive(NANITE_HUD)
-	if(src in SSnanites.nanite_monitored_mobs)
+	if(HAS_TRAIT_FROM(src, TRAIT_SUITLESS_SENSORS, NANITE_TRAIT))
 		holder.icon_state = "nanite_ping"
 		set_hud_image_active(NANITE_HUD)
 
@@ -377,7 +379,7 @@ Diagnostic HUDs!
 	var/image/holder = hud_list[DIAG_MECH_HUD]
 	var/icon/I = icon(icon, icon_state, dir)
 	holder.pixel_y = I.Height() - world.icon_size
-	holder.icon_state = "huddiag[RoundDiagBar(obj_integrity/max_integrity)]"
+	holder.icon_state = "huddiag[RoundDiagBar(atom_integrity/max_integrity)]"
 	set_hud_image_active(DIAG_MECH_HUD)
 
 /obj/mecha/proc/diag_hud_set_mechcell()

@@ -11,10 +11,11 @@
 	user << browse(create_panel_helper(create_mob_html), "window=create_mob;size=425x475")
 
 /proc/randomize_human(mob/living/carbon/human/human)
-	human.gender = pick(MALE, FEMALE)
+	human.gender = human.dna ? pick(human.dna.species.possible_genders) : pick(MALE, FEMALE, PLURAL, NEUTER)
 	human.real_name = human.dna?.species.random_name(human.gender) || random_unique_name(human.gender)
 	human.name = human.real_name
-	human.underwear = random_underwear(human.gender)
+	if(!human.dna.features["legs"] == "Digitigrade Legs")	//dripstation edit
+		human.underwear = random_underwear(human.gender)	//dripstation edit
 	human.skin_tone = random_skin_tone()
 	human.hair_style = random_hair_style(human.gender)
 	human.facial_hair_style = random_facial_hair_style(human.gender)

@@ -55,6 +55,7 @@
 		"ntosradarpointerS.png" = 'icons/UI_Icons/tgui/ntosradar_pointer_S.png'
 	)
 
+/* Dripstation edit
 /datum/asset/simple/inspector_booth
 	assets = list(
 		"desk_bg.png" = 'icons/UI_Icons/tgui/inspector_booth/desk_bg.png',
@@ -85,6 +86,7 @@
 		"stamp_unknown.png" = 'icons/UI_Icons/tgui/inspector_booth/stamp_unknown.png',
 		"paper.png" = 'icons/UI_Icons/tgui/inspector_booth/paper.png',
 	)
+*/
 
 /datum/asset/spritesheet/simple/pda
 	name = "pda"
@@ -118,6 +120,7 @@
 		"dronephone"	= 'icons/pda_icons/pda_dronephone.png',
 	)
 
+/* //Dripstation edit
 /datum/asset/spritesheet/simple/paper
 	name = "paper"
 	assets = list(
@@ -137,6 +140,7 @@
 		"stamp-syndi" = 'icons/stamp_icons/large_stamp-syndi.png',
 		"stamp-syndiround" = 'icons/stamp_icons/large_stamp-syndiround.png'
 	)
+*/
 
 
 /datum/asset/simple/irv
@@ -170,6 +174,7 @@
 		"coding.png" = 'html/coding.png',
 		"ban.png" = 'html/ban.png',
 		"chrome-wrench.png" = 'html/chrome-wrench.png',
+		"mapping.png" = 'html/mapping.png',
 		"changelog.css" = 'html/changelog.css'
 	)
 	parents = list("changelog.html" = 'html/changelog.html')
@@ -370,6 +375,14 @@
 				if (machine)
 					item = machine
 
+			// Check for GAGS support where necessary
+			var/greyscale_config = initial(item.greyscale_config)
+			var/greyscale_colors = initial(item.greyscale_colors)
+			if (greyscale_config && greyscale_colors)
+				icon_file = SSgreyscale.GetColoredIconByType(greyscale_config, greyscale_colors)
+			else
+				icon_file = initial(item.icon)
+
 			icon_file = initial(item.icon)
 			icon_state = initial(item.icon_state)
 			#ifdef UNIT_TESTS
@@ -401,7 +414,11 @@
 		if (!ispath(item, /atom))
 			continue
 
-		var/icon_file = initial(item.icon)
+		var/icon_file
+		if (initial(item.greyscale_colors) && initial(item.greyscale_config))
+			icon_file = SSgreyscale.GetColoredIconByType(initial(item.greyscale_config), initial(item.greyscale_colors))
+		else
+			icon_file = initial(item.icon)
 		var/icon_state = initial(item.icon_state)
 		if(ispath(item, /obj/item/ammo_box))
 			var/obj/item/ammo_box/ammoitem = item
