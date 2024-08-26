@@ -37,7 +37,10 @@
 #define PDA_THEME_TITLE_CYBER "Cyber Sun"
 #define PDA_THEME_TITLE_VAHLEN "Vahlen"
 #define PDA_THEME_TITLE_GORLEX "Gorlex"
+/*
 #define PDA_THEME_TITLE_BOSYN "Bosyn"
+*/
+#define PDA_THEME_TITLE_BOSYN "Vostok"
 
 GLOBAL_LIST_INIT(pda_themes, list(
 	PDA_THEME_TITLE_NTOS = PDA_THEME_NTOS, 

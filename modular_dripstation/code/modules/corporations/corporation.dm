@@ -58,3 +58,7 @@
 /datum/corporation/traitor/independent
 	name = "Independent"
 	paymodifier = 0
+
+/datum/corporation/vostok
+	name = "Vostok"
+	paymodifier = 0.9

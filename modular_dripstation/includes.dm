@@ -168,6 +168,7 @@
 #include "code\modules\antagonists\horror\horror_chemicals.dm"
 #include "code\modules\antagonists\nukeop\nukeop.dm"
 #include "code\modules\antagonists\traitor\backstory\traitor_factions.dm"
+#include "code\modules\antagonists\traitor\backstory\traitor_backstories.dm"
 #include "code\modules\antagonists\traitor\traitor.dm"
 #include "code\modules\antagonists\wizard\equipment\wizard_spellbook.dm"
 #include "code\modules\assembly\assembly.dm"

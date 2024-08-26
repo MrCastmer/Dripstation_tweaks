@@ -16,9 +16,11 @@
 /datum/traitor_faction/independent
 	name = "Independent"
 	employer_name = "You"
+/* Dripstation edit
 	description = "Not for the faint of heart, being an independent traitor requires superior roleplay abilities, and superior traitor skills. \n\
 	You are a person who holds grudges, and has been hurt greatly by Nanotrasen.\n\
 	You will have no allies."
+*/
 	key = TRAITOR_FACTION_INDEPENDENT
 /* Dripstation edit
 	faction_theme = PDA_THEME_RETRO
