@@ -163,3 +163,7 @@
 #include "code\game\machinery\embedded_controller\access_controller.dm"
 #include "code\game\machinery\embedded_controller\simple_vent_controller.dm"
 #include "code\game\machinery\embedded_controller\airlock_controller.dm"
+#include "code\modules\surgery\organs\augments_arms.dm"
+#include "code\modules\surgery\organs\augments_chest.dm"
+#include "code\modules\surgery\organs\augments_eyes.dm"
+#include "code\modules\surgery\organs\augments_legs.dm"

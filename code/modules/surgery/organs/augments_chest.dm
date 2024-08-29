@@ -231,6 +231,7 @@
 	var/hasexerted = FALSE
 	var/list/hsv
 	var/last_step = 0
+	var/cooling_modifier = 2	//dripstation edit
 	COOLDOWN_DECLARE(alertcooldown)
 	COOLDOWN_DECLARE(startsoundcooldown)
 	COOLDOWN_DECLARE(endsoundcooldown)
@@ -321,7 +322,10 @@
 				to_chat(owner, span_userdanger("You feel a slight sense of shame as your brain and spine rip themselves apart from overexertion."))
 				owner.gib()
 	else
+/*	dripstation edit start
 		time_on -= 2
+*/
+		time_on -= cooling_modifier	//dripstation edit end
 
 	time_on = max(time_on, 0)
 	if(hasexerted && time_on == 0)
