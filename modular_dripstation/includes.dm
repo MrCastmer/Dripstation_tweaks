@@ -421,6 +421,7 @@
 #include "code\modules\surgery\surgery_step.dm"
 #include "code\modules\surgery\organs\autosurgeon.dm"
 #include "code\modules\surgery\tools.dm"
+#include "code\modules\uplink\ntia_uplink.dm"
 #include "code\modules\uplink\uplink_devices.dm"
 #include "code\modules\uplink\uplink_items.dm"
 #include "code\modules\vending\_vending.dm"
