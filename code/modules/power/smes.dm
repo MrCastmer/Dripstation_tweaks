@@ -58,7 +58,7 @@
 					break dir_loop
 
 	if(!terminal)
-		obj_break()
+		atom_break()
 		return
 	terminal.master = src
 	update_appearance(UPDATE_ICON)
@@ -202,7 +202,7 @@
 	if(terminal)
 		terminal.master = null
 		terminal = null
-		obj_break()
+		atom_break()
 
 
 /obj/machinery/power/smes/update_overlays()
@@ -214,17 +214,22 @@
 
 	if(outputting)
 		. += "smes-out1"
+		. += emissive_appearance(icon, "smes-out1", src)
 	else
 		. += "smes-out0"
+		. += emissive_appearance(icon, "smes-out0", src)
 
 	if(inputting)
 		. += "smes-inp1"
+		. += emissive_appearance(icon, "smes-inp1", src)
 	else if(input_attempt)
 		. += "smes-inp0"
+		. += emissive_appearance(icon, "smes-inp0", src)
 
 	var/clevel = chargedisplay()
 	if(clevel > 0)
 		. += "smes-og[clevel]"
+		. += emissive_appearance(icon, "smes-og[clevel]", src)
 
 
 /obj/machinery/power/smes/proc/chargedisplay()

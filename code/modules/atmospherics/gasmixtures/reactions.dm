@@ -316,9 +316,6 @@
 	return fusion_react(air, holder)
 
 /proc/fusion_react(datum/gas_mixture/air, datum/holder)
-	var/turf/open/location = get_holder_turf(holder)
-	if(!location)
-		return NO_REACTION
 	if(!air.analyzer_results)
 		air.analyzer_results = new
 	var/list/cached_scan_results = air.analyzer_results
@@ -366,6 +363,7 @@
 		air.adjust_moles(GAS_NITRIUM, FUSION_TRITIUM_MOLES_USED*(reaction_energy*-FUSION_TRITIUM_CONVERSION_COEFFICIENT))
 
 	if(reaction_energy)
+		var/turf/open/location = get_holder_turf(holder)
 		if(location)
 			var/particle_chance = ((PARTICLE_CHANCE_CONSTANT)/(reaction_energy-PARTICLE_CHANCE_CONSTANT)) + 1//Asymptopically approaches 100% as the energy of the reaction goes up.
 			if(prob(PERCENT(particle_chance)))
@@ -375,7 +373,7 @@
 
 		var/new_heat_capacity = air.heat_capacity()
 		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
-			air.set_temperature(clamp(((old_thermal_energy + reaction_energy)/new_heat_capacity),TCMB,INFINITY))
+			air.set_temperature(clamp(((old_thermal_energy + reaction_energy)/(new_heat_capacity*0.8)),TCMB,INFINITY))
 		return REACTING
 
 /datum/gas_reaction/nitriumformation //The formation of nitrium. Endothermic. Requires N2O as a catalyst.

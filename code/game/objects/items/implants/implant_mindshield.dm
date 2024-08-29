@@ -16,6 +16,7 @@
 	return dat
 
 
+/* Dripstation start
 /obj/item/implant/mindshield/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
 	if(..())
 		if(!target.mind)
@@ -39,7 +40,7 @@
 				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your mental conditioning, but you resist it!"))
 			removed(target, TRUE)
 			return FALSE
-		if(target.mind.has_antag_datum(/datum/antagonist/gang/boss) || is_shadow_or_thrall(target) || target.mind.has_antag_datum(/datum/antagonist/mindslave))
+		if(target.mind.has_antag_datum(/datum/antagonist/gang/boss) || target.mind.has_antag_datum(/datum/antagonist/mindslave))
 			if(!silent)
 				target.visible_message(span_warning("[target] seems to resist the implant!"), span_warning("You feel something interfering with your mental conditioning, but you resist it!"))
 			removed(target, TRUE)
@@ -77,8 +78,6 @@
 			rev.remove_revolutionary(FALSE, user)
 		if(target.mind.has_antag_datum(/datum/antagonist/gang))
 			target.mind.remove_antag_datum(/datum/antagonist/gang)
-		if(target.mind.has_antag_datum(/datum/antagonist/veil))
-			target.mind.remove_antag_datum(/datum/antagonist/veil)
 		if(!silent)
 			if(target.mind in SSticker.mode.cult)
 				to_chat(target, span_warning("You feel something interfering with your mental conditioning, but you resist it!"))
@@ -87,6 +86,7 @@
 		ADD_TRAIT(target, TRAIT_MINDSHIELD, "implant")
 		target.sec_hud_set_implants()
 		return TRUE
+*/ //Dripstation end
 
 /obj/item/implant/mindshield/removed(mob/target, silent = FALSE, special = 0)
 	if(..())

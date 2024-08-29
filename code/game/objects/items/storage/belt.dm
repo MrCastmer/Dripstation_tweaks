@@ -287,7 +287,8 @@
 		/obj/item/pinpointer/crew,
 		/obj/item/stack/medical/bone_gel,
 		/obj/item/holosign_creator/medical,
-		/obj/item/holosign_creator/firstaid
+		/obj/item/holosign_creator/firstaid,
+		/obj/item/sequence_scanner
 		))
 
 /obj/item/storage/belt/medical/chief
@@ -1189,8 +1190,12 @@
 
 /obj/item/storage/belt/sabre/update_icon(updates=ALL)
 	. = ..()
+	/* Dripstation edit
 	icon_state = "sheath"
 	item_state = "sheath"
+	*/
+	icon_state = initial(icon_state)
+	item_state = initial(item_state)
 	if(contents.len)
 		icon_state += "-sabre"
 		item_state += "-sabre"

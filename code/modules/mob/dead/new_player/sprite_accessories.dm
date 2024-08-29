@@ -61,6 +61,7 @@
 	var/dimension_y = 32
 	var/limbs_id // The limbs id supplied for full-body replacing features.
 	var/center = FALSE	//Should we center the sprite?
+	var/emissive = FALSE //is this emissive?
 
 //////////////////////
 // Hair Definitions //
@@ -857,6 +858,7 @@
 /datum/sprite_accessory/ipc_screens
 	icon = 'icons/mob/ipc_accessories.dmi'
 	color_src = EYECOLOR
+	emissive = TRUE
 
 /datum/sprite_accessory/ipc_screens/blue
 	name = "Blue"
@@ -875,6 +877,7 @@
 /datum/sprite_accessory/ipc_screens/blank
 	name = "Null"
 	icon_state = "blank"
+	emissive = FALSE
 
 /datum/sprite_accessory/ipc_screens/console
 	name = "Console"
@@ -1268,6 +1271,7 @@
 	icon_state = null
 	gender = NEUTER
 
+/*
 ///////////////////////////
 // Underwear Definitions //
 ///////////////////////////
@@ -1959,6 +1963,7 @@
 /datum/sprite_accessory/socks/white_thigh
 	name = "Thigh-high (White)"
 	icon_state = "white_thigh"
+*/
 
 //////////.//////////////////
 // MutantParts Definitions //
@@ -2242,6 +2247,7 @@
 	center = TRUE
 	dimension_y = 34
 	locked = TRUE
+	emissive = TRUE
 
 /datum/sprite_accessory/wings_open/ethereal
 	name = "Ethereal"
@@ -2249,6 +2255,7 @@
 	dimension_x = 46
 	center = TRUE
 	dimension_y = 34
+	emissive = TRUE
 
 /datum/sprite_accessory/wings/etherealdetails
 	name = "Etherealdetails"
@@ -2258,6 +2265,7 @@
 	dimension_y = 34
 	locked = TRUE
 	color_src = null
+	emissive = TRUE
 
 /datum/sprite_accessory/wings_open/etherealdetails
 	name = "Etherealdetails"
@@ -2266,6 +2274,7 @@
 	center = TRUE
 	dimension_y = 34
 	color_src = null
+	emissive = TRUE
 
 /datum/sprite_accessory/wings/elytra
 	name = "Elytra"
@@ -2275,6 +2284,7 @@
 	dimension_y = 32
 	locked = TRUE
 	color_src = EYECOLOR
+	emissive = TRUE
 
 /datum/sprite_accessory/wings_open/elytra
 	name = "Elytra"
@@ -2283,6 +2293,7 @@
 	center = TRUE
 	dimension_y = 32
 	color_src = EYECOLOR
+	emissive = TRUE
 
 /datum/sprite_accessory/frills
 	icon = 'icons/mob/mutant_bodyparts.dmi'
@@ -2598,6 +2609,7 @@
 /datum/sprite_accessory/ethereal_mark
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	color_src = EYECOLOR
+	emissive = TRUE
 
 /datum/sprite_accessory/ethereal_mark/eyes
 	name = "Eyes"
@@ -2717,6 +2729,7 @@
 /datum/sprite_accessory/preternis_eye
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	color_src = EYECOLOR
+	emissive = TRUE
 
 /datum/sprite_accessory/preternis_eye/one
 	name = "Standard"
@@ -2754,6 +2767,7 @@
 /datum/sprite_accessory/preternis_core
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	color_src = EYECOLOR
+	emissive = TRUE
 
 /datum/sprite_accessory/preternis_core/core
 	name = "Core"

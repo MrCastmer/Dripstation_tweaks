@@ -8,6 +8,16 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	name = "item"
 	icon = 'icons/obj/misc.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
+
+	/* !!!!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!!
+
+		IF YOU ADD MORE ICON CRAP TO THIS
+		ENSURE YOU ALSO ADD THE NEW VARS TO CHAMELEON ITEM_ACTION'S update_item() PROC (/datum/action/item_action/chameleon/change/proc/update_item())
+		WASHING MASHINE'S dye_item() PROC (/obj/item/proc/dye_item())
+		AND ALSO TO THE CHANGELING PROFILE DISGUISE SYSTEMS (/datum/changeling_profile / /datum/antagonist/changeling/proc/create_profile() / /proc/changeling_transform())
+
+		!!!!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!! */
+
 	///icon state name for inhand overlays
 	var/item_state = null
 	///Icon file for left hand inhand overlays
@@ -16,10 +26,21 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
 	///Icon file for mob worn overlays.
-	///no var for state because it should *always* be the same as icon_state
-	var/icon/mob_overlay_icon
-	//Forced mob worn layer instead of the standard preferred ssize.
+	var/icon/worn_icon
+	///Icon state for mob worn overlays, if null the normal icon_state will be used.
+	var/worn_icon_state
+	///Icon state for the belt overlay, if null the normal icon_state will be used.
+	var/belt_icon_state
+	//Forced mob worn layer instead of the standard preferred size.
 	var/alternate_worn_layer
+	///The config type to use for greyscaled worn sprites. Both this and greyscale_colors must be assigned to work.
+	var/greyscale_config_worn
+	///The config type to use for greyscaled left inhand sprites. Both this and greyscale_colors must be assigned to work.
+	var/greyscale_config_inhand_left
+	///The config type to use for greyscaled right inhand sprites. Both this and greyscale_colors must be assigned to work.
+	var/greyscale_config_inhand_right
+	///The config type to use for greyscaled belt overlays. Both this and greyscale_colors must be assigned to work.
+	var/greyscale_config_belt
 
 	//Dimensions of the icon file used when this item is worn, eg: hats.dmi
 	//eg: 32x32 sprite, 64x64 sprite, etc.
@@ -45,6 +66,10 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/pickup_sound
 	///Sound uses when dropping the item, or when its thrown.
 	var/drop_sound
+
+	///Dripstation edit
+	///Sound which is produced when blocking an attack
+	var/block_sound
 
 	var/w_class = WEIGHT_CLASS_NORMAL
 	var/slot_flags = 0		//This is used to determine on which slots an item can fit.
@@ -105,6 +130,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/block_chance = 0
 	var/hit_reaction_chance = 0 //If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
 
+	///Effect of blocking, Dripstation edit
+	var/block_effect = /obj/effect/temp_visual/block
+	var/block_color = COLOR_YELLOW
+	//Dripstation edit end
+
 	//The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
 	var/list/slot_equipment_priority = null // for default list, see /mob/proc/equip_to_appropriate_slot()
 
@@ -162,6 +192,9 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if (attack_verb)
 		attack_verb = typelist("attack_verb", attack_verb)
 
+	if(!greyscale_config && greyscale_colors && (greyscale_config_worn || greyscale_config_belt || greyscale_config_inhand_right || greyscale_config_inhand_left))
+		update_greyscale()
+
 	. = ..()
 
 	// Handle adding item associated actions
@@ -192,8 +225,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	else if (!istype(embedding, /datum/embedding_behavior))
 		stack_trace("Invalid type [embedding.type] found in .embedding during /obj/item Initialize(mapload)")
 
-/obj/item/Destroy()
-	item_flags &= ~DROPDEL	//prevent reqdels
+/obj/item/Destroy(force=FALSE)
+	item_flags &= ~DROPDEL //prevent reqdels
 	if(ismob(loc))
 		var/mob/m = loc
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
@@ -266,6 +299,27 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 //Output a creative message and then return the damagetype done
 /obj/item/proc/suicide_act(mob/user)
 	return
+
+/obj/item/set_greyscale(list/colors, new_config, new_worn_config, new_inhand_left, new_inhand_right)
+	if(new_worn_config)
+		greyscale_config_worn = new_worn_config
+	if(new_inhand_left)
+		greyscale_config_inhand_left = new_inhand_left
+	if(new_inhand_right)
+		greyscale_config_inhand_right = new_inhand_right
+	return ..()
+
+/// Checks if this atom uses the GAGS system and if so updates the worn and inhand icons
+/obj/item/update_greyscale()
+	. = ..()
+	if(!greyscale_colors)
+		return
+	if(greyscale_config_worn)
+		worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
+	if(greyscale_config_inhand_left)
+		lefthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_left, greyscale_colors)
+	if(greyscale_config_inhand_right)
+		righthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_right, greyscale_colors)
 
 /obj/item/proc/get_sharpness()
 	return sharpness
@@ -477,6 +531,9 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		return 1
 	if(prob(final_block_chance))
 		owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"))
+		var/owner_turf = get_turf(owner)	//dripstation edit
+		new block_effect(owner_turf, block_color)	//dripstation edit
+		playsound(src, block_sound, 70, vary = TRUE)	//dripstation edit
 		return 1
 	return 0
 
@@ -675,6 +732,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(hit_atom && !QDELETED(hit_atom))
+		if(SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_IMPACT, hit_atom, throwingdatum) & COMPONENT_MOVABLE_IMPACT_NEVERMIND)	//dripstation edit
+			return	//dripstation edit
 		SEND_SIGNAL(src, COMSIG_MOVABLE_IMPACT, hit_atom, throwingdatum)
 		if(is_hot() && isliving(hit_atom))
 			var/mob/living/L = hit_atom
@@ -724,7 +783,10 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	return FALSE
 
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
-	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
+	var/icon_state_to_use = belt_icon_state || icon_state
+	if(greyscale_config_belt && greyscale_colors)
+		return mutable_appearance(SSgreyscale.GetColoredIconByType(greyscale_config_belt, greyscale_colors), icon_state_to_use)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state_to_use)
 
 /obj/item/proc/update_slot_icon()
 	if(!ismob(loc))
@@ -797,7 +859,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		return ..()
 	return 0
 
-/obj/item/mech_melee_attack(obj/mecha/M, equip_allowed)
+/obj/item/mech_melee_attack(obj/mecha/M, punch_force, equip_allowed = TRUE)
 	return 0
 
 /obj/item/deconstruct(disassembled = TRUE)

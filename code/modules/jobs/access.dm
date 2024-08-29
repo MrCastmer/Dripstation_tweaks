@@ -151,7 +151,8 @@
 	            ACCESS_THEATRE, ACCESS_RESEARCH, ACCESS_RND, ACCESS_MINING, ACCESS_MAILSORTING, ACCESS_WEAPONS,
 				ACCESS_MECH_MINING, ACCESS_MECH_ENGINE, ACCESS_MECH_SCIENCE, ACCESS_MECH_SECURITY, ACCESS_MECH_MEDICAL,
 	            ACCESS_VAULT, ACCESS_MINING_STATION, ACCESS_XENOBIOLOGY, ACCESS_CE, ACCESS_HOP, ACCESS_HOS, ACCESS_RC_ANNOUNCE,
-	            ACCESS_KEYCARD_AUTH, ACCESS_TCOMSAT, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM, ACCESS_MINISAT, ACCESS_NETWORK, ACCESS_CLONING, ACCESS_TCOM_ADMIN, ACCESS_PARAMEDIC, ACCESS_MANUFACTURING, ACCESS_BRIG_PHYS, ACCESS_PSYCH) //YOGS - yogs jobs
+				ACCESS_CLOWN, ACCESS_MIME, ACCESS_POD_PILOT, ACCESS_BLUESHIELD, ACCESS_NTREP, ACCESS_MAGISTRATE, ACCESS_HAZARD_TECH, ACCESS_ARTIST,	/*	Dripstation jobs	*/
+	            ACCESS_KEYCARD_AUTH, ACCESS_TCOMSAT, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM, ACCESS_MINISAT, ACCESS_NETWORK, ACCESS_CLONING, ACCESS_TCOM_ADMIN, ACCESS_PARAMEDIC, ACCESS_MANUFACTURING, ACCESS_BRIG_PHYS, ACCESS_PSYCH, ACCESS_SERVHALL) //YOGS - yogs jobs
 
 /// Gets all centcom accesses
 /proc/get_all_centcom_access()
@@ -185,19 +186,19 @@
 		if(0)
 			return get_all_accesses()
 		if(1) //station general
-			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_MANUFACTURING)
+			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_MANUFACTURING, ACCESS_SERVHALL)
 		if(2) //security
 			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_MECH_SECURITY, ACCESS_HOS)
 		if(3) //medbay
 			return list(ACCESS_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_SURGERY, ACCESS_MECH_MEDICAL, ACCESS_CMO, ACCESS_PARAMEDIC, ACCESS_BRIG_PHYS, ACCESS_PSYCH) // yogs - Yog jobs
 		if(4) //research
-			return list(ACCESS_RESEARCH, ACCESS_RND, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_GENETICS, ACCESS_ROBO_CONTROL, ACCESS_ROBOTICS, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINISAT, ACCESS_RD, ACCESS_NETWORK, ACCESS_AI_UPLOAD)
+			return list(ACCESS_RESEARCH, ACCESS_RND, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_GENETICS, ACCESS_ROBO_CONTROL, ACCESS_ROBOTICS, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINISAT, ACCESS_RD, ACCESS_NETWORK, ACCESS_AI_UPLOAD, ACCESS_TELEPORTER, ACCESS_GATEWAY)	//dripstation edit
 		if(5) //engineering and maintenance
 			return list(ACCESS_CONSTRUCTION, ACCESS_MAINT_TUNNELS, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_EXTERNAL_AIRLOCKS, ACCESS_TECH_STORAGE, ACCESS_SECURE_TECH_STORAGE, ACCESS_ATMOSPHERICS, ACCESS_MECH_ENGINE, ACCESS_TCOMSAT, ACCESS_MINISAT, ACCESS_CE, ACCESS_TCOM_ADMIN, ACCESS_RC_ANNOUNCE) // yogs - Yog jobs
 		if(6) //supply
-			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT)
+			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT, ACCESS_MAINT_TUNNELS, ACCESS_GATEWAY)	//dripstation edit
 		if(7) //command
-			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT)
+			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_MAINT_TUNNELS)	//dripstation edit
 
 /// Gets the name from region ID
 /proc/get_region_accesses_name(code)
@@ -377,6 +378,8 @@
 			return "Freeminer Engineer"
 		if(ACCESS_FREEMINER_CAPTAIN)
 			return "Freeminer Captain"
+		if(ACCESS_SERVHALL)
+			return "Service Hall"
 		// yogs end
 
 /// Get descriptions for centcom accesses
@@ -408,7 +411,7 @@
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist",
 				// yogs start - Yog jobs
 				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer",
-				"Network Admin", "Mining Medic", "Paramedic", "Psychiatrist", "Clerk", "Tourist", "Space Bartender", "Artist", "Brig Physician")
+				"Network Admin", "Mining Medic", "Paramedic", "Psychiatrist", "Clerk", "Tourist", "Space Bartender", "Artist", "Brig Physician", "Synthetic")
 				// yogs end
 
 /// Gets all jobs with hud icons
@@ -417,7 +420,7 @@
 
 /// Gets all centcom jobs
 /proc/get_all_centcom_jobs()
-	return list("VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Research Officer","Special Ops Officer","Admiral","CentCom Commander","Emergency Response Team Commander","Security Response Officer","Engineer Response Officer", "Medical Response Officer","CentCom Bartender", "Janitorial Response Officer", "Religious Response Officer", "CentCom Captain", "CentCom Major", "CentCom Commodore", "CentCom Colonel", "CentCom Rear-Admiral", "CentCom Admiral", "CentCom Grand Admiral", "Comedy Response Officer", "HONK Squad Trooper")
+	return list("VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Research Officer","Special Ops Officer","Admiral","CentCom Commander","Emergency Response Team Commander","Security Response Officer","Engineer Response Officer", "Medical Response Officer","CentCom Bartender", "Janitorial Response Officer", "Religious Response Officer", "CentCom Captain", "CentCom Major", "CentCom Commodore", "CentCom Colonel", "CentCom Rear-Admiral", "CentCom Admiral", "CentCom Executive Admiral", "Comedy Response Officer", "HONK Squad Trooper")
 
 /// Gets all task for jobs
 /proc/get_all_task_force_jobs()

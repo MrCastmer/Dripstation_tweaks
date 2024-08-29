@@ -257,26 +257,25 @@
 	taste_description = "mint"
 
 /datum/reagent/consumable/frostoil/on_mob_life(mob/living/carbon/M)
-	var/cooling = 0
+	var/cooling = -10 * TEMPERATURE_DAMAGE_COEFFICIENT
 	switch(current_cycle)
 		if(1 to 15)
-			cooling = -10 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 				holder.remove_reagent(/datum/reagent/consumable/capsaicin, 5)
 			if(isslime(M))
 				cooling = -rand(5,20)
 		if(15 to 25)
-			cooling = -20 * TEMPERATURE_DAMAGE_COEFFICIENT
+			cooling *= 2
 			if(isslime(M))
 				cooling = -rand(10,20)
 		if(25 to 35)
-			cooling = -30 * TEMPERATURE_DAMAGE_COEFFICIENT
+			cooling *= 3
 			if(prob(1) && !HAS_TRAIT(M, TRAIT_RESISTCOLD))
 				M.emote("shiver")
 			if(isslime(M))
 				cooling = -rand(15,20)
 		if(35 to INFINITY)
-			cooling = -40 * TEMPERATURE_DAMAGE_COEFFICIENT
+			cooling *= 4
 			if(prob(5) && !HAS_TRAIT(M, TRAIT_RESISTCOLD))
 				M.emote("shiver")
 			if(isslime(M))
@@ -301,6 +300,7 @@
 	taste_description = "scorching agony"
 	metabolization_rate = 6 * REAGENTS_METABOLISM
 
+/* dripstation edit
 /datum/reagent/consumable/condensedcapsaicin/reaction_mob(mob/living/M, methods=TOUCH, reac_volume)
 	if(!ishuman(M) && !ismonkey(M))
 		return
@@ -342,6 +342,7 @@
 			victim.Paralyze(14 SECONDS)
 			M.adjustStaminaLoss(5)
 		victim.update_damage_hud()
+*/
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
 	if(prob(15))

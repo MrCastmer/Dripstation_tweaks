@@ -10,6 +10,8 @@
 	integrity_failure = 100
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 40, ACID = 20)
 	clicksound = "keyboard"
+	/// Boolean, Doesn't have standard overlays or appearance, but has the same effects
+	var/special_appearance = FALSE
 	/// How bright we are when turned on.
 	var/brightness_on = 1
 	/// Icon_state of the keyboard overlay.
@@ -45,10 +47,13 @@
 	return TRUE
 
 /obj/machinery/computer/ratvar_act()
-	if(!clockwork)
+	if(!clockwork && !special_appearance)
 		clockwork = TRUE
 		icon_screen = "ratvar[rand(1, 4)]"
+		/* //Dripstation edit
 		icon_keyboard = "ratvar_key[rand(1, 6)]"
+		*/
+		icon_keyboard = "ratvar_key[rand(1, 2)]" //Dripstation edit
 		icon_state = "ratvarcomputer[rand(1, 4)]"
 		update_appearance()
 
@@ -62,6 +67,8 @@
 
 /obj/machinery/computer/update_appearance(updates)
 	. = ..()
+	if(special_appearance) //always centered
+		return
 	//Prevents fuckery with subtypes that are meant to be pixel shifted or map shifted shit
 	if(pixel_x == 0 && pixel_y == 0)
 		// this bit of code makes the computer hug the wall its next to
@@ -91,12 +98,14 @@
 
 /obj/machinery/computer/update_overlays()
 	. = ..()
+	if(special_appearance)
+		return
 	if(icon_keyboard)
 		if(keyboard_change_icon && (stat & NOPOWER))
 			. += "[icon_keyboard]_off"
 		else
 			. += icon_keyboard
-
+			. += emissive_appearance(icon, "[icon_keyboard]_lightmask", src) //Dripstation edit
 	if(stat & BROKEN)
 		. += mutable_appearance(icon, "[icon_state]_broken")
 		return // If we don't do this broken computers glow in the dark.
@@ -138,7 +147,7 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, 1)
 
-/obj/machinery/computer/obj_break(damage_flag)
+/obj/machinery/computer/atom_break(damage_flag)
 	if(!circuit) //no circuit, no breaking
 		return
 	. = ..()
@@ -151,7 +160,7 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(prob(5 * severity))
-		obj_break(ENERGY)
+		atom_break(ENERGY)
 
 /obj/machinery/computer/deconstruct(disassembled = TRUE, mob/user)
 	on_deconstruction()
