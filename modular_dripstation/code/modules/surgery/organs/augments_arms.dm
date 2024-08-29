@@ -27,8 +27,8 @@
 	syndicate_implant = TRUE
 
 /obj/item/melee/transforming/energy/blade
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/augment_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/augment_righthand.dmi'
 
 /obj/item/organ/cyberimp/arm/hardlight
 	name = "arm-mounted hardlight blade"
@@ -93,8 +93,8 @@
 
 /obj/item/mantis/blade
 	icon = "modular_dripstation/icons/obj/augments.dmi"
-	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
-	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/augment_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/augment_righthand.dmi'
 	icon_state = "mantis"
 	force = 18
 
