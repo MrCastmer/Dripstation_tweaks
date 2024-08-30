@@ -46,10 +46,10 @@
 
 /obj/item/organ/cyberimp/arm/flash
 	icon = "modular_dripstation/icons/obj/augments.dmi"
-	icon_state = "flash"
+	icon_state = "arm_flash"
 
-/obj/item/assembly/flash/armimplant
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+/obj/item/organ/cyberimp/arm/flash/rev
+	icon_state = "arm_revflash"
 
 /obj/item/organ/cyberimp/arm/baton
 	icon = "modular_dripstation/icons/obj/augments.dmi"
