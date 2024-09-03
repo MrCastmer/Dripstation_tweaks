@@ -6,7 +6,7 @@
 	orbit_icon = "pencil-alt"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list("CentCom")
-	head_announce = list(RADIO_CHANNEL_COMMAND, RADIO_CHANNEL_SECURITY)
+	head_announce = null
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

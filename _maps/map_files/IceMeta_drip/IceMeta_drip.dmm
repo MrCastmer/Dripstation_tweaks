@@ -24463,6 +24463,7 @@
 /obj/item/kitchen/knife/combat,
 /obj/item/kitchen/knife/combat,
 /obj/item/kitchen/knife/combat,
+/obj/item/melee/sledgehammer/security,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "gOJ" = (
@@ -39794,7 +39795,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/medical_kiosk,
 /turf/open/floor/plasteel{
 	icon_state = "whiteblue";
 	dir = 1
