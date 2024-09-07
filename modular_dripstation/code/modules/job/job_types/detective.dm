@@ -1,3 +1,6 @@
+/datum/job/detective
+	supervisor_corporation = /datum/corporation/spearhead
+
 /datum/outfit/job/detective
 	uniform = /obj/item/clothing/under/rank/security/detective
 	shoes = /obj/item/clothing/shoes/laceup
