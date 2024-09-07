@@ -419,12 +419,15 @@
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist",
 				// yogs start - Yog jobs
 				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer",
+				/*
 				"Network Admin", "Mining Medic", "Paramedic", "Psychiatrist", "Clerk", "Tourist", "Space Bartender", "Artist", "Brig Physician", "Synthetic")
+				*/
+				"Network Admin", "Mining Medic", "Paramedic", "Psychiatrist", "Clerk", "Tourist", "Space Bartender", "Artist", "Brig Physician")
 				// yogs end
 
 /// Gets all jobs with hud icons
 /proc/get_all_job_icons() //For all existing HUD icons
-	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate")	//dripstation edit
+	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate", "Repair Worker Replika")	//dripstation edit
 
 /// Gets all centcom jobs
 /proc/get_all_centcom_jobs()

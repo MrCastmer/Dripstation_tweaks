@@ -16,6 +16,11 @@
 	icon_state = "Magistrate"
 	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
 
+/obj/effect/landmark/start/repair_worker_replika
+	name = "Repair Worker Replika"
+	icon_state = "Repair Worker Replika"
+	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
+
 /obj/effect/landmark/ert_spawn
 	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
 

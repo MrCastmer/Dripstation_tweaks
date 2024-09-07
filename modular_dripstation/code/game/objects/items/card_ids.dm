@@ -27,8 +27,8 @@
 /obj/item/card/id/syndicate/nuke
 	name = "operative card"
 	registered_name = "operative"
-	assignment = "Nuclear Squad"
-	originalassignment = "Nuclear Squad"
+	assignment = "Nuclear Squad Operative"
+	originalassignment = "Nuclear Squad Operative"
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -38,8 +38,8 @@
 /obj/item/card/id/syndicate/nuke_leader
 	name = "squad leader card"
 	registered_name = "leader"
-	assignment = "Nuclear Squad"
-	originalassignment = "Nuclear Squad"
+	assignment = "Nuclear Squad Leader"
+	originalassignment = "Nuclear Squad Leader"
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -64,8 +64,8 @@
 /obj/item/card/id/syndicate/syndibase_commander
 	name = "team leader card"
 	registered_name = "leader"
-	assignment = "SRB Team"
-	originalassignment = "SRB Team"
+	assignment = "SRB Team Leader"
+	originalassignment = "SRB Team Leader"
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -122,6 +122,7 @@
 		"Explorer" = list("cargo","purple"),
 		"Bridge Assistant" = list("captain","green"),
 		"Brig Officer" = list("security","white"),
+		"Repair Worker Replika" = list("nanotrasen","silver"),
 	)
 	var/static/list/fluffblacklist = list(
 		"Deathsquad Officer",
@@ -137,8 +138,10 @@
 		"Janitorial Response Officer",
 		"Clown ERT",
 		"Nuclear Squad",
+		"Nuclear Squad Leader",
 		"Syndicate Overlord",
 		"SRB Team",
+		"SRB Team Leader",
 	)
 	if(job in idfluff)
 		has_fluff = TRUE
@@ -158,6 +161,18 @@
 
 /obj/item/card/id/head
 	icon_state = "id_head"
+
+/obj/item/card/id/head/synthetic
+	name = "replika identification card"
+	desc = "A card that allows synthetic units access across the station."
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/item/card/id/head/synthetic/GetAccess()
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
+		if(H.mind)
+			return GLOB.synthetic_base_access + GLOB.synthetic_added_access
+	return list()
 
 /obj/item/card/id/mime
 	icon_state = "id_mime"

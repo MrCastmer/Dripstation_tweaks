@@ -137,6 +137,7 @@ GLOBAL_LIST_INIT(security_lightup_areas,	\
 GLOBAL_LIST_INIT(original_nonhuman_positions, list(
 	"AI",
 	"Cyborg",
+	"Repair Worker Replika",
 	"pAI"))
 
 GLOBAL_LIST_INIT(alt_command_positions, list(
@@ -150,9 +151,9 @@ GLOBAL_LIST_INIT(alt_command_positions, list(
 	"Chief Science Officer", "Head of Research", "Chief Technology Officer",
 	"Medical Director", "Head of Medical",
 	"Stock Controller", "Cargo Coordinator", "Shipping Overseer",										/*dripstation edit*/
-	"Nanotrasen Representative", "Nanotrasen Consultant", "Central Command Representative",				/*dripstation edit*/
-	"Magistrate", "TerraGov Judge",	"Nanotrasen Internal Affairs Representative",						/*dripstation edit*/
-	"Blueshield", "Blueshield Lieutenant", "Close Protection Specialist", "Executive Protection Agent"))//dripstation edit
+	"Nanotrasen Consultant", "Central Command Representative",				/*dripstation edit*/
+	"TerraGov Judge",	"Nanotrasen Internal Affairs Representative",						/*dripstation edit*/
+	"Blueshield Lieutenant", "Close Protection Specialist", "Executive Protection Agent"))//dripstation edit
 
 GLOBAL_LIST_INIT(alt_engineering_positions, list(
 	"Head of Engineering", "Engineering Director", "Senior Engineer",
@@ -215,6 +216,7 @@ GLOBAL_LIST_INIT(alt_security_positions, list(
 GLOBAL_LIST_INIT(alt_nonhuman_positions, list(
 	"Station Central Processor", "Central Silicon Intelligence", "Station Super Computer",
 	"Droid", "Robot", "Automaton",
+	"Security Technician Replika",
 	ROLE_PAI))
 
 GLOBAL_LIST_INIT(command_positions, original_command_positions | alt_command_positions)
@@ -291,6 +293,7 @@ GLOBAL_PROTECT(exp_specialmap)
 	var/static/regex/bs_expand = new("blueshield")
 	var/static/regex/ntr_expand = new("nanotrasen representative")
 	var/static/regex/mag_expand = new("magistrate")
+	var/static/regex/replica_expand = new("replica")
 	//dripstation end
 
 	job = lowertext(job)
@@ -320,6 +323,7 @@ GLOBAL_PROTECT(exp_specialmap)
 	job = bs_expand.Replace(job, "blueshield")
 	job = ntr_expand.Replace(job, "nanotrasen representative")
 	job = mag_expand.Replace(job, "magistrate")
+	job = replica_expand.Replace(job, "replika")
 	//dripstation end
 	return job
 

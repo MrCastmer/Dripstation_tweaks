@@ -9719,6 +9719,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/mirror{
+	pixel_y = 36;
+	pixel_x = 0;
+	layer = 2.8
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
@@ -36630,6 +36635,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+/obj/structure/mirror{
+	pixel_y = 35;
+	pixel_x = 0;
+	layer = 2.8
+	},
+/obj/effect/landmark/start/repair_worker_replika,
 /turf/open/floor/plasteel/white/side{
 	dir = 9
 	},
@@ -37740,6 +37751,7 @@
 /obj/structure/mirror{
 	pixel_x = 28
 	},
+/obj/effect/landmark/start/repair_worker_replika,
 /turf/open/floor/plasteel,
 /area/crew_quarters/toilet/auxiliary)
 "koZ" = (
@@ -58146,6 +58158,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics/garden)
+"pOw" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel{
+	icon_state = "red";
+	dir = 4
+	},
+/area/hallway/primary/fore)
 "pOL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -248824,7 +248845,7 @@ pbZ
 gEj
 gEj
 gEj
-gEj
+pOw
 gEj
 cmu
 aqD
