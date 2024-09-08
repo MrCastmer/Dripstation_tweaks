@@ -350,7 +350,53 @@
 	desc = "For every man, who at the bottom of his heart believes that he is a born detective."
 	icon_state = "satchel-detective"
 	item_state = "satchel-detective"	
-	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'	
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi' 
+
+/obj/item/storage/backpack/duffelbag/sec/surgery
+	icon_state = "duffel-bm"
+	item_state = "duffel-med"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+
+/obj/item/storage/box/barrier_grenades
+	name = "box of barrier grenades"
+	desc = "<B>WARNING: These devices deploy barriers.</B>"
+	icon_state = "secbox"
+	item_state = "secbox"	
+	illustration = "grenade"
+
+/obj/item/storage/box/barrier_grenades/PopulateContents()
+	for(var/i in 1 to 6)
+		new /obj/item/grenade/barrier(src)
+
+/obj/item/storage/backpack/duffelbag/sec/armorygrenades
+	name = "grenade duffel bag"
+	desc = "A large duffel bag for holding extra armory supplies - this one has a material inlay with space for boxes with police grade grenades."
+
+/obj/item/storage/backpack/duffelbag/sec/armorygrenades/PopulateContents()
+	new /obj/item/storage/box/flashes(src)
+	new /obj/item/storage/box/barrier_grenades(src)
+	new /obj/item/storage/box/teargas(src)
+	new /obj/item/storage/box/handcuffs(src)
+
+/obj/item/storage/backpack/duffelbag/sec/nonlethalshots
+	name = "rubber 12 gauge duffel bag"
+	desc = "A large duffel bag for holding extra armory supplies - this one has a material inlay with space for boxes with rubber shots."
+
+/obj/item/storage/backpack/duffelbag/sec/nonlethalshots/PopulateContents()
+	new /obj/item/storage/box/rubbershot(src)
+	new /obj/item/storage/box/rubbershot(src)
+	new /obj/item/storage/box/rubbershot(src)
+	new /obj/item/storage/box/rubbershot(src)
+
+/obj/item/storage/backpack/duffelbag/sec/nonlethalwt
+	name = "spare rubber WT magazines duffel bag"
+	desc = "A large duffel bag for holding extra armory supplies - this one has a material inlay with space for spare magazines with rubber WT ammo."
+
+/obj/item/storage/backpack/duffelbag/sec/nonlethalwt/PopulateContents()
+	new /obj/item/ammo_box/magazine/wt550m9/wtr(src)
+	new /obj/item/ammo_box/magazine/wt550m9/wtr(src)
+	new /obj/item/ammo_box/magazine/wt550m9/wtr(src)
+	new /obj/item/ammo_box/magazine/wt550m9/wtr(src)
 
 /obj/item/storage/backpack/duffelbag/genetics
 	name = "geneticist duffelbag"
@@ -403,8 +449,8 @@
 /obj/item/storage/backpack/duffelbag/cargo
 	name = "cargo duffelbag"
 	desc = "A duffelbag designed to hold cargo. Heavy cargo."
-	icon_state = "duffelbag-cargo"
-	item_state = "duffelbag-cargo"
+	icon_state = "duffel-cargo"
+	item_state = "duffel-cargo"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'

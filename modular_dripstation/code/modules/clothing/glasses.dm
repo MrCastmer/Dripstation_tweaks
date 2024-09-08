@@ -372,6 +372,29 @@
 	icon_state = "aviator_diagnostic"
 	custom_premium_price = 200
 
+/obj/item/clothing/glasses/hud/permit
+	name = "weapon permit HUDs"
+	desc = "A heads-up display capable of checking weapon permit status."
+	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
+	icon_state = "permithud"
+	flags_cover = null //GLASSESCOVERSEYES
+	hud_type = DATA_HUD_PERMIT
+
+/obj/item/clothing/glasses/hud/permit/sunglasses
+	name = "weapon permit HUDsunglasses"
+	desc = "Sunglasses with a weapon permit HUD."
+	icon_state = "sunhudpermit"
+	flash_protect = 1
+	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/darkred
+
+/obj/item/clothing/glasses/hud/permit/sunglasses/aviators
+	name = "weapon permit HUDaviators"
+	desc = "Aviators with a weapon permit HUD."
+	icon_state = "aviator_permit"
+	custom_premium_price = 200
+
 /obj/item/clothing/glasses/hud/security
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'

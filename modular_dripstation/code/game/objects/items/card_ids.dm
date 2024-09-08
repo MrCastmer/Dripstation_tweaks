@@ -1,3 +1,12 @@
+/obj/item/proc/get_gun_permit_iconstate()
+	var/obj/item/card/id/id_card = GetID()
+
+	if(!id_card)
+		return null
+	if(ACCESS_WEAPONS in id_card.GetAccess())
+		return "hud_permit"
+	return null
+
 /obj/item/card/id/departmental_budget
 	icon = 'modular_dripstation/icons/obj/card.dmi'
 	icon_state = "budgetcard"

@@ -599,6 +599,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/door_remote/quartermaster(src)
 	new /obj/item/storage/bag/garment/quartermaster(src)
+	new /obj/item/clothing/glasses/hud/permit/sunglasses(src)
 	new /obj/item/storage/backpack/cargo/tactical(src)
 	new /obj/item/circuitboard/machine/techfab/department/cargo(src)
 	new /obj/item/storage/photo_album/QM(src)

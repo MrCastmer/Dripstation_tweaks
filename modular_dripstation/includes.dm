@@ -68,6 +68,7 @@
 #include "code\game\objects\effects\contraband.dm"
 #include "code\game\objects\effects\countdown.dm"
 #include "code\game\objects\effects\landmarks.dm"
+#include "code\game\objects\effects\lootdrop.dm"
 #include "code\game\objects\effects\decals\cleanable\chem.dm"
 #include "code\game\objects\effects\effect_system\effects_explosions.dm"
 #include "code\game\objects\items\ashtray.dm"

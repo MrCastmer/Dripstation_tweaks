@@ -71,6 +71,9 @@
 	charge_sections = 1
 	shaded_charge = 1
 
+/obj/item/gun/energy/plasmarifle/unsecure
+	pin = null
+
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized version of the energy gun with a built-in flashlight. The NT-E4 functions as a popular self defense weapon among the elite due to its small size and cheap price. It has three settings: disable, stun and kill."

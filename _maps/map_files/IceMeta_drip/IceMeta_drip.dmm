@@ -20517,10 +20517,10 @@
 	dir = 8;
 	color = "#ff0000"
 	},
-/obj/item/ammo_box/magazine/wt550m9/wtr,
-/obj/item/ammo_box/magazine/wt550m9/wtr,
-/obj/item/ammo_box/magazine/wt550m9/wtr,
-/obj/item/ammo_box/magazine/wt550m9/wtr,
+/obj/item/storage/box/breacherslug,
+/obj/item/storage/box/breacherslug,
+/obj/item/gun/ballistic/shotgun/automatic/breaching,
+/obj/item/gun/ballistic/shotgun/automatic/breaching,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "fPq" = (
@@ -41664,44 +41664,8 @@
 /area/mine/laborcamp)
 "ltZ" = (
 /obj/effect/turf_decal/bot_red,
-/obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 8;
-	max_integrity = 350;
-	color = "#ff0000"
-	},
-/obj/machinery/door/window/brigdoor{
-	dir = 2;
-	name = "Armory Door";
-	req_access_txt = "1";
-	color = "#aa0808"
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1;
-	color = "#ff0000"
-	},
-/obj/item/storage/box/handcuffs,
-/obj/item/storage/box/teargas{
-	pixel_x = 1;
-	pixel_y = -2
-	},
-/obj/item/storage/box/flashes{
-	pixel_x = 3
-	},
-/obj/item/grenade/barrier{
-	pixel_x = -3;
-	pixel_y = 1
-	},
-/obj/item/grenade/barrier,
-/obj/item/grenade/barrier{
-	pixel_x = 3;
-	pixel_y = -1
-	},
-/obj/item/grenade/barrier{
-	pixel_x = 6;
-	pixel_y = -2
-	},
+/obj/structure/closet/secure_closet/contraband/armory,
+/obj/effect/spawner/lootdrop/armory_contraband_dripstation,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "lue" = (
@@ -75976,12 +75940,10 @@
 	dir = 8;
 	color = "#aa0808"
 	},
-/obj/structure/rack,
 /obj/effect/turf_decal/bot_red,
-/obj/item/storage/box/breacherslug,
-/obj/item/storage/box/breacherslug,
-/obj/item/gun/ballistic/shotgun/automatic/breaching,
-/obj/item/gun/ballistic/shotgun/automatic/breaching,
+/obj/structure/guncase/wt,
+/obj/item/gun/ballistic/automatic/wt550/armory,
+/obj/item/gun/ballistic/automatic/wt550/armory,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "uGu" = (
@@ -84912,9 +84874,8 @@
 	dir = 8;
 	color = "#ff0000"
 	},
-/obj/structure/guncase/wt,
-/obj/item/gun/ballistic/automatic/wt550/armory,
-/obj/item/gun/ballistic/automatic/wt550/armory,
+/obj/structure/rack,
+/obj/item/storage/backpack/duffelbag/sec/armorygrenades,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "wXa" = (
@@ -88966,7 +88927,6 @@
 /turf/open/floor/wood,
 /area/lawoffice)
 "xWc" = (
-/obj/structure/rack,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -88987,9 +88947,12 @@
 	max_integrity = 350;
 	color = "#ff0000"
 	},
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
+/obj/structure/rack,
+/obj/item/storage/backpack/duffelbag/sec/nonlethalwt{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/storage/backpack/duffelbag/sec/nonlethalshots,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "xWe" = (
