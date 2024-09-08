@@ -1,5 +1,6 @@
 /datum/job/captain
 	paycheck_department = ACCOUNT_CAR	//station main acc
+	supervisor_corporation = /datum/corporation/nanotrasen
 
 /datum/outfit/job/captain
 	head = /obj/item/clothing/head/beret/captain
