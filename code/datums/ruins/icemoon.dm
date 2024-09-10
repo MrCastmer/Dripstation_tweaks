@@ -67,16 +67,11 @@
 /datum/map_template/ruin/icemoon/walker_village
 	name = "Walker Village"
 	id = "walkervillage"
+	always_place = TRUE	// Dripstation edit
 	description = "A town populated by strange, sapient zombies."
 	suffix = "icemoon_surface_walkervillage.dmm"
 
 //Dripstation edit bellow
-/datum/map_template/ruin/icemoon/ufo_crash
-	name = "UFO Crash"
-	id = "ufo-crash"
-	description = "Turns out that keeping your abductees unconscious is really important. Who knew?"
-	suffix = "icemoon_surface_ufo_crash.dmm"
-
 /datum/map_template/ruin/icemoon/syndicatepod
 	name = "Syndicate Pod"
 	id = "syndicatepod"
@@ -88,42 +83,54 @@
 	id = "dead_ratvar"
 	description = "The god himself"
 	suffix = "icemoon_surface_dead_ratvar.dmm"
-	cost = 15
+	cost = 10
+	allow_duplicates = FALSE
 
 /datum/map_template/ruin/icemoon/engioutpost
 	name = "Engi Outpost"
 	id = "engioutpost"
 	description = "Engioutposting"
 	suffix = "icemoon_surface_engioutpost.dmm"
-	cost = 15
+	cost = 10
+	allow_duplicates = FALSE
 
-/datum/map_template/ruin/icemoon/underground/abandonedhydrolab
-	name = "Abandoned Hydroponics Lab"
-	id = "hydroponicslab"
+/datum/map_template/ruin/icemoon/newcops
+	name = "Abandoned Nuclear Operatives base"
+	id = "nukiebaseabandoned"
 	description = "Who knows what lies within?"
-	suffix = "icemoon_underground_hydroponics_lab.dmm"
-	cost = 15
+	suffix = "icemoon_surface_abandoned_newcops.dmm.dmm"
+	cost = 20
+	allow_duplicates = FALSE
 
 /datum/map_template/ruin/icemoon/underground/arctic_station
 	name = "Abandoned Arctic Station"
 	id = "arctic_station"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_oldstation.dmm"
-	cost = 20
+	cost = 15
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/icemoon/underground/ufo_crash
+	name = "UFO Crash"
+	id = "ufo-crash"
+	description = "Turns out that keeping your abductees unconscious is really important. Who knew?"
+	suffix = "icemoon_underground_ufo_crash.dmm"
+
+/datum/map_template/ruin/icemoon/underground/abandonedhydrolab
+	name = "Abandoned Hydroponics Lab"
+	id = "hydroponicslab"
+	description = "Who knows what lies within?"
+	suffix = "icemoon_underground_hydroponics_lab.dmm"
+	cost = 10
+	allow_duplicates = FALSE
 
 /datum/map_template/ruin/icemoon/underground/slimelab
 	name = "Abandoned Slime Laboratory"
 	id = "slimelab"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_slimelab.dmm"
-	cost = 20
-
-/datum/map_template/ruin/icemoon/underground/slimelab
-	name = "Abandoned Nuclear Operatives base"
-	id = "nukiebaseabandoned"
-	description = "Who knows what lies within?"
-	suffix = "icemoon_underground_abandoned_newcops.dmm"
-	cost = 30
+	cost = 15
+	allow_duplicates = FALSE
 
 // above and below ground together
 
@@ -139,7 +146,10 @@
 	name = "Mining Site Underground"
 	id = "miningsite-underground"
 	description = "Who knew ladders could be so useful?"
+/*
 	suffix = "icemoon_underground_mining_site.dmm"
+*/
+	suffix = "icemoon_underground_mining_site_drip.dmm"
 	unpickable = TRUE
 
 // below ground only

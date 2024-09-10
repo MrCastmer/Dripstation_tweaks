@@ -11526,6 +11526,9 @@
 	icon_state = "textured_half"
 	},
 /area/hallway/primary/central)
+"dnr" = (
+/turf/open/floor/plating/asteroid/icerock,
+/area/icemoon/underground/explored)
 "dok" = (
 /obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating,
@@ -23175,7 +23178,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
-/turf/closed/wall,
+/turf/open/floor/plasteel/dark,
 /area/quartermaster/miningoffice)
 "gxN" = (
 /obj/machinery/button/door{
@@ -32665,7 +32668,6 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/secondary/entry)
 "iZL" = (
-/obj/effect/landmark/start/quartermaster,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -33831,6 +33833,9 @@
 	dir = 4
 	},
 /area/chapel/main)
+"jqf" = (
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/mine/eva)
 "jqg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -38406,6 +38411,9 @@
 	icon_state = "textured_dark_large"
 	},
 /area/hallway/primary/port)
+"kzi" = (
+/turf/open/floor/plating/asteroid/iceberg/lit,
+/area/icemoon/underground/explored)
 "kzn" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -52122,6 +52130,9 @@
 	dir = 6
 	},
 /area/crew_quarters/fitness/recreation)
+"odE" = (
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/icemoon/underground/explored)
 "odF" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -53616,6 +53627,7 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
+/obj/effect/landmark/start/customs_agent,
 /turf/open/floor/plasteel{
 	icon_state = "textured_corner";
 	dir = 4
@@ -67770,6 +67782,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/effect/landmark/start/customs_agent,
 /turf/open/floor/plasteel/dark,
 /area/quartermaster/office/locker)
 "swO" = (
@@ -77712,6 +77725,13 @@
 	dir = 1
 	},
 /area/science/xenobiology)
+"vds" = (
+/obj/effect/landmark/start/explorer,
+/turf/open/floor/plasteel/dark/side{
+	icon_state = "textured_dark_edge";
+	dir = 1
+	},
+/area/quartermaster/miningoffice)
 "vdt" = (
 /obj/structure/table/glass,
 /obj/item/clothing/neck/stethoscope{
@@ -83450,6 +83470,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/main)
+"wCS" = (
+/turf/open/floor/plating/asteroid/icerock/smooth,
+/area/icemoon/underground/explored)
 "wCT" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -105142,8 +105165,8 @@ lbu
 lbu
 lbu
 lbu
-lbu
-lbu
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -105399,10 +105422,10 @@ lbu
 lbu
 lbu
 lbu
-lbu
-lbu
-lbu
-lbu
+dnr
+dnr
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -105656,11 +105679,11 @@ lbu
 lbu
 lbu
 lbu
-lbu
-lbu
-lbu
-lbu
-lbu
+odE
+kzi
+dnr
+dnr
+odE
 lbu
 lbu
 lbu
@@ -105916,9 +105939,9 @@ iwT
 ucZ
 kNa
 iwT
-lbu
-lbu
-lbu
+dnr
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -106173,9 +106196,9 @@ sVd
 cLh
 xXW
 kNa
-lbu
-lbu
-lbu
+kzi
+dnr
+wCS
 lbu
 lbu
 lbu
@@ -106430,9 +106453,9 @@ fiM
 iJS
 xXW
 vLm
-lbu
-lbu
-lbu
+dnr
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -106687,9 +106710,9 @@ igO
 xXW
 kss
 mLB
-lbu
-lbu
-lbu
+kzi
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -106944,9 +106967,9 @@ iwT
 ucZ
 mLB
 iwT
-lbu
-lbu
-lbu
+dnr
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -107198,11 +107221,11 @@ lbu
 lbu
 lbu
 lbu
-lbu
-lbu
-lbu
-lbu
-lbu
+dnr
+kzi
+dnr
+wCS
+wCS
 lbu
 lbu
 lbu
@@ -107455,10 +107478,10 @@ lbu
 lbu
 lbu
 lbu
-lbu
-lbu
-lbu
-lbu
+dnr
+dnr
+dnr
+dnr
 lbu
 lbu
 lbu
@@ -107712,8 +107735,8 @@ lbu
 lbu
 lbu
 lbu
-lbu
-lbu
+odE
+dnr
 lbu
 lbu
 lbu
@@ -171718,7 +171741,7 @@ lWf
 nJq
 eTn
 sGW
-wMi
+jqf
 wMi
 wMi
 wMi
@@ -171975,7 +171998,7 @@ vcr
 eHS
 lWs
 abh
-wMi
+jqf
 wMi
 wMi
 wMi
@@ -172232,7 +172255,7 @@ bMl
 bog
 yas
 sGW
-wMi
+jqf
 wMi
 wMi
 wMi
@@ -238262,7 +238285,7 @@ rNk
 tZe
 aMT
 kzH
-hdB
+vds
 jXc
 lRe
 bTp
@@ -238519,7 +238542,7 @@ rNk
 mzo
 rNk
 gWi
-hdB
+vds
 hdB
 iLc
 fsx

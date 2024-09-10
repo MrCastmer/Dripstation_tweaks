@@ -891,7 +891,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "YU" = (
-/obj/structure/mecha_wreckage/mauler,
+/obj/structure/mecha_wreckage/mauler{
+	self_destruct = 0
+	},
 /obj/machinery/light{
 	dir = 1
 	},

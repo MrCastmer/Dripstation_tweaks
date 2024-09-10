@@ -4,7 +4,7 @@
 /area/template_noop)
 "ab" = (
 /mob/living/simple_animal/hostile/asteroid/wolf,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "ad" = (
 /turf/closed/wall/r_wall,
@@ -724,7 +724,7 @@
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "cs" = (
 /obj/item/stack/rods,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "ct" = (
 /obj/structure/sign/poster/official/science,
@@ -840,7 +840,8 @@
 /area/ruin/space/has_grav/ancientstation/proto)
 "cL" = (
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg2"
+	icon_state = "platingdmg2";
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "cM" = (
@@ -1158,7 +1159,7 @@
 /area/ruin/space/has_grav/ancientstation/medbay)
 "dF" = (
 /obj/structure/lattice,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "dG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1169,7 +1170,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "dH" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "dJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1371,7 +1373,9 @@
 /area/ruin/space/has_grav/ancientstation)
 "eg" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "eh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1838,7 +1842,8 @@
 "fA" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg2"
+	icon_state = "platingdmg2";
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "fB" = (
@@ -2017,7 +2022,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "ga" = (
 /turf/closed/wall,
@@ -2037,7 +2044,7 @@
 "gd" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "ge" = (
@@ -2244,7 +2251,7 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg2"
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "gv" = (
@@ -2371,7 +2378,9 @@
 /area/ruin/space/has_grav/ancientstation/kitchen)
 "gJ" = (
 /obj/structure/grille,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/atmo)
 "gL" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end{
@@ -2439,7 +2448,9 @@
 /obj/structure/rack,
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/mask/breath,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "gV" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
@@ -2460,7 +2471,7 @@
 /area/ruin/space/has_grav/ancientstation/engi)
 "gY" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "gZ" = (
 /obj/structure/table,
@@ -2581,7 +2592,9 @@
 	pixel_x = -23
 	},
 /obj/machinery/space_heater,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "hp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2920,12 +2933,10 @@
 /area/ruin/space/has_grav/ancientstation)
 "id" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/paper/guides/jobs/engi/solars,
 /obj/structure/cable,
-/obj/machinery/power/solar_control{
+/obj/machinery/computer/turbine_computer{
 	dir = 1;
-	id = "aftport";
-	name = "Station Solar Control"
+	id = "geothermal"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
@@ -3485,7 +3496,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "jl" = (
@@ -3696,9 +3707,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "jD" = (
-/obj/item/solar_assembly,
-/obj/structure/cable,
-/turf/open/floor/plasteel/solarpanel,
+/obj/structure/lattice/catwalk,
+/obj/machinery/button/door{
+	id = "geo_vent_nw";
+	name = "pressure chamber vent";
+	pixel_y = 28
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "jE" = (
 /turf/closed/wall/rust,
@@ -4271,7 +4294,9 @@
 /area/ruin/space/has_grav/ancientstation/proto)
 "lc" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/energy/e_gun/old,
+/obj/item/gun/energy/e_gun/old{
+	desc = "NT-E1 Prototype Energy Gun. Early stage development of a unique energy rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command. Was quickly made useless by the NT-E2 and NT-E3 Hybrid Energy Guns, which utilized a more efficient power system."
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "le" = (
@@ -4431,9 +4456,9 @@
 /area/icemoon/underground/unexplored)
 "lJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/space/nasavoid/old,
 /obj/structure/closet,
-/obj/item/clothing/head/helmet/space/nasavoid/old,
+/obj/item/clothing/suit/space,
+/obj/item/clothing/head/helmet/space,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
 "lK" = (
@@ -4505,9 +4530,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "lS" = (
-/obj/machinery/power/solar,
-/obj/structure/cable,
-/turf/open/floor/plasteel/solarpanel,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "lV" = (
 /obj/structure/grille/broken,
@@ -4569,7 +4595,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "mc" = (
-/turf/closed/mineral/snowmountain/cavern/icemoon,
+/turf/closed/mineral/random/snow/icyrock,
 /area/ruin/space/has_grav/ancientstation)
 "md" = (
 /obj/structure/girder,
@@ -4584,11 +4610,13 @@
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "mf" = (
 /obj/structure/girder,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "mg" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/snowmountain/cavern/icemoon,
+/turf/closed/mineral/random/snow/icyrock,
 /area/icemoon/underground/unexplored)
 "mh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4731,7 +4759,8 @@
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "my" = (
 /obj/structure/cable,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "mz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4803,12 +4832,12 @@
 "mL" = (
 /obj/structure/closet,
 /obj/item/tank/jetpack/void,
-/obj/item/clothing/head/helmet/space/nasavoid/old,
-/obj/item/clothing/suit/space/nasavoid,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/item/clothing/suit/space,
+/obj/item/clothing/head/helmet/space,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/mining)
 "mM" = (
@@ -5041,7 +5070,7 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "nj" = (
-/turf/closed/mineral/snowmountain/cavern/icemoon,
+/turf/closed/mineral/random/snow/icyrock,
 /area/icemoon/underground/unexplored)
 "nl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5212,16 +5241,22 @@
 /area/ruin/space/has_grav/ancientstation/medbay)
 "nE" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "nF" = (
 /obj/structure/closet/firecloset,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "nG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/anchored,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "nI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5551,7 +5586,9 @@
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "ot" = (
 /obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "ou" = (
 /obj/machinery/droneDispenser/hivebot,
@@ -5587,7 +5624,9 @@
 	amount = 25
 	},
 /obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "oy" = (
 /obj/structure/table,
@@ -5633,7 +5672,9 @@
 /area/ruin/space/has_grav/ancientstation/medbay)
 "oC" = (
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "oD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5764,7 +5805,9 @@
 	start_charge = 0
 	},
 /obj/structure/cable,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "oQ" = (
 /obj/item/shard{
@@ -5784,7 +5827,7 @@
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "oR" = (
 /obj/item/shard,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "oS" = (
 /obj/effect/decal/cleanable/glass,
@@ -5897,7 +5940,7 @@
 /obj/item/shard{
 	icon_state = "small"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "pf" = (
 /obj/structure/window/reinforced{
@@ -6074,11 +6117,13 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/medbay)
 "qZ" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/machinery/door/poddoor{
+	id = "geo_vent_nw";
+	name = "pressure chamber vent"
 	},
-/turf/open/floor/plasteel/solarpanel,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "rg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6117,12 +6162,10 @@
 /area/ruin/space/has_grav/ancientstation)
 "rG" = (
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "sy" = (
 /obj/structure/closet/firecloset/full,
@@ -6136,7 +6179,7 @@
 "sY" = (
 /obj/structure/lattice,
 /obj/item/stack/rods,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "tf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6178,16 +6221,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "tS" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "up" = (
 /obj/machinery/light/small{
@@ -6205,7 +6245,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "uB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6328,22 +6369,22 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "wc" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/space/has_grav/ancientstation/solararray)
+/obj/structure/cable,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
+/area/icemoon/underground/unexplored)
 "wf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/power/compressor{
+	comp_id = "geothermal";
+	dir = 4;
+	luminosity = 2
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "2-8"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "wj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6365,13 +6406,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
 "xh" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/steam_fissure,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "xl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6466,6 +6502,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"ze" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/solararray)
 "zm" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 8;
@@ -6479,12 +6524,12 @@
 /area/ruin/space/has_grav/ancientstation/atmo)
 "zr" = (
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "zB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6570,12 +6615,11 @@
 /area/ruin/space/has_grav/ancientstation/medbay)
 "Bh" = (
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "Bs" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -6629,16 +6673,34 @@
 /area/ruin/space/has_grav/ancientstation/kitchen)
 "Cs" = (
 /obj/structure/grille/broken,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "CZ" = (
+/obj/machinery/power/compressor{
+	comp_id = "geothermal";
+	dir = 8;
+	luminosity = 2
+	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/ruin/space/has_grav/ancientstation/solararray)
+"Dd" = (
+/obj/machinery/power/turbine{
+	dir = 8;
+	luminosity = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "Dg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6727,6 +6789,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"DZ" = (
+/obj/machinery/door/poddoor{
+	id = "geo_vent_se";
+	name = "pressure chamber vent"
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/solararray)
 "EP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -6756,23 +6827,46 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"FV" = (
-/turf/closed/mineral/snowmountain/cavern/icemoon,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"Gq" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/space/has_grav/ancientstation/solararray)
-"Gt" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+"FM" = (
+/obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/machinery/button/door{
+	id = "geo_vent_se";
+	name = "pressure chamber vent";
+	pixel_y = 28
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/solararray)
+"FV" = (
+/turf/closed/mineral/random/snow/icyrock,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"Gq" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/solararray)
+"Gt" = (
+/obj/machinery/power/turbine{
+	dir = 4;
+	luminosity = 2
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "GA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6816,7 +6910,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "HT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6905,10 +7000,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "JG" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/door/poddoor{
+	id = "geo_turbine_nw";
+	name = "pressure chamber vent"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "JT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6927,9 +7025,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "Ky" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/betastorage)
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/space/has_grav/ancientstation/solararray)
 "KF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -6959,7 +7056,8 @@
 "KO" = (
 /obj/item/stack/rods,
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
+	icon_state = "platingdmg1";
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "KX" = (
@@ -7025,6 +7123,9 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 8
 	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/atmo)
 "Mt" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end,
@@ -7073,12 +7174,12 @@
 /area/ruin/space/has_grav/ancientstation)
 "Nm" = (
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-4";
+	tag = ""
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "Nn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7140,11 +7241,13 @@
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "Oe" = (
-/obj/item/solar_assembly,
-/obj/structure/cable{
-	icon_state = "0-2"
+/obj/machinery/door/poddoor{
+	id = "geo_turbine_se";
+	name = "turbine vent"
 	},
-/turf/open/floor/plasteel/solarpanel,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "On" = (
 /obj/machinery/light/small{
@@ -7153,7 +7256,9 @@
 /obj/machinery/light_switch{
 	pixel_x = 26
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "OA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7170,10 +7275,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
 "OP" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "OQ" = (
 /obj/structure/girder,
@@ -7223,8 +7325,19 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/sec)
 "Pp" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/obj/machinery/button/door{
+	id = "geo_turbine_se";
+	name = "turbine vent";
+	pixel_y = 28
+	},
+/obj/structure/lattice/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/solararray)
 "Pt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/rad_collector,
@@ -7260,7 +7373,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "PV" = (
 /obj/item/kirbyplants{
@@ -7273,6 +7387,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"Qb" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/button/door{
+	id = "geo_turbine_nw";
+	name = "turbine vent";
+	pixel_y = 28
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/space/has_grav/ancientstation/solararray)
 "Ql" = (
 /obj/machinery/door/airlock,
 /obj/machinery/door/firedoor/border_only,
@@ -7337,7 +7465,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "Ro" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7346,10 +7475,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/comm)
 "Rz" = (
+/obj/structure/lattice/catwalk,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/snowed/temperatre{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/solararray)
 "RA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -7432,7 +7564,7 @@
 "Td" = (
 /obj/item/stack/rods,
 /obj/structure/lattice,
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "Tf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7453,11 +7585,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "Tw" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/ruin/space/has_grav/ancientstation/solararray)
+/turf/open/floor/plating/asteroid/icerock,
+/area/icemoon/underground/unexplored)
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer{
@@ -7571,10 +7700,12 @@
 /area/ruin/space/has_grav/ancientstation/engi)
 "WD" = (
 /obj/structure/grille,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "WI" = (
-/turf/closed/mineral/snowmountain/cavern/icemoon,
+/turf/closed/mineral/random/snow/icyrock,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "WJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7690,7 +7821,9 @@
 "YA" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/spawner/lootdrop/maintenance/seven,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating/airless{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "YM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7702,7 +7835,8 @@
 /area/ruin/space/has_grav/ancientstation/engi)
 "YN" = (
 /turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
+	icon_state = "platingdmg1";
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "Ze" = (
@@ -7746,11 +7880,11 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -7766,7 +7900,7 @@ aa
 aa
 nj
 nj
-lg
+Tw
 gY
 kQ
 kQ
@@ -7778,7 +7912,7 @@ kQ
 kQ
 kQ
 kQ
-lg
+Tw
 aa
 aa
 aa
@@ -7794,12 +7928,12 @@ aa
 aa
 aa
 aa
-lg
-lg
+Tw
+Tw
 nj
 nj
 Td
-lg
+Tw
 dF
 AK
 AK
@@ -7808,8 +7942,8 @@ bF
 lV
 AK
 AK
-lg
-lg
+Tw
+Tw
 aa
 nj
 nj
@@ -7827,8 +7961,8 @@ kQ
 qk
 GP
 kQ
-lg
-lg
+Tw
+Tw
 aa
 aa
 aa
@@ -7843,7 +7977,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 nj
 nj
 nj
@@ -7857,8 +7991,8 @@ oA
 oE
 nC
 AK
-lg
-lg
+Tw
+Tw
 nj
 nj
 nj
@@ -7876,8 +8010,8 @@ nB
 HA
 EV
 kQ
-lg
-lg
+Tw
+Tw
 cs
 aa
 aa
@@ -7892,7 +8026,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 nj
 nj
 mg
@@ -7927,7 +8061,7 @@ ng
 kQ
 cs
 ab
-lg
+Tw
 aa
 aa
 "}
@@ -7941,7 +8075,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 FV
 md
 ch
@@ -7955,11 +8089,11 @@ kb
 eH
 nD
 AK
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
+Tw
+Tw
 nj
 nj
 WI
@@ -7974,7 +8108,7 @@ le
 pp
 kQ
 kQ
-lg
+Tw
 nj
 nj
 aa
@@ -7990,7 +8124,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 dF
 nQ
 me
@@ -8039,8 +8173,8 @@ aa
 aa
 aa
 aa
-lg
-lg
+Tw
+Tw
 nQ
 gw
 bw
@@ -8120,7 +8254,7 @@ Zg
 pv
 uT
 kQ
-lg
+Tw
 nj
 nj
 nj
@@ -8170,7 +8304,7 @@ pv
 Ze
 kQ
 cs
-lg
+Tw
 nj
 aa
 nr
@@ -8195,7 +8329,7 @@ zJ
 ck
 ch
 ox
-Ky
+gd
 ot
 gu
 gU
@@ -8204,13 +8338,13 @@ jk
 oP
 Cs
 oR
-lg
+Tw
 dF
-lg
+Tw
 dF
 pe
 dF
-lg
+Tw
 kQ
 Tk
 Mt
@@ -8218,9 +8352,9 @@ qF
 Tk
 Mt
 kQ
-lg
-lg
-lg
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -8238,7 +8372,7 @@ aa
 aa
 aa
 nj
-lg
+Tw
 ch
 zJ
 mS
@@ -8252,26 +8386,26 @@ YN
 nE
 nG
 GU
-lg
-lg
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
+Tw
+Tw
 LY
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 "}
 (12,1,1) = {"
@@ -8308,20 +8442,20 @@ dF
 bf
 dF
 bf
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 "}
 (13,1,1) = {"
 aa
@@ -8335,8 +8469,8 @@ aa
 aa
 aa
 dF
-lg
-lg
+Tw
+Tw
 ch
 np
 mV
@@ -8350,27 +8484,27 @@ GU
 GU
 GU
 GU
-lg
-lg
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-Oe
-zr
-lS
-lg
 lz
-OP
 lz
-lg
+lz
+lz
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (14,1,1) = {"
 aa
@@ -8384,8 +8518,8 @@ aa
 aa
 aa
 dF
-lg
-lg
+Tw
+Tw
 ch
 cr
 dM
@@ -8394,32 +8528,32 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-Oe
-Bh
-lz
+OP
+JG
+OP
+Qb
 dF
-lz
-wf
-lS
-lg
+Tw
+Tw
+Tw
+Tw
 "}
 (15,1,1) = {"
 aa
@@ -8433,8 +8567,8 @@ aa
 aa
 aa
 dF
-lg
-lg
+Tw
+Tw
 ch
 Cq
 dM
@@ -8443,32 +8577,32 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lz
-CZ
+OP
+Dd
+OP
 lS
-lg
-qZ
-tS
-jD
-lg
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (16,1,1) = {"
 aa
@@ -8479,11 +8613,11 @@ aa
 aa
 aa
 aa
-nr
+aa
 dF
-lg
-lg
-lg
+cs
+Tw
+Tw
 bK
 mW
 mV
@@ -8493,31 +8627,31 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-dF
+OP
+wf
 Gq
+ze
 dF
-lg
-dF
-Gq
-dF
-lg
+Tw
+Tw
+Tw
+Tw
 "}
 (17,1,1) = {"
 aa
@@ -8542,31 +8676,31 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lz
-dH
-lz
-lg
-Oe
-wc
-lz
-lg
+OP
+xh
+OP
+tS
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (18,1,1) = {"
 aa
@@ -8591,31 +8725,31 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+OP
 qZ
-rG
+OP
 jD
-lg
-lz
-Gq
-lz
-lg
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (19,1,1) = {"
 aa
@@ -8640,31 +8774,31 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
-dF
-lg
-dF
-lg
-dF
-lg
-lg
-lg
-lg
-dF
-lg
-lz
-dH
-lz
-lg
-qZ
 Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+dF
+Tw
+dF
+Tw
+dF
+Tw
+Tw
+Tw
+Tw
+dF
 lz
-lg
+lz
+lz
+Bh
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (20,1,1) = {"
 aa
@@ -8689,31 +8823,31 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-OP
+rG
 dF
-lg
 dF
-HQ
 dF
-lg
+Tw
+Tw
+Tw
 "}
 (21,1,1) = {"
 aa
@@ -8738,9 +8872,9 @@ aa
 aa
 aa
 aa
-lg
-dH
-dH
+Tw
+Ky
+Ky
 uA
 PL
 PL
@@ -8748,21 +8882,21 @@ PL
 PL
 PL
 my
-dH
-dH
+Ky
+Ky
 uA
 PL
 my
 dH
-dH
+Ky
 uA
 Rk
-my
-dH
-uA
-JG
-lz
-lg
+wc
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (22,1,1) = {"
 aa
@@ -8787,31 +8921,31 @@ aa
 aa
 aa
 aa
-lg
-OP
-lg
-lg
-lg
-lg
+Tw
+rG
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-OP
+rG
 dF
-lg
 dF
-dH
 dF
-lg
+Tw
+Tw
+Tw
 "}
 (23,1,1) = {"
 aa
@@ -8836,31 +8970,31 @@ aa
 aa
 aa
 aa
-lg
+Tw
 HQ
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+lz
+lz
 lz
 Nm
-lS
-lg
-lz
-OP
-lz
-lg
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (24,1,1) = {"
 aa
@@ -8888,28 +9022,28 @@ aa
 fB
 vM
 fB
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lz
-HQ
-lz
-lg
-lz
-HQ
-lz
-lg
+OP
+DZ
+OP
+FM
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (25,1,1) = {"
 aa
@@ -8937,28 +9071,28 @@ aa
 fC
 LI
 fC
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lz
-Rz
-jD
-lg
-lz
-Nm
-lS
-lg
+OP
+xh
+OP
+zr
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (26,1,1) = {"
 aa
@@ -8971,9 +9105,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 bK
 zJ
 mV
@@ -8986,28 +9120,28 @@ aa
 fC
 LI
 fC
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+OP
+CZ
+Gq
+Rz
 dF
-dH
-dF
-lg
-dF
-HQ
-dF
-lg
+Tw
+Tw
+Tw
+Tw
 "}
 (27,1,1) = {"
 aa
@@ -9020,9 +9154,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 ch
 np
 mV
@@ -9039,24 +9173,24 @@ hk
 eI
 eI
 eI
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lz
 OP
-lz
-lg
-lz
-HQ
-lz
-lg
+Gt
+OP
+lS
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (28,1,1) = {"
 aa
@@ -9069,9 +9203,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 ch
 mW
 mS
@@ -9088,24 +9222,24 @@ hl
 hO
 id
 eI
-lg
+Tw
 dF
-lg
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
+OP
 Oe
-Gt
-lz
+OP
+Pp
 dF
-lz
-Nm
-lS
-lg
+Tw
+Tw
+Tw
+Tw
 "}
 (29,1,1) = {"
 aa
@@ -9118,9 +9252,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 ch
 mW
 mS
@@ -9143,18 +9277,18 @@ eI
 eI
 eI
 eI
-lg
-lg
+Tw
+Tw
 dF
-lg
-qZ
-JG
 lz
-lg
-qZ
-xh
-lS
-lg
+lz
+lz
+lz
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (30,1,1) = {"
 aa
@@ -9167,9 +9301,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 ch
 mW
 mS
@@ -9192,18 +9326,18 @@ iU
 ji
 gH
 eI
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-Pp
-lg
+Tw
+Tw
+Tw
+Tw
+dF
+Tw
+Tw
+Tw
+Tw
 "}
 (31,1,1) = {"
 aa
@@ -9216,9 +9350,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 ch
 zJ
 mV
@@ -9241,17 +9375,17 @@ iV
 XJ
 pg
 eI
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-Pp
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 "}
 (32,1,1) = {"
@@ -9265,9 +9399,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 bJ
 zJ
 mV
@@ -9290,16 +9424,16 @@ iW
 jj
 ie
 eI
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -9342,13 +9476,13 @@ aT
 aT
 aT
 aT
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -9393,11 +9527,11 @@ kC
 aT
 aT
 aT
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -9442,10 +9576,10 @@ KX
 KX
 jQ
 aT
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 nj
 aa
 aa
@@ -9456,7 +9590,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 as
 as
 as
@@ -9492,8 +9626,8 @@ kM
 aG
 aT
 aT
-lg
-lg
+Tw
+Tw
 nj
 nj
 nj
@@ -9504,7 +9638,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 as
 as
 dW
@@ -9542,7 +9676,7 @@ kD
 mz
 aT
 aG
-lg
+Tw
 nj
 nj
 nj
@@ -9552,8 +9686,8 @@ aa
 aa
 aa
 aa
-lg
-lg
+Tw
+Tw
 aS
 aO
 bg
@@ -9600,9 +9734,9 @@ nj
 (39,1,1) = {"
 aa
 aa
-lg
-lg
-lg
+Tw
+Tw
+Tw
 al
 at
 bi
@@ -9649,9 +9783,9 @@ nj
 (40,1,1) = {"
 aa
 aa
-lg
-lg
-lg
+Tw
+Tw
+Tw
 am
 au
 aJ
@@ -9698,8 +9832,8 @@ aa
 (41,1,1) = {"
 aa
 aa
-lg
-lg
+Tw
+Tw
 gY
 am
 av
@@ -9747,9 +9881,9 @@ aa
 (42,1,1) = {"
 aa
 aa
-lg
-lg
-lg
+Tw
+Tw
+Tw
 am
 aw
 aL
@@ -9796,9 +9930,9 @@ aa
 (43,1,1) = {"
 aa
 aa
-lg
-lg
-lg
+Tw
+Tw
+Tw
 an
 at
 aI
@@ -9846,8 +9980,8 @@ aa
 aa
 aa
 aa
-lg
-lg
+Tw
+Tw
 aS
 bP
 at
@@ -9896,7 +10030,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 as
 as
 fP
@@ -9946,7 +10080,7 @@ aa
 aa
 aa
 aa
-lg
+Tw
 as
 as
 as
@@ -10146,9 +10280,9 @@ aa
 aa
 aa
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 nj
 mc
 mc
@@ -10171,9 +10305,9 @@ cW
 yJ
 bN
 aT
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
 aa
 aa
@@ -10195,8 +10329,8 @@ aa
 aa
 aa
 dF
-lg
-lg
+Tw
+Tw
 nj
 nj
 mc
@@ -10220,12 +10354,12 @@ bN
 yJ
 bN
 aT
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
+Tw
+Tw
 aa
 aa
 aa
@@ -10243,9 +10377,9 @@ aa
 aa
 aa
 dF
-lg
+Tw
 cs
-lg
+Tw
 nj
 nj
 mc
@@ -10269,14 +10403,14 @@ bL
 ij
 bL
 aT
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -10292,15 +10426,15 @@ aa
 aa
 aa
 nr
-lg
+Tw
 dF
-lg
+Tw
 aa
 nj
 nj
 nj
 ff
-lg
+Tw
 eJ
 fd
 kc
@@ -10314,19 +10448,19 @@ OV
 kc
 eJ
 eJ
-lg
+Tw
 iv
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -10347,10 +10481,10 @@ aa
 aa
 nj
 nj
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 eJ
 ex
 eV
@@ -10362,22 +10496,22 @@ hB
 hX
 im
 eJ
-lg
-lg
+Tw
+Tw
 iv
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -10396,10 +10530,10 @@ aa
 aa
 aa
 bd
-lg
+Tw
 lH
-lg
-lg
+Tw
+Tw
 eJ
 eJ
 eJ
@@ -10411,22 +10545,22 @@ dv
 dv
 dv
 eJ
-lg
-lg
+Tw
+Tw
 iv
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -10445,36 +10579,36 @@ aa
 aa
 aa
 bd
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
 bf
 dF
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 iO
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 nj
-lg
-lg
+Tw
+Tw
 aa
 aa
 aa
@@ -10493,15 +10627,15 @@ aa
 aa
 aa
 aa
-lg
-lg
+Tw
+Tw
 VE
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
 bf
 dF
@@ -10518,8 +10652,8 @@ dF
 dF
 dF
 bf
-lg
-lg
+Tw
+Tw
 nj
 nj
 nj
@@ -10530,45 +10664,45 @@ aa
 "}
 (58,1,1) = {"
 aa
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
 aa
 aa
 nr
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 lI
-lg
-lg
+Tw
+Tw
 nj
 nj
-lg
-lg
+Tw
+Tw
 dF
 bf
 dF
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 iO
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
+Tw
+Tw
 nj
 nj
 nj
@@ -10580,45 +10714,45 @@ aa
 (59,1,1) = {"
 aa
 ab
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 QV
-lg
-lg
+Tw
+Tw
 nj
 nj
 nj
-lg
+Tw
 dF
 bf
 dF
-lg
-lg
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 iO
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 nj
 nj
 nj
@@ -10628,18 +10762,18 @@ aa
 "}
 (60,1,1) = {"
 aa
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 bE
 bY
 cv
@@ -10653,21 +10787,21 @@ bE
 bY
 bD
 bE
-lg
+Tw
 dF
-lg
+Tw
 bE
 bY
 jp
 bY
 bE
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
+Tw
+Tw
+Tw
 nj
 nj
 nj
@@ -10678,17 +10812,17 @@ aa
 (61,1,1) = {"
 aa
 aa
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 cs
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 bE
 bZ
 ca
@@ -10702,22 +10836,22 @@ he
 nR
 nn
 bE
-lg
+Tw
 dF
-lg
+Tw
 bE
 pb
 jr
 lA
 bE
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 nj
 nj
 nj
@@ -10727,17 +10861,17 @@ aa
 (62,1,1) = {"
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 bE
 ca
 cx
@@ -10751,25 +10885,25 @@ Ve
 fV
 dh
 bE
-lg
+Tw
 dF
-lg
+Tw
 bD
 lB
 jr
 lw
 bE
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -10777,16 +10911,16 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
 dF
-lg
-lg
+Tw
+Tw
 cs
-lg
-lg
+Tw
+Tw
 bE
 ct
 cy
@@ -10808,35 +10942,35 @@ cb
 js
 cb
 bD
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 "}
 (64,1,1) = {"
 aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 bE
 om
 Yc
@@ -10857,19 +10991,19 @@ GA
 As
 jJ
 bD
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 "}
 (65,1,1) = {"
 aa
@@ -10877,15 +11011,15 @@ aa
 aa
 aa
 aa
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 bE
 cA
 ee
@@ -10906,16 +11040,16 @@ JT
 jw
 dG
 bD
-lg
-lg
-lg
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -10933,8 +11067,8 @@ ad
 ad
 ad
 ad
-lg
-lg
+Tw
+Tw
 bE
 dC
 oc
@@ -10983,7 +11117,7 @@ Co
 Co
 ad
 ad
-lg
+Tw
 bE
 dG
 ca
@@ -11060,7 +11194,7 @@ ku
 lO
 jA
 dF
-lg
+Tw
 aa
 aa
 aa
@@ -11158,7 +11292,7 @@ lF
 cE
 jA
 dF
-lg
+Tw
 aa
 aa
 aa
@@ -11206,7 +11340,7 @@ RA
 kS
 lb
 li
-lg
+Tw
 aa
 aa
 aa
@@ -11255,7 +11389,7 @@ qf
 kw
 cJ
 lj
-lg
+Tw
 aa
 aa
 aa
@@ -11451,8 +11585,8 @@ jA
 kU
 lc
 jA
-lg
-lg
+Tw
+Tw
 aa
 aa
 aa
@@ -11500,9 +11634,9 @@ jA
 jA
 jA
 jA
-lg
-lg
-lg
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -11543,15 +11677,15 @@ nX
 ob
 ca
 bE
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -11592,16 +11726,16 @@ nY
 Yh
 od
 bE
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -11641,16 +11775,16 @@ bD
 cI
 bE
 bE
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa
@@ -11690,17 +11824,17 @@ Ve
 dh
 dh
 bE
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
 dF
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -11744,12 +11878,12 @@ dF
 dF
 dF
 bf
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 "}
@@ -11788,13 +11922,13 @@ bE
 bE
 bE
 bE
-lg
-lg
-lg
-lg
-lg
-lg
-lg
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
+Tw
 aa
 aa
 aa

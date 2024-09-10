@@ -132,6 +132,7 @@
 		"Bridge Assistant" = list("captain","green"),
 		"Brig Officer" = list("security","white"),
 		"Repair Worker Replika" = list("nanotrasen","silver"),
+		"Customs Agent" = list("cargo","red"),
 	)
 	var/static/list/fluffblacklist = list(
 		"Deathsquad Officer",
@@ -151,6 +152,9 @@
 		"Syndicate Overlord",
 		"SRB Team",
 		"SRB Team Leader",
+		"TerraGov Infantryman",
+		"TerraGov Military",
+		"TerraGov Military Officer",
 	)
 	if(job in idfluff)
 		has_fluff = TRUE
@@ -185,6 +189,15 @@
 
 /obj/item/card/id/mime
 	icon_state = "id_mime"
+
+/obj/item/card/id/idtags
+	name = "dog ID-tag"
+	desc = "A terragov dog tag."
+	icon_state = "dogtag"
+	item_state = "dogtag"
+	registered_name = "TerraGov Militant"
+	assignment = "TerraGov Military"
+	originalassignment = "TerraGov Military"
 
 /obj/item/card/id/deathsquad
 	name = "\improper BlackOps ID"

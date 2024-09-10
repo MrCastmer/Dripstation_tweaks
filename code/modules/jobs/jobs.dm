@@ -89,7 +89,12 @@ GLOBAL_LIST_INIT(original_supply_positions, list(
 	*/
 	"Quartermaster",
 	"Cargo Technician",
+	/*	dripstation edit
 	"Shaft Miner"))
+	*/
+	"Shaft Miner",
+	"Explorer",
+	"Customs Agent"))
 
 GLOBAL_LIST_INIT(supply_lightup_areas,			\
 	typecacheof(list(							\
@@ -185,7 +190,12 @@ GLOBAL_LIST_INIT(alt_supply_positions, list(
 	*/
 	"Stock Controller", "Cargo Coordinator", "Shipping Overseer",
 	"Deliveryperson", "Mail Service", "Exports Handler", "Cargo Trainee", "Crate Pusher", "Courier",
+	/*Dripstation edit, QM is head of supply
 	"Lavaland Scout", "Prospector", "Junior Miner", "Major Miner", "Surveyor"))
+	*/
+	"Lavaland Scout", "Prospector", "Junior Miner", "Major Miner",
+	"Space Scout", "Junior Explorer", "Major Explorer", "Surveyor",
+	"Customs Officer", "Customs Specialist"))
 
 GLOBAL_LIST_INIT(alt_civilian_positions, list(
 	"Barkeep", "Tapster", "Barista", "Mixologist",
@@ -294,6 +304,8 @@ GLOBAL_PROTECT(exp_specialmap)
 	var/static/regex/ntr_expand = new("nanotrasen representative")
 	var/static/regex/mag_expand = new("magistrate")
 	var/static/regex/replica_expand = new("replica")
+	var/static/regex/customs_expand = new("customs officer")
+	var/static/regex/explorer_expand = new("explorer")
 	//dripstation end
 
 	job = lowertext(job)
@@ -324,6 +336,8 @@ GLOBAL_PROTECT(exp_specialmap)
 	job = ntr_expand.Replace(job, "nanotrasen representative")
 	job = mag_expand.Replace(job, "magistrate")
 	job = replica_expand.Replace(job, "replika")
+	job = customs_expand.Replace(job, "customs officer")
+	job = explorer_expand.Replace(job, "explorer")
 	//dripstation end
 	return job
 

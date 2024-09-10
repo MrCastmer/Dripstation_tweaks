@@ -33,6 +33,19 @@
 	name = "supply radio headset"
 	desc = "A headset used by QM`s slaves."
 
+/obj/item/radio/headset/headset_cargo/mining
+
+/obj/item/encryptionkey/headset_mining
+	name = "mining&exploring radio encryption key"
+	icon_state = "mine_cypherkey"
+	channels = list(RADIO_CHANNEL_SUPPLY = 1)
+
+/obj/item/radio/headset/headset_cargo/explorer
+	name = "explorer`s radio headset"
+	desc = "Headset used by explorers."
+	icon_state = "expl_headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_mining
+
 /obj/item/radio/headset/headset_medcargo
 	icon_state = "medcargo_headset"
 

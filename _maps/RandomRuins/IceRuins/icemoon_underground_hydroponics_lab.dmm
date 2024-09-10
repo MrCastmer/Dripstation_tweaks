@@ -892,7 +892,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/walker_village)
 "DV" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/closed/mineral/random/snow/icyrock,
 /area/icemoon/surface/outdoors)
 "Eo" = (
 /obj/item/trash/sosjerky{
@@ -1363,7 +1363,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/walker_village)
 "Zd" = (
-/turf/closed/mineral/snowmountain/icemoon,
+/turf/closed/mineral/random/snow/icyrock,
 /area/icemoon/surface/outdoors)
 "ZN" = (
 /obj/effect/decal/cleanable/dirt,

@@ -1,13 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/mineral/snowmountain,
-/area/lavaland/surface/outdoors)
+/turf/closed/mineral/random/snow/icyrock,
+/area/lavaland/surface/outdoors/explored)
 "b" = (
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/lavaland/surface/outdoors)
+/turf/open/floor/plating/asteroid/icerock,
+/area/lavaland/surface/outdoors/explored)
 "c" = (
 /turf/closed/wall/mineral/abductor,
-/area/lavaland/surface/outdoors)
+/area/lavaland/surface/outdoors/explored)
 "d" = (
 /turf/closed/wall/mineral/abductor,
 /area/ruin/unpowered)
@@ -34,8 +34,8 @@
 /area/ruin/unpowered)
 "m" = (
 /obj/item/stack/tile/mineral/abductor,
-/turf/open/floor/plating/asteroid/snow/icemoon/do_not_chasm,
-/area/lavaland/surface/outdoors)
+/turf/open/floor/plating/asteroid/icerock,
+/area/lavaland/surface/outdoors/explored)
 "o" = (
 /obj/item/hemostat/alien,
 /turf/open/floor/plating/abductor{
@@ -56,8 +56,8 @@
 /area/ruin/unpowered)
 "r" = (
 /obj/item/stack/sheet/mineral/abductor,
-/turf/open/floor/plating/asteroid/snow/icemoon/do_not_chasm,
-/area/lavaland/surface/outdoors)
+/turf/open/floor/plating/asteroid/icerock,
+/area/lavaland/surface/outdoors/explored)
 "s" = (
 /obj/structure/table/optable/abductor,
 /obj/item/cautery/alien,
@@ -73,9 +73,9 @@
 	},
 /area/ruin/unpowered)
 "u" = (
-/obj/structure/sign/poster/abductor,
-/turf/closed/wall/mineral/abductor,
-/area/ruin/unpowered)
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating/asteroid/icerock,
+/area/lavaland/surface/outdoors/explored)
 "v" = (
 /obj/item/scalpel/alien,
 /obj/item/surgical_drapes,
@@ -110,9 +110,23 @@
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
 /area/ruin/unpowered)
+"B" = (
+/obj/item/stack/sheet/mineral/abductor,
+/turf/open/floor/plating/asteroid/snow/icemoon/do_not_chasm,
+/turf/open/floor/plating/asteroid/icerock,
+/area/lavaland/surface/outdoors/explored)
 "D" = (
-/turf/open/floor/plating/snowed/smoothed,
-/area/lavaland/surface/outdoors)
+/turf/open/floor/plating/asteroid/icerock/smooth,
+/area/lavaland/surface/outdoors/explored)
+"I" = (
+/obj/structure/sign/poster/abductor/random{
+	pixel_x = 0;
+	pixel_y = 30
+	},
+/turf/open/floor/plating/abductor{
+	initial_gas_mix = "o2=14;n2=23;TEMP=300"
+	},
+/area/ruin/unpowered)
 "L" = (
 /obj/structure/closet/abductor,
 /obj/item/toy/plush/abductor,
@@ -122,7 +136,8 @@
 /area/ruin/unpowered)
 "N" = (
 /turf/open/floor/plating/asteroid/snow/icemoon/do_not_chasm,
-/area/lavaland/surface/outdoors)
+/turf/open/floor/plating/asteroid/icerock,
+/area/lavaland/surface/outdoors/explored)
 
 (1,1,1) = {"
 a
@@ -187,8 +202,8 @@ a
 (6,1,1) = {"
 a
 a
-u
-k
+d
+I
 o
 s
 v
@@ -223,23 +238,23 @@ a
 (9,1,1) = {"
 a
 a
-N
+b
 c
 d
 d
 d
 c
-N
+b
 a
 "}
 (10,1,1) = {"
 a
 a
-N
+b
 D
-N
+b
 D
-N
+b
 D
 a
 a
@@ -247,35 +262,35 @@ a
 (11,1,1) = {"
 a
 a
-N
-r
-N
+b
+B
+b
 D
-N
-N
+b
+b
 a
 a
 "}
 (12,1,1) = {"
 a
 a
+b
 N
-N
-N
+b
 m
-N
-N
+b
+b
 a
 a
 "}
 (13,1,1) = {"
 a
 a
+b
 N
 N
-N
-N
-N
+b
+b
 r
 a
 a
@@ -285,7 +300,7 @@ a
 a
 b
 b
-b
+u
 b
 b
 b
@@ -297,7 +312,7 @@ a
 a
 b
 b
-b
+u
 b
 b
 b
@@ -309,7 +324,7 @@ a
 a
 b
 b
-b
+u
 b
 b
 b
@@ -321,7 +336,7 @@ a
 b
 b
 b
-b
+u
 b
 b
 b

@@ -21,6 +21,16 @@
 	icon_state = "Repair Worker Replika"
 	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
 
+/obj/effect/landmark/start/customs_agent
+	name = "Customs Agent"
+	icon_state = "Customs Agent"
+	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
+
+/obj/effect/landmark/start/explorer
+	name = "Explorer"
+	icon_state = "Explorer"
+	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
+
 /obj/effect/landmark/ert_spawn
 	icon = 'modular_dripstation/icons/mob/landmarks.dmi'
 

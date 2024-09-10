@@ -495,3 +495,30 @@
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/unknown
+	name = "unknown backpack"
+	desc = "Unknown backpack."
+	icon_state = "unknownpack"
+	item_state = "unknownpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/satchel/unknown
+	name = "unknown satchel"
+	desc = "Unknown satchel."
+	icon_state = "unknownpack"
+	item_state = "unknownpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/duffelbag/unknown
+	name = "unknown duffelbag"
+	desc = "Unknown duffelbag."
+	icon_state = "unknownpack"
+	item_state = "unknownpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'

@@ -8,6 +8,7 @@
 	icon_state = "icemoon_ground_coarse"
 	icon_plating = "icemoon_ground_coarse"
 	initial_gas_mix = FROZEN_ATMOS
+	slowdown = 0
 	base_icon_state = "icemoon_ground_coarse"
 	environment_type = "icemoon_ground_coarse"
 	flags_1 = NONE
@@ -47,6 +48,7 @@
 	icon_state = "iceberg"
 	icon_plating = "iceberg"
 	initial_gas_mix = FROZEN_ATMOS
+	slowdown = 0
 	base_icon_state = "iceberg"
 	environment_type = "iceberg"
 	flags_1 = NONE
@@ -64,3 +66,52 @@
 /turf/open/floor/plating/asteroid/iceberg/lit
 	light_range = 2
 	light_power = 1
+
+/turf/open/floor/plating/ice/deep
+	icon_state = "ice"
+	icon = 'modular_dripstation/icons/turf/snow.dmi'
+	damaged_dmi = 'modular_dripstation/icons/turf/snow.dmi'
+
+/turf/open/floor/plating/ice/deep/iceberg
+	name = "cracked ice floor"
+	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
+	icon_state = "ice1"
+	icon = 'modular_dripstation/icons/turf/snow.dmi'
+	damaged_dmi = 'modular_dripstation/icons/turf/snow.dmi'
+
+/turf/open/floor/plating/ice/deep/iceberg/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	icon_state = "ice[rand(1,8)]"
+
+/turf/open/floor/plating/ice/deep/iceberg/lit
+	light_range = 2
+	light_power = 1
+
+/turf/open/lava/plasma
+	baseturfs = /turf/open/lava/plasma
+	icon = 'modular_dripstation/icons/turf/liquidplasma.dmi'
+	mask_icon = 'icons/turf/floors/lava_mask.dmi'
+	icon_state = "liquidplasma-255"
+	mask_state = "liquidplasma-255"
+	base_icon_state = "liquidplasma"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_FLOOR_LAVA
+	canSmoothWith = SMOOTH_GROUP_FLOOR_LAVA
+
+/turf/open/lava/plasma/ice_moon/deep
+	initial_gas_mix = FROZEN_ATMOS
+
+// Chasms for Ice moon, with planetary atmos and glow
+/turf/open/chasm/icemoon
+	icon = 'icons/turf/floors/icechasms.dmi'
+	icon_state = "icechasms-255"
+	base_icon_state = "icechasms"
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/chasm/icemoon
+	light_range = 1.9
+	light_power = 0.65
+	light_color = LIGHT_COLOR_PURPLE
+
+/turf/open/chasm/icemoon/deep
+	initial_gas_mix = FROZEN_ATMOS
