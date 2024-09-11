@@ -962,6 +962,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/item/clothing/under/syndicate/donk/maid,
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/under/syndicate/gorlex,
 /turf/open/floor/plasteel/dark,
@@ -1292,7 +1293,6 @@
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/item/storage/backpack/satchel/flat/empty,
-/obj/item/clothing/under/syndicate/donk/maid,
 /turf/open/floor/plasteel/dark,
 /area/ruin/syndicate_icemoon/warehouse)
 "ht" = (

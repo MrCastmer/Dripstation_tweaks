@@ -24,19 +24,21 @@
 	weighted_flora_spawn_list = list(
 		/obj/structure/flora/tree/pine = 18,
 		/obj/structure/flora/tree/dead = 1,
+		/obj/structure/flora/tree/dead/jungle = 1,
 		/obj/structure/flora/rock/icy = 1,
 		/obj/structure/flora/rock/pile/icy = 3,
-		/obj/structure/flora/grass/both = 50,
-		/obj/structure/flora/bush = 25,
+		/obj/structure/flora/grass/brown = 10,
+		/obj/structure/flora/grass/both = 30,
+		/obj/structure/flora/bush = 15,
 	)
-	mob_spawn_chance = 4
+	mob_spawn_chance = 6
 	weighted_mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/wolf = 20,
 						  /mob/living/simple_animal/hostile/asteroid/polarbear = 10,
 						  /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 5, 
 						  /mob/living/simple_animal/hostile/asteroid/marrowweaver/ice = 5,
 						  /mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 						  /mob/living/simple_animal/hostile/asteroid/ambusher = 2)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 0.4
 	weighted_feature_spawn_list = list(/obj/structure/geyser/ash = 10, 
 		/obj/structure/spawner/ice_moon = 1, 
 		/obj/structure/spawner/ice_moon/polarbear = 1,
@@ -74,7 +76,7 @@
 
 /datum/map_generator/cave_generator/icemoon/deep
 	flora_spawn_chance = 1
-	mob_spawn_chance = 16
+	mob_spawn_chance = 20
 	weighted_mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/ice_demon = 50,
 						  /mob/living/simple_animal/hostile/asteroid/old_demon = 20,
 						  /mob/living/simple_animal/hostile/asteroid/ice_whelp = 30,
@@ -88,7 +90,7 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/snowlegion = 1,
 		/obj/structure/geyser/random = 1
 	)
-	megafauna_spawn_list = list(/mob/living/simple_animal/hostile/megafauna/colossus = 1)
+	weighted_megafauna_spawn_list = list(/mob/living/simple_animal/hostile/megafauna/colossus = 1)
 	weighted_flora_spawn_list = list(/obj/structure/flora/rock/icy = 6, /obj/structure/flora/rock/pile/icy = 6)
 	weighted_open_turf_types = list(/turf/open/floor/plating/asteroid/icerock = 30, /turf/open/floor/plating/asteroid/icerock/smooth = 2, /turf/open/floor/plating/asteroid/icerock/cracked = 2, /turf/open/floor/plating/ice/deep = 1, /turf/open/floor/plating/ice/deep/iceberg = 1, /turf/open/floor/plating/asteroid/iceberg = 1)
 	weighted_closed_turf_types = list(/turf/closed/mineral/random/snow/icyrock = 1)

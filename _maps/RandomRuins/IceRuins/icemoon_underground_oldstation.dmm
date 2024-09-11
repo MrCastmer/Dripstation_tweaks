@@ -828,6 +828,13 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
+"cH" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/space/has_grav/ancientstation/solararray)
 "cI" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/effect/decal/cleanable/dirt,
@@ -1170,7 +1177,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "dH" = (
-/obj/structure/lattice/catwalk,
+/obj/structure/lattice,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "dJ" = (
@@ -4759,7 +4766,6 @@
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "my" = (
 /obj/structure/cable,
-/obj/structure/lattice/catwalk,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "mz" = (
@@ -6161,10 +6167,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "rG" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "sy" = (
@@ -6245,7 +6251,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/lattice/catwalk,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "uB" = (
@@ -6370,7 +6375,7 @@
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "wc" = (
 /obj/structure/cable,
-/obj/structure/lattice/catwalk,
+/obj/structure/lattice,
 /turf/open/floor/plating/asteroid/icerock,
 /area/icemoon/underground/unexplored)
 "wf" = (
@@ -6391,6 +6396,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"ww" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/space/has_grav/ancientstation/solararray)
 "wz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -6910,7 +6922,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/lattice/catwalk,
+/obj/structure/lattice,
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "HT" = (
@@ -7466,6 +7478,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4";
+	tag = ""
+	},
 /turf/open/floor/plating/asteroid/icerock,
 /area/ruin/space/has_grav/ancientstation/solararray)
 "Ro" = (
@@ -7489,6 +7505,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
+"RE" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/icerock,
+/area/ruin/space/has_grav/ancientstation/solararray)
 "RL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8882,14 +8905,14 @@ PL
 PL
 PL
 my
-Ky
-Ky
-uA
-PL
-my
 dH
 Ky
-uA
+RE
+PL
+RE
+dH
+Ky
+cH
 Rk
 wc
 dF
@@ -8922,7 +8945,7 @@ aa
 aa
 aa
 Tw
-rG
+ww
 Tw
 Tw
 Tw

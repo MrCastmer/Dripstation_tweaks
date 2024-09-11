@@ -424,7 +424,7 @@
 				*/
 				"Network Admin", "Mining Medic", "Paramedic", "Psychiatrist", "Clerk", "Tourist", "Space Bartender", "Artist", "Brig Physician",
 				// yogs end
-				"Customs Agent")
+				"Customs Agent", "Explorer")
 				// Dripstation end
 
 /// Gets all jobs with hud icons

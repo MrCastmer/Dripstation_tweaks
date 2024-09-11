@@ -4,7 +4,7 @@
 #define RANDOM_LOWER_X 50
 #define RANDOM_LOWER_Y 50
 
-/proc/spawn_rivers(target_z, nodes = 4, turf_type = /turf/open/lava/smooth/lava_land_surface, whitelist_area = /area/lavaland/surface/outdoors/unexplored, min_x = RANDOM_LOWER_X, min_y = RANDOM_LOWER_Y, max_x = RANDOM_UPPER_X, max_y = RANDOM_UPPER_Y, clear_below = TRUE)
+/proc/spawn_rivers(target_z, nodes = 4, turf_type = /turf/open/lava/smooth/lava_land_surface, whitelist_area = /area/lavaland/surface/outdoors/unexplored, min_x = RANDOM_LOWER_X, min_y = RANDOM_LOWER_Y, max_x = RANDOM_UPPER_X, max_y = RANDOM_UPPER_Y)
 	var/list/river_nodes = list()
 	var/num_spawned = 0
 	var/list/possible_locs = block(locate(min_x, min_y, target_z), locate(max_x, max_y, target_z))
@@ -56,7 +56,7 @@
 			else
 				// Workaround around ChangeTurf that's safe because of when this proc is called
 				var/turf/river_turf = new turf_type(cur_turf)
-				river_turf.Spread(25, 11, whitelist_area, clear_below)
+				river_turf.Spread(25, 11, whitelist_area)
 
 	for(var/WP in river_nodes)
 		qdel(WP)
@@ -68,7 +68,7 @@
 	invisibility = INVISIBILITY_ABSTRACT
 
 
-/turf/proc/Spread(probability = 30, prob_loss = 25, whitelisted_area, clear_below = TRUE)
+/turf/proc/Spread(probability = 30, prob_loss = 25, whitelisted_area)
 	if(probability <= 0)
 		return
 	var/list/cardinal_turfs = list()
@@ -99,17 +99,6 @@
 			if(baseturfs)
 				cardinal_candidate.baseturfs = baseturfs
 			cardinal_candidate.Spread(probability - prob_loss, prob_loss, whitelisted_area)
-			if(clear_below)	//dripstation edit start
-				var/list/static/clear_below_typecache = typecacheof(list(
-					/obj/structure/spawner,
-					/mob/living/simple_animal,
-					/obj/structure/flora,
-					/obj/structure/herb
-				))
-				for(var/turf/T as anything in cardinal_candidate)
-					for(var/atom/thing as anything in T)
-						if(clear_below_typecache[thing.type])
-							qdel(thing)	//dripstation edit end
 
 	for(var/turf/diagonal_candidate as anything in diagonal_turfs) //diagonal turfs only sometimes change, but will always spread if changed
 		// Important NOTE: SEE ABOVE
@@ -121,17 +110,6 @@
 			var/turf/closed/mineral/diagonal_mineral = diagonal_candidate
 			// SEE ABOVE, THIS IS ONLY VERY RARELY SAFE
 			new diagonal_mineral.turf_type(diagonal_mineral)
-			if(clear_below)	//dripstation edit start
-				var/list/static/clear_below_typecache = typecacheof(list(
-					/obj/structure/spawner,
-					/mob/living/simple_animal,
-					/obj/structure/flora,
-					/obj/structure/herb //YOGS EDIT
-				))
-				for(var/turf/T as anything in diagonal_candidate)
-					for(var/atom/thing as anything in T)
-						if(clear_below_typecache[thing.type])
-							qdel(thing)	//dripstation edit end
 
 
 #undef RANDOM_UPPER_X

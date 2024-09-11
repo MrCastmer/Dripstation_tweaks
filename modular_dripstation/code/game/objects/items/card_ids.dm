@@ -199,6 +199,10 @@
 	assignment = "TerraGov Military"
 	originalassignment = "TerraGov Military"
 
+/obj/item/card/id/idtags/ID_fluff()
+	has_fluff = FALSE
+	return
+
 /obj/item/card/id/deathsquad
 	name = "\improper BlackOps ID"
 	desc = "An ID straight from Nanotrasen SpecOps Division."
