@@ -1,7 +1,7 @@
 /obj/structure/spawner/ice_moon/demonic_portal
 	name = "demonic portal"
 	desc = "A portal that goes to another world, normal creatures couldn't survive there. When it collapses, who knows where it will go?"
-	icon_state = "nether"
+	icon_state = "redspace"
 	icon = 'modular_dripstation/icons/mob/nether.dmi'
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/ice_demon)
 	light_range = 2

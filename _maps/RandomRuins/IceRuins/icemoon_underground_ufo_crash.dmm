@@ -1,13 +1,13 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/closed/mineral/random/snow/icyrock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "b" = (
 /turf/open/floor/plating/asteroid/icerock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "c" = (
 /turf/closed/wall/mineral/abductor,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "d" = (
 /turf/closed/wall/mineral/abductor,
 /area/ruin/unpowered)
@@ -35,7 +35,7 @@
 "m" = (
 /obj/item/stack/tile/mineral/abductor,
 /turf/open/floor/plating/asteroid/icerock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "o" = (
 /obj/item/hemostat/alien,
 /turf/open/floor/plating/abductor{
@@ -57,7 +57,7 @@
 "r" = (
 /obj/item/stack/sheet/mineral/abductor,
 /turf/open/floor/plating/asteroid/icerock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "s" = (
 /obj/structure/table/optable/abductor,
 /obj/item/cautery/alien,
@@ -75,7 +75,7 @@
 "u" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /turf/open/floor/plating/asteroid/icerock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "v" = (
 /obj/item/scalpel/alien,
 /obj/item/surgical_drapes,
@@ -114,10 +114,10 @@
 /obj/item/stack/sheet/mineral/abductor,
 /turf/open/floor/plating/asteroid/snow/icemoon/do_not_chasm,
 /turf/open/floor/plating/asteroid/icerock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "D" = (
 /turf/open/floor/plating/asteroid/icerock/smooth,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 "I" = (
 /obj/structure/sign/poster/abductor/random{
 	pixel_x = 0;
@@ -137,7 +137,7 @@
 "N" = (
 /turf/open/floor/plating/asteroid/snow/icemoon/do_not_chasm,
 /turf/open/floor/plating/asteroid/icerock,
-/area/lavaland/surface/outdoors/explored)
+/area/icemoon/underground/explored)
 
 (1,1,1) = {"
 a

@@ -159,29 +159,39 @@
 	ruin_type = ZTRAIT_ICE_RUINS_UNDERGROUND
 	default_area = /area/icemoon/underground/unexplored
 
+/* Dripstation edit, remap
 /datum/map_template/ruin/icemoon/underground/abandonedvillage
 	name = "Abandoned Village"
 	id = "abandonedvillage"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
+*/
 
 /datum/map_template/ruin/icemoon/underground/library
 	name = "Buried Library"
 	id = "buriedlibrary"
 	description = "A once grand library, now lost to the confines of the Ice Moon."
+/*	dripstation edit
 	suffix = "icemoon_underground_library.dmm"
+*/
+	suffix = "icemoon_underground_library_drip.dmm"	//dripstation edit
 
 /datum/map_template/ruin/icemoon/underground/wrath
 	name = "Ruin of Wrath"
 	id = "wrath"
 	description = "You'll fight and fight and just keep fighting."
+/*	dripstation edit
 	suffix = "icemoon_underground_wrath.dmm"
+*/
+	suffix = "icemoon_underground_wrath_drip.dmm"	//dripstation edit
 
+/* Dripstation edit
 /datum/map_template/ruin/icemoon/underground/lavaland
 	name = "Lavaland Site"
 	id = "lavalandsite"
 	description = "I guess we never really left you huh?"
 	suffix = "icemoon_underground_lavaland.dmm"
+*/
 
 /datum/map_template/ruin/icemoon/underground/puzzle
 	name = "Ancient Puzzle"
@@ -193,10 +203,15 @@
 	name = "Bath House"
 	id = "bathhouse"
 	description = "A taste of paradise, locked in the hell of the Ice Moon."
+/*	dripstation edit
 	suffix = "icemoon_underground_bathhouse.dmm"
+*/
+	suffix = "icemoon_underground_bathhouse_drip.dmm"	//dripstation edit
 
+/* Cringe, dripstation edit
 /datum/map_template/ruin/icemoon/underground/wampacave
 	name = "Wampa Cave"
 	id = "wampacave"
 	description = "A cave inhabited by a strange monster, with an unfortunate hero..."
 	suffix = "icemoon_underground_wampacave.dmm"
+*/

@@ -340,6 +340,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\fauna.dm"
 #include "code\modules\mob\living\simple_animal\hostile\mimic.dm"
 #include "code\modules\mob\living\simple_animal\hostile\nanotrasen.dm"
+#include "code\modules\mob\living\simple_animal\hostile\netherworld.dm"
 #include "code\modules\mob\living\simple_animal\hostile\russian.dm"
 #include "code\modules\mob\living\simple_animal\hostile\syndicate.dm"
 #include "code\modules\mob\living\simple_animal\corpse.dm"
