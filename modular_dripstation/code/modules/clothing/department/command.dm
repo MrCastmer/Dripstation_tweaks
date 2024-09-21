@@ -297,6 +297,7 @@
 /obj/item/clothing/under/rank/centcom_officer/ntrep/skirt
 	name = "\improper Nanotrasen Representative's Skirt"
 	icon_state = "ntrep_skirt"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/centcom_officer/ntrep/formal
 	name = "\improper Formal Nanotrasen Representative's Uniform"
@@ -349,6 +350,7 @@
 /obj/item/clothing/under/rank/centcom_officer/magistrate/skirt
 	name = "\improper Nanotrasen Magistrate's Skirt"
 	icon_state = "magistrate_skirt"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/centcom_officer/magistrate/formal
 	name = "\improper Formal Magistrate's Uniform"
@@ -411,6 +413,7 @@
 	name = "blueshield's skirt"
 	desc = "A short, black and grey with blue markings skirted uniform. For the feminine Blueshield."
 	icon_state = "blueshield_skirt"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/urban
 	name = "blueshield's jumpsuit"
@@ -426,6 +429,7 @@
 	name = "blueshield's skirtle"
 	desc = "A short, black and grey with blue markings skirted tactical skirtle. For the feminine Blueshield."
 	icon_state = "blueshield_turtle_grey_skirt"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/white
 	name = "blueshield's turtle"
@@ -436,6 +440,7 @@
 	name = "blueshield's skirtle"
 	desc = "A short, white shirt with blue markings and tactical skirt. For the feminine Blueshield."
 	icon_state = "blueshield_white_skirt"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/blue
 	name = "blueshield's blue uniform"
@@ -446,6 +451,7 @@
 	name = "blueshield's skirtle"
 	desc = "A short, blue shirt with white markings and tactical skirt. For the feminine Blueshield."
 	icon_state = "blueshieldskirt_blue"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/formal
 	name = "blueshield's formal uniform"
@@ -465,6 +471,7 @@
 	desc = "It's a jumpskirt worn by low rank Shields."
 	name = "\improper Close Protection Blueshield Lieutenant's jumpskirt"
 	icon_state = "bs_skirtleneck"
+	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/head/beret/blueshield
 	name = "blueshield`s armored beret"

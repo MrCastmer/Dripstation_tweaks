@@ -6,7 +6,7 @@
 	/// Who is wearing the target?
 	var/mob/living/wearer
 
-/datum/component/clothing_damaged_by_bullets/Initialize(projectile_damage_multiplier = 20)
+/datum/component/clothing_damaged_by_bullets/Initialize(projectile_damage_multiplier = 15)
 	if(!istype(parent, /obj/item/clothing)) // Just in case someone loses it and tries to put this on something that's not clothing
 		return COMPONENT_INCOMPATIBLE
 
@@ -61,7 +61,7 @@
 
 	var/obj/item/clothing/clothing_parent = parent
 	var/weak_against_armour = FALSE
-	var/damage_dealt
+	//var/damage_dealt
 
 	if(!(def_zone in cover_flags2body_zones(clothing_parent.body_parts_covered)))
 		return
@@ -76,7 +76,7 @@
 	/// This seems complex but the actual math is simple, the damage of the projectile * vest damage multiplier, divided by two if the projectile is weak to armour
 	var/total_damage = ((hitting_projectile.damage * projectile_damage_multiplier) * (weak_against_armour ? 0.5 : 1))
 	//var/damage_dealt = clothing_parent.take_damage(total_damage, BRUTE, hitting_projectile.armour_penetration, FALSE)
-	damage_dealt = clothing_parent.take_damage(total_damage, BRUTE, BULLET, null, hitting_projectile.armour_penetration)
+	clothing_parent.take_damage(total_damage, BRUTE, BULLET, null, hitting_projectile.armour_penetration)
 
 	//if(clothing_parent.limb_integrity)	//It just don`t work, I`m tired
 	//	clothing_parent.take_damage_zone(def_zone, total_damage, BRUTE)

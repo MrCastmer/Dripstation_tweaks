@@ -127,7 +127,7 @@
 /// The non-existent CentCom Bar
 #define ACCESS_CENT_BAR 110
 
-#define ACCESS_TERRAGOV 125
+#define ACCESS_TERRAGOV 125	//dripstation terragov military
 
 	//The Syndicate
 /// General Syndicate Access. Includes Syndicate mechs and ruins.
