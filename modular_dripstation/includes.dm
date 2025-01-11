@@ -355,6 +355,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\russian.dm"
 #include "code\modules\mob\living\simple_animal\hostile\syndicate.dm"
 #include "code\modules\mob\living\simple_animal\corpse.dm"
+#include "code\modules\mob\living\simple_animal\frog.dm"
 #include "code\modules\mob\mob_helpers.dm"
 #include "code\modules\modular_computers\computers\item\pda\pda_presets.dm"
 #include "code\modules\modular_computers\computers\item\pda\pda.dm"

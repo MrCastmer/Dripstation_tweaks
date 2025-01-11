@@ -38,11 +38,27 @@
 
 /obj/item/melee/sledgehammer/security/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
+	user.changeNext_move(1.4 SECONDS)
+	if(ishuman(user))
+		var/mob/living/carbon/human/U = user
+		U.adjustStaminaLoss(20)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		var/mob/living/carbon/human/U = user
-		U.changeNext_move(1.4 SECONDS)
-		U.adjustStaminaLoss(10)
 		var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
+		H.throw_at(throw_target, 2, 4)
+		to_chat(H, span_danger("\The [src] hits you very hard and throws you back!"))
+
+/obj/item/melee/sledgehammer/security/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, quickstart = TRUE)
+	thrower.changeNext_move(2.4 SECONDS)
+	if(ishuman(thrower))
+		var/mob/living/carbon/human/T = thrower
+		T.adjustStaminaLoss(40)
+	return ..()
+
+/obj/item/melee/sledgehammer/security/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(ishuman(hit_atom))
+		var/mob/living/carbon/human/H = hit_atom
+		var/atom/throw_target = get_edge_target_turf(H, get_dir(src, get_step_away(H, src)))
 		H.throw_at(throw_target, 2, 4)
 		to_chat(H, span_danger("\The [src] hits you very hard and throws you back!"))

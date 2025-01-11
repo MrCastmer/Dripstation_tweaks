@@ -646,11 +646,14 @@
 	on_item_state = "telebaton_1"
 
 /obj/item/melee/classic_baton/telescopic/cane
+	name = "telescopic cane"
 	icon_state = "telecane"
 	item_state = "telecane"
 	on_icon_state = "telecane_active"
 	off_icon_state = "telecane"
 	on_item_state = "telecane_active"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
 
 /obj/item/melee/classic_baton/blc
@@ -728,8 +731,11 @@
 /obj/item/melee/hardlight_cane
 	icon_state = "holocane"
 	item_state = "holocane"
+	w_class = WEIGHT_CLASS_NORMAL
 	icon = 'modular_dripstation/icons/obj/weapons/melee.dmi'
 	force = 0
+	wound_bonus = -10
+	bare_wound_bonus = 10
 	attack_verb = list("hit", "poked")
 
 /obj/item/melee/hardlight_cane/Initialize(mapload)
@@ -742,7 +748,7 @@
 		throw_speed_on = throw_speed, \
 		sharpness_on = SHARP_EDGED, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
-		w_class_on = WEIGHT_CLASS_NORMAL, \
+		w_class_on = WEIGHT_CLASS_BULKY, \
 		attack_verb_on = list("cuted", "stabed", "slashed"), \
 	)
 

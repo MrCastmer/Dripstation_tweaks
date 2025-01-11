@@ -117,5 +117,6 @@
 /obj/structure/guncase/wt
 	name = "security carbine locker"
 	desc = "A locker that holds WT 550."
+	icon = 'modular_dripstation/icons/obj/closet.dmi'
 	case_type = "wtgun"
 	gun_category = /obj/item/gun/ballistic/automatic/wt550

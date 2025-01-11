@@ -22939,11 +22939,10 @@
 /turf/open/floor/carpet/red,
 /area/security/warden)
 "gwp" = (
-/obj/machinery/door/window/brigdoor{
+/obj/machinery/door/window/brigdoor/tinted{
 	dir = 8;
 	name = "Magistrate Private Door";
-	req_access_txt = "84";
-	opacity = 1
+	req_access_txt = "84"
 	},
 /turf/open/floor/carpet/red,
 /area/crew_quarters/heads/magistrate)
@@ -77363,6 +77362,8 @@
 /obj/item/clothing/under/rank/security/warden/navyblue,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
+/obj/item/melee/classic_baton/blc,
+/obj/item/melee/classic_baton/blc,
 /turf/open/floor/plasteel/dark/side{
 	icon_state = "textured_dark_corner";
 	dir = 8
@@ -80532,11 +80533,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/window/brigdoor{
+/obj/machinery/door/window/brigdoor/tinted{
 	dir = 4;
 	name = "Representative`s Private Door";
-	req_access_txt = "84";
-	opacity = 1
+	req_access_txt = "83"
 	},
 /turf/open/floor/plasteel{
 	icon_state = "darkbrown";

@@ -109,6 +109,8 @@
 		return
 	if(LAZYACCESS(modifiers, ALT_CLICK))
 		return
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		return
 	/* Dripstation edit - fix when throwmode will be implemented
 	if(source.mob.throw_mode)
 		return

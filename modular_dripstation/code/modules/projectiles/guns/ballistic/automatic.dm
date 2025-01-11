@@ -242,6 +242,10 @@
 	semi_auto_spread = 10
 	can_suppress = FALSE
 
+/obj/item/gun/ballistic/automatic/ar/akm_tactical/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
+
 /obj/item/gun/ballistic/automatic/ar/ak101
 	name = "\improper AK-101 Assault Rifle"
 	desc = "More modern version of the cheap assault rifle chambered in 5.56mm. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
