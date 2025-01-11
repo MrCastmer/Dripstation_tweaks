@@ -10,6 +10,7 @@
 /obj/item/clothing/suit/hooded/explorer/winter
 	icon_state = "explorer_winter"
 	item_state = "explorer_winter"
+	hoodtype = /obj/item/clothing/head/hooded/explorer/winter
 
 /obj/item/clothing/head/hooded/explorer/winter
 	icon_state = "explorer_winter"
@@ -138,6 +139,15 @@
 	name = "chief medical officer's labcoat"
 	desc = "Long standard model in chief medical colors."
 	icon_state = "labcoat_long_cmo"
+
+/obj/item/clothing/suit/toggle/labcoat/syndicate
+	icon_state = "labcoat_syndicate"
+
+/obj/item/clothing/suit/toggle/labcoat/syndicate/robo
+	icon_state = "labcoat_syndicaterobo"
+
+/obj/item/clothing/suit/toggle/labcoat/syndicate/long
+	icon_state = "labcoat_long_syndicate"
 
 /obj/item/clothing/suit/toggle/browntrenchcoat
 	name = "brown trench coat"

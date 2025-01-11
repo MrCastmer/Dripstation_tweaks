@@ -118,6 +118,7 @@
 		/obj/item/attachment/scope/infrared,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/grip/vertical,
+		/obj/item/attachment/grip/angled,	/*Dripstation edit*/
 	)
 	max_attachments = 4
 	recoil = 0.3

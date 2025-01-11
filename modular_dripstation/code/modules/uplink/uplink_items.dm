@@ -179,6 +179,13 @@
 	item = /obj/item/clothing/gloves/tackler/combat/waffle
 	cost = 3
 
+/datum/uplink_item/device_tools/morphbelt
+	name = "Morphing combat belt"
+	desc = "Military grade belt with some tacticool advantage."
+	item = /obj/item/storage/belt/military/webbing/syndicate/morphing
+	cost = 1
+	include_modes = list(/datum/game_mode/nuclear)
+
 /datum/uplink_item/device_tools/tactical_gloves
 	exclude_modes = list(/datum/game_mode/nuclear) //you can't buy it in nuke, because they have another pair that costs the same while being better
 
@@ -206,7 +213,42 @@
 	limited_stock = 1 //you only get one so you don't end up with too many gun cases
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 
+/datum/uplink_item/dangerous/pistol
+	name = "WSP-10M Pistol"
+	manufacturer = /datum/corporation/traitor/waffleco
 
+/datum/uplink_item/ammo/pistol
+	desc = "A box that contains two additional 10-round 10mm magazines; compatible with the WSP-10M Pistol."
+
+/datum/uplink_item/ammo/pistol/random
+	name = "Random 10mm Handgun Magazines"
+	desc = "A box that contains four random 10-round 10mm magazines at a discount; compatible with the WSP-10M Pistol."
+	item = /obj/item/storage/box/syndie_kit/pistolammo/random
+	cost = 2 // same mentality as the 357. You can get 4 mags for 2-4 TC, so giving in to the random chance give you a deal
+
+/datum/uplink_item/ammo/pistol/cs
+	desc = "A box that contains two additional 10-round 10mm magazines; compatible with the WSP-10M Pistol. \
+			These rounds will leave no casings behind when fired."
+
+/datum/uplink_item/ammo/pistol/ap
+	desc = "An additional 10-round 10mm magazine; compatible with the WSP-10M Pistol. \
+			These rounds are less effective at injuring the target but penetrate protective gear."
+
+/datum/uplink_item/ammo/pistol/hp
+	desc = "An additional 10-round 10mm magazine; compatible with the WSP-10M Pistol. \
+			These rounds are more damaging but ineffective against armour."
+
+/datum/uplink_item/ammo/pistol/sleepy
+	desc = "A box that contains 2 additional 10-round 10mm magazines; compatible with the WSP-10M Pistol. \
+			These rounds will deliver small doses of tranqulizers on hit, knocking the target out after a few successive hits."
+
+/datum/uplink_item/ammo/pistol/fire
+	desc = "An additional 10-round 10mm magazine; compatible with the WSP-10M Pistol. \
+			Loaded with incendiary rounds which inflict reduced damage, but ignite the target."
+
+/datum/uplink_item/ammo/pistol/emp
+	desc = "An additional 10-round 10mm magazine; compatible with the WSP-10M pistol. \
+			Loaded with bullets which release micro-electromagnetic pulses on hit, disrupting electronics on the target hit."
 
 ///////NT///////////
 /datum/uplink_item/nt

@@ -796,11 +796,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 1
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
+/* Dripstation edit
 /datum/uplink_item/ammo/pistol
 	name = "Random 10mm Handgun Magazines"
 	desc = "A box that contains four random 10-round 10mm magazines at a discount; compatible with the Stechkin Pistol."
 	item = /obj/item/storage/box/syndie_kit/pistolammo/random
 	cost = 2 // same mentality as the 357. You can get 4 mags for 2-4 TC, so giving in to the random chance give you a deal
+*/
 
 /datum/uplink_item/ammo/pistol/cs
 	name = "Pair of 10mm Caseless Magazines"

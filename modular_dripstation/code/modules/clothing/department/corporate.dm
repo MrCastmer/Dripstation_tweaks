@@ -211,7 +211,7 @@
 	icon_state = "helldiver"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
-	armor = list(MELEE = 40, BULLET = 40, LASER = 20, ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
+	armor = list(MELEE = 40, BULLET = 60, LASER = 20, ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/suit/armor/helldiver
 	name = "helldiver armor"
@@ -220,7 +220,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	slowdown = 0.33
-	armor = list(MELEE = 40, BULLET = 40, LASER = 20, ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
+	armor = list(MELEE = 40, BULLET = 60, LASER = 20, ENERGY = 25, BOMB = 30, BIO = 100, RAD = 30, FIRE = 80, ACID = 85, WOUND = 10, ELECTRIC = 100)
 
 /obj/item/clothing/neck/helldiver
 	name = "helldiver mantle"
@@ -262,6 +262,14 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
 
+/obj/item/clothing/suit/jacket/leather/overcoat/armored
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT	//uh oh
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT	//uh oh
+	armor = list(MELEE = 25, BULLET = 25, LASER = 20, ENERGY = 25, BOMB = 15, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 5)
+
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	desc = "A fireproof armored chestpiece reinforced with ceramic plates and plasteel pauldrons to provide additional protection whilst still offering maximum mobility and flexibility. Issued only to the syndicate's finest, although it does chafe your nipples."
 	icon_state = "syndie_carapace"
@@ -274,6 +282,7 @@
 
 /obj/item/clothing/suit/armor/hos/syndicate
 	name = "syndicate captain's armored coat"
+	icon_state = "syndie_coat_armor"
 	mutantrace_variation = NONE
 	pocket_storage_component_path = null
 	armor = list(MELEE = 40, BULLET = 35, LASER = 40, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
@@ -282,16 +291,15 @@
 /obj/item/clothing/suit/armor/hos/syndicate/winter
 	name = "syndicate captain's unarmored winter coat"
 	desc = "Winter fashion!"
+	icon_state = "syndie_coat_winter"
 	armor = list(MELEE = 10, BULLET = 15, LASER = 10, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
-	resistance_flags = FIRE_PROOF
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/suit/armor/hos/syndicate/winter/armored
 	name = "syndicate captain's armored winter coat"
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
+	icon_state = "syndie_coat_winter_armor"
 	armor = list(MELEE = 40, BULLET = 35, LASER = 40, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 15)
-	resistance_flags = FIRE_PROOF
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/head/helmet/space/infiltrator
 	name = "infiltrator helmet"
@@ -511,6 +519,7 @@
 	name = "Vahlen`s combat uniform"
 	desc = "A tactical combat jumpsuit with cargo pants for operatives employed by Vahlen Pharmaceuticals."
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 10, BOMB = 0, BIO = 20, FIRE = 20, ACID = 30, WOUND = 10, ELECTRIC = 0)
+	icon_state = "vahlen_combat"
 
 /obj/item/clothing/under/syndicate/vahlen/chief_medical_officer
 	name = "chief medical officer's turtleneck jumpsuit"
@@ -546,14 +555,14 @@
 /obj/item/clothing/under/syndicate/gec
 	name = "GEC engineer uniform"
 	desc = "An official uniform worn by GEC engineers. This one is worn by middle ranking engineers."
-	icon_state = "gec_engineer"
+	icon_state = "gec_official"
 	mutantrace_variation = NONE
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 60, ACID = 20, WOUND = 0, ELECTRIC = 0)
 
 /obj/item/clothing/under/syndicate/gec/chief_engineer
 	name = "GEC chief engineer uniform"
 	desc = "An official uniform worn by GEC engineers. This one is worn by high ranking engineers."
-	icon_state = "gec_ce"
+	icon_state = "gec_official_alt"
 	mutantrace_variation = NONE
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 80, ACID = 40, WOUND = 0, ELECTRIC = 0)
 

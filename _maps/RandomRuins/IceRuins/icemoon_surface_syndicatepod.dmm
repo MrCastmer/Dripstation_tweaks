@@ -101,6 +101,10 @@
 /obj/structure/shuttle/engine/platform,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/powered)
+"D" = (
+/obj/effect/landmark/lost_syndicate_ghost_spawn,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/ruin/powered)
 "E" = (
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red/brig,
@@ -132,7 +136,7 @@ a
 "}
 (3,1,1) = {"
 j
-e
+D
 j
 k
 n

@@ -203,55 +203,55 @@
 	crate_name = "firing pins crate"
 	item = /obj/structure/closet/crate/donk
 
-/datum/market_item/syndibase/security/stechkin
-	name = "Waffle Co Stechkin Pistol Crate"
+/datum/market_item/syndibase/security/pistol
+	name = "Waffle Co WSP-10M Pistol Crate"
 	desc = "Waffle Co two standart service pistols with spare magasines. Fire at will!"
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm)
 	price = CARGO_CRATE_VALUE * 12
-	crate_name = "Stechkin Pistol Crate"
+	crate_name = "WSP-10M Pistol Crate"
 	item = /obj/structure/closet/crate/waffle
 
-/datum/market_item/syndibase/security/stechkin_ammo
-	name = "Waffle Co Stechkin - 10mm Magazine"
+/datum/market_item/syndibase/security/pistol_ammo
+	name = "Waffle Co WSP-10M - 10mm Magazine"
 	desc = "Waffle Co three standart magazines with 10mm ammo. Fire at will!"
 	contains = list(/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm)
 	price = CARGO_CRATE_VALUE * 3
-	crate_name = "Stechkin - 10mm Magazine crate"
+	crate_name = "WSP-10M - 10mm Magazine crate"
 	item = /obj/structure/closet/crate/waffle
 
-/datum/market_item/syndibase/security/stechkin_ammo_ap
-	name = "Waffle Co Stechkin - 10mm Armour Piercing Magazine"
+/datum/market_item/syndibase/security/pistol_ammo_ap
+	name = "Waffle Co WSP-10M - 10mm Armour Piercing Magazine"
 	desc = "Waffle Co three standart magazines with 10mm AP ammo. Fire at will!"
 	contains = list(/obj/item/ammo_box/magazine/m10mm/ap,
 					/obj/item/ammo_box/magazine/m10mm/ap,
 					/obj/item/ammo_box/magazine/m10mm/ap)
 	price = CARGO_CRATE_VALUE * 3
-	crate_name = "Stechkin - 10mm Armour Piercing Magazine crate"
+	crate_name = "WSP-10M - 10mm Armour Piercing Magazine crate"
 	item = /obj/structure/closet/crate/waffle
 
-/datum/market_item/syndibase/security/stechkin_ammo_fire
-	name = "Waffle Co Stechkin - 10mm Incendiary Magazine"
+/datum/market_item/syndibase/security/pistol_ammo_fire
+	name = "Waffle Co WSP-10M - 10mm Incendiary Magazine"
 	desc = "Waffle Co three standart magazines with 10mm Incendiary ammo. Fire at will!"
 	contains = list(/obj/item/ammo_box/magazine/m10mm/fire,
 					/obj/item/ammo_box/magazine/m10mm/fire,
 					/obj/item/ammo_box/magazine/m10mm/fire)
 	price = CARGO_CRATE_VALUE * 3
-	crate_name = "Stechkin - 10mm Incendiary Magazine crate"
+	crate_name = "WSP-10M - 10mm Incendiary Magazine crate"
 	item = /obj/structure/closet/crate/waffle
 
-/datum/market_item/syndibase/security/stechkin_ammo_hp
-	name = "Waffle Co Stechkin - 10mm Hollow Point Magazine"
+/datum/market_item/syndibase/security/pistol_ammo_hp
+	name = "Waffle Co WSP-10M - 10mm Hollow Point Magazine"
 	desc = "Waffle Co three standart magazines with 10mm HP ammo. Fire at will!"
 	contains = list(/obj/item/ammo_box/magazine/m10mm/hp,
 					/obj/item/ammo_box/magazine/m10mm/hp,
 					/obj/item/ammo_box/magazine/m10mm/hp)
 	price = CARGO_CRATE_VALUE * 3
-	crate_name = "Stechkin - 10mm Hollow Point Magazine crate"
+	crate_name = "WSP-10M - 10mm Hollow Point Magazine crate"
 	item = /obj/structure/closet/crate/waffle
 
 /datum/market_item/syndibase/security/energy_crossbow
@@ -260,17 +260,17 @@
 	contains = list(/obj/item/gun/energy/kinetic_accelerator/crossbow)
 	price = CARGO_CRATE_VALUE * 20
 	crate_name = "Energy Crossbow crate"
-	item = /obj/structure/closet/crate/donk
+	item = /obj/structure/closet/crate/secure/syndicate
 
 /datum/market_item/syndibase/security/armor
 	name = "Armor Crate"
 	desc = "Three sets of well-rounded, decently-protective armor and helmet. Requires Security access to open."
-	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/head/helmet,
-					/obj/item/clothing/head/helmet,
-					/obj/item/clothing/head/helmet)
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/suit/armor/vest/bulletproof/cybersun,
+					/obj/item/clothing/head/helmet/alt/cybersun,
+					/obj/item/clothing/head/helmet/alt/cybersun,
+					/obj/item/clothing/head/helmet/alt/cybersun)
 	price = CARGO_CRATE_VALUE * 6
 	crate_name = "Armor crate"
 	item = /obj/structure/closet/crate/secure/syndicate
@@ -305,13 +305,13 @@
 	category = "Outside Weaponry"
 
 /datum/market_item/syndibase/armory/c20smg
-	name = "Scarborough Arms C-20r SMG Crate"
+	name = "Scarborough Arms C-18 SMG Crate"
 	desc = "Scarborough best arms! One SMG - two spare magazines."
-	contains = list(/obj/item/gun/ballistic/automatic/c20r,
+	contains = list(/obj/item/gun/ballistic/automatic/c20r/cobra/ultrasecure,
 					/obj/item/ammo_box/magazine/smgm45,
 					/obj/item/ammo_box/magazine/smgm45)
 	price = CARGO_CRATE_VALUE * 20
-	crate_name = "C-20r SMG Crate"
+	crate_name = "C-18 SMG Crate"
 	item = /obj/structure/closet/crate
 
 /datum/market_item/syndibase/armory/smgammo
@@ -323,6 +323,34 @@
 	price = CARGO_CRATE_VALUE * 5
 	crate_name = ".45 SMG Magazines Crate"
 	item = /obj/structure/closet/crate
+
+/datum/market_item/syndibase/armory/ar
+	name = "Waffle Arms WA-5 AR Crate"
+	desc = "Waffle Arms brand WA-5 assault rifle. One AR - two spare magazines."
+	contains = list(/obj/item/gun/ballistic/automatic/ar/waffle,
+					/obj/item/ammo_box/magazine/r556,
+					/obj/item/ammo_box/magazine/r556)
+	price = CARGO_CRATE_VALUE * 40
+	crate_name = "WA-5 AR Crate"
+	item = /obj/structure/closet/crate/waffle
+
+/datum/market_item/syndibase/armory/arammo
+	name = "Waffle Arms 5.56 Magazines Crate"
+	desc = "Waffle Arms starndart rifle ammo."
+	contains = list(/obj/item/ammo_box/magazine/r556,
+					/obj/item/ammo_box/magazine/r556,
+					/obj/item/ammo_box/magazine/r556)
+	price = CARGO_CRATE_VALUE * 10
+	crate_name = "5.56 Rifle Magazines Crate"
+	item = /obj/structure/closet/crate/waffle
+
+/datum/market_item/syndibase/armory/plasma
+	name = "Cybersun Armory plasma rifle Crate"
+	desc = "Cybersun Armory brand plasma rifle."
+	contains = list(/obj/item/gun/energy/plasmarifle)
+	price = CARGO_CRATE_VALUE * 40
+	crate_name = "Cybersun Armory Crate"
+	item = /obj/structure/closet/crate/secure/syndicate
 
 /datum/market_item/syndibase/armory/iweapons
 	name = "Incendiary Weapons Crate"

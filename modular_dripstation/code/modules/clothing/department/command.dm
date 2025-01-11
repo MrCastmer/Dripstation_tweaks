@@ -496,6 +496,23 @@
 	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
 	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
 
+// ###### BRIGE ASSISTANT ######
+/obj/item/clothing/under/rank/bridge_assistant
+	name = "brige assistant's uniform"
+	desc = "Blue formal jumpsuit that shows your NanoTrasen allighment."
+	icon_state = "pilot"
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/bridge_assistant.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/bridge_assistant.dmi'
+	can_adjust = TRUE
+	mutantrace_variation = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/under/rank/bridge_assistant/skirt
+	name = "brige assistant's turtleneck skirt"
+	desc = "Blue formal jumpskirt that shows your NanoTrasen allighment."
+	icon_state = "pilot_skirt"
+	fitted = FEMALE_UNIFORM_TOP
+	mutantrace_variation = NONE	
+
 ////////Formal coat////////
 /obj/item/clothing/suit/toggle/capformal
 	name = "captain's formal coat"

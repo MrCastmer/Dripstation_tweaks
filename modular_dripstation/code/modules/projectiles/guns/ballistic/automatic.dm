@@ -1,7 +1,15 @@
 /obj/item/gun/ballistic/automatic/proto
+	desc = "A fullauto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
+	burst_size = 1
+	actions_types = list()
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+
+/obj/item/gun/ballistic/automatic/proto/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/c20r
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
@@ -16,8 +24,11 @@
 	icon_state = "c18_cobra"
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 
+/obj/item/gun/ballistic/automatic/c20r/cobra/ultrasecure
+	pin = /obj/item/firing_pin/fucked
+
 /obj/item/gun/ballistic/automatic/c20r/waffle
-	name = "\improper W-20"
+	name = "\improper WA-20"
 	desc = "A brand new SMG manufactured by Waffle Arms. Chambered in .45."
 	can_bayonet = FALSE
 	empty_indicator = FALSE
@@ -30,7 +41,7 @@
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/c20r/vector
-	name = "\improper UNN PDW-45 'Vector'"
+	name = "\improper UNN PDW-45V 'Vector'"
 	desc = "A brand new SMG manufactured by UNN nicknamed Vector. Chambered in .45."
 	can_bayonet = FALSE
 	empty_indicator = TRUE
@@ -41,7 +52,7 @@
 	pin = /obj/item/firing_pin/dna/secure
 
 /obj/item/gun/ballistic/automatic/c20r/aegis
-	name = "\improper 'Aegis'"
+	name = "\improper NB-20A 'Aegis'"
 	desc = "An SMG manufactured for Nanotrasen`s Special Operations Department. Chambered in .45."
 	can_bayonet = FALSE
 	can_suppress = FALSE
@@ -71,6 +82,7 @@
 	mag_type = /obj/item/ammo_box/magazine/sa450
 	fire_delay = 2
 	burst_size = 4
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	can_suppress = TRUE
@@ -112,12 +124,15 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	can_suppress = FALSE
 	burst_size = 3
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_delay = 2
 	pin = /obj/item/firing_pin
 	mag_display = TRUE
 	empty_indicator = TRUE
 
 /obj/item/gun/ballistic/automatic/ar
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
 	mag_display = TRUE
 	can_suppress = TRUE
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
@@ -125,14 +140,20 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	fire_sound = 'sound/weapons/rifleshot.ogg'
 	item_state = "arifle"
+	recoil = 0.4
+	spread = 10
+	semi_auto_spread = 5
 	fire_sound_volume = 80
 	vary_fire_sound = 0
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/ar/mk4
 	name = "\improper Militech M-K4 Infantry Assault Rifle"
 	desc = "A robust assault rifle used by Militech fighting forces."
 	icon_state = "militech_mkIV"
 	pin = /obj/item/firing_pin/dna
+	spread = 5
+	semi_auto_spread = 3
 
 /obj/item/gun/ballistic/automatic/ar/mk4/grn
 	name = "\improper Militech M-K4 Infantry Assault Rifle"
@@ -145,15 +166,138 @@
 	desc = "A robust assault rifle used by Terra Gov Marine Corps."
 	icon_state = "tgm16"
 	pin = /obj/item/firing_pin
+	spread = 8
+	semi_auto_spread = 5
 
 /obj/item/gun/ballistic/automatic/ar/waffle
-	name = "\improper W-5 Infantry Assault Rifle"
-	desc = "A robust assault rifle used by Waffle Special Operations Division."
+	name = "\improper WA-5 Infantry Assault Rifle"
+	desc = "A robust assault rifle used by mercinaries and Waffle Special Operations Division."
 	icon_state = "waffle_assault"
 	pin = /obj/item/firing_pin/fucked
+	spread = 5
+	semi_auto_spread = 3
 
 /obj/item/gun/ballistic/automatic/ar/waffle/unrestricted
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/automatic/ar/ak814
+	name = "\improper AK-814 Infantry Assault Rifle"
+	desc = "A modern bullpup version of AK assault system favored by elite Soviet soldiers. Chambered in 5.45x39mm."
+	icon_state = "ak814"
+	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	mag_type = /obj/item/ammo_box/magazine/r545
+	starting_mag_type = /obj/item/ammo_box/magazine/r545
+	recoil = 0.8
+	spread = 12
+	semi_auto_spread = 8
+	burst_size = 1
+	actions_types = list()
+	can_suppress = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/automatic/ar/ak814/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
+/obj/item/gun/ballistic/automatic/ar/ak47
+	name = "\improper AK-47 Assault Rifle"
+	desc = "An old assault rifle, dating back to 20th century. It is commonly used by various bandits, pirates and colonists thanks to its reliability and ease of maintenance. Chambered in 7.62x39mm."
+	icon_state = "ak47"
+	mag_type = /obj/item/ammo_box/magazine/r762x39
+	starting_mag_type = /obj/item/ammo_box/magazine/r762x39
+	recoil = 1.5
+	spread = 25
+	semi_auto_spread = 20
+	burst_size = 1
+	actions_types = list()
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/ar/ak47/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
+
+/obj/item/gun/ballistic/automatic/ar/akm
+	name = "\improper AKM Assault Rifle"
+	desc = "An obsolete assault rifle seized from some frontier armory. Chambered in 7.62x39mm."
+	icon_state = "akm"
+	mag_type = /obj/item/ammo_box/magazine/r762x39
+	starting_mag_type = /obj/item/ammo_box/magazine/r762x39
+	recoil = 1.2
+	spread = 20
+	semi_auto_spread = 15
+	burst_size = 1
+	actions_types = list()
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/ar/akm/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
+
+/obj/item/gun/ballistic/automatic/ar/akm_tactical
+	name = "\improper TMCAR-47M Tactical Assault Rifle"
+	desc = "An obsolete assault rifle seized from some frontier armory and extensively modified to TMC standards. Chambered in 7.62x39mm."
+	icon_state = "akm_tactical"
+	recoil = 0.8
+	spread = 15
+	semi_auto_spread = 10
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/ar/ak101
+	name = "\improper AK-101 Assault Rifle"
+	desc = "More modern version of the cheap assault rifle chambered in 5.56mm. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
+	icon_state = "ak101"
+	mag_type = /obj/item/ammo_box/magazine/r556
+	starting_mag_type = /obj/item/ammo_box/magazine/r556
+	spread = 10
+	semi_auto_spread = 8
+	burst_size = 1
+	recoil = 1.2
+	var/folded = FALSE
+	var/unfolded_spread = 15
+	var/unfolded_item_state = "ak47_ak101"
+	var/folded_spread = 35
+	var/folded_item_state = "ak47_ak101_stockless"
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/ar/ak101/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+
+/obj/item/gun/ballistic/automatic/ar/ak101/CtrlClick(mob/user)
+	. = ..()
+	if((!ishuman(user) || user.stat))
+		return
+	to_chat(user, "<span class='notice'>You start to [folded ? "unfold" : "fold"] the stock on the [src].</span>")
+	if(do_after(user, 10, target = src))
+		fold(user)
+		user.update_inv_back()
+		user.update_inv_hands()
+		user.update_inv_s_store()
+
+/obj/item/gun/ballistic/automatic/ar/ak101/proc/fold(mob/user)
+	if(folded)
+		to_chat(user, "<span class='notice'>You unfold the stock on the [src].</span>")
+		spread = unfolded_spread
+		item_state = unfolded_item_state
+		w_class = WEIGHT_CLASS_BULKY
+	else
+		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
+		spread = folded_spread
+		item_state = folded_item_state
+		w_class = WEIGHT_CLASS_NORMAL
+
+	folded = !folded
+	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+
+/obj/item/gun/ballistic/automatic/ar/ak101/update_overlays()
+	. = ..()
+	var/mutable_appearance/stock
+	if(!folded)
+		stock = mutable_appearance(icon, "ak47_ak101_stock")
+	else
+		stock = mutable_appearance(icon, null)
+	. += stock
 
 //STM-9
 /obj/item/gun/ballistic/automatic/stm9
@@ -188,6 +332,8 @@
 
 
 /obj/item/gun/ballistic/automatic/pistol
+	name = "WSP-10M"
+	desc = "A small, easily concealable 10mm modern handgun. Has a threaded barrel for suppressors. Often named 'Stechkin', but nobody knows why."
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/stickman
@@ -210,9 +356,13 @@
 	name = "\improper NB-2 'Ancile'"
 	desc = "Nanotrasen easily concealable servise pistol. Chambered in 9x19mm."
 	icon_state = "nt_ancile"
+	item_state = "nt_ancile"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	can_suppress = FALSE
 	starting_mag_type = /obj/item/ammo_box/magazine/pistolm9mm
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/ballistic/automatic/pistol/glock18
 	name = "\improper Glock-18"
@@ -226,6 +376,7 @@
 	fire_sound = 'modular_dripstation/sound/weapons/pistol/shot_alt.ogg'
 	burst_size = 3
 	fire_delay = 2
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/glock18/shelg
 	name = "\improper SSP-7 'Lawyer'"
@@ -317,3 +468,35 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
+
+
+//paintballs
+/obj/item/gun/ballistic/automatic/toy/paintball
+	name = "red paintball gun"
+	desc = "An entry level paintball gun. This one comes in red."
+	icon_state = "paintball"
+	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	mag_type = /obj/item/ammo_box/magazine/toy/paintball
+	mag_display = TRUE
+	fire_sound = 'modular_dripstation/sound/weapons/paintball.ogg'
+	burst_size = 2
+	clumsy_check = FALSE
+
+/obj/item/gun/ballistic/automatic/toy/paintball/blue
+	name = "blue paintball gun"
+	icon_state = "paintball-blue"
+	desc = "An entry level paintball gun. This one comes in blue."
+	mag_type = /obj/item/ammo_box/magazine/toy/paintball/blue
+
+/obj/item/gun/ballistic/automatic/pistol/pepperball
+	name = "\improper Bolt Pepperball AHG"
+	desc = "An incredibly mediocre 'firearm' designed to fire soft pepper balls meant to easily subdue targets."
+	icon_state = "peppergun"
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/pepperball
+	can_suppress = FALSE
+	fire_sound = 'modular_dripstation/sound/weapons/paintball.ogg'
+	//rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
+	//lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
+	//bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	fire_sound_volume = 50

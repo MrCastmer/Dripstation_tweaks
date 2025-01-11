@@ -16,7 +16,7 @@
 	icon = 'modular_dripstation/icons/obj/blackmarket/telecoms.dmi'
 	icon_state = "pad"
 	circuit = /obj/item/circuitboard/machine/redspacepad
-	density = TRUE
+	density = FALSE
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 200

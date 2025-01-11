@@ -212,6 +212,25 @@
 /obj/item/storage/backpack/duffelbag/syndie/ammo
 	item_state = "duffel-syndiammo"
 
+/obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax/PopulateContents()
+	new /obj/item/mecha_ammo/incendiarylmg(src)
+	new /obj/item/mecha_ammo/incendiarylmg(src)
+	new /obj/item/mecha_ammo/incendiarylmg(src)
+	new /obj/item/mecha_ammo/flashbang(src)
+	new /obj/item/mecha_ammo/flashbang(src)
+	new /obj/item/mecha_ammo/flashbang(src)
+
+/obj/item/storage/backpack/duffelbag/syndie/ammo/mauler/PopulateContents()
+	new /obj/item/mecha_ammo/hmg(src)
+	new /obj/item/mecha_ammo/hmg(src)
+	new /obj/item/mecha_ammo/hmg(src)
+	new /obj/item/mecha_ammo/syndieshot(src)
+	new /obj/item/mecha_ammo/syndieshot(src)
+	new /obj/item/mecha_ammo/syndieshot(src)
+	new /obj/item/mecha_ammo/missiles_he(src)
+	new /obj/item/mecha_ammo/missiles_he(src)
+	new /obj/item/mecha_ammo/missiles_he(src)
+
 /obj/item/storage/backpack/duffelbag/syndie/hitman
 	item_state = "duffel-syndiammo"
 

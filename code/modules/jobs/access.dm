@@ -196,7 +196,7 @@
 		if(5) //engineering and maintenance
 			return list(ACCESS_CONSTRUCTION, ACCESS_MAINT_TUNNELS, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_EXTERNAL_AIRLOCKS, ACCESS_TECH_STORAGE, ACCESS_SECURE_TECH_STORAGE, ACCESS_ATMOSPHERICS, ACCESS_MECH_ENGINE, ACCESS_TCOMSAT, ACCESS_MINISAT, ACCESS_CE, ACCESS_TCOM_ADMIN, ACCESS_RC_ANNOUNCE) // yogs - Yog jobs
 		if(6) //supply
-			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT, ACCESS_MAINT_TUNNELS, ACCESS_GATEWAY)	//dripstation edit
+			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT, ACCESS_MAINT_TUNNELS, ACCESS_EXPLORER, ACCESS_GATEWAY)	//dripstation edit
 		if(7) //command
 			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_BLUESHIELD, ACCESS_NTREP, ACCESS_MAGISTRATE, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_MAINT_TUNNELS)	//dripstation edit
 
@@ -429,7 +429,7 @@
 
 /// Gets all jobs with hud icons
 /proc/get_all_job_icons() //For all existing HUD icons
-	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate", "Repair Worker Replika")	//dripstation edit
+	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate", "Repair Worker Replika", "Bridge Assistant", "Security Consultant", "Corrections Officer")	//dripstation edit
 
 /// Gets all centcom jobs
 /proc/get_all_centcom_jobs()

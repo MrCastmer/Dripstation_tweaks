@@ -1,6 +1,34 @@
 /mob/living/simple_animal/hostile/asteroid/wolf
+	maxHealth = 70
+	health = 70
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
+
+/mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin
+	name = "ice vulpkanin"
+	desc = "A disgusting hybrid of man and wolf. A distant relative of Sharikov."
+	icon = 'modular_dripstation/icons/mob/icemoon/icemoon_monsters.dmi'
+	icon_state = "vulpa"
+	icon_living = "vulpa"
+	icon_dead = "vulpa"
+	flip_on_death = TRUE
+	attacktext = "hugs and violates"
+	vision_range = 9
+	aggro_vision_range = 9
+	maxHealth = 200
+	health = 200
+	wound_bonus = 0
+	bare_wound_bonus = 10
+	sharpness = SHARP_EDGED
+	obj_damage = 15	// IT`S JOHNY
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+
+/mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin/examine_more(mob/user)
+	. = ..()
+	var/msg = "- A moy ded vulpu s siskami vidal.\
+		- Durak tvoi ded."
+
+	return list(span_notice("<i>[msg]</i>"))
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	name = "ice whelp"
@@ -366,3 +394,10 @@
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/icemoon
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon/death()
+	for(var/obj/effect/landmark/lost_syndicate_ghost_spawn/L in GLOB.landmarks_list)
+		L.create_roles()
+	..()

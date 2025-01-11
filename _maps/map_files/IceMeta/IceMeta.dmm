@@ -17663,6 +17663,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/camera{
+	c_tag = "Bridge - Command Chair";
+	dir = 1
+	},
 /turf/open/floor/carpet,
 /area/bridge)
 "fnn" = (
@@ -44116,10 +44120,6 @@
 	pixel_x = -1;
 	pixel_y = -34;
 	req_access_txt = "19"
-	},
-/obj/machinery/camera{
-	c_tag = "Bridge - Command Chair";
-	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5

@@ -18,7 +18,7 @@
 
 	added_access = list(ACCESS_SEC_DOORS, ACCESS_SECURITY, ACCESS_BAR)
 	base_access = list(ACCESS_WEAPONS, ACCESS_GATEWAY,
-						ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, 
+						ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO,
 						ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_MEDIUM	//He is just a guy that is more valuable then tech, but less than normal officer
 	paycheck_department = ACCOUNT_CAR
@@ -32,9 +32,10 @@
 	)
 
 	mail_goodies = list(
-		/obj/item/reagent_containers/food/snacks/donut = 10,
-		/obj/item/reagent_containers/food/drinks/beer = 5,
-		/obj/item/reagent_containers/food/drinks/beer/light = 4,
+		/obj/item/reagent_containers/food/snacks/donut = 7,
+		/obj/item/ammo_box/magazine/pepperball = 5,
+		/obj/item/reagent_containers/food/drinks/beer = 4,
+		/obj/item/reagent_containers/food/drinks/beer/light = 3,
 		/obj/item/clothing/suit/armor/vest/alt = 3,
 		/obj/item/gun/ballistic/rifle/boltaction = 1
 	)
@@ -60,10 +61,10 @@
 	gloves = /obj/item/clothing/gloves/fingerless/tactifool
 	shoes = /obj/item/clothing/shoes/jackboots
 	digitigrade_shoes = /obj/item/clothing/shoes/xeno_wraps/jackboots
-	belt = null
+	belt = /obj/item/gun/ballistic/automatic/pistol/pepperball
 	backpack = /obj/item/storage/backpack/cargo
 	satchel = /obj/item/storage/backpack/satchel/cargo
 	duffelbag = /obj/item/storage/backpack/duffelbag/cargo
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper = 1, /obj/item/melee/shocker = 1)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper = 1, /obj/item/melee/shocker = 1, /obj/item/ammo_box/magazine/pepperball = 1)
 	r_pocket = /obj/item/assembly/flash/handheld
 	implants = list(/obj/item/implant/mindshield)

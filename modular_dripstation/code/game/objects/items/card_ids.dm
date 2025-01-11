@@ -38,6 +38,7 @@
 	registered_name = "operative"
 	assignment = "Nuclear Squad Operative"
 	originalassignment = "Nuclear Squad Operative"
+	has_fluff = TRUE
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -49,6 +50,7 @@
 	registered_name = "leader"
 	assignment = "Nuclear Squad Leader"
 	originalassignment = "Nuclear Squad Leader"
+	has_fluff = TRUE
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -64,6 +66,7 @@
 	registered_name = "operative"
 	assignment = "SRB Team"
 	originalassignment = "SRB Team"
+	has_fluff = TRUE
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -75,6 +78,7 @@
 	registered_name = "leader"
 	assignment = "SRB Team Leader"
 	originalassignment = "SRB Team Leader"
+	has_fluff = TRUE
 	registered_age = null
 	forged = TRUE
 	anyone = TRUE
@@ -83,8 +87,9 @@
 
 /obj/item/card/id
 	icon = 'modular_dripstation/icons/obj/card.dmi'
+	var/has_fluff
 
-/obj/item/card/id/ID_fluff()
+/obj/item/card/id/proc/ID_fluff()
 	var/job = originalassignment
 	var/static/list/idfluff = list(
 		"Assistant" = list("civillian","green"),
@@ -130,9 +135,11 @@
 		"Nanotrasen Representative" = list("nanotrasen","gold"),
 		"Explorer" = list("cargo","purple"),
 		"Bridge Assistant" = list("captain","green"),
-		"Brig Officer" = list("security","white"),
+		"Corrections Officer" = list("security","white"),
 		"Repair Worker Replika" = list("nanotrasen","silver"),
 		"Customs Agent" = list("cargo","red"),
+		"Security Consultant" = list("security","silver"),
+		"Bridge Assistant" = list("civillian","green"),
 	)
 	var/static/list/fluffblacklist = list(
 		"Deathsquad Officer",
@@ -147,7 +154,7 @@
 		"Religious Response Officer",
 		"Janitorial Response Officer",
 		"Clown ERT",
-		"Nuclear Squad",
+		"Nuclear Squad Operative",
 		"Nuclear Squad Leader",
 		"Syndicate Overlord",
 		"SRB Team",
@@ -158,7 +165,7 @@
 	)
 	if(job in idfluff)
 		has_fluff = TRUE
-	else if(!job)
+	else if(!job || job in fluffblacklist)
 		return
 	else
 		if(has_fluff)
@@ -195,6 +202,7 @@
 	desc = "A terragov dog tag."
 	icon_state = "dogtag"
 	item_state = "dogtag"
+	has_fluff = TRUE
 	registered_name = "TerraGov Militant"
 	assignment = "TerraGov Military"
 	originalassignment = "TerraGov Military"
@@ -207,6 +215,7 @@
 	name = "\improper BlackOps ID"
 	desc = "An ID straight from Nanotrasen SpecOps Division."
 	icon_state = "deathsquad"
+	has_fluff = TRUE
 	registered_name = "BlackOps Operative"
 	assignment = "Deathsquad Officer"
 	originalassignment = "Deathsquad Officer"
@@ -216,6 +225,7 @@
 	name = "\improper SpecOps ID"
 	desc = "An ID straight from Nanotrasen SpecOps Division."
 	icon_state = "ERT_gamma"
+	has_fluff = TRUE
 	registered_name = "SpecOps Operative"
 	assignment = "SpecOps Officer"
 	originalassignment = "SpecOps Officer"
@@ -235,30 +245,39 @@
 
 /obj/item/card/id/ert/amber
 	icon_state = "ERT_amber"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/occupying
 	icon_state = "ERT_occ"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/leader
 	icon_state = "ERT_leader"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/Security
 	icon_state = "ERT_security"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/Engineer
 	icon_state = "ERT_engineering"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/Medical
 	icon_state = "ERT_medical"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/chaplain
 	icon_state = "ERT_chaplain"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/Janitor
 	icon_state = "ERT_janitorial"
+	has_fluff = TRUE
 
 /obj/item/card/id/ert/clown
 	icon_state = "ERT_clown"
+	has_fluff = TRUE
 
 /obj/item/card/id/makeshift
 	icon = 'modular_dripstation/icons/obj/card.dmi'

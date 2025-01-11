@@ -29,6 +29,15 @@
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
 
+/obj/item/storage/belt/security/corrections/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/reagent_containers/spray/pepper, src)
+	SSwardrobe.provide_type(/obj/item/restraints/handcuffs, src)
+	SSwardrobe.provide_type(/obj/item/restraints/handcuffs, src)
+	SSwardrobe.provide_type(/obj/item/grenade/flashbang, src)
+	SSwardrobe.provide_type(/obj/item/assembly/flash/handheld, src)
+	SSwardrobe.provide_type(/obj/item/melee/baton/loaded/departmental/prison, src)
+	update_appearance(UPDATE_ICON)
+
 /obj/item/storage/belt/security/webbing
 	icon_state = "securitywebbing"
 	item_state = "securitywebbing"
@@ -192,37 +201,52 @@
 
 /obj/item/storage/belt/military/webbing/syndicate/elite
 	name = "elite syndicate chest rig"
-	desc = "A set of black tactical webbing worn by best syndicate operatives."
+	desc = "A set of tactical webbing worn by best syndicate operatives."
 	item_state = "militarywebbing-elite"
 	icon_state = "militarywebbing-elite"
 
 /obj/item/storage/belt/military/webbing/syndicate/waffle
 	name = "Waffle operative chest rig"
-	desc = "A set of black tactical webbing worn by Waffle Co operatives."
+	desc = "A set of tactical webbing worn by Waffle Co operatives."
 	item_state = "militarywebbing-waffle"
 	icon_state = "militarywebbing-waffle"
 
 /obj/item/storage/belt/military/webbing/syndicate/gorlex
 	name = "Gorlex marauder chest rig"
-	desc = "A set of black tactical webbing worn by bloody marauders."
+	desc = "A set of tactical webbing worn by bloody marauders."
 	item_state = "militarywebbing-bloody"
 	icon_state = "militarywebbing-bloody"
 
+/obj/item/storage/belt/military/webbing/gorlex_secutity
+	name = "Gorlex Security chest rig"
+	desc = "A set of tactical webbing worn by Gorlex Security."
+	item_state = "militarywebbing-bloody"
+	icon_state = "militarywebbing-bloody"
+
+/obj/item/storage/belt/military/webbing/gorlex_secutity/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/r556, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/r556/ap, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/fn45, src)
+	SSwardrobe.provide_type(/obj/item/restraints/handcuffs, src)
+	SSwardrobe.provide_type(/obj/item/melee/classic_baton/telescopic, src)
+	SSwardrobe.provide_type(/obj/item/grenade/flashbang, src)
+	SSwardrobe.provide_type(/obj/item/assembly/flash/handheld, src)
+
 /obj/item/storage/belt/military/webbing/syndicate/cybersun
 	name = "Cybersun operative chest rig"
-	desc = "A set of black tactical webbing worn by Cybersun Industries operatives."
+	desc = "A set of tactical webbing worn by Cybersun Industries operatives."
 	item_state = "militarywebbing-cybersun"
 	icon_state = "militarywebbing-cybersun"
 
 /obj/item/storage/belt/military/webbing/syndicate/cybersunmed
 	name = "Cybersun medic chest rig"
-	desc = "A set of black tactical webbing worn by Cybersun Industries medics."
+	desc = "A set of tactical webbing worn by Cybersun Industries medics."
 	item_state = "militarywebbing-cybersunmed"
 	icon_state = "militarywebbing-cybersunmed"
 
 /obj/item/storage/belt/military/webbing/syndicate/vahlen
 	name = "Vahlen medic chest rig"
-	desc = "A set of black tactical webbing worn by Vahlen Pharmaceuticals employees."
+	desc = "A set of tactical webbing worn by Vahlen Pharmaceuticals employees."
 	item_state = "militarywebbing-vahlen"
 	icon_state = "militarywebbing-vahlen"
 

@@ -52,6 +52,16 @@
 /obj/item/radio/headset/headset_medsec
 	icon_state = "medsec_headset"
 
+/obj/item/radio/headset/headset_com/alt
+	icon_state = "com_headset_alt"
+
+/obj/item/radio/headset/headset_com/alt/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+/obj/item/radio/headset/headset_com/alt/security_consultant
+	keyslot2 = new /obj/item/encryptionkey/headset_sec
+
 /obj/item/radio/headset/heads/captain
 	icon_state = "cap_headset"
 

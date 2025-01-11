@@ -217,16 +217,13 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/storage/bag/garment/warden(src)
 
 // ###### SEC OFFICER ######
-/obj/structure/closet/secure_closet/security/PopulateContents()
+/obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/vest/alt(src)
-	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
-	new /obj/item/clipboard/yog/paperwork/security(src)
-	new /obj/item/flashlight/seclite(src)
 	new /obj/item/radio/security(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/storage/belt/security/full(src)
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
@@ -245,7 +242,7 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/binoculars(src)
 	new /obj/item/barrier_taperoll/police(src)
 
-/obj/structure/closet/secure_closet/security/external/PopulateContents()
+/obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/clothing/head/helmet/sec(src)
@@ -414,9 +411,9 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/defibrillator/loaded(src)
 	new /obj/item/clothing/suit/toggle/labcoat/emt/explorer(src)
 	new /obj/item/clothing/head/beret/emt/mining(src)
-	new /obj/item/clothing/under/rank/miner/mmedic/alt(src)
-	new /obj/item/clothing/under/rank/miner/mmedic/alt(src)
-	new /obj/item/clothing/under/rank/miner/mmedic/alt/skirt(src)
+	new /obj/item/clothing/under/rank/cargo/miner/mmedic/alt(src)
+	new /obj/item/clothing/under/rank/cargo/miner/mmedic/alt(src)
+	new /obj/item/clothing/under/rank/cargo/miner/mmedic/alt/skirt(src)
 	new /obj/item/clothing/under/yogs/rank/miner/medic(src)
 	new /obj/item/clothing/suit/toggle/labcoat/explorer(src)
 	new /obj/item/storage/belt/medical/mining(src)
@@ -701,6 +698,17 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 	new /obj/item/stamp(src)
 	new /obj/item/stamp/denied(src)
 
+/obj/structure/closet/secure_closet/explorer
+	name = "explorer's equipment"
+	icon_state = "explorer"
+	req_access = list(ACCESS_EXPLORER)
+
+/obj/structure/closet/secure_closet/explorer/PopulateContents()
+	..()
+	new /obj/item/radio/headset/headset_cargo/explorer(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/gun/energy/kinetic_accelerator(src)
+
 /obj/structure/closet/bombcloset/security/PopulateContents()
 	new /obj/item/clothing/suit/bomb_suit/security(src)
 	new /obj/item/clothing/under/rank/security/officer(src)
@@ -780,16 +788,33 @@ GLOBAL_LIST_INIT(closet_cutting_types, typecacheof(list(
 
 /////SYNDICATE/////
 /obj/structure/closet/syndicate/personal
+	desc = "It's a personal storage unit for agent gear."
 
 /obj/structure/closet/syndicate/personal/PopulateContents()
 	..()
 	new /obj/item/clothing/under/syndicate(src)
 	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/radio/headset/syndicate(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)	//probably fix this in weapon update
+	new /obj/item/ammo_box/magazine/m10mm(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/crowbar/red(src)
 	new /obj/item/clothing/glasses/night(src)
+
+/obj/structure/closet/syndicate/nuclear
+	desc = "It's a personal storage unit for nuclear operative gear."
+
+/obj/structure/closet/syndicate/nuclear/PopulateContents()
+	..()
+	new /obj/item/clothing/under/syndicate(src)
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/radio/headset/syndicate(src)
+	new /obj/item/ammo_box/magazine/fn45(src)
+	new /obj/item/storage/belt/military(src)
+	new /obj/item/crowbar/nuke(src)
+	new /obj/item/clothing/glasses/night(src)
+	for(var/obj/item/I in contents)
+		I.toolspeed = 0.33
+		I.name = "syndicate [I.name]"
 
 /obj/structure/closet/secure_closet/syndicate
 	icon_state = "syndicatesecure"

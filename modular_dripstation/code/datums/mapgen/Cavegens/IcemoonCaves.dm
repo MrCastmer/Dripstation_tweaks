@@ -7,6 +7,7 @@
 						  /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50, 
 						  /mob/living/simple_animal/hostile/asteroid/marrowweaver/ice = 30,
 						  /mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
+						  /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin = 10,
 						  /mob/living/simple_animal/hostile/asteroid/ice_demon = 5, 
 						  /mob/living/simple_animal/hostile/asteroid/old_demon = 1,
 						  /mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
@@ -37,6 +38,7 @@
 						  /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 5, 
 						  /mob/living/simple_animal/hostile/asteroid/marrowweaver/ice = 5,
 						  /mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+						  /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin = 4,
 						  /mob/living/simple_animal/hostile/asteroid/ambusher = 2)
 	feature_spawn_chance = 0.4
 	weighted_feature_spawn_list = list(/obj/structure/geyser/ash = 10, 
@@ -57,6 +59,7 @@
 						  /mob/living/simple_animal/hostile/asteroid/polarbear = 30,
 						  /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50, 
 						  /mob/living/simple_animal/hostile/asteroid/marrowweaver/ice = 30,
+						  /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin = 10,
 						  /mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
 						  /mob/living/simple_animal/hostile/asteroid/ice_demon = 5, 
 						  /mob/living/simple_animal/hostile/asteroid/old_demon = 1,

@@ -24,7 +24,10 @@
 		if(bodypart_flag & cover.body_parts_covered)
 			protection += cover.armor.getRating(armor_flag)
 		else if(bodypart_flag & cover.body_parts_partial_covered)
+			/* Dripstation edit
 			protection += cover.armor.getRating(armor_flag) * 0.5
+			*/
+			protection += cover.armor.getRating(armor_flag) * cover.partial_armor_coeff
 	protection += physiology.armor.getRating(armor_flag)
 	return protection
 

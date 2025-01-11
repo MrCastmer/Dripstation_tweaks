@@ -1,4 +1,5 @@
 /obj/item/gun/energy/e_gun
+	cell_type = /obj/item/stock_parts/cell/gun
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
 /obj/item/gun/energy/e_gun/ancient
@@ -11,7 +12,7 @@
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/e_gun/stun
-	cell_type = /obj/item/stock_parts/cell/pulse/pistol	//specops grade cell
+	cell_type = /obj/item/stock_parts/cell/gun/pulse/pistol	//specops grade cell
 
 /obj/item/gun/energy/e_gun/energyrevolver
 	name = "\improper NT-S02 Revolver Energy Gun"
@@ -37,7 +38,7 @@
 	force = 15
 	ammo_x_offset = 2
 	pin = /obj/item/firing_pin/implant/centcom_mindshield
-	cell_type = /obj/item/stock_parts/cell/pulse/pistol
+	cell_type = /obj/item/stock_parts/cell/gun/pulse/pistol
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/laser_spec, /obj/item/ammo_casing/energy/ion)
 
@@ -80,7 +81,7 @@
 	icon_state = "mini"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
-	cell_type = /obj/item/stock_parts/cell/mini_egun
+	cell_type = /obj/item/stock_parts/cell/gun/mini
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
 
 /obj/item/gun/energy/e_gun/mini/secure
@@ -88,7 +89,7 @@
 	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/e_gun/mini/specops	//easy concealable gun for NT special operations department
-	cell_type = /obj/item/stock_parts/cell/pulse/pistol	//specops grade cell
+	cell_type = /obj/item/stock_parts/cell/gun/pulse/pistol	//specops grade cell
 	pin = /obj/item/firing_pin/implant/centcom_mindshield
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/laser_spec)
 

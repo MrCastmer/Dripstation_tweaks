@@ -98,9 +98,17 @@
 	name = "Abandoned Nuclear Operatives base"
 	id = "nukiebaseabandoned"
 	description = "Who knows what lies within?"
-	suffix = "icemoon_surface_abandoned_newcops.dmm.dmm"
+	suffix = "icemoon_surface_abandoned_newcops.dmm"
 	cost = 20
 	allow_duplicates = FALSE
+
+/datum/map_template/ruin/icemoon/drakelair
+	name = "Icemoon Drake Lair"
+	id = "drakelair"
+	description = "Who knows what lies within?"
+	suffix = "icemoon_surface_drakelair.dmm"
+	cost = 20
+	allow_duplicates = FALSE	
 
 /datum/map_template/ruin/icemoon/underground/arctic_station
 	name = "Abandoned Arctic Station"

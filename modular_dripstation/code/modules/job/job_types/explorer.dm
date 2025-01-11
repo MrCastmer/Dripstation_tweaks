@@ -49,8 +49,8 @@
 	pda_type = /obj/item/modular_computer/tablet/pda/preset/shaft_miner
 
 	ears = /obj/item/radio/headset/headset_cargo/explorer
-	uniform = /obj/item/clothing/under/rank/miner/explorer
-	uniform_skirt = /obj/item/clothing/under/rank/miner/explorer/fem
+	uniform = /obj/item/clothing/under/rank/cargo/miner/explorer
+	uniform_skirt = /obj/item/clothing/under/rank/cargo/miner/explorer/fem
 	suit = /obj/item/clothing/suit/toggle/bomber/explorer
 	head = /obj/item/clothing/head/soft/explorer
 	gloves = /obj/item/clothing/gloves/color/black

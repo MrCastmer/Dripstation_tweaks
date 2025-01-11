@@ -100,22 +100,15 @@
 	item_state = "monomolecular"
 	desc = "An elegant weapon, its molecular edge is capable of cutting through flesh and bone with ease."
 	block_chance = 40	//pretty hard 
+	force = 35 	//not too deadly though
 	block_projectile_mod = 1.5	// 60 projectile block chance
 	armour_penetration = 75
-
-/obj/item/katana/murasame/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(istype(hitby, /obj/projectile/bullet) && prob(final_block_chance))
-		if(istype(hitby, /obj/projectile/bullet))
-			owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], while he cuts the air, splitting the bullet in half!"))
-			playsound(src, block_sound, 70, vary = TRUE)
-			return 1
-	return 0
 
 /obj/item/katana/murasame
 	name = "\improper Murasame"
 	icon_state = "murasame"
 	item_state = "murasame"
-	desc = "Murasame is a katana whose blade is coated with poison, which nearly instantly kills its victim. As soon as the blade's blade pierces the skin, a deadly poison is injected into the victim's wound, killing him in a matter of seconds."
+	desc = "Murasame is a katana whose blade is coated with poison, which nearly instantly kills its victim. As soon as the katana's blade pierces the skin, a deadly poison is injected into the victim's wound, killing him in a matter of seconds."
 	block_chance = 50
 	armour_penetration = 40
 	var/next_blow

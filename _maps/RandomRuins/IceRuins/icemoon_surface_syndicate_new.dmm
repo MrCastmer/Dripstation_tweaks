@@ -7498,6 +7498,7 @@
 	pixel_x = -6
 	},
 /obj/item/clothing/under/syndicate/gorlex/elite,
+/obj/item/clothing/suit/armor/hos/syndicate/winter/armored,
 /turf/open/floor/carpet/red,
 /area/ruin/syndicate_icemoon/command)
 "SZ" = (

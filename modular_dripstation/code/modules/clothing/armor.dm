@@ -7,6 +7,27 @@
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
+/obj/item/clothing/suit/armor/examine(mob/user)
+	. = ..()
+	if(body_parts_covered || body_parts_partial_covered)
+		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_parts=1'>tag</a> listing its protected parts.</span>"
+
+/obj/item/clothing/suit/armor/Topic(href, href_list)
+	. = ..()
+	if(href_list["list_parts"])
+		var/list/readout = list("<span class='notice'><u><b>COVERAGE</u></b>")
+		if(body_parts_covered || body_parts_partial_covered)
+			if((body_parts_covered & CHEST) || (body_parts_partial_covered & CHEST))
+				readout += "\nIt has <b>CHEST</b> [(body_parts_partial_covered & CHEST) ? "partial " : ""]covered."
+			if((body_parts_covered & ARMS) || (body_parts_partial_covered & ARMS))
+				readout += "\nIt has <b>ARMS</b> [(body_parts_partial_covered & ARMS) ? "partial " : ""]covered."
+			if((body_parts_covered & LEGS) || (body_parts_partial_covered & LEGS))
+				readout += "\nIt has <b>LEGS</b> [(body_parts_partial_covered & LEGS) ? "partial " : ""]covered."
+			if(body_parts_partial_covered && partial_armor_coeff)
+				readout += "\nIt has [partial_armor_coeff] partial armoring rating."
+		readout += "</span>"
+		to_chat(usr, "[readout.Join()]")
+
 /obj/item/clothing/suit/armor/vest
 	icon_state = "armor"
 	item_state = "armor"
@@ -76,6 +97,29 @@
 	icon = 'icons/obj/clothing/suits/suits.dmi'
 	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
 
+/obj/item/clothing/suit/armor/riot/knight
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/riot/occupying
+	icon_state = "occriotsuit"
+
+/obj/item/clothing/suit/armor/secconcoat
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/secconvest
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/stormtrooper
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
+
+/obj/item/clothing/suit/armor/tdome
+	icon = 'icons/obj/clothing/suits/suits.dmi'
+	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
+
 /obj/item/clothing/head/helmet/abductor
 	flags_cover = HEADCOVERSEYES
 	icon = 'icons/obj/clothing/hats/hats.dmi'
@@ -123,7 +167,8 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	slowdown = 0.7
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list(MELEE = 40, BULLET = 40, LASER = 30,ENERGY = 30, BOMB = 50, BIO = 90, RAD = 20, FIRE = 100, ACID = 100, WOUND = 15)
+	body_parts_partial_covered = 0
+	armor = list(MELEE = 40, BULLET = 40, LASER = 30, ENERGY = 30, BOMB = 60, BIO = 90, RAD = 20, FIRE = 100, ACID = 100, WOUND = 15)
 	strip_delay = 120
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
@@ -161,12 +206,31 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 						/obj/item/ammo_box/a762))
 
 /obj/item/clothing/head/helmet/rus_helmet
-	name = "/improper Altin helmet"
+	name = "/improper SH-77 helmet"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	icon_state = "rus_helmet"
 	armor = list(MELEE = 30, BULLET = 45, LASER = 20, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 20, FIRE = 30, ACID = 50, WOUND = 5)
 
+/obj/item/clothing/head/helmet/riot/altin
+	name = "/improper Altin helmet"
+	desc = "Heavy is here."
+	icon_state = "russian_heavy_helmet"
+	armor = list(MELEE = 30, BULLET = 60, LASER = 20, ENERGY = 40, BOMB = 60, BIO = 2, RAD = 20, FIRE = 50, ACID = 50, WOUND = 15)
+
+/obj/item/clothing/head/helmet/riot/altin/black
+	name = "/improper black Altin helmet"
+	desc = "Heavy is here. Extra black."
+	icon_state = "brussian_heavy_helmet"
+
+/obj/item/clothing/head/helmet/riot/altin/kill
+	name = "/improper striped Altin helmet"
+	desc = "Heavy is here. Extra black with stripes."
+	icon_state = "killa_heavy_helmet"
+
 /obj/item/clothing/head/helmet/rus_ushanka
+	icon = 'icons/obj/clothing/hats/hats.dmi'
+	worn_icon = 'icons/mob/clothing/head/head.dmi'
 	armor = list(MELEE = 10, BULLET = 5, LASER = 5, ENERGY = 20, BOMB = 5, BIO = 50, RAD = 20, FIRE = -10, ACID = 0, WOUND = 5)
 
 /obj/item/clothing/suit/armor/vest/russian_coat
@@ -274,6 +338,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 /obj/item/clothing/head/helmet/alt/gorlex
 	name = "combat gorlex helmet"
 	icon_state = "helmetaltgorlex"
+	armor = list(MELEE = 30, BULLET = 60, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 40, ACID = 40, WOUND = 20)
 
 /obj/item/clothing/head/helmet/alt/waffle
 	name = "combat waffle helmet"
@@ -290,9 +355,9 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	icon_state = "ballistic_cybersun"
 	armor = list(MELEE = 15, BULLET = 60, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 
-/obj/item/clothing/suit/armor/vest/combat
+/obj/item/clothing/suit/armor/vest/bulletproof/combat
 	name = "combat vest"
-	desc = "Type III bulletproof armor usually issued to paramilitary groups and real soldiers alike. Protects full body and arms. Has additional armor against energy based weaponry."
+	desc = "Type III bulletproof armor usually issued to paramilitary groups and real soldiers alike. Protects full body and arms. Has slightly better armor against energy based weaponry"
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	icon_state = "combat"
@@ -405,7 +470,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	if(hitting_projectile.damage_type != BRUTE)
 		return
 
-	hitting_projectile.armour_penetration *= clothing_parent.armor_pen_remove_mod
+	hitting_projectile.armour_penetration = max(hitting_projectile.hard_armour_penetration, hitting_projectile.armour_penetration * clothing_parent.armor_pen_remove_mod)
 	playsound(owner, SFX_RICOCHET, 0.35, vary = TRUE)
 
 //////////////////HARDENED SKYRAT ARMOR//////////////////
@@ -414,7 +479,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	desc = "A large white breastplate, and a semi-flexible mail of dense panels that cover the torso. \
 		While not so incredible at directly stopping bullets, the vest is uniquely suited to cause bullets \
 		to lose much of their armor penetrating energy before any damage can be done. \
-		Standard-issue armored vest worn by the Nanotrasen Defense Team."
+		Standard-issue armored vest worn by members of the Nanotrasen Defense Team."
 	icon_state = "hardened_standard"
 	item_state = "armor"
 	blood_overlay_type = "armor"
@@ -433,7 +498,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	var/msg = "What do you do in an age where armor penetration technology keeps getting better and better, \
 		and you're quite fond of not being a corpse? The 'Muur' type armor was a pretty successful attempt at an answer \
 		to the question. Using some advanced materials, micro-scale projectile dampener fields, and a whole \
-		host of other technologies that some poor SolFed procurement general had to talked to death about, \
+		host of other technologies that some poor Terragov procurement general had to talked to death about, \
 		it offers a unique advantage over many armor piercing bullets. Why stop the bullet from piercing the armor \
 		with more armor, when you could simply force the bullet to penetrate less and get away with less protection? \
 		Some people would rather the bullet just be stopped, of course, but when you have to make choices, many choose \
@@ -450,10 +515,10 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	icon_state = "hardened_cmd"
 
 /obj/item/clothing/head/helmet/hardened
-	name = "nanotrasen defence team enclosed helmet"
+	name = "nanotrasen defense team enclosed helmet"
 	desc = "A thick-fronted helmet with extendable visor for whole face protection. The materials and geometry of the helmet \
 		combine in such a way that bullets lose much of their armor penetrating energy before any damage can be done, rather than penetrate into it. \
-		Standard-issue armored helmet worn by the Nanotrasen Defense Team."
+		Standard-issue armored helmet worn by members of the Nanotrasen Defense Team."
 	icon_state = "enclosed_standard"
 	item_state = "helmet"
 	can_toggle = 1
@@ -469,7 +534,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	dog_fashion = null
 	armor = list(MELEE = 10, BULLET = 50, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 
-/obj/item/clothing/suit/armor/hardened/Initialize(mapload)
+/obj/item/clothing/head/helmet/hardened/Initialize(mapload)
 	. = ..()
 
 	AddComponent(/datum/component/hardened)
@@ -479,7 +544,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	var/msg = "What do you do in an age where armor penetration technology keeps getting better and better, \
 		and you're quite fond of not being a corpse? The 'Muur' type armor was a pretty successful attempt at an answer \
 		to the question. Using some advanced materials, micro-scale projectile dampener fields, and a whole \
-		host of other technologies that some poor SolFed procurement general had to talked to death about, \
+		host of other technologies that some poor Terragov procurement general had to talked to death about, \
 		it offers a unique advantage over many armor piercing bullets. Why stop the bullet from piercing the armor \
 		with more armor, when you could simply force the bullet to penetrate less and get away with less protection? \
 		Some people would rather the bullet just be stopped, of course, but when you have to make choices, many choose \
@@ -540,6 +605,6 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	name = "/improper amber engineer hardened vest"
 	icon_state = "ertarmor_eng"
 
-/obj/item/clothing/suit/armor/hardened/amber/engineer
+/obj/item/clothing/suit/armor/hardened/amber/paradimensional
 	name = "/improper amber paradimensional specialist hardened vest"
 	icon_state = "ertarmor_paranormal"

@@ -8,7 +8,9 @@ GLOBAL_LIST_INIT(original_command_positions, list(
 	"Quartermaster",				/*dripstation edit*/
 	"Nanotrasen Representative",	/*dripstation edit*/
 	"Magistrate",					/*dripstation edit*/
-	"Blueshield"))					//dripstation edit
+	"Blueshield",					/*dripstation edit*/
+	"Lawyer",						/*dripstation edit*/
+	"Bridge Assistant"))			//dripstation edit
 
 GLOBAL_LIST_INIT(command_lightup_areas, typecacheof(list(
 	/area/bridge,
@@ -114,7 +116,9 @@ GLOBAL_LIST_INIT(original_civilian_positions, list(
 	"Cook",
 	"Janitor",
 	"Curator",
+	/*	//dripstation edit
 	"Lawyer",
+	*/
 	"Chaplain",
 	"Clown",
 	"Mime",
@@ -124,6 +128,14 @@ GLOBAL_LIST_INIT(original_civilian_positions, list(
 	"Artist"))
 
 GLOBAL_LIST_INIT(original_security_positions, list(
+	"Head of Security",
+	"Warden",
+	"Detective",
+	"Security Officer",			/*dripstation edit*/
+	"Corrections Officer",		/*dripstation edit*/
+	"Security Consultant"))		//dripstation edit
+
+GLOBAL_LIST_INIT(selectable_security_positions, list(
 	"Head of Security",
 	"Warden",
 	"Detective",
@@ -155,10 +167,12 @@ GLOBAL_LIST_INIT(alt_command_positions, list(
 	"Head of Engineering", "Engineering Director", "Senior Engineer",
 	"Chief Science Officer", "Head of Research", "Chief Technology Officer",
 	"Medical Director", "Head of Medical",
-	"Stock Controller", "Cargo Coordinator", "Shipping Overseer",										/*dripstation edit*/
-	"Nanotrasen Consultant", "Central Command Representative",				/*dripstation edit*/
+	"Stock Controller", "Cargo Coordinator", "Shipping Overseer",							/*dripstation edit*/
+	"Nanotrasen Consultant", "Central Command Representative",								/*dripstation edit*/
 	"TerraGov Judge",	"Nanotrasen Internal Affairs Representative",						/*dripstation edit*/
-	"Blueshield Lieutenant", "Close Protection Specialist", "Executive Protection Agent"))//dripstation edit
+	"Blueshield Lieutenant", "Close Protection Specialist", "Executive Protection Agent",	/*dripstation edit*/
+	"Internal Affair`s Observer", "Corporate Defense Attorney",								/*dripstation edit*/
+	"Captain`s Secretary",))//dripstation edit
 
 GLOBAL_LIST_INIT(alt_engineering_positions, list(
 	"Head of Engineering", "Engineering Director", "Senior Engineer",
@@ -220,7 +234,8 @@ GLOBAL_LIST_INIT(alt_security_positions, list(
 	"Brig Watchman", "Brig Superintendent", "Security Staff Sergeant", "Security Dispatcher", "Prison Supervisor",
 	"Investigator", "Forensic Analyst", "Investigative Cadet", "Private Eye", "Inspector",
 	"Threat Response Officer", "Civilian Protection Officer", "Security Cadet", "Corporate Officer", "Peacekeeper",
-	"Internal Affair`s Observer", "Corporate Defense Attorney",			/*dripstation edit*/
+	"Brig Enforcer",														/*dripstation edit*/
+	"Nanotrasen Defense Team Member", "Nanotrasen Fighting Force Veteran",	/*dripstation edit*/
 	))
 
 GLOBAL_LIST_INIT(alt_nonhuman_positions, list(

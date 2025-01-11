@@ -2,6 +2,7 @@
 	name = "mindshield implant"
 	desc = "Protects against brainwashing."
 
+/* Dripstation start
 /obj/item/implant/mindshield/tot/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>
 				<b>Name:</b> Syndicate Brainwash Denial Implant<BR>
@@ -80,6 +81,7 @@
 		target.sec_hud_set_implants()
 		return TRUE
 	return FALSE
+*/ //Dripstation end
 
 /obj/item/implant/mindshield/tot/removed(mob/target, silent = FALSE, special = 0)
 	if(..())
