@@ -1,3 +1,6 @@
+/datum/job/captain
+	supervisor_corporation = /datum/corporation/nanotrasen
+
 /datum/outfit/job/captain
 	head = /obj/item/clothing/head/beret/captain
 	glasses = /obj/item/clothing/glasses/sunglasses 
