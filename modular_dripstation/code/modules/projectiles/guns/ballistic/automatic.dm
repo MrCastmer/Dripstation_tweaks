@@ -178,9 +178,6 @@
 		. += "[initial(icon_state)]_gren"
 
 /obj/item/gun/ballistic/automatic/m90/AltClick()
-	grenade_select()
-
-/obj/item/gun/ballistic/automatic/m90/grenade_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(1)
