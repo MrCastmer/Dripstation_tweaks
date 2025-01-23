@@ -353,6 +353,10 @@
 		var/armor = run_armor_check(affecting, MELEE, armour_penetration = M.armour_penetration)
 		var/attack_direction = get_dir(M, src)
 		apply_damage(damage, M.melee_damage_type, affecting, armor, wound_bonus = M.wound_bonus, bare_wound_bonus = M.bare_wound_bonus, sharpness = M.sharpness, attack_direction = attack_direction)
+		if(M.has_desease && M.desease_type && prob(M.infect_prob))
+			var/datum/disease/D = M.desease_type
+			if(D.spread_flags & DISEASE_SPREAD_BLOOD)
+				ContactContractDisease(D)
 
 
 /mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)

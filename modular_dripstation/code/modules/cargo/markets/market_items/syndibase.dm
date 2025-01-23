@@ -352,6 +352,14 @@
 	crate_name = "Cybersun Armory Crate"
 	item = /obj/structure/closet/crate/secure/syndicate
 
+/datum/market_item/syndibase/armory/plasma
+	name = "Cybersun Armory magnetic rifle Crate"
+	desc = "Cybersun Armory brand magnetic rifle."
+	contains = list(/obj/item/gun/ballistic/automatic/powered/gauss_rifle)
+	price = CARGO_CRATE_VALUE * 40
+	crate_name = "Cybersun Armory Crate"
+	item = /obj/structure/closet/crate/secure/syndicate
+
 /datum/market_item/syndibase/armory/iweapons
 	name = "Incendiary Weapons Crate"
 	desc = "Light them up with flamethrower and three plasma grenades."

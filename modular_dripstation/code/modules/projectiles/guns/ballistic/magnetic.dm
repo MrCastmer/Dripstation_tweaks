@@ -90,8 +90,10 @@
 	name = "prototype magnetic assault rifle"
 	desc = "A Cybersun experimental rifle with advanced capacitors. Useful for putting down variety of enemies. Chambered in ferromagnetic pellets."
 	icon_state = "magauto"
-	item_state = "arg"
+	item_state = "carbine"
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/gauss
 	cell_type = /obj/item/stock_parts/cell/gun/upgraded
@@ -103,7 +105,6 @@
 	tac_reloads = FALSE //No tac reloading on advanced rifle, handle it with care
 	can_suppress = FALSE
 	burst_size = 3
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_delay = 3
 	spread = 0
 	recoil = 0.1
@@ -126,7 +127,9 @@
 	name = "prototype rail sniper rifle"
 	desc = "A Cybersun experimental rifle with advanced capacitors. Useful for putting down armored enemies. Chambered in ferromagnetic railslugs."
 	icon_state = "railgun"
-	item_state = "sniper"
+	item_state = "railgun"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/rail

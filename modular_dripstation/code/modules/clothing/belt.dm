@@ -274,17 +274,63 @@
 	item_state = "militarywebbing-coalition"
 	icon_state = "militarywebbing-coalition"
 
-/obj/item/storage/belt/military/webbing/shellgard
-	name = "Shellgard military chest rig"
-	desc = "A set of tactical webbing worn by Shellgard merks."
+/obj/item/storage/belt/military/webbing/shellguard
+	name = "Shellguard military chest rig"
+	desc = "A set of tactical webbing worn by Shellguard merks."
 	item_state = "militarywebbing-shelg"
 	icon_state = "militarywebbing-shelg"
 
-/obj/item/storage/belt/military/webbing/shellgardmed
-	name = "Shellgard medical chest rig"
-	desc = "A set of tactical webbing worn by Shellgard medical."
+/obj/item/storage/belt/military/webbing/shellguard/full
+
+/obj/item/storage/belt/military/webbing/shellguard/full/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/reagent_containers/spray/pepper, src)
+	SSwardrobe.provide_type(/obj/item/restraints/handcuffs, src)
+	SSwardrobe.provide_type(/obj/item/grenade/flashbang, src)
+	SSwardrobe.provide_type(/obj/item/assembly/flash/handheld, src)
+	SSwardrobe.provide_type(/obj/item/melee/baton/loaded, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/military/webbing/shellguard/op
+
+/obj/item/storage/belt/military/webbing/shellguard/op/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/reagent_containers/spray/pepper, src)
+	SSwardrobe.provide_type(/obj/item/restraints/handcuffs, src)
+	SSwardrobe.provide_type(/obj/item/grenade/flashbang, src)
+	SSwardrobe.provide_type(/obj/item/assembly/flash/handheld, src)
+	SSwardrobe.provide_type(/obj/item/melee/baton/loaded, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/sa450, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/sa450, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/military/webbing/shellguardmed
+	name = "Shellguard medical chest rig"
+	desc = "A set of tactical webbing worn by Shellguard medical."
 	item_state = "militarywebbing-feldsher"
 	icon_state = "militarywebbing-feldsher"
+
+/obj/item/storage/belt/military/webbing/shellguardmed/full
+
+/obj/item/storage/belt/military/webbing/shellguardmed/full/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/scalpel, src)
+	SSwardrobe.provide_type(/obj/item/retractor, src)
+	SSwardrobe.provide_type(/obj/item/cautery, src)
+	SSwardrobe.provide_type(/obj/item/stack/medical/gauze/twelve, src)
+	SSwardrobe.provide_type(/obj/item/stack/medical/suture, src)
+	SSwardrobe.provide_type(/obj/item/stack/medical/mesh, src)
+	SSwardrobe.provide_type(/obj/item/reagent_containers/autoinjector/medipen/ekit, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/military/webbing/shellguard/tech
+	desc = "A set of tactical webbing worn by Shellguard tech."
+
+/obj/item/storage/belt/military/webbing/shellguard/tech/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/handdrill, src)
+	SSwardrobe.provide_type(/obj/item/jawsoflife, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/experimental, src) //This can be changed if this is too much //It's been 5 years
+	SSwardrobe.provide_type(/obj/item/multitool, src)	//yogs: changes the multitool to the tricorder and removes the analyzer
+	SSwardrobe.provide_type(/obj/item/stack/cable_coil, src)
+	SSwardrobe.provide_type(/obj/item/extinguisher/mini, src)
+	update_appearance(UPDATE_ICON)	
 
 /obj/item/storage/belt/military/webbing/militech
 	name = "Militech medical chest rig"

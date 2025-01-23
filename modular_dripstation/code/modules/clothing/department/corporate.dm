@@ -147,6 +147,54 @@
 	icon_state = "shelg_sallet_visor"
 	tint = 5
 
+/obj/item/clothing/head/beret/sec/shellguard
+	name = "shellguard beret"
+	desc = "A robust beret with the Shellguard insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	icon_state = "shelg_guard_beret"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/sec/navywarden/shellguard	
+	name = "shellguard warden's beret"
+	desc = "A special beret with the Shellguard Warden's insignia emblazoned on it."
+	icon_state = "shelg_warden_beret"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/captain/shellguard	
+	name = "shellguard specops's beret"
+	desc = "A special beret with the Shellguard insignia emblazoned on it."
+	icon_state = "shelg_judgeberet"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/suit/hooded/wintercoat/security/shellguard
+	name = "shellguard winter coat"
+	desc = "A Shellguard brand armour-padded winter coat. It glitters with a mild ablative coating and a robust air of authority."
+	icon_state = "shelg_coat"
+	item_state = "coatsecurity"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	armor = list(MELEE = 30, BULLET = 30, LASER = 20, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 45)
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/shellguard
+
+/obj/item/clothing/head/hooded/winterhood/security/shellguard
+	name = "shellguard winter hood"
+	desc = "A red, armour-padded winter hood. Definitely not bulletproof, especially not the part where your face goes."
+	icon_state = "shelg_hood"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/suit/armor/vest/warden/shellguard
+	name = "shellguard warden's jacket"
+	desc = "Shellguard brand jacket with all the protection of a armor vest!"
+	icon_state = "warden_shelg"
+
+/obj/item/clothing/suit/armor/vest/hosjacket/shellguard
+	name = "shellguard specops's jacket"
+	desc = "Shellguard brand jacket with all the protection of a armor vest!"
+	icon_state = "shelg_judgetrench"
+
 /obj/item/clothing/under/shellguard
 	name = "shellguard employee uniform"
 	desc = "Standart uniform issued for ShellGuard employees. Red pants protects wearer from blood strains."

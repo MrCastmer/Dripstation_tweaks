@@ -126,3 +126,19 @@
 	icon_state = "arg556A"
 	ammo_type = /obj/item/ammo_casing/a762x39/ap
 	sprite_designation = "A"
+
+///Standart 7.62x54
+/obj/item/ammo_box/magazine/svd
+	name = "sniper magazine (7.62x54mm)"
+	desc = "A standard 10-round magazine filled with 7.62x54 rounds, designed for sniper rifles."
+	icon_state = ".50mag"
+	ammo_type = /obj/item/ammo_casing/a762
+	caliber = CALIBER_762X54R
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/svd/update_icon_state()
+	. = ..()
+	if(ammo_count())
+		icon_state = "[initial(icon_state)]-ammo"
+	else
+		icon_state = "[initial(icon_state)]"

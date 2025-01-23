@@ -22,7 +22,7 @@
 	can_be_held = TRUE
 	worn_slot_flags = ITEM_SLOT_HEAD
 	held_lh = 'modular_dripstation/icons/mob/inhands/mobs_lefthand.dmi'
-	held_lh = 'modular_dripstation/icons/mob/inhands/mobs_righthand.dmi'
+	held_rh = 'modular_dripstation/icons/mob/inhands/mobs_righthand.dmi'
 	held_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS

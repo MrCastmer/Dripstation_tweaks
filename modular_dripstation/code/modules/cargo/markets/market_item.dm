@@ -28,6 +28,8 @@
 	var/stock_max = 0
 	/// Probability for this item to be available. Used by SSblackmarket on init.
 	var/availability_prob = 0
+	/// Additional market_item position, added by this market position.
+	var/datum/market_item/added_market_item
 
 /datum/market_item/New()
 	if(isnull(price))

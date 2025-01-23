@@ -84,3 +84,14 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/waffle/unrestricted
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/doublebarrel
+	item_state = "shotgun_db"
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/64x_guns_left.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/64x_guns_right.dmi'
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/improvised
+	item_state = "ishotgun"
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
+	item_state = "ishotgun_sawn"

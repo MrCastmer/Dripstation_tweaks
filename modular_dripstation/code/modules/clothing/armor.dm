@@ -146,11 +146,11 @@ obj/item/clothing/head/helmet/swat/nanotrasen
 	desc = "An extremely robust helmet with the Nanotrasen logo emblazoned on the top."
 
 obj/item/clothing/head/helmet/swat/nanotrasen/ert
-	name = "/improper amber SWAT helmet"
+	name = "\improper amber SWAT helmet"
 	icon_state = "erthelmet"
 
 obj/item/clothing/head/helmet/swat/nanotrasen/med
-	name = "/improper amber medic SWAT helmet"
+	name = "\improper amber medic SWAT helmet"
 	icon_state = "erthelmet_med"
 
 /obj/item/clothing/suit/space/swat
@@ -206,25 +206,25 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 						/obj/item/ammo_box/a762))
 
 /obj/item/clothing/head/helmet/rus_helmet
-	name = "/improper SH-77 helmet"
+	name = "\improper SH-77 helmet"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 	icon_state = "rus_helmet"
-	armor = list(MELEE = 30, BULLET = 45, LASER = 20, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 20, FIRE = 30, ACID = 50, WOUND = 5)
+	armor = list(MELEE = 30, BULLET = 35, LASER = 10, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 20, FIRE = 30, ACID = 50, WOUND = 5)
 
 /obj/item/clothing/head/helmet/riot/altin
-	name = "/improper Altin helmet"
+	name = "\improper Altin helmet"
 	desc = "Heavy is here."
 	icon_state = "russian_heavy_helmet"
 	armor = list(MELEE = 30, BULLET = 60, LASER = 20, ENERGY = 40, BOMB = 60, BIO = 2, RAD = 20, FIRE = 50, ACID = 50, WOUND = 15)
 
 /obj/item/clothing/head/helmet/riot/altin/black
-	name = "/improper black Altin helmet"
+	name = "\improper black Altin helmet"
 	desc = "Heavy is here. Extra black."
 	icon_state = "brussian_heavy_helmet"
 
 /obj/item/clothing/head/helmet/riot/altin/kill
-	name = "/improper striped Altin helmet"
+	name = "\improper striped Altin helmet"
 	desc = "Heavy is here. Extra black with stripes."
 	icon_state = "killa_heavy_helmet"
 
@@ -582,7 +582,7 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 
 
 /obj/item/clothing/suit/armor/hardened/amber
-	name = "/improper amber trooper hardened vest"
+	name = "\improper amber trooper hardened vest"
 	desc = "Nanotrasen combat variant of the 'Muur' type armor. While if offers tactical grade protection \
 		the semi-flexible composite with nanocarbone matrix provides special defence that cause bullets \
 		to lose some of their armor penetrating energy before any damage can be done."
@@ -594,17 +594,50 @@ obj/item/clothing/head/helmet/swat/nanotrasen/med
 	armor = list(MELEE = 40, BULLET = 60, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
 
 /obj/item/clothing/suit/armor/hardened/amber/command
-	name = "/improper amber commander hardened vest"
+	name = "\improper amber commander hardened vest"
 	icon_state = "ertarmor_cmd"
 
 /obj/item/clothing/suit/armor/hardened/amber/medic
-	name = "/improper amber medic hardened vest"
+	name = "\improper amber medic hardened vest"
 	icon_state = "ertarmor_med"
 
 /obj/item/clothing/suit/armor/hardened/amber/engineer
-	name = "/improper amber engineer hardened vest"
+	name = "\improper amber engineer hardened vest"
 	icon_state = "ertarmor_eng"
 
 /obj/item/clothing/suit/armor/hardened/amber/paradimensional
-	name = "/improper amber paradimensional specialist hardened vest"
+	name = "\improper amber paradimensional specialist hardened vest"
 	icon_state = "ertarmor_paranormal"
+
+
+//////SHELGUARD//////
+
+/obj/item/clothing/head/helmet/shellguard
+	name = "\improper shellguard helmet"
+	desc = "Standart issue helmet with Shellguard marking."
+	icon_state = "shelg_helmet"
+
+/obj/item/clothing/suit/armor/vest/shellguard
+	name = "\improper shellguard vest"
+	desc = "Standart issue vest with Shellguard marking."
+	icon_state = "shelgvest"
+
+/obj/item/clothing/suit/armor/vest/shellguard/brand
+	name = "\improper shellguard brand vest"
+	desc = "Standart issue vest with Shellguard marking. Has BIG logo on their chest."
+	icon_state = "shelgbrandvest"
+
+/obj/item/clothing/suit/armor/riot/shellguard
+	name = "\improper shellguard riot vest"
+	desc = "Standart issue riot vest with Shellguard marking."
+	icon_state = "riot_shelg"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/combat/shellguard
+	name = "\improper combat shellguard vest"
+	desc = "Type III bulletproof armor issued to Shellguard heavy troopers. Protects full body, legs and arms. Has slightly better armor against energy based weaponry."
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	icon_state = "bulletproof_shelg"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+	heat_protection = CHEST|GROIN|ARMS|LEGS

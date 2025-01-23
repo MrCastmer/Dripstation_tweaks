@@ -6,6 +6,11 @@
 /// Gun is shooting.
 #define AUTOFIRE_STAT_FIRING (1<<2)
 
+///When a gun is switched to automatic fire mode
+#define COMSIG_GUN_AUTOFIRE_SELECTED "gun_autofire_selected"
+///When a gun is switched off of automatic fire mode
+#define COMSIG_GUN_AUTOFIRE_DESELECTED "gun_autofire_deselected"
+
 #define COMSIG_AUTOFIRE_ONMOUSEDOWN "autofire_onmousedown"
 	#define COMPONENT_AUTOFIRE_ONMOUSEDOWN_BYPASS (1<<0)
 #define COMSIG_AUTOFIRE_SHOT "autofire_shot"

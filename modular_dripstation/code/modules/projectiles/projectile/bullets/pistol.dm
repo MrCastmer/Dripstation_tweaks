@@ -6,6 +6,7 @@
 
 /obj/projectile/bullet/c10mm
 	damage = 25
+	stamina = 10
 	wound_bonus = -25
 
 /obj/projectile/bullet/c10mm/cs
@@ -25,3 +26,4 @@
 
 /obj/projectile/bullet/incendiary/c10mm
 	damage = 19
+	stamina = 10

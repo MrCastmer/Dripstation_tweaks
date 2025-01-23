@@ -19,14 +19,18 @@
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/wake_up)
+	RegisterSignal(parent, COMSIG_GUN_AUTOFIRE_SELECTED, .proc/wake_up)
+	RegisterSignals(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED, COMSIG_GUN_AUTOFIRE_DESELECTED), .proc/autofire_off)
 	if(_autofire_shot_delay)
 		autofire_shot_delay = _autofire_shot_delay
-	if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(gun.loc))
+	if(ismob(gun.loc))
 		var/mob/user = gun.loc
 		wake_up(src, user)
 
 
 /datum/component/automatic_fire/Destroy()
+	UnregisterSignal(parent, list(COMSIG_ITEM_DROPPED, COMSIG_QDELETING, COMSIG_GUN_AUTOFIRE_DESELECTED, \
+	COMSIG_GUN_AUTOFIRE_SELECTED, COMSIG_ITEM_EQUIPPED))
 	autofire_off()
 	return ..()
 
@@ -45,10 +49,14 @@
 	if(autofire_stat == AUTOFIRE_STAT_FIRING)
 		stop_autofiring() //Let's stop shooting to avoid issues.
 		return
+	var/obj/item/gun/parent_gun = parent
+
 	if(iscarbon(user))
-		var/mob/living/carbon/arizona_ranger = user
-		if(arizona_ranger.is_holding(parent))
-			autofire_on(arizona_ranger.client)
+		var/mob/living/carbon/shooter = user
+		if(shooter.is_holding(parent) && parent_gun.fire_select == SELECT_FULLY_AUTOMATIC)
+			autofire_on(shooter.client)
+		else
+			autofire_off()
 
 
 // There is a gun and there is a user wielding it. The component now waits for the mouse click.
@@ -65,7 +73,7 @@
 	if(!QDELETED(shooter))
 		RegisterSignal(shooter, COMSIG_MOB_LOGOUT, .proc/autofire_off)
 		UnregisterSignal(shooter, COMSIG_MOB_LOGIN)
-	RegisterSignals(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))	//dripstation edit COMSIG_QDELETING check for bugs
+	RegisterSignals(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off), override = TRUE)	//dripstation edit COMSIG_QDELETING check for bugs
 	parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, /obj/item/gun/.proc/autofire_bypass_check)
 	parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, /obj/item/gun/.proc/do_autofire)
 

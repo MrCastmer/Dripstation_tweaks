@@ -127,7 +127,12 @@
 /// The non-existent CentCom Bar
 #define ACCESS_CENT_BAR 110
 
-#define ACCESS_TERRAGOV 125	//dripstation terragov military
+// The Terragov&Corps
+#define ACCESS_TERRAGOV 125	//dripstation terragov general
+#define ACCESS_UNN 126	//dripstation UNN
+#define ACCESS_SHELLGUARD 127	//dripstation Shellguard
+#define ACCESS_HEPHAESTUS 128	//dripstation Hephaestus Industries
+#define ACCESS_TERRAGOVMC 129	//dripstation terragov military
 
 	//The Syndicate
 /// General Syndicate Access. Includes Syndicate mechs and ruins.

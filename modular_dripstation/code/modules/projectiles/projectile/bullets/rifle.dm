@@ -53,6 +53,7 @@
 /obj/projectile/bullet/a762x39
 	name = "7.62x39mm bullet"
 	damage = 32
+	stamina = 27
 	bare_wound_bonus = 10
 	wound_bonus = -20
 	armour_penetration = 0
@@ -61,6 +62,7 @@
 /obj/projectile/bullet/incendiary/a762x39
 	name = "7.62x39mm incendiary bullet"
 	damage = 24
+	stamina = 27
 	wound_bonus = -25
 	fire_stacks = 2
 	armour_penetration = 10

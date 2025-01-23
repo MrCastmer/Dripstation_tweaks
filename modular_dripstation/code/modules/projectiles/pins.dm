@@ -7,7 +7,7 @@
 		if(jammed)
 			. += "<span class='boldwarning'><b>Warning: PIN MALFUNCTION DETECTED.</b></span>"
 
-/obj/item/firing_pin/AltClick(mob/living/user)
+/obj/item/firing_pin/CtrlClick(mob/living/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(jammed)

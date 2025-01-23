@@ -204,8 +204,8 @@
 							emote("me [pick(emote_hear)]", 2, TRUE)
 				else
 					say(pick(speak), forced = "poly")
-					if(speak_sound)
-						playsound(loc, pick(speak_sound), 25, 1, -1)
+					if(length(speak_sound))	//dripstation edit
+						playsound(loc, pick(speak_sound), 25, 1, -1)	//dripstation edit
 			else
 				if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
 					emote("me", 1, pick(emote_see))
@@ -299,8 +299,8 @@
 /mob/living/simple_animal/say_mod(input, list/message_mods = list())
 	if(length(speak_emote))
 		verb_say = pick(speak_emote)
-		if(speak_sound)
-			playsound(loc, pick(speak_sound), 25, 1, -1)
+		if(length(speak_sound))	//dripstation edit
+			playsound(loc, pick(speak_sound), 25, 1, -1)	//dripstation edit
 	return ..()
 
 /mob/living/simple_animal/emote(act, m_type=1, message = null, intentional = FALSE, is_keybind = FALSE)

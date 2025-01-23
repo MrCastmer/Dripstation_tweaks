@@ -39,7 +39,7 @@
 	worn_slot_flags = ITEM_SLOT_NECK
 	*/
 	held_lh = 'modular_dripstation/icons/mob/inhands/mobs_lefthand.dmi'
-	held_lh = 'modular_dripstation/icons/mob/inhands/mobs_righthand.dmi'
+	held_rh = 'modular_dripstation/icons/mob/inhands/mobs_righthand.dmi'
 	worn_slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	obj_damage = 0
 	poison_per_bite = 10

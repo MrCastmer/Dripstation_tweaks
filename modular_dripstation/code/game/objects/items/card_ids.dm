@@ -134,7 +134,6 @@
 		"Magistrate" = list("nanotrasen","red"),
 		"Nanotrasen Representative" = list("nanotrasen","gold"),
 		"Explorer" = list("cargo","purple"),
-		"Bridge Assistant" = list("captain","green"),
 		"Corrections Officer" = list("security","white"),
 		"Repair Worker Replika" = list("nanotrasen","silver"),
 		"Customs Agent" = list("cargo","red"),
@@ -162,6 +161,7 @@
 		"TerraGov Infantryman",
 		"TerraGov Military",
 		"TerraGov Military Officer",
+		"Shellguard Mercenary",
 	)
 	if(job in idfluff)
 		has_fluff = TRUE
@@ -203,13 +203,30 @@
 	icon_state = "dogtag"
 	item_state = "dogtag"
 	has_fluff = TRUE
-	registered_name = "TerraGov Militant"
+	//registered_name = "TerraGov Militant"
 	assignment = "TerraGov Military"
 	originalassignment = "TerraGov Military"
+	resistance_flags = UNACIDABLE | ACID_PROOF	//xenos scum
 
 /obj/item/card/id/idtags/ID_fluff()
-	has_fluff = FALSE
 	return
+
+/obj/item/card/id/idtags/update_label(newname, newjob)
+	if(newname || newjob)
+		name = "[(!newname)	? "dog ID-tag"	: "[newname]'s Dog ID-tag"][(!newjob) ? "" : " ([newjob])"]"
+		return
+
+	name = "[(!registered_name)	? "dog ID-tag"	: "[registered_name]'s Dog ID-tag"][(!assignment) ? "" : " ([assignment])"]"
+
+//a card that can't register a bank account IC
+/obj/item/card/id/idtags/AltClick(mob/living/user)
+	return FALSE
+
+/obj/item/card/id/idtags/shellguard
+	desc = "A shellguard dog tag."
+	//registered_name = "Shellguard Mercenary"
+	assignment = "Shellguard Mercenary"
+	originalassignment = "Shellguard Mercenary"
 
 /obj/item/card/id/deathsquad
 	name = "\improper BlackOps ID"

@@ -2,7 +2,16 @@
 	maxHealth = 70
 	health = 70
 	obj_damage = 0
+	attack_vis_effect = ATTACK_EFFECT_BITE
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	desease_prob = 5
+	infect_prob = 30
+	desease_type = /datum/disease/rabies
+
+/mob/living/simple_animal/hostile/asteroid/wolf/examine(mob/user)
+	. = ..()
+	if(has_desease && istype(desease_type, /datum/disease/rabies))
+		. += span_warning("It strangely drools!")
 
 /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin
 	name = "ice vulpkanin"
@@ -13,6 +22,12 @@
 	icon_dead = "vulpa"
 	flip_on_death = TRUE
 	attacktext = "hugs and violates"
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "hits"
+	attacktext = "claws"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	friendly = "vulpa hugs"
 	vision_range = 9
 	aggro_vision_range = 9
 	maxHealth = 200
@@ -20,8 +35,11 @@
 	wound_bonus = 0
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
+	attack_vis_effect = ATTACK_EFFECT_CLAW
 	obj_damage = 15	// IT`S JOHNY
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	desease_prob = 50
+	var/violating = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin/examine_more(mob/user)
 	. = ..()
@@ -29,6 +47,60 @@
 		- Durak tvoi ded."
 
 	return list(span_notice("<i>[msg]</i>"))
+
+/mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin/ListTargets()
+	. = oview(vision_range, targets_from) //get list of things in vision range
+	var/list/conscious_mobs = list()
+	var/list/violation_target = list()
+	for(var/HM in .)
+		//Yum a tasty white woman
+		if(ishuman(HM))
+			var/mob/living/carbon/human/H = HM
+			if(!(H.mobility_flags & MOBILITY_STAND))
+				violation_target += HM
+	for(var/LC in .)
+		if(isliving(LC))
+			var/mob/living/L = LC
+			if(L.stat == CONSCIOUS)
+				conscious_mobs += LC
+
+	// if no victims around let`s find target to violate
+	if(length(conscious_mobs) == 0)
+		//Filter violation target
+		return violation_target
+	return conscious_mobs
+
+/mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin/AttackingTarget()
+	if(violating)
+		return
+	if(istype(target, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = target
+		if(!(H.mobility_flags & MOBILITY_STAND))
+			if(ishumanbasic(H) && H.gender == FEMALE && prob(40))	//white woman moment
+				visible_message(span_notice("[src]] tries to violate [H]!"), span_notice("You trying to violate [H]!"))
+				violating = TRUE
+				H.apply_effect(4 SECONDS, EFFECT_PARALYZE)
+				H.apply_effect(10 SECONDS, EFFECT_KNOCKDOWN)
+				if(do_after(src, 3 SECONDS))
+					visible_message(span_notice("[src]] in a few quick moves violates [H] and leaves some liquid on their skin!"), span_notice("You violate [H]!"))
+					do_attack_animation(H, ATTACK_EFFECT_BITE)
+					if(has_desease && desease_type)
+						var/datum/disease/D = desease_type
+						if(D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS)
+							ContactContractDisease(D)
+				violating = FALSE
+			else if(H.stat != DEAD)
+				visible_message(span_notice("[src]] bites off a piece of meat from [H]!"), span_notice("You bite [H]!"))
+				do_attack_animation(H, ATTACK_EFFECT_BITE)
+				return ..()
+	else
+		return ..()
+
+/mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin/handle_automated_action()
+	if(violating)
+		return 0
+	else
+		return ..()
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp
 	name = "ice whelp"
