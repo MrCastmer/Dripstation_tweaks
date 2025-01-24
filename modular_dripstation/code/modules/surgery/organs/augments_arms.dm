@@ -1,5 +1,5 @@
 /obj/item/organ/cyberimp/arm/toolset
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "multitool_utility"
 
 /obj/item/organ/cyberimp/arm/toolset/surgery
@@ -21,7 +21,7 @@
 	toolspeed = 0.33
 
 /obj/item/organ/cyberimp/arm/esword
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "arm_energy"
 	contents = newlist(/obj/item/melee/transforming/energy/blade)
 	syndicate_implant = TRUE
@@ -33,7 +33,7 @@
 /obj/item/organ/cyberimp/arm/hardlight
 	name = "arm-mounted hardlight blade"
 	desc = "Combat arm with highly dangerous cybernetic implant that can project a deadly blade of concentrated energy."
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "arm_hardlight"
 	contents = newlist(/obj/item/melee/transforming/energy/blade/hardlight)
 
@@ -41,34 +41,34 @@
 	syndicate_implant = TRUE
 
 /obj/item/organ/cyberimp/arm/medibeam
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "multitool_syndicatemedical"
 
 /obj/item/organ/cyberimp/arm/flash
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "arm_flash"
 
 /obj/item/organ/cyberimp/arm/flash/rev
 	icon_state = "arm_revflash"
 
 /obj/item/organ/cyberimp/arm/baton
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "arm_baton"
 
 /obj/item/organ/cyberimp/arm/combat
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "multitool_combat"
 
 /obj/item/organ/cyberimp/arm/syndie_mantis
 	desc = "Modernized mantis blades designed and coined by Gorlex operatives. Energy actuators makes the blade a much deadlier weapon and provides protection."
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "mantis_syndicate"
 
 /obj/item/organ/cyberimp/arm/nt_mantis
 	name = "N.A.N.O. mantis blade implants"
 	desc = "Retractable arm-blade implants to get you out of a pinch. This one provides extra wound chances.  Wielding two will let you double-attack."
 	contents = newlist(/obj/item/mantis/blade/NT)
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "mantis_militech"
 
 /obj/item/organ/cyberimp/arm/militech_mantis
@@ -92,7 +92,7 @@
 	contents = newlist(/obj/item/mantis/blade/hfreq)
 
 /obj/item/mantis/blade
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/augment_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/augment_righthand.dmi'
 	icon_state = "mantis"
@@ -124,9 +124,9 @@
 	force = 20
 
 /obj/item/organ/cyberimp/arm/stechkin_implant
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "popout_stechkin"
 
 /obj/item/gun/ballistic/automatic/pistol/implant
-	icon = "modular_dripstation/icons/obj/augments.dmi"
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "popout_stechkin"
