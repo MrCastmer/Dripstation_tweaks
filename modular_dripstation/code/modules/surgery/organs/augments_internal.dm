@@ -9,6 +9,7 @@
 /obj/item/organ/cyberimp/neural_link
 	name = "basic neural link"
 	desc = "Neural link is critical for linking cybernetics to the central nervous system. Uses nanotech to establish an interface between the module and the nervous system in the body."
+	icon = 'modular_dripstation/icons/obj/augments.dmi'
 	icon_state = "brain_implant"
 	implant_overlay = "brain_implant_overlay"
 	slot = ORGAN_SLOT_NEURALWARE
