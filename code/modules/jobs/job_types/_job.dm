@@ -44,6 +44,10 @@
 	/// Supervisors, who this person answers to directly
 	var/supervisors = ""
 
+	/// The corporation, that person should belongs to by job. NT standart.	Dripstation edit
+	var/datum/corporation/supervisor_corporation = /datum/corporation/nanotrasen/management	//Dripstation edit
+	var/list/alt_supervisor_corporations = list()	//Dripstation edit
+
 	/// What kind of mob type joining players with this job as their assigned role are spawned as.
 	var/spawn_type = /mob/living/carbon/human
 
@@ -161,7 +165,10 @@
 	if(liver)
 		for(var/trait in liver_traits)
 			ADD_TRAIT(liver, trait, JOB_TRAIT)
+	/* Dripstation edit start
 	spawned.mind.add_employee(/datum/corporation/nanotrasen)
+	*/
+	spawned.mind.add_employee(supervisor_corporation)	//	Dripstation edit end
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
@@ -361,13 +368,14 @@
 			C.registered_account = B
 			B.bank_cards += C
 		H.sec_hud_set_ID()
+		H.equip_to_slot_if_possible(C, ITEM_SLOT_ID)	//dripstation edit
 
 	if(pda_type)
 		var/obj/item/modular_computer/PDA = new pda_type()
 		if(istype(PDA))
 			H.equip_to_slot_if_possible(PDA, pda_slot)
+/*	dripstation edit
 			PDA.InsertID(C)
-/*
 			H.equip_to_slot_if_possible(PDA, ITEM_SLOT_ID)
 
 			PDA.update_label()
@@ -376,8 +384,8 @@
 		else
 			H.equip_to_slot_if_possible(C, ITEM_SLOT_ID)
 	else
-		*/
 		H.equip_to_slot_if_possible(C, ITEM_SLOT_ID)
+*/
 
 	if(H.stat != DEAD)//if a job has a gps and it isn't a decorative corpse, rename the GPS to the owner's name
 		for(var/obj/item/gps/G in H.get_all_contents())
