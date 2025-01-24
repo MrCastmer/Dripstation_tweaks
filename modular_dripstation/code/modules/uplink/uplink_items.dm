@@ -220,6 +220,16 @@
 /datum/uplink_item/ammo/pistol
 	desc = "A box that contains two additional 10-round 10mm magazines; compatible with the WSP-10M Pistol."
 
+/datum/uplink_item/role_restricted/velvetfu
+	name = "Velvet-Fu VHS tape"
+	desc = "Velvet-Fu is a knock-off Hollywood Martial Art.\
+			Has a notice, 'Removes the ability to Grab/Push'.\
+			Has been modified to beam its knowledge directly into your eyes, removing the need for a TV."
+	item = /obj/item/book/granter/martial/velvetfu
+	cost = 7
+	restricted_roles = list("Janitor")
+	manufacturer = /datum/corporation/traitor/cybersun
+
 /datum/uplink_item/ammo/pistol/random
 	name = "Random 10mm Handgun Magazines"
 	desc = "A box that contains four random 10-round 10mm magazines at a discount; compatible with the WSP-10M Pistol."
