@@ -12,6 +12,7 @@
 	allow_temp_override = FALSE
 	var/datum/action/receding_stance/recedingstance = new/datum/action/receding_stance()
 	var/datum/action/twisted_stance/twistedstance = new/datum/action/twisted_stance()
+	display_combos = TRUE
 
 /datum/martial_art/velvetfu/teach(mob/living/H, make_temporary = FALSE)
 	if(..())
@@ -26,19 +27,19 @@
 
 /datum/martial_art/velvetfu/proc/check_streak(mob/living/A, mob/living/D)
 	if(findtext(streak, FLYING_AXEKICK_COMBO))
-		streak = ""
+		reset_streak()
 		flyingAxekick(A,D)
 		return TRUE
 	if(findtext(streak, GOAT_HEADBUTT_COMBO))
-		streak = ""
+		reset_streak()
 		goatHeadbutt(A,D)
 		return TRUE
 	if(findtext(streak, FULL_THRUST_COMBO))
-		streak = ""
+		reset_streak()
 		fullThrust(A,D)
 		return TRUE
 	if(findtext(streak, MINOR_IRIS_COMBO))
-		streak = ""
+		reset_streak()
 		minorIris(A,D)
 	return FALSE
 
@@ -118,7 +119,7 @@
 		span_userdanger("You untwist yourself in pain!"),
 	)
 	if(owner.mind.martial_art.streak == TWISTED_STANCE)
-		owner.mind.martial_art.streak = ""
+		owner.mind.martial_art.reset_streak()
 
 
 /*

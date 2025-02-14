@@ -1776,8 +1776,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 						shove_on_table = TRUE
 				if(shove_on_table)
 					target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
-					user.visible_message(span_danger("[user.name] shoves [target.name] onto \the table!"),
-				span_danger("You shove [target.name] onto \the table!"), null, COMBAT_MESSAGE_RANGE)
+					user.visible_message(span_danger("[user.name] shoves [target.name] onto the table!"),
+				span_danger("You shove [target.name] onto the table!"), null, COMBAT_MESSAGE_RANGE)
 					target.throw_at(target_shove_turf, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
 					user.do_attack_animation(target, ATTACK_EFFECT_DISARM2) //dripstation edit
 					playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1) //dripstation edit

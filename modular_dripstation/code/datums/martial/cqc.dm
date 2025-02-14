@@ -1,6 +1,34 @@
+/datum/martial_art/cqc
+	display_combos = TRUE
+
+/datum/martial_art/cqc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(!(can_use(A) || can_use(D)))
+		return FALSE
+	if(findtext(streak,SLAM_COMBO))
+		reset_streak()
+		Slam(A,D)
+		return TRUE
+	if(findtext(streak,KICK_COMBO))
+		reset_streak()
+		Kick(A,D)
+		return TRUE
+	if(findtext(streak,RESTRAIN_COMBO))
+		reset_streak()
+		Restrain(A,D)
+		return TRUE
+	if(findtext(streak,PRESSURE_COMBO))
+		reset_streak()
+		Pressure(A,D)
+		return TRUE
+	if(findtext(streak,CONSECUTIVE_COMBO))
+		reset_streak()
+		Consecutive(A,D)
+		return TRUE
+	return FALSE
+
 /datum/martial_art/cqc/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(A.a_intent == INTENT_GRAB && A!=D && (can_use(A) && can_use(D))) // A!=D prevents grabbing yourself
-		add_to_streak("G",D)
+		add_to_streak("G", D)
 		if(check_streak(A,D)) //if a combo is made no grab upgrade is done
 			return TRUE
 		if(D.grabbedby(A))

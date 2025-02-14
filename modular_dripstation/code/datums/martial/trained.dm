@@ -13,7 +13,7 @@
 	if(!(can_use(A) || can_use(D)))
 		return FALSE
 	if(findtext(streak,LOW_RESTRAIN_COMBO))
-		streak = ""
+		reset_streak()
 		LowRestrain(A,D)
 		return TRUE
 	return FALSE
@@ -91,6 +91,10 @@
 		armlock(A, D)
 		if(A.grab_state < GRAB_NECK)
 			A.grab_state = GRAB_NECK
+		var/checkpull = "A do not pull D"
+		if(A.pulling == D)
+			checkpull = "A pull D"
+		to_chat(A, span_warning("Current grab state is [A.grab_state], [checkpull]!"))
 	else
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 		var/picked_hit_type = pick("punched effectively", "kicked effectively", "tacticooled")
