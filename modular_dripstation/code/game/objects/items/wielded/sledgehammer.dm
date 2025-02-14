@@ -1,7 +1,5 @@
 /obj/item/melee/sledgehammer
 	var/force_wielded_twohand = 15
-	slowdown = 0.1	//You need some strength to cary this shit
-	item_flags = SLOWS_WHILE_IN_HAND
 
 /obj/item/melee/sledgehammer/Initialize(mapload)
 	. = ..()
@@ -10,7 +8,7 @@
 		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
 		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
 		require_twohands = TRUE, \
-		wielded_stats = list(SWING_SPEED = 1.5, ENCUMBRANCE = 0.7, ENCUMBRANCE_TIME = 1 SECONDS, REACH = 1, DAMAGE_LOW = 0, DAMAGE_HIGH = 0), \
+		wielded_stats = list(SWING_SPEED = 1.5, ENCUMBRANCE = 0.5, ENCUMBRANCE_TIME = 1 SECONDS, REACH = 1, DAMAGE_LOW = 0, DAMAGE_HIGH = 0), \
 	)
 	AddComponent(/datum/component/cleave_attack, \
 		arc_size=180, \
@@ -19,7 +17,7 @@
 	) // big and heavy hammer makes wide arc
 
 /obj/item/melee/sledgehammer/security
-	name = "\improper security kuvalda"
+	name = "/improper security kuvalda"
 	desc = "Tactical version of sledgehammer with more unbalanced weight. Was designed to harm walls, not crewmembers."
 	icon = 'modular_dripstation/icons/obj/weapons/security.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/back.dmi'
@@ -27,8 +25,7 @@
 	item_state = "sledgehammer"
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
-	slowdown = 0.3	//You need some strength to cary this shit
-	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.2	//You need some strength to cary this shit
 	armour_penetration = -10//Tactical, but still not very practical
 	throwforce = 30			//OUCH
 	throw_range = 3 		//Doesn't throw very far
@@ -38,27 +35,9 @@
 
 /obj/item/melee/sledgehammer/security/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	user.changeNext_move(1.4 SECONDS)
-	if(ishuman(user))
-		var/mob/living/carbon/human/U = user
-		U.adjustStaminaLoss(20)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
+		H.adjustStaminaLoss(10)
 		var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
-		H.throw_at(throw_target, 2, 4)
-		to_chat(H, span_danger("\The [src] hits you very hard and throws you back!"))
-
-/obj/item/melee/sledgehammer/security/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, quickstart = TRUE)
-	thrower.changeNext_move(2.4 SECONDS)
-	if(ishuman(thrower))
-		var/mob/living/carbon/human/T = thrower
-		T.adjustStaminaLoss(40)
-	return ..()
-
-/obj/item/melee/sledgehammer/security/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	. = ..()
-	if(ishuman(hit_atom))
-		var/mob/living/carbon/human/H = hit_atom
-		var/atom/throw_target = get_edge_target_turf(H, get_dir(src, get_step_away(H, src)))
-		H.throw_at(throw_target, 2, 4)
+		H.throw_at(throw_target, 200, 4)
 		to_chat(H, span_danger("\The [src] hits you very hard and throws you back!"))

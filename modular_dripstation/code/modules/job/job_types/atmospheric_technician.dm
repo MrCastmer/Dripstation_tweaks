@@ -1,7 +1,3 @@
-/datum/job/atmos
-	supervisor_corporation = /datum/corporation/nanotrasen/interstellar_industries
-	alt_supervisor_corporations = list(/datum/corporation/hephaestus/industrial)
-
 /datum/outfit/job/atmos
 	backpack = /obj/item/storage/backpack/industrial/atmos
 	satchel = /obj/item/storage/backpack/satchel/atmos

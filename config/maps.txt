@@ -15,11 +15,6 @@ endmap
 
 # Production-level maps.
 
-map icemeta_drip
-	#default
-	votable
-endmap
-
 map yogstation
 	#default
 	voteweight 0.7

@@ -63,12 +63,6 @@
 	var/knife_x_offset = 0
 	var/knife_y_offset = 0
 
-	var/can_cell = FALSE  //if a cell can be added or removed if it already has one.
-	var/cell_removing_time = 2 SECONDS
-	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
-	var/cell_type = null //for gun purposes
-	var/load_cell_sound = null
-
 	var/list/available_attachments = list() // What attachments can this gun have
 	var/max_attachments = 0 // How many attachments can this gun hold, recommend not going over 5
 
@@ -155,7 +149,6 @@
 	if(!no_pin_required)
 		if(pin)
 			. += "It has \a [pin] installed."
-			. += "The [pin] is [pin.jammed ? "malfunctioning" : "combat ready"]."
 		else
 			. += "It doesn't have a <b>firing pin</b> installed, and won't fire."
 
@@ -175,12 +168,6 @@
 	
 	for(var/obj/item/attachment/A in current_attachments)
 		. += "It has \a [A] affixed to it."
-
-	if(can_cell)
-		if(cell)
-			. += "It has \a [cell] inserted into it."
-		else
-			. += "It has a place for cell in it."
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -317,13 +304,7 @@
 	if(no_pin_required)
 		return TRUE
 	if(pin)
-		if(pin.jammed)
-			to_chat(user, span_warning("[src]'s trigger is locked. Bloody pin jammed!"))
-			return FALSE
-		else if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
-		/* Dripstation edit
 		if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
-		*/
 			return TRUE
 		else
 			pin.auth_fail(user)
@@ -518,26 +499,8 @@
 		to_chat(user, span_notice("You attach [K] to [src]'s bayonet lug."))
 		bayonet = K
 		update_appearance()
-	else if (istype(I, /obj/item/stock_parts/cell/gun))
-		if(!can_cell || cell) //ensure the gun has an attachment point available, and that the cell is compatible with it.
-			return ..()
-		if(!cell_insert(I, user))
-			return
 	else
 		return ..()
-
-/obj/item/gun/proc/cell_insert(obj/item/I, mob/user)
-	if(do_after(user, cell_removing_time, src, timed_action_flags = IGNORE_USER_LOC_CHANGE))
-		if(!user.transferItemToLoc(I, src))
-			return FALSE
-		var/obj/item/stock_parts/cell/gun/C = I
-		to_chat(user, span_notice("You attach [C] to [src]."))
-		cell = C
-		update_appearance()
-		playsound(src, load_cell_sound, 40, TRUE)
-		return TRUE
-	else
-		return FALSE
 
 /obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -548,19 +511,13 @@
 	
 	var/has_fl = FALSE
 	var/has_bayo = FALSE
-	var/has_cell = FALSE
 	var/amt_modular = LAZYLEN(current_attachments)
 	if(can_flashlight && gun_light)
 		has_fl = TRUE
 	if(bayonet && can_bayonet)
 		has_bayo = TRUE
-	if(cell && can_cell)
-		has_cell = TRUE
 	
-	/* Dripstation edit
 	var/attachments_amt = amt_modular + has_fl + has_bayo
-	*/
-	var/attachments_amt = amt_modular + has_fl + has_bayo + has_cell	// Dripstation edit
 	if(attachments_amt > 1) //give them a choice instead of removing both
 		var/list/possible_items = list(gun_light, bayonet)
 		possible_items += current_attachments
@@ -577,9 +534,6 @@
 
 	else if(has_bayo) //if it has a bayonet, and the bayonet can be removed
 		return remove_gun_attachment(user, I, bayonet, "unfix")
-
-	else if(has_cell) //if it has a cell, and the cell can be removed, Dripstation edit
-		return remove_gun_attachment(user, I, cell, "unscrewed") //Dripstation edit
 
 /obj/item/gun/proc/remove_gun_attachment(mob/living/user, obj/item/tool_item, obj/item/item_to_remove, removal_verb)
 	if(tool_item)
@@ -598,15 +552,6 @@
 		return clear_bayonet()
 	else if(item_to_remove == gun_light)
 		return clear_gunlight()
-	else if(item_to_remove == cell)
-		return clear_cell()
-
-/obj/item/gun/proc/clear_cell()
-	if(!cell)
-		return
-	cell = null
-	update_appearance(UPDATE_ICON)
-	return TRUE
 
 /obj/item/gun/proc/clear_bayonet()
 	if(!bayonet)

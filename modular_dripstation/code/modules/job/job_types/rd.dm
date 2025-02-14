@@ -1,7 +1,3 @@
-/datum/job/rd
-	supervisor_corporation = /datum/corporation/nanotrasen/nova_copen
-	alt_supervisor_corporations = list(/datum/corporation/nanotrasen/arq_tek)
-
 /datum/outfit/job/rd
 	id_type = /obj/item/card/id/head
 	glasses = /obj/item/clothing/glasses/material/aviator

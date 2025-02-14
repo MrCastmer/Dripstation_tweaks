@@ -262,8 +262,6 @@
 	desc = "The standard issue hardsuit of the ERT. Offers superb protection against environmental hazards."
 	icon_state = "nt_combat_hardsuit"
 	//item_state = "nt_combat_hardsuit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS //finally, some normal armoring
-	body_parts_partial_covered = 0
 	armor = list(MELEE = 45, BULLET = 40, LASER = 40, ENERGY = 35, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 10, ELECTRIC = 100)
 	slowdown = 0.5
 
@@ -397,8 +395,6 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR //we don`t want to see the mask
 
 /obj/item/clothing/suit/space/hardsuit/swat
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS //finally, some normal armoring
-	body_parts_partial_covered = 0
 
 	//Captain MKII
 /obj/item/clothing/head/helmet/space/hardsuit/swat/captain
@@ -559,8 +555,6 @@
 	//item_state = "hardsuit-wiz"
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS //finally, some normal armoring
-	body_parts_partial_covered = 0
 	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 25, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -568,13 +562,3 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
 	slowdown = 0
 	clothing_traits = list(TRAIT_ANTIMAGIC_NO_SELFBLOCK)
-
-/obj/item/clothing/head/helmet/space/hardsuit/cult
-	icon = 'icons/obj/clothing/hats/hats.dmi'
-	worn_icon = 'icons/mob/clothing/head/head.dmi'
-
-/obj/item/clothing/suit/space/hardsuit/cult
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS //finally, some normal armoring
-	body_parts_partial_covered = 0
-	icon = 'icons/obj/clothing/suits/suits.dmi'
-	worn_icon = 'icons/mob/clothing/suit/suit.dmi'

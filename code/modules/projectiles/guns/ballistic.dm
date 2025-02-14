@@ -118,7 +118,6 @@
 		/obj/item/attachment/scope/infrared,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/grip/vertical,
-		/obj/item/attachment/grip/angled,	/*Dripstation edit*/
 	)
 	max_attachments = 4
 	recoil = 0.3
@@ -366,10 +365,7 @@
 					user.say(reload_say, forced = "reloading")
 				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 					chamber_round()
-				/*dripstation edit
 				A.update_appearance(UPDATE_ICON)
-				*/
-				A.update_appearance(UPDATE_ICON|UPDATE_DESC) //dripstation edit
 				update_appearance(UPDATE_ICON)
 			return
 	if(istype(A, /obj/item/suppressor))

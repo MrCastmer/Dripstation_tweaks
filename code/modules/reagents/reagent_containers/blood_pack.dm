@@ -104,10 +104,7 @@
 
 /obj/item/reagent_containers/blood/random/Initialize(mapload)
 	icon_state = "bloodpack"
-/* Dripstation edit
 	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L")
-*/
-	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "Oxidant")
 	return ..()
 
 /obj/item/reagent_containers/blood/APlus

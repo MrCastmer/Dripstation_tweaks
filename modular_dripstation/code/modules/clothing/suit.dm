@@ -3,8 +3,9 @@
 	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 	icon_state = "hazmat_suit"
 	slowdown = 0.33
-	body_parts_covered = CHEST|GROIN
-	flags_inv = HIDEJUMPSUIT
+	body_parts_covered = HEAD|CHEST|GROIN
+	flags_inv = HIDEJUMPSUIT|HIDEHAIR|HIDEEARS
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "hazmat_suit_general"
@@ -33,14 +34,6 @@
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit
 	icon = 'icons/obj/clothing/suits/suits.dmi'
 	worn_icon = 'icons/mob/clothing/suit/suit.dmi'
-
-/obj/item/clothing/suit/bomb_suit/security
-	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
-	icon_state = "blastsuit_sec"
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	heat_protection = CHEST|GROIN|ARMS|HANDS
-	cold_protection = CHEST|GROIN|ARMS|HANDS
 
 /obj/item/clothing/suit/poncho
 	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'

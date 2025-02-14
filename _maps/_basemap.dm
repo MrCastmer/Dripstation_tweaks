@@ -1,9 +1,6 @@
 //#define LOWMEMORYMODE //uncomment this to load centcom and runtime station and thats it.
 
-/* Dripstation edit
 #include "map_files\generic\CentCom.dmm"
-*/
-#include "map_files\generic_drip\DripCentCom.dmm"	//dripstation edit
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS

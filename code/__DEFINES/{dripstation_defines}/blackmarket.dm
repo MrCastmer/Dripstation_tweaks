@@ -7,5 +7,3 @@
 #define SHIPPING_METHOD_TELEPORT "Teleport"
 // Throws the item from somewhere at the station.
 #define SHIPPING_METHOD_LAUNCH "Launch"
-// Syndicate cargo method
-#define SHIPPING_METHOD_RST "RST"
