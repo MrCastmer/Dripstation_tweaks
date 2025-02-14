@@ -5,10 +5,6 @@
 	icon_state = "uplink"
 
 	// UI variables.
-	/// What name of our uplink sistem?
-	var/market_name
-	/// What style is our uplink?
-	var/theme_type
 	/// What category is the current uplink viewing?
 	var/viewing_category
 	/// What market is currently being bought from by the uplink?
@@ -19,7 +15,6 @@
 	var/buying
 	///Reference to the currently logged in user's bank account.
 	var/datum/bank_account/current_user
-	var/datum/bank_account/modified_account
 	/// List of typepaths for "/datum/market"s that this uplink can access.
 	var/list/accessible_markets = list(/datum/market/blackmarket)
 
@@ -57,8 +52,6 @@
 		id_card = livin.get_idcard()
 	if(id_card?.registered_account)
 		current_user = id_card.registered_account
-	else if (modified_account)
-		current_user = modified_account
 	else
 		current_user = null
 	data["categories"] = market ? market.categories : null
@@ -69,8 +62,6 @@
 	data["money"] = "N/A cr"
 	if(current_user)
 		data["money"] = current_user.account_balance
-	data["market_name"] = market_name
-	data["theme_type"] = theme_type
 	data["buying"] = buying
 	data["items"] = list()
 	data["viewing_category"] = viewing_category
@@ -83,7 +74,6 @@
 					"name" = I.name,
 					"cost" = I.price,
 					"amount" = I.stock,
-					"limited" = I.limitedstock,
 					"desc" = I.desc || I.name
 				))
 	return data
@@ -92,7 +82,6 @@
 	var/list/data = list()
 	data["delivery_method_description"] = SSblackmarket.shipping_method_descriptions
 	data["ltsrbt_built"] = SSblackmarket.telepads.len
-	data["redpad_built"] = SSblackmarket.redspacetelepads.len
 	data["markets"] = list()
 	for(var/M in accessible_markets)
 		var/datum/market/BM = SSblackmarket.markets[M]
@@ -154,25 +143,12 @@
 			buying = FALSE
 			selected_item = null
 
-/obj/item/market_uplink/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/card/id))
-		var/obj/item/card/id/card = I
-		if(card?.registered_account)
-			modified_account = card.registered_account
-	else
-		return ..()
-
-/obj/item/market_uplink/AltClick(mob/living/user)
-	modified_account = null
-
 /obj/item/market_uplink/blackmarket
 	name = "\improper Black Market Uplink"
 	desc = "An illegal black market uplink. If command wanted you to have these, they wouldn't have made it so hard to get one."
 	icon = 'modular_dripstation/icons/obj/blackmarket/blackmarket.dmi'
 	icon_state = "uplink"
 	//The original black market uplink
-	market_name = "Black Market Uplink"
-	theme_type = "hackerman"
 	accessible_markets = list(/datum/market/blackmarket)
 
 
@@ -193,14 +169,3 @@
 	..()
 	blacklist |= typesof(/obj/item/radio/headset) // because we got shit like /obj/item/radio/off ... WHY!?!
 	blacklist |= typesof(/obj/item/radio/intercom)
-
-/obj/item/market_uplink/syndicatecargo
-	name = "\improper Syndicate Cargo Uplink"
-	desc = "An illegal market uplink."
-	icon = 'modular_dripstation/icons/obj/blackmarket/blackmarket.dmi'
-	icon_state = "uplink-syndie"
-	slot_flags = ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_SMALL
-	market_name = "Donk Co Shipping Services Uplink"
-	theme_type = "donk_co"
-	accessible_markets = list(/datum/market/syndicatecargo)

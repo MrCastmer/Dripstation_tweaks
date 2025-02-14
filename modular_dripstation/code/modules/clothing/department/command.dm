@@ -297,7 +297,6 @@
 /obj/item/clothing/under/rank/centcom_officer/ntrep/skirt
 	name = "\improper Nanotrasen Representative's Skirt"
 	icon_state = "ntrep_skirt"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/centcom_officer/ntrep/formal
 	name = "\improper Formal Nanotrasen Representative's Uniform"
@@ -327,8 +326,6 @@
 	name = "Nanotrasen Representative`s hat"
 	desc = "The hat of the Nanotrasen Representative."
 	icon_state = "ntrep"
-	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/ntrep/high
 	name = "Nanotrasen Representative`s high hat"
@@ -350,7 +347,6 @@
 /obj/item/clothing/under/rank/centcom_officer/magistrate/skirt
 	name = "\improper Nanotrasen Magistrate's Skirt"
 	icon_state = "magistrate_skirt"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/centcom_officer/magistrate/formal
 	name = "\improper Formal Magistrate's Uniform"
@@ -398,8 +394,6 @@
 	armor = list(MELEE = 25, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 0, BIO = 20, RAD = 0, FIRE = 20, ACID = 45, WOUND = 10)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
-	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/under/rank/blueshield
 	name = "blueshield's uniform"
@@ -413,7 +407,6 @@
 	name = "blueshield's skirt"
 	desc = "A short, black and grey with blue markings skirted uniform. For the feminine Blueshield."
 	icon_state = "blueshield_skirt"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/urban
 	name = "blueshield's jumpsuit"
@@ -429,7 +422,6 @@
 	name = "blueshield's skirtle"
 	desc = "A short, black and grey with blue markings skirted tactical skirtle. For the feminine Blueshield."
 	icon_state = "blueshield_turtle_grey_skirt"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/white
 	name = "blueshield's turtle"
@@ -440,7 +432,6 @@
 	name = "blueshield's skirtle"
 	desc = "A short, white shirt with blue markings and tactical skirt. For the feminine Blueshield."
 	icon_state = "blueshield_white_skirt"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/blue
 	name = "blueshield's blue uniform"
@@ -451,7 +442,6 @@
 	name = "blueshield's skirtle"
 	desc = "A short, blue shirt with white markings and tactical skirt. For the feminine Blueshield."
 	icon_state = "blueshieldskirt_blue"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/blueshield/formal
 	name = "blueshield's formal uniform"
@@ -471,14 +461,11 @@
 	desc = "It's a jumpskirt worn by low rank Shields."
 	name = "\improper Close Protection Blueshield Lieutenant's jumpskirt"
 	icon_state = "bs_skirtleneck"
-	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/head/beret/blueshield
-	name = "blueshield`s armored beret"
-	desc = "An armored beret with the badge of a Blueshield Lieutenant."
-	icon_state = "beret_blueshield"
-	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	name = "blueshield`s bulletproof armor"
+	desc = "An armored bulletproof vest with the badge of a Blueshield Lieutenant."
+	icon_state = "bulletproof_bs"
 
 /obj/item/clothing/mask/gas/sechailer/swat/blueshield
 	name = "\improper Close Protection SWAT mask"
@@ -495,23 +482,6 @@
 	new /obj/item/reagent_containers/medspray/synthflesh(src)
 	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
 	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
-
-// ###### BRIGE ASSISTANT ######
-/obj/item/clothing/under/rank/bridge_assistant
-	name = "brige assistant's uniform"
-	desc = "Blue formal jumpsuit that shows your NanoTrasen allighment."
-	icon_state = "pilot"
-	icon = 'modular_dripstation/icons/obj/clothing/uniform/command/bridge_assistant.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/command/bridge_assistant.dmi'
-	can_adjust = TRUE
-	mutantrace_variation = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/under/rank/bridge_assistant/skirt
-	name = "brige assistant's turtleneck skirt"
-	desc = "Blue formal jumpskirt that shows your NanoTrasen allighment."
-	icon_state = "pilot_skirt"
-	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = NONE	
 
 ////////Formal coat////////
 /obj/item/clothing/suit/toggle/capformal

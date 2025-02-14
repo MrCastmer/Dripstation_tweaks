@@ -163,16 +163,15 @@
 	payment_department = ACCOUNT_MED
 
 // ###### Genecist ######
-/obj/item/clothing/under/rank/rnd/geneticist
+/obj/item/clothing/under/rank/geneticist
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/genetics.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/genetics.dmi'
 
-/obj/item/clothing/under/rank/rnd/geneticist/skirt
+/obj/item/clothing/under/rank/geneticist/skirt
 	can_adjust = TRUE
 
 // ###### Virology ######
 /obj/item/clothing/under/rank/virologist
-	icon_state = "virology"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/medical/virology.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/medical/virology.dmi'
 

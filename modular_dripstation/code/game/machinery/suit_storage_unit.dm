@@ -174,21 +174,15 @@
 	department = "synd"	
 
 /obj/machinery/suit_storage_unit/syndicate
-	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi
-	mask_type = /obj/item/clothing/mask/gas/syndicate
-	tank_type = /obj/item/tank/jetpack/oxygen/harness
-	department = "synd"	
-
-/obj/machinery/suit_storage_unit/syndicate/nuclear
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred
 	mask_type = /obj/item/clothing/mask/gas/syndicate
-	tank_type = /obj/item/tank/internals/oxygen/syndicate
+	tank_type = /obj/item/tank/jetpack/oxygen/harness
 	department = "synd"	
 
 /obj/machinery/suit_storage_unit/syndicate/winter
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred/winter
 	mask_type = /obj/item/clothing/mask/gas/syndicate
-	tank_type = /obj/item/tank/internals/oxygen/syndicate
+	tank_type = /obj/item/tank/jetpack/oxygen/harness
 	department = "synd"	
 
 /obj/machinery/suit_storage_unit/syndicate/engi
@@ -199,6 +193,12 @@
 
 /obj/machinery/suit_storage_unit/syndicate/winter/engi
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/engineering/syndicate/winter
+	mask_type = /obj/item/clothing/mask/gas/syndicate
+	tank_type = /obj/item/tank/jetpack/oxygen/harness
+	department = "synd"	
+
+/obj/machinery/suit_storage_unit/syndicate/donk
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi
 	mask_type = /obj/item/clothing/mask/gas/syndicate
 	tank_type = /obj/item/tank/jetpack/oxygen/harness
 	department = "synd"	

@@ -1,4 +1,4 @@
-/datum/job/officer
+/datum/job/security
 	supervisor_corporation = /datum/corporation/spearhead
 
 /datum/outfit/job/security

@@ -124,9 +124,7 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/weapons/gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/minigunosprey
-	/* Dripstation edit
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	*/
 	tac_reloads = FALSE
 	casing_ejector = FALSE
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
@@ -182,7 +180,6 @@
 	. = ..()
 	ammo_pack.attach_gun(user)
 
-/* Dripstation edit
 /obj/item/gun/ballistic/minigunosprey/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
 		burst_select()
@@ -200,4 +197,3 @@
 		to_chat(user, span_notice("You switch to [burst_size]-rnd burst. BRRRRRRRT."))
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	return
-*/

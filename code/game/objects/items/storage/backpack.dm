@@ -572,7 +572,6 @@
 /obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
 
-/*Dripstation edit
 /obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax/PopulateContents()
 	new /obj/item/mecha_ammo/incendiary(src)
 	new /obj/item/mecha_ammo/incendiary(src)
@@ -580,12 +579,10 @@
 	new /obj/item/mecha_ammo/flashbang(src)
 	new /obj/item/mecha_ammo/flashbang(src)
 	new /obj/item/mecha_ammo/flashbang(src)
-*/
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
 
-/*Dripstation edit
 /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler/PopulateContents()
 	new /obj/item/mecha_ammo/lmg(src)
 	new /obj/item/mecha_ammo/lmg(src)
@@ -596,7 +593,6 @@
 	new /obj/item/mecha_ammo/missiles_he(src)
 	new /obj/item/mecha_ammo/missiles_he(src)
 	new /obj/item/mecha_ammo/missiles_he(src)
-*/
 
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle
 	desc = "A large duffel bag containing a C-20r, some magazines, and a cheap looking suppressor."

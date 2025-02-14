@@ -1,6 +1,5 @@
 /datum/saymode
 	var/key
-	var/altkey	//dripstation edit
 	var/mode
 	var/bypass_mute = FALSE
 
@@ -14,7 +13,6 @@
 
 /datum/saymode/changeling
 	key = MODE_KEY_CHANGELING
-	altkey = ALTMODE_KEY_CHANGELING	//dripstation edit
 	mode = MODE_CHANGELING
 
 /datum/saymode/changeling/handle_message(mob/living/user, message, datum/language/language)
@@ -69,11 +67,7 @@
 
 
 /datum/saymode/xeno
-	/* Dripstation edit
 	key = "a"
-	*/
-	key = MODE_KEY_ALIEN	//dripstation edit
-	altkey = ALTMODE_KEY_ALIEN	//dripstation edit
 	mode = MODE_ALIEN
 
 /datum/saymode/xeno/handle_message(mob/living/user, message, datum/language/language)
@@ -84,7 +78,6 @@
 
 /datum/saymode/vocalcords
 	key = MODE_KEY_VOCALCORDS
-	altkey = ALTMODE_KEY_VOCALCORDS	//dripstation edit
 	mode = MODE_VOCALCORDS
 
 /datum/saymode/vocalcords/handle_message(mob/living/user, message, datum/language/language)
@@ -94,7 +87,6 @@
 
 /datum/saymode/binary //everything that uses .b (silicons, drones, blobbernauts/spores, swarmers)
 	key = MODE_KEY_BINARY
-	altkey = ALTMODE_KEY_BINARY	//dripstation edit
 	mode = MODE_BINARY
 
 /datum/saymode/binary/handle_message(mob/living/user, message, datum/language/language)
@@ -118,7 +110,6 @@
 
 /datum/saymode/holopad
 	key = MODE_KEY_HOLOPAD
-	altkey = ALTMODE_KEY_HOLOPAD	//dripstation edit
 	mode = MODE_HOLOPAD
 
 /datum/saymode/holopad/handle_message(mob/living/user, message, datum/language/language)
@@ -130,7 +121,6 @@
 
 /datum/saymode/monkey
 	key = MODE_KEY_MONKEY
-	altkey = ALTMODE_KEY_MONKEY	//dripstation edit
 	mode = MODE_MONKEY
 
 /datum/saymode/monkey/handle_message(mob/living/user, message, datum/language/language)
@@ -153,7 +143,6 @@
 
 /datum/saymode/darkspawn //yogs: darkspawn
 	key = MODE_KEY_DARKSPAWN
-	altkey = ALTMODE_KEY_DARKSPAWN	//dripstation edit
 	mode = MODE_DARKSPAWN
 	bypass_mute = TRUE //it's mentally talking, not physically
 

@@ -76,9 +76,7 @@
 
 /obj/item/robot_suit/examine(mob/user)
 	. = ..()
-/*Dripstation edit
 	. += "If you insert an AI CPU when this endoskeleton is complete it will be constructed as a synthetic."
-*/
 
 /obj/item/robot_suit/wrench_act(mob/living/user, obj/item/I) //Deconstucts empty borg shell. Flashes remain unbroken because they haven't been used yet
 	var/turf/T = get_turf(src)
@@ -258,7 +256,6 @@
 		else
 			to_chat(user, span_warning("The endoskeleton must be assembled before debugging can begin!"))
 
-/*Dripstation edit
 	else if(istype(W, /obj/item/ai_cpu))
 		if(check_completion())
 			var/response = tgui_alert(user, "Are you sure you want to turn this endoskeleton into a synthetic unit?", "Please Confirm", list("Yes", "No"))
@@ -279,7 +276,6 @@
 			S.inbuilt_cpu = null
 			S.inbuilt_cpu = W
 			qdel(src)
-*/
 
 	else if(istype(W, /obj/item/mmi))
 		var/obj/item/mmi/M = W

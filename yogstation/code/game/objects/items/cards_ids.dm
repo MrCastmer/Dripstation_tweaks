@@ -1,14 +1,11 @@
-/* //Dripstation edit
 /obj/item/card
 	icon = 'yogstation/icons/obj/card.dmi'
 	var/has_fluff
-*/
 
 /obj/item/card/id/update_label(newname, newjob)
 	..()
 	ID_fluff()
 
-/* //Dripstation edit
 /obj/item/card/id/proc/ID_fluff()
 	var/job = originalassignment
 	var/static/list/idfluff = list(
@@ -64,7 +61,6 @@
 	overlays.Cut()
 	overlays += idfluff[job][1]
 	overlays += idfluff[job][2]
-*/
 
 /obj/item/card/id/silver
 	icon_state = "id_silver"
