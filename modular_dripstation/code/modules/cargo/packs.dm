@@ -253,9 +253,17 @@
 
 /datum/supply_pack/weaponry/ballistic
 	desc = "For when the enemy absolutely needs to be replaced with lead. Contains three Militech-designed Combat Shotguns, and three Shotgun Bandoliers. Requires Armory access to open."
+	contains = list(/obj/item/gun/ballistic/shotgun/automatic/combat,
+					/obj/item/gun/ballistic/shotgun/automatic/combat,
+					/obj/item/gun/ballistic/shotgun/automatic/combat,
+					/obj/item/storage/pouch/shotgun/full,
+					/obj/item/storage/pouch/shotgun/full,
+					/obj/item/storage/pouch/shotgun/full)
 
 /datum/supply_pack/weaponry/ballistic_single
 	desc = "For when the enemy absolutely needs to be replaced with lead. Contains one Militech-designed Combat Shotgun, and one Shotgun Bandolier. Requires Armory access to open."
+	contains = list(/obj/item/gun/ballistic/shotgun/automatic/combat,
+					/obj/item/storage/pouch/shotgun/full)
 
 /datum/supply_pack/weaponry/riotshotgun
 	name = "Riot Shotguns Crate"
@@ -308,3 +316,21 @@
 					/obj/item/ammo_box/magazine/toy/paintball/orange,
 					/obj/item/ammo_box/magazine/toy/paintball/orange)
 	crate_name = "paintball ammo crate"
+
+/datum/supply_pack/service/replica_rationpacks
+	name = "Replika rationpacks crate"
+	desc = "Plenty of rations for your replika."
+	cost = 2000
+	contains = list(/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack,
+					/obj/item/reagent_containers/food/snacks/synthrationpack)
+	crate_name = "ratiopapack crate"

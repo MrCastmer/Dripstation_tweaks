@@ -1,6 +1,5 @@
 /obj/item/gun/energy/pulse
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
-	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/energy/pulse/pistol
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse/pistol, /obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
@@ -21,3 +20,18 @@
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	icon_state = "tgm19c4"
 	item_state = "pulse"
+
+/obj/item/gun/energy/pulse/loyalpin
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+
+/obj/item/gun/energy/pulse/carbine/loyalpin
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+
+/obj/item/gun/energy/pulse/pistol/loyalpin
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+
+/obj/item/gun/energy/pulse/pistol/m1911
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+
+/obj/item/gun/energy/pulse/destroyer/loyalpin
+	pin = /obj/item/firing_pin/implant/centcom_mindshield

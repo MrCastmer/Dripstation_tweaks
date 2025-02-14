@@ -46,6 +46,11 @@
 
 
 /mob/living/carbon/human/bullet_act(obj/projectile/P, def_zone)
+	var/obj/item/card/id/I = get_item_by_slot(ITEM_SLOT_ID)	//dripstation edit
+	if(I?.iff_signal & P.iff_signal)				//dripstation edit
+		return BULLET_ACT_FORCE_PIERCE				//dripstation edit
+	if(P.precise && get_dist(P.firer, src) <= 2)	//dripstation edit
+		return BULLET_ACT_FORCE_PIERCE				//dripstation edit
 	if(dna && dna.species)
 		var/spec_return = dna.species.bullet_act(P, src)
 		if(spec_return)
@@ -353,10 +358,10 @@
 		var/armor = run_armor_check(affecting, MELEE, armour_penetration = M.armour_penetration)
 		var/attack_direction = get_dir(M, src)
 		apply_damage(damage, M.melee_damage_type, affecting, armor, wound_bonus = M.wound_bonus, bare_wound_bonus = M.bare_wound_bonus, sharpness = M.sharpness, attack_direction = attack_direction)
-		if(M.has_desease && M.desease_type && prob(M.infect_prob))
-			var/datum/disease/D = M.desease_type
+		for(var/thing in M.diseases)
+			var/datum/disease/D = thing
 			if(D.spread_flags & DISEASE_SPREAD_BLOOD)
-				ContactContractDisease(D)
+				ContactContractDisease(D, affecting)
 
 
 /mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)

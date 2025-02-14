@@ -8,6 +8,8 @@
 /obj/item/melee/transforming/vib_blade 
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
 	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
+	w_class = WEIGHT_CLASS_SMALL
+	w_class_on = WEIGHT_CLASS_NORMAL
 
 /obj/item/energy_katana
 	icon_state = "energy_katana"
@@ -188,6 +190,11 @@
 	hit_reaction_chance = 20
 	block_sound = 'modular_dripstation/sound/weapons/block/sound_weapons_parry.ogg'
 
+/obj/item/storage/belt/sabre/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.attack_hand_interact = FALSE
+
 /obj/item/storage/belt/sabre/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == MELEE_ATTACK && prob(hit_reaction_chance))
 		owner.visible_message(span_danger("[owner] fends off [attack_text] with [src]!"))
@@ -264,6 +271,7 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
 	icon = 'modular_dripstation/icons/obj/weapons/blades.dmi'
+	equip_sound = null
 	force = 5
 	throwforce = 5
 	w_class = WEIGHT_CLASS_SMALL
@@ -773,7 +781,7 @@
 	item_state = "emergency_forcing_tool"
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "sliced", "torn", "ripped", "diced")
 	sharpness = SHARP_EDGED
@@ -820,13 +828,18 @@
 	name = "Varyag"
 	desc = "Combat forcing tool, capable of prying firelocks, destroing stuff and killing someone in emergency situations."
 	force = 30
-	armour_penetration = -10
+	//w_class = WEIGHT_CLASS_NORMAL
+	armour_penetration = 0
 	wound_bonus = 0
-	throwforce = 30
+	throwforce = 35
 	throw_range = 7
 	throw_speed = 2
 	icon_state = "varyag"
 	item_state = "varyag"
+
+/obj/item/melee/emergency_forcing_tool/varyag/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 70, 100)
 
 /obj/item/phone
 	icon = 'modular_dripstation/icons/obj/misc.dmi'

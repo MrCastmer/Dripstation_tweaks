@@ -634,7 +634,7 @@
 	item = /obj/item/pen/red/edagger/nt
 	cost = 2
 
-/datum/uplink_item/nt/cqc/edagger
+/datum/uplink_item/nt/cqc/vib_blade
 	name = "Bibration Blade"
 	desc = "A blade with an edge that vibrates rapidly, enabling it to easily cut through armor and flesh alike."
 	item = /obj/item/melee/transforming/vib_blade

@@ -1,4 +1,46 @@
 ////CentCom Faction////
+/obj/item/clothing/head/beret/sec/centcom
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/sec/centcom/officer
+	name = "centcom officer`s beret"
+	desc = "A robust beret with the Nanotrasen insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	icon_state = "beret_centcom_officer"
+	armor = list(MELEE = 50, BULLET = 30, LASER = 20, ENERGY = 10, BOMB = 15, BIO = 10, FIRE = 20, ACID = 60, WOUND = 10)
+	strip_delay = 90
+
+/obj/item/clothing/head/beret/sec/centcom/officer/naval
+	name = "nanotrasen naval officer`s beret"
+	icon_state = "beret_centcom_officer_navy"
+
+/obj/item/clothing/head/beret/sec/centcom/officer/soo
+	name = "centcom spec ops department officer`s beret"
+	icon_state = "beret_soo"
+
+/obj/item/clothing/head/beret/sec/centcom/officer/executive
+	name = "centcom executive officer`s beret"
+	icon_state = "beret_centcom_admiral"
+
+/obj/item/clothing/head/beret/sec/centcom/officer/gold
+	name = "gold centcom officer`s beret"
+	icon_state = "centgold_beret"
+
+/obj/item/clothing/head/beret/sec/centcom/officer/centcom_shield
+	name = "\"Close Protection\" unit`s beret"
+	icon_state = "centcomshield_beret"
+
+/obj/item/clothing/head/centhat
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/centhat/admiral
+	name = "centcom officer`s hat"
+
+/obj/item/clothing/head/centhat/admiral/executive
+	name = "centcom admiral`s hat"
+	icon_state = "grand_admiral"
+
 /obj/item/clothing/gloves/color/captain/centcom
 	desc = "Regal dark blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
 	icon_state = "centcom_officer"
@@ -12,81 +54,162 @@
 	desc = "Regal light blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
 	icon_state = "centcom_official"
 
-/obj/item/clothing/under/rank/centcom_officer
-	icon_state = "centcom_officer"
+/obj/item/clothing/suit/armor/vest/capcarapace/centcom
+	name = "\improper CentCom carapace"
+	desc = "A CentCom alteration of the captain's carapace. Issued only to Nanotrasen's finest, although it does chafe your pecks."
+
+/obj/item/clothing/suit/armor/vest/capcarapace/centcom/black
+	name = "\improper Nanotrasen Black carapace"
+	desc = "A Nanotrasen black alteration of the captain's carapace. Issued only to Nanotrasen's finest, although it does chafe your pecks."
+	icon_state = "centcarapace_blc"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/centcom/gold
+	name = "\improper Nanotrasen Gold carapace"
+	desc = "A Nanotrasen gold alteration of the captain's carapace. Issued only to Nanotrasen's finest, although it does chafe your pecks."
+	icon_state = "goldcarapace"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/alt/centcom
+	name = "\improper CentCom bulletproof carapace"
+	desc = "A CentCom alteration of the captain's bulletproof carapace. Issued only to Nanotrasen's finest, although it does chafe your pecks."
+	icon_state = "navalcarapace_bulletproof"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/alt/centcom/alt
+	icon_state = "navalcarapace_alt_bulletproof"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/alt/centcom/black
+	icon_state = "centcarapace_blc_bulletproof"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/alt/centcom/black/alt
+	name = "\improper CentCom \"Close Protection\" Officer`s carapace"
+	icon_state = "centcarapace_blcalt_bulletproof"
+	armor = list(MELEE = 65, BULLET = 55, LASER = 65, ENERGY = 35, BOMB = 65, BIO = 20, RAD = 0, FIRE = 100, ACID = 90, WOUND = 30)
+
+/obj/item/clothing/suit/armor/vest/capcarapace/alt/centcom/gold
+	icon_state = "goldcarapace_bulletproof"
+
+/obj/item/clothing/suit/armor/riot/battlearmor
+	name = "\improper Nanotrasen battle carapace"
+	desc = "A Nanotrasen combat version of the captain's carapace. Issued only to Nanotrasen's finest."
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 30)
+	icon_state = "cap_battlearmor"
+
+/obj/item/clothing/suit/armor/riot/battlearmor/official
+	name = "\improper Nanotrasen official battle carapace"
+	desc = "A Nanotrasen official combat version of the captain's carapace. Issued only to Nanotrasen's finest."
+	icon_state = "official_battlearmor"
+
+/obj/item/clothing/suit/armor/riot/battlearmor/naval
+	name = "\improper Nanotrasen naval battle carapace"
+	desc = "A Nanotrasen naval combat version of the captain's carapace. Issued only to Nanotrasen's finest."
+	icon_state = "naval_battlearmor"
+
+/obj/item/clothing/suit/armor/riot/battlearmor/black
+	name = "\improper Nanotrasen black battle carapace"
+	desc = "A Nanotrasen black combat version of the captain's carapace. Issued only to Nanotrasen's finest."
+	icon_state = "blc_battlearmor"
+
+/obj/item/clothing/suit/captunic/admiral
+	name = "admiral's parade tunic"
+	desc = "Worn by a Admiral to show their class."
+	armor = list(MELEE = 35, BULLET = 40, LASER = 35, ENERGY = 35, BOMB = 25, BIO = 20, RAD = 0, FIRE = 0, ACID = 90, WOUND = 30)
+
+/obj/item/clothing/suit/armor/centcom_shield
+	name = "\"Close Protection\" plate carrier"
+	desc = "An armored bulletproof vest with the badge of a \"Close Protection\" officer."
+	icon_state = "centcomshield_pcarrier"
+	armor = list(MELEE = 45, BULLET = 60, LASER = 45, ENERGY = 35, BOMB = 65, BIO = 20, RAD = 0, FIRE = 30, ACID = 90, WOUND = 30)
+
+/obj/item/clothing/suit/armor/riot/centcom_shield
+	name = "\"Close Protection\" armor"
+	desc = "An armored bulletproof vest with the badge of a \"Close Protection\" officer."
+	icon_state = "centcomshield_pcarrier_full"
+	armor = list(MELEE = 50, BULLET = 60, LASER = 45, ENERGY = 35, BOMB = 65, BIO = 20, RAD = 0, FIRE = 30, ACID = 90, WOUND = 30)
+
+/obj/item/clothing/head/helmet/alt/centcom_shield
+	name = "\"Close Protection\" bulletproof helmet"
+	icon_state = "centcomshield_helmet"
+	armor = list(MELEE = 45, BULLET = 60, LASER = 45, ENERGY = 35, BOMB = 65, BIO = 20, RAD = 0, FIRE = 30, ACID = 90, WOUND = 30)
+
+/obj/item/clothing/head/helmet/alt/centcom_shield/alt	
+	icon_state = "centcomshield_helmet_blue"
+
+/obj/item/clothing/under/rank/centcom
+	desc = "It's a jumpsuit worn by CentCom Interns."
+	name = "\improper CentCom intern's jumpsuit"
+	icon_state = "intern"
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/nanotrasen.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/nanotrasen.dmi'
+
+/obj/item/clothing/under/rank/centcom/internalt
+	icon_state = "intern_alt"
+
+/obj/item/clothing/under/rank/centcom/officer
+	icon_state = "centcom_officer"
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 20, ACID = 30)
 
-/obj/item/clothing/under/rank/centcom_officer/skirt
+/obj/item/clothing/under/rank/centcom/officer/skirt
 	desc = "It's a jumpskirt worn by CentCom Officers."
 	name = "\improper CentCom officer's jumpskirt"
 	icon_state = "centcom_officer_skirt"
 
-/obj/item/clothing/under/rank/centcom_officer/alt
+/obj/item/clothing/under/rank/centcom/officer/alt
 	icon_state = "centcom_officer_alt"
 
-/obj/item/clothing/under/rank/centcom_officer/official
+/obj/item/clothing/under/rank/centcom/officer/official
 	desc = "A very gaudy and official looking uniform of the Nanotrasen Diplomatic Corps."
 	name = "\improper Nanotrasen Diplomatic Uniform"
 	icon_state = "centcom_official"
 
-/obj/item/clothing/under/rank/centcom_officer/official/alt
+/obj/item/clothing/under/rank/centcom/officer/official/alt
 	icon_state = "centcom_official_alt"
 
-/obj/item/clothing/under/rank/centcom_officer/intern
-	icon_state = "intern"
-
-/obj/item/clothing/under/rank/centcom_officer/internalt
-	icon_state = "intern_alt"
-
-/obj/item/clothing/under/rank/centcom_officer/occ
+/obj/item/clothing/under/rank/centcom/officer/occ
 	icon_state = "occ_uniform"
 
-/obj/item/clothing/under/rank/centcom_officer/ert
+/obj/item/clothing/under/rank/centcom/officer/ert
 	desc = "It's a jumpsuit worn by ERT Operatives."
 	name = "\improper ERT Operative's jumpsuit"
 	icon_state = "ert_uniform"
 
-/obj/item/clothing/under/rank/centcom_officer/ert_cmd
+/obj/item/clothing/under/rank/centcom/officer/ert_cmd
 	desc = "It's a jumpsuit worn by ERT Officers."
 	name = "\improper ERT Officer's jumpsuit"
 	icon_state = "ert_uniform_cmd"
 
-/obj/item/clothing/under/rank/centcom_officer/ert_medic
+/obj/item/clothing/under/rank/centcom/officer/ert_medic
 	desc = "It's a jumpsuit worn by ERT Medics."
 	name = "\improper ERT Medic's jumpsuit"
 	icon_state = "ert_uniform_medic"
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield
+/obj/item/clothing/under/rank/centcom/officer/centcom_shield
 	desc = "Gold trim on space-black cloth, this uniform bears \"Close Protection\" on the left shoulder. It's got exotic materials for protection."
-	name = "\improper Formal ERT Shield's Uniform"
+	name = "\improper Formal \"Close Protection\" unit's Uniform"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon_state = "centcom_shield"
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/turtle
-	desc = "It's a turtleneck worn by CentCom Shields."
-	name = "\improper ERT Shield's turtleneck"
+/obj/item/clothing/under/rank/centcom/officer/centcom_shield/turtle
+	desc = "It's a turtleneck worn by \"Close Protection\" units."
+	name = "\improper \"Close Protection\" unit's turtleneck"
 	icon_state = "centcom_shield_turtle"
 
-/obj/item/clothing/under/rank/centcom_officer/centcom_shield/turtle_skirt
-	desc = "It's a jumpskirt worn by CentCom Shields."
-	name = "\improper ERT Shield's jumpskirt"
+/obj/item/clothing/under/rank/centcom/officer/centcom_shield/turtle_skirt
+	desc = "It's a jumpskirt worn by \"Close Protection\" units."
+	name = "\improper \"Close Protection\" unit's jumpskirt"
 	icon_state = "centcom_shield_turtle_skirt"
 
-/obj/item/clothing/under/rank/centcom_officer/specops_blue
+/obj/item/clothing/under/rank/centcom/officer/specops_blue
 	desc = "It's a turtleneck worn by operatives of NT Special Operations Department. It's got exotic materials for protection."
 	name = "\improper NT SOD Officer's turtleneck"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon_state = "specops_blue"
 
-/obj/item/clothing/under/rank/centcom_officer/specops_combat
+/obj/item/clothing/under/rank/centcom/officer/specops_combat
 	desc = "It's a black turtleneck worn by elite of NT Special Operations Department. It's got exotic materials for protection."
 	name = "\improper NT Black Ops Officer's turtleneck"
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, FIRE = 20, ACID = 30)
 	icon_state = "specops_combat"
 
-/obj/item/clothing/under/rank/centcom_commander
+/obj/item/clothing/under/rank/centcom/commander
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Captain\". Worn exclusively by officers of the Nanotrasen Navy. It's got exotic materials for protection."
 	name = "\improper Nanotrasen Naval Captain Uniform"
 	icon_state = "naval_fleet_captain"
@@ -94,10 +217,10 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/nanotrasen.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/nanotrasen.dmi'
 
-/obj/item/clothing/under/rank/centcom_commander/ensign
+/obj/item/clothing/under/rank/centcom/commander/ensign
 	icon_state = "naval_ensign"
 
-/obj/item/clothing/under/rank/centcom_admiral
+/obj/item/clothing/under/rank/centcom/admiral
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Admiral\". Worn exclusively by officers of the Nanotrasen Navy. It's got exotic materials for protection."
 	name = "\improper Nanotrasen Naval Admiral Uniform"
 	icon_state = "naval_fleet_admiral"
@@ -105,7 +228,7 @@
 	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/nanotrasen.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/nanotrasen.dmi'
 
-/obj/item/clothing/under/rank/centcom_admiral/grand
+/obj/item/clothing/under/rank/centcom/admiral/executive
 	desc = "Gold trim on space-black cloth, this uniform displays the rank of \"Grand Admiral\". Worn exclusively by officers of the Nanotrasen Navy. It's got exotic materials for protection."
 	name = "\improper Nanotrasen Naval Grand Admiral Uniform"
 	icon_state = "naval_command"
@@ -122,7 +245,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "welding"
 	flash_protect = 2
-	tint = 4
+	tint = 1
 	armor = list(MELEE = 20, BULLET = 0, LASER = 0, ENERGY = 30, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100, WOUND = 10, ELECTRIC = 100)
 	var/alt_armor = list(MELEE = 60, BULLET = 30, LASER = 30, ENERGY = 50, BOMB = 40, BIO = 100, RAD = 40, FIRE = 100, ACID = 100, WOUND = 10, ELECTRIC = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
@@ -145,26 +268,29 @@
 	name = "Shellguard Combat Sallet Helmet"
 	desc = "Combat head cover designed to protect the wearer completely from space-arc eye."
 	icon_state = "shelg_sallet_visor"
-	tint = 5
 
 /obj/item/clothing/head/beret/sec/shellguard
 	name = "shellguard beret"
 	desc = "A robust beret with the Shellguard insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
 	icon_state = "shelg_guard_beret"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/beret/sec/navywarden/shellguard	
 	name = "shellguard warden's beret"
 	desc = "A special beret with the Shellguard Warden's insignia emblazoned on it."
 	icon_state = "shelg_warden_beret"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
-	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
 /obj/item/clothing/head/beret/captain/shellguard	
-	name = "shellguard specops's beret"
+	name = "shellguard judge's beret"
 	desc = "A special beret with the Shellguard insignia emblazoned on it."
 	icon_state = "shelg_judgeberet"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/head/beret/captain/shellguard/black	
+	name = "shellguard specops's beret"
+	icon_state = "shelg_specops_beret"
 	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
 
@@ -189,11 +315,15 @@
 	name = "shellguard warden's jacket"
 	desc = "Shellguard brand jacket with all the protection of a armor vest!"
 	icon_state = "warden_shelg"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/vest/hosjacket/shellguard
 	name = "shellguard specops's jacket"
 	desc = "Shellguard brand jacket with all the protection of a armor vest!"
 	icon_state = "shelg_judgetrench"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/under/shellguard
 	name = "shellguard employee uniform"
@@ -278,6 +408,97 @@
 	icon_state = "helldivercloak"
 
 
+////Entire Hephaestus inc. & Militech Asset Security////
+//Hephaestus Resource Logistics & Hephaestus Industries
+/obj/item/clothing/under/hephaestus
+	name = "hephaestus tech uniform"
+	desc = "Standart Hephaestus uniform. This one probably belongs to some tech specialist."
+	icon = 'modular_dripstation/icons/obj/clothing/uniform/corporate/pmc.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/uniform/corporate/pmc.dmi'
+	icon_state = "heph_tech"
+	item_state = "hephaestus_under"
+	armor = list(MELEE = 10, BULLET = 10, LASER = 0, ENERGY = 10, BOMB = 0, BIO = 0, RAD = 10, FIRE = 20, ACID = 30, WOUND = 0)
+/obj/item/clothing/under/hephaestus/alt
+	icon_state = "heph_tech_alt"
+/obj/item/clothing/under/hephaestus/miner
+	name = "hephaestus miner uniform"
+	desc = "Standart Hephaestus uniform. This one probably belongs to some miner."
+	icon_state = "heph_miner"
+/obj/item/clothing/under/hephaestus/engi
+	name = "hephaestus engineer uniform"
+	desc = "Standart Hephaestus uniform. This one probably belongs to some engineer."
+	icon_state = "heph_engi"
+//Hephaestus Asset Management
+/obj/item/clothing/under/hephaestus/official
+	name = "hephaestus official suit"
+	desc = "Standart Hephaestus official suit."
+	icon_state = "heph_official"
+//Militech Corp&Gov Asset Security
+/obj/item/clothing/under/hephaestus/militech
+	name = "militech uniform"
+	desc = "A double seamed tactical camouflage uniform for usage in corporate wars. Intended for corporate operator."
+	icon_state = "militech_uni"
+/obj/item/clothing/under/hephaestus/militech/tech
+	name = "militech tech uniform"
+	icon_state = "militech_tech"
+/obj/item/clothing/under/hephaestus/militech/turtle
+	name = "militech tactical turtleneck"
+	icon_state = "militech_turtle"
+/obj/item/clothing/under/hephaestus/militech/turtleblack
+	name = "militech black tactical turtleneck"
+	icon_state = "militech_blcturtle"
+/obj/item/clothing/under/hephaestus/militech/gex
+	name = "militech gex camouflage"
+	icon_state = "militech_gex"
+
+/obj/item/clothing/suit/hooded/wintercoat/security/militech
+	name = "militech winter coat"
+	desc = "A Militech brand armour-padded winter coat. It glitters with a mild ablative coating and a robust air of authority."
+	icon_state = "militech_coat"
+	item_state = "coatmilitech"
+	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/suits.dmi'
+	armor = list(MELEE = 30, BULLET = 30, LASER = 20, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 45)
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/militech
+
+/obj/item/clothing/head/hooded/winterhood/security/militech
+	name = "militech winter hood"
+	desc = "A red, armour-padded winter hood. Definitely not bulletproof, especially not the part where your face goes."
+	icon_state = "militech_hood"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+
+/obj/item/clothing/suit/armor/vest/iotv
+	name = "Improved Outer Tactical Vest Gen 3"
+	desc = "An improoved Gen III TerraGov armored vest that provides decent protection against most types of damage. Has Militech Asset Security production logo on it."
+	armor = list(MELEE = 20, BULLET = 60, LASER = 20, ENERGY = 30, BOMB = 40, BIO = 0, RAD = 0, FIRE = 80, ACID = 80, WOUND = 15, ELECTRIC = 100)
+	icon_state = "iotvgen3"
+
+/obj/item/clothing/suit/armor/vest/iotv/gen4
+	name = "Improved Outer Tactical Vest Gen 4"
+	desc = "An improoved Gen IV TerraGov armored vest that provides decent protection against most types of damage. Has Militech Asset Security production logo on it."
+	armor = list(MELEE = 25, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 80, ACID = 80, WOUND = 15, ELECTRIC = 100)
+	icon_state = "iotvgen4"
+
+/obj/item/clothing/suit/armor/vest/militech_carrier
+	name = "militech plate carrier"
+	desc = "An improoved Type II armored vest that provides decent protection against most types of damage. Has Militech Asset Security production logo on it."
+	armor = list(MELEE = 35, BULLET = 50, LASER = 50, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 80, ACID = 80, WOUND = 20, ELECTRIC = 100)
+	icon_state = "militech_carrier"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/carrier
+
+/obj/item/clothing/head/helmet/militech
+	name = "militech helmet"
+	desc = "Standart issue Militech helmet."
+	icon_state = "militech_helmet"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/hats.dmi'
+	dynamic_hair_suffix = ""
+
+/obj/item/clothing/head/beret/sec/militech
+	name = "militech officer`s beret"
+	icon_state = "alpha_beret"
+	icon = 'modular_dripstation/icons/obj/clothing/hats.dmi'
 
 //////////////////////////////
 //////////Syndicate///////////

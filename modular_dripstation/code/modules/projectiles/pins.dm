@@ -40,7 +40,7 @@
 /obj/item/firing_pin/implant/mindshield/pin_auth(mob/living/user)
 	if(user)
 		for(var/obj/item/implant/I in user.implants)
-			if(req_implant && (I.type == /obj/item/implant/mindshield || I.type == /obj/item/implant/mindshield/centcom))
+			if(req_implant && (I.type == /obj/item/implant/mindshield || I.type == /obj/item/implant/mindshield/centcom || I.type == /obj/item/implant/mindshield/centcom/iaa))
 				return TRUE
 	return FALSE
 
@@ -49,6 +49,13 @@
 	desc = "This Centcom firing pin authorizes the weapon for only high quality mindshield-implanted users."
 	icon_state = "firing_pin_centcomloyalty"
 	req_implant = /obj/item/implant/mindshield/centcom
+
+/obj/item/firing_pin/implant/centcom_mindshield/pin_auth(mob/living/user)
+	if(user)
+		for(var/obj/item/implant/I in user.implants)
+			if(req_implant && (I.type == /obj/item/implant/mindshield/centcom || I.type == /obj/item/implant/mindshield/centcom/iaa))
+				return TRUE
+	return FALSE
 
 /obj/item/firing_pin/implant/centcom_mindshield/gun_remove(mob/living/user)
 	auth_fail(user)

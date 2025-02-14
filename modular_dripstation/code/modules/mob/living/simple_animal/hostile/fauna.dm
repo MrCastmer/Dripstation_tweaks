@@ -4,14 +4,15 @@
 	obj_damage = 0
 	attack_vis_effect = ATTACK_EFFECT_BITE
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	desease_prob = 5
-	infect_prob = 30
-	desease_type = /datum/disease/rabies
+	disease_prob = 5
+	disease_type = /datum/disease/rabies
 
 /mob/living/simple_animal/hostile/asteroid/wolf/examine(mob/user)
 	. = ..()
-	if(has_desease && istype(desease_type, /datum/disease/rabies))
-		. += span_warning("It strangely drools!")
+	for(var/thing in diseases)
+		var/datum/disease/D
+		if(istype(D, "The Rabies"))
+			. += span_warning("It strangely drools!")
 
 /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin
 	name = "ice vulpkanin"
@@ -38,7 +39,7 @@
 	attack_vis_effect = ATTACK_EFFECT_CLAW
 	obj_damage = 15	// IT`S JOHNY
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
-	desease_prob = 50
+	disease_prob = 50
 	var/violating = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/wolf/vulpkanin/examine_more(mob/user)
@@ -77,20 +78,20 @@
 		var/mob/living/carbon/human/H = target
 		if(!(H.mobility_flags & MOBILITY_STAND))
 			if(ishumanbasic(H) && H.gender == FEMALE && prob(40))	//white woman moment
-				visible_message(span_notice("[src]] tries to violate [H]!"), span_notice("You trying to violate [H]!"))
+				visible_message(span_notice("[src] tries to violate [H]!"), span_notice("You trying to violate [H]!"))
 				violating = TRUE
 				H.apply_effect(4 SECONDS, EFFECT_PARALYZE)
 				H.apply_effect(10 SECONDS, EFFECT_KNOCKDOWN)
 				if(do_after(src, 3 SECONDS))
-					visible_message(span_notice("[src]] in a few quick moves violates [H] and leaves some liquid on their skin!"), span_notice("You violate [H]!"))
+					visible_message(span_notice("[src] in a few quick moves violates [H] and leaves some liquid on their skin!"), span_notice("You violate [H]!"))
 					do_attack_animation(H, ATTACK_EFFECT_BITE)
-					if(has_desease && desease_type)
-						var/datum/disease/D = desease_type
+					for(var/thing in diseases)
+						var/datum/disease/D = thing
 						if(D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS)
-							ContactContractDisease(D)
+							H.ForceContractDisease(D)
 				violating = FALSE
 			else if(H.stat != DEAD)
-				visible_message(span_notice("[src]] bites off a piece of meat from [H]!"), span_notice("You bite [H]!"))
+				visible_message(span_notice("[src] bites off a piece of meat from [H]!"), span_notice("You bite [H]!"))
 				do_attack_animation(H, ATTACK_EFFECT_BITE)
 				return ..()
 	else

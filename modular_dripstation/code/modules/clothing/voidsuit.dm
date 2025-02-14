@@ -18,6 +18,7 @@
 	desc = "A suit that protects against low pressure environments. Has a big 13 on the back."
 	icon = 'modular_dripstation/icons/obj/clothing/suits.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/spacesuits/suits.dmi'
+	species_restricted = list("exclude", "lizard", "polysmorph")
 
 /obj/item/clothing/suit/space/examine(mob/user)
 	. = ..()

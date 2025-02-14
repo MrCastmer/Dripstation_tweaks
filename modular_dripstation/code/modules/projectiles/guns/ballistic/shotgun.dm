@@ -89,6 +89,8 @@
 	item_state = "shotgun_db"
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/64x_guns_left.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	item_state = "ishotgun"

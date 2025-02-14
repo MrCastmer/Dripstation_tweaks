@@ -26,6 +26,7 @@
 /obj/item/storage/firstaid/tactical/alt/PopulateContents()
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/hypospray/combat(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/combat(src)
 	new /obj/item/reagent_containers/pill/patch/styptic(src)
 	new /obj/item/reagent_containers/pill/patch/styptic(src)
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
@@ -34,9 +35,10 @@
 /obj/item/storage/firstaid/tactical/centcom
 	item_state = "bezerk"
 
-/obj/item/storage/firstaid/tactical/ert/PopulateContents()
+/obj/item/storage/firstaid/tactical/centcom/PopulateContents()
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/hypospray/combat/nt(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/combat(src)
 	new /obj/item/reagent_containers/pill/patch/styptic(src)
 	new /obj/item/reagent_containers/pill/patch/styptic(src)
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)

@@ -6,6 +6,8 @@
 	icon_state = "antimaterial_rifle"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_sound = 'modular_dripstation/sound/weapons/tgmc/sniper.ogg'
+	dry_fire_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_empty.ogg'
 
 /obj/item/gun/ballistic/rifle/sniper_rifle/syndicate
 	name = "\improper 'Caracal' SA-91M anti-materiel rifle"
@@ -14,6 +16,9 @@
 	rack_delay = 40 //Delay reduced thanks to recoil absorption
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
+
+/obj/item/gun/ballistic/rifle/sniper_rifle/syndicate/nt
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/ballistic/rifle/sniper_rifle/ultrasecure
 	name = "\improper 'Caracal' SA-91M anti-materiel rifle"
@@ -27,7 +32,7 @@
 
 /obj/item/gun/ballistic/rifle/sniper_rifle/waffle
 	name = "\improper WA-7 anti-material sniper rifle"
-	desc = "An illegal Waffle Armory rendition of an Scarborough Arms sniper rifle. This one has been fitted with a heavy duty scope, a sturdier stock, and has a removable muzzle brake that allows easy attachment of suppressors."
+	desc = "An illegal Waffle Armory rendition of an Scarborough Arms sniper rifle. This one has been fitted with a sturdier stock and has a removable muzzle brake that allows easy attachment of suppressors."
 	icon_state = "waffle_sniper"
 	item_state = "waffle_sniper"
 	can_suppress = TRUE
@@ -36,8 +41,6 @@
 	rack_delay = 55 //Slightly smaller than standard sniper
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
-	fire_sound = "'modular_dripstation/sound/weapons/tgmc/sniper.ogg"
-	dry_fire_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_empty.ogg'
 	eject_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_unload.ogg'
 	eject_empty_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_unload.ogg'
 	load_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_reload.ogg'
@@ -46,13 +49,24 @@
 /obj/item/gun/ballistic/rifle/sniper_rifle/waffle/unrestricted
 	pin = /obj/item/firing_pin
 
+/obj/item/gun/ballistic/rifle/sniper_rifle/militech
+	name = "\improper 'Catalyst' MR-5 anti-material sniper rifle"
+	desc = "An Militech legal copy of SA-91R Scarborough Arms sniper rifle. This one has been fitted with a heavy duty scope and a sturdier stock."
+	icon_state = "militech_catalyst"
+	rack_delay = 50 //Smaller than standard sniper
+	eject_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_unload.ogg'
+	eject_empty_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_unload.ogg'
+	load_sound = 'modular_dripstation/sound/weapons/tgmc/sniper_reload.ogg'
+	pin = /obj/item/firing_pin/dna/secure
+
+
 ///Nitro Express///
 /obj/item/gun/ballistic/nitro_express
 	name = "\improper BW-5 Nitro Express Rifle"
 	desc = "A large-bore double-barelled break-action hunting rifle. Fires armor-piercing .700 'Nitro Express' ammunition. The recoil feels strong enough to break your shoulder."
 	icon_state = "nitro_express"
 	mag_type = /obj/item/ammo_box/magazine/internal/nitro_express
-	fire_sound = "sound/weapons/sniper_shot.ogg"
+	fire_sound = 'sound/weapons/sniper_shot.ogg'
 	fire_sound_volume = 80
 	can_suppress = FALSE
 	var/select
@@ -71,6 +85,10 @@
 	fire_sound_volume = 100
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
 	var/locked = TRUE
+
+	available_attachments = list(
+		/obj/item/attachment/laser_sight,
+	)
 
 /obj/item/gun/ballistic/nitro_express/examine_more(mob/user)
 	. = ..()
@@ -258,6 +276,11 @@
 */
 
 ///Boltaction///
+/obj/item/gun/ballistic/rifle/boltaction
+	available_attachments = list(
+		/obj/item/attachment/scope/sniper_slav,
+	)
+
 /obj/item/gun/ballistic/rifle/boltaction/brand_new
 	desc = "A brand new Mosin Nagant issued by Nanotrasen for their interns. You would rather not to damage it."
 	icon_state = "mosinprime"
