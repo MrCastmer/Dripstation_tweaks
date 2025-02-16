@@ -90,7 +90,7 @@
 	head = /obj/item/clothing/head/helmet/hardened/cmd
 	mask = /obj/item/clothing/mask/breath/tactical
 	suit_store = /obj/item/gun/ballistic/automatic/proto
-	belt = /obj/item/storage/belt/military/assault
+	belt = /obj/item/storage/belt/military/assault/consultant
 	backpack = /obj/item/storage/backpack/unknown
 	satchel = /obj/item/storage/backpack/satchel/unknown
 	duffelbag = /obj/item/storage/backpack/duffelbag/unknown

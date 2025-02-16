@@ -1,7 +1,7 @@
 /datum/outfit/syndicate
 	id = /obj/item/card/id/syndicate/nuke
 	back = /obj/item/storage/backpack/syndie
-	belt = /obj/item/gun/ballistic/automatic/pistol/fn45
+	belt = /obj/item/storage/belt/holster/syndicate/fnx45
 	box = /obj/item/storage/box/syndie/nuke	//box for syndicate`s MODERN COMBAT personel
 	backpack_contents = list(/obj/item/kitchen/knife/combat/survival = 1)
 
@@ -12,6 +12,7 @@
 
 /datum/outfit/syndicate/leader
 	gloves = /obj/item/clothing/gloves/combat
+	l_pocket = /obj/item/storage/pouch/general/large/nuclear
 
 /datum/outfit/syndicate/leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -23,8 +24,10 @@
 
 /obj/item/tank/internals/oxygen/syndicate
 	name = "unknown oxygen tank"
-	desc = "A black colored tank of oxygen."
-	color = "#23242c"
+	desc = "A grey colored tank of oxygen."
+	icon_state = "syndicate"
+	item_state = "air"
+	icon = 'modular_dripstation/icons/obj/tank.dmi'	
 
 /datum/outfit/syndicate/full
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/bloodred
@@ -134,7 +137,7 @@
 /datum/outfit/syndicate/no_crystals/donk/post_equip(mob/living/carbon/human/H)
 	..()
 	var/obj/item/organ/cyberimp/arm/toolset/tl = new(H)	//don`t work
-	tl.Insert(H, special = FALSE, drop_if_replaced = FALSE)
+	tl.Insert(H, special = TRUE, drop_if_replaced = FALSE)
 	to_chat(H, "Your arm have been implanted with a cybernetic toolset which will help you keep tools with you.")	
 
 /datum/outfit/syndicate/no_crystals/waffle

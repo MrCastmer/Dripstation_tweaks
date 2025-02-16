@@ -2,6 +2,11 @@
 	cell_type = /obj/item/stock_parts/cell/gun
 	icon = 'modular_dripstation/icons/obj/weapons/energy.dmi'
 
+/obj/item/gun/energy/e_gun/secure
+	icon_state = "energyalt"
+	can_cell = TRUE ///if the gun's cell can be replaced
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+
 /obj/item/gun/energy/e_gun/ancient
 	name = "NT-E1 gun"
 	desc = "The NT-E2 is a basic energy gun that has only one mode. Kill."
@@ -12,6 +17,10 @@
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/e_gun/stun
+	desc = "NT-ME5 Hybrid Energy Gun"
+	desc = "The NT-ME5 hybrid energy gun is the newest generation of standardized energy equipment for use by NT private military forces. This hybrid energy gun comes equipped with two settings: disable and kill."
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+	can_cell = TRUE ///if the gun's cell can be replaced
 	cell_type = /obj/item/stock_parts/cell/gun/pulse/pistol	//specops grade cell
 
 /obj/item/gun/energy/e_gun/energyrevolver
@@ -38,6 +47,7 @@
 	force = 15
 	ammo_x_offset = 2
 	pin = /obj/item/firing_pin/implant/centcom_mindshield
+	can_cell = TRUE ///if the gun's cell can be replaced
 	cell_type = /obj/item/stock_parts/cell/gun/pulse/pistol
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/laser_spec, /obj/item/ammo_casing/energy/ion)
@@ -57,8 +67,9 @@
 	charge_sections = 3
 	pin = /obj/item/firing_pin/implant/mindshield
 
-/obj/item/gun/energy/sniperrifle
+/obj/item/gun/energy/sniperrifle/secure
 	icon_state = "esniper_black"
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/energy/plasmarifle
 	name = "Plasma Assault Rifle"
@@ -105,7 +116,8 @@
 /obj/item/gun/energy/e_gun/turret
 	icon = 'icons/obj/guns/energy.dmi'
 
-/obj/item/gun/energy/e_gun/stun
-	desc = "NT-ME5 Hybrid Energy Gun"
-	desc = "The NT-ME5 hybrid energy gun is the newest generation of standardized energy equipment for use by NT private military forces. This hybrid energy gun comes equipped with two settings: disable and kill."
-	pin = /obj/item/firing_pin/implant/mindshield
+/obj/item/gun/energy/e_gun/advtaser/secure
+	icon_state = "advtaser_alt"
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+	can_cell = TRUE ///if the gun's cell can be replaced
+	charge_sections = 1

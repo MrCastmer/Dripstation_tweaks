@@ -88,6 +88,7 @@
 /obj/item/card/id
 	icon = 'modular_dripstation/icons/obj/card.dmi'
 	var/has_fluff
+	var/iff_signal = NONE
 
 /obj/item/card/id/proc/ID_fluff()
 	var/job = originalassignment
@@ -144,15 +145,17 @@
 		"Deathsquad Officer",
 		"SpecOps Officer",
 		"CentCom Official",
-		"Emergency Response Team Commander",
+		"Emergency Response Team Officer",
 		"Amber Task Force",
-		"Occupying Officer",
-		"Security Response Officer",
-		"Engineer Response Officer",
-		"Medical Response Officer",
-		"Religious Response Officer",
-		"Janitorial Response Officer",
-		"Clown ERT",
+		"Gamma Task Force",
+		"Occupying Operative",
+		"Emergency Response Team Member",
+		"Security Response Operative",
+		"Engineer Response Operative",
+		"Medical Response Operative",
+		"Religious Response Operative",
+		"Janitorial Response Operative",
+		"Fun Response Operative",
 		"Nuclear Squad Operative",
 		"Nuclear Squad Leader",
 		"Syndicate Overlord",
@@ -178,9 +181,18 @@
 
 /obj/item/card/id/nanotrasen
 	icon_state = "id_nanotrasen"
+	iff_signal = NANOTRASEN_IFF | SPEARHEAD_IFF
 
 /obj/item/card/id/head
 	icon_state = "id_head"
+
+/obj/item/card/id/gold/captain
+	iff_signal = SPEARHEAD_IFF
+
+/obj/item/card/id/spearhead
+	desc = "A card that allows access across the station. Also has Security IFF signal."
+	icon_state = "id_spearhead"
+	iff_signal = SPEARHEAD_IFF
 
 /obj/item/card/id/head/synthetic
 	name = "replika identification card"
@@ -207,6 +219,7 @@
 	assignment = "TerraGov Military"
 	originalassignment = "TerraGov Military"
 	resistance_flags = UNACIDABLE | ACID_PROOF	//xenos scum
+	iff_signal = TERRAGOV_IFF
 
 /obj/item/card/id/idtags/ID_fluff()
 	return
@@ -226,7 +239,23 @@
 	desc = "A shellguard dog tag."
 	//registered_name = "Shellguard Mercenary"
 	assignment = "Shellguard Mercenary"
-	originalassignment = "Shellguard Mercenary"
+	originalassignment = "Shellguard"
+	iff_signal = SHELLGUARD_IFF
+
+/obj/item/card/id/idtags/militech
+	desc = "A militech dog tag."
+	//registered_name = "Militech Operative"
+	assignment = "Militech Operative"
+	originalassignment = "Militech"
+	iff_signal = HEPHAESTUS_IFF
+
+/obj/item/card/id/hephaestus
+	desc = "An ID straight from Hephaestus Industries."
+	icon_state = "hephaestus"
+	has_fluff = TRUE
+	assignment = "Hephaestus Tech"
+	originalassignment = "Hephaestus"
+	iff_signal = HEPHAESTUS_IFF
 
 /obj/item/card/id/deathsquad
 	name = "\improper BlackOps ID"
@@ -234,66 +263,150 @@
 	icon_state = "deathsquad"
 	has_fluff = TRUE
 	registered_name = "BlackOps Operative"
-	assignment = "Deathsquad Officer"
-	originalassignment = "Deathsquad Officer"
+	assignment = "Death Commando"
+	originalassignment = "Death Commando"
 	registered_age = null
+	iff_signal = NANOTRASEN_IFF | DEATHSQUAD_IFF
 
-/obj/item/card/id/gamma_force
+obj/item/card/id/centcom
+	icon_state = "centcom"
+	originalassignment = "CentCom"
+	has_fluff = TRUE
+	iff_signal = NANOTRASEN_IFF
+
+/obj/item/card/id/centcom/Initialize(mapload)
+	access = get_centcom_access("CentCom Official")
+	access += ACCESS_WEAPONS
+	access += ACCESS_HEADS
+	. = ..()
+
+/obj/item/card/id/centcom/silver/Initialize(mapload)
+	access += get_centcom_access("Research Officer")
+	. = ..()
+
+/obj/item/card/id/centcom/gold/Initialize(mapload)
+	access = get_all_accesses()
+	access += get_centcom_access("CentCom Commander")
+	. = ..()
+
+/obj/item/card/id/centcom/silver
+	name = "\improper silver CentCom ID"
+	desc = "A silver ID straight from Central Command."
+	icon_state = "centcom_silver"
+	originalassignment = "CentCom Officer"
+	iff_signal = NANOTRASEN_IFF | DEATHSQUAD_IFF
+
+/obj/item/card/id/centcom/gold
+	name = "\improper gold CentCom ID"
+	desc = "A gold ID straight from Central Command."
+	icon_state = "centcom_gold"
+	originalassignment = "CentCom Officer"
+	iff_signal = NANOTRASEN_IFF | DEATHSQUAD_IFF
+
+/obj/item/card/id/ert
+	icon_state = "ERT_empty"
+	assignment = "Emergency Response Operative"
+	originalassignment = "CentCom"
+	iff_signal = NANOTRASEN_IFF
+
+/obj/item/card/id/ert/Initialize(mapload)
+	access += get_region_accesses(1)
+	access = list(ACCESS_SECURITY,ACCESS_BRIG,ACCESS_WEAPONS,ACCESS_SEC_DOORS,ACCESS_MAINT_TUNNELS, ACCESS_HEADS, ACCESS_MEDICAL, ACCESS_MORGUE)
+	access += get_centcom_access("VIP Guest")
+	. = ..()
+
+/obj/item/card/id/ert/amber
+	icon_state = "ERT_amber"
+	assignment = "Amber Soldier"
+	originalassignment = "Amber Task Force"
+	has_fluff = TRUE
+
+/obj/item/card/id/ert/gamma
 	name = "\improper SpecOps ID"
 	desc = "An ID straight from Nanotrasen SpecOps Division."
 	icon_state = "ERT_gamma"
 	has_fluff = TRUE
 	registered_name = "SpecOps Operative"
 	assignment = "SpecOps Officer"
-	originalassignment = "SpecOps Officer"
+	originalassignment = "Gamma Task Force"
 
-/obj/item/card/id/centcom/silver
-	name = "\improper silver CentCom ID"
-	desc = "A silver ID straight from Central Command."
-	icon_state = "centcom_silver"
-
-/obj/item/card/id/centcom/gold
-	name = "\improper gold CentCom ID"
-	desc = "A gold ID straight from Central Command."
-	icon_state = "centcom_gold"
-
-/obj/item/card/id/ert
-	icon_state = "ERT_empty"
-
-/obj/item/card/id/ert/amber
-	icon_state = "ERT_amber"
-	has_fluff = TRUE
+/obj/item/card/id/ert/gamma/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
 
 /obj/item/card/id/ert/occupying
 	icon_state = "ERT_occ"
+	assignment = "Peacekeeping Operative"
+	originalassignment = "Occupying Operative"
 	has_fluff = TRUE
 
 /obj/item/card/id/ert/leader
 	icon_state = "ERT_leader"
+	assignment = "Emergency Response Team Officer"
+	originalassignment = "Centcom Officer"
 	has_fluff = TRUE
+
+/obj/item/card/id/ert/leader/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
 
 /obj/item/card/id/ert/Security
 	icon_state = "ERT_security"
+	assignment = "Detaining Response Specialist"
+	assignment = "Centcom"
 	has_fluff = TRUE
+
+/obj/item/card/id/ert/Security/Initialize(mapload)
+	access += get_ert_access("sec")
+	. = ..()
 
 /obj/item/card/id/ert/Engineer
 	icon_state = "ERT_engineering"
+	originalassignment = "Engineer Response Specialist"
+	originalassignment = "Centcom Engineer"
 	has_fluff = TRUE
+
+/obj/item/card/id/ert/Engineer/Initialize(mapload)
+	access += get_region_accesses(5)
+	access += get_ert_access("engi")
+	. = ..()
 
 /obj/item/card/id/ert/Medical
 	icon_state = "ERT_medical"
+	originalassignment = "Medical Response Specialist"
+	originalassignment = "Centcom Medic"
 	has_fluff = TRUE
+
+/obj/item/card/id/ert/Medical/Initialize(mapload)
+	access += get_region_accesses(3)
+	access += get_ert_access("med")
+	. = ..()
 
 /obj/item/card/id/ert/chaplain
 	icon_state = "ERT_chaplain"
+	originalassignment = "Religious Response Specialist"
+	originalassignment = "Centcom Chap"
 	has_fluff = TRUE
+
+/obj/item/card/id/ert/chaplain/Initialize(mapload)
+	access += get_ert_access("sec")
+	. = ..()
 
 /obj/item/card/id/ert/Janitor
 	icon_state = "ERT_janitorial"
+	originalassignment = "Janitorial Response Specialist"
+	originalassignment = "Centcom Janitor"
 	has_fluff = TRUE
+
+/obj/item/card/id/ert/Janitor/Initialize(mapload)
+	access += get_region_accesses(1)
+	access += get_ert_access("engi")
+	. = ..()
 
 /obj/item/card/id/ert/clown
 	icon_state = "ERT_clown"
+	originalassignment = "Fun Response Specialist"
+	originalassignment = "Centcom Clown"
 	has_fluff = TRUE
 
 /obj/item/card/id/makeshift

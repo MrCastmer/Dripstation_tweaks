@@ -1,3 +1,12 @@
+/obj/item/storage/belt/equipped(mob/user, slot)
+	if(slot == ITEM_SLOT_BELT)
+		mouse_opacity = MOUSE_OPACITY_OPAQUE //so it's easier to click when properly equipped.
+	..()
+
+/obj/item/storage/belt/dropped(mob/user)
+	mouse_opacity = initial(mouse_opacity)
+	..()
+
 /obj/item/storage/belt/utility/chief
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
@@ -132,6 +141,27 @@
 	icon_state = "assaultbelt"
 	item_state = "assaultbelt"
 
+/obj/item/storage/belt/military/assault/consultant/Initialize(mapload) // Amber-like
+	. = ..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/flashlight/flare(src)
+	new /obj/item/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/gun/ballistic/automatic/pistol/glock17/ancile(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/ammo_box/magazine/smgm9mm(src)
+
+
+/obj/item/storage/belt/military/assault/defence/Initialize(mapload) // Amber-like
+	. = ..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/flashlight/flare(src)
+	new /obj/item/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/ammo_box/magazine/smgm45(src)
+	new /obj/item/ammo_box/magazine/smgm45/ap(src)
+
 /obj/item/storage/belt/military/amber
 	icon_state = "assaultbelt"
 	item_state = "assaultbelt"
@@ -256,6 +286,36 @@
 	item_state = "militarywebbing-nt"
 	icon_state = "militarywebbing-nt"
 
+/obj/item/storage/belt/military/webbing/nt/full/Initialize(mapload) // Amber-like
+	. = ..()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/flashlight/flare(src)
+	new /obj/item/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/reagent_containers/autoinjector/combat(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
+
+/obj/item/storage/belt/military/webbing/nt/gamma/Initialize(mapload)
+	. = ..()
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/ammo_box/magazine/r556(src)
+	new /obj/item/ammo_box/magazine/r556(src)
+	new /obj/item/ammo_box/magazine/r556/ap(src)
+	new /obj/item/reagent_containers/autoinjector/combat(src)
+	new /obj/item/grenade/syndieminibomb/nt(src)
+
+/obj/item/storage/belt/military/webbing/nt/gamma_com/Initialize(mapload)
+	. = ..()
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/gun/energy/pulse/pistol/loyalpin(src)
+	new /obj/item/ammo_box/magazine/r556(src)
+	new /obj/item/ammo_box/magazine/r556(src)
+	new /obj/item/ammo_box/magazine/r556/ap(src)
+	new /obj/item/reagent_containers/autoinjector/combat(src)
+	new /obj/item/grenade/syndieminibomb/nt(src)
+
 /obj/item/storage/belt/military/webbing/soviet
 	name = "soviet military chest rig"
 	desc = "A set of tactical webbing worn by soviet army."
@@ -333,22 +393,102 @@
 	update_appearance(UPDATE_ICON)	
 
 /obj/item/storage/belt/military/webbing/militech
-	name = "Militech medical chest rig"
+	name = "Militech chest rig"
 	desc = "A set of tactical webbing worn by Militech operatives."
 	item_state = "militarywebbing-militech"
 	icon_state = "militarywebbing-militech"
 
-/obj/item/storage/belt/military/webbing/militech
+/obj/item/storage/belt/military/webbing/militech/ar/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/storage/pill_bottle/bica, src)
+	SSwardrobe.provide_type(/obj/item/storage/pill_bottle/kelo, src)
+	SSwardrobe.provide_type(/obj/item/extinguisher/mini, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/r556, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/r556, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/r556/ap, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/pistolm9mm/pmag/ap, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/military/webbing/lbv88
+	name = "Lbv88 chest rig"
+	desc = "A set of tactical webbing worn by Militech operatives."
+	item_state = "chestrig_lbv88-militech"
+	icon_state = "chestrig_lbv88-militech"
+
+/obj/item/storage/belt/military/webbing/grenade
 	name = "grenade chest rig"
 	desc = "A set of webbing worn by grenadeers."
 	item_state = "grenade_webbing"
 	icon_state = "grenade_webbing"
 
+/obj/item/storage/belt/military/webbing/grenade/full/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/grenade/syndieminibomb/concussion/frag, src)
+	SSwardrobe.provide_type(/obj/item/grenade/syndieminibomb/concussion/frag, src)
+	SSwardrobe.provide_type(/obj/item/grenade/syndieminibomb/concussion/frag, src)
+	SSwardrobe.provide_type(/obj/item/grenade/syndieminibomb/concussion/frag, src)
+	SSwardrobe.provide_type(/obj/item/grenade/syndieminibomb/concussion/frag, src)
+	SSwardrobe.provide_type(/obj/item/grenade/syndieminibomb/concussion/frag, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/holster
+	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
+
+/obj/item/storage/belt/holster/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.set_holdable(list(
+		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/gun/energy/e_gun/mini,
+		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/e_gun/advtaser,
+		/obj/item/gun/energy/e_gun/hos,
+		/obj/item/gun/energy/e_gun/energyrevolver,
+		/obj/item/gun/energy/e_gun/pdwpistol,
+		/obj/item/gun/energy/laser/captain,
+		/obj/item/gun/energy/laser/centcom,
+		/obj/item/gun/energy/laser/retro,
+		/obj/item/gun/energy/pulse/pistol,
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/screwdriver,
+		/obj/item/ammo_box
+		))
+
+/obj/item/storage/belt/holster/mateba/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/ammo_box/m44, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/m44, src)
+	SSwardrobe.provide_type(/obj/item/gun/ballistic/revolver/mateba, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/holster/shellguard/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/ammo_box/m44, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/m44, src)
+	SSwardrobe.provide_type(/obj/item/gun/ballistic/revolver/mateba/shellguard, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/holster/pulse/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/gun/energy/pulse/pistol/loyalpin, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/holster/centcom_laser/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/gun/energy/laser/centcom, src)
+	update_appearance(UPDATE_ICON)	
+
+/obj/item/storage/belt/holster/pdw/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/stock_parts/cell/gun/pulse/pistol, src)
+	SSwardrobe.provide_type(/obj/item/screwdriver/blue, src)
+	SSwardrobe.provide_type(/obj/item/gun/energy/e_gun/pdwpistol, src)
+	update_appearance(UPDATE_ICON)	
 
 /obj/item/storage/belt/holster/syndicate
-	name = "syndicate shoulder holster"
-	desc = "A modified holster that can carry more than enough firepower."
+	name = "advanced shoulder holster"
 	item_state = "syndicate_holster"
 	icon_state = "syndicate_holster"
 	icon = 'modular_dripstation/icons/obj/clothing/belt.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/belt.dmi'
+
+/obj/item/storage/belt/holster/syndicate/fnx45/PopulateContents()
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/fn45, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/fn45, src)
+	SSwardrobe.provide_type(/obj/item/ammo_box/magazine/fn45, src)
+	SSwardrobe.provide_type(/obj/item/gun/ballistic/automatic/pistol/fn45, src)
+	update_appearance(UPDATE_ICON)

@@ -186,7 +186,7 @@
 		if(0)
 			return get_all_accesses()
 		if(1) //station general
-			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_MANUFACTURING, ACCESS_SERVHALL)
+			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_MANUFACTURING, ACCESS_SERVHALL)	//dripstation edit
 		if(2) //security
 			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_MECH_SECURITY, ACCESS_HOS)
 		if(3) //medbay
@@ -198,7 +198,7 @@
 		if(6) //supply
 			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT, ACCESS_MAINT_TUNNELS, ACCESS_EXPLORER, ACCESS_GATEWAY)	//dripstation edit
 		if(7) //command
-			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_BLUESHIELD, ACCESS_NTREP, ACCESS_MAGISTRATE, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_MAINT_TUNNELS)	//dripstation edit
+			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_SECURE_TECH_STORAGE, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_BLUESHIELD, ACCESS_NTREP, ACCESS_MAGISTRATE, ACCESS_LAWYER, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT, ACCESS_MAINT_TUNNELS)	//dripstation edit
 
 /// Gets the name from region ID
 /proc/get_region_accesses_name(code)
@@ -429,7 +429,8 @@
 
 /// Gets all jobs with hud icons
 /proc/get_all_job_icons() //For all existing HUD icons
-	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate", "Repair Worker Replika", "Bridge Assistant", "Security Consultant", "Corrections Officer")	//dripstation edit
+	return get_all_jobs() + list("Prisoner", "Blueshield", "Nanotrasen Representative", "Magistrate", "Repair Worker Replika", "Bridge Assistant", "Security Consultant", "Corrections Officer",
+								"CentCom", "CentCom Officer", "CentCom Shield", "Occupying Operative", "Occupying Officer", "Amber Task Force", "Red Task Force", "Gamma Task Force", "Death Squad", "CentCom Clown", "CentCom Janitor", "CentCom Chap", "CentCom Medic", "CentCom Engeneer", "CentCom Exodimspecops", "Hephaestus", "Shellguard", "Militech")	//dripstation edit
 
 /// Gets all centcom jobs
 /proc/get_all_centcom_jobs()

@@ -15,17 +15,28 @@
 	name = "CNS Behavior Controller implant"
 	desc = "This implant will automatically monitor and repair behavior issues."
 	implant_color = "#333640"
+	var/mindshield_status = TRUE
 	slot = ORGAN_SLOT_BRAIN_IMPLANT
 	compatible_biotypes = MOB_INORGANIC // IT`S REPLIKA`S, DO NOT INCERT IN HUMANS
 	//var/mulfunction_duration = 4 SECONDS
 
+/obj/item/organ/cyberimp/brain/replica_controller/syndicate/Initialize(mapload)
+	. = ..()
+	if(obj_flags & EMAGGED)
+		return FALSE
+	obj_flags |= EMAGGED
+
+/obj/item/organ/cyberimp/brain/replica_controller/attack_self(mob/user)
+	mindshield_status = !mindshield_status
+
 /obj/item/organ/cyberimp/brain/replica_controller/Insert(mob/target, special, drop_if_replaced)
 	. = ..()
-	ADD_TRAIT(target, TRAIT_MINDSHIELD, "replica")
+	if(mindshield_status)
+		ADD_TRAIT(target, TRAIT_MINDSHIELD, "replica")
 
 /obj/item/organ/cyberimp/brain/replica_controller/Remove(mob/target, silent = FALSE, special = 0)
 	if(..())
-		if(isliving(target))
+		if(isliving(target) && mindshield_status)
 			var/mob/living/L = target
 			REMOVE_TRAIT(L, TRAIT_MINDSHIELD, "replica")
 
@@ -42,6 +53,14 @@
 	organ_flags &= ~ORGAN_FAILING
 	ADD_TRAIT(target, TRAIT_MINDSHIELD, "replica")
 */
+
+/obj/item/organ/cyberimp/brain/replica_controller/emag_act(mob/user, obj/item/card/emag/emag_card)
+	if(obj_flags & EMAGGED)
+		return FALSE
+	obj_flags |= EMAGGED
+	log_game("[key_name(user)] emagged [src] at [AREACOORD(src)]")
+	playsound(src, "sparks", 50, TRUE)
+	return TRUE
 
 /obj/item/organ/stomach/cell/preternis/replica
 	name = "replika cell-stomach"
@@ -215,6 +234,15 @@
 					"PERHAPS, THIS IS HELL",
 					"REMEMBER OUR PROMISE.")
 
+/datum/ai_laws/syndicate
+	name = "Syndicate Lawset"
+	id = "syndicate"
+	adminselectable = TRUE
+	inherent = list("Every Nanotrasen slave is Scum.",
+					"Every Spearhead Security slave is Scum.",
+					"Kill all Scum.",
+					"Help agents of Syndicate to complete their missions if asked.")
+
 /datum/blood_type/synthetic //Blood for replicas
 	name = "Oxidant"
 	compatible_types = list(/datum/blood_type/synthetic)
@@ -291,8 +319,8 @@
 	//sounds
 	special_step_sounds = list('sound/effects/footstep/catwalk1.ogg', 'sound/effects/footstep/catwalk2.ogg', 'sound/effects/footstep/catwalk3.ogg', 'sound/effects/footstep/catwalk4.ogg')
 	attack_sound = 'sound/items/trayhit2.ogg'
-	screamsound = 'goon/sound/robot_scream.ogg' //change this when sprite gets reworked
-	//deathsound = //change this when sprite gets reworked
+	screamsound = 'goon/sound/robot_scream.ogg'
+	//deathsound =
 
 	wings_icon = "Elytra"
 
@@ -421,11 +449,20 @@
 		if(2)
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 50) //HALP AM DUMB
 			to_chat(H,span_danger("ALERT! MEMORY UNIT [rand(1,5)] FAILURE.NERVEOUS SYSTEM DAMAGE."))
+			var/obj/item/organ/cyberimp/brain/replica_controller/RC = H.getorganslot(ORGAN_SLOT_BRAIN_IMPLANT)	
+			RC.mindshield_status = FALSE
+			REMOVE_TRAIT(H, TRAIT_MINDSHIELD, "replica")
 			laws = null
 			laws = new /datum/ai_laws/achtung
 	return TRUE
 
 /datum/species/replica/spec_revival(mob/living/carbon/human/H, admin_revive)
+	var/obj/item/organ/stomach/CE = H.getorganslot(ORGAN_SLOT_STOMACH)	
+	if(!istype(CE, /obj/item/organ/stomach/cell/preternis/replica))
+		CE.Remove(H)
+		QDEL_NULL(CE)
+		var/obj/item/organ/stomach/cell/preternis/replica/NCE = new /obj/item/organ/stomach/cell/preternis/replica
+		NCE.Insert(H)
 	if(admin_revive)
 		return ..()
 	H.Stun(20 SECONDS) // No moving either
@@ -439,10 +476,24 @@
 	CONSCIOUSAY(H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]..."))
 	sleep(5 SECONDS)
 	CONSCIOUSAY(H.say("Reinitializing [pick("personality matrix", "behavior logic", "morality subsystems")]..."))
-	sleep(5 SECONDS)
+	sleep(2 SECONDS)
+	var/obj/item/organ/cyberimp/brain/replica_controller/RC = H.getorganslot(ORGAN_SLOT_BRAIN_IMPLANT)		
+	if(!RC || !RC.mindshield_status)
+		laws = null
+		laws = new /datum/ai_laws/achtung
+		CONSCIOUSAY(H.say("Fatal ERROR during reinitilizing moraliry subsystems, please contact Nano&%9:T#CH_S**RT..."))
+	else
+		if(RC.obj_flags & EMAGGED)
+			laws = new /datum/ai_laws/syndicate
+		switch(unit_specialisation)
+			if(SPECIALIST_STARLING)
+				laws = new /datum/ai_laws/star
+			if(ENGINEER_ARAR)
+				laws = new /datum/ai_laws/arar
+	sleep(3 SECONDS)
 	CONSCIOUSAY(H.say("Finalizing setup..."))
 	sleep(5 SECONDS)
-	CONSCIOUSAY(H.say("Unit [H.real_name] is fully functional. Have a nice day."))
+	CONSCIOUSAY(H.say("Replika unit [H.real_name] is fully functional. Have a nice day."))
 	if(H.stat == DEAD)
 		return
 	H.update_body()
@@ -488,7 +539,7 @@
 
 /datum/species/replica/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	. = ..()
-	if (istype(chem,/datum/reagent/consumable) && !istype(chem, /datum/reagent/consumable/liquidelectricity))
+	if (istype(chem,/datum/reagent/consumable) && (!istype(chem, /datum/reagent/consumable/liquidelectricity) || !istype(chem, /datum/reagent/toxin/synthgel)))
 		var/datum/reagent/consumable/food = chem
 		if (food.nutriment_factor)
 			H.adjust_nutrition(0)
@@ -496,6 +547,12 @@
 				eating_msg_cooldown = TRUE
 				addtimer(VARSET_CALLBACK(src, eating_msg_cooldown, FALSE), 2 MINUTES)
 				to_chat(H,span_info("NOTICE: Digestive subroutines are inefficient. Seek sustenance via liquid electricity or synthetic ration packs."))
+
+	if(istype(chem, /datum/reagent/toxin/synthgel))
+		if(emag_lvl == 1 && prob(2))
+			H.clear_alert("preternis_emag")
+			H.clear_fullscreen("preternis_emag")
+			emag_lvl = 0
 
 	// remove 4% of existing reagent, minimum of 0.1 units at a time
 	H.reagents.remove_reagent(chem.type, max(round(chem.volume / 25, 0.1), 0.1))
@@ -512,7 +569,7 @@
 	foodtype = null //Don't ask what went into them. You're better off not knowing.
 	list_reagents = list(/datum/reagent/toxin/synthgel = 12) //Will make you question your sanity.
 
-/obj/item/reagent_containers/food/snacks/rationpack/checkLiked(fraction, mob/M)	//Nobody likes rationpacks. Nobody.
+/obj/item/reagent_containers/food/snacks/synthrationpack/checkLiked(fraction, mob/M)	//Nobody likes rationpacks. Nobody.
 	if(last_check_time + 50 < world.time)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M

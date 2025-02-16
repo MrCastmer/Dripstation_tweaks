@@ -69,11 +69,15 @@
 	item_state = "box_emergency"
 	illustration = null
 
-/obj/item/storage/box/engineer
+/obj/item/storage/box/survival/engineer
 	name = "extended emergency survival box"
 	icon_state = "air_upgrade"
 	item_state = "box_emergency"
 	illustration = null
+
+/obj/item/storage/box/survival/engineer/PopulateContents()
+	..()
+	new /obj/item/flashlight/glowstick/yellow(src)
 
 /obj/item/storage/box/syndie
 	name = "emergency survival box"
@@ -213,6 +217,17 @@
 /obj/item/storage/box/silver_ids
 	icon_state = "nt"
 	item_state = "nt"
+
+/obj/item/storage/box/sec_ids
+	name = "box of spare security IDs"
+	desc = "Shiny IDs for security personel. Cards has IFF signal."
+	icon_state = "secbox"
+	item_state = "secbox"
+	illustration = "id"
+
+/obj/item/storage/box/sec_ids/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card/id/spearhead(src)
 
 /obj/item/storage/box/deputy
 	icon_state = "secbox"
@@ -378,6 +393,51 @@
 	new /obj/item/tank/internals/emergency_oxygen/engi(src)
 	new /obj/item/reagent_containers/autoinjector/medipen(src)
 	new /obj/item/crowbar/red(src)
+
+/obj/item/storage/box/ert
+	name = "combat survival box"
+	icon_state = "nt"
+	item_state = "nt"
+	illustration = "syringe"
+
+/obj/item/storage/box/ert/PopulateContents()
+	new /obj/item/clothing/mask/breath/tactical(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
+	new /obj/item/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/melee/emergency_forcing_tool(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/flashlight/flare/signal(src)
+
+/obj/item/storage/box/militech
+	name = "unknown survival box"
+	icon_state = "box"
+	item_state = "box"
+	illustration = null
+
+/obj/item/storage/box/militech/PopulateContents()
+	new /obj/item/clothing/mask/gas/tactical(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
+	new /obj/item/radio/military/militech(src)
+	new /obj/item/melee/emergency_forcing_tool/varyag(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/flashlight/flare/signal(src)
+
+/obj/item/storage/box/shellguard
+	name = "unknown survival box"
+	icon_state = "box"
+	item_state = "box"
+	illustration = null
+
+/obj/item/storage/box/shellguard/PopulateContents()
+	new /obj/item/clothing/mask/breath/tactical/shellguard(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
+	new /obj/item/reagent_containers/autoinjector/medipen/survival(src)
+	new /obj/item/radio/military/shellguard(src)
+	new /obj/item/melee/emergency_forcing_tool/varyag(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/flashlight/flare/signal(src)
 
 /obj/item/storage/box/holobadge
 	name = "holobadge box"

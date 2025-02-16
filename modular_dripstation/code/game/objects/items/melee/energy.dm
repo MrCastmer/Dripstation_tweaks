@@ -45,13 +45,19 @@
 
 /obj/item/melee/transforming/energy/sword/nt
 	name = "hardlight blade"
-	desc = "A powerful energy-based hardlight blade that is easily stored when not in use. NT property."
+	desc = "A powerful energy-based hardlight blade that is easily stored when not in use. NanoTrasen property."
 	icon_state = "ntesword0"
 	icon_state_on = "ntesword1"
 	item_state = "sword0"
-	icon_state_on = "swordblue"
 	saber_color = null
 	light_color = "#40ceff"
+
+/obj/item/melee/transforming/energy/sword/nt/transform_weapon(mob/living/user, supress_message_text)
+	. = ..()
+	if(. && active)
+		item_state = "swordblue"
+	else
+		item_state = initial(item_state)
 
 /obj/item/melee/transforming/energy/machete
 	name = "energy machete"

@@ -780,8 +780,14 @@
 
 /datum/action/toggle_scope_zoom/IsAvailable(feedback = FALSE)
 	. = ..()
+	if(owner.get_active_held_item() != gun)		//dripstation edit
+		if(gun.zoomed)
+			gun.zoom(owner, owner.dir, FALSE)	//dripstation edit
+		return FALSE
+	/*
 	if(!. && gun)
 		gun.zoom(owner, owner.dir, FALSE)
+	*/
 
 /datum/action/toggle_scope_zoom/Remove(mob/living/L)
 	gun.zoom(L, L.dir, FALSE)
@@ -805,9 +811,16 @@
 			zoomed = !zoomed
 
 	if(zoomed)
+		if(!do_after(user, zooming_time, src, timed_action_flags = IGNORE_USER_LOC_CHANGE)) 			//dripstation edit
+			return	!zoomed		 																		//dripstation edit
+		user.add_movespeed_modifier(MOVESPEED_ID_ZOOMED_MODIFIER, update=TRUE, priority=100, multiplicative_slowdown = zooming_speed)//dripstation edit
+		fire_select(SELECT_SEMI_AUTOMATIC)								//dripstation edit
+		fire_delay = zooming_fire_delay			//dripstation edit
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
 	else
+		user.remove_movespeed_modifier(MOVESPEED_ID_ZOOMED_MODIFIER)					//dripstation edit
+		fire_delay = initial(fire_delay)			//dripstation edit
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.client.view_size.zoomIn()
 	return zoomed

@@ -18,7 +18,7 @@
 				/obj/item/gun/ballistic/automatic/pistol/m1911/signature = 1,
 				/obj/item/gun/ballistic/automatic/pistol/APS = 1,
 				/obj/item/gun/ballistic/automatic/pistol/glock18/shelg = 1,
-				/obj/item/gun/energy/laser/cybersun = 1,
-				/obj/item/gun/energy/plasmarifle/unsecure = 1,
+				//obj/item/gun/energy/laser/cybersun = 1,
+				//obj/item/gun/energy/plasmarifle/unsecure = 1,
 				/obj/item/gun/ballistic/revolver/mateba = 1
 				)

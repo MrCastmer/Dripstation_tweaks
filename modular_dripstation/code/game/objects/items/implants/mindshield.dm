@@ -56,10 +56,12 @@
 	imp_type = /obj/item/implant/mindshield/centcom
 
 /obj/item/implant/mindshield/centcom/iaa
+	icon_state = "iaamindshield"
 	actions_types = list(/datum/action/item_action/hands_free/activate)
 
 /obj/item/implant/mindshield/centcom/iaa/activate(status = TRUE)
-	active = status
+	. = ..()
+	active = !active
 	to_chat(imp_in, "You feel a faint click as [name] [active ? "activates" : "deactivates"]")
 	implant_visible_as = "[active ? "hud_imp_loyal_ert" : null]"
 	imp_in.sec_hud_set_implants()
@@ -126,7 +128,7 @@
 
 /obj/item/implantcase/tot_obvious
 	name = "implant case - 'Syndicate Operative Field Mentalshield'"
-	desc = "A glass case containing a Amnestic implant."
+	desc = "A glass case containing a mindshield implant."
 	imp_type = /obj/item/implant/mindshield/tot_obvious
 
 /////Amnestic implant/////

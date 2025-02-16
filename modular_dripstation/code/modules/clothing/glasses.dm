@@ -163,10 +163,11 @@
 	icon_state = "sunhudbeer"
 
 /obj/item/clothing/glasses/thermal
+	icon_state = "thermal"
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
-	icon_state = "tact-thermal_nvg"
-	var/can_toggle = TRUE
+	var/can_toggle = FALSE
+/*
 	var/on = FALSE
 	var/lighting_cutoff_off = 0
 	var/flash_protect_off = 2
@@ -174,7 +175,6 @@
 	var/glass_colour_type_off = null
 	var/vision_flags_off = null
 
-/*
 /obj/item/clothing/glasses/thermal/verb/toggle()
 	set name = "Toggle Thermal"
 	set category = "Object"
@@ -260,14 +260,18 @@
 		glass_colour_type = glass_colour_type_off
 		vision_flags = vision_flags_off
 */
+
+/obj/item/clothing/glasses/thermal/tactical
+	icon_state = "tact-thermal_nvg"
+	can_toggle = TRUE
+	//actions_types = list(/datum/action/item_action/toggle_t)
+
 /obj/item/clothing/glasses/thermal/xray
 	name = "syndicate xray goggles"
 	desc = "A pair of xray goggles manufactured by the Syndicate."
 	icon_state = "tact-xray_nvg"
-
-/obj/item/clothing/glasses/thermal/syndi
-	icon_state = "thermal"
-	can_toggle = FALSE
+	can_toggle = TRUE
+	//actions_types = list(/datum/action/item_action/toggle_t)
 
 /obj/item/clothing/glasses/thermal/monocle
 	can_toggle = FALSE
@@ -309,7 +313,7 @@
 /obj/item/clothing/glasses/hud/health
 	icon = 'modular_dripstation/icons/obj/clothing/eyes.dmi'
 	worn_icon = 'modular_dripstation/icons/mob/clothing/eyes.dmi'
-	hud_type = DATA_HUD_MEDICAL_BASIC
+	hud_type = DATA_HUD_MEDICAL_ADVANCED
 	flags_cover = null //GLASSESCOVERSEYES
 
 /obj/item/clothing/glasses/hud/health/night/cultblind

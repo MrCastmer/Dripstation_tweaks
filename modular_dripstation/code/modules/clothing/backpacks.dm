@@ -4,6 +4,15 @@
 	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
 	var/list/species_restricted = list("exclude", "replica")
 
+/obj/item/storage/backpack/equipped(mob/user, slot)
+	if(slot == ITEM_SLOT_BACK)
+		mouse_opacity = MOUSE_OPACITY_OPAQUE //so it's easier to click when properly equipped.
+	..()
+
+/obj/item/storage/backpack/dropped(mob/user)
+	mouse_opacity = initial(mouse_opacity)
+	..()
+
 /obj/item/storage/backpack/mob_can_equip(M as mob, slot)
 
 	//if we can't equip the item anyway, don't bother with species_restricted (also cuts down on spam)
@@ -527,7 +536,7 @@
 /obj/item/storage/backpack/satchel/unknown
 	name = "unknown satchel"
 	desc = "Unknown satchel."
-	icon_state = "unknownpack"
+	icon_state = "satchel-unknown"
 	item_state = "unknownpack"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
@@ -536,7 +545,34 @@
 /obj/item/storage/backpack/duffelbag/unknown
 	name = "unknown duffelbag"
 	desc = "Unknown duffelbag."
-	icon_state = "unknownpack"
+	icon_state = "duffel-unknown"
+	item_state = "unknownpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/centcom
+	name = "centcom backpack"
+	desc = "Centcom backpack."
+	icon_state = "centcompack"
+	item_state = "unknownpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/satchel/centcom
+	name = "centcom satchel"
+	desc = "Centcom satchel."
+	icon_state = "satchel-centcom"
+	item_state = "unknownpack"
+	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
+	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'
+	righthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_righthand.dmi'
+
+/obj/item/storage/backpack/duffelbag/centcom
+	name = "centcom duffelbag"
+	desc = "Centcom duffelbag."
+	icon_state = "duffel-centcom"
 	item_state = "unknownpack"
 	icon = 'modular_dripstation/icons/obj/storage/backpacks.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/clothing/backpack_lefthand.dmi'

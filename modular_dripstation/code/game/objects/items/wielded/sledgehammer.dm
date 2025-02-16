@@ -1,6 +1,6 @@
 /obj/item/melee/sledgehammer
 	var/force_wielded_twohand = 15
-	slowdown = 0.1	//You need some strength to cary this shit
+	slowdown = 0.3	//You need some strength to cary this shit
 	item_flags = SLOWS_WHILE_IN_HAND
 
 /obj/item/melee/sledgehammer/Initialize(mapload)
@@ -27,14 +27,21 @@
 	item_state = "sledgehammer"
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/melee_righthand.dmi'
-	slowdown = 0.3	//You need some strength to cary this shit
+	slowdown = 0.4	//You need some strength to cary this shit
 	item_flags = SLOWS_WHILE_IN_HAND
 	armour_penetration = -10//Tactical, but still not very practical
 	throwforce = 30			//OUCH
 	throw_range = 3 		//Doesn't throw very far
 	wound_bonus = -10		//So it`s somewhat combat
 	bare_wound_bonus = 20	//So it`s somewhat combat
-	force_wielded_twohand = 25
+	force_wielded_twohand = 20	//It shouldn`t be like better then thunder one
+
+/obj/item/melee/sledgehammer/attack(mob/living/M, mob/living/user)
+	var/current_stamina_damage = user.getStaminaLoss()
+	if(current_stamina_damage >= 50)
+		to_chat(user, span_warning("You muscles seize, you can`t swing \the [src] again!"))
+		return
+	return ..()
 
 /obj/item/melee/sledgehammer/security/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -62,3 +69,9 @@
 		var/atom/throw_target = get_edge_target_turf(H, get_dir(src, get_step_away(H, src)))
 		H.throw_at(throw_target, 2, 4)
 		to_chat(H, span_danger("\The [src] hits you very hard and throws you back!"))
+
+/obj/item/melee/vxtvulhammer
+	name = "Thunder Hammer"
+
+/obj/item/melee/vxtvulhammer/nt
+	force_wielded = 44

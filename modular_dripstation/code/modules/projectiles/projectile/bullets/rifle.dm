@@ -16,6 +16,7 @@
 	armour_penetration = 60
 	penetration_flags = PENETRATE_MOBS
 	penetrations = 1
+	hard_armour_penetration = 10	//penetrates hard armor
 	wound_bonus = -45
 
 ///AP 5.56

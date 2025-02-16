@@ -351,16 +351,6 @@
 	desc = "A stylish turtleneck complete with tactical skirt."
 	icon_state = "blueturtle_skirt_blue"
 
-/obj/item/storage/belt/military/assault/consultant/Initialize(mapload) // Amber-like
-	. = ..()
-	new /obj/item/reagent_containers/spray/pepper(src)
-	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/flashlight/flare(src)
-	new /obj/item/restraints/handcuffs/cable/zipties(src)
-	new /obj/item/gun/ballistic/automatic/pistol/glock17/ancile(src)
-	new /obj/item/ammo_box/magazine/pistolm9mm(src)
-	new /obj/item/ammo_box/magazine/smgm9mm(src)
-
 // ###### CORRECTIONS OFFICER ######
 /obj/item/clothing/under/rank/security/corrections_officer
 	name = "corrections officer's uniform"
@@ -408,17 +398,25 @@
 					/obj/item/reagent_containers/food/snacks/donut = 12,
 					/obj/item/storage/box/evidence = 6,
 					/obj/item/flashlight/seclite = 4,
-					/obj/item/restraints/legcuffs/bola/energy = 7)
+					/obj/item/flashlight/flare = 20,
+					/obj/item/restraints/legcuffs/bola/energy = 7,
+					/obj/item/storage/pouch/pistol = 2,
+					/obj/item/storage/pouch/magazine/pistol = 2,
+					/obj/item/storage/pouch/magazine = 2,
+					/obj/item/storage/pouch/explosive = 2,
+					/obj/item/storage/pouch/flare = 2,
+					/obj/item/storage/belt/bandolier = 2)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
-					  /obj/item/storage/fancy/donut_box = 2)
+					/obj/item/storage/fancy/donut_box = 2)
 	premium = list(/obj/item/storage/belt/security/webbing = 5,
 					/obj/item/clothing/gloves/tackler/security = 3,
 					/obj/item/clothing/glasses/hud/security/sunglasses/aviators = 1,
-				   /obj/item/coin/antagtoken = 1,
-				   /obj/item/clothing/head/helmet/warhelmet = 5,
-				   /obj/item/clothing/suit/armor/vest/rycliesarmour = 5,
-				   /obj/item/clothing/head/helmet/blueshirt = 5,
-				   /obj/item/clothing/suit/armor/vest/blueshirt = 5)
+					/obj/item/coin/antagtoken = 1,
+					/obj/item/bowman_upgrade = 2,
+					/obj/item/clothing/head/helmet/warhelmet = 5,
+					/obj/item/clothing/suit/armor/vest/rycliesarmour = 5,
+					/obj/item/clothing/head/helmet/blueshirt = 5,
+					/obj/item/clothing/suit/armor/vest/blueshirt = 5)
 
 
 /obj/machinery/vending/wardrobe/sec_wardrobe

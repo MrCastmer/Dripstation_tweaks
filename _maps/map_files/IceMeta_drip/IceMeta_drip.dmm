@@ -59543,6 +59543,7 @@
 	},
 /obj/structure/rack,
 /obj/effect/turf_decal/bot_red,
+/obj/item/storage/box/sec_ids,
 /obj/item/card/id/departmental_budget/sec,
 /obj/item/circuitboard/machine/techfab/department/security,
 /turf/open/floor/plasteel/dark,

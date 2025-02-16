@@ -27,3 +27,23 @@
 
 /datum/outfit/securitycorpse/jackbootless
 	shoes = null
+
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier
+	name = "Nanotrasen Amber Trooper"
+	id_job = "Amber Task Force"
+	id_access = "Security Officer"
+	outfit = /datum/outfit/nanotrasensoldiercorpse2
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+	mob_color = "#EEEEEE"
+
+/datum/outfit/nanotrasensoldiercorpse2
+	name = "NT Amber Task Force Trooper Corpse"
+	uniform = /obj/item/clothing/under/rank/centcom/officer/ert/amber
+	suit = /obj/item/clothing/suit/armor/hardened/amber
+	shoes = /obj/item/clothing/shoes/combat/combat_knife
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/alt
+	glasses = /obj/item/clothing/glasses/hud/security/military
+	mask = /obj/item/clothing/mask/breath/tactical
+	id = /obj/item/card/id

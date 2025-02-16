@@ -556,7 +556,7 @@
 
 /obj/item/clothing/suit/toggle/capformal/centcom
 	name = "\improper CentCom formal coat"
-	desc = "A CentCom green alteration of the captain's formal coat. Issued only to Nanotrasen's finest!"
+	desc = "A CentCom alteration of the captain's formal coat. Issued only to Nanotrasen's finest!"
 	icon_state = "centcom_formal"
 	mutantrace_variation = NONE
 	strip_delay = 80

@@ -15,6 +15,32 @@
 	var/selector_switch_icon = FALSE
 	var/auto_fire_delay = 0.3 SECONDS
 
+	var/damage_mult = 1
+	var/shell_speed_mod = 1
+	var/iff_having = FALSE		//gun has IFF
+	var/has_magnetic_harness = FALSE		//gun has magnetic harness
+
+	var/zooming_fire_delay = 20
+	var/zooming_time = 2 SECONDS
+	var/zooming_speed = 1
+
+	var/list/initial_attachments = list()
+
+/obj/item/gun/equipped(mob/user, slot)
+	mouse_opacity = MOUSE_OPACITY_OPAQUE //so it's easier to click when it`s in inventory
+	..()
+
+/obj/item/gun/dropped(mob/user)
+	mouse_opacity = initial(mouse_opacity)
+	harness_check(user)
+	..()
+
+/obj/item/gun/throw_at(atom/target, range, speed, thrower)
+	if(harness_check(thrower))
+		visible_message(span_warning("\The [src] clanks on the ground."))
+	else
+		return ..()
+
 /datum/action/item_action/toggle_safety
 	name = "Toggle Safety"
 	button_icon = 'modular_dripstation/icons/effects/gunsafety.dmi'
@@ -25,7 +51,24 @@
 	button_icon_state = "fireselect_no"
 	button_icon = 'modular_dripstation/icons/effects/firemode.dmi'
 
+/datum/action/item_action/toggle_safety/IsAvailable(feedback = FALSE)
+	var/obj/item/gun/G = target
+	if(!owner.is_holding(G))
+		return FALSE
+	return ..()
+
+/datum/action/item_action/toggle_firemode/IsAvailable(feedback = FALSE)
+	var/obj/item/gun/G = target
+	if(!owner.is_holding(G))
+		return FALSE
+	if(G.zoomed)
+		return FALSE
+	return ..()
+
 /obj/item/gun/ui_action_click(mob/user, actiontype)
+	if(!user.is_holding(src))
+		to_chat(user, span_notice("You should be able to press the toggle button to change safety or firemode on [src]."))
+		return
 	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
 		fire_select()
 	else if(istype(actiontype, toggle_safety_action))
@@ -51,7 +94,7 @@
 		span_notice("You toggle [src]'s safety [safety ? "<font color='#00ff15'>ON</font>" : "<font color='#ff0000'>OFF</font>"].")
 	)
 
-/obj/item/gun/proc/fire_select()
+/obj/item/gun/proc/fire_select(force)
 	var/mob/living/carbon/human/user = usr
 
 	var/max_mode = fire_select_modes.len
@@ -60,9 +103,11 @@
 		balloon_alert(user, "only one firemode!")
 		return
 
-	fire_select_index = 1 + fire_select_index % max_mode // Magic math to cycle through this shit!
-
-	fire_select = fire_select_modes[fire_select_index]
+	if(force)
+		fire_select = force
+	else
+		fire_select_index = 1 + fire_select_index % max_mode // Magic math to cycle through this shit!
+		fire_select = fire_select_modes[fire_select_index]
 
 	switch(fire_select)
 		if(SELECT_SEMI_AUTOMATIC)
@@ -78,6 +123,7 @@
 			SEND_SIGNAL(src, COMSIG_GUN_AUTOFIRE_DESELECTED, user)
 			balloon_alert(user, "[burst_size]-round burst")
 		if(SELECT_FULLY_AUTOMATIC)
+			fire_delay = initial(fire_delay)
 			spread = initial(spread)
 			burst_size = 1
 			SEND_SIGNAL(src, COMSIG_GUN_AUTOFIRE_SELECTED, user)
@@ -120,6 +166,11 @@
 	if(SELECT_FULLY_AUTOMATIC in fire_select_modes)
 		AddComponent(/datum/component/automatic_fire, auto_fire_delay)
 
+	if(initial_attachments.len > 0)
+		for(var/att in initial_attachments)
+			var/obj/item/attachment/_att = new att(src)
+			_att.on_attach(src)
+
 /obj/item/gun/Destroy()
 	if(toggle_safety_action)
 		QDEL_NULL(toggle_safety_action)
@@ -154,3 +205,53 @@
 /obj/item/gun/proc/pin_still_exists()
 	return (!QDELETED(pin) && src.loc == pin)
 
+
+/obj/item/gun/proc/apply_gun_modifiers(obj/projectile/projectile_to_fire, atom/target, firer)
+	projectile_to_fire.damage *= damage_mult
+	//projectile_to_fire.damage_falloff *= damage_falloff_mult
+	projectile_to_fire.speed += shell_speed_mod
+	if(iff_having || projectile_to_fire.iff_having)
+		var/iff_signal
+		if(ishuman(firer))
+			var/mob/living/carbon/human/_firer = firer
+			var/obj/item/card/id/id = _firer.get_idcard()
+			iff_signal = id?.iff_signal
+		//else if(istype(firer, /obj/machinery/porta_turret))
+		//	var/obj/machinery/porta_turret/sentry = firer
+		//	iff_signal = sentry.iff_signal
+		//else if(istype(firer, /obj/machinery/manned_turret))
+		//	var/obj/machinery/manned_turret/sentry = firer
+		//	iff_signal = sentry.iff_signal
+		projectile_to_fire.iff_signal = iff_signal
+	if(ishuman(firer) && zoomed)
+		var/mob/living/carbon/human/_firer = firer
+		if(_firer.a_intent != INTENT_HARM)
+			projectile_to_fire.precise = TRUE
+
+/obj/item/gun/proc/harness_check(mob/user)
+	if(!ishuman(user))
+		return FALSE
+	var/mob/living/carbon/human/owner = user
+	if(!has_magnetic_harness)
+		return FALSE
+	var/obj/item/I = owner.wear_suit	//ITEM_SLOT_OCLOTHING
+	if(!is_type_in_list(I, list(/obj/item/clothing/suit/armor, /obj/item/clothing/suit/space)))
+		return FALSE
+	addtimer(CALLBACK(src, .proc/harness_return, user), 0.3 SECONDS, TIMER_UNIQUE)
+	return TRUE
+
+/obj/item/gun/proc/harness_return(mob/living/carbon/human/user)
+	if(!isturf(loc) || QDELETED(user) || !isnull(user.s_store) && !isnull(user.back))
+		return
+
+	user.equip_to_slot_if_possible(src, ITEM_SLOT_SUITSTORE)
+	if(user.s_store == src)
+		var/obj/item/I = user.wear_suit
+		user.visible_message(span_warning("[src] snaps into place on [I]."))
+		user.update_inv_s_store()
+		return
+
+	user.equip_to_slot_if_possible(src, ITEM_SLOT_BACK)
+	if(user.back == src)
+		user.visible_message(span_warning("[src] snaps into place on your back."))
+	user.update_inv_back()

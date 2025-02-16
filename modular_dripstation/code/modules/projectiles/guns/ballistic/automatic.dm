@@ -1,5 +1,17 @@
 /obj/item/gun/ballistic/automatic
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT, SELECT_FULLY_AUTOMATIC)
+	available_attachments = list(
+		/obj/item/attachment/scope/simple,
+		/obj/item/attachment/scope/holo,
+		/obj/item/attachment/scope/infrared,
+		/obj/item/attachment/scope/sniper,
+		/obj/item/attachment/scope/sniper/nvg,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/grip/vertical,
+		/obj/item/attachment/grip/angled,
+		/obj/item/attachment/grip/magnetic_harness,
+		/obj/item/attachment/trigger/iff_module
+	)
 
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
@@ -16,12 +28,12 @@
 /obj/item/gun/ballistic/minigun
 	burst_size = 1
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_FULLY_AUTOMATIC)
-	auto_fire_delay = 0.1 SECONDS
+	auto_fire_delay = 0.07 SECONDS
 
 /obj/item/gun/ballistic/minigunosprey
 	burst_size = 1
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_FULLY_AUTOMATIC)
-	auto_fire_delay = 0.1 SECONDS
+	auto_fire_delay = 0.07 SECONDS
 
 /obj/item/gun/ballistic/automatic/proto
 	desc = "A fullauto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
@@ -89,7 +101,7 @@
 	pin = /obj/item/firing_pin/dna/secure
 	burst_size = 3
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT, SELECT_FULLY_AUTOMATIC)
-	auto_fire_delay = 0.1 SECONDS
+	auto_fire_delay = 0.07 SECONDS
 
 /obj/item/gun/ballistic/automatic/c20r/aegis
 	name = "\improper NB-20A 'Aegis'"
@@ -100,18 +112,28 @@
 	selector_switch_icon = FALSE
 	icon_state = "nt_aegis"
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 
 /obj/item/gun/ballistic/automatic/wt550
+	name = "\improper WT-550 security auto carbine"
+	desc = "An outdated personal defence weapon manufactured by Ward-Takahashi Arms Group. Uses 4.6x30mm rounds. Has a two-round burst, auto or a semi-automatic firing mode."
 	item_state = "wt550"
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
-	auto_fire_delay = 0.3 SECONDS
+	auto_fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/wt550/armory
 	icon_state = "wt550_secure"
 	item_state = "wt550_secure"
 	pin = /obj/item/firing_pin/implant/mindshield
+
+/obj/item/gun/ballistic/automatic/wt550/combat
+	icon_state = "wt550_secure"
+	item_state = "wt550_secure"
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
+	starting_mag_type = /obj/item/ammo_box/magazine/wt550m9/wt_airburst
+	initial_attachments = list(/obj/item/attachment/grip/angled, /obj/item/attachment/scope/holo, /obj/item/attachment/trigger/iff_module)
 
 /obj/item/gun/ballistic/automatic/sa450
 	name = "\improper Shellguard security auto carbine"
@@ -126,7 +148,6 @@
 	spread = 10
 	semi_auto_spread = 4
 	burst_size = 3
-	actions_types = list()
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	can_suppress = TRUE
@@ -134,7 +155,7 @@
 	knife_x_offset = 25
 	knife_y_offset = 12
 	mag_display = TRUE
-	auto_fire_delay = 0.2 SECONDS
+	auto_fire_delay = 0.15 SECONDS
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
@@ -150,8 +171,12 @@
 	name = "\improper Militech M-90gl"
 	desc = "A three-round burst 5.56 toploading rifle, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
 	icon = 'modular_dripstation/icons/obj/weapons/ballistic.dmi'
+	fire_sound = 'modular_dripstation/sound/weapons/tgmc/smg_heavy.ogg'
+	suppressed_sound = 'sound/weapons/gunshot_smg.ogg'
+	mag_display = TRUE
 	mag_display_ammo = TRUE
 	selector_switch_icon = TRUE
+	select = 0
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT)
 
 /obj/item/gun/ballistic/automatic/m90/examine(mob/user)
@@ -197,8 +222,22 @@
 	icon_state = "m31a1"
 	empty_indicator = FALSE
 	can_suppress = TRUE
-	selector_switch_icon = FALSE
+	selector_switch_icon = TRUE
+	pin = /obj/item/firing_pin/dna/secure
+	initial_attachments = list(/obj/item/attachment/trigger/iff_module)
+
+/obj/item/gun/ballistic/automatic/m90/m31a1/Initialize(mapload)
+	. = ..()
+	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/dna(src)
+	update_appearance(UPDATE_ICON)
+
+/obj/item/gun/ballistic/automatic/m90/m31a1/unrestricted
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/automatic/m90/m31a1/unrestricted/Initialize(mapload)
+	. = ..()
+	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
+	update_appearance(UPDATE_ICON)
 
 /obj/item/gun/ballistic/automatic/p90
 	name = "\improper P-90 Personal Defense Weapon"
@@ -225,7 +264,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_display = TRUE
 	can_suppress = TRUE
+	slot_flags = ITEM_SLOT_BACK
+	pin = /obj/item/firing_pin/implant/centcom_mindshield
 	icon = 'modular_dripstation/icons/obj/weapons/48x32.dmi'
+	worn_icon = 'modular_dripstation/icons/mob/clothing/guns_on_back.dmi'
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	fire_sound = 'modular_dripstation/sound/weapons/tgmc/autorifle-1.ogg'
@@ -242,7 +284,7 @@
 	fire_sound = 'modular_dripstation/sound/weapons/tgmc/autorifle-2.ogg'
 	icon_state = "militech_mkIV"
 	item_state = "militech_mkIV"
-	pin = /obj/item/firing_pin/dna
+	pin = /obj/item/firing_pin/dna/secure
 	spread = 5
 	semi_auto_spread = 2
 
@@ -284,7 +326,6 @@
 	spread = 12
 	semi_auto_spread = 4
 	burst_size = 1
-	actions_types = list()
 	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
 	auto_fire_delay = 0.1 SECONDS
@@ -304,7 +345,6 @@
 	recoil = 1.5
 	spread = 25
 	burst_size = 1
-	actions_types = list()
 	can_suppress = FALSE
 
 /obj/item/gun/ballistic/automatic/ar/akm
@@ -322,7 +362,6 @@
 	recoil = 1.2
 	spread = 20
 	burst_size = 1
-	actions_types = list()
 	can_suppress = FALSE
 
 /obj/item/gun/ballistic/automatic/ar/akm_tactical
@@ -338,7 +377,6 @@
 	recoil = 0.8
 	spread = 15
 	burst_size = 1
-	actions_types = list()
 	can_suppress = FALSE
 
 /obj/item/gun/ballistic/automatic/ar/ak101
@@ -357,7 +395,6 @@
 	semi_auto_spread = 2
 	recoil = 1.2
 	burst_size = 1
-	actions_types = list()
 	var/folded = FALSE
 	var/unfolded_spread = 15
 	var/unfolded_item_state = "ak101"
@@ -435,6 +472,9 @@
 	worn_icon = 'modular_dripstation/icons/mob/clothing/guns_on_back.dmi'
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 
+/obj/item/gun/ballistic/automatic/k41s/dna
+	pin = /obj/item/firing_pin/dna/secure
+
 /obj/item/gun/ballistic/automatic/lwt650
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 
@@ -461,6 +501,9 @@
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	recoil = 1
+	available_attachments = list(
+		/obj/item/attachment/scope/sniper_slav,
+	)
 
 
 /obj/item/gun/ballistic/automatic/pistol
@@ -471,6 +514,16 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
+	available_attachments = list(
+		/obj/item/attachment/scope/simple,
+		/obj/item/attachment/scope/holo,
+		/obj/item/attachment/scope/infrared,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/grip/vertical,
+		/obj/item/attachment/grip/angled,
+		/obj/item/attachment/grip/magnetic_harness,
+		/obj/item/attachment/trigger/iff_module
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/stickman
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -593,7 +646,7 @@
 	mag_type = /obj/item/ammo_box/magazine/mm556x45_100
 	burst_size = 1
 	actions_types = list()
-	auto_fire_delay = 0.2 SECONDS
+	auto_fire_delay = 0.1 SECONDS
 
 /obj/item/gun/ballistic/automatic/l6_saw/update_icon()
 	. = ..()
@@ -601,6 +654,9 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inv_hands()
+
+/obj/item/gun/ballistic/automatic/l6_saw/dna
+	pin = /obj/item/firing_pin/dna/secure
 
 /obj/item/gun/ballistic/automatic/l6_saw/m60
 	name = "\improper L4 GPMG"
@@ -611,7 +667,7 @@
 	lefthand_file = 'modular_dripstation/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_dripstation/icons/mob/inhands/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	auto_fire_delay = 0.4 SECONDS
+	auto_fire_delay = 0.25 SECONDS
 
 /obj/item/gun/ballistic/automatic/l6_saw/m60/unrestricted
 	pin = /obj/item/firing_pin

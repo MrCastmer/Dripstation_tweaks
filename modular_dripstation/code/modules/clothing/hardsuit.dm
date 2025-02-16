@@ -266,6 +266,7 @@
 	body_parts_partial_covered = 0
 	armor = list(MELEE = 45, BULLET = 40, LASER = 40, ENERGY = 35, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 10, ELECTRIC = 100)
 	slowdown = 0.5
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/emergency_forcing_tool, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/command
 	name = "emergency response team commander helmet"
@@ -508,7 +509,7 @@
 /obj/item/clothing/suit/space/hardsuit/deathsquad/mk5
 	name = "\improper MK.V SWAT suit"
 	desc = "A bulky and technological suit with ominous black and red paiting worn by \
-		Nanotrasen Black Ops teams. If you can see this suit, you fucked up. \
+		Nanotrasen Black Ops teams. If you see this suit - you fucked up. \
 		Heavy plasteel plates was replaced with bluespace-pocket plasceramic ultra-dense plating. \
 		Providing greate mobility and an impossible level of armor protection against all kinds of threats."
 	icon_state = "swat5_deathsquad_hardsuit"
@@ -517,6 +518,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/mk5
 	armor = list(MELEE = 90, BULLET = 100, LASER = 60, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
 	slowdown = 0.5
+	allowed = list(/obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/flashlight, /obj/item/gun/ballistic, /obj/item/gun/energy, /obj/item/melee/baton, /obj/item/melee/classic_baton, /obj/item/reagent_containers/spray/pepper, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
 
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/mk5/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -562,7 +564,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS //finally, some normal armoring
 	body_parts_partial_covered = 0
 	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 25, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30, ELECTRIC = 100)
-	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
+	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals, /obj/item/gun/magic/staff)
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard

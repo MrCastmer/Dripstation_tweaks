@@ -54,6 +54,9 @@ GLOBAL_LIST_EMPTY(synthetic_added_access)
 	. = ..()
 	//H.apply_pref_name(/datum/preference/name/synthetic, M.client)
 	H.remove_all_quirks()
+	var/start_sound = "[global.config.directory]/sounds/TurnedAround.ogg"
+	if(start_sound)
+		SEND_SOUND(H, sound(start_sound))
 
 /datum/job/replica/get_access()
 	return GLOB.synthetic_base_access
@@ -67,12 +70,15 @@ GLOBAL_LIST_EMPTY(synthetic_added_access)
 	suit = null
 	shoes = null
 	uniform = null
+	l_pocket = /obj/item/storage/pouch/general/medium/synthration
 	pda_type = null
 	backpack = null
 	implants = list()
 
 /datum/outfit/job/replica/post_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
+	if(visualsOnly)
+		return
 	var/obj/item/organ/cyberimp/eyes/hud/security/Y = new
 	Y.Insert(H, special = TRUE, drop_if_replaced = FALSE)
 	var/obj/item/organ/cyberimp/brain/replica_controller/RCI = new
@@ -106,13 +112,14 @@ GLOBAL_LIST_EMPTY(synthetic_added_access)
 
 /datum/outfit/job/replica/engineer/post_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
+	if(visualsOnly)
+		return
 	var/obj/item/organ/cyberimp/chest/replica/T = new
 	T.Insert(H, special = TRUE, drop_if_replaced = FALSE)
-	if(!visualsOnly)
-		if(!GLOB.granted_synthetic_access[ENGINEERING])
-			binary_talk("Synthetic assistance required in the Engineering department for the following reason: All-Purpose Repair Replika arrived.", "Synthetic Access Requester")
-			GLOB.granted_synthetic_access[ENGINEERING] = TRUE
-			GLOB.synthetic_added_access |= list(ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_ATMOSPHERICS, ACCESS_CONSTRUCTION, ACCESS_SECURE_TECH_STORAGE)
+	if(!GLOB.granted_synthetic_access[ENGINEERING])
+		binary_talk("Synthetic assistance required in the Engineering department for the following reason: All-Purpose Repair Replika arrived.", "Synthetic Access Requester")
+		GLOB.granted_synthetic_access[ENGINEERING] = TRUE
+		GLOB.synthetic_added_access |= list(ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_ATMOSPHERICS, ACCESS_CONSTRUCTION, ACCESS_SECURE_TECH_STORAGE)
 
 /datum/outfit/job/replica/sec
 	name = "Security Replika"
@@ -138,22 +145,18 @@ GLOBAL_LIST_EMPTY(synthetic_added_access)
 	SSwardrobe.provide_type(/obj/item/barrier_taperoll/police, src)
 	update_appearance(UPDATE_ICON)
 
-/obj/item/radio/headset/headset_synthetic/alt
-	icon_state = "hos_headset_alt"
-
-/obj/item/radio/headset/headset_synthetic/alt/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
-
 /datum/outfit/job/replica/sec/post_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
+	if(visualsOnly)
+		return
 	var/obj/item/organ/cyberimp/chest/replica/plating/T = new
 	T.Insert(H, special = TRUE, drop_if_replaced = FALSE)
-	if(!visualsOnly)
-		if(!GLOB.granted_synthetic_access[SECURITY])
-			binary_talk("Synthetic assistance required in the Security department for the following reason: Security Technician Replica arrived.", "Synthetic Access Requester")
-			GLOB.granted_synthetic_access[SECURITY] = TRUE
-			GLOB.synthetic_added_access |= list(ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS, ACCESS_BRIG_PHYS)
+	if(!GLOB.granted_synthetic_access[SECURITY])
+		binary_talk("Synthetic assistance required in the Security department for the following reason: Security Technician Replica arrived.", "Synthetic Access Requester")
+		GLOB.granted_synthetic_access[SECURITY] = TRUE
+		GLOB.synthetic_added_access |= list(ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS, ACCESS_BRIG_PHYS)
+	var/obj/item/card/id/W = H.wear_id
+	W.iff_signal = SPEARHEAD_IFF
 
 /datum/outfit/job/replica/naked
 	name = "Synthetic (Naked)"

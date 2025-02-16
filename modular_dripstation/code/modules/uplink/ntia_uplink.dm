@@ -188,6 +188,7 @@
 	restricted_roles = list(NT_SPY)
 
 /obj/item/grenade/syndieminibomb/nt
+	name = "\improper nanotrasen minibomb"
 	desc = "A nanotrasen manufactured explosive used to sow destruction and chaos."
 	icon = 'modular_dripstation/icons/obj/weapons/grenade.dmi'
 	icon_state = "nanotrasen"
